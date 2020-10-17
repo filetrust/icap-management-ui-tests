@@ -41,10 +41,3 @@ Feature: User Management View
             |      |       |      |
         Then the expected validation error is displayed
         And the record is not saved
-
-    @TEST-191
-    Scenario: A user cannot delete themselves
-        Given user has logged into the ui
-        And the user has navigated to the Users page
-        When the user observes their acocunt
-        Then there will be no delete button next to their account

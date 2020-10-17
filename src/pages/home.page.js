@@ -9,7 +9,7 @@ module.exports = {
     logout: "",
   },
   sections: {
-    menu: `section[class*='Toolbar_Toolbar__1M58_']`,
+    menu: `section[class*='Toolbar_Toolbar__1Imro.Toolbar_expanded__3KBgy']`,
   },
   links: {
     dashboard: `a[href*='dashboard'] > div > p`,
