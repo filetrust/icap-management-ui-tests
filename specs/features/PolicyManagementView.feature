@@ -40,7 +40,7 @@ Feature: Policy Management View
     @TEST-153
     Scenario: A user selecting the "Current Policy" in the navigation panel will be taken to the current policy page
         When the user clicks on Current Policy in the navigation panel
-        Then D:\work\upwork\dinis\dinesh\icap\dineshfork\icap-management-ui-teststhe user is taken to the current policy page
+        Then the user is taken to the current policy page
 
     @TEST-154
     Scenario: A user selecting the "Policy History" in the navigation panel will be taken to the policy history page
