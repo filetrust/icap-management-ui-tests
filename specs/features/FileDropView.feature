@@ -31,7 +31,7 @@ Feature: FileDropView
         Given the user has navigated to the "File Drop" page
         And has processed a file
         When the user clicks on "XML"
-        Then the full CML report is downloaded
+        Then the full XML report is downloaded
 
     @TEST-181
     Scenario: A user is able to download the full PDF analysis report for a file

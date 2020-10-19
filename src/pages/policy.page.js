@@ -1,12 +1,27 @@
-const {
-    I
-} = inject();
+const { I } = inject();
 
 module.exports = {
-
-    //Locators
-
+  //locators
+    tabs: {
+        current: `section[class*='TabNav_TabNav__2M5TN'] > ul > li:nth-of-type(1) > button`,
+        history: `section[class*='TabNav_TabNav__2M5TN'] > ul > li:nth-of-type(2) > button`,
+    },
+    checkboxes: {
+        unprocessedFileRelay: "",
+        unprocessedFileBlock: "",
+        unprocessedFileRefer: "",
+        blockedFileRelay: "",
+        blockedFileBlock: "",
+        blockedFileRefer: "",
+    },
+      containers: {
+        wordContentFlags: `div[class*='Current_inner__1pjYU'] > section:nth-of-type(1) > div`,
+        excelContentFlags: `div[class*='Current_inner__1pjYU'] > section:nth-of-type(2) > div`,
+        powerPointContentFlags: `div[class*='Current_inner__1pjYU'] > section:nth-of-type(3) > div`,
+        pdfContentFlags: `div[class*='Current_inner__1pjYU'] > section:nth-of-type(4) > div`,
+      },
     fields: {
+        domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
         pageHeading: `h1[class*='Main_pageHeading']`,
         word: {
             sanitise : {
@@ -102,7 +117,14 @@ module.exports = {
         policy : {
             current: `//button[text()='Current']`,
             history: `//button[text()='History']`
-        }
+        },
+        view: "",
+        activate: "",
+        gotoPage: "",
+        previousPage: "",
+        firstPage: "",
+        nextPage: "",
+        lastPage: "",
     },
     sections: {
 
@@ -212,4 +234,96 @@ module.exports = {
             I.assertEqual(numberTabs, expectedTabCount, 'Expected and actual tab count is not same')
         })
     },
-}
+
+  /*
+   * Policy Setting
+   * ***************************************************************
+   */
+  getContentFlagRule(type, rule) {
+    return "label[for='" + type + "ContentManagement_" + rule + "']";
+  },
+
+  setContentFlagRule(type, rule) {
+    const container = null;
+    if (type == "Word") {
+      container = this.containers.wordContentFlags;
+    } else if (type == "Excel") {
+      container = this.containers.excelContentFlags;
+    } else if (type == "PowerPoint") {
+      container = this.containers.powerPointContentFlags;
+    } else if (type == "Pdf") {
+      container = this.containers.pdfContentFlags;
+    }
+    I.click(container);
+    const element = this.getContentFlagRule(type, rule);
+    I.click(element);
+  },
+
+  /*
+   * Policy History
+   * ***************************************************************
+   */
+
+
+  // Pagination
+
+  clickFirst() {
+    const element = this.buttons.firstPage;
+    I.click(element);
+  },
+
+  clickLast() {
+    const element = this.buttons.lastPage;
+    I.click(element);
+  },
+
+  clickPrevious() {
+    const element = this.buttons.nextPage;
+    I.click(element);
+  },
+
+  setCustomPage(value) {
+    const element = this.fields.customPaginatorGoTo;
+    I.fillField(element, value);
+  },
+
+  clickGo() {
+    const element = this.buttons.go;
+    I.click(element);
+  },
+
+  /*
+   * Non compliant Files
+   * ***************************************************************
+   */
+
+  setUnprocessableFileAsRelay() {
+    const element = this.checkboxes.unprocessedFileRelay;
+    I.click(element);
+  },
+
+  setUnprocessableFileAsBlock() {
+    const element = this.checkboxes.unprocessedFileBlock;
+    I.click(element);
+  },
+
+  setUnprocessableFileAsRefer() {
+    const element = this.checkboxes.unprocessedFileRefer;
+    I.click(element);
+  },
+
+  setBlockedFileAsRelay() {
+    const element = this.checkboxes.blockedFileRelay;
+    I.click(element);
+  },
+
+  setBlockedFileAsBlock() {
+    const element = this.checkboxes.blockedFileBlock;
+    I.click(element);
+  },
+
+  setUNprocessedFileRefer() {
+    const element = this.checkboxes.unprocessedFileRefer;
+    I.click(element);
+  },
+};

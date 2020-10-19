@@ -40,7 +40,7 @@ Feature: Policy Management View
     @TEST-153
     Scenario: A user selecting the "Current Policy" in the navigation panel will be taken to the current policy page
         When the user clicks on Current Policy in the navigation panel
-        Then the user is taken to the current policy page
+        Then D:\work\upwork\dinis\dinesh\icap\dineshfork\icap-management-ui-teststhe user is taken to the current policy page
 
     @TEST-154
     Scenario: A user selecting the "Policy History" in the navigation panel will be taken to the policy history page
@@ -116,11 +116,15 @@ Feature: Policy Management View
         When user click the delete button
 
     @TEST-161
-    Scenario: A user can change the number of items displayed on a page
+    Scenario Outline: A user can change the number of items displayed on a page
         Given user has navigated to the "Policy History" page
         And there are more than 10 policies in the history
-        When "Items Shown" is changed to 25
-        Then up to 25 previous policies are displayed
+        When "Items Shown" is changed to <itemCount>
+        Then up to <fileCount> previous policies are displayed
+        Examples:
+        | itemCount | fileCount |
+        | 25        | 25        |
+        | 100       | 100       |
 
     @TEST-183
     Scenario Outline: A user can change the outcome of Un-processable files

@@ -43,11 +43,11 @@ Feature: Transaction / ICAP History View
         When user has clicked on Date/Time
         And user select a custom range as <customRange> and apply
         Then the files processed for the selected period are displayed
-        And the date range for the selected period is displayed in the Date/Time field as <dateRamge>
+        And the date range for the selected period is displayed in the Date/Time field as <dateRange>
         Examples:
-            | customRange | dateRamge |
+            | customRange | dateRange |
             | 12 hours    |           |
-            |             |           |
+            | 3  hours    |           |
 
 
     @TEST-169
@@ -80,11 +80,8 @@ Feature: Transaction / ICAP History View
         Then the expected validation error is displayed
         And the date range is not updated
         Examples:
-            | customRange | dateRamge |
+            | customRange | dateRange |
             | 25 hours    |           |
-            |             |           |
-
-
 
     @TEST-189
     Scenario: A user can remove individual filters

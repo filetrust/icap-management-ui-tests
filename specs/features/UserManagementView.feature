@@ -8,8 +8,9 @@ Feature: User Management View
         Given user has logged into the ui
         And user has navigated to the Users page
         When User add a new user with a valid email address
-            | name | email | role |
-            |      |       |      |
+            | name      | email                     |
+            | tester1   | tester1@glasswalltest.co  |
+            | tester2   | tester2@glasswalltest.co  |
         Then The new user record is saved
 
     @TEST-172
@@ -17,8 +18,8 @@ Feature: User Management View
         Given user has logged into the ui
         And user has navigated to the Users page
         When user deletes a existing user
-            | name | email | role |
-            |      |       |      |
+            | name      | email                     |
+            | tester2   | tester2@glasswalltest.co  |
         Then The user record is no longer available
 
 
@@ -27,8 +28,9 @@ Feature: User Management View
         Given user has logged into the ui
         And admin user has navigated to the Users page
         When user add a new user with a invalid email address
-            | name | email | role |
-            |      |       |      |
+            | name          | email             |
+            | InvalidUser1  | Invalid@email.com |
+            | InvalidUser2  | Invalid           |
         Then the record is not saved
         And the expected validation error is displayed
 
@@ -37,7 +39,7 @@ Feature: User Management View
         Given user has logged into the ui
         And user has navigated to the Users page
         When user add a new user with a valid email address already used
-            | name | email | role |
-            |      |       |      |
+            | name      | email                     |
+            | tester1   | tester1@glasswalltest.co  |
         Then the expected validation error is displayed
         And the record is not saved
