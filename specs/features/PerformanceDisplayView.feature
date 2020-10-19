@@ -36,3 +36,18 @@ Feature:
             | 12 Hours |           |
             | 12 Hours |           |
             | 12 Hours |           |
+<<<<<<< HEAD
+=======
+
+    @TEST-192
+    Scenario: A user can remove file-outcomes from the filters on the charts
+        Given user has navigated to the Dashboard page
+        When the user clicks on <fileOutcome> on <chart>
+        Then the chart is updated to remove <fileOutcome>
+        Examples:
+            | chart         | fileOutcome   |
+            | pie chart     | Safe          |
+            | pie chart     | Blocked       |
+            | line graph    | Safe          |
+            | line graph    | Blocked       |
+>>>>>>> 1f7712e36ee68382788a092d039604d070443ab9

@@ -50,11 +50,17 @@ Feature: Policy Management View
     @TEST-155
     Scenario: A user is able to change part of the policy from Allow to Sanitise and the policy can be saved with all changes
         Given the user has logged into the ui
-        And has navigated to the "Current Policy" page
-        And has changed one of the "Content Flags" from "Allow" to "Sanitise"
-        When the "Save Changes" button is clicked
+        And has navigated to the Current Policy page
+        And has changed one of the <ContentFlags> for <fileType> from <FlagType1> to <FlagType2>
+        When the Save Changes button is clicked
         Then the changes are saved
-        And the previous policy can now be located in the "Policy history" page
+        And the previous policy can now be located in the Policy history page
+        Examples:
+            | fileType   | ContentFlags    | FlagType1 | FlagType2 |
+            | Word       | Embedded Files  | Sanitise  | Disallow  |
+            | Excel      | Review Comments | Disallow  | Sanitise  |
+            | Powerpoint | Embedded Images | Disallow  | Sanitise  |
+            | PDF        | Acroform        | Sanitise  | Disallow  |
 
     @TEST-156
     Scenario: A user can view previous Policy details
@@ -119,7 +125,7 @@ Feature: Policy Management View
     Scenario Outline: A user can change the number of items displayed on a page
         Given user has navigated to the "Policy History" page
         And there are more than 10 policies in the history
-        When "Items Shown" is changed to <itemCount>
+        When Items Shown is changed to <itemCount>
         Then up to <fileCount> previous policies are displayed
         Examples:
         | itemCount | fileCount |
@@ -154,9 +160,9 @@ Feature: Policy Management View
 
     @TEST-188
     Scenario: A user can cancel any updates that they have done to the policy by pressing cancel
-        Given user has navigated to the "Current Policy" page
+        Given user has navigated to the Current Policy page
         And user has updated sections of the current policy
-        When the user presses the "Cancel button"
+        When the user presses the Cancel button
         Then the changes are undone
         And the Current policy defaults to the latest saved policy
 
