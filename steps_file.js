@@ -1,5 +1,6 @@
 const homePage = require('./src/pages/home.page.js')
 const loginPage = require('./src/pages/login.page.js')
+const policyPage = require('./src/pages/policy.page.js')
 
 module.exports = function () {
     return actor({
@@ -17,6 +18,10 @@ module.exports = function () {
         },
         enterInvalidPassword: function () {
             loginPage.setPassword(faker.random.number())
-        }
+        },
+
+        goToPolicy: function () {
+            policyPage.clickPolicyTab()
+        },
     });
 }

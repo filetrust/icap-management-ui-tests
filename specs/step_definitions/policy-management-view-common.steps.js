@@ -7,12 +7,8 @@ const {
 /*****************************************
  * Navigation
  ******************************************/
-Given('the user has logged into the ui', () => {
-    I.loginAs(env.qa.url, env.qa.email, env.qa.password)
-    I.wait(2)
-});
 
-Given('I am on policy screen', () => {
+Given('I have navigated to the Policy page', () => {
     I.goToPolicy()
     I.wait(2)
 });
@@ -93,9 +89,7 @@ Then('all flags of the pdf is changed to disallow', () => {
     // policyPage.assertDisallowForAllFlagForDoc("pdf")
 });
 
-When('the user clicks on Current Policy in the navigation panel', () => {
-    I.goToPolicy()
-    I.wait(1)
+When('I click view on a previous policy', () => {
     policyPage.clickOnCurrentPolicyTab()
 });
 
@@ -109,11 +103,11 @@ Given('the user clicks on Policy History in the navigation panel', () => {
     policyPage.clickOnHistoryPolicyTab()
 });
 
-Given('I clicks on Policy History tab', () => {
+When('I click on Policy History in the navigation panel', () => {
     policyPage.clickOnHistoryPolicyTab()
 });
 
-Then('the user is taken to the Policy History page', () => {
+Then('I am taken to the Policy History page', () => {
     policyPage.assertHistoryPolicyPage()
 });
 
@@ -145,11 +139,11 @@ When('the save button is selected', () => {
     policyPage.clickSaveApiUrl()
 });
 
-When('the activate button is clicked', () => {
+When('I click activate on a previous policy', () => {
     policyPage.clickActivate()
 });
 
-When('I click view', () => {
+When('I click view on a previous policy', () => {
     policyPage.clickView()
 });
 

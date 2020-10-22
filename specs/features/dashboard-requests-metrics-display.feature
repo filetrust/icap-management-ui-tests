@@ -10,11 +10,9 @@ Feature: dashboard-requests-metrics-display
         When I process a <file>
         Then the Total Files processed will increase by 1
         And <fileOutcome> on the graphs will increase by 1
-        Example:
+        Examples:
             | file              | fileOutcome   |
             | Safe_file         | Safe          |
             | Blocked_file      | Blocked       |
             | Dangerous_file    | Dangerous     |
             | Unclassified_file | Uncalssified  |
-
-

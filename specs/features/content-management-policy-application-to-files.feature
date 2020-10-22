@@ -5,12 +5,10 @@ Feature: content-management-policy-application-to-files
         Given I am logged into the ui
 
     @TEST-
-    Scenario Outline: I can process a file and the file is sanitised when content management policy is set to Sanitise
+    Scenario: I can process a file and the file is sanitised when content management policy is set to Sanitise
         Given I have applied the sanitise content management policy
         When I process <File>
         Then <File> is returned with <FileHash>
-        Example:
-            | File | FileHash |
 
     @TEST-
     Scenario: I cannot process a file if the content management policy is set to Disallow
