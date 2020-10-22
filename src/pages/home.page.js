@@ -20,7 +20,7 @@ module.exports = {
     },
     links: {
         dashboard: `a[href*='dashboard'] > div > p`,
-        fileDrop: `a[class*='NavigationItem_active__mP0BB'] > div`,
+        fileDrop: `a[href*='file-drop'] > div`,
         requestsHistory: `a[href*='request-history'] > div`,
         policy: `a[href*='policy'] > div`,
         configuration: `a[href*='configuration'] > div`,

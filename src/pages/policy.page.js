@@ -237,6 +237,7 @@ module.exports = {
         I.click(element);
     },
 
+    
     clickSaveChanges() {
         I.click(this.buttons.saveChange)
     },
@@ -315,4 +316,100 @@ module.exports = {
             I.assertEqual(numberTabs, expectedTabCount, 'Expected and actual tab count is not same')
         })
     }
+
+  clickCancelChanges() {
+    const element = this.buttons.cancelChanges;
+    I.click(element);
+  },
+
+  clickSaveChanges() {
+    const element = this.buttons.saveChanges;
+    I.click(element);
+  },
+
+  /*
+   * Policy History
+   * ***************************************************************
+   */
+  clickView() {
+    const element = this.buttons.view;
+    I.click(element);
+  },
+
+  clickActivate() {
+    const element = this.buttons.activate;
+    I.click(element);
+  },
+
+  clickHistoryTab() {
+    const element = this.tabs.history;
+    I.click(element);
+  },
+
+  // Pagination
+
+  clickFirst() {
+    const element = this.buttons.firstPage;
+    I.click(element);
+  },
+
+  clickPrevious() {
+    const element = this.buttons.previousPage;
+    I.click(element);
+  },
+
+  clickLast() {
+    const element = this.buttons.lastPage;
+    I.click(element);
+  },
+
+  clickPrevious() {
+    const element = this.buttons.nextPage;
+    I.click(element);
+  },
+
+  setCustomPage(value) {
+    const element = this.fields.customPaginatorGoTo;
+    I.fillField(element, value);
+  },
+
+  clickGo() {
+    const element = this.buttons.go;
+    I.click(element);
+  },
+
+  /*
+   * Non compliant Files
+   * ***************************************************************
+   */
+
+  setUnprocessableFileAsRelay() {
+    const element = this.checkboxes.unprocessedFileRelay;
+    I.click(element);
+  },
+
+  setUnprocessableFileAsBlock() {
+    const element = this.checkboxes.unprocessedFileBlock;
+    I.click(element);
+  },
+
+  setUnprocessableFileAsRefer() {
+    const element = this.checkboxes.unprocessedFileRefer;
+    I.click(element);
+  },
+
+  setBlockedFileAsRelay() {
+    const element = this.checkboxes.blockedFileRelay;
+    I.click(element);
+  },
+
+  setBlockedFileAsRelay() {
+    const element = this.checkboxes.blockedFileBlock;
+    I.click(element);
+  },
+
+  setBlockedFileAsRelay() {
+    const element = this.checkboxes.unprocessedFileRefer;
+    I.click(element);
+  },
 };

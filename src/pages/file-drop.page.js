@@ -22,7 +22,8 @@ module.exports = {
         xml: `div[class*='RenderResults_buttons__1XTWu'] > button:nth-of-type(2)`,
         refresh: `button[class*='IconButton_IconButton__1Dhtl']`,
         downloadAnalysisReport: `button[class*='DownloadAnalysisReport_button__1Uy0T']`,
-        viewresult: `button[class*='FileDrop_button__3Yv25']`
+        viewresult: `button[class*='FileDrop_button__3Yv25']`,
+        fileInput: `input[type = file]`
     },
 
 
