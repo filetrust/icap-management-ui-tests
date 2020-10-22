@@ -29,3 +29,7 @@ When(/^I fill in (.*), (.*), (.*), and click Save$/, function (currentPassword, 
     homePage.changePassword(currentPassword, newPassword, confirmNewPassword);
 
 });
+Given('I am logged into the ui', () => {
+    I.loginNoPwd();
+});
+

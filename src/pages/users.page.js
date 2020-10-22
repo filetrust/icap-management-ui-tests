@@ -56,8 +56,8 @@ module.exports = {
     },
 
     getUserRecord(n) {
-        const element = null;
-        var rows = locate(`//*[@id="usersTable2"]/tbody/tr`);
+        let element = null;
+        const rows = locate(`//*[@id="usersTable2"]/tbody/tr`);
         for (let i in rows) {
             const text = I.grabTextFrom(rows[i] + "/td[" + n + "]/input")
             if (text === "") {
@@ -65,6 +65,23 @@ module.exports = {
             }
         }
         return element;
+    },
+
+    findUserByEmail(email) {
+        let className = null;
+        const rowArray = document.querySelectorAll(`div[class*='Users_table__'] > div[class*='User_User__']`);
+        rowArray.forEach(row => {
+            console.log('Observing row : ', row);
+            let rowClassName = row.className;
+            // this locator is written here `div[class*='Users_table__'] > div[class*='User_User__'] > div > div:nth-child(2)`
+            let rowUserEmail = row.firstChild.childNodes.item(2).textContent;
+            if (rowUserEmail === email) {
+                className = rowClassName;
+            }
+        })
+        //    let userRowEmail = locate(`div[class*='Users_table__'] > div[class*='User_User__'] > div > div:nth-child(2)`);
+        //   let userEmail = I.grabTextFrom(userRowEmail);
+        return className;
     }
-    
+
 }
