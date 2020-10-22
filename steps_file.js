@@ -1,15 +1,22 @@
-
 const homePage = require('./src/pages/home.page.js')
 const loginPage = require('./src/pages/login.page.js')
 
-module.exports = function() {
-  return actor({
+module.exports = function () {
+    return actor({
 
-    loginNoPwd: function () {
-      this.amOnPage('http://localhost:3000')
-      loginPage.clickLogIn();
-      
-    },
-    
-  });
+        onLoginPage: function () {
+            this.amOnPage('http://localhost:3000')
+        },
+        loginNoPwd: function () {
+            this.onLoginPage()
+            loginPage.clickLogIn();
+        },
+
+        enterValidCredential: function () {
+            loginPage.loginWith(env.qa.email, env.qa.password)
+        },
+        enterInvalidPassword: function () {
+            loginPage.setPassword(faker.random.number())
+        }
+    });
 }
