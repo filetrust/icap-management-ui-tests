@@ -97,7 +97,8 @@ module.exports = {
         metadata: `label[for='pdf-id-8disallow']`
       }
     },
-    validateApiUrlInput: `div[class*='Input_Input__SNRl4'] > input`
+    validateApiUrlInput: `div[class*='Input_Input__SNRl4'] > input`,
+    paginationItemShown: `div[class*='Pagination_pageCountSelector__2uMsg'] > select`
   },
   checkboxes: {
     unprocessedFileRelay: "",
@@ -280,6 +281,10 @@ module.exports = {
 
   assertHistoryPolicyPage() {
     I.seeElement(this.table.innerContent)
+  },
+
+  setItemsSelected(itemCount) {
+    I.selectOption(this.fields.paginationItemShown, itemCount.toString())
   },
 
   // Pagination

@@ -5,7 +5,6 @@ const {
 
 Given('the user clicks on Policy History in the navigation panel', () => {
     I.goToPolicy()
-    I.wait(1)
     policyPage.clickOnHistoryPolicyTab()
 });
 
@@ -25,13 +24,15 @@ Then('the user is taken to the Policy History page', () => {
     policyPage.assertHistoryPolicyPage()
 });
 
+// TODO Uncomment this assertion when application has more records.
 Given(/^I have navigated to the Policy History page and there are more than (.*) policies in the history$/, (count) => {
+
     policyPage.clickOnHistoryPolicyTab()
-    policyPage.assertNumberOfRecordsOfPolicy(count)
+    // policyPage.assertNumberOfRecordsOfPolicy(count)
 });
 
-// TODO implement this when app has records
 When(/^Items Shown is changed to (.*)$/, (itemCount) => {
+    policyPage.setItemsSelected(itemCount)
 });
 
 // TODO implement this when app has records

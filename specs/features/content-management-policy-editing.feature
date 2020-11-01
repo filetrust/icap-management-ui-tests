@@ -30,8 +30,6 @@ Feature: Content Management Policy Editing
         When I change one of the <ContentFlags> for required file types <fileType> to <FlagType>
         When I press the Save button
         Then <ContentFlags> for required file types <fileType> is set to <FlagType>
-        When I click on the previous policy button
-        Then the previous policy can now be located in the Policy history page
         Examples:
             | fileType   | ContentFlags    | FlagType |
             | word       | embeddedFiles   | sanitise |
@@ -40,10 +38,19 @@ Feature: Content Management Policy Editing
             | pdf        | acroform        | sanitise |
 
 
-    @TEST-Change-all-content-flag-for-all-doc-type
+    @TEST-Change-all-content-flag-to-sanitise-for-all-doc-type
     Scenario Outline: A user is able to change the content flags to sanitise for word in policy page
         When I change all the flag for <fileType> to sanitise on policy page
         Then all flags of the <fileType> is changed to sanitise
+        Examples:
+            | fileType   |
+            | word       |
+            | excel      |
+            | powerpoint |
+            | pdf        |
+
+    @TEST-Change-all-content-flag-to-disallow-for-all-doc-type
+    Scenario Outline: A user is able to change the content flags to sanitise for word in policy page
         When I change all the flag for <fileType> to disallow on policy page
         Then all flags of the <fileType> is changed to disallow
         Examples:

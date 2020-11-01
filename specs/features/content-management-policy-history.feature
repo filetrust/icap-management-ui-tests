@@ -14,4 +14,4 @@ Feature: content-management-policy-history
         Examples:
             | itemCount | fileCount |
             | 25        | 25        |
-            | 100       | 100       |
+            | 50        | 50        |
