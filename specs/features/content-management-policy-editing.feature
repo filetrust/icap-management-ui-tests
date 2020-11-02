@@ -1,3 +1,4 @@
+@content-management-policy-editing
 Feature: Content Management Policy Editing
     As a admin I need to validate that policy content flags can be edited in order to confirm that the solution works as expected
 
@@ -20,9 +21,7 @@ Feature: Content Management Policy Editing
         Examples:
             | fileType   | ContentFlags    | FlagType |
             | word       | embeddedFiles   | sanitise |
-            | excel      | reviewComments  | disallow |
-            | powerpoint | embeddedImages  | disallow |
-            | pdf        | acroform        | sanitise |
+          
 
 
     @TEST-155

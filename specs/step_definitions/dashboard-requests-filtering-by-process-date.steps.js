@@ -10,7 +10,7 @@ Given('I am logged into the ui', () => {
 });
 
 Given('I have navigated to the Dashboard page', () => {
-    I.goToDashboard();
+    I.goToAnalytics();
     filterValueFrom = I.grabValueFrom(datetimeFrom);
     filterValueTo = I.grabValueFrom(datetimeTo);
 

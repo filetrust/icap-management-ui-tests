@@ -1,3 +1,4 @@
+@non-compliant-files-routing-mechanism
 Feature: non-compliant-files-routing-mechanism
     As a admin I need to validate the routing mechanism for non-compliant files in order to confirm that the solution works as expected
 

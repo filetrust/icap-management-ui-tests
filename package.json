@@ -3,13 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "test": "start run.sh",
+        "report": "allure serve output",
+        "test": "(npx codeceptjs run --steps --verbose --plugins allure) & npm run report",
         "codeceptjs": "codeceptjs run --steps",
-        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
-        "codeceptjs:ui": "codecept-ui --app",
-        "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples/codecept.puppeteer.conf.js",
-        "codeceptjs:demo:headless": "HEADLESS=true codeceptjs run --steps -c node_modules/@codeceptjs/examples/codecept.puppeteer.conf.js",
-        "codeceptjs:demo:ui": "codecept-ui --app  -c node_modules/@codeceptjs/examples/codecept.puppeteer.conf.js"
+        "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps"
     },
     "devDependencies": {
         "@codeceptjs/configure": "^0.6.0",
@@ -19,12 +16,13 @@
         "codeceptjs-assert": "0.0.4",
         "eslint": "^7.12.0",
         "eslint-plugin-codeceptjs": "^1.3.0",
-        "faker": "^5.1.0",
-        "puppeteer": "^5.3.1"
+        "faker": "^5.1.0"
     },
     "dependencies": {
         "codeceptjs-chai": "^2.2.0",
+        "dotenv": "^8.2.0",
         "moment": "^2.29.1",
+        "puppeteer": "^5.4.1",
         "uuid": "^8.3.1"
     }
 }

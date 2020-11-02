@@ -17,12 +17,13 @@ module.exports = {
     countOfFiles: ""
   },
   buttons: {
-    moreFilters: `button[class*='Filters_moreFilters__']`,
+    filterArrow: `button[class*='Filters_arrow__3D5k3']`,
+    moreFilters: `button[class*='Filters_moreFilters__1-x0w']`,
     dateTime: `//button[contains(.,'Date/Time')]`,
     time_1hour: 'button:nth-child(1) > p',
     time_12hours: 'button:nth-child(2) > p',
     time_24hours: 'button:nth-child(3) > p',
-    addFilter: `#Button_button__1ngtp`,
+    addFilter: `//button[contains(.,'+ Add Filter')]`,
     deleteAppliedFilter: `button[class^='SelectedFilter_buttonClose__']`,
     fileTypeMenu: "",
     fileOutcomeMenu: "",
@@ -110,7 +111,6 @@ module.exports = {
     } else if (period === '24 Hours') {
       I.click(this.buttons.time_24hours)
     }
-
   },
 
   async getTimeFrom() {
@@ -218,7 +218,10 @@ module.exports = {
   },
 
   setFileId(value) {
-    I.click(this.buttons.addFilter)
+    I.waitForElement(this.buttons.moreFilters,30)
+    I.click(this.buttons.filterArrow);
+    I.waitForElement(this.buttons.addFilter, 30)
+    I.click(this.buttons.addFilter);
     I.click(this.buttons.fileIdMenu);
     I.fillField(this.fields.inputFilterFileID, value);
   },
@@ -227,7 +230,6 @@ module.exports = {
     this.setFileId(fileId);
     I.click(this.buttons.fileIdAdd);
   },
-
 
   setFileType(value) {
     const checkboxLabel = value.toUpperCase();

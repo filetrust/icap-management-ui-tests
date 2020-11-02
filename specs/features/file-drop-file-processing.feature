@@ -1,4 +1,4 @@
-@fileUpload
+@file-drop-file-processing
 Feature: file-drop-file-processing
     As a admin I need to validate the successful file processing by the File Drop service and error notification for unprocessed files in order to confirm that the solution works as expected
 
@@ -13,9 +13,9 @@ Feature: file-drop-file-processing
         Then the File is processed with the process status displayed as <processStatus>
         And I can view more detailed results with file attributes <fileName> and <fileType>
         Examples:
-            | supportedFile              | fileName    | fileType | processStatus                |
-            | src/data/input/issues.docx | issues.docx | docx     | Your file has been processed |
-            | src/data/input/file2.pdf   | file2.pdf   | pdf      | Your file has been processed |
+            | supportedFile                        | fileName              | fileType | processStatus                |
+            | src/data/input/issues.docx           | issues.docx           | docx     | Your file has been processed |
+            | src/data/input/structuralIssues.xlsx | structuralIssues.xlsx | xlsx     | Your file has been processed |
 
     @TEST-182
     Scenario Outline: An error message is produced when file drop is unable to process a file

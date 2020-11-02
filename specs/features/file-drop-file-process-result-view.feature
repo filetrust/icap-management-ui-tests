@@ -1,3 +1,4 @@
+@file-drop-file-process-result-view
 Feature: file-drop-file-process-result-view
     As a admin I need to validate the processed file result view in order to confirm that the solution works as expected
 

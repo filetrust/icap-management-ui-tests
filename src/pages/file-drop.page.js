@@ -70,6 +70,7 @@ module.exports = {
 
     clickPdf() {
         const element = this.buttons.pdf;
+        I.handleDownloads();
         I.click(element);
     },
 

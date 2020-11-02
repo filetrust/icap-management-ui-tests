@@ -1,3 +1,4 @@
+@dashboard-requests-filtering-by-process-date
 Feature: dashboard-requests-filtering-by-process-date
     As a admin I need to validate file requests filtering by a date period in order to confirm that the solution works as expected
 

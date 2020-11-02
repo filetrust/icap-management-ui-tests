@@ -9,9 +9,9 @@ module.exports = {
         datetimeTo: 'div[class^=MuiInputBase-inputAdornedEnd]::after > input',
     },
     sections: {
-        dashboard_innerTop: `div[class*='Dashboard_innerTop__dMQgj']`,
-        Dashboard_lineChart: `div[class*='Dashboard_lineChart__Tw9kQ'] > div > canvas`,
-        totalfilesprocessed: `div[class*='Dashboard_innerTop__dMQgj']`,
+        dashboard_innerTop: `div[class*='Analytics_innerTop__3k8hH']`,
+        dashboard_lineChart: `div[class*='Analytics_lineChart__3DTCr']`,
+        totalfilesprocessed: `div[class*='Analytics_infoBlocks__JMNAV']`,
     },
     calendar: {
         datetime_left: `input[id='datetime-local-left']`,

@@ -1,3 +1,5 @@
+![.github/workflows/node.js.yml](https://github.com/filetrust/icap-management-ui-tests/workflows/.github/workflows/node.js.yml/badge.svg)
+
 # icap-management-ui-tests
 
 # Running Tests

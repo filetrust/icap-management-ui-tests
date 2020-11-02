@@ -1,3 +1,4 @@
+@dashboard-requests-metrics-display
 Feature: dashboard-requests-metrics-display
     As a admin I need to validate the accuracy of dashboard metrics for processed files in order to confirm that the solution works as expected
 

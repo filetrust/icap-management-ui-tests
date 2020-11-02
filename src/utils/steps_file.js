@@ -2,17 +2,18 @@ const homePage = require("../pages/home.page.js");
 const loginPage = require("../pages/login.page.js");
 const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
+require('dotenv').config({path: '.env'});
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage("http://localhost:8080");
+            this.amOnPage("http://localhost:5692");
         },
 
         loginNoPwd: function () {
             this.onLoginPage();
             loginPage.clickLogIn();
-            this.wait(5);
+            this.waitForElement(homePage.sections.menu, 30)
         },
 
         enterValidCredential: function () {
@@ -26,8 +27,8 @@ module.exports = function () {
             this.click(loginPage.clickForgotPasswordLink());
         },
 
-        goToDashboard: function () {
-            homePage.clickDashboard();
+        goToAnalytics: function () {
+            homePage.clickAnalytics();
         },
 
         goToFileDrop: function () {
@@ -54,7 +55,7 @@ module.exports = function () {
 
         uploadFile: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
-            this.wait(5);
+            this.waitForElement(filedropPage.sections.analysisReportView,30)
         },
 
         uploadFileByType: function (fileType) {

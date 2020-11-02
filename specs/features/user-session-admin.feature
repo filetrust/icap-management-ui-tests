@@ -1,3 +1,4 @@
+@user-session-admin
 Feature: user-session-admin
     As a admin I need to validate that user can successfully logout or change a password in order to confirm that the solution works as expected
 

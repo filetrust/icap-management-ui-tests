@@ -1,3 +1,4 @@
+@request-history-log
 Feature: request-history-log
     As a admin I need to validate the file requests history log view using a fileId and a combination of multiple filters
     in order to confirm that the solution works as expected

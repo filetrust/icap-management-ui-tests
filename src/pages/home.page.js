@@ -19,7 +19,7 @@ module.exports = {
         menu: `section[class*='Toolbar_Toolbar__1M58_']`,
     },
     links: {
-        dashboard: `a[href*='dashboard'] > div > p`,
+        analytics: `a[href*='analytics'] > div > p`,
         fileDrop: `a[href*='file-drop'] > div`,
         requestsHistory: `a[href*='request-history'] > div`,
         policy: `a[href*='policy'] > div`,
@@ -33,8 +33,8 @@ module.exports = {
      * ***************************************************************
      */
 
-    clickDashboard() {
-        const element = this.links.dashboard;
+    clickAnalytics() {
+        const element = this.links.analytics;
         I.click(element);
     },
     clickRequestsHistory() {
@@ -52,10 +52,7 @@ module.exports = {
         I.click(element);
     },
 
-    clickConfiguration() {
-        const element = this.links.configuration;
-        I.click(element);
-    },
+    
     clickUsers() {
         const element = this.links.users;
         I.click(element);

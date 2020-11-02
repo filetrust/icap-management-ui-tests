@@ -1,3 +1,4 @@
+@user-records-admin
 Feature: user-records-admin
     As a admin I need to validate successful user record addition, editing and deletion in order to confirm that the solution works as expected
 

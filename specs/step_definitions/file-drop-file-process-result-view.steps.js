@@ -15,7 +15,6 @@ Given("I have navigated to the File Drop page", () => {
 
 Given(/^I have processed a supported file (.*)$/, (supportedFile) => {
     I.uploadFile(supportedFile);
-    I.wait(5);
 });
 
 When('I view result and click on Download Analysis Report', () => {

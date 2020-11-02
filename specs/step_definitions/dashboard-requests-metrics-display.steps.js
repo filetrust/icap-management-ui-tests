@@ -7,7 +7,7 @@ const {
 let totalNumber;
 
 Given('I have navigated to the Dashboard page', () => {
-    homePage.clickDashboard();
+    I.goToAnalytics();
     totalNumber = dashboardPage.getTotalFileNumber();
 });
 When('I process a {string}', (fileType) => {

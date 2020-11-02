@@ -1,3 +1,4 @@
+@request-history-filtering-by-date
 Feature: request-history-filtering-by-date
     As a admin I need to validate file requests history filtering by date in order to confirm that the solution works as expected
 

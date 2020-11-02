@@ -1,3 +1,4 @@
+@dashboard-requests-filtering-by-file-risk
 Feature: dashboard-requests-filtering-by-file-risk
     As a admin I need to validate file requests filtering by risk in order to confirm that the solution works as expected
 

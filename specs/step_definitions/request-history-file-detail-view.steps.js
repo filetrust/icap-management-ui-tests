@@ -10,6 +10,7 @@ Given("I am logged into the ui", () => {
 
 Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();
+    pause();
 });
 
 When(/^I search for a file with id (.*) and click on the file record$/, (fileId) => {

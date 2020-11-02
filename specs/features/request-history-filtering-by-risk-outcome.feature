@@ -1,3 +1,4 @@
+@request-history-filtering-by-risk-outcome
 Feature: request-history-filtering-by-risk-outcome
     As a admin I need to validate file requests history filtering by risk outcome in order to confirm that the solution works as expected
 
