@@ -59,8 +59,12 @@ module.exports = function () {
         },
 
         uploadFile: function (file) {
-            this.attachFile(filedropPage.buttons.fileInput, file)
-            this.waitForElement(filedropPage.sections.analysisReportView,30)
+            this.attachFile(filedropPage.buttons.fileInput, file);
+            this.waitForElement(filedropPage.buttons.viewresult, 30);
+       //     this.waitForElement(filedropPage.sections.analysisReportView,30)
+        },
+        clickViewResultButton(){
+            I.click(filedropPage.buttons.viewresult);
         },
 
         uploadFileByType: function (fileType) {

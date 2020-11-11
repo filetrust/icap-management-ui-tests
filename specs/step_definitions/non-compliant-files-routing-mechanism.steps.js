@@ -52,6 +52,7 @@ When('I submit a non compliant file {string} through the icap server',  (file) =
     I.goToFileDrop();
     I.uploadFile(file);
     I.wait(5);
+    I.clickViewResultButton();
 });
 When('the file outcome status is blocked',  () => {
 

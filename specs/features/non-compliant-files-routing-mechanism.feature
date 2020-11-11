@@ -53,12 +53,12 @@ Feature: non-compliant-files-routing-mechanism
         Then the response code received is '<responseCode>'
         And the file outcome for the submitted file is '<fileOutcome>'
         Examples:
-            | blockedPolicyAction | NcfsDecision | file | responseCode | fileOutcome        |
-            | Relay               | NA           | file | 204          | Unmodified         |
-            | Block               | NA           | file | 403          | HtmlReport         |
-            | Refer               | relay        | file | 204          | Unmodified         |
-            | Refer               | replace      | file | ''           | alternativeContent |
-            | Refer               | block        | file | 403          | HtmlReport         |
+            | blockedPolicyAction | NcfsDecision | file                     | responseCode | fileOutcome        |
+            | Relay               | NA           | src/data/input/Clean.png | 204          | Unmodified         |
+            | Block               | NA           | src/data/input/file2.pdf | 403          | HtmlReport         |
+#            | Refer               | relay        | file | 204          | Unmodified         |
+#            | Refer               | replace      | file | ''           | alternativeContent |
+#            | Refer               | block        | file | 403          | HtmlReport         |
 
     @TEST-234
     Scenario Outline: A set routing policy for unprocessable files is correctly applied
