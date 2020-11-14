@@ -1,12 +1,12 @@
 {
-  "uid" : "9a9c23cee3a52cb2",
-  "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155",
-  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155",
-  "historyId" : "a424fedca99782ec3f8e7ccdf730b4dd",
+  "uid" : "6624f1fef9e6a054",
+  "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @TEST-155",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @TEST-155",
+  "historyId" : "81c943f8cfbcdf62883af59de34c6532",
   "time" : {
-    "start" : 1605391409573,
-    "stop" : 1605391432723,
-    "duration" : 23150
+    "start" : 1605392280811,
+    "stop" : 1605392303980,
+    "duration" : 23169
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -17,19 +17,19 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"externalHyperlinks\", \"excel\", \"disallow\"",
+      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"embeddedFiles\", \"word\", \"sanitise\"",
       "time" : {
-        "start" : 1605391428083,
-        "stop" : 1605391430495,
-        "duration" : 2412
+        "start" : 1605392299335,
+        "stop" : 1605392301748,
+        "duration" : 2413
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"label[for='excel-id-4disallow']\"",
+        "name" : "I click \"label[for='word-id-2sanitise']\"",
         "time" : {
-          "start" : 1605391428083,
-          "stop" : 1605391430395,
-          "duration" : 2312
+          "start" : 1605392299335,
+          "stop" : 1605392301648,
+          "duration" : 2313
         },
         "status" : "passed",
         "steps" : [ ],
@@ -49,17 +49,17 @@
     }, {
       "name" : "policyPage: clickSaveChanges ",
       "time" : {
-        "start" : 1605391430495,
-        "stop" : 1605391432719,
-        "duration" : 2224
+        "start" : 1605392301748,
+        "stop" : 1605392303976,
+        "duration" : 2228
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"//button[text()='Save Changes']\"",
         "time" : {
-          "start" : 1605391430495,
-          "stop" : 1605391432719,
-          "duration" : 2224
+          "start" : 1605392301748,
+          "stop" : 1605392303976,
+          "duration" : 2228
         },
         "status" : "passed",
         "steps" : [ ],
@@ -77,18 +77,18 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "policyPage: assertElementChecked \"input[id='excel-id-4disallow']\"",
+      "name" : "policyPage: assertElementChecked \"input[id='word-id-2sanitise']\"",
       "time" : {
-        "start" : 1605391432719,
-        "stop" : 1605391432723,
+        "start" : 1605392303976,
+        "stop" : 1605392303980,
         "duration" : 4
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I see attributes on elements \"input[id='excel-id-4disallow']\", {\"checked\":true}",
+        "name" : "I see attributes on elements \"input[id='word-id-2sanitise']\", {\"checked\":true}",
         "time" : {
-          "start" : 1605391432719,
-          "stop" : 1605391432723,
+          "start" : 1605392303976,
+          "stop" : 1605392303980,
           "duration" : 4
         },
         "status" : "passed",
@@ -132,7 +132,7 @@
     "value" : "Content Management Policy Editing @content-management-policy-editing"
   }, {
     "name" : "testMethod",
-    "value" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155"
+    "value" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @TEST-155"
   }, {
     "name" : "package",
     "value" : "Content Management Policy Editing @content-management-policy-editing"
@@ -154,6 +154,6 @@
     } ],
     "tags" : [ "@content-management-policy-editing", "@TEST-155", "@functional" ]
   },
-  "source" : "9a9c23cee3a52cb2.json",
+  "source" : "6624f1fef9e6a054.json",
   "parameterValues" : [ ]
 }

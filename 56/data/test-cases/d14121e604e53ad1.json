@@ -1,12 +1,12 @@
 {
-  "uid" : "2f5e33cb0230ece9",
-  "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
-  "fullName" : "Content Management Policy Editing @content-management-policy-editing.A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
-  "historyId" : "6bd7c86fc7ce2fe19726d2f9e11aa1ae",
+  "uid" : "d14121e604e53ad1",
+  "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155",
+  "historyId" : "a424fedca99782ec3f8e7ccdf730b4dd",
   "time" : {
-    "start" : 1605391358547,
-    "stop" : 1605391385776,
-    "duration" : 27229
+    "start" : 1605392304011,
+    "stop" : 1605392327166,
+    "duration" : 23155
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -17,19 +17,19 @@
   "testStage" : {
     "status" : "passed",
     "steps" : [ {
-      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"embeddedFiles\", \"word\", \"sanitise\"",
+      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"externalHyperlinks\", \"excel\", \"disallow\"",
       "time" : {
-        "start" : 1605391381128,
-        "stop" : 1605391383547,
-        "duration" : 2419
+        "start" : 1605392322512,
+        "stop" : 1605392324933,
+        "duration" : 2421
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"label[for='word-id-2sanitise']\"",
+        "name" : "I click \"label[for='excel-id-4disallow']\"",
         "time" : {
-          "start" : 1605391381128,
-          "stop" : 1605391383447,
-          "duration" : 2319
+          "start" : 1605392322512,
+          "stop" : 1605392324832,
+          "duration" : 2320
         },
         "status" : "passed",
         "steps" : [ ],
@@ -47,19 +47,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "policyPage: clickCancelChanges ",
+      "name" : "policyPage: clickSaveChanges ",
       "time" : {
-        "start" : 1605391383547,
-        "stop" : 1605391385769,
-        "duration" : 2222
+        "start" : 1605392324933,
+        "stop" : 1605392327161,
+        "duration" : 2228
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"//button[text()='Cancel Changes']\"",
+        "name" : "I click \"//button[text()='Save Changes']\"",
         "time" : {
-          "start" : 1605391383547,
-          "stop" : 1605391385768,
-          "duration" : 2221
+          "start" : 1605392324933,
+          "stop" : 1605392327160,
+          "duration" : 2227
         },
         "status" : "passed",
         "steps" : [ ],
@@ -77,19 +77,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "policyPage: assertElementChecked \"input[id='word-id-2disallow']\"",
+      "name" : "policyPage: assertElementChecked \"input[id='excel-id-4disallow']\"",
       "time" : {
-        "start" : 1605391385769,
-        "stop" : 1605391385776,
-        "duration" : 7
+        "start" : 1605392327161,
+        "stop" : 1605392327166,
+        "duration" : 5
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I see attributes on elements \"input[id='word-id-2disallow']\", {\"checked\":true}",
+        "name" : "I see attributes on elements \"input[id='excel-id-4disallow']\", {\"checked\":true}",
         "time" : {
-          "start" : 1605391385769,
-          "stop" : 1605391385776,
-          "duration" : 7
+          "start" : 1605392327161,
+          "stop" : 1605392327166,
+          "duration" : 5
         },
         "status" : "passed",
         "steps" : [ ],
@@ -117,16 +117,13 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "tag",
-    "value" : "@TEST-188"
+    "value" : "@TEST-155"
   }, {
     "name" : "tag",
     "value" : "@content-management-policy-editing"
   }, {
     "name" : "tag",
     "value" : "@functional"
-  }, {
-    "name" : "tag",
-    "value" : "@smoke"
   }, {
     "name" : "suite",
     "value" : "Content Management Policy Editing @content-management-policy-editing"
@@ -135,7 +132,7 @@
     "value" : "Content Management Policy Editing @content-management-policy-editing"
   }, {
     "name" : "testMethod",
-    "value" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188"
+    "value" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @TEST-155"
   }, {
     "name" : "package",
     "value" : "Content Management Policy Editing @content-management-policy-editing"
@@ -155,8 +152,8 @@
       "matchedStatuses" : [ "passed" ],
       "flaky" : false
     } ],
-    "tags" : [ "@smoke", "@content-management-policy-editing", "@TEST-188", "@functional" ]
+    "tags" : [ "@content-management-policy-editing", "@TEST-155", "@functional" ]
   },
-  "source" : "2f5e33cb0230ece9.json",
+  "source" : "d14121e604e53ad1.json",
   "parameterValues" : [ ]
 }
