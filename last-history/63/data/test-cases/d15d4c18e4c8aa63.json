@@ -1,0 +1,168 @@
+{
+  "uid" : "d15d4c18e4c8aa63",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+  "historyId" : "644e25b55b81a940aec52986876b41cd",
+  "time" : {
+    "start" : 1605452208938,
+    "stop" : 1605452225691,
+    "duration" : 16753
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "",
+  "statusTrace" : "undefined",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "requesthistoryPage: openDatePicker ",
+      "time" : {
+        "start" : 1605452221061,
+        "stop" : 1605452223438,
+        "duration" : 2377
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1605452221061,
+          "stop" : 1605452223324,
+          "duration" : 2263
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectTimePeriod \"24 Hours\"",
+      "time" : {
+        "start" : 1605452223438,
+        "stop" : 1605452225667,
+        "duration" : 2229
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"$24 Hours\"",
+        "time" : {
+          "start" : 1605452223438,
+          "stop" : 1605452225667,
+          "duration" : 2229
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isTimeApplied \"24\", \"current time\"",
+      "time" : {
+        "start" : 1605452225667,
+        "stop" : 1605452225690,
+        "duration" : 23
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see element \"//span[contains(.,'14/11/2020 14:57 PM - 15/11/2020 14:57 PM')]\"",
+        "time" : {
+          "start" : 1605452225667,
+          "stop" : 1605452225687,
+          "duration" : 20
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "cb8258c497d4d981",
+      "name" : "Last Seen Screenshot",
+      "source" : "cb8258c497d4d981.png",
+      "type" : "image/png",
+      "size" : 34205
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-167"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@smoke", "@TEST-167", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "d15d4c18e4c8aa63.json",
+  "parameterValues" : [ ]
+}

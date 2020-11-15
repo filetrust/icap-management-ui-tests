@@ -1,0 +1,189 @@
+{
+  "uid" : "f43d89c2f0f3b518",
+  "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
+  "historyId" : "6bd7c86fc7ce2fe19726d2f9e11aa1ae",
+  "time" : {
+    "start" : 1605456800380,
+    "stop" : 1605456829465,
+    "duration" : 29085
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"embeddedFiles\", \"word\", \"sanitise\"",
+      "time" : {
+        "start" : 1605456824812,
+        "stop" : 1605456827235,
+        "duration" : 2423
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"label[for='word-id-2sanitise']\"",
+        "time" : {
+          "start" : 1605456824812,
+          "stop" : 1605456827134,
+          "duration" : 2322
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCancelChanges ",
+      "time" : {
+        "start" : 1605456827235,
+        "stop" : 1605456829460,
+        "duration" : 2225
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//button[text()='Cancel Changes']\"",
+        "time" : {
+          "start" : 1605456827235,
+          "stop" : 1605456829460,
+          "duration" : 2225
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='word-id-2disallow']\"",
+      "time" : {
+        "start" : 1605456829460,
+        "stop" : 1605456829465,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='word-id-2disallow']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1605456829460,
+          "stop" : 1605456829465,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-188"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "6619f59172d255b6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605452172624,
+        "stop" : 1605452198181,
+        "duration" : 25557
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "f8a568b7a4c303a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605452172624,
+          "stop" : 1605452198181,
+          "duration" : 25557
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@content-management-policy-editing", "@TEST-188", "@functional" ]
+  },
+  "source" : "f43d89c2f0f3b518.json",
+  "parameterValues" : [ ]
+}
