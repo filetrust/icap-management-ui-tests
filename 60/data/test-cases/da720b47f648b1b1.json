@@ -1,12 +1,12 @@
 {
-  "uid" : "84bc0514b146d99e",
-  "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
-  "fullName" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome.I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
-  "historyId" : "395dd9c50080a356e8f34bfa0f15802c",
+  "uid" : "da720b47f648b1b1",
+  "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+  "historyId" : "a0596f5c2616a4ba1ed85d4e37749f05",
   "time" : {
-    "start" : 1605446206550,
-    "stop" : 1605446241312,
-    "duration" : 34762
+    "start" : 1605447016226,
+    "stop" : 1605447044466,
+    "duration" : 28240
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -19,17 +19,17 @@
     "steps" : [ {
       "name" : "homePage: clickRequestsHistory ",
       "time" : {
-        "start" : 1605446222706,
-        "stop" : 1605446225049,
-        "duration" : 2343
+        "start" : 1605447025846,
+        "stop" : 1605447028185,
+        "duration" : 2339
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"a[href*='request-history'] > div\"",
         "time" : {
-          "start" : 1605446222706,
-          "stop" : 1605446224943,
-          "duration" : 2237
+          "start" : 1605447025846,
+          "stop" : 1605447028080,
+          "duration" : 2234
         },
         "status" : "passed",
         "steps" : [ ],
@@ -49,17 +49,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_wrap__']\" ",
       "time" : {
-        "start" : 1605446225049,
-        "stop" : 1605446229698,
-        "duration" : 4649
+        "start" : 1605447028185,
+        "stop" : 1605447032837,
+        "duration" : 4652
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click button[class*='Filters_moreFilters__']",
         "time" : {
-          "start" : 1605446225049,
-          "stop" : 1605446227261,
-          "duration" : 2212
+          "start" : 1605447028185,
+          "stop" : 1605447030399,
+          "duration" : 2214
         },
         "status" : "passed",
         "steps" : [ ],
@@ -72,9 +72,9 @@
       }, {
         "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605446227267,
-          "stop" : 1605446227274,
-          "duration" : 7
+          "start" : 1605447030405,
+          "stop" : 1605447030413,
+          "duration" : 8
         },
         "status" : "passed",
         "steps" : [ ],
@@ -87,9 +87,9 @@
       }, {
         "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605446227375,
-          "stop" : 1605446229594,
-          "duration" : 2219
+          "start" : 1605447030514,
+          "stop" : 1605447032731,
+          "duration" : 2217
         },
         "status" : "passed",
         "steps" : [ ],
@@ -109,17 +109,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_popup__']\" ",
       "time" : {
-        "start" : 1605446229698,
-        "stop" : 1605446232048,
-        "duration" : 2350
+        "start" : 1605447032837,
+        "stop" : 1605447035198,
+        "duration" : 2361
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"button:nth-child(2) > p\"",
+        "name" : "I click \"button:nth-child(1) > p\"",
         "time" : {
-          "start" : 1605446229698,
-          "stop" : 1605446231947,
-          "duration" : 2249
+          "start" : 1605447032837,
+          "stop" : 1605447035096,
+          "duration" : 2259
         },
         "status" : "passed",
         "steps" : [ ],
@@ -130,10 +130,10 @@
         "shouldDisplayMessage" : false,
         "hasContent" : false
       }, {
-        "name" : "Filter to set is: Safe",
+        "name" : "Filter to set is: docx",
         "time" : {
-          "start" : 1605446231948,
-          "stop" : 1605446231948,
+          "start" : 1605447035097,
+          "stop" : 1605447035097,
           "duration" : 0
         },
         "status" : "passed",
@@ -152,19 +152,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
       "time" : {
-        "start" : 1605446232048,
-        "stop" : 1605446234292,
-        "duration" : 2244
+        "start" : 1605447035198,
+        "stop" : 1605447037447,
+        "duration" : 2249
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"//span[text()='Safe']\"",
+        "name" : "I click \"//span[contains(.,'docx')]/parent::label/span[1]/span/input\"",
         "time" : {
-          "start" : 1605446232048,
-          "stop" : 1605446234291,
-          "duration" : 2243
+          "start" : 1605447035198,
+          "stop" : 1605447037447,
+          "duration" : 2249
         },
         "status" : "passed",
         "steps" : [ ],
@@ -184,17 +184,17 @@
     }, {
       "name" : "requesthistoryPage: closeFilterPopup ",
       "time" : {
-        "start" : 1605446234292,
-        "stop" : 1605446236303,
-        "duration" : 2011
+        "start" : 1605447037447,
+        "stop" : 1605447039454,
+        "duration" : 2007
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I move cursor to \"#root\"",
         "time" : {
-          "start" : 1605446234292,
-          "stop" : 1605446236303,
-          "duration" : 2011
+          "start" : 1605447037447,
+          "stop" : 1605447039454,
+          "duration" : 2007
         },
         "status" : "passed",
         "steps" : [ ],
@@ -212,19 +212,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
       "time" : {
-        "start" : 1605446236303,
-        "stop" : 1605446241306,
-        "duration" : 5003
+        "start" : 1605447039454,
+        "stop" : 1605447044460,
+        "duration" : 5006
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I wait 5",
         "time" : {
-          "start" : 1605446236303,
-          "stop" : 1605446241305,
-          "duration" : 5002
+          "start" : 1605447039454,
+          "stop" : 1605447044459,
+          "duration" : 5005
         },
         "status" : "passed",
         "steps" : [ ],
@@ -242,18 +242,18 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: checkFileOutcomeValues \"Safe\"",
+      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Docx\", 3",
       "time" : {
-        "start" : 1605446241306,
-        "stop" : 1605446241312,
+        "start" : 1605447044460,
+        "stop" : 1605447044466,
         "duration" : 6
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I check row \"Safe\", 4",
+        "name" : "I grab text from \"//tbody\"",
         "time" : {
-          "start" : 1605446241306,
-          "stop" : 1605446241312,
+          "start" : 1605447044460,
+          "stop" : 1605447044466,
           "duration" : 6
         },
         "status" : "passed",
@@ -271,10 +271,25 @@
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
       "hasContent" : true
+    }, {
+      "name" : "No data returned",
+      "time" : {
+        "start" : 1605447044467,
+        "stop" : 1605447044467,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 17,
+    "stepsCount" : 18,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -282,28 +297,28 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "tag",
-    "value" : "@TEST-164"
+    "value" : "@TEST-163"
   }, {
     "name" : "tag",
     "value" : "@functional"
   }, {
     "name" : "tag",
-    "value" : "@request-history-filtering-by-risk-outcome"
+    "value" : "@request-history-filtering-by-file-type"
   }, {
     "name" : "tag",
     "value" : "@smoke"
   }, {
     "name" : "suite",
-    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
   }, {
     "name" : "testClass",
-    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
   }, {
     "name" : "testMethod",
-    "value" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164"
+    "value" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163"
   }, {
     "name" : "package",
-    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -315,12 +330,12 @@
   "extra" : {
     "severity" : "normal",
     "retries" : [ {
-      "uid" : "403624a7b0e6d079",
+      "uid" : "c0b10b07407d0541",
       "status" : "passed",
       "time" : {
-        "start" : 1605444985133,
-        "stop" : 1605445014736,
-        "duration" : 29603
+        "start" : 1605445037442,
+        "stop" : 1605445065943,
+        "duration" : 28501
       }
     } ],
     "categories" : [ {
@@ -328,8 +343,8 @@
       "matchedStatuses" : [ "passed" ],
       "flaky" : false
     } ],
-    "tags" : [ "@request-history-filtering-by-risk-outcome", "@smoke", "@TEST-164", "@functional" ]
+    "tags" : [ "@TEST-163", "@request-history-filtering-by-file-type", "@smoke", "@functional" ]
   },
-  "source" : "84bc0514b146d99e.json",
+  "source" : "da720b47f648b1b1.json",
   "parameterValues" : [ ]
 }

@@ -1,12 +1,12 @@
 {
-  "uid" : "7990327e09d6acb7",
-  "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
-  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
-  "historyId" : "1ecfc58db52bcdc7682c19bcd48f0287",
+  "uid" : "748397cbf3100c2",
+  "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+  "fullName" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome.I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+  "historyId" : "395dd9c50080a356e8f34bfa0f15802c",
   "time" : {
-    "start" : 1605445066095,
-    "stop" : 1605445094379,
-    "duration" : 28284
+    "start" : 1605444985133,
+    "stop" : 1605445014736,
+    "duration" : 29603
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -19,17 +19,17 @@
     "steps" : [ {
       "name" : "homePage: clickRequestsHistory ",
       "time" : {
-        "start" : 1605445075573,
-        "stop" : 1605445077970,
-        "duration" : 2397
+        "start" : 1605444995967,
+        "stop" : 1605444998343,
+        "duration" : 2376
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"a[href*='request-history'] > div\"",
         "time" : {
-          "start" : 1605445075574,
-          "stop" : 1605445077855,
-          "duration" : 2281
+          "start" : 1605444995967,
+          "stop" : 1605444998231,
+          "duration" : 2264
         },
         "status" : "passed",
         "steps" : [ ],
@@ -49,17 +49,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_wrap__']\" ",
       "time" : {
-        "start" : 1605445077970,
-        "stop" : 1605445082683,
-        "duration" : 4713
+        "start" : 1605444998343,
+        "stop" : 1605445003039,
+        "duration" : 4696
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click button[class*='Filters_moreFilters__']",
         "time" : {
-          "start" : 1605445077970,
-          "stop" : 1605445080189,
-          "duration" : 2219
+          "start" : 1605444998343,
+          "stop" : 1605445000555,
+          "duration" : 2212
         },
         "status" : "passed",
         "steps" : [ ],
@@ -72,9 +72,9 @@
       }, {
         "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605445080240,
-          "stop" : 1605445080250,
-          "duration" : 10
+          "start" : 1605445000572,
+          "stop" : 1605445000601,
+          "duration" : 29
         },
         "status" : "passed",
         "steps" : [ ],
@@ -87,9 +87,9 @@
       }, {
         "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605445080351,
-          "stop" : 1605445082577,
-          "duration" : 2226
+          "start" : 1605445000702,
+          "stop" : 1605445002924,
+          "duration" : 2222
         },
         "status" : "passed",
         "steps" : [ ],
@@ -109,17 +109,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_popup__']\" ",
       "time" : {
-        "start" : 1605445082683,
-        "stop" : 1605445085087,
-        "duration" : 2404
+        "start" : 1605445003039,
+        "stop" : 1605445005384,
+        "duration" : 2345
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"button:nth-child(1) > p\"",
+        "name" : "I click \"button:nth-child(2) > p\"",
         "time" : {
-          "start" : 1605445082683,
-          "stop" : 1605445084983,
-          "duration" : 2300
+          "start" : 1605445003040,
+          "stop" : 1605445005282,
+          "duration" : 2242
         },
         "status" : "passed",
         "steps" : [ ],
@@ -130,10 +130,10 @@
         "shouldDisplayMessage" : false,
         "hasContent" : false
       }, {
-        "name" : "Filter to set is: pdf",
+        "name" : "Filter to set is: Safe",
         "time" : {
-          "start" : 1605445084985,
-          "stop" : 1605445084985,
+          "start" : 1605445005284,
+          "stop" : 1605445005284,
           "duration" : 0
         },
         "status" : "passed",
@@ -152,19 +152,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileType \"pdf\"",
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
       "time" : {
-        "start" : 1605445085087,
-        "stop" : 1605445087346,
-        "duration" : 2259
+        "start" : 1605445005384,
+        "stop" : 1605445007630,
+        "duration" : 2246
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"//span[contains(.,'pdf')]/parent::label/span[1]/span/input\"",
+        "name" : "I click \"//span[text()='Safe']\"",
         "time" : {
-          "start" : 1605445085087,
-          "stop" : 1605445087346,
-          "duration" : 2259
+          "start" : 1605445005384,
+          "stop" : 1605445007630,
+          "duration" : 2246
         },
         "status" : "passed",
         "steps" : [ ],
@@ -184,17 +184,17 @@
     }, {
       "name" : "requesthistoryPage: closeFilterPopup ",
       "time" : {
-        "start" : 1605445087346,
-        "stop" : 1605445089355,
-        "duration" : 2009
+        "start" : 1605445007630,
+        "stop" : 1605445009690,
+        "duration" : 2060
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I move cursor to \"#root\"",
         "time" : {
-          "start" : 1605445087346,
-          "stop" : 1605445089355,
-          "duration" : 2009
+          "start" : 1605445007630,
+          "stop" : 1605445009689,
+          "duration" : 2059
         },
         "status" : "passed",
         "steps" : [ ],
@@ -212,19 +212,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileType \"pdf\"",
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
       "time" : {
-        "start" : 1605445089355,
-        "stop" : 1605445094356,
-        "duration" : 5001
+        "start" : 1605445009690,
+        "stop" : 1605445014709,
+        "duration" : 5019
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I wait 5",
         "time" : {
-          "start" : 1605445089356,
-          "stop" : 1605445094356,
-          "duration" : 5000
+          "start" : 1605445009690,
+          "stop" : 1605445014709,
+          "duration" : 5019
         },
         "status" : "passed",
         "steps" : [ ],
@@ -242,19 +242,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Pdf\", 3",
+      "name" : "requesthistoryPage: checkFileOutcomeValues \"Safe\"",
       "time" : {
-        "start" : 1605445094356,
-        "stop" : 1605445094379,
-        "duration" : 23
+        "start" : 1605445014709,
+        "stop" : 1605445014736,
+        "duration" : 27
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I grab text from \"//tbody\"",
+        "name" : "I check row \"Safe\", 4",
         "time" : {
-          "start" : 1605445094356,
-          "stop" : 1605445094378,
-          "duration" : 22
+          "start" : 1605445014709,
+          "stop" : 1605445014735,
+          "duration" : 26
         },
         "status" : "passed",
         "steps" : [ ],
@@ -271,25 +271,10 @@
       "attachmentsCount" : 0,
       "shouldDisplayMessage" : false,
       "hasContent" : true
-    }, {
-      "name" : "No data returned",
-      "time" : {
-        "start" : 1605445094383,
-        "stop" : 1605445094383,
-        "duration" : 0
-      },
-      "status" : "passed",
-      "steps" : [ ],
-      "attachments" : [ ],
-      "parameters" : [ ],
-      "stepsCount" : 0,
-      "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false,
-      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "stepsCount" : 18,
+    "stepsCount" : 17,
     "attachmentsCount" : 0,
     "shouldDisplayMessage" : false,
     "hasContent" : true
@@ -297,28 +282,28 @@
   "afterStages" : [ ],
   "labels" : [ {
     "name" : "tag",
-    "value" : "@TEST-163"
+    "value" : "@TEST-164"
   }, {
     "name" : "tag",
     "value" : "@functional"
   }, {
     "name" : "tag",
-    "value" : "@request-history-filtering-by-file-type"
+    "value" : "@request-history-filtering-by-risk-outcome"
   }, {
     "name" : "tag",
     "value" : "@smoke"
   }, {
     "name" : "suite",
-    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
   }, {
     "name" : "testClass",
-    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
   }, {
     "name" : "testMethod",
-    "value" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163"
+    "value" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164"
   }, {
     "name" : "package",
-    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
   }, {
     "name" : "resultFormat",
     "value" : "allure1"
@@ -329,8 +314,8 @@
   "retry" : true,
   "extra" : {
     "categories" : [ ],
-    "tags" : [ "@TEST-163", "@request-history-filtering-by-file-type", "@smoke", "@functional" ]
+    "tags" : [ "@request-history-filtering-by-risk-outcome", "@smoke", "@TEST-164", "@functional" ]
   },
-  "source" : "7990327e09d6acb7.json",
+  "source" : "748397cbf3100c2.json",
   "parameterValues" : [ ]
 }

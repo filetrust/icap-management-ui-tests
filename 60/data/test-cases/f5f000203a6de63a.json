@@ -1,12 +1,12 @@
 {
-  "uid" : "ac43147f12beb9a1",
-  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
-  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
-  "historyId" : "d3d8292af41125fb894769b85ec281cc",
+  "uid" : "f5f000203a6de63a",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+  "historyId" : "644e25b55b81a940aec52986876b41cd",
   "time" : {
-    "start" : 1605445003309,
-    "stop" : 1605445019979,
-    "duration" : 16670
+    "start" : 1605445020128,
+    "stop" : 1605445037231,
+    "duration" : 17103
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -19,17 +19,17 @@
     "steps" : [ {
       "name" : "requesthistoryPage: openDatePicker ",
       "time" : {
-        "start" : 1605445015238,
-        "stop" : 1605445017668,
-        "duration" : 2430
+        "start" : 1605445032507,
+        "stop" : 1605445034948,
+        "duration" : 2441
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"div[id*='reportrange']\"",
         "time" : {
-          "start" : 1605445015238,
-          "stop" : 1605445017566,
-          "duration" : 2328
+          "start" : 1605445032507,
+          "stop" : 1605445034847,
+          "duration" : 2340
         },
         "status" : "passed",
         "steps" : [ ],
@@ -47,19 +47,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectTimePeriod \"12 Hours\"",
+      "name" : "requesthistoryPage: selectTimePeriod \"24 Hours\"",
       "time" : {
-        "start" : 1605445017668,
-        "stop" : 1605445019924,
+        "start" : 1605445034948,
+        "stop" : 1605445037204,
         "duration" : 2256
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"$12 Hours\"",
+        "name" : "I click \"$24 Hours\"",
         "time" : {
-          "start" : 1605445017668,
-          "stop" : 1605445019923,
-          "duration" : 2255
+          "start" : 1605445034948,
+          "stop" : 1605445037204,
+          "duration" : 2256
         },
         "status" : "passed",
         "steps" : [ ],
@@ -77,19 +77,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: isTimeApplied \"12\", \"current time\"",
+      "name" : "requesthistoryPage: isTimeApplied \"24\", \"current time\"",
       "time" : {
-        "start" : 1605445019924,
-        "stop" : 1605445019950,
-        "duration" : 26
+        "start" : 1605445037204,
+        "stop" : 1605445037210,
+        "duration" : 6
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I see element \"//span[contains(.,'15/11/2020 0:56 AM - 15/11/2020 12:56 PM')]\"",
+        "name" : "I see element \"//span[contains(.,'14/11/2020 12:57 PM - 15/11/2020 12:57 PM')]\"",
         "time" : {
-          "start" : 1605445019924,
-          "stop" : 1605445019950,
-          "duration" : 26
+          "start" : 1605445037204,
+          "stop" : 1605445037210,
+          "duration" : 6
         },
         "status" : "passed",
         "steps" : [ ],
@@ -109,17 +109,17 @@
     }, {
       "name" : "And the files processed for the selected period are displayed ",
       "time" : {
-        "start" : 1605445019950,
-        "stop" : 1605445019967,
-        "duration" : 17
+        "start" : 1605445037210,
+        "stop" : 1605445037218,
+        "duration" : 8
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I grab text from \"div[id*='reportrange']\"",
         "time" : {
-          "start" : 1605445019950,
-          "stop" : 1605445019967,
-          "duration" : 17
+          "start" : 1605445037210,
+          "stop" : 1605445037218,
+          "duration" : 8
         },
         "status" : "passed",
         "steps" : [ ],
@@ -137,19 +137,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: isDataInRange \"15/11/2020 0:56 AM - 15/11/2020 12:56 PM\", 1",
+      "name" : "requesthistoryPage: isDataInRange \"14/11/2020 12:57 PM - 15/11/2020 12:57 PM\", 1",
       "time" : {
-        "start" : 1605445019967,
-        "stop" : 1605445019979,
-        "duration" : 12
+        "start" : 1605445037218,
+        "stop" : 1605445037231,
+        "duration" : 13
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I grab text from \"//tbody\"",
         "time" : {
-          "start" : 1605445019967,
-          "stop" : 1605445019979,
-          "duration" : 12
+          "start" : 1605445037218,
+          "stop" : 1605445037231,
+          "duration" : 13
         },
         "status" : "passed",
         "steps" : [ ],
@@ -169,8 +169,8 @@
     }, {
       "name" : "No data returned",
       "time" : {
-        "start" : 1605445019981,
-        "stop" : 1605445019981,
+        "start" : 1605445037233,
+        "stop" : 1605445037233,
         "duration" : 0
       },
       "status" : "passed",
@@ -210,7 +210,7 @@
     "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
   }, {
     "name" : "testMethod",
-    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167"
+    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167"
   }, {
     "name" : "package",
     "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
@@ -226,6 +226,6 @@
     "categories" : [ ],
     "tags" : [ "@smoke", "@TEST-167", "@functional", "@request-history-filtering-by-date" ]
   },
-  "source" : "ac43147f12beb9a1.json",
+  "source" : "f5f000203a6de63a.json",
   "parameterValues" : [ ]
 }
