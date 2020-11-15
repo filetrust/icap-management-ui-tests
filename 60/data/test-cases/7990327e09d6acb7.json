@@ -1,12 +1,12 @@
 {
-  "uid" : "caef70015f55e452",
-  "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
-  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
-  "historyId" : "a0596f5c2616a4ba1ed85d4e37749f05",
+  "uid" : "7990327e09d6acb7",
+  "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+  "historyId" : "1ecfc58db52bcdc7682c19bcd48f0287",
   "time" : {
-    "start" : 1605445037442,
-    "stop" : 1605445065943,
-    "duration" : 28501
+    "start" : 1605445066095,
+    "stop" : 1605445094379,
+    "duration" : 28284
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -19,17 +19,17 @@
     "steps" : [ {
       "name" : "homePage: clickRequestsHistory ",
       "time" : {
-        "start" : 1605445047132,
-        "stop" : 1605445049505,
-        "duration" : 2373
+        "start" : 1605445075573,
+        "stop" : 1605445077970,
+        "duration" : 2397
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"a[href*='request-history'] > div\"",
         "time" : {
-          "start" : 1605445047132,
-          "stop" : 1605445049391,
-          "duration" : 2259
+          "start" : 1605445075574,
+          "stop" : 1605445077855,
+          "duration" : 2281
         },
         "status" : "passed",
         "steps" : [ ],
@@ -49,17 +49,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_wrap__']\" ",
       "time" : {
-        "start" : 1605445049505,
-        "stop" : 1605445054231,
-        "duration" : 4726
+        "start" : 1605445077970,
+        "stop" : 1605445082683,
+        "duration" : 4713
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click button[class*='Filters_moreFilters__']",
         "time" : {
-          "start" : 1605445049505,
-          "stop" : 1605445051744,
-          "duration" : 2239
+          "start" : 1605445077970,
+          "stop" : 1605445080189,
+          "duration" : 2219
         },
         "status" : "passed",
         "steps" : [ ],
@@ -72,9 +72,9 @@
       }, {
         "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605445051762,
-          "stop" : 1605445051787,
-          "duration" : 25
+          "start" : 1605445080240,
+          "stop" : 1605445080250,
+          "duration" : 10
         },
         "status" : "passed",
         "steps" : [ ],
@@ -87,8 +87,8 @@
       }, {
         "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
         "time" : {
-          "start" : 1605445051889,
-          "stop" : 1605445054115,
+          "start" : 1605445080351,
+          "stop" : 1605445082577,
           "duration" : 2226
         },
         "status" : "passed",
@@ -109,17 +109,17 @@
     }, {
       "name" : "Within \"div[class*='Filters_popup__']\" ",
       "time" : {
-        "start" : 1605445054231,
-        "stop" : 1605445056617,
-        "duration" : 2386
+        "start" : 1605445082683,
+        "stop" : 1605445085087,
+        "duration" : 2404
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"button:nth-child(1) > p\"",
         "time" : {
-          "start" : 1605445054231,
-          "stop" : 1605445056511,
-          "duration" : 2280
+          "start" : 1605445082683,
+          "stop" : 1605445084983,
+          "duration" : 2300
         },
         "status" : "passed",
         "steps" : [ ],
@@ -130,10 +130,10 @@
         "shouldDisplayMessage" : false,
         "hasContent" : false
       }, {
-        "name" : "Filter to set is: docx",
+        "name" : "Filter to set is: pdf",
         "time" : {
-          "start" : 1605445056515,
-          "stop" : 1605445056515,
+          "start" : 1605445084985,
+          "stop" : 1605445084985,
           "duration" : 0
         },
         "status" : "passed",
@@ -152,19 +152,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "name" : "requesthistoryPage: selectFileType \"pdf\"",
       "time" : {
-        "start" : 1605445056617,
-        "stop" : 1605445058903,
-        "duration" : 2286
+        "start" : 1605445085087,
+        "stop" : 1605445087346,
+        "duration" : 2259
       },
       "status" : "passed",
       "steps" : [ {
-        "name" : "I click \"//span[contains(.,'docx')]/parent::label/span[1]/span/input\"",
+        "name" : "I click \"//span[contains(.,'pdf')]/parent::label/span[1]/span/input\"",
         "time" : {
-          "start" : 1605445056617,
-          "stop" : 1605445058903,
-          "duration" : 2286
+          "start" : 1605445085087,
+          "stop" : 1605445087346,
+          "duration" : 2259
         },
         "status" : "passed",
         "steps" : [ ],
@@ -184,17 +184,17 @@
     }, {
       "name" : "requesthistoryPage: closeFilterPopup ",
       "time" : {
-        "start" : 1605445058904,
-        "stop" : 1605445060919,
-        "duration" : 2015
+        "start" : 1605445087346,
+        "stop" : 1605445089355,
+        "duration" : 2009
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I move cursor to \"#root\"",
         "time" : {
-          "start" : 1605445058904,
-          "stop" : 1605445060919,
-          "duration" : 2015
+          "start" : 1605445087346,
+          "stop" : 1605445089355,
+          "duration" : 2009
         },
         "status" : "passed",
         "steps" : [ ],
@@ -212,19 +212,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "name" : "requesthistoryPage: selectFileType \"pdf\"",
       "time" : {
-        "start" : 1605445060919,
-        "stop" : 1605445065922,
-        "duration" : 5003
+        "start" : 1605445089355,
+        "stop" : 1605445094356,
+        "duration" : 5001
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I wait 5",
         "time" : {
-          "start" : 1605445060919,
-          "stop" : 1605445065921,
-          "duration" : 5002
+          "start" : 1605445089356,
+          "stop" : 1605445094356,
+          "duration" : 5000
         },
         "status" : "passed",
         "steps" : [ ],
@@ -242,19 +242,19 @@
       "shouldDisplayMessage" : false,
       "hasContent" : true
     }, {
-      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Docx\", 3",
+      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Pdf\", 3",
       "time" : {
-        "start" : 1605445065922,
-        "stop" : 1605445065943,
-        "duration" : 21
+        "start" : 1605445094356,
+        "stop" : 1605445094379,
+        "duration" : 23
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I grab text from \"//tbody\"",
         "time" : {
-          "start" : 1605445065922,
-          "stop" : 1605445065942,
-          "duration" : 20
+          "start" : 1605445094356,
+          "stop" : 1605445094378,
+          "duration" : 22
         },
         "status" : "passed",
         "steps" : [ ],
@@ -274,8 +274,8 @@
     }, {
       "name" : "No data returned",
       "time" : {
-        "start" : 1605445065953,
-        "stop" : 1605445065953,
+        "start" : 1605445094383,
+        "stop" : 1605445094383,
         "duration" : 0
       },
       "status" : "passed",
@@ -315,7 +315,7 @@
     "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
   }, {
     "name" : "testMethod",
-    "value" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163"
+    "value" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163"
   }, {
     "name" : "package",
     "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
@@ -331,6 +331,6 @@
     "categories" : [ ],
     "tags" : [ "@TEST-163", "@request-history-filtering-by-file-type", "@smoke", "@functional" ]
   },
-  "source" : "caef70015f55e452.json",
+  "source" : "7990327e09d6acb7.json",
   "parameterValues" : [ ]
 }

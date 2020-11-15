@@ -1,12 +1,12 @@
 {
-  "uid" : "93e49e6d13cc36b6",
+  "uid" : "ac52d43d9ace7685",
   "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-155",
   "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-155",
   "historyId" : "59426a3817fbc16942b7c00b59b3f52b",
   "time" : {
-    "start" : 1605445009894,
-    "stop" : 1605445033463,
-    "duration" : 23569
+    "start" : 1605446236318,
+    "stop" : 1605446259481,
+    "duration" : 23163
   },
   "description" : "",
   "descriptionHtml" : "",
@@ -19,17 +19,17 @@
     "steps" : [ {
       "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"embeddedFiles\", \"word\", \"sanitise\"",
       "time" : {
-        "start" : 1605445028746,
-        "stop" : 1605445031209,
-        "duration" : 2463
+        "start" : 1605446254834,
+        "stop" : 1605446257244,
+        "duration" : 2410
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"label[for='word-id-2sanitise']\"",
         "time" : {
-          "start" : 1605445028746,
-          "stop" : 1605445031109,
-          "duration" : 2363
+          "start" : 1605446254834,
+          "stop" : 1605446257143,
+          "duration" : 2309
         },
         "status" : "passed",
         "steps" : [ ],
@@ -49,17 +49,17 @@
     }, {
       "name" : "policyPage: clickSaveChanges ",
       "time" : {
-        "start" : 1605445031210,
-        "stop" : 1605445033448,
-        "duration" : 2238
+        "start" : 1605446257244,
+        "stop" : 1605446259476,
+        "duration" : 2232
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I click \"//button[text()='Save Changes']\"",
         "time" : {
-          "start" : 1605445031210,
-          "stop" : 1605445033447,
-          "duration" : 2237
+          "start" : 1605446257244,
+          "stop" : 1605446259476,
+          "duration" : 2232
         },
         "status" : "passed",
         "steps" : [ ],
@@ -79,17 +79,17 @@
     }, {
       "name" : "policyPage: assertElementChecked \"input[id='word-id-2sanitise']\"",
       "time" : {
-        "start" : 1605445033449,
-        "stop" : 1605445033463,
-        "duration" : 14
+        "start" : 1605446259476,
+        "stop" : 1605446259481,
+        "duration" : 5
       },
       "status" : "passed",
       "steps" : [ {
         "name" : "I see attributes on elements \"input[id='word-id-2sanitise']\", {\"checked\":true}",
         "time" : {
-          "start" : 1605445033449,
-          "stop" : 1605445033463,
-          "duration" : 14
+          "start" : 1605446259476,
+          "stop" : 1605446259481,
+          "duration" : 5
         },
         "status" : "passed",
         "steps" : [ ],
@@ -145,12 +145,26 @@
   } ],
   "parameters" : [ ],
   "links" : [ ],
-  "hidden" : true,
-  "retry" : true,
+  "hidden" : false,
+  "retry" : false,
   "extra" : {
-    "categories" : [ ],
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "ff111a6894ffafa5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605445009894,
+        "stop" : 1605445033463,
+        "duration" : 23569
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
     "tags" : [ "@smoke", "@content-management-policy-editing", "@TEST-155", "@functional" ]
   },
-  "source" : "93e49e6d13cc36b6.json",
+  "source" : "ac52d43d9ace7685.json",
   "parameterValues" : [ ]
 }
