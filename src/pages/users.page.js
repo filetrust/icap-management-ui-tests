@@ -7,16 +7,16 @@ module.exports = {
     //Locators   
 
     fields: {
-        newUserNameField: `div[class*='Input_Input__17Nwp'] > input`,
-        newUserEmailField: `div[class*='User_tr__ppbfc'] > div:nth-of-type(2)`,
+        newUserNameField: `div[class*='Input_Input__'] > input`,
+        newUserEmailField: `div[class*='User_tr__'] > div:nth-of-type(2)`,
         errorMessage: ""
     },
     buttons: {
-        addUser: `div[class*='Users_header__2gDwu'] > button`,
+        addUser: `div[class*='Users_header__'] > button`,
         deleteUser: `svg[id='Layer_1'] > path:nth-of-type(1)`,
     },
     table: {
-        userTable: `div[class*='Users_table__3T8bv']`,
+        userTable: `div[class*='Users_table__']`,
     },
 
     //Methods
@@ -36,11 +36,11 @@ module.exports = {
     },
 
     async getNewUserRowNameInput() {
-        return await this.getUserRecord(1)
+        return this.getUserRecord(1);
     },
 
     async getNewUserRowEmailInput() {
-        return await this.getUserRecord(2)
+        return this.getUserRecord(2);
     },
     setNewUserEmail(userEmail) {
         const element = this.fields.newUserEmailField;
@@ -57,11 +57,9 @@ module.exports = {
     },
 
     deleteUser(userName) {
-        let deleteButton = document
-            .getElementsByClassName(this.findUserByName(userName))[0]
-            .getElementsByTagName("SVG")
-            .namedItem("Layer_1");
-        I.click(deleteButton);
+        let userRow = this.findUserByName(userName);
+        const deleteUserButton = userRow+"/td[4]/*[@id='Layer_1']";
+        I.click(deleteUserButton);
 
 
     },
@@ -79,39 +77,11 @@ module.exports = {
     },
 
     findUserByEmail(email) {
-        let className = null;
-        const rowArray = document.querySelectorAll(`div[class*='Users_table__'] > div[class*='User_User__']`);
-        rowArray.forEach(row => {
-            console.log('Observing row : ', row);
-            let rowClassName = row.className;
-            // this locator is written here `div[class*='Users_table__'] > div[class*='User_User__'] > div > div:nth-child(2)`
-            let rowUserEmail = row.firstChild.childNodes.item(2).textContent;
-            if (rowUserEmail === email) {
-                className = rowClassName;
-            }
-        })
-        //    let userRowEmail = locate(`div[class*='Users_table__'] > div[class*='User_User__'] > div > div:nth-child(2)`);
-        //   let userEmail = I.grabTextFrom(userRowEmail);
-        return locate(`div[class*='` + className + `']`);
+        return "//td[text()='" + email + "']/parent::tr";
     },
 
     findUserByName(name) {
-        let className = null;
-        const rowArray = document.querySelectorAll(`div[class*='Users_table__'] > div[class*='User_User__']`);
-        rowArray.forEach(row => {
-            console.log('Observing row : ', row);
-            let rowClassName = row.className;
-            // this locator is written here `div[class*='Users_table__'] > div[class*='User_User__'] > div > div:nth-child(1) > div > input[type=text]`
-            let rowUserName = row.firstChild.childNodes.item(1).firstChild.textContent;
-            if (rowUserName === name) {
-                className = rowClassName;
-            }
-        })
-        return className;
-    },
-
-    findRowWithUserName(name) {
-        return `div[class*='`+name+`']`;
+        return "//input[@value='" + name + "']/parent::tr";
     }
 
 }

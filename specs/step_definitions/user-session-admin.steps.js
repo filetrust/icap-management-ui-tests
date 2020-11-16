@@ -1,5 +1,3 @@
-//<reference path="../../src/utils/steps_file.js" />
-
 const {I, homePage, loginPage, env} = inject();
 
 

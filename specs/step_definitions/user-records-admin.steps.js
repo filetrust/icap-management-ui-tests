@@ -1,12 +1,14 @@
-//<reference path="../../src/utils/steps_file.js" />
-
 const {
     I,
-    homePage, usersPage
+    homePage,
+    usersPage,
+    env
 } = inject();
+
 let user;
 let userEmail;
 let userName;
+const MY_EMAIL = 'ahewitt@glasswallsolutions.com';
 
 Given('I am logged into the ui', () => {
     I.loginNoPwd();
@@ -41,7 +43,7 @@ When('I delete an existing user {string}', (name) => {
     usersPage.deleteUser(userName)
 });
 Then('The user record is no longer available', () => {
-    I.dontSeeElement(usersPage.findRowWithUserName(userName))
+    I.dontSeeElement(usersPage.findUserByName(userName))
 });
 When('I add a new user with a invalid {string}', (email) => {
     usersPage.addUser('', email, '');
