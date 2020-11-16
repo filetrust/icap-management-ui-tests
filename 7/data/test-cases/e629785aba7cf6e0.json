@@ -1,0 +1,257 @@
+{
+  "uid" : "e629785aba7cf6e0",
+  "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @smoke @TEST-185",
+  "fullName" : "user-records-admin @user-records-admin.A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @smoke @TEST-185",
+  "historyId" : "5f3925de4c5b7cecad2d2ee1027e085b",
+  "time" : {
+    "start" : 1605542129522,
+    "stop" : 1605542146828,
+    "duration" : 17306
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "I: onLoginPage ",
+      "time" : {
+        "start" : 1605542138975,
+        "stop" : 1605542142169,
+        "duration" : 3194
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"http://management-ui-main.northeurope.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1605542138975,
+          "stop" : 1605542142069,
+          "duration" : 3094
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "loginPage: clickLogIn ",
+      "time" : {
+        "start" : 1605542142169,
+        "stop" : 1605542144386,
+        "duration" : 2217
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//button[@type='submit']\"",
+        "time" : {
+          "start" : 1605542142169,
+          "stop" : 1605542144386,
+          "duration" : 2217
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: loginNoPwd ",
+      "time" : {
+        "start" : 1605542144386,
+        "stop" : 1605542144495,
+        "duration" : 109
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"section[class*='Toolbar_Toolbar__']\"",
+        "time" : {
+          "start" : 1605542144386,
+          "stop" : 1605542144394,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickUsers ",
+      "time" : {
+        "start" : 1605542144495,
+        "stop" : 1605542146818,
+        "duration" : 2323
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"a[href*='users'] > div\"",
+        "time" : {
+          "start" : 1605542144495,
+          "stop" : 1605542146718,
+          "duration" : 2223
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "usersPage: clickAddUserBtn ",
+      "time" : {
+        "start" : 1605542146818,
+        "stop" : 1605542146828,
+        "duration" : 10
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I click \"div[class*='Users_header__2gDwu'] > button\"",
+        "time" : {
+          "start" : 1605542146818,
+          "stop" : 1605542146828,
+          "duration" : 10
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "99418cb796b69c12",
+      "name" : "Last Seen Screenshot",
+      "source" : "99418cb796b69c12.png",
+      "type" : "image/png",
+      "size" : 22489
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-185"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "tag",
+    "value" : "@user-records-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @smoke @TEST-185"
+  }, {
+    "name" : "package",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "4af14b5353de719f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/4af14b5353de719f",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605540041700,
+          "stop" : 1605540058030,
+          "duration" : 16330
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-185", "@smoke", "@user-records-admin" ]
+  },
+  "source" : "e629785aba7cf6e0.json",
+  "parameterValues" : [ ]
+}
