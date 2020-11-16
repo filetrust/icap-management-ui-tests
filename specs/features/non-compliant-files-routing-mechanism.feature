@@ -6,6 +6,7 @@ Feature: non-compliant-files-routing-mechanism
         Given I am logged into the ui
         And I have navigated to the Current Policy page
 
+    @smoke
     Scenario: The default routing option for unprocessable and blocked files is accurate
         Given I am a new user
         And I have navigated to the Current Policy page
@@ -13,6 +14,7 @@ Feature: non-compliant-files-routing-mechanism
         Then I see the default set routing option for blocked files as ''
 
 
+    @smoke
     @TEST-158_159
     Scenario Outline: I can only update the non-compliant routes API URL with a valid one
         When I enter a valid URL '<url>' into the API URL box

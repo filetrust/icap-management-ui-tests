@@ -12,14 +12,12 @@ Given('I am logged into the ui', () => {
 
 Given('I have navigated to the Dashboard page', () => {
     I.goToAnalytics();
-    filterValue = I.grabTextFrom(datetimeValue);
+   // filterValue = I.grabTextFrom(datetimeValue);
  //   I.say(filterValue);
 
 });
 
-When('I make a time selection with {string} and click apply', (timeInterval) => {
-    analyticsPage.chooseTimeInterval(timeInterval);
-});
+
 Then('the requests for the selected {string} are displayed', () => {
 //todo: write step definition after function implementation
 });
@@ -32,4 +30,7 @@ Given('a previous time selection is applied', () => {
 });
 Then(/^the date range for the selected period is displayed in the Date\/Time field as '(.*)'$/,  (dateRange) =>{
     analyticsPage.checkDateTimeFilterValues(dateRange);
+});
+When(/^I make a time selection with '(.*)' and click apply$/, function (timeInterval) {
+        analyticsPage.chooseTimeInterval(timeInterval);
 });
