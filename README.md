@@ -1,4 +1,4 @@
-![.github/workflows/node.js.yml](https://github.com/filetrust/icap-management-ui-tests/workflows/.github/workflows/node.js.yml/badge.svg)
+![Node.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/Node.js%20CI/badge.svg)
 
 # icap-management-ui-tests
 

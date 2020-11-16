@@ -6,7 +6,7 @@ Feature: dashboard-requests-filtering-by-file-risk
         Given I am logged into the ui
         And I have navigated to the analytics page
 
-    @smoke
+    
     @TEST-192
     Scenario Outline: I can filter the risk legend
         When I tick select from the '<chart>' legend a file risk '<fileRisk>'

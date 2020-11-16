@@ -11,91 +11,182 @@ module.exports = {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
-    word: {
-      sanitise: {
-        dynamicDataExchange: `label[for='word-id-1sanitise']`,
-        embeddedFiles: `label[for='word-id-2sanitise']`,
-        embeddedFiles2: `label[for='word-id-3sanitise']`,
-        externalHyperlinks: `label[for='word-id-4sanitise']`,
-        internalHyperlinks: `label[for='word-id-5sanitise']`,
-        macros: `label[for='word-id-6sanitise']`,
-        metadata: `label[for='word-id-7sanitise']`,
-        reviewComments: `label[for='word-id-8sanitise']`
+    label: {
+      word: {
+        sanitise: {
+          dynamicDataExchange: `label[for='word-id-1sanitise']`,
+          embeddedFiles: `label[for='word-id-2sanitise']`,
+          embeddedFiles2: `label[for='word-id-3sanitise']`,
+          externalHyperlinks: `label[for='word-id-4sanitise']`,
+          internalHyperlinks: `label[for='word-id-5sanitise']`,
+          macros: `label[for='word-id-6sanitise']`,
+          metadata: `label[for='word-id-7sanitise']`,
+          reviewComments: `label[for='word-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `label[for='word-id-1disallow']`,
+          embeddedFiles: `label[for='word-id-2disallow']`,
+          embeddedFiles2: `label[for='word-id-3disallow']`,
+          externalHyperlinks: `label[for='word-id-4disallow']`,
+          internalHyperlinks: `label[for='word-id-5disallow']`,
+          macros: `label[for='word-id-6disallow']`,
+          metadata: `label[for='word-id-7disallow']`,
+          reviewComments: `label[for='word-id-8disallow']`
+        }
       },
-      disallow: {
-        dynamicDataExchange: `label[for='word-id-1disallow']`,
-        embeddedFiles: `label[for='word-id-2disallow']`,
-        embeddedFiles2: `label[for='word-id-3disallow']`,
-        externalHyperlinks: `label[for='word-id-4disallow']`,
-        internalHyperlinks: `label[for='word-id-5disallow']`,
-        macros: `label[for='word-id-6disallow']`,
-        metadata: `label[for='word-id-7disallow']`,
-        reviewComments: `label[for='word-id-8disallow']`
+      excel: {
+        sanitise: {
+          dynamicDataExchange: `label[for='excel-id-1sanitise']`,
+          embeddedFiles: `label[for='excel-id-2sanitise']`,
+          embeddedFiles2: `label[for='excel-id-3sanitise']`,
+          externalHyperlinks: `label[for='excel-id-4sanitise']`,
+          internalHyperlinks: `label[for='excel-id-5sanitise']`,
+          macros: `label[for='excel-id-6sanitise']`,
+          metadata: `label[for='excel-id-7sanitise']`,
+          reviewComments: `label[for='excel-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `label[for='excel-id-1disallow']`,
+          embeddedFiles: `label[for='excel-id-2disallow']`,
+          embeddedFiles2: `label[for='excel-id-3disallow']`,
+          externalHyperlinks: `label[for='excel-id-4disallow']`,
+          internalHyperlinks: `label[for='excel-id-5disallow']`,
+          macros: `label[for='excel-id-6disallow']`,
+          metadata: `label[for='excel-id-7disallow']`,
+          reviewComments: `label[for='excel-id-8disallow']`,
+        }
+      },
+      powerpoint: {
+        sanitise: {
+          embeddedFiles: `label[for='powerpoint-id-1sanitise']`,
+          embeddedImages: `label[for='powerpoint-id-2sanitise']`,
+          externalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
+          internalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
+          macros: `label[for='powerpoint-id-5sanitise']`,
+          metadata: `label[for='powerpoint-id-6sanitise']`,
+          reviewComments: `label[for='powerpoint-id-7sanitise']`
+        },
+        disallow: {
+          embeddedFiles: `label[for='powerpoint-id-1disallow']`,
+          embeddedImages: `label[for='powerpoint-id-2disallow']`,
+          externalHyperlinks: `label[for='powerpoint-id-3disallow']`,
+          internalHyperlinks: `label[for='powerpoint-id-4disallow']`,
+          macros: `label[for='powerpoint-id-5disallow']`,
+          metadata: `label[for='powerpoint-id-6disallow']`,
+          reviewComments: `label[for='powerpoint-id-7disallow']`
+        }
+      },
+      pdf: {
+        sanitise: {
+          acroform: `label[for='pdf-id-1sanitise']`,
+          actionsAll: `label[for='pdf-id-2sanitise']`,
+          embeddedFiles: `label[for='pdf-id-3sanitise']`,
+          embeddedImages: `label[for='pdf-id-4sanitise']`,
+          externalHyperlinks: `label[for='pdf-id-5sanitise']`,
+          internalHyperlinks: `label[for='pdf-id-6sanitise']`,
+          javascript: `label[for='pdf-id-7sanitise']`,
+          metadata: `label[for='pdf-id-8sanitise']`
+        },
+        disallow: {
+          acroform: `label[for='pdf-id-1disallow']`,
+          actionsAll: `label[for='pdf-id-2disallow']`,
+          embeddedFiles: `label[for='pdf-id-3disallow']`,
+          embeddedImages: `label[for='pdf-id-4disallow']`,
+          externalHyperlinks: `label[for='pdf-id-5disallow']`,
+          internalHyperlinks: `label[for='pdf-id-6disallow']`,
+          javascript: `label[for='pdf-id-7disallow']`,
+          metadata: `label[for='pdf-id-8disallow']`
+        }
       }
     },
-    excel: {
-      sanitise: {
-        dynamicDataExchange: `label[for='excel-id-1sanitise']`,
-        embeddedFiles: `label[for='excel-id-2sanitise']`,
-        embeddedFiles2: `label[for='excel-id-3sanitise']`,
-        externalHyperlinks: `label[for='excel-id-4sanitise']`,
-        internalHyperlinks: `label[for='excel-id-5sanitise']`,
-        macros: `label[for='excel-id-6sanitise']`,
-        metadata: `label[for='excel-id-7sanitise']`,
-        reviewComments: `label[for='excel-id-8sanitise']`
+    input: {
+      word: {
+        sanitise: {
+          dynamicDataExchange: `input[id='word-id-1sanitise']`,
+          embeddedFiles: `input[id='word-id-2sanitise']`,
+          embeddedFiles2: `input[id='word-id-3sanitise']`,
+          externalHyperlinks: `input[id='word-id-4sanitise']`,
+          internalHyperlinks: `input[id='word-id-5sanitise']`,
+          macros: `input[id='word-id-6sanitise']`,
+          metadata: `input[id='word-id-7sanitise']`,
+          reviewComments: `input[id='word-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `input[id='word-id-1disallow']`,
+          embeddedFiles: `input[id='word-id-2disallow']`,
+          embeddedFiles2: `input[id='word-id-3disallow']`,
+          externalHyperlinks: `input[id='word-id-4disallow']`,
+          internalHyperlinks: `input[id='word-id-5disallow']`,
+          macros: `input[id='word-id-6disallow']`,
+          metadata: `input[id='word-id-7disallow']`,
+          reviewComments: `input[id='word-id-8disallow']`
+        }
       },
-      disallow: {
-        dynamicDataExchange: `label[for='excel-id-1disallow']`,
-        embeddedFiles: `label[for='excel-id-2disallow']`,
-        embeddedFiles2: `label[for='excel-id-3disallow']`,
-        externalHyperlinks: `label[for='excel-id-4disallow']`,
-        internalHyperlinks: `label[for='excel-id-5disallow']`,
-        macros: `label[for='excel-id-6disallow']`,
-        metadata: `label[for='excel-id-7disallow']`,
-        reviewComments: `label[for='excel-id-8disallow']`,
-      }
-    },
-    powerpoint: {
-      sanitise: {
-        embeddedFiles: `label[for='powerpoint-id-1sanitise']`,
-        embeddedImages: `label[for='powerpoint-id-2sanitise']`,
-        externalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
-        internalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
-        macros: `label[for='powerpoint-id-5sanitise']`,
-        metadata: `label[for='powerpoint-id-6sanitise']`,
-        reviewComments: `label[for='powerpoint-id-7sanitise']`
+      excel: {
+        sanitise: {
+          dynamicDataExchange: `input[id='excel-id-1sanitise']`,
+          embeddedFiles: `input[id='excel-id-2sanitise']`,
+          embeddedFiles2: `input[id='excel-id-3sanitise']`,
+          externalHyperlinks: `input[id='excel-id-4sanitise']`,
+          internalHyperlinks: `input[id='excel-id-5sanitise']`,
+          macros: `input[id='excel-id-6sanitise']`,
+          metadata: `input[id='excel-id-7sanitise']`,
+          reviewComments: `input[id='excel-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `input[id='excel-id-1disallow']`,
+          embeddedFiles: `input[id='excel-id-2disallow']`,
+          embeddedFiles2: `input[id='excel-id-3disallow']`,
+          externalHyperlinks: `input[id='excel-id-4disallow']`,
+          internalHyperlinks: `input[id='excel-id-5disallow']`,
+          macros: `input[id='excel-id-6disallow']`,
+          metadata: `input[id='excel-id-7disallow']`,
+          reviewComments: `input[id='excel-id-8disallow']`,
+        }
       },
-      disallow: {
-        embeddedFiles: `label[for='powerpoint-id-1disallow']`,
-        embeddedImages: `label[for='powerpoint-id-2disallow']`,
-        externalHyperlinks: `label[for='powerpoint-id-3disallow']`,
-        internalHyperlinks: `label[for='powerpoint-id-4disallow']`,
-        macros: `label[for='powerpoint-id-5disallow']`,
-        metadata: `label[for='powerpoint-id-6disallow']`,
-        reviewComments: `label[for='powerpoint-id-7disallow']`
-      }
-    },
-    pdf: {
-      sanitise: {
-        acroform: `label[for='pdf-id-1sanitise']`,
-        actionsAll: `label[for='pdf-id-2sanitise']`,
-        embeddedFiles: `label[for='pdf-id-3sanitise']`,
-        embeddedImages: `label[for='pdf-id-4sanitise']`,
-        externalHyperlinks: `label[for='pdf-id-5sanitise']`,
-        internalHyperlinks: `label[for='pdf-id-6sanitise']`,
-        javascript: `label[for='pdf-id-7sanitise']`,
-        metadata: `label[for='pdf-id-8sanitise']`
+      powerpoint: {
+        sanitise: {
+          embeddedFiles: `input[id='powerpoint-id-1sanitise']`,
+          embeddedImages: `input[id='powerpoint-id-2sanitise']`,
+          externalHyperlinks: `input[id='powerpoint-id-3sanitise']`,
+          internalHyperlinks: `input[id='powerpoint-id-3sanitise']`,
+          macros: `input[id='powerpoint-id-5sanitise']`,
+          metadata: `input[id='powerpoint-id-6sanitise']`,
+          reviewComments: `input[id='powerpoint-id-7sanitise']`
+        },
+        disallow: {
+          embeddedFiles: `input[id='powerpoint-id-1disallow']`,
+          embeddedImages: `input[id='powerpoint-id-2disallow']`,
+          externalHyperlinks: `input[id='powerpoint-id-3disallow']`,
+          internalHyperlinks: `input[id='powerpoint-id-4disallow']`,
+          macros: `input[id='powerpoint-id-5disallow']`,
+          metadata: `input[id='powerpoint-id-6disallow']`,
+          reviewComments: `input[id='powerpoint-id-7disallow']`
+        }
       },
-      disallow: {
-        acroform: `label[for='pdf-id-1disallow']`,
-        actionsAll: `label[for='pdf-id-2disallow']`,
-        embeddedFiles: `label[for='pdf-id-3disallow']`,
-        embeddedImages: `label[for='pdf-id-4disallow']`,
-        externalHyperlinks: `label[for='pdf-id-5disallow']`,
-        internalHyperlinks: `label[for='pdf-id-6disallow']`,
-        javascript: `label[for='pdf-id-7disallow']`,
-        metadata: `label[for='pdf-id-8disallow']`
+      pdf: {
+        sanitise: {
+          acroform: `input[id='pdf-id-1sanitise']`,
+          actionsAll: `input[id='pdf-id-2sanitise']`,
+          embeddedFiles: `input[id='pdf-id-3sanitise']`,
+          embeddedImages: `input[id='pdf-id-4sanitise']`,
+          externalHyperlinks: `input[id='pdf-id-5sanitise']`,
+          internalHyperlinks: `input[id='pdf-id-6sanitise']`,
+          javascript: `input[id='pdf-id-7sanitise']`,
+          metadata: `input[id='pdf-id-8sanitise']`
+        },
+        disallow: {
+          acroform: `input[id='pdf-id-1disallow']`,
+          actionsAll: `input[id='pdf-id-2disallow']`,
+          embeddedFiles: `input[id='pdf-id-3disallow']`,
+          embeddedImages: `input[id='pdf-id-4disallow']`,
+          externalHyperlinks: `input[id='pdf-id-5disallow']`,
+          internalHyperlinks: `input[id='pdf-id-6disallow']`,
+          javascript: `input[id='pdf-id-7disallow']`,
+          metadata: `input[id='pdf-id-8disallow']`
+        }
       }
+
     },
     validateApiUrlInput: `div[class*='Input_Input__'] > input`,
     blockedFileRelay: "//label[@for='relay-Glasswall-Blocked-Files']",
@@ -192,46 +283,45 @@ module.exports = {
   },
 
   clickSanitiseForAllFlag(docType) {
-    const elements = this.fields[docType].sanitise
+    const elements = this.fields.label[docType].sanitise
     for (let element in elements) {
       I.click(elements[element])
     }
   },
 
   setFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
-    const element = this.fields[fileType][flagType][contentFlags]
+    const element = this.fields.label[fileType][flagType][contentFlags]
     I.click(element)
   },
 
   assertSanitiseForAllFlag(docType) {
-    const elements = this.fields[docType].sanitise
+    const elements = this.fields.input[docType].sanitise
     for (let element in elements) {
       this.assertElementChecked(elements[element])
     }
   },
 
   assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
-    const element = this.fields[fileType][flagType][contentFlags]
+    const element = this.fields.input[fileType][flagType][contentFlags]
     this.assertElementChecked(element)
   },
 
   clickDisallowForAllFlag(docType) {
-    const elements = this.fields[docType].disallow
+    const elements = this.fields.label[docType].disallow
     for (let element in elements) {
       I.click(elements[element])
     }
   },
 
   assertDisallowForAllFlag(docType) {
-    const elements = this.fields[docType].disallow
+    const elements = this.fields.input[docType].disallow
     for (let element in elements) {
       this.assertElementChecked(elements[element])
     }
   },
 
-  // TODO Uncomment this assertion when functionality work fine.
   assertElementChecked(element) {
-      // I.seeAttributesOnElements(element, 'checked')
+      I.seeAttributesOnElements(element, { checked: true})
   },
 
   clickSaveApiUrl() {

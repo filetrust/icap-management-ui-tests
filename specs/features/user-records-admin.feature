@@ -5,6 +5,7 @@ Feature: user-records-admin
     Background: Login
         Given I am logged into the ui
 
+    
     @TEST-171
     Scenario Outline: I can add a new user to the ui
         Given I have logged into the ui and navigated to the Users page
@@ -24,7 +25,7 @@ Feature: user-records-admin
             | name    | email                    |
             | tester2 | tester2@glasswalltest.co |
 
-
+    @smoke
     @TEST-185
     Scenario Outline: A new user cannot be added with a invalid email
         Given I have logged into the ui and navigated to the Users page
@@ -35,6 +36,7 @@ Feature: user-records-admin
             | InvalidUser1 | Invalid@email.com |
             | InvalidUser2 | Invalid           |
 
+    @smoke
     @TEST-186
     Scenario Outline: A duplicate user cannot be added
         Given I have logged into the ui and navigated to the Users page
@@ -44,6 +46,7 @@ Feature: user-records-admin
             | name    | email                    |
             | tester1 | tester1@glasswalltest.co |
 
+    @smoke
     @TEST-191
     Scenario: I cannot delete my own account
         Given I have logged into the ui and has navigated to the Users page

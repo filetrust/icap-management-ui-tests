@@ -24,8 +24,12 @@ Then(/^The (.*) for required file types (.*) is set to (.*)$/, (contentFlag, fil
     policyPage.assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
 });
 
-Then('I see all the content flags set as Sanitise', () => {
-    
+When('I click on Current Policy in the navigation panel', () => {
+    policyPage.clickOnCurrentPolicyTab()
+});
+
+Then('I am taken to the current policy page', () => {
+    policyPage.assertCurrentPolicyPage()
 });
 
 When('I press the Cancel button', () => {
@@ -70,6 +74,6 @@ When('the save button is selected', () => {
     policyPage.clickSaveApiUrl()
 });
 
-Then(/^(.*) for file types (.*) defaults to (.*)$/, (contentFlag, fileType, flagType) => {
+Then(/^The (.*) for file types (.*) defaults to (.*)$/, (contentFlag, fileType, flagType) => {
     policyPage.assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
 });

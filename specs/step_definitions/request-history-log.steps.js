@@ -16,33 +16,31 @@ When('I click on the Add Filter button', () => {
     requesthistoryPage.clickMoreFiltersButton();
     requesthistoryPage.clickAddFilterButton();
 });
-When('add multiple filter selections as {string}, {string}, {string}', (filterOne, filterTwo, filterThree) => {
-    requesthistoryPage.addFilterWithValue(filterOne);
-    requesthistoryPage.addFilterWithValue(filterTwo);
-    requesthistoryPage.addFilterWithValue(filterThree);
-    requesthistoryPage.closeFilterMenu();
+When('add multiple filter selections as {string}, {string}, {string}', (riskFilter, typeFilter, fileIdFilter) => {
+    requesthistoryPage.selectFileOutcome(riskFilter);
+
+    requesthistoryPage.clickAddFilterButton();
+    requesthistoryPage.selectFileType(typeFilter);
+
+ //   requesthistoryPage.clickAddFilterButton();
+//    requesthistoryPage.setFileId(fileIdFilter);
 });
-Then('the result list shows files with the applied filtertypes {string}', (filteredFile) => {
-    requesthistoryPage.checkFilters(filteredFile);
+Then('the result list shows files with the applied filtertypes {string}', (appliedFilter) => {
+    requesthistoryPage.checkFilters(appliedFilter);
+    requesthistoryPage.verifyResultIsAccurate(appliedFilter)
 });
 
-Given('{string} and {string} are applied', (filterOne, filterTwo) => {
-    requesthistoryPage.clickMoreFiltersButton();
-    requesthistoryPage.clickAddFilterButton();
-    requesthistoryPage.addFilterWithValue(filterOne);
-    requesthistoryPage.clickAddFilterButton();
-    requesthistoryPage.addFilterWithValue(filterTwo);
+Given('{string} and {string} are applied', (typeFilter, riskFilter) => {
+    requesthistoryPage.applyMultipleFilters(riskFilter, typeFilter);
 });
 When('I remove {string}', (filterName) => {
     requesthistoryPage.removeAppliedFilter(filterName);
 });
 
 When('I click on the Add Filter button and add a file id filter as {string}', (filter) => {
-    requesthistoryPage.clickMoreFiltersButton();
-    requesthistoryPage.addFilterWithValue(filter);
+    requesthistoryPage.setFileId(filter);
 });
 
 Then('the result list only shows the filtered file as {string}', (filteredFile) => {
-    requesthistoryPage.checkFilters(filteredFile);
-    requesthistoryPage.checkFileValues(filteredFile);
+    requesthistoryPage.checkFileIdValues(filteredFiles);
 });

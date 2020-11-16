@@ -5,14 +5,15 @@ const filedropPage = require("../pages/file-drop.page.js");
 
 const assert = require('assert');
 
-const env = require('../../credentials.js');
+const env = require('../data/credentials.js');
 require('dotenv').config({path: '.env'});
 
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage("http://localhost:3000/");
+            this.amOnPage('http://management-ui-main.northeurope.cloudapp.azure.com')
+                //"http://k8-proxy.github.io/p-ui-wireframes/";
         },
 
         loginNoPwd: function () {

@@ -1,0 +1,130 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1605452172840' stop='1605452203330'>
+    <name>request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome</name>
+    <title>request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome</title>
+    <test-cases>
+        <test-case start='1605452172841' status='passed' stop='1605452203164'>
+            <name>I can filter the log by file risks {"filter":"Safe","filteredFile":"Safe"} @functional @smoke @TEST-164</name>
+            <title>I can filter the log by file risks {"filter":"Safe","filteredFile":"Safe"} @functional @smoke @TEST-164</title>
+            <labels>
+                <label name='tag' value='@request-history-filtering-by-risk-outcome'/>
+                <label name='tag' value='@functional'/>
+                <label name='tag' value='@smoke'/>
+                <label name='tag' value='@TEST-164'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1605452184327' status='passed' stop='1605452186715'>
+                    <name>homePage: clickRequestsHistory </name>
+                    <title>homePage: clickRequestsHistory </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452184327' status='passed' stop='1605452186594'>
+                            <name>I click "a[href*='request-history'] > div"</name>
+                            <title>I click "a[href*='request-history'] > div"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452186716' status='passed' stop='1605452191416'>
+                    <name>Within "div[class*='Filters_wrap__']" </name>
+                    <title>Within "div[class*='Filters_wrap__']" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452186716' status='passed' stop='1605452188949'>
+                            <name>I click button[class*='Filters_moreFilters__']</name>
+                            <title>I click button[class*='Filters_moreFilters__']</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1605452188968' status='passed' stop='1605452188996'>
+                            <name>I wait for clickable "//button[contains(.,'+ Add Filter')]"</name>
+                            <title>I wait for clickable "//button[contains(.,'+ Add Filter')]"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1605452189096' status='passed' stop='1605452191310'>
+                            <name>I click "//button[contains(.,'+ Add Filter')]"</name>
+                            <title>I click "//button[contains(.,'+ Add Filter')]"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452191416' status='passed' stop='1605452193790'>
+                    <name>Within "div[class*='Filters_popup__']" </name>
+                    <title>Within "div[class*='Filters_popup__']" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452191416' status='passed' stop='1605452193688'>
+                            <name>I click "button:nth-child(2) > p"</name>
+                            <title>I click "button:nth-child(2) > p"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                        <step start='1605452193690' status='passed' stop='1605452193690'>
+                            <name>Filter to set is: Safe</name>
+                            <title>Filter to set is: Safe</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452193790' status='passed' stop='1605452196058'>
+                    <name>requesthistoryPage: selectFileOutcome "Safe"</name>
+                    <title>requesthistoryPage: selectFileOutcome "Safe"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452193790' status='passed' stop='1605452196058'>
+                            <name>I click "//span[text()='Safe']"</name>
+                            <title>I click "//span[text()='Safe']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452196058' status='passed' stop='1605452198112'>
+                    <name>requesthistoryPage: closeFilterPopup </name>
+                    <title>requesthistoryPage: closeFilterPopup </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452196059' status='passed' stop='1605452198112'>
+                            <name>I move cursor to "#root"</name>
+                            <title>I move cursor to "#root"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452198112' status='passed' stop='1605452203121'>
+                    <name>requesthistoryPage: selectFileOutcome "Safe"</name>
+                    <title>requesthistoryPage: selectFileOutcome "Safe"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452198113' status='passed' stop='1605452203119'>
+                            <name>I wait 5</name>
+                            <title>I wait 5</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1605452203123' status='passed' stop='1605452203164'>
+                    <name>requesthistoryPage: checkFileOutcomeValues "Safe"</name>
+                    <title>requesthistoryPage: checkFileOutcomeValues "Safe"</title>
+                    <attachments/>
+                    <steps>
+                        <step start='1605452203123' status='passed' stop='1605452203163'>
+                            <name>I check row "Safe", 4</name>
+                            <title>I check row "Safe", 4</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

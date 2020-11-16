@@ -6,6 +6,7 @@ Feature: request-history-log
     Background:
         Given I am logged into the ui
 
+   
     @smoke
     @TEST-166
     Scenario Outline: I am able to change the number of files displayed on the page
@@ -15,29 +16,31 @@ Feature: request-history-log
         Examples:
             | itemCount | fileCount |
             | 25        | 4         |
-            | 50        | 4         |
-
+           
+    
     @TEST-179
     Scenario Outline: Validate requests log view using a combination of multiple filters
         Given I have navigated to the Request History page
         When I click on the Add Filter button
-        And add multiple filter selections as '<filterOne>', '<filterTwo>', '<filterThree>'
-        Then the result list shows files with the applied filtertypes '<filteredFile>'
+        And add multiple filter selections as '<riskFilter>', '<typeFilter>', '<fileIdFilter>'
+        Then the result list shows files with the applied filtertypes '<appliedFilters>'
         Examples:
-            | filterOne             | filterTwo        | filterThree   | filteredFile       |
-            | FileOutcome_Safe      | FileType_png     |               | Safe_png           |
-
-
+            | riskFilter | typeFilter | fileIdFilter                         | appliedFilters       |
+            | Safe       | png        |                                      | Safe_Png           |
+        
+    @functional
+    @smoke
     @TEST-189
     Scenario Outline: I can remove individual filters
         Given I have navigated to the Request History page
         And '<filterOne>' and '<filterTwo>' are applied
-        When I remove '<filterOne>'
-        Then the result list shows files with the applied filtertypes '<filteredFile>'
+        When I remove '<filterToRemove>'
+        Then the result list shows files with the applied filtertypes '<appliedFilter>'
         Examples:
-            | filterOne        | filterTwo             | filteredFile |
-            | FileType_docx    | FileOutcome_Safe      | safe         |
-            | FileOutcome_Safe | FileType_docx         | docx         |
+            | filterOne | filterTwo | filterToRemove | appliedFilter |
+            | docx      | Safe      | docx           | Safe         |
+            | png       | Safe      | Safe           | Png          |
+
 
     @filterfileid
     Scenario Outline: I can filter the log using file id
@@ -45,5 +48,5 @@ Feature: request-history-log
         When I click on the Add Filter button and add a file id filter as '<filter>'
         Then the result list only shows the filtered file as '<filteredFile>'
         Examples:
-            | filter                                             | filteredFile                                  |
-            | fileId_44444444 - 4444 - 4444 - 4444 - 44444444444 | 44444444 - 4444 - 4444 - 4444 - 44444444444   |
+            | filter                                      | filteredFile                                  |
+            | 44444444 - 4444 - 4444 - 4444 - 44444444444 | 44444444 - 4444 - 4444 - 4444 - 44444444444   |

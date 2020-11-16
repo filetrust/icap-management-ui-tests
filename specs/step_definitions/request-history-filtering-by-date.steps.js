@@ -20,23 +20,26 @@ When(/^I open the date picker and select a (.*)$/, (timeInterval) => {
     requesthistoryPage.selectTimePeriod(timeInterval)
    });
 
-Then(/^the date range is updated to be from (.*) hrs earlier to (.*)$/, async (datetimeFrom, datetimeTo) => {
-    displayedRange = await I.grabTextFrom(requesthistoryPage.calendar.reportRange);
-    selectedRange = requesthistoryPage.getDateRange(datetimeFrom, datetimeTo);
-    I.assertEqual(displayedRange, selectedRange, 'Time ranges do NOT match');
-    
-   
+Then(/^the date range is updated to be from (.*) hrs earlier to (.*)$/, (datetimeFrom, datetimeTo) => {
+    requesthistoryPage.isTimeApplied(datetimeFrom, datetimeTo)
 });
 
-Then('the files processed for the selected period are displayed', () => {
-    requesthistoryPage.isDataInRange(displayedRange);
+Then('the files processed for the selected period are displayed', async () => {
+    displayedRange = await I.grabTextFrom(requesthistoryPage.calendar.reportRange)
+    let col =1
+    requesthistoryPage.isDataInRange(displayedRange, col);
 });
 
 When(/^I select a valid (.*) and (.*)$/, (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.setTimeFrom(datetimeFrom);
-    requesthistoryPage.setTimeTo(datetimeTo);
+    requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 
 });
+
+Then(/^the selected custom range is applied to include (.*) and (.*)$/, (datetimeFrom, datetimeTo) => {
+    requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
+});
+
+
 
 When(/^I select a custom over 24 hours range from (.*) to (.*)$/, (datetimeFrom, datetimeTo) => {
     requesthistoryPage.setTimeFrom(datetimeFrom);
