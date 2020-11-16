@@ -6,14 +6,16 @@ Given('I have navigated to the Current Policy page',  () => {
     I.goToContentManagementPolicy();
 });
 Given('I am a new user', () => {
-    I.loginNoPwd();
+  //  I.loginNoPwd();
 });
 Then(`I see the default set routing option for unprocessable files as ''`,  () =>{
+    I.scrollTo(policyPage.blockedFileRefer);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.unprocessedFileBlock);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.unprocessedFileRelay);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.unprocessedFileRefer);
 });
 Then(`I see the default set routing option for blocked files as ''`,  () => {
+    I.scrollTo(policyPage.blockedFileRefer);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.blockedFileBlock);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.blockedFileRefer);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.blockedFileRelay);

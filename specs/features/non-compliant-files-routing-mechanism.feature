@@ -8,6 +8,7 @@ Feature: non-compliant-files-routing-mechanism
 
     Scenario: The default routing option for unprocessable and blocked files is accurate
         Given I am a new user
+        And I have navigated to the Current Policy page
         Then I see the default set routing option for unprocessable files as ''
         Then I see the default set routing option for blocked files as ''
 
@@ -18,9 +19,9 @@ Feature: non-compliant-files-routing-mechanism
         And I click save
         Then the API URL is updated and the validation message '<message>' is displayed
         Examples:
-            | url        | message |
-            | validurl   | success |
-            | invalidurl | error   |
+            | url                      | message |
+            | glasswallsolutions.com   | success |
+            | invalidurl               | error   |
 
     @smoke
     @TEST-183
@@ -53,9 +54,9 @@ Feature: non-compliant-files-routing-mechanism
         Then the response code received is '<responseCode>'
         And the file outcome for the submitted file is '<fileOutcome>'
         Examples:
-            | blockedPolicyAction | NcfsDecision | file                     | responseCode | fileOutcome        |
-            | Relay               | NA           | src/data/input/Clean.png | 204          | Unmodified         |
-            | Block               | NA           | src/data/input/file2.pdf | 403          | HtmlReport         |
+            | blockedPolicyAction | NcfsDecision | file                                | responseCode | fileOutcome        |
+            | Relay               | NA           | src/data/input/types/safe_file.xlsx | 204          | Unmodified         |
+            | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport         |
 #            | Refer               | relay        | file | 204          | Unmodified         |
 #            | Refer               | replace      | file | ''           | alternativeContent |
 #            | Refer               | block        | file | 403          | HtmlReport         |
