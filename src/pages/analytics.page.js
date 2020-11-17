@@ -60,6 +60,13 @@ module.exports = {
         label_AllowedByPolicy: `path[fill*='#91E1F3']`,
     },
 
+    date:locale = {
+        en: {
+            month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        }
+    },
+
     //class="recharts-layer"
 
     //Methods
@@ -203,9 +210,26 @@ module.exports = {
         const day = startDate[0];
         const month = startDate[1];
         const year = startDate[2];
-        this.chooseTimeInterval()
+        this.setMonthYear(month, year);
 
+    },
 
+    setMonthYear(month, year){
+        const monthNamesShort = this.date.en.month_names_short;
+        const givenDate = monthNamesShort[month-1] + " " + year;
+        let calendarDate =  I.grabTextFrom(this.calendar.startMonth);
+        let calendarMonth = calendarDate.split(" ")[0];
+        let monthNumber = 1;
+        for (let i = 0; i < monthNamesShort.length; i++) {
+            if (calendarMonth===monthNamesShort[i]) {
+                monthNumber=i;
+                break;
+            }
+        }
+        if (monthNumber>month) {
+            I.click("//div[@class='drp-calendar left']/descendant::th[@class=''prev available']")
+        }
+//todo: describe other variants
     },
     setTime(time, timePeriod, flag){
         switch (flag){
@@ -275,4 +299,5 @@ module.exports = {
         }
         return newTime;
     }
+
 }
