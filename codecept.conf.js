@@ -22,8 +22,7 @@ exports.config = {
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
-      waitForAction: 2000,
-
+      waitForAction: 2000
     },
     FileSystem: {},
     AssertWrapper: {
@@ -43,7 +42,8 @@ exports.config = {
     passwordResetPage: './src/pages/password-reset.page.js',
     policyPage: './src/pages/policy.page.js',
     requesthistoryPage: './src/pages/request-history.page.js',
-    usersPage: './src/pages/users.page.js'
+    usersPage: './src/pages/users.page.js',
+    icapProxyPage: './src/pages/icap-proxy.page.js'
   },
   bootstrap: null,
   gherkin: {

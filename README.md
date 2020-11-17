@@ -1,4 +1,5 @@
-![Node.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/Node.js%20CI/badge.svg)
+![FunctionalTest.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/FunctionalTest.js%20CI/badge.svg)
+![Prototype-test CI](https://github.com/filetrust/icap-management-ui-tests/workflows/Prototype-test%20CI/badge.svg)
 
 # icap-management-ui-tests
 
