@@ -12,9 +12,6 @@ Given('I am logged into the ui', () => {
 
 Given('I have navigated to the Dashboard page', () => {
     I.goToAnalytics();
-   // filterValue = I.grabTextFrom(datetimeValue);
- //   I.say(filterValue);
-
 });
 
 
