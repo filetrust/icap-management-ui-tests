@@ -23,8 +23,12 @@ When('I view result and click on XML button', () => {
 
 Then(/^the XML report (.*) is downloaded$/, (xmlFile) => {
     I.amInPath("output/downloads");
-    I.seeFileNameMatching(xmlFile);
+    filedropPage.isFileDownloaded(xmlFile)
+
+        //console.log
+    //I.seeFileNameMatching(xmlFile);
 });
+
 
 When('I view result and click on PDF button', () => {
     I.handleDownloads();
@@ -33,5 +37,6 @@ When('I view result and click on PDF button', () => {
 
 Then(/^the pdf report (.*) is downloaded$/, (pdfFile) => {
     I.amInPath("output/downloads");
-    I.seeFileNameMatching(pdfFile);
+    filedropPage.isFileDownloaded(pdfFile);
+
 });
