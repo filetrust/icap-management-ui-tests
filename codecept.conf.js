@@ -18,7 +18,7 @@ exports.config = {
       url: 'http://management-ui-main.northeurope.cloudapp.azure.com',
       show: true,
       chrome: {
-        args: ['--headless', '--no-sandbox', '--window-size=1536,826'],
+        args: ['--no-sandbox', '--window-size=1536,826'],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,

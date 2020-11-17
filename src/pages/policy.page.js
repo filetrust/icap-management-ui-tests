@@ -294,6 +294,7 @@ module.exports = {
     I.click(element)
   },
 
+
   assertSanitiseForAllFlag(docType) {
     const elements = this.fields.input[docType].sanitise
     for (let element in elements) {
@@ -301,7 +302,7 @@ module.exports = {
     }
   },
 
-  assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
+  assertFlagTypeForGivenContentFlagsForGivenDocType(fileType, flagType,contentFlags ) {
     const element = this.fields.input[fileType][flagType][contentFlags]
     this.assertElementChecked(element)
   },
@@ -507,5 +508,21 @@ module.exports = {
         break;
     }
     I.seeCheckboxIsChecked(radioElement);
+  },
+
+  checkFileOutcomeIsAccurate(fileOutcome,file) {
+  if (fileOutcome == 'Sanitised') {
+    I.goToFileDrop()
+    I.uploadFile(file)
+    filedropPage.clickViewResult();
+    filedropPage.isRequiredContentRefDisplayed('File is clean')
+  } else if (fileOutcome == 'htmlReport') {
+    I.amInPath('output/downloads');
+    I.seeInThisFile('Document Access Blocked due to Policy', 'utf8')
+  }else {
+    I.say(`Set option `+fileOutcome+` is not available`)
   }
+  }
+
+
 };

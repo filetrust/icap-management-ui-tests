@@ -11,7 +11,8 @@ const env = require('../data/credentials.js');
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage('http://management-ui-main.northeurope.cloudapp.azure.com')
+            this.amOnPage('http://localhost:3000/')
+            //('http://management-ui-main.northeurope.cloudapp.azure.com')
                 //"http://k8-proxy.github.io/p-ui-wireframes/";
         },
 
@@ -60,37 +61,19 @@ module.exports = function () {
 
         uploadFile: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
-            this.wait(5)
+            this.waitForElement(filedropPage.buttons.refresh, 60)
+            //this.wait(5)
+        },        
+
+        checkFileInFileDrop: function (file){
+            this.loginNoPwd()
+            this.goToFileDrop()
+            this.uploadFile(file)
+            filedropPage.clickViewResult();
         },
-
-
-        // uploadFileByType: function (fileType) {
-        //     let path = null;
-        //     switch (fileType) {
-        //         case ('Safe_file'):
-        //             path = 'src/data/input/types/safe_file.xlsx';
-        //             break;
-        //         case ('Blocked_file'):
-        //             path = 'src/data/input/types/blocked_file.doc';
-        //             break;
-        //         //todo: add file
-        //         case ('Dangerous_file'):
-        //             path = 'src/data/input/types/dangerous_file.doc';
-        //             break;
-        //         case ('Unclassified_file'):
-        //             path = 'src/data/input/unsupported_icaptest.ps1';
-        //             break;
-        //         default:
-        //             throw 'There is not such file type.'
-        //     }
-        //     this.uploadFile(path);
-        // },
-
-        
 
         uploadFileWithNoSanitiseData: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
-            this.waitForElement(filedropPage.buttons.refresh,60)
         },
 
         uploadFileByType: function (fileType) {

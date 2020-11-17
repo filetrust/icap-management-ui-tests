@@ -8,7 +8,7 @@ module.exports = {
 
     sections: {
         filedropModal: `div[class*='StyledDropzone_border__']`,
-        analysisReportView: `$divFileDropResults`,
+        analysisReportView: `div[class*='RenderResults_RenderResults__']`,
         fileSize: `tr:nth-child(2) > td:nth-child(2)`,
         fileName: `tr:nth-child(2) > td:nth-child(1)`,
         fileType: `tr:nth-child(2) > td:nth-child(3)`,
@@ -110,9 +110,22 @@ module.exports = {
          I.grabTextFrom(element)
       },
 
+       async getResultViewContent() {
+           const element = this.sections.analysisReportView;
+            await I.getTextFrom(element)
+      },
+
+      isRequiredContentRefDisplayed(contentRef){
+            const element = this.sections.analysisReportView;
+                within(element, () =>{
+                    I.see(contentRef)
+                })
+      },
+
+
       isFileDownloaded(file) {
          return I.checkFileExist("output/downloads/" + file)
-      }
+      },
 
     assertAnalysisReportDownload(analysisReport) {
         I.amInPath('output/downloads');

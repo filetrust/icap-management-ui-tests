@@ -22,6 +22,11 @@ module.exports = {
         I.click(this.links[`download_${fileType}`])
     },
 
+    // downloadFile(fileRef) {
+    //     I.handleDownloads()
+    //     I.click(this.links[`${fileRef}`])
+    // },
+
     assertFileDownload(file) {
         I.amInPath('output/downloads')
         I.seeFile(file)

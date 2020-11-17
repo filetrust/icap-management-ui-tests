@@ -20,7 +20,7 @@ class MyHelper extends Helper {
 
     //          })
 
-    async getText(selector, ...options) {
+    async getTextFrom(selector, ...options) {
         const helper = this.helpers['Puppeteer'];
         try {
             const numVisible = await helper.grabNumberOfVisibleElements(selector);
@@ -113,7 +113,15 @@ class MyHelper extends Helper {
         }
         }
 
-   
+   checkFileContains(content) {
+       try{
+       I.amInPath('output/downloads');
+       I.seeInThisFile(content, 'utf8')
+       } catch (err) {
+           console.error('The file does not contain required content:-  '+content);
+       }
+   }
+
     checkFileExist(path){
     fs.access(path, fs.F_OK, (err) => {
         if (err) {
