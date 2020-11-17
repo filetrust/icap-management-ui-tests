@@ -1,9 +1,8 @@
-const MyHelper = require("../utils/helper");
 const { I } = inject();
 
 module.exports = {
 
-    //Locators   
+    //Locators
 
     inputs: {
         dateFilter: 'div[data-test-id="dateRangePicker"] > span',
@@ -33,7 +32,7 @@ module.exports = {
         endHourDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='hourselect']`,
         endMinsDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='minuteselect']`,
         endPeriodDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='ampmselect']`,
-        startMonth: `//div[@class='drp-calendar left']/descendant::th[@class="month"]`,
+        leftMonth: `//div[@class='drp-calendar left']/descendant::th[@class="month"]`,
     },
     button: {
         datetime: `div[data-test-id="dateRangePicker"] > span`
@@ -103,8 +102,8 @@ module.exports = {
         let risk = fileRisk.trim();
         let element = this.getChartElement(chart)
         within(element, () => {
-                I.click("//span[contains(.,'" + risk + "')]")
-                    .catch(() =>  I.say('Required options not found'));
+            I.click("//span[contains(.,'" + risk + "')]")
+                .catch(() =>  I.say('Required options not found'));
         })
     },
 
@@ -124,7 +123,7 @@ module.exports = {
         this.filterByRisk(element, risk);
         within(element, () => {
             try {
-               sector = this.legend.label_ + risk
+                sector = this.legend.label_ + risk
             } catch (e) {
                 I.say('errors, sector element not found')
                 console.warn(e);
@@ -139,7 +138,7 @@ module.exports = {
         this.filterByRisk(element, risk);
         within(element, async () => {
             try {
-            count = await I.grabValueFrom(this.legend.label_+ risk)
+                count = await I.grabValueFrom(this.legend.label_+ risk)
             } catch (e) {
                 I.say('errors, unable to retrieve value')
                 console.warn(e);
@@ -200,36 +199,34 @@ module.exports = {
     },
 
     setCustomTimeRange(start, end){
-       const startArr = start.split(" ");
-       const startTime = startArr[1];
-       const startTimePeriod = startArr[2];
-       this.setTime(startTime, startTimePeriod, "start");
+        const startArr = start.split(" ");
+        const startDate = startArr[0];
+        const startTime = startArr[1];
+        const startTimePeriod = startArr[2];
+        this.setTime(startTime, startTimePeriod, "start");
+        this.setDate(startDate);
+    },
 
-       //21/09/2020
-       let startDate = startArr[0].split("/");
+    setDate(date){
+        let startDate = date[0].split("/");
         const day = startDate[0];
         const month = startDate[1];
         const year = startDate[2];
         this.setMonthYear(month, year);
-
+        I.click("//div[@class='drp-calendar left']/descendant::td[text()=" + day + "]");
     },
 
-    setMonthYear(month, year){
+    async setMonthYear(month, year){
         const monthNamesShort = this.date.en.month_names_short;
+        const leftMonthLocator = this.calendar.leftMonth;
         const givenDate = monthNamesShort[month-1] + " " + year;
-        let calendarDate =  I.grabTextFrom(this.calendar.startMonth);
-        let calendarMonth = calendarDate.split(" ")[0];
-        let monthNumber = 1;
-        for (let i = 0; i < monthNamesShort.length; i++) {
-            if (calendarMonth===monthNamesShort[i]) {
-                monthNumber=i;
-                break;
-            }
+        let calendarLeftDate = await I.grabTextFrom(this.calendar.leftMonth);
+        let calendarLeftMonth = calendarLeftDate.split(" ")[0];
+        if (calendarLeftMonth===month){
+            return leftMonthLocator.substring(2, 33);
         }
-        if (monthNumber>month) {
-            I.click("//div[@class='drp-calendar left']/descendant::th[@class=''prev available']")
-        }
-//todo: describe other variants
+        //todo: else while loop and create a func witch click to any side (prev/next)
+        else return false;
     },
     setTime(time, timePeriod, flag){
         switch (flag){
@@ -257,7 +254,7 @@ module.exports = {
         const endMinsDropdown = this.calendar.endMinsDropdown;
         const endPeriodDropdown = this.calendar.endPeriodDropdown;
 
-      this.setTimeDropdowns(endTime, endTimePeriod, endHourDropdown, endMinsDropdown, endPeriodDropdown);
+        this.setTimeDropdowns(endTime, endTimePeriod, endHourDropdown, endMinsDropdown, endPeriodDropdown);
     },
 
     setTimeDropdowns(time, timePeriod, hourDropdown, minsDropdown, startPeriodDropdown) {
@@ -270,7 +267,7 @@ module.exports = {
     setValueToDropdown(locator, value) {
         I.click(locator);
         I.selectOption(locator, value);
-    }, 
+    },
     async getValueFromDateTimeInput(element) {
         return await I.grabValueFrom(element);
     },
