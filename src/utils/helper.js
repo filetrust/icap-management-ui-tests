@@ -2,7 +2,7 @@ const Helper = require('@codeceptjs/helper');
 var moment = require('moment');
 const recorder = require('codeceptjs').recorder;
 const event = require('codeceptjs').event;
- const fs = require('fs');
+const fs = require('fs');
 
 class MyHelper extends Helper {
 
@@ -46,15 +46,29 @@ class MyHelper extends Helper {
         }
     }
 
-    async fillInField(selector,value) {
+    async fillInField(selector, value) {
         const helper = this.helpers['Puppeteer'];
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (elVisible) {
-                return helper.fillfield(selector,value);
+                return helper.fillfield(selector, value);
             }
         } catch (err) {
             console.log('Skipping step as element is not visible');
+        }
+    }
+
+    async getRowCount() {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        try {
+            const tableRows = 'tbody tr';
+            let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            console.log(rowCount +' rows are displayed')
+            return rowCount;
+        }
+        catch (err) {
+            console.log(err);
         }
     }
 
@@ -72,11 +86,13 @@ class MyHelper extends Helper {
                         console.log('The result list shows required files with the filter: ' + text);
                     } else {
                         console.error('The result is not as expected, filter found is: ' + text);
-                    }break; }
-                    }
+                    } break;
+                }
+            }
         } catch (err) {
             console.log('Skipping operation as there was a problem getting the cell');
-        } }
+        }
+    }
 
 
     async checkIfReturnedFilesInDateRange(range, col) {
@@ -100,9 +116,9 @@ class MyHelper extends Helper {
         }
     }
 
-        compareThatEqual(word1, word2){
-            return word1.toUpperCase() === word2.toUpperCase();
-        }
+    compareThatEqual(word1, word2) {
+        return word1.toUpperCase() === word2.toUpperCase();
+    }
 
     checkFileIsDownloaded(file) {
         var f = new File(file);
@@ -111,27 +127,27 @@ class MyHelper extends Helper {
         } else {
             write('The file does not exist');
         }
-        }
+    }
 
-   checkFileContains(content) {
-       try{
-       I.amInPath('output/downloads');
-       I.seeInThisFile(content, 'utf8')
-       } catch (err) {
-           console.error('The file does not contain required content:-  '+content);
-       }
-   }
-
-    checkFileExist(path){
-    fs.access(path, fs.F_OK, (err) => {
-        if (err) {
-            console.log('The file does not exist');
-            return;
+    checkFileContains(content) {
+        try {
+            I.amInPath('output/downloads');
+            I.seeInThisFile(content, 'utf8')
+        } catch (err) {
+            console.error('The file does not contain required content:-  ' + content);
         }
-       
-    })
-}
- 
+    }
+
+    checkFileExist(path) {
+        fs.access(path, fs.F_OK, (err) => {
+            if (err) {
+                console.log('The file does not exist');
+                return;
+            }
+
+        })
+    }
+
 }
 
 

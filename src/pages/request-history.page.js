@@ -44,7 +44,9 @@ module.exports = {
         dataTransactionInfo: `//h2[contains(.,'No Transaction Data Found')]`,
         historyTable: `div[class*='RequestHistory_wrapTable__']`,
         fileTableBody: `tbody[class*='MuiTableBody-root']`,
-        fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`
+        fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`,
+        file01: `tr[id='file-01']:nth-of-type(1)`
+
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
@@ -467,6 +469,10 @@ module.exports = {
 
     openFileRecord(fileId) {
         I.click(this.getFileRecord(fileId))
+    },
+
+   openAFileRecord() {
+        I.clickElement(this.table.file01)
     },
 
     checkFileDetailViewId(fileId) {
