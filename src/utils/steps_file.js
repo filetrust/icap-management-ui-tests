@@ -11,8 +11,7 @@ const env = require('../data/credentials.js');
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(`http://localhost:3664`)
-                //'http://management-ui-main.northeurope.cloudapp.azure.com')
+            this.amOnPage('http://management-ui-main.northeurope.cloudapp.azure.com')
                 //"http://k8-proxy.github.io/p-ui-wireframes/";
         },
 
