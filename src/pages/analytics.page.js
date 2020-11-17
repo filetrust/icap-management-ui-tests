@@ -1,3 +1,4 @@
+const MyHelper = require("../utils/helper");
 const { I } = inject();
 
 module.exports = {
@@ -6,8 +7,6 @@ module.exports = {
 
     inputs: {
         dateFilter: 'div[data-test-id="dateRangePicker"] > span',
-        // datetimeFrom: 'div[class^=MuiInputBase-inputAdornedEnd]::before > input',
-        // datetimeTo: 'div[class^=MuiInputBase-inputAdornedEnd]::after > input',
         reportrange: `div[id='reportrange'] > span`,
     },
     sections: {
@@ -22,21 +21,22 @@ module.exports = {
 
     },
     calendar: {
-        datetime_left: `input[id='datetime-local-left']`,
-        datetime_right: `input[id='datetime-local-right']`,
         daterangepicker: `div[class*='daterangepicker']`,
-        onehour: `div[class*='ranges'] > ul > li:nth-of-type(1)`,
-        twelvehours: `div[class*='ranges'] > ul > li:nth-of-type(2)`,
-        twenty4hours: `div[class*='ranges'] > ul > li:nth-of-type(3)`,
-        customrange: `div[class*='ranges'] > ul > li:nth-of-type(4)`,
-        daterangeselected: `span[class*='drp-selected']`,
+        //daterangeselected: `span[class*='drp-selected']`,
         cancelBtn: `button[class*='cancelBtn']`,
         applyBtn: `button[class*='applyBtn']`,
         next: `th[class*='next']`,
         prev: `th[class*='prev']`,
+        startHourDropdown: `//div[@class='drp-calendar left']/descendant::select[@class='hourselect']`,
+        startMinsDropdown: `//div[@class='drp-calendar left']/div[@class='calendar-time']/select[@class='minuteselect']`,
+        startPeriodDropdown: `//div[@class='drp-calendar left']/div[@class='calendar-time']/select[@class='ampmselect']`,
+        endHourDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='hourselect']`,
+        endMinsDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='minuteselect']`,
+        endPeriodDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='ampmselect']`,
+        startMonth: `//div[@class='drp-calendar left']/descendant::th[@class="month"]`,
     },
     button: {
-        datetime: `div[data-test-id="dateRangePicker"]`
+        datetime: `div[data-test-id="dateRangePicker"] > span`
     },
     popup: {
         timeIntervalPopup: 'div[class^=Popup_Popup__]'
@@ -187,29 +187,73 @@ module.exports = {
      * ***************************************************************
      */
 
-    openDatetimeStart() {
-        const element = this.buttons.datetime_left;
-        I.click(element);
+    selectTimeInterval(timeInterval) {
+        I.click(this.buttons.datetime);
+        I.click("li[data-range-key='"+ timeInterval + "']");
     },
 
-    openDatetimeEnd() {
-        const element = this.buttons.datetime_right;
-        I.click(element);
+    setCustomTimeRange(start, end){
+       const startArr = start.split(" ");
+       const startTime = startArr[1];
+       const startTimePeriod = startArr[2];
+       this.setTime(startTime, startTimePeriod, "start");
+
+       //21/09/2020
+       let startDate = startArr[0].split("/");
+        const day = startDate[0];
+        const month = startDate[1];
+        const year = startDate[2];
+        this.chooseTimeInterval()
+
+
+    },
+    setTime(time, timePeriod, flag){
+        switch (flag){
+            case("start"):
+                this.setStartTime(time, timePeriod);
+                break;
+            case("end"):
+                this.setEndTime(time, timePeriod);
+                break;
+            default:
+                I.say("No such element");
+        }
     },
 
-    async setDatetimelocalleft(value) {
-        const element = await this.getDatetimelocalleftElement();
-        await element.type(value);
+    setStartTime(startTime, startTimePeriod){
+        const startHourDropdown = this.calendar.startHourDropdown;
+        const startMinsDropdown = this.calendar.startMinsDropdown;
+        const startPeriodDropdown = this.calendar.startPeriodDropdown;
+
+        this.setTimeDropdowns(startTime, startTimePeriod, startHourDropdown, startMinsDropdown, startPeriodDropdown);
     },
 
+    setEndTime(endTime, endTimePeriod){
+        const endHourDropdown = this.calendar.endHourDropdown;
+        const endMinsDropdown = this.calendar.endMinsDropdown;
+        const endPeriodDropdown = this.calendar.endPeriodDropdown;
+
+      this.setTimeDropdowns(endTime, endTimePeriod, endHourDropdown, endMinsDropdown, endPeriodDropdown);
+    },
+
+    setTimeDropdowns(time, timePeriod, hourDropdown, minsDropdown, startPeriodDropdown) {
+        const hourMinsArr = time.split(":");
+        this.setValueToDropdown(hourDropdown, hourMinsArr[0]);
+        this.setValueToDropdown(minsDropdown, hourMinsArr[1]);
+        this.setValueToDropdown(startPeriodDropdown, timePeriod);
+    },
+
+    setValueToDropdown(locator, value) {
+        I.click(locator);
+        I.selectOption(locator, value);
+    }, 
     async getValueFromDateTimeInput(element) {
         return await I.grabValueFrom(element);
     },
 
-    chooseTimeInterval(timeInterval) {
-        const datetimeButton = this.buttons.datetime;
-        I.click(datetimeButton);
-        I.click("li[data-range-key='"+ timeInterval + "']");
+    clickApply() {
+        const element = this.buttons.apply;
+        I.click(element);
     },
 
 
