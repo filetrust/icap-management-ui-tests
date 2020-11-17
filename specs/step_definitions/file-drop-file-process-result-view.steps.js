@@ -34,7 +34,7 @@ When(/^I process a supported sanitisation file (.*) with remedy items$/, (active
 });
 
 Then(/^the notification message is displayed as(.*)$/, (processStatus) => {
-    I.see(processStatus.trim(), filedropPage.sections.analysisReportView)
+    I.seeInSource(processStatus.trim())
 });
 
 Then(/^I see the list of sanitised active contents with expected(.*)$/, (activeContent) => {

@@ -7,16 +7,16 @@ module.exports = {
     //Locators   
 
     fields: {
-        newUserNameField: `div[class*='Input_Input__17Nwp'] > input`,
-        newUserEmailField: `div[class*='User_tr__ppbfc'] > div:nth-of-type(2)`,
+        newUserNameField: `div[class*='Input_Input__'] > input`,
+        newUserEmailField: `div[class*='User_tr__'] > div:nth-of-type(2)`,
         errorMessage: ""
     },
     buttons: {
-        addUser: `div[class*='Users_header__2gDwu'] > button`,
+        addUser: `div[class*='Users_header__'] > button`,
         deleteUser: `svg[id='Layer_1'] > path:nth-of-type(1)`,
     },
     table: {
-        userTable: `div[class*='Users_table__3T8bv']`,
+        userTable: `div[class*='Users_table__']`,
     },
 
     //Methods
@@ -27,12 +27,12 @@ module.exports = {
         */
     clickAddUserBtn() {
         const element = this.buttons.addUser;
-        I.click(element);
+        I.clickElement(element);
     },
 
     setNewUserName(userName) {
         const element = this.fields.newUserNameField;
-        I.fillField(element, userName);
+        I.fillInField(element, userName);
     },
 
     async getNewUserRowNameInput() {
@@ -44,7 +44,7 @@ module.exports = {
     },
     setNewUserEmail(userEmail) {
         const element = this.fields.newUserEmailField;
-        I.fillField(element, userEmail);
+        I.fillInField(element, userEmail);
     },
 
     addUser(userName, userEmail, userGroup) {

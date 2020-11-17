@@ -7,35 +7,39 @@ module.exports = {
     //Locators   
 
     sections: {
-        filedropModal: `div[class*='StyledDropzone_border__92UuO']`,
-        analysisReportView: `div[data-test-id='divFileDropResults']`,
-        fileAttributeView: `div[class*='FileAttributes_FileAttributes__13JsG']`,
-        activeContentView: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(1)`,
-        repairedObjestsView: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(2)`,
-        unrepairedObjectsView: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(3)`,
-        fileiscleanElement: `div[class*='SectionTitle_SectionTitle__1y7-1']`,
+        filedropModal: `div[class*='StyledDropzone_border__']`,
+        analysisReportView: `$divFileDropResults`,
+        fileSize: `tr:nth-child(2) > td:nth-child(2)`,
+        fileName: `tr:nth-child(2) > td:nth-child(1)`,
+        fileType: `tr:nth-child(2) > td:nth-child(3)`,
+        fileAttributeView: `div[class*='FileAttributes_FileAttributes__']`,
+        activeContentView: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(1)`,
+        repairedObjestsView: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(2)`,
+        unrepairedObjectsView: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(3)`,
+        fileiscleanElement: `div[class*='SectionTitle_SectionTitle__']`,
         notification: `div[class*='react-toast-notifications__toast__content']`,
-        fileProcessStatus: `div[class*='FileDrop_message__3pcoB']`
+        fileProcessStatus: `div[class*='FileDrop_message__']`
     },
     buttons: {
-        fileSelectButton: `button[class*='Button_button__1V1sR']`,
-        pdf: `div[class*='RenderResults_buttons__1XTWu'] > button:nth-of-type(1)`,
-        xml: `div[class*='RenderResults_buttons__1XTWu'] > button:nth-of-type(2)`,
-        refresh: `button[class*='IconButton_IconButton__1Dhtl']`,
-        downloadAnalysisReport: `button[class*='DownloadAnalysisReport_button__1Uy0T']`,
-        viewresult: `button[class*='FileDrop_button__']`,
+        fileSelectButton: `button[class*='Button_button__']`,
+        pdf: `//button[contains(.,'PDF')]`,
+        xml: `//button[contains(.,'XML')]`,
+        refresh: `button[class*='IconButton_IconButton__']`,
+        downloadAnalysisReport: `button[class*='DownloadAnalysisReport_button__']`,
+        viewresult: `button[data-test-id='buttonFileDropViewResult']`,
+        viewresultByXpath: `//button[contains(.,'VIEW RESULT')]`,
         fileInput: `input[type = file]`,
         downloadFile: ''
     },
     table:{
-        fileAttribute: `table[class*='FileAttributes_table__211rg']`,
-        activeContent: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(1) > table`,
-        repairedObjest: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(2) > table`,
-        unrepairedObject: `div[class*='RenderAnalysis_RenderAnalysis__1DRB7'] > div:nth-of-type(3) > table`,
+        fileAttribute: `table[class*='FileAttributes_table__']`,
+        activeContent: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(1) > table`,
+        repairedObjest: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(2) > table`,
+        unrepairedObject: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(3) > table`,
         cell:{
-            fileName: `table[class*='FileAttributes_table__211rg'] > tbody > tr:nth-of-type(1) > td:nth-of-type(2)`,
-            fileSize: `table[class*='FileAttributes_table__211rg'] > tbody > tr:nth-of-type(2) > td:nth-of-type(2)`,
-            fileType: `table[class*='FileAttributes_table__211rg'] > tbody > tr:nth-of-type(3) > td:nth-of-type(2)`,
+            fileName: `table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(1) > td:nth-of-type(2)`,
+            fileSize: `table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(2) > td:nth-of-type(2)`,
+            fileType: `table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(3) > td:nth-of-type(2)`,
         }
         },
     
@@ -54,8 +58,8 @@ module.exports = {
     },
 
     clickViewResult() {
-        const element = this.buttons.viewresult;
-        I.click(element);
+        const element = this.buttons.viewresultByXpath;
+        I.clickElement(element);
     },
 
     clickRefresh() {
@@ -76,11 +80,6 @@ module.exports = {
 
     clickDownloadAnalysisReport() {
         const element = this.buttons.downloadAnalysisReport;
-        I.click(element);
-    },
-
-    clickDownloadFile() {
-        const element = this.buttons.downloadFile;
         I.click(element);
     },
 
@@ -109,5 +108,10 @@ module.exports = {
       getFileType() {
           const element = this.table.cell.fileType;
          I.grabTextFrom(element)
+      },
+
+      isFileDownloaded(file) {
+         return I.checkFileExist("output/downloads/" + file)
       }
+
 }

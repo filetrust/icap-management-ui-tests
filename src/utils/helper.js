@@ -2,6 +2,7 @@ const Helper = require('@codeceptjs/helper');
 var moment = require('moment');
 const recorder = require('codeceptjs').recorder;
 const event = require('codeceptjs').event;
+ const fs = require('fs');
 
 class MyHelper extends Helper {
 
@@ -19,16 +20,41 @@ class MyHelper extends Helper {
 
     //          })
 
-    async checkIfVisible(selector, ...options) {
+    async getText(selector, ...options) {
         const helper = this.helpers['Puppeteer'];
         try {
             const numVisible = await helper.grabNumberOfVisibleElements(selector);
-
             if (numVisible) {
                 return await helper.grabTextFrom(selector, ...options);
             }
         } catch (err) {
-            console.log('Skipping operation as element is not visible');
+            console.log('Skipping text grab as element is not visible');
+        }
+    }
+
+    async clickElement(selector) {
+        const helper = this.helpers['Puppeteer'];
+        try {
+            const elVisible = await helper.grabNumberOfVisibleElements(selector);
+            if (elVisible) {
+                return helper.click(selector);
+            } else {
+                console.log('The element is not visible')
+            }
+        } catch (err) {
+            console.log('Skipping step as element is not visible');
+        }
+    }
+
+    async fillInField(selector,value) {
+        const helper = this.helpers['Puppeteer'];
+        try {
+            const elVisible = await helper.grabNumberOfVisibleElements(selector);
+            if (elVisible) {
+                return helper.fillfield(selector,value);
+            }
+        } catch (err) {
+            console.log('Skipping step as element is not visible');
         }
     }
 
@@ -77,6 +103,27 @@ class MyHelper extends Helper {
         compareThatEqual(word1, word2){
             return word1.toUpperCase() === word2.toUpperCase();
         }
+
+    checkFileIsDownloaded(file) {
+        var f = new File(file);
+        if (f.exists()) {
+            write('The file is downloaded');
+        } else {
+            write('The file does not exist');
+        }
+        }
+
+   
+    checkFileExist(path){
+    fs.access(path, fs.F_OK, (err) => {
+        if (err) {
+            console.log('The file does not exist');
+            return;
+        }
+       
+    })
+}
+ 
 }
 
 
