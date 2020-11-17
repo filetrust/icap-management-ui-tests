@@ -4,7 +4,7 @@ const {
 
 module.exports = {
 
-    //Locators   
+    //Locators
 
     sections: {
         filedropModal: `div[class*='StyledDropzone_border__']`,
@@ -41,8 +41,8 @@ module.exports = {
             fileSize: `table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(2) > td:nth-of-type(2)`,
             fileType: `table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(3) > td:nth-of-type(2)`,
         }
-        },
-    
+    },
+
 
 
     //Methods
@@ -114,4 +114,8 @@ module.exports = {
          return I.checkFileExist("output/downloads/" + file)
       }
 
+    assertAnalysisReportDownload(analysisReport) {
+        I.amInPath('output/downloads');
+        I.seeFileNameMatching(analysisReport);
+    }
 }

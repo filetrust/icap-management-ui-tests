@@ -63,6 +63,7 @@ module.exports = function () {
             this.wait(5)
         },
 
+
         // uploadFileByType: function (fileType) {
         //     let path = null;
         //     switch (fileType) {
@@ -86,5 +87,43 @@ module.exports = function () {
         // },
 
         
+
+        uploadFileWithNoSanitiseData: function (file) {
+            this.attachFile(filedropPage.buttons.fileInput, file)
+            this.waitForElement(filedropPage.buttons.refresh,60)
+        },
+
+        uploadFileByType: function (fileType) {
+            let path = null;
+            switch (fileType) {
+                case ('Safe_file'):
+                    path = 'src/data/input/types/safe_file.xlsx';
+                    break;
+                case ('Blocked_file'):
+                    path = 'src/data/input/types/blocked_file.doc';
+                    break;
+                //todo: add file
+                case ('Dangerous_file'):
+                    path = 'src/data/input/types/dangerous_file.doc';
+                    break;
+                case ('Unclassified_file'):
+                    path = 'src/data/input/unsupported_icaptest.ps1';
+                    break;
+                default:
+                    throw 'There is not such file type.'
+            }
+            this.uploadFile(path);
+        },
+
+        fail(message) {
+            assert.fail(message);
+        },
+
+        onIcapProxyPage: function () {
+            this.amOnPage("https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/");
+            this.wait(5)
+        },
+
+
     });
 };
