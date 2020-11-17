@@ -14,9 +14,9 @@ Given('I am logged into the ui', () => {
     I.loginNoPwd();
 });
 
-Given('I have logged into the ui and has navigated to the Users page', () => {
-    homePage.clickUsers();
-    I.seeElement(usersPage.table.userTable);
+Given('I have logged into the ui and navigated to the Users page', () => {
+    I.goToUsers();
+    I.seeElement('tbody');
 });
 
 When('I observe my account', () => {
@@ -27,10 +27,7 @@ Then('there will be no delete button next to my account', () => {
     I.dontSeeElement(usersPage.buttons.deleteUser);
 });
 
-Given('I have logged into the ui and navigated to the Users page', () => {
-    I.loginNoPwd();
-    homePage.clickUsers();
-});
+
 When('I add a new user with a valid {string}', (email) => {
     userEmail = email;
     usersPage.addUser('', email, '');

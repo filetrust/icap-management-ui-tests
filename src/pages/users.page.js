@@ -27,12 +27,12 @@ module.exports = {
         */
     clickAddUserBtn() {
         const element = this.buttons.addUser;
-        I.click(element);
+        I.clickElement(element);
     },
 
     setNewUserName(userName) {
         const element = this.fields.newUserNameField;
-        I.fillField(element, userName);
+        I.fillInField(element, userName);
     },
 
     async getNewUserRowNameInput() {
@@ -44,7 +44,7 @@ module.exports = {
     },
     setNewUserEmail(userEmail) {
         const element = this.fields.newUserEmailField;
-        I.fillField(element, userEmail);
+        I.fillInField(element, userEmail);
     },
 
     addUser(userName, userEmail, userGroup) {

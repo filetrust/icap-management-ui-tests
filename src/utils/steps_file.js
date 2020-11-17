@@ -38,7 +38,7 @@ module.exports = function () {
 
         goToFileDrop: function () {
             homePage.clickFileDrop();
-            I.seeElement(filedropPage.buttons.fileSelectButton)
+            this.waitForElement(filedropPage.buttons.fileSelectButton)
         },
 
         goToUsers: function () {
@@ -59,13 +59,36 @@ module.exports = function () {
         },
 
         uploadFile: function (file) {
-            this.attachFile(filedropPage.buttons.fileInput, file);
-            this.waitForElement(filedropPage.buttons.viewresult, 30);
-       //     this.waitForElement(filedropPage.sections.analysisReportView,30)
+
+            this.attachFile(filedropPage.buttons.fileInput, file)
+            this.wait(5)
+
         },
-        clickViewResultButton(){
-            I.click(filedropPage.buttons.viewresult);
-        },
+
+
+        // uploadFileByType: function (fileType) {
+        //     let path = null;
+        //     switch (fileType) {
+        //         case ('Safe_file'):
+        //             path = 'src/data/input/types/safe_file.xlsx';
+        //             break;
+        //         case ('Blocked_file'):
+        //             path = 'src/data/input/types/blocked_file.doc';
+        //             break;
+        //         //todo: add file
+        //         case ('Dangerous_file'):
+        //             path = 'src/data/input/types/dangerous_file.doc';
+        //             break;
+        //         case ('Unclassified_file'):
+        //             path = 'src/data/input/unsupported_icaptest.ps1';
+        //             break;
+        //         default:
+        //             throw 'There is not such file type.'
+        //     }
+        //     this.uploadFile(path);
+        // },
+
+        
 
         uploadFileWithNoSanitiseData: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
@@ -102,6 +125,7 @@ module.exports = function () {
             this.amOnPage("https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/");
             this.wait(5)
         },
+
 
     });
 };
