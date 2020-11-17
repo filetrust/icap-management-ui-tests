@@ -5,8 +5,9 @@ module.exports = {
     //Locators   
 
     inputs: {
-        datetimeFrom: 'div[class^=MuiInputBase-inputAdornedEnd]::before > input',
-        datetimeTo: 'div[class^=MuiInputBase-inputAdornedEnd]::after > input',
+        dateFilter: 'div[data-test-id="dateRangePicker"] > span',
+        // datetimeFrom: 'div[class^=MuiInputBase-inputAdornedEnd]::before > input',
+        // datetimeTo: 'div[class^=MuiInputBase-inputAdornedEnd]::after > input',
         reportrange: `div[id='reportrange'] > span`,
     },
     sections: {
@@ -35,7 +36,7 @@ module.exports = {
         prev: `th[class*='prev']`,
     },
     button: {
-        datetime: 'button[class*=DateAndTimePickers_intervalButton__]'
+        datetime: `div[data-test-id="dateRangePicker"]`
     },
     popup: {
         timeIntervalPopup: 'div[class^=Popup_Popup__]'
@@ -50,13 +51,13 @@ module.exports = {
         rechart_sector: `path.recharts-sector`,
         rechart_line: `path.recharts-curve.recharts-line-curve`,
         riskLabels: `g[class*='recharts-pie-labels']`,
-        rechartsTwo: `.recharts-wrapper:nth-child(2) > .recharts-surface`,
-        rechartsOne: `.recharts-wrapper:nth-child(1) > .recharts-surface`,
-        label_Safe: `path[fill*='#6262B7']`,
-        label_Blocked: `path[fill*=' #e1974e']`,
-        label_Dangerous: `path[fill*='']`,
-        label_Unclassified: `path[fill*='#4C9BCC']`,
-        label_Checked: `path[fill*='#7A7A7A']`,
+        rechartsTwo: `div[data-test-id='pieChart'] > div > svg`,
+        rechartsOne: `div[data-test-id='lineChart'] > div > div > svg`,
+        label_Safe: `path[fill*='#91CAA8']`,
+        label_AllowedByNCFS: `path[fill*='#85B5D5']`,
+        label_BlockedByNCFS: `path[fill*='#D47779']`,
+        label_BlockedByPolicy: `path[fill*='#DF9F81']`,
+        label_AllowedByPolicy: `path[fill*='#91E1F3']`,
     },
 
     //class="recharts-layer"
@@ -95,19 +96,8 @@ module.exports = {
         let risk = fileRisk.trim();
         let element = this.getChartElement(chart)
         within(element, () => {
-            if (risk === 'Safe') {
-                I.click(this.legend.safe);
-            } else if (risk === 'Blocked') {
-                I.click(this.legend.blocked)
-            } else if (risk === 'Dangerous') {
-                I.click(this.legend.dangerous)
-            } else if (risk === 'Unclassified') {
-                I.click(this.legend.unclassified)
-            } else if (risk === 'Checked') {
-                I.click(this.legend.checked)
-            } else {
-                I.say('Required options not found')
-            }
+                I.click("//span[contains(.,'" + risk + "')]")
+                    .catch(() =>  I.say('Required options not found'));
         })
     },
 
@@ -174,14 +164,14 @@ module.exports = {
                 I.assertEqual(countsectors, 1, "The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
                 if (riskLabel === 'Safe') {
                     I.seeElement(this.legend.label_Safe)
-                } else if (label === 'Blocked') {
-                    I.seeElement(this.legend.label_Blocked)
-                } else if (label === 'Dangerous') {
-                    I.seeElement(this.legend.label_Dangerous)
-                } else if (label === 'Unclassified') {
-                    I.seeElement(this.legend.label_Unclassified)
-                } else if (label === 'Checked') {
-                    I.seeElement(this.legend.label_Checked)
+                } else if (label === 'Allowed By NCFS') {
+                    I.seeElement(this.legend.label_AllowedByNCFS)
+                } else if (label === 'Blocked By NCFS') {
+                    I.seeElement(this.legend.label_BlockedByNCFS)
+                } else if (label === 'Blocked By Policy') {
+                    I.seeElement(this.legend.label_BlockedByPolicy)
+                } else if (label === 'Allowed By Policy') {
+                    I.seeElement(this.legend.label_AllowedByPolicy)
                 } else {
                     I.say('Required options not found')
                 }
@@ -219,31 +209,14 @@ module.exports = {
     chooseTimeInterval(timeInterval) {
         const datetimeButton = this.buttons.datetime;
         I.click(datetimeButton);
-        I.click(timeInterval.toUpperCase());
+        I.click("li[data-range-key='"+ timeInterval + "']");
     },
 
 
     async checkDateTimeFilterValues(dateRange) {
-        const array = dateRange.split(" ");
-        const dateFrom = array[0];
-        const timeFrom = array[1];
-        const dateTo = array[3];
-        const timeTo = array[4];
-
-        I.seeTextEquals(dateFrom + " " + this.convertTimeFrom24To12(timeFrom), this.inputs.datetimeFrom);
-        I.seeTextEquals(dateTo + " " + this.convertTimeFrom24To12(timeTo), this.inputs.datetimeTo);
-
+        I.seeInField(this.inputs.dateFilter, dateRange);
     },
 
-    convertTimeFrom12To24(time, modifier) {
-        let timeArray = time.split(":");
-        let hours = timeArray[0];
-        let mins = timeArray[1];
-        if (modifier === 'PM') {
-            hours = parseInt(hours, 10) + 12;
-        }
-        return hours + ":" + mins;
-    },
 
     //23:00 --> 11:00 PM; 11:00 --> 11:00 AM
     convertTimeFrom24To12(time) {

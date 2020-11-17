@@ -19,7 +19,7 @@ module.exports = {
         menu: `section[class*='Toolbar_Toolbar__']`,
     },
     links: {
-        analytics: `//a[contains(.,'Analytics')]`,
+        analytics: `a[href*="analytics"] > div`,
         fileDrop: `a[href*='file-drop'] > div`,
         requestsHistory: `a[href*='request-history'] > div`,
         policy: `a[href*='policy'] > div`,
