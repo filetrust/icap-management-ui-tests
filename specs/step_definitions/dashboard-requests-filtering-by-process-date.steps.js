@@ -14,7 +14,6 @@ Given('I have navigated to the Dashboard page', () => {
     I.goToAnalytics();
 });
 
-
 Then('the requests for the selected {string} are displayed', () => {
 //todo: write step definition after function implementation
 });
@@ -24,15 +23,13 @@ Then(/^the date range for the selected period is displayed in the Date\/Time fie
 });
 
 When('I make a time selection with {string}',  (option) => {
-    I.click(analyticsPage.button.datetime);
-    I.click("li[data-range-key='"+ option + "']");
-  //  analyticsPage.selectTimeInterval(option);
+   analyticsPage.selectTimeInterval(option);
 });
 When('I set the {string} and {string}',  (datetimeStart, dateTimeEnd) =>{
     analyticsPage.setCustomTimeRange(datetimeStart, dateTimeEnd);
 });
 When('I click apply',  () => {
-    analyticsPage.clickApply();
+    I.click(analyticsPage.calendar.applyBtn);
 });
 Then(/^the date range for the selected period is displayed in the Date\/Time field as dateRange for current time$/,  () => {
 

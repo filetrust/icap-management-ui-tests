@@ -23,7 +23,7 @@ module.exports = {
         daterangepicker: `div[class*='daterangepicker']`,
         //daterangeselected: `span[class*='drp-selected']`,
         cancelBtn: `button[class*='cancelBtn']`,
-        applyBtn: `button[class*='applyBtn']`,
+        applyBtn: `//button[text()='Apply']`,
         next: `th[class*='next']`,
         prev: `th[class*='prev']`,
         startHourDropdown: `//div[@class='drp-calendar left']/descendant::select[@class='hourselect']`,
@@ -33,6 +33,7 @@ module.exports = {
         endMinsDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='minuteselect']`,
         endPeriodDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='ampmselect']`,
         leftMonth: `//div[@class='drp-calendar left']/descendant::th[@class="month"]`,
+        rightMonth: `//div[@class='drp-calendar right']/descendant::th[@class="month"]`
     },
     button: {
         datetime: `div[data-test-id="dateRangePicker"] > span`
@@ -57,13 +58,6 @@ module.exports = {
         label_BlockedByNCFS: `path[fill*='#D47779']`,
         label_BlockedByPolicy: `path[fill*='#DF9F81']`,
         label_AllowedByPolicy: `path[fill*='#91E1F3']`,
-    },
-
-    date:locale = {
-        en: {
-            month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-            month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-        }
     },
 
     //class="recharts-layer"
@@ -194,7 +188,7 @@ module.exports = {
      */
 
     selectTimeInterval(timeInterval) {
-        I.click(this.buttons.datetime);
+        I.click(this.button.datetime);
         I.click("li[data-range-key='"+ timeInterval + "']");
     },
 
@@ -203,8 +197,16 @@ module.exports = {
         const startDate = startArr[0];
         const startTime = startArr[1];
         const startTimePeriod = startArr[2];
-        this.setTime(startTime, startTimePeriod, "start");
+
+        const endArr = end.split(" ");
+        const endDate = endArr[0];
+        const endTime = endArr[1];
+        const endTimePeriod = endArr[2];
+
         this.setDate(startDate);
+        this.setTime(startTime, startTimePeriod, "start");
+        this.setDate(endDate);
+        this.setTime(endTime, endTimePeriod, "end");
     },
 
     setDate(date){
@@ -212,21 +214,52 @@ module.exports = {
         const day = startDate[0];
         const month = startDate[1];
         const year = startDate[2];
-        this.setMonthYear(month, year);
-        I.click("//div[@class='drp-calendar left']/descendant::td[text()=" + day + "]");
+        // this.setMonthYear(month, year).then(result => {
+        //     I.click(result+"/descendant::td[text()=" + day + "]");
+        // });
+         I.click("//div[@class='drp-calendar left']/descendant::td[text()=" + day + "]");
     },
 
     async setMonthYear(month, year){
-        const monthNamesShort = this.date.en.month_names_short;
         const leftMonthLocator = this.calendar.leftMonth;
-        const givenDate = monthNamesShort[month-1] + " " + year;
-        let calendarLeftDate = await I.grabTextFrom(this.calendar.leftMonth);
-        let calendarLeftMonth = calendarLeftDate.split(" ")[0];
+        const rightMonthLocator = this.calendar.rightMonth;
+        let results = await Promise.all([
+            this.getMonthNumberFromLocator(leftMonthLocator),
+            this.getMonthNumberFromLocator(rightMonthLocator)
+        ]);
+        let calendarLeftMonth = results[0];
+        let calendarRightMonth = results[1];
+
         if (calendarLeftMonth===month){
             return leftMonthLocator.substring(2, 33);
         }
+        else if (calendarRightMonth===month){
+            return rightMonthLocator.substring(2, 34);
+        }
         //todo: else while loop and create a func witch click to any side (prev/next)
         else return false;
+    },
+   async getMonthNumberFromLocator(locator){
+        let calendarDate = await I.grabTextFrom(locator);
+        let calendarMonth = calendarDate.split(" ")[0];
+        return  this.getMonthNumber(calendarMonth);
+    },
+    getMonthNumber(monthName){
+        const months = {
+            'Jan': '01',
+            'Feb': '02',
+            'Mar': '03',
+            'Apr': '04',
+            'May': '05',
+            'Jun': '06',
+            'Jul': '07',
+            'Aug': '08',
+            'Sep': '09',
+            'Oct': '10',
+            'Nov': '11',
+            'Dec': '12'
+        };
+        return months[monthName];
     },
     setTime(time, timePeriod, flag){
         switch (flag){
@@ -279,7 +312,7 @@ module.exports = {
 
 
     async checkDateTimeFilterValues(dateRange) {
-        I.seeInField(this.inputs.dateFilter, dateRange);
+        I.grabTextFrom(this.inputs.reportrange).then(result => I.assert(dateRange, result));
     },
 
 

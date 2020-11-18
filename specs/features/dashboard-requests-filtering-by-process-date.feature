@@ -16,7 +16,9 @@ Feature: dashboard-requests-filtering-by-process-date
         And the date range for the selected period is displayed in the Date/Time field as '<dateRange>'
         Examples:
             | time         | dateStart           | dateEnd             | dateRange                                 |
-            | Custom Range | 21/09/2020 10:30 AM | 21/09/2020 11:00 AM | 21/09/2020 10:30 AM - 21/09/2020 11:00 AM |
+            | Custom Range | 2/10/2020 10:30 AM  | 2/10/2020 11:00 AM  | 02/10/2020 10:30 AM - 02/10/2020 11:00 AM |
+#            | Custom Range | 21/10/2020 10:30 AM | 21/11/2020 11:00 AM | 21/10/2020 10:30 AM - 21/11/2020 11:00 AM |
+#            | Custom Range | 21/09/2020 10:30 AM | 21/09/2020 11:00 AM | 21/09/2020 10:30 AM - 21/09/2020 11:00 AM |
 
     @TEST-151
     Scenario Outline: I am able to filter the dashboard requests by time
