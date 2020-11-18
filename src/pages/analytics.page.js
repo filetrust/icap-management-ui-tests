@@ -318,7 +318,7 @@ module.exports = {
 
 
     async checkDateTimeFilterValues(dateRange) {
-        I.grabTextFrom(this.inputs.reportrange).then(result => I.assert(dateRange, result));
+        I.seeTextEquals(dateRange, this.inputs.reportrange);
     },
 
 
