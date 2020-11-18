@@ -6,7 +6,7 @@ module.exports = {
 
     inputs: {
         dateFilter: 'div[data-test-id="dateRangePicker"] > span',
-        reportrange: `div[id='reportrange'] > span`,
+        reportrange: `div[id='reportrange']`,
     },
     sections: {
         dashboard_innerTop: `div[class*='Analytics_innerTop__']`,
@@ -185,12 +185,12 @@ module.exports = {
 
     selectTimeInterval(timeInterval) {
         try {
-            I.click(this.button.datetime);
+            I.click(this.inputs.reportrange);
             I.click("li[data-range-key='"+ timeInterval + "']");
         }
         catch (err){
             I.say('Action unsuccessful')
-            console.warn(e);
+            console.warn(err);
         }
     },
 
