@@ -17,7 +17,7 @@ Feature: request-history-log
             | itemCount | fileCount |
             | 25        | 4         |
            
-    
+    @smoke
     @TEST-179
     Scenario Outline: Validate requests log view using a combination of multiple filters
         Given I have navigated to the Request History page

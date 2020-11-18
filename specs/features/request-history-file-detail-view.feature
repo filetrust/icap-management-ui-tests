@@ -4,6 +4,7 @@ Feature: request-history-file-detail-view
     in order to confirm that the solution works as expected
 
     @functional
+    @smoke
     @TEST-169
     Scenario: I am able to view more detail on a file
         Given I am logged into the portal

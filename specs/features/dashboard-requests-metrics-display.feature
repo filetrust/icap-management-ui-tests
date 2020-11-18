@@ -6,7 +6,7 @@ Feature: dashboard-requests-metrics-display
         Given I am logged into the ui
         And I have navigated to the Analytics page
 
-
+    @smoke
     @TEST-223
     Scenario Outline: The file risk count is updated for every file processed based on the outcome
         Given I have confirmed the current risks counts for '<risk>'
@@ -20,7 +20,7 @@ Feature: dashboard-requests-metrics-display
     # | Allowed By NCFS   | Unclassified_file | 1              |
     # | Blocked By NCFS   | Malicious_file    | 1              |
 
-
+    @smoke
     @TEST-224
     Scenario Outline: The count of files requests processed is updated based on processing status
         Given I have confirmed the concurrent counts of total files requests processed

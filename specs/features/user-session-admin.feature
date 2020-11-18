@@ -5,11 +5,13 @@ Feature: user-session-admin
     Background:
         Given I am logged into the ui
 
+    @smoke
     @TEST-
     Scenario: I am able to log out of the ui
         When I hover over my profile and select Log Out
         Then I am taken to the Login Screen
 
+    @smoke
     @TEST-
     Scenario Outline: I am able to update my password
         Given I hover over my profile and select Change Password

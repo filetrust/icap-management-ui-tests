@@ -47,6 +47,7 @@ Feature: non-compliant-files-routing-mechanism
             | Block       | Block              |
             | Refer       | Refer              |
 
+    @smoke
     @TEST-233
     Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
         Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
@@ -63,6 +64,7 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | replace      | file | ''           | alternativeContent |
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
+    @smoke
     @TEST-234
     Scenario Outline: A set routing policy for unprocessable files is correctly applied
         Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
@@ -74,8 +76,8 @@ Feature: non-compliant-files-routing-mechanism
             | fileTypePolicyAction | NcfsDecision | file | responseCode | fileOutcome        |
             | Relay                | NA           | file | 204          | Unmodified         |
             | Block                | NA           | file | 403          | HtmlReport         |
-            | Refer                | relay        | file | 204          | Unmodified         |
-            | Refer                | replace      | file | ''           | alternativeContent |
-            | Refer                | block        | file | 403          | HtmlReport         |
+            # | Refer                | relay        | file | 204          | Unmodified         |
+            # | Refer                | replace      | file | ''           | alternativeContent |
+            # | Refer                | block        | file | 403          | HtmlReport         |
 
 
