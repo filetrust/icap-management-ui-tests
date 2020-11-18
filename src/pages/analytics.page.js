@@ -188,8 +188,14 @@ module.exports = {
      */
 
     selectTimeInterval(timeInterval) {
-        I.click(this.button.datetime);
-        I.click("li[data-range-key='"+ timeInterval + "']");
+        try {
+            I.click(this.button.datetime);
+            I.click("li[data-range-key='"+ timeInterval + "']");
+        }
+        catch (err){
+            I.say('Action unsuccessful')
+            console.warn(e);
+        }
     },
 
     setCustomTimeRange(start, end){
@@ -328,6 +334,38 @@ module.exports = {
             newTime = hours + ":" + mins + " AM";
         }
         return newTime;
-    }
+    },
+
+    getRequiredTime(datetimeTo) {
+        let time = null;
+        try {
+            if (datetimeTo === 'current time') {
+                time = moment();
+            } else {
+                time = datetimeTo
+            }
+        } catch (e) {
+            I.say('errors')
+            console.warn(e);
+        }
+        return time;
+    },
+
+    getPastPeriod(time) {
+        const now = moment();
+        return now.subtract(time, 'h');
+    },
+
+    isTimeApplied(start, end) {
+        let time = null;
+        if (end === 'current time') {
+            time = moment();
+        } else {
+            time = end;
+        }
+        const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
+        const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
+        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+    },
 
 }

@@ -29,6 +29,6 @@ When('I set the {string} and {string}',  (datetimeStart, dateTimeEnd) =>{
 When('I click apply',  () => {
     analyticsPage.clickApply();
 });
-Then(/^the date range for the selected period is displayed in the Date\/Time field as dateRange for current time$/,  () => {
-
+Then('the date range is displayed date from {string} hrs earlier to {string}', (datetimeFrom, datetimeTo) => {
+    analyticsPage.isTimeApplied(datetimeFrom, datetimeTo)
 });
