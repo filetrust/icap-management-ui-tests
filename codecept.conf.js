@@ -25,12 +25,7 @@ exports.config = {
       waitForAction: 2000
     },
     FileSystem: {},
-    AssertWrapper: {
-      require: "codeceptjs-assert"
-    },
-    ChaiWrapper: {
-      require: "codeceptjs-chai"
-    }
+      
   },
   include: {
     I: './src/utils/steps_file.js',
@@ -80,7 +75,7 @@ exports.config = {
   },
   multiple: {
     parallel: {
-      chunks: 10,
+      chunks: 20,
       browsers: ['puppeteer']
     }
   },

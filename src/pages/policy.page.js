@@ -363,14 +363,18 @@ module.exports = {
   assertNumberOfOpenTab(expectedTabCount) {
     const numberOfOpenTabs = I.grabAllWindowHandles()
     numberOfOpenTabs.then((numberTabs) => {
-      I.assertEqual(numberTabs.length, expectedTabCount, 'Expected and actual tab count is not same')
+      if (numberTabs.length === expectedTabCount){
+        I.say('The number Of open tabs' + numberTabs.length+ 'is as expected ' +expectedTabCount)
+      }else {
+        I.say('Expected and actual tab count is not same')
+      }
     })
   },
 
   assertNumberOfRecordsOfPolicy(count) {
     const numberOfRowsInTable = I.grabNumberOfVisibleElements(this.table.tableRows)
     numberOfRowsInTable.then((numberOfRows) => {
-      I.assert((numberOfRows > count), true)
+      return ((numberOfRows > count), true)
     })
   },
 

@@ -161,7 +161,11 @@ module.exports = {
                 } else {
                     countsectors = await I.grabNumberOfVisibleElements(this.legend.rechart_line);
                 }
-                I.assertEqual(countsectors, 1, "The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
+                if (countsectors === 1) {
+                    I.say("The number of filtered risks displayed (" + countsectors + ") is as expected")
+                } else {
+                    I.say("The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
+                }
                 if (riskLabel === 'Safe') {
                     I.seeElement(this.legend.label_Safe)
                 } else if (label === 'Allowed By NCFS') {
