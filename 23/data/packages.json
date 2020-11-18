@@ -1,0 +1,241 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "content-management-policy-application-to-files @content-management-policy-application-to-files",
+    "children" : [ {
+      "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @functional @smoke @TEST-212",
+      "uid" : "f90227eed82884a5",
+      "parentUid" : "d266cbf7acdd59c5f453a4fc2e940bc2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697369864,
+        "stop" : 1605697418303,
+        "duration" : 48439
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @functional @smoke @TEST-212",
+      "uid" : "cc4a712782a70bdf",
+      "parentUid" : "d266cbf7acdd59c5f453a4fc2e940bc2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697418486,
+        "stop" : 1605697455452,
+        "duration" : 36966
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "d266cbf7acdd59c5f453a4fc2e940bc2"
+  }, {
+    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
+    "children" : [ {
+      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+      "uid" : "8b3a6ad6c9910c1f",
+      "parentUid" : "03bbb3585e9d26559b15aeb91751f9ac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697369992,
+        "stop" : 1605697400277,
+        "duration" : 30285
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "03bbb3585e9d26559b15aeb91751f9ac"
+  }, {
+    "name" : "request-history-filtering-by-date @request-history-filtering-by-date",
+    "children" : [ {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+      "uid" : "e8d8d0f23ae95c23",
+      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697370166,
+        "stop" : 1605697388804,
+        "duration" : 18638
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+      "uid" : "f9e6afb139fef1e6",
+      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697388853,
+        "stop" : 1605697404607,
+        "duration" : 15754
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+      "uid" : "f4f44e1771bf4d65",
+      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697404631,
+        "stop" : 1605697420182,
+        "duration" : 15551
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "282c3fa0779844206c0a149d3f1a5b21"
+  }, {
+    "name" : "request-history-file-detail-view @request-history-file-detail-view",
+    "children" : [ {
+      "name" : "I am able to view more detail on a file @functional @TEST-169",
+      "uid" : "5c8acc82932ec501",
+      "parentUid" : "03e5756c40b2d31e5ea5558a1cd57a1d",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697370196,
+        "stop" : 1605697395550,
+        "duration" : 25354
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "03e5756c40b2d31e5ea5558a1cd57a1d"
+  }, {
+    "name" : "request-history-log @request-history-log",
+    "children" : [ {
+      "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\"} @functional @smoke @TEST-189",
+      "uid" : "2c8fa5de2291f23e",
+      "parentUid" : "9d9fcd0eae09492ac804d6e2df8f3111",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697400315,
+        "stop" : 1605697443964,
+        "duration" : 43649
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"Png\"} @functional @smoke @TEST-189",
+      "uid" : "b5e9dae7944a0d7f",
+      "parentUid" : "9d9fcd0eae09492ac804d6e2df8f3111",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697443999,
+        "stop" : 1605697487605,
+        "duration" : 43606
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "9d9fcd0eae09492ac804d6e2df8f3111"
+  }, {
+    "name" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type",
+    "children" : [ {
+      "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+      "uid" : "b3cfb80cb3964bed",
+      "parentUid" : "817b18c8e839984f231f4c3e5d7f8546",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697420229,
+        "stop" : 1605697447491,
+        "duration" : 27262
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+      "uid" : "83d74a511482b2b2",
+      "parentUid" : "817b18c8e839984f231f4c3e5d7f8546",
+      "status" : "failed",
+      "time" : {
+        "start" : 1605697447629,
+        "stop" : 1605697474856,
+        "duration" : 27227
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "817b18c8e839984f231f4c3e5d7f8546"
+  }, {
+    "name" : "Content Management Policy Editing @content-management-policy-editing",
+    "children" : [ {
+      "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-213",
+      "uid" : "a49d272cb2df5cb8",
+      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697455626,
+        "stop" : 1605697477880,
+        "duration" : 22254
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-214",
+      "uid" : "d57d6db2d7153a99",
+      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697477900,
+        "stop" : 1605697500155,
+        "duration" : 22255
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-214",
+      "uid" : "c83e95577f55162e",
+      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697500189,
+        "stop" : 1605697522430,
+        "duration" : 22241
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-215",
+      "uid" : "e2da6a000a3a9193",
+      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697522457,
+        "stop" : 1605697561917,
+        "duration" : 39460
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-215",
+      "uid" : "25eb9d2ef5e436af",
+      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
+      "status" : "passed",
+      "time" : {
+        "start" : 1605697561952,
+        "stop" : 1605697601394,
+        "duration" : 39442
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "262a0365cef9223b0d8606ee810d1d32"
+  } ],
+  "name" : "packages"
+}
