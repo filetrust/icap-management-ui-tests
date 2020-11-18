@@ -60,10 +60,11 @@ module.exports = function () {
         },
 
         uploadFile: function (file) {
+
             this.attachFile(filedropPage.buttons.fileInput, file)
-            this.waitForElement(filedropPage.buttons.refresh, 60)
-            //this.wait(5)
-        },        
+            this.wait(5)
+
+        },
 
         checkFileInFileDrop: function (file){
             this.loginNoPwd()
