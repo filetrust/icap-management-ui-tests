@@ -8,14 +8,9 @@ Feature: Content Management Policy Editing
     Given I am on current policy screen
 
 
-  @TEST-153
-  Scenario: A user selecting the "Current Policy" in the navigation panel will be taken to the current policy page
-    When I click on Current Policy in the navigation panel
-    Then I am taken to the current policy page
-
   @functional
   @smoke
-  @TEST-188
+  @TEST-213
   Scenario Outline: A user can cancel any updates that they have done to the policy by pressing cancel
     When I change one of the <ContentFlags> for required file types <FileType> to <ChangedFlagType>
     And I press the Cancel button
@@ -26,7 +21,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @smoke
-  @TEST-155
+  @TEST-214
   Scenario Outline: I can edit policy content flags
     When I change one of the <ContentFlags> for required file types <FileType> to <FlagType>
     And I press the Save button
@@ -38,7 +33,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @smoke
-  @TEST-Change-all-content-flag-for-all-doc-type
+  @TEST-215
   Scenario Outline: A user is able to change all content flags for all file type in policy page
     When I change all the flag for <FileType> to <FlagType> on policy page
     Then All flags of the <FileType> is changed to <FlagType>
@@ -46,3 +41,7 @@ Feature: Content Management Policy Editing
       | FileType | FlagType |
       | word     | sanitise |
       | pdf      | disallow |
+
+  @TEST-216
+  Scenario Outline: The default Current Policy set is Sanitise
+    Then I see all content flags set to Sanitise

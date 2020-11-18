@@ -10,18 +10,18 @@ Given("I am logged into the ui", () => {
 
 Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();
-    pause();
+    //pause();
 });
 
 When('I click on a available file record with id {string}', (fileId) => {
     //requesthistoryPage.filterByFileId(fileId)
-    requesthistoryPage.openFileRecord(fileId)
+    requesthistoryPage.openAFileRecord()
 });
 
-Then('the file detail view opens with the {string} displayed at the top', (fileId) => {
+Then('the file detail view opens', () => {
     I.wait(5)
-    //I.seeElementInDOM(requesthistoryPage.modal.fileDetailModal)
-    requesthistoryPage.checkFileDetailViewId(fileId)
+    I.seeElement(requesthistoryPage.modal.fileDetailModal)
+    //requesthistoryPage.checkFileDetailViewId(fileId)
 
 });
 

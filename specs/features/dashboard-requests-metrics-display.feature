@@ -13,11 +13,13 @@ Feature: dashboard-requests-metrics-display
         When I process a '<file>' through the icap server
         Then the risk sector '<risk>' is available and shows the count updated by '<increasedValue>'
         Examples:
-            | risk         | file              | increasedValue |
-            | Safe         | Safe_file         | 1              |
-            | Blocked      | Malicious_file    | 1              |
-            | Dangerous    | Malware_file      | 1              |
-            | Unclassified | Unclassified_file | 1              |
+            | risk              | file             | increasedValue |
+            | Safe              | safe_file.xlsx   | 1              |
+            | Blocked By Policy | blocked_file.doc | 1              |
+            | Allowed By Policy | issues.docx      | 1              |
+    # | Allowed By NCFS   | Unclassified_file | 1              |
+    # | Blocked By NCFS   | Malicious_file    | 1              |
+
 
     @TEST-224
     Scenario Outline: The count of files requests processed is updated based on processing status
@@ -27,9 +29,9 @@ Feature: dashboard-requests-metrics-display
         And the Total icap requests is increased by '<TRUpdateByValue>'
         And the max files per second processed is increased by '<MFUpdateByValue>'
         Examples:
-            | file              | fileOutcome  | TFUpdateByValue | TRUpdateByValue | MFUpdateByValue |
-            | Safe_file         | Safe         | 1               | 1               | 1               |
-            | Malicious_file    | Blocked      | 0               | 1               | 0               |
-            | Malware_file      | Dangerous    | 0               | 1               | 0               |
-            | Unclassified_file | Unclassified | 0               | 1               | 1               |
+            | file              | fileOutcome       | TFUpdateByValue | TRUpdateByValue | MFUpdateByValue |
+            | safe_file.xlsx    | Safe              | 1               | 1               | 1               |
+            | blocked_file.doc  | Blocked By Policy | 0               | 1               | 0               |
+            | issues.docx       | Allowed By Policy | 0               | 1               | 0               |
+            | Unclassified_file | Unclassified      | 0               | 1               | 1               |
 
