@@ -1,0 +1,227 @@
+{
+  "uid" : "f57efc3390f66156",
+  "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"file\",\"responseCode\":\"204\",\"fileOutcome\":\"Unmodified\"} @smoke @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"file\",\"responseCode\":\"204\",\"fileOutcome\":\"Unmodified\"} @smoke @TEST-234",
+  "historyId" : "b84211aa2f0e4eb5ffb9813b5e7b7b3a",
+  "time" : {
+    "start" : 1605729339753,
+    "stop" : 1605729355373,
+    "duration" : 15620
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system",
+  "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system",
+    "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: setUnprocessableFileAsRelay ",
+      "time" : {
+        "start" : 1605729350712,
+        "stop" : 1605729353026,
+        "duration" : 2314
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//label[@for='relay-Un-Processable-File-Types']\"",
+        "time" : {
+          "start" : 1605729350713,
+          "stop" : 1605729352925,
+          "duration" : 2212
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickFileDrop ",
+      "time" : {
+        "start" : 1605729353026,
+        "stop" : 1605729355366,
+        "duration" : 2340
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"a[href*='file-drop'] > div\"",
+        "time" : {
+          "start" : 1605729353026,
+          "stop" : 1605729355366,
+          "duration" : 2340
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: goToFileDrop ",
+      "time" : {
+        "start" : 1605729355366,
+        "stop" : 1605729355372,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='Button_button__']\"",
+        "time" : {
+          "start" : 1605729355366,
+          "stop" : 1605729355372,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"file\"",
+      "time" : {
+        "start" : 1605729355373,
+        "stop" : 1605729355373,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"file\"",
+        "time" : {
+          "start" : 1605729355373,
+          "stop" : 1605729355373,
+          "duration" : 0
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "52bee290e46b1cde",
+      "name" : "Last Seen Screenshot",
+      "source" : "52bee290e46b1cde.png",
+      "type" : "image/png",
+      "size" : 22876
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"file\",\"responseCode\":\"204\",\"fileOutcome\":\"Unmodified\"} @smoke @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "c63a3e46b6616ea",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/24//#testresult/c63a3e46b6616ea",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/file can not be found on local system",
+        "time" : {
+          "start" : 1605728257501,
+          "stop" : 1605728273122,
+          "duration" : 15621
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@TEST-234", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "f57efc3390f66156.json",
+  "parameterValues" : [ ]
+}
