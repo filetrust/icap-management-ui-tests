@@ -1,0 +1,545 @@
+{
+  "uid" : "a5baa73035bb8a5d",
+  "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+  "historyId" : "a0596f5c2616a4ba1ed85d4e37749f05",
+  "time" : {
+    "start" : 1605710782051,
+    "stop" : 1605710809257,
+    "duration" : 27206
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"//tbody\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"//tbody\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabTextFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1570:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"//tbody\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"//tbody\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabTextFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1570:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "homePage: clickRequestsHistory ",
+      "time" : {
+        "start" : 1605710790674,
+        "stop" : 1605710793015,
+        "duration" : 2341
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1605710790674,
+          "stop" : 1605710792907,
+          "duration" : 2233
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1605710793015,
+        "stop" : 1605710797659,
+        "duration" : 4644
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1605710793015,
+          "stop" : 1605710795227,
+          "duration" : 2212
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1605710795234,
+          "stop" : 1605710795242,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1605710795343,
+          "stop" : 1605710797555,
+          "duration" : 2212
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1605710797659,
+        "stop" : 1605710800012,
+        "duration" : 2353
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(1) > p\"",
+        "time" : {
+          "start" : 1605710797659,
+          "stop" : 1605710799910,
+          "duration" : 2251
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: docx",
+        "time" : {
+          "start" : 1605710799911,
+          "stop" : 1605710799911,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1605710800012,
+        "stop" : 1605710802242,
+        "duration" : 2230
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//span[contains(.,'docx')]/parent::label/span[1]/span/input\"",
+        "time" : {
+          "start" : 1605710800012,
+          "stop" : 1605710802242,
+          "duration" : 2230
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1605710802242,
+        "stop" : 1605710804251,
+        "duration" : 2009
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"#root\"",
+        "time" : {
+          "start" : 1605710802242,
+          "stop" : 1605710804251,
+          "duration" : 2009
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1605710804251,
+        "stop" : 1605710809253,
+        "duration" : 5002
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1605710804251,
+          "stop" : 1605710809253,
+          "duration" : 5002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Docx\", 3",
+      "time" : {
+        "start" : 1605710809253,
+        "stop" : 1605710809257,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"//tbody\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabTextFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1570:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I grab text from \"//tbody\"",
+        "time" : {
+          "start" : 1605710809253,
+          "stop" : 1605710809255,
+          "duration" : 2
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"//tbody\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabTextFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1570:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "errors",
+      "time" : {
+        "start" : 1605710809258,
+        "stop" : 1605710809258,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "c8defde4b67013d6",
+      "name" : "Last Seen Screenshot",
+      "source" : "c8defde4b67013d6.png",
+      "type" : "image/png",
+      "size" : 57826
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 18,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-163"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-file-type"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testMethod",
+    "value" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 14,
+        "unknown" : 0,
+        "total" : 20
+      },
+      "items" : [ {
+        "uid" : "ea5abad336335356",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/25//#testresult/ea5abad336335356",
+        "status" : "failed",
+        "statusDetails" : "Element \"//tbody\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605704365475,
+          "stop" : 1605704392741,
+          "duration" : 27266
+        }
+      }, {
+        "uid" : "569303c7f80c3630",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/24//#testresult/569303c7f80c3630",
+        "status" : "failed",
+        "statusDetails" : "Element \"//tbody\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605697671236,
+          "stop" : 1605697698436,
+          "duration" : 27200
+        }
+      }, {
+        "uid" : "b3cfb80cb3964bed",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/23//#testresult/b3cfb80cb3964bed",
+        "status" : "failed",
+        "statusDetails" : "Element \"//tbody\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605697420229,
+          "stop" : 1605697447491,
+          "duration" : 27262
+        }
+      }, {
+        "uid" : "b9a9bcf6f660e7b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/21//#testresult/b9a9bcf6f660e7b",
+        "status" : "failed",
+        "statusDetails" : "Failed to launch the browser process!\n                [4080:4080:1118/105923.175055:ERROR:browser_main_loop.cc(1439)] Unable to open X display.\n                [1118/105923.183258:ERROR:nacl_helper_linux.cc(307)] NaCl helper process running without a sandbox!\n                Most likely you need to configure your SUID sandbox correctly\n                \n                \n                TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md\n                ",
+        "time" : {
+          "start" : 1605697163019,
+          "stop" : 1605697163185,
+          "duration" : 166
+        }
+      }, {
+        "uid" : "7de24caa7598a1d0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/20//#testresult/7de24caa7598a1d0",
+        "status" : "failed",
+        "statusDetails" : "Failed to launch the browser process!\n                [4040:4040:1118/105552.949573:ERROR:browser_main_loop.cc(1439)] Unable to open X display.\n                [1118/105552.964619:ERROR:nacl_helper_linux.cc(307)] NaCl helper process running without a sandbox!\n                Most likely you need to configure your SUID sandbox correctly\n                \n                \n                TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md\n                ",
+        "time" : {
+          "start" : 1605696952841,
+          "stop" : 1605696952968,
+          "duration" : 127
+        }
+      }, {
+        "uid" : "54b3af3ecfc8fb00",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/13//#testresult/54b3af3ecfc8fb00",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605596965120,
+          "stop" : 1605596992367,
+          "duration" : 27247
+        }
+      }, {
+        "uid" : "9ffe5d375bdacf5f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/10//#testresult/9ffe5d375bdacf5f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605542169519,
+          "stop" : 1605542196770,
+          "duration" : 27251
+        }
+      }, {
+        "uid" : "2da5719034dd654f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/9//#testresult/2da5719034dd654f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605542037989,
+          "stop" : 1605542065219,
+          "duration" : 27230
+        }
+      }, {
+        "uid" : "f7f36163d9ee9789",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/8//#testresult/f7f36163d9ee9789",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605541788107,
+          "stop" : 1605541815330,
+          "duration" : 27223
+        }
+      }, {
+        "uid" : "3de59a3659493ef9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/6//#testresult/3de59a3659493ef9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605540063922,
+          "stop" : 1605540091148,
+          "duration" : 27226
+        }
+      }, {
+        "uid" : "769f11bcdba3f994",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/5//#testresult/769f11bcdba3f994",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605539819902,
+          "stop" : 1605539847190,
+          "duration" : 27288
+        }
+      }, {
+        "uid" : "62a98f3a3b001cb4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/62a98f3a3b001cb4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605539536275,
+          "stop" : 1605539563504,
+          "duration" : 27229
+        }
+      }, {
+        "uid" : "4715291f7e049722",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/4715291f7e049722",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605530827019,
+          "stop" : 1605530855239,
+          "duration" : 28220
+        }
+      }, {
+        "uid" : "e341a777ccee374e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/e341a777ccee374e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605520032556,
+          "stop" : 1605520060741,
+          "duration" : 28185
+        }
+      }, {
+        "uid" : "a8b5beb0650ba155",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/65//#testresult/a8b5beb0650ba155",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605502895264,
+          "stop" : 1605502923468,
+          "duration" : 28204
+        }
+      }, {
+        "uid" : "4487695ae806788a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/1//#testresult/4487695ae806788a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605460715981,
+          "stop" : 1605460744194,
+          "duration" : 28213
+        }
+      }, {
+        "uid" : "8c742c3cfb614e82",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/64//#testresult/8c742c3cfb614e82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605458312560,
+          "stop" : 1605458340750,
+          "duration" : 28190
+        }
+      }, {
+        "uid" : "4e3f3f6ba514c8f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/63//#testresult/4e3f3f6ba514c8f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605457375629,
+          "stop" : 1605457403864,
+          "duration" : 28235
+        }
+      }, {
+        "uid" : "d901631d951a4352",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605452226213,
+          "stop" : 1605452254695,
+          "duration" : 28482
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-163", "@request-history-filtering-by-file-type", "@smoke", "@functional" ]
+  },
+  "source" : "a5baa73035bb8a5d.json",
+  "parameterValues" : [ ]
+}
