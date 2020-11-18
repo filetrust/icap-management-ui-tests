@@ -6,7 +6,7 @@ Feature: content-management-policy-application-to-files
         Given I am logged into the ui
         Given I am on current policy screen
 
-    @functional
+    
     @smoke
     @TEST-212
     Scenario Outline: Content Management policy is correctly applied to processed files
