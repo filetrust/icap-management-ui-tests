@@ -1,0 +1,197 @@
+{
+  "uid" : "60671493a7cac3e1",
+  "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @smoke @TEST-185",
+  "fullName" : "user-records-admin @user-records-admin.A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @smoke @TEST-185",
+  "historyId" : "89a297a9d03cb7e0bfabfa5d481dca16",
+  "time" : {
+    "start" : 1605697165808,
+    "stop" : 1605697178145,
+    "duration" : 12337
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "",
+  "statusTrace" : "undefined",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "homePage: clickUsers ",
+      "time" : {
+        "start" : 1605697175865,
+        "stop" : 1605697178141,
+        "duration" : 2276
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"a[href*='users'] > div\"",
+        "time" : {
+          "start" : 1605697175865,
+          "stop" : 1605697178140,
+          "duration" : 2275
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I have logged into the ui and navigated to the Users page ",
+      "time" : {
+        "start" : 1605697178141,
+        "stop" : 1605697178145,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see element \"tbody\"",
+        "time" : {
+          "start" : 1605697178141,
+          "stop" : 1605697178144,
+          "duration" : 3
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "f467ecbe8698adf2",
+      "name" : "Last Seen Screenshot",
+      "source" : "f467ecbe8698adf2.png",
+      "type" : "image/png",
+      "size" : 22489
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-185"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "tag",
+    "value" : "@user-records-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @smoke @TEST-185"
+  }, {
+    "name" : "package",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "952529e97d2be8a5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/17//#testresult/952529e97d2be8a5",
+        "status" : "failed",
+        "statusDetails" : "net::ERR_CONNECTION_REFUSED at http://localhost:3000/",
+        "time" : {
+          "start" : 1605696952479,
+          "stop" : 1605696955420,
+          "duration" : 2941
+        }
+      }, {
+        "uid" : "5cbe584aa7548ccf",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/10//#testresult/5cbe584aa7548ccf",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"div[class*='Users_header__'] > button\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605596922939,
+          "stop" : 1605596946881,
+          "duration" : 23942
+        }
+      }, {
+        "uid" : "54ca46c5d9a2f410",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/7//#testresult/54ca46c5d9a2f410",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605542107634,
+          "stop" : 1605542129363,
+          "duration" : 21729
+        }
+      }, {
+        "uid" : "259293609d9a0760",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/259293609d9a0760",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"div[class*='Users_header__2gDwu'] > button\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605540024089,
+          "stop" : 1605540041564,
+          "duration" : 17475
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-185", "@smoke", "@user-records-admin" ]
+  },
+  "source" : "60671493a7cac3e1.json",
+  "parameterValues" : [ ]
+}
