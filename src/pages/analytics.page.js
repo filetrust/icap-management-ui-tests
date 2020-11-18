@@ -2,13 +2,11 @@ const { I } = inject();
 
 module.exports = {
 
-    //Locators   
+    //Locators
 
     inputs: {
         dateFilter: 'div[data-test-id="dateRangePicker"] > span',
-        // datetimeFrom: 'div[class^=MuiInputBase-inputAdornedEnd]::before > input',
-        // datetimeTo: 'div[class^=MuiInputBase-inputAdornedEnd]::after > input',
-        reportrange: `div[id='reportrange'] > span`,
+        reportrange: `div[id='reportrange']`,
     },
     sections: {
         dashboard_innerTop: `div[class*='Analytics_innerTop__']`,
@@ -22,21 +20,22 @@ module.exports = {
 
     },
     calendar: {
-        datetime_left: `input[id='datetime-local-left']`,
-        datetime_right: `input[id='datetime-local-right']`,
         daterangepicker: `div[class*='daterangepicker']`,
-        onehour: `div[class*='ranges'] > ul > li:nth-of-type(1)`,
-        twelvehours: `div[class*='ranges'] > ul > li:nth-of-type(2)`,
-        twenty4hours: `div[class*='ranges'] > ul > li:nth-of-type(3)`,
-        customrange: `div[class*='ranges'] > ul > li:nth-of-type(4)`,
-        daterangeselected: `span[class*='drp-selected']`,
         cancelBtn: `button[class*='cancelBtn']`,
-        applyBtn: `button[class*='applyBtn']`,
+        applyBtn: `//button[text()='Apply']`,
         next: `th[class*='next']`,
         prev: `th[class*='prev']`,
+        startHourDropdown: `//div[@class='drp-calendar left']/descendant::select[@class='hourselect']`,
+        startMinsDropdown: `//div[@class='drp-calendar left']/div[@class='calendar-time']/select[@class='minuteselect']`,
+        startPeriodDropdown: `//div[@class='drp-calendar left']/div[@class='calendar-time']/select[@class='ampmselect']`,
+        endHourDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='hourselect']`,
+        endMinsDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='minuteselect']`,
+        endPeriodDropdown: `//div[@class='drp-calendar right']/div[@class='calendar-time']/select[@class='ampmselect']`,
+        leftMonth: `//div[@class='drp-calendar left']/descendant::th[@class="month"]`,
+        rightMonth: `//div[@class='drp-calendar right']/descendant::th[@class="month"]`
     },
     button: {
-        datetime: `div[data-test-id="dateRangePicker"]`
+        datetime: `div[data-test-id="dateRangePicker"] > span`
     },
     popup: {
         timeIntervalPopup: 'div[class^=Popup_Popup__]'
@@ -71,20 +70,17 @@ module.exports = {
 
     async getTotalFileProcessed() {
         const element = this.sections.countTotalProcessed;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
     async getMaxFileProcessed() {
         const element = this.sections.countMaxProcessed;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
     async getTotalIcapRequests() {
         const element = this.sections.countIcapRequests;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
 
@@ -96,8 +92,8 @@ module.exports = {
         let risk = fileRisk.trim();
         let element = this.getChartElement(chart)
         within(element, () => {
-                I.click("//span[contains(.,'" + risk + "')]")
-                    .catch(() =>  I.say('Required options not found'));
+            I.click("//span[contains(.,'" + risk + "')]")
+                .catch(() =>  I.say('Required options not found'));
         })
     },
 
@@ -117,7 +113,7 @@ module.exports = {
         this.filterByRisk(element, risk);
         within(element, () => {
             try {
-               sector = this.legend.label_ + risk
+                sector = this.legend.label_ + risk
             } catch (e) {
                 I.say('errors, sector element not found')
                 console.warn(e);
@@ -132,7 +128,7 @@ module.exports = {
         this.filterByRisk(element, risk);
         within(element, async () => {
             try {
-            count = await I.grabValueFrom(this.legend.label_+ risk)
+                count = await I.grabValueFrom(this.legend.label_+ risk)
             } catch (e) {
                 I.say('errors, unable to retrieve value')
                 console.warn(e);
@@ -191,34 +187,153 @@ module.exports = {
      * ***************************************************************
      */
 
-    openDatetimeStart() {
-        const element = this.buttons.datetime_left;
-        I.click(element);
+    selectTimeInterval(timeInterval) {
+        try {
+            I.click(this.inputs.reportrange);
+            I.click("li[data-range-key='"+ timeInterval + "']");
+        }
+        catch (err){
+            I.say('Action unsuccessful')
+            console.warn(err);
+        }
     },
 
-    openDatetimeEnd() {
-        const element = this.buttons.datetime_right;
-        I.click(element);
+ async setCustomTimeRange(start, end){
+        const startArr = start.split(" ");
+        const startDate = startArr[0];
+        const startTime = startArr[1];
+        const startTimePeriod = startArr[2];
+
+        const endArr = end.split(" ");
+        const endDate = endArr[0];
+        const endTime = endArr[1];
+        const endTimePeriod = endArr[2];
+       try{
+        await Promise.allSettled([
+               this.setDate(startDate),
+               this.setTime(startTime, startTimePeriod, "start"),
+               this.setDate(endDate),
+               this.setTime(endTime, endTimePeriod, "end")
+           ])
+            .then(() => this.clickApply());
+        }
+       catch (err){
+           I.say('errors')
+           console.warn(err);
+       }
+
     },
 
-    async setDatetimelocalleft(value) {
-        const element = await this.getDatetimelocalleftElement();
-        await element.type(value);
+   setDate(date){
+        let startDate = date[0].split("/");
+        const day = startDate[0];
+        const month = startDate[1];
+        const year = startDate[2];
+        let result =  this.setMonthYear(month, year);
+        I.click(result+"/descendant::td[text()=" + day + "]");
     },
 
+     setMonthYear(month, year){
+        const leftMonthLocator = this.calendar.leftMonth;
+        const rightMonthLocator = this.calendar.rightMonth;
+        let calendarLeftMonth;
+        let calendarRightMonth;
+        let value;
+            this.getMonthNumberFromLocator(leftMonthLocator).then(result => {
+                calendarLeftMonth=result;
+            });
+            this.getMonthNumberFromLocator(rightMonthLocator).then(result => {
+                calendarRightMonth=result;
+            });
+        switch (month){
+            case (calendarLeftMonth):
+                value = leftMonthLocator.substring(0, 33);
+                break;
+            case (calendarRightMonth):
+                value = rightMonthLocator.substring(0, 34);
+                break;
+            default:
+                value = leftMonthLocator.substring(0, 33);
+                break;
+            //todo: else while loop and create a func witch click to any side (prev/next)
+        }
+    return value;
+    },
+  async getMonthNumberFromLocator(locator){
+        let result = await I.grabTextFrom(locator);
+        let calendarMonth = result.split(" ")[0];
+        return this.getMonthNumber(calendarMonth);
+       },
+
+    getMonthNumber(monthName){
+        const months = {
+            'JAN': '01',
+            'FEB': '02',
+            'MAR': '03',
+            'APR': '04',
+            'MAY': '05',
+            'JUN': '06',
+            'JUL': '07',
+            'AUG': '08',
+            'SEP': '09',
+            'OCT': '10',
+            'NOV': '11',
+            'DEC': '12'
+        };
+        return months[monthName];
+    },
+     setTime(time, timePeriod, flag){
+        switch (flag){
+            case("start"):
+                this.setStartTime(time, timePeriod);
+                break;
+            case("end"):
+                this.setEndTime(time, timePeriod);
+                break;
+            default:
+               I.say("No such element");
+        }
+    },
+
+    setStartTime(startTime, startTimePeriod){
+        const startHourDropdown = this.calendar.startHourDropdown;
+        const startMinsDropdown = this.calendar.startMinsDropdown;
+        const startPeriodDropdown = this.calendar.startPeriodDropdown;
+
+        this.setTimeDropdowns(startTime, startTimePeriod, startHourDropdown, startMinsDropdown, startPeriodDropdown);
+    },
+
+    setEndTime(endTime, endTimePeriod){
+        const endHourDropdown = this.calendar.endHourDropdown;
+        const endMinsDropdown = this.calendar.endMinsDropdown;
+        const endPeriodDropdown = this.calendar.endPeriodDropdown;
+
+        this.setTimeDropdowns(endTime, endTimePeriod, endHourDropdown, endMinsDropdown, endPeriodDropdown);
+    },
+
+    setTimeDropdowns(time, timePeriod, hourDropdown, minsDropdown, startPeriodDropdown) {
+        const hourMinsArr = time.split(":");
+        this.setValueToDropdown(hourDropdown, hourMinsArr[0]);
+        this.setValueToDropdown(minsDropdown, hourMinsArr[1]);
+        this.setValueToDropdown(startPeriodDropdown, timePeriod);
+    },
+
+    setValueToDropdown(locator, value) {
+        I.click(locator);
+        I.selectOption(locator, value);
+    },
     async getValueFromDateTimeInput(element) {
         return await I.grabValueFrom(element);
     },
 
-    chooseTimeInterval(timeInterval) {
-        const datetimeButton = this.buttons.datetime;
-        I.click(datetimeButton);
-        I.click("li[data-range-key='"+ timeInterval + "']");
+    clickApply() {
+        const element = this.calendar.applyBtn;
+        I.click(element);
     },
 
 
     async checkDateTimeFilterValues(dateRange) {
-        I.seeInField(this.inputs.dateFilter, dateRange);
+        I.seeTextEquals(dateRange, this.inputs.reportrange);
     },
 
 
@@ -234,5 +349,38 @@ module.exports = {
             newTime = hours + ":" + mins + " AM";
         }
         return newTime;
+    },
+
+    getRequiredTime(datetimeTo) {
+        let time = null;
+        try {
+            if (datetimeTo === 'current time') {
+                time = moment();
+            } else {
+                time = datetimeTo
+            }
+        } catch (e) {
+            I.say('errors')
+            console.warn(e);
+        }
+        return time;
+    },
+
+    getPastPeriod(time) {
+        const now = moment();
+        return now.subtract(time, 'h');
+    },
+
+    isTimeApplied(start, end) {
+        let time = null;
+        if (end === 'current time') {
+            time = moment();
+        } else {
+            time = end;
+        }
+        const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
+        const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
+        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     }
+
 }
