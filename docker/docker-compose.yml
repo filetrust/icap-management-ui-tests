@@ -1,9 +1,0 @@
-version: '2'
-services:
-  codeceptjs:
-    image: codeception/codeceptjs
-    environment:
-      - NO_OF_WORKERS=3
-      - CODECEPT_ARGS=--debug
-    volumes:
-      - .:/tests
