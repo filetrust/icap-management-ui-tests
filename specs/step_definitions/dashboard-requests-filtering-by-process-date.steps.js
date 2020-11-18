@@ -3,9 +3,7 @@ const {
     analyticsPage
 } = inject();
 
-let datetimeValue = analyticsPage.inputs.dateFilter;
 
-let filterValue;
 Given('I am logged into the ui', () => {
     I.loginNoPwd();
 });
@@ -29,7 +27,7 @@ When('I set the {string} and {string}',  (datetimeStart, dateTimeEnd) =>{
     analyticsPage.setCustomTimeRange(datetimeStart, dateTimeEnd);
 });
 When('I click apply',  () => {
-    I.click(analyticsPage.calendar.applyBtn);
+    analyticsPage.clickApply();
 });
 Then(/^the date range for the selected period is displayed in the Date\/Time field as dateRange for current time$/,  () => {
 

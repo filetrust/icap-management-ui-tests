@@ -306,7 +306,7 @@ module.exports = {
     },
 
     clickApply() {
-        const element = this.buttons.apply;
+        const element = this.calendar.applyBtn;
         I.click(element);
     },
 
