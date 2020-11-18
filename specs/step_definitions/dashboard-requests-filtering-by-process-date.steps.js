@@ -26,9 +26,7 @@ When('I make a time selection with {string}',  (option) => {
 When('I set the {string} and {string}',  (datetimeStart, dateTimeEnd) =>{
     analyticsPage.setCustomTimeRange(datetimeStart, dateTimeEnd);
 });
-When('I click apply',  () => {
-    analyticsPage.clickApply();
-});
+
 Then('the date range is displayed date from {string} hrs earlier to {string}', (datetimeFrom, datetimeTo) => {
     analyticsPage.isTimeApplied(datetimeFrom, datetimeTo)
 });

@@ -21,7 +21,6 @@ module.exports = {
     },
     calendar: {
         daterangepicker: `div[class*='daterangepicker']`,
-        //daterangeselected: `span[class*='drp-selected']`,
         cancelBtn: `button[class*='cancelBtn']`,
         applyBtn: `//button[text()='Apply']`,
         next: `th[class*='next']`,
@@ -71,20 +70,17 @@ module.exports = {
 
     async getTotalFileProcessed() {
         const element = this.sections.countTotalProcessed;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
     async getMaxFileProcessed() {
         const element = this.sections.countMaxProcessed;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
     async getTotalIcapRequests() {
         const element = this.sections.countIcapRequests;
-        let count = parseInt(await I.grabTextFrom(element));
-        return count;
+        return parseInt(await I.grabTextFrom(element));
     },
 
 
@@ -198,7 +194,7 @@ module.exports = {
         }
     },
 
-    setCustomTimeRange(start, end){
+ async setCustomTimeRange(start, end){
         const startArr = start.split(" ");
         const startDate = startArr[0];
         const startTime = startArr[1];
@@ -208,66 +204,81 @@ module.exports = {
         const endDate = endArr[0];
         const endTime = endArr[1];
         const endTimePeriod = endArr[2];
+       try{
+        await Promise.allSettled([
+               this.setDate(startDate),
+               this.setTime(startTime, startTimePeriod, "start"),
+               this.setDate(endDate),
+               this.setTime(endTime, endTimePeriod, "end")
+           ])
+            .then(() => this.clickApply());
+        }
+       catch (err){
+           I.say('errors')
+           console.warn(err);
+       }
 
-        this.setDate(startDate);
-        this.setTime(startTime, startTimePeriod, "start");
-        this.setDate(endDate);
-        this.setTime(endTime, endTimePeriod, "end");
     },
 
-    setDate(date){
+   setDate(date){
         let startDate = date[0].split("/");
         const day = startDate[0];
         const month = startDate[1];
         const year = startDate[2];
-        // this.setMonthYear(month, year).then(result => {
-        //     I.click(result+"/descendant::td[text()=" + day + "]");
-        // });
-         I.click("//div[@class='drp-calendar left']/descendant::td[text()=" + day + "]");
+        let result =  this.setMonthYear(month, year);
+        I.click(result+"/descendant::td[text()=" + day + "]");
     },
 
-    async setMonthYear(month, year){
+     setMonthYear(month, year){
         const leftMonthLocator = this.calendar.leftMonth;
         const rightMonthLocator = this.calendar.rightMonth;
-        let results = await Promise.all([
-            this.getMonthNumberFromLocator(leftMonthLocator),
-            this.getMonthNumberFromLocator(rightMonthLocator)
-        ]);
-        let calendarLeftMonth = results[0];
-        let calendarRightMonth = results[1];
+        let calendarLeftMonth;
+        let calendarRightMonth;
+        let value;
+            this.getMonthNumberFromLocator(leftMonthLocator).then(result => {
+                calendarLeftMonth=result;
+            });
+            this.getMonthNumberFromLocator(rightMonthLocator).then(result => {
+                calendarRightMonth=result;
+            });
+        switch (month){
+            case (calendarLeftMonth):
+                value = leftMonthLocator.substring(0, 33);
+                break;
+            case (calendarRightMonth):
+                value = rightMonthLocator.substring(0, 34);
+                break;
+            default:
+                value = leftMonthLocator.substring(0, 33);
+                break;
+            //todo: else while loop and create a func witch click to any side (prev/next)
+        }
+    return value;
+    },
+  async getMonthNumberFromLocator(locator){
+        let result = await I.grabTextFrom(locator);
+        let calendarMonth = result.split(" ")[0];
+        return this.getMonthNumber(calendarMonth);
+       },
 
-        if (calendarLeftMonth===month){
-            return leftMonthLocator.substring(2, 33);
-        }
-        else if (calendarRightMonth===month){
-            return rightMonthLocator.substring(2, 34);
-        }
-        //todo: else while loop and create a func witch click to any side (prev/next)
-        else return false;
-    },
-   async getMonthNumberFromLocator(locator){
-        let calendarDate = await I.grabTextFrom(locator);
-        let calendarMonth = calendarDate.split(" ")[0];
-        return  this.getMonthNumber(calendarMonth);
-    },
     getMonthNumber(monthName){
         const months = {
-            'Jan': '01',
-            'Feb': '02',
-            'Mar': '03',
-            'Apr': '04',
-            'May': '05',
-            'Jun': '06',
-            'Jul': '07',
-            'Aug': '08',
-            'Sep': '09',
-            'Oct': '10',
-            'Nov': '11',
-            'Dec': '12'
+            'JAN': '01',
+            'FEB': '02',
+            'MAR': '03',
+            'APR': '04',
+            'MAY': '05',
+            'JUN': '06',
+            'JUL': '07',
+            'AUG': '08',
+            'SEP': '09',
+            'OCT': '10',
+            'NOV': '11',
+            'DEC': '12'
         };
         return months[monthName];
     },
-    setTime(time, timePeriod, flag){
+     setTime(time, timePeriod, flag){
         switch (flag){
             case("start"):
                 this.setStartTime(time, timePeriod);
@@ -276,7 +287,7 @@ module.exports = {
                 this.setEndTime(time, timePeriod);
                 break;
             default:
-                I.say("No such element");
+               I.say("No such element");
         }
     },
 
@@ -366,6 +377,6 @@ module.exports = {
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
-    },
+    }
 
 }
