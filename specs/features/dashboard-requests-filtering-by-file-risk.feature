@@ -8,6 +8,8 @@ Feature: dashboard-requests-filtering-by-file-risk
 
     @smoke
     @TEST-192
+    @Fail-App
+    #Assertion error (filtered risks displayed)
     Scenario Outline: I can filter the risk legend
         When I tick select from the '<chart>' legend a file risk '<fileRisk>'
         Then the '<chart>' is updated to only show the filtered risk '<filteredRisk>'

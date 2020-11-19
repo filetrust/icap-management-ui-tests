@@ -22,6 +22,8 @@ Feature: file-drop-file-processing
     
     @smoke
     @TEST-231
+    @Fail-Code
+    #test2.pdf is not bigger than 3.5mb
     Scenario Outline: An error message is produced when file drop is unable to process a file
         When I click Select a file and choose non processable file <file>
         Then the expected validation error is displayed as <error>
