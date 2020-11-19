@@ -48,9 +48,8 @@ Feature: non-compliant-files-routing-mechanism
       | Block       | Block              |
       | Refer       | Refer              |
 
+    @smoke
   @TEST-233
-    @Fail-code
-    # I.clickViewResultButton is not a function
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'
@@ -66,9 +65,8 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | replace      | file | ''           | alternativeContent |
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
+  @smoke
   @TEST-234
-    @Fail-code
-    # No files yet entered
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
     Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'
