@@ -6,7 +6,7 @@ Feature: request-history-log
     Background:
         Given I am logged into the ui
 
-   
+   @functional
     @smoke
     @TEST-166
     Scenario Outline: I am able to change the number of files displayed on the page
@@ -16,7 +16,8 @@ Feature: request-history-log
         Examples:
             | itemCount | fileCount |
             | 25        | 4         |
-           
+
+    @functional
     @smoke
     @TEST-179
     Scenario Outline: Validate requests log view using a combination of multiple filters
