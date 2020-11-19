@@ -9,6 +9,8 @@ Feature: content-management-policy-application-to-files
     
     @smoke
     @TEST-212
+    @Fail-code
+    #Able to download file and not get blocked (still gives okay however)
     Scenario Outline: Content Management policy is correctly applied to processed files
         Given I set a policy with the <contentFlags> set to <flagType> for a file type <fileType>
         When I process file <fileType> file <file> through the icap server

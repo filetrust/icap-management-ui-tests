@@ -19,6 +19,8 @@ Feature: request-history-log
            
     
     @TEST-179
+    @Fail-code
+    #Error: Element "//div/span[contains(.,'Png')]" was not found by text|CSS|XPath
     Scenario Outline: Validate requests log view using a combination of multiple filters
         Given I have navigated to the Request History page
         When I click on the Add Filter button

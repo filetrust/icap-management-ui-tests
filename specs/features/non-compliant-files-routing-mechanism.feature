@@ -7,6 +7,7 @@ Feature: non-compliant-files-routing-mechanism
         And I have navigated to the Current Policy page
 
     @smoke
+    @TEST-MISSING
     Scenario: The default routing option for unprocessable and blocked files is accurate
         Given I am a new user
         And I have navigated to the Current Policy page
@@ -48,6 +49,8 @@ Feature: non-compliant-files-routing-mechanism
             | Refer       | Refer              |
 
     @TEST-233
+    @Fail-code
+    # I.clickViewResultButton is not a function
     Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
         Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
         And the non-compliant file service has been defined as '<NcfsDecision>'
@@ -64,6 +67,8 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
     @TEST-234
+    @Fail-code
+    # No files yet entered
     Scenario Outline: A set routing policy for unprocessable files is correctly applied
         Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
         And the non-compliant file service has been defined as '<NcfsDecision>'

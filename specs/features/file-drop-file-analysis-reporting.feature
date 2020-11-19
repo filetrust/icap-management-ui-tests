@@ -8,6 +8,8 @@ Feature: file-drop-file-analysis-reporting
 
     @smoke
     @TEST-225
+    @Fail-code
+    # Returning Okay, but then says "The file does not exist"
     Scenario Outline: I can download the full XML analysis report for a file
         Given I have uploded a file <supportedFile>
         When  I view result and click on XML button
@@ -18,6 +20,9 @@ Feature: file-drop-file-analysis-reporting
 
     @smoke
     @TEST-226
+    @Fail-code
+    # Returning Okay, but then says "The file does not exist"
+    # Missing assertion of pdf
     Scenario Outline: I can download the full PDF analysis report for a file
         Given I have uploded a file <supportedFile>
         When  I view result and click on PDF button
