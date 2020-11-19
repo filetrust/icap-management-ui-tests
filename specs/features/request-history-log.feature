@@ -28,7 +28,7 @@ Feature: request-history-log
         Then the result list shows files with the applied filtertypes '<appliedFilters>'
         Examples:
             | riskFilter | typeFilter | fileIdFilter                         | appliedFilters       |
-            | Safe       | png        |                                      | Safe_Png           |
+            | Safe       | png        |                                      | Safe_png           |
         
     @functional
     @smoke

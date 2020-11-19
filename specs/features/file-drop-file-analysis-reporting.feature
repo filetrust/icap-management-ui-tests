@@ -11,7 +11,7 @@ Feature: file-drop-file-analysis-reporting
     @Fail-code
     # Returning Okay, but then says "The file does not exist"
     Scenario Outline: I can download the full XML analysis report for a file
-        Given I have uploded a file <supportedFile>
+        Given I have uploaded a file '<supportedFile>'
         When  I view result and click on XML button
         Then the XML report <xmlFile> is downloaded
         Examples:
@@ -24,7 +24,7 @@ Feature: file-drop-file-analysis-reporting
     # Returning Okay, but then says "The file does not exist"
     # Missing assertion of pdf
     Scenario Outline: I can download the full PDF analysis report for a file
-        Given I have uploded a file <supportedFile>
+        Given I have uploaded a file '<supportedFile>'
         When  I view result and click on PDF button
         Then the pdf report <pdfFile> is downloaded
         Examples:
