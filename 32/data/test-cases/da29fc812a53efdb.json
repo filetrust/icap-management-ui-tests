@@ -1,0 +1,325 @@
+{
+  "uid" : "da29fc812a53efdb",
+  "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @smoke @TEST-212 @Fail-code",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @smoke @TEST-212 @Fail-code",
+  "historyId" : "f34145d372adad5ff04d0ffdc45f05db",
+  "time" : {
+    "start" : 1605869138414,
+    "stop" : 1605869175452,
+    "duration" : 37038
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+    "steps" : [ {
+      "name" : "I: onIcapProxyPage ",
+      "time" : {
+        "start" : 1605869149320,
+        "stop" : 1605869158109,
+        "duration" : 8789
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/\"",
+        "time" : {
+          "start" : 1605869149320,
+          "stop" : 1605869153107,
+          "duration" : 3787
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1605869153107,
+          "stop" : 1605869158109,
+          "duration" : 5002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: downloadFile \"jpg\"",
+      "time" : {
+        "start" : 1605869158109,
+        "stop" : 1605869160448,
+        "duration" : 2339
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1605869158109,
+          "stop" : 1605869158111,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//a[@href=\"https://gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com/Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\"]\"",
+        "time" : {
+          "start" : 1605869158211,
+          "stop" : 1605869160448,
+          "duration" : 2237
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I process file jpg file Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg through the icap server ",
+      "time" : {
+        "start" : 1605869160448,
+        "stop" : 1605869175451,
+        "duration" : 15003
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 15",
+        "time" : {
+          "start" : 1605869160448,
+          "stop" : 1605869175451,
+          "duration" : 15003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: assertFileDownload \"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\"",
+      "time" : {
+        "start" : 1605869175451,
+        "stop" : 1605869175451,
+        "duration" : 0
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+      "steps" : [ {
+        "name" : "I am in path \"output/downloads\"",
+        "time" : {
+          "start" : 1605869175451,
+          "stop" : 1605869175451,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I see file \"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\"",
+        "time" : {
+          "start" : 1605869175451,
+          "stop" : 1605869175451,
+          "duration" : 0
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b024a36fff2a8fff",
+      "name" : "Last Seen Screenshot",
+      "source" : "b024a36fff2a8fff.png",
+      "type" : "image/png",
+      "size" : 197648
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 11,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-code"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @smoke @TEST-212 @Fail-code"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 7,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "866828e3bad3a63",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/31//#testresult/866828e3bad3a63",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605862464048,
+          "stop" : 1605862500977,
+          "duration" : 36929
+        }
+      }, {
+        "uid" : "3f41b96f85a8c23b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/30//#testresult/3f41b96f85a8c23b",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605829175719,
+          "stop" : 1605829213613,
+          "duration" : 37894
+        }
+      }, {
+        "uid" : "6590966a104fc407",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/29//#testresult/6590966a104fc407",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605828837780,
+          "stop" : 1605828874878,
+          "duration" : 37098
+        }
+      }, {
+        "uid" : "60aea8bebd961431",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/28//#testresult/60aea8bebd961431",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605828298778,
+          "stop" : 1605828335675,
+          "duration" : 36897
+        }
+      }, {
+        "uid" : "6a9e0fecaf7f5af0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/27//#testresult/6a9e0fecaf7f5af0",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605827834768,
+          "stop" : 1605827872759,
+          "duration" : 37991
+        }
+      }, {
+        "uid" : "e38cb044d4b8ed51",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/26//#testresult/e38cb044d4b8ed51",
+        "status" : "failed",
+        "statusDetails" : "File Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605800858399,
+          "stop" : 1605800896361,
+          "duration" : 37962
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@Fail-code", "@TEST-212", "@content-management-policy-application-to-files" ]
+  },
+  "source" : "da29fc812a53efdb.json",
+  "parameterValues" : [ ]
+}
