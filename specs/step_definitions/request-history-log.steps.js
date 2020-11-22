@@ -25,8 +25,8 @@ When('add multiple filter selections as {string}, {string}, {string}', (riskFilt
  //   requesthistoryPage.clickAddFilterButton();
 //    requesthistoryPage.setFileId(fileIdFilter);
 });
-Then('the result list shows files with the applied filtertypes {string}', (appliedFilter) => {
-    requesthistoryPage.checkFilters(appliedFilter);
+Then('the result list shows files with the applied filtertypes {string}, {string}', (appliedFilter, filterValues) => {
+    requesthistoryPage.checkFilters(appliedFilter, filterValues);
     requesthistoryPage.verifyResultIsAccurate(appliedFilter)
 });
 
