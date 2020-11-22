@@ -1,5 +1,6 @@
 const MyHelper = require("../utils/helper");
 const moment = require('moment');
+const assert = require('assert');
 
 const {
     I
@@ -45,7 +46,7 @@ module.exports = {
         historyTable: `div[class*='RequestHistory_wrapTable__']`,
         fileTableBody: `tbody[class*='MuiTableBody-root']`,
         fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`,
-        file01: `tr[id='file-01']:nth-of-type(1)`
+        file: `tr:nth-of-type(2)`
 
     },
     calendar: {
@@ -72,12 +73,12 @@ module.exports = {
         filters: `div[class*='Filters_wrap__']`
     },
     modal: {
-        modalHeader: `section[class*='FileInfo_FileInfo__1Z457'] > header`,
-        cmpDetailsBanner: `div[class*='FileInfo_inner__1NnWT'] > div:nth-of-type(5) > div > label`,
-        issueItemsBanner: `.FileInfo_block__3_27q:nth-child(2) .MuiFormControlLabel-root`,
-        sanitisationItemsBanner: `div[class*='FileInfo_inner__1NnWT'] > div:nth-of-type(3)`,
-        remedyItemsBanner: `div[class*='FileInfo_inner__1NnWT'] > div:nth-of-type(4)`,
-        fileDetailModal: `//section[2]/section/div`,
+        modalHeader: `section[class*='FileInfo_FileInfo__'] > header`,
+        cmpDetailsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(5) > div > label`,
+        issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
+        sanitisationItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(3)`,
+        remedyItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(4)`,
+        fileDetailModal: `div[class*='FileInfo_inner__']`,
     },
 
     //Methods
@@ -398,6 +399,14 @@ module.exports = {
         this.selectFileType(typeFilter);
     },
 
+    getAppliedFilter(res) {
+        let col;
+        if (res === 'Safe') {
+            col = 4;
+        } else col = 3;
+        return col;
+    },
+
     /*
      * File ID Filtering
      * ***************************************************************
@@ -471,20 +480,70 @@ module.exports = {
         I.click(this.getFileRecord(fileId))
     },
 
-   openAFileRecord() {
-        I.clickElement(this.table.file01)
-    },
+   async openAFileRecord() {
+    try{
+      const text = await I.grabTextFrom(`//tbody`);
+        if (text === 'No Transaction Data Found'){
+            I.say('No Transaction Data Found')
+        } else {
+            I.say("Transaction Data is available")
+            
+            I.clickRecord(2)
+     } 
+     } catch (e) {
+       console.warn(e); 
+    }},
+
+isFileDetailModalOpened() {
+    const element = this.modal.fileDetailModal;
+    I.seeElementExist(element)
+    I._failed()
+},
+
 
     checkFileDetailViewId(fileId) {
+        const el = this.modal.fileDetailModal;
+        if (I.seeElementExist(el) === true){
         within(this.modal.modalHeader, () => {
             I.see(fileId);
         })
-    },
-    getAppliedFilter(res) {
-        let col;
-        if (res === 'Safe') {
-            col = 4;
-        } else col = 3;
-        return col;
-    }
+     } },
+
+    isIssueItemsSectionAvailable(){
+        const el = this.modal.fileDetailModal;
+        if (I.seeElementExist(el) === true){
+        within(this.modal.fileDetailModal, () => {
+        const element = this.modal.issueItemsBanner;
+        I.seeElementExist(element)
+        });
+    }},
+
+    isRemedyItemsSectionAvailable(){
+        const el = this.modal.fileDetailModal;
+        if (I.seeElementExist(el) === true){
+        within(this.modal.fileDetailModal, () => {
+        const element = this.modal.remedyItemsBanner;
+        I.seeElementExist(element)
+    });
+     } },
+
+    isCmpSectionAvailable(){
+        const el = this.modal.fileDetailModal;
+        if (I.seeElementExist(el) === true){
+        within(el, () => {
+        const element = this.modal.cmpDetailsBanner;
+        I.seeElementExist(element)
+    });
+    }},
+
+    isSanitisationItemsSectionAvailable(){
+        const el = this.modal.fileDetailModal;
+        if (I.seeElementExist(el) === true){
+        within(this.modal.fileDetailModal, () => {
+        const element = this.modal.sanitisationItemsBanner;
+        I.seeElementExist(element)
+    });
+    }},
+
+    
 };

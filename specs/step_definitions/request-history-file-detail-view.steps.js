@@ -20,14 +20,14 @@ When('I click on a available file record with id {string}', (fileId) => {
 
 Then('the file detail view opens', () => {
     I.wait(5)
-    I.seeElement(requesthistoryPage.modal.fileDetailModal)
+    requesthistoryPage.isFileDetailModalOpened()
     //requesthistoryPage.checkFileDetailViewId(fileId)
-
+   
 });
 
-Then('the issue items, sanitisation items, remedy items, and content management policy sections are available', () => {
-    I.seeElement(requesthistoryPage.modal.issueItemsBanner)
-    I.seeElement(requesthistoryPage.modal.remedyItemsBanner)
-    I.seeElement(requesthistoryPage.modal.sanitisationItemsBanner)
-    I.seeElement(requesthistoryPage.modal.cmpDetailsBanner)
+Then('the file result details and content management policy sections are available', () => {
+    requesthistoryPage.isIssueItemsSectionAvailable();
+    requesthistoryPage.isRemedyItemsSectionAvailable();
+    requesthistoryPage.isSanitisationItemsSectionAvailable();
+    requesthistoryPage.isCmpSectionAvailable();
 });
