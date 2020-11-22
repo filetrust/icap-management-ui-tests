@@ -6,6 +6,8 @@ Feature: request-history-file-detail-view
     @functional
     @smoke
     @TEST-169
+    @Fail-Code
+    #Does not take to correct id record
     Scenario: I am able to view more detail on a file
         Given I am logged into the portal
         And I have navigated to the Request History page

@@ -11,7 +11,7 @@ Given("I have navigated to the File Drop page", () => {
     I.goToFileDrop();
 });
 
-Given(/^I have uploded a file(.*)$/, (supportedFile) => {
+Given('I have uploaded a file {string}', (supportedFile) => {
     I.uploadFile(supportedFile.trim());
 });
 

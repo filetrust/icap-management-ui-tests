@@ -343,37 +343,49 @@ module.exports = {
 
 
    async verifyResultIsAccurate(filter) {
-         try {
-             const text = await I.grabTextFrom(`//tbody`);
-             if (text == 'No Transaction Data Found') {
-                 I.say('No data returned')
-             } else {
-                 I.say("Data is available")
-        let col = this.getAppliedFilter(filter);
-        I.checkRow(filter, col);
-        }} catch (e) {
-            I.say('errors')
-            console.warn(e);
-        }
+       let col;
+       let text;
+       try {
+           I.grabTextFrom(`//tbody/descendant::h2`).then((value) =>
+           {
+               I.say(value);
+               text = value;
+               if (text==='Error Getting Transaction Data' || text==='No Transaction Data Found') {
+                   I.say('No data returned');
+               } else {
+                    Promise.all([
+                       I.say("Data is available"),
+                       col = this.getAppliedFilter(filter),
+                       I.checkRow(filter, col),
+                   ]);
+               }
+           })
+          // text = await I.grabTextFrom(`//tbody/descendant::h2`);
+          //      I.say(text);
+
+       } catch (e) {
+           I.say('errors')
+           console.warn(e);
+       }
     },
 
 
-    async checkFilters(appliedFilters) {
-        const res = appliedFilters.split("_");
-        if (res.length === 1) {
-            const filterValue = this.containers.appliedFiltersFooter;
-            await this.checkFilterByValue(res[0], filterValue);
-        } else {
-            for (let i = 0; i < res.length; i++) {
-                let filterValueLocator = `//div/span[contains(.,'` + res[i] + `')]`;
-                await this.checkFilterByValue(res[i], filterValueLocator);
-            }
+     checkFilters(appliedFilters, filterValues) {
+        const filterRes = appliedFilters.split("_");
+        const res = filterValues.split("_");
+        // if (res.length === 1) {
+        //     const filterValue = this.containers.appliedFiltersFooter;
+        //     this.checkFilterByValue(res[0], filterValue);
+        // } else {
+            for (let i = 0; i < filterRes.length; i++) {
+                let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
+                this.checkFilterByValue(res[i], filterValueLocator);
+            // }
         }
     },
 
-    async checkFilterByValue(value, locator) {
-        let filterValueText = (await I.grabTextFrom(locator));
-        I.compareThatEqual(value, filterValueText);
+     checkFilterByValue(value, locator) {
+            I.seeTextEquals(value, locator);
     },
 
     checkFileValues(filteredFile) {

@@ -44,3 +44,6 @@ Then('the risk sector is available and shows the count updated by {int}', (risk,
     I.seeInField(analyticsPage.getRiskSector(risk), riskMetricsCount + increasedValue)
 
 });
+Given('I have navigated to the Analytics page',  () => {
+        I.goToAnalytics();
+});

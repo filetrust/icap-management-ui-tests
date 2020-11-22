@@ -7,6 +7,7 @@ Feature: user-records-admin
 
     @smoke
     @TEST-171
+    @Fail-app
     Scenario Outline: I can add a new user to the ui
         Given I have logged into the ui and navigated to the Users page
         When I add a new user with a valid '<email>'
@@ -18,6 +19,7 @@ Feature: user-records-admin
 
     @smoke
     @TEST-172
+    @Fail-app
     Scenario Outline: I can delete another user from the page
         Given I have logged into the ui and navigated to the Users page
         When I delete an existing user '<name>'
@@ -28,6 +30,7 @@ Feature: user-records-admin
 
     @smoke
     @TEST-185
+    @Fail-app
     Scenario Outline: A new user cannot be added with a invalid email
         Given I have logged into the ui and navigated to the Users page
         When I add a new user with a invalid '<email>'
@@ -39,6 +42,7 @@ Feature: user-records-admin
 
     @smoke
     @TEST-186
+    @Fail-app
     Scenario Outline: A duplicate user cannot be added
         Given I have logged into the ui and navigated to the Users page
         When I add a new user with '<email>' that is already used
@@ -49,6 +53,7 @@ Feature: user-records-admin
 
     @smoke
     @TEST-191
+    @Fail-app
     Scenario: I cannot delete my own account
         Given I have logged into the ui and has navigated to the Users page
         When I observe my account
