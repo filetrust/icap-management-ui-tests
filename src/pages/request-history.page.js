@@ -46,7 +46,8 @@ module.exports = {
         historyTable: `div[class*='RequestHistory_wrapTable__']`,
         fileTableBody: `tbody[class*='MuiTableBody-root']`,
         fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`,
-        file: `tr:nth-of-type(2)`
+        file: `tr:nth-of-type(2)`,
+        emptyTableNotification: `//td[contains(.,'No Transaction Data Found')]`,
 
     },
     calendar: {
@@ -210,7 +211,8 @@ module.exports = {
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         //const range = (timeFrom + " - " + currentTime).toString();
-        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+        I.see(timeFrom + ` - ` + currentTime)
+        //I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     },
 
 
@@ -240,10 +242,10 @@ module.exports = {
         return pastPeriod;
     },
 
-    async isDataAvailable(range) {
+    async isDataAvailable() {
         const table = this.table.fileTableBody;
         try {
-            const element = await I.grabNumberOfVisibleElements(this.table.dataTransactionInfo);
+            const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
                 I.say("No Transaction Data Found")
             } else {
@@ -257,15 +259,14 @@ module.exports = {
 
     async isDataInRange(range, col) {
         try {
-            const text = await I.grabTextFrom(`//tbody`);
-            if (text == 'No Transaction Data Found') {
-                I.say('No data returned')
+            const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
+            if (el || el.length > 0) {
+            I.say('No Transaction Data Found')
             } else {
                 I.say("Data is available")
-                I.checkIfReturnedFilesInDateRange(range, col)
+                I.checkIfReturnedFilesInDateRange(range, col) 
             }
         } catch (e) {
-            I.say('errors')
             console.warn(e);
         }
     },
@@ -509,7 +510,7 @@ module.exports = {
 isFileDetailModalOpened() {
     const element = this.modal.fileDetailModal;
     I.seeElementExist(element)
-    I._failed()
+   
 },
 
 

@@ -130,17 +130,20 @@ class MyHelper extends Helper {
         const tableRows = 'tbody tr';
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            if (rowCount > 1) {
             for (let i = 0; i < rowCount; i++) {
                 let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
                 if (moment(parsed).isBetween(range.split("-"))) {
-                    output.log('The result list shows required files within the selected time: ' + range);
+                    output.print('The result list shows required files within the selected time: ' + range);
                 } else {
-                    output.error('The result files returned are not within the selected time: ' + range);
+                    assert.fail('The result files returned are not within the selected time: ' + range);
                 }
                 break;
             }
-        } catch (err) {
+        }else{
+            output.print('No Transactiona are available')
+        }} catch (err) {
             output.error(err);
         }
     }

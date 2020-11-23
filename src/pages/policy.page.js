@@ -306,7 +306,7 @@ module.exports = {
     }
   },
 
-  assertFlagTypeForGivenContentFlagsForGivenDocType(fileType, flagType,contentFlags ) {
+  assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
     const element = this.fields.input[fileType][flagType][contentFlags]
     this.assertElementChecked(element)
   },

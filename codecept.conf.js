@@ -75,7 +75,7 @@ exports.config = {
   },
   multiple: {
     parallel: {
-      chunks: 20,
+      chunks: 10,
       browsers: ['puppeteer']
     }
   },
