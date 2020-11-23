@@ -1,0 +1,1013 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "content-management-policy-history @content-management-policy-history",
+    "children" : [ {
+      "name" : "I can change the number of items displayed on a page {\"itemCount\":\"25\"} @smoke @TEST-217",
+      "uid" : "6a80239553b66605",
+      "parentUid" : "d85917f3390485a3d98b59e71d1c3958",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703639,
+        "stop" : 1606171724521,
+        "duration" : 20882
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the number of items displayed on a page {\"itemCount\":\"50\"} @smoke @TEST-217",
+      "uid" : "ffc630a05f2a49a5",
+      "parentUid" : "d85917f3390485a3d98b59e71d1c3958",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171724632,
+        "stop" : 1606171744515,
+        "duration" : 19883
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "d85917f3390485a3d98b59e71d1c3958"
+  }, {
+    "name" : "user-records-admin @user-records-admin",
+    "children" : [ {
+      "name" : "I can add a new user to the ui {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @smoke @TEST-171 @Fail-app",
+      "uid" : "490efd8b1003c620",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703684,
+        "stop" : 1606171715485,
+        "duration" : 11801
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can add a new user to the ui {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @smoke @TEST-171 @Fail-app",
+      "uid" : "95a3db47ed3037e0",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171716726,
+        "stop" : 1606171727840,
+        "duration" : 11114
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can delete another user from the page {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @smoke @TEST-172 @Fail-app",
+      "uid" : "d04166a16aa91822",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171727991,
+        "stop" : 1606171738953,
+        "duration" : 10962
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @smoke @TEST-185 @Fail-app",
+      "uid" : "b63037395900b3c0",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171739099,
+        "stop" : 1606171750138,
+        "duration" : 11039
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @smoke @TEST-185 @Fail-app",
+      "uid" : "6c2fc69a93096649",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171750242,
+        "stop" : 1606171761211,
+        "duration" : 10969
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A duplicate user cannot be added {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @smoke @TEST-186 @Fail-app",
+      "uid" : "df678328809150b5",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171761321,
+        "stop" : 1606171772349,
+        "duration" : 11028
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I cannot delete my own account @smoke @TEST-191 @Fail-app",
+      "uid" : "487bbf18d0fb5efd",
+      "parentUid" : "4f5b79a17bf0ea81f959c67a6efd7431",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171772466,
+        "stop" : 1606171781101,
+        "duration" : 8635
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4f5b79a17bf0ea81f959c67a6efd7431"
+  }, {
+    "name" : "content-management-policy-application-to-files @content-management-policy-application-to-files",
+    "children" : [ {
+      "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @smoke @TEST-212 @Fail-code",
+      "uid" : "1266958542bf5b04",
+      "parentUid" : "1283d1e2ee419d45a42f3268c02674a3",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703688,
+        "stop" : 1606171749009,
+        "duration" : 45321
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @smoke @TEST-212 @Fail-code",
+      "uid" : "69778a5a2fec0bbd",
+      "parentUid" : "1283d1e2ee419d45a42f3268c02674a3",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171749165,
+        "stop" : 1606171786102,
+        "duration" : 36937
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "1283d1e2ee419d45a42f3268c02674a3"
+  }, {
+    "name" : "dashboard-requests-filtering-by-file-risk @dashboard-requests-filtering-by-file-risk",
+    "children" : [ {
+      "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Safe\",\"filteredRisk\":\"Safe\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "67a0fc1059937a26",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703744,
+        "stop" : 1606171715434,
+        "duration" : 11690
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Blocked By Policy\",\"filteredRisk\":\"Blocked By Policy\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "b06526b09f82fb33",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171715888,
+        "stop" : 1606171727657,
+        "duration" : 11769
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Blocked By NCFS\",\"filteredRisk\":\"Blocked By NCFS\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "9626efc7aec0fad2",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171727785,
+        "stop" : 1606171738849,
+        "duration" : 11064
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Allowed By NCFS\",\"filteredRisk\":\"Allowed By NCFS\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "41633a9b58220f54",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171738969,
+        "stop" : 1606171749882,
+        "duration" : 10913
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Allowed By Policy\",\"filteredRisk\":\"Allowed By Policy\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "91f246bce206b5e3",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171749995,
+        "stop" : 1606171760798,
+        "duration" : 10803
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Safe\",\"filteredRisk\":\"Safe\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "7b46594521dc657d",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171760922,
+        "stop" : 1606171771793,
+        "duration" : 10871
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Blocked By Policy\",\"filteredRisk\":\"Blocked By Policy\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "3f49469440f5b1ba",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171771908,
+        "stop" : 1606171782721,
+        "duration" : 10813
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Blocked By NCFS\",\"filteredRisk\":\"Blocked By NCFS\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "8004e10f79b05a28",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171782813,
+        "stop" : 1606171793619,
+        "duration" : 10806
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Allowed By NCFS\",\"filteredRisk\":\"Allowed By NCFS\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "23dc64c8293fcc9c",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171793721,
+        "stop" : 1606171804516,
+        "duration" : 10795
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Allowed By Policy\",\"filteredRisk\":\"Allowed By Policy\"} @smoke @TEST-192 @Fail-App",
+      "uid" : "dde70c80d108938c",
+      "parentUid" : "820cba080b1df737a1c7f6325c4edce2",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171804628,
+        "stop" : 1606171815475,
+        "duration" : 10847
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "820cba080b1df737a1c7f6325c4edce2"
+  }, {
+    "name" : "file-drop-file-process-result-view @file-drop-file-process-result-view",
+    "children" : [ {
+      "name" : "I can download the full analysis report of a processed file {\"supportedFile\":\"src/data/input/issues.docx\",\"analysisReport\":\"issues.docx.xml\"} @smoke @TEST-227",
+      "uid" : "5f62abc21ab446f4",
+      "parentUid" : "8dd610d9d9bab73769241a886feff124",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703765,
+        "stop" : 1606171715739,
+        "duration" : 11974
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can see the result of a repaired file with the issues removed {\"activeContentFile\":\"src/data/input/file1.docx\",\"activeContent\":\"Internal Hyperlinks present in CT_Bookmark\",\"repairedObject\":\"APP segment removed\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-228",
+      "uid" : "d60c84ecc2df8d5e",
+      "parentUid" : "8dd610d9d9bab73769241a886feff124",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171716783,
+        "stop" : 1606171727873,
+        "duration" : 11090
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can see the result of a unrepaired file with the list of structural issues not removed {\"fileWithIssues\":\"src/data/input/file2.pdf\",\"nonrepairedObject\":\"Non-conforming image\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-229",
+      "uid" : "1f1318fa5277aac4",
+      "parentUid" : "8dd610d9d9bab73769241a886feff124",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171728202,
+        "stop" : 1606171739179,
+        "duration" : 10977
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "8dd610d9d9bab73769241a886feff124"
+  }, {
+    "name" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism",
+    "children" : [ {
+      "name" : "The default routing option for unprocessable and blocked files is accurate @smoke @TEST-MISSING",
+      "uid" : "f536abbc469fb7cd",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171703769,
+        "stop" : 1606171722306,
+        "duration" : 18537
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"glasswallsolutions.com\",\"message\":\"success\"} @smoke @TEST-158_159",
+      "uid" : "dba4f1cbf0f995ce",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171722329,
+        "stop" : 1606171738398,
+        "duration" : 16069
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"invalidurl\",\"message\":\"error\"} @smoke @TEST-158_159",
+      "uid" : "92bc6907cc740380",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171738413,
+        "stop" : 1606171754315,
+        "duration" : 15902
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Relay\",\"updatedRouteOption\":\"Relay\"} @smoke @TEST-183",
+      "uid" : "2c5defdc86750e45",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171754332,
+        "stop" : 1606171767520,
+        "duration" : 13188
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Block\",\"updatedRouteOption\":\"Block\"} @smoke @TEST-183",
+      "uid" : "5c9d194a58797243",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171767534,
+        "stop" : 1606171780698,
+        "duration" : 13164
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Refer\",\"updatedRouteOption\":\"Refer\"} @smoke @TEST-183",
+      "uid" : "6b636b9e4c36791b",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171780716,
+        "stop" : 1606171793887,
+        "duration" : 13171
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Relay\",\"updatedRouteOption\":\"Relay\"} @smoke @TEST-187",
+      "uid" : "4eb9b3297fa4f9bc",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171793904,
+        "stop" : 1606171807053,
+        "duration" : 13149
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Block\",\"updatedRouteOption\":\"Block\"} @smoke @TEST-187",
+      "uid" : "94493d3859d75cc3",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171807067,
+        "stop" : 1606171820272,
+        "duration" : 13205
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Refer\",\"updatedRouteOption\":\"Refer\"} @smoke @TEST-187",
+      "uid" : "2fda3ffeccdf1db2",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171820289,
+        "stop" : 1606171832806,
+        "duration" : 12517
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-233",
+      "uid" : "a9930a31c8392935",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171832825,
+        "stop" : 1606171853778,
+        "duration" : 20953
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-234",
+      "uid" : "1856bb583b450e3",
+      "parentUid" : "0d0b0d7f457f46fbe9de9d64602394f5",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171853894,
+        "stop" : 1606171869496,
+        "duration" : 15602
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "0d0b0d7f457f46fbe9de9d64602394f5"
+  }, {
+    "name" : "request-history-filtering-by-date @request-history-filtering-by-date",
+    "children" : [ {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+      "uid" : "3d0104a1b78e5f45",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171703772,
+        "stop" : 1606171720179,
+        "duration" : 16407
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+      "uid" : "72088179875f694b",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171720213,
+        "stop" : 1606171735892,
+        "duration" : 15679
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+      "uid" : "fc888cf2bf69e326",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171735917,
+        "stop" : 1606171751499,
+        "duration" : 15582
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "035179e06095b1264ae35ae53693096c"
+  }, {
+    "name" : "dashboard-requests-metrics-display @dashboard-requests-metrics-display",
+    "children" : [ {
+      "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Safe\",\"file\":\"safe_file.xlsx\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+      "uid" : "7422d2d9d98bf451",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171703806,
+        "stop" : 1606171715788,
+        "duration" : 11982
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Blocked By Policy\",\"file\":\"blocked_file.doc\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+      "uid" : "a65713d6873f2cab",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171716756,
+        "stop" : 1606171727907,
+        "duration" : 11151
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Allowed By Policy\",\"file\":\"issues.docx\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+      "uid" : "9bbfa97f30e70a7f",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171728209,
+        "stop" : 1606171739119,
+        "duration" : 10910
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The count of files requests processed is updated based on processing status {\"file\":\"safe_file.xlsx\",\"fileOutcome\":\"Safe\",\"TFUpdateByValue\":\"1\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"1\"} @smoke @TEST-224 @Fail-Code",
+      "uid" : "4a05c2f6777ce1cc",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171739362,
+        "stop" : 1606171750268,
+        "duration" : 10906
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The count of files requests processed is updated based on processing status {\"file\":\"blocked_file.doc\",\"fileOutcome\":\"Blocked By Policy\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"0\"} @smoke @TEST-224 @Fail-Code",
+      "uid" : "2866fed7470736f1",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171750487,
+        "stop" : 1606171761388,
+        "duration" : 10901
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The count of files requests processed is updated based on processing status {\"file\":\"issues.docx\",\"fileOutcome\":\"Allowed By Policy\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"0\"} @smoke @TEST-224 @Fail-Code",
+      "uid" : "3d86e73262b8c559",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171761579,
+        "stop" : 1606171772486,
+        "duration" : 10907
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "The count of files requests processed is updated based on processing status {\"file\":\"Unclassified_file\",\"fileOutcome\":\"Unclassified\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"1\"} @smoke @TEST-224 @Fail-Code",
+      "uid" : "4c321077aec796a0",
+      "parentUid" : "4e7267443eb5bd7dabaec6c425b950f7",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171772658,
+        "stop" : 1606171783591,
+        "duration" : 10933
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "4e7267443eb5bd7dabaec6c425b950f7"
+  }, {
+    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
+    "children" : [ {
+      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+      "uid" : "777fc8b1ead85ef6",
+      "parentUid" : "deb4054e85d118f1d01bf0fc579b4159",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171703823,
+        "stop" : 1606171731692,
+        "duration" : 27869
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "deb4054e85d118f1d01bf0fc579b4159"
+  }, {
+    "name" : "request-history-log @request-history-log",
+    "children" : [ {
+      "name" : "I am able to change the number of files displayed on the page {\"itemCount\":\"25\",\"fileCount\":\"4\"} @smoke @TEST-166",
+      "uid" : "9c2a2317215055ae",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171731723,
+        "stop" : 1606171742610,
+        "duration" : 10887
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @functional @smoke @TEST-179",
+      "uid" : "2142f345f95d1830",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171742760,
+        "stop" : 1606171784014,
+        "duration" : 41254
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\",\"filterValues\":\"SAFE\"} @functional @smoke @TEST-189",
+      "uid" : "a2531accbe516aa3",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171784041,
+        "stop" : 1606171827594,
+        "duration" : 43553
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"png\",\"filterValues\":\"png\"} @functional @smoke @TEST-189",
+      "uid" : "4075a0d4da9eed84",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171827611,
+        "stop" : 1606171871175,
+        "duration" : 43564
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "bb013c60765ee8db3d0fa37aa66b6820"
+  }, {
+    "name" : "file-drop-file-processing @file-drop-file-processing",
+    "children" : [ {
+      "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-230",
+      "uid" : "73e12728f4c60eb8",
+      "parentUid" : "a3b1971439bb10976d7a87a29854a7e1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171739310,
+        "stop" : 1606171750252,
+        "duration" : 10942
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-230",
+      "uid" : "24f1ab9b4c65fa7a",
+      "parentUid" : "a3b1971439bb10976d7a87a29854a7e1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171750396,
+        "stop" : 1606171761350,
+        "duration" : 10954
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @smoke @TEST-231 @Fail-Code",
+      "uid" : "e4ed58069c3e7b08",
+      "parentUid" : "a3b1971439bb10976d7a87a29854a7e1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171761546,
+        "stop" : 1606171772494,
+        "duration" : 10948
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/test2.pdf\",\"error\":\"This free service is currently limited to a maximum file size of 3.5MB\"} @smoke @TEST-231 @Fail-Code",
+      "uid" : "e2e337bb93b8e249",
+      "parentUid" : "a3b1971439bb10976d7a87a29854a7e1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171772640,
+        "stop" : 1606171783621,
+        "duration" : 10981
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "a3b1971439bb10976d7a87a29854a7e1"
+  }, {
+    "name" : "content-management-previous-policy @content-management-previous-policy",
+    "children" : [ {
+      "name" : "I can view previous Policy details @smoke @TEST-218",
+      "uid" : "23d2973ae4d8bb7a",
+      "parentUid" : "86a2c3b595a4cf35a587369eadc14e2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171744637,
+        "stop" : 1606171766803,
+        "duration" : 22166
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can activate a previous policy @smoke @TEST-219",
+      "uid" : "704e63b7ed76177e",
+      "parentUid" : "86a2c3b595a4cf35a587369eadc14e2c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171766825,
+        "stop" : 1606171788954,
+        "duration" : 22129
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "86a2c3b595a4cf35a587369eadc14e2c"
+  }, {
+    "name" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type",
+    "children" : [ {
+      "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+      "uid" : "6103aaca8c5e9247",
+      "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171751550,
+        "stop" : 1606171778788,
+        "duration" : 27238
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+      "uid" : "7053f4baf374df21",
+      "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171778815,
+        "stop" : 1606171806104,
+        "duration" : 27289
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "a89ae962261ac178c78d0e0ce666c114"
+  }, {
+    "name" : "user-session-admin @user-session-admin",
+    "children" : [ {
+      "name" : "I am able to log out of the ui @smoke @TEST-",
+      "uid" : "468d913735b8cd94",
+      "parentUid" : "0358b1784cfd9bf03fdc1759e7c33274",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171781235,
+        "stop" : 1606171794429,
+        "duration" : 13194
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I am able to update my password {\"CurrentPassword\":\"OldPassword1?\",\"NewPassword\":\"NewPassword2)\",\"ConfirmNewPassword\":\"NewPassword2)\"} @smoke @TEST-",
+      "uid" : "1f05baae46ca8dc6",
+      "parentUid" : "0358b1784cfd9bf03fdc1759e7c33274",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171794445,
+        "stop" : 1606171828937,
+        "duration" : 34492
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "0358b1784cfd9bf03fdc1759e7c33274"
+  }, {
+    "name" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting",
+    "children" : [ {
+      "name" : "I can download the full XML analysis report for a file {\"supportedFile\":\"src/data/input/file1.docx\",\"xmlFile\":\"file1.xml\"} @smoke @TEST-225 @Fail-code",
+      "uid" : "82c1456b6a258520",
+      "parentUid" : "59eb04837d9de284b07ee13627a40a12",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171783801,
+        "stop" : 1606171794649,
+        "duration" : 10848
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/input/file2.pdf\",\"pdfFile\":\"file2.pdf\"} @smoke @TEST-226 @Fail-code",
+      "uid" : "b1a4e3b327283a6d",
+      "parentUid" : "59eb04837d9de284b07ee13627a40a12",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171794750,
+        "stop" : 1606171805573,
+        "duration" : 10823
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "59eb04837d9de284b07ee13627a40a12"
+  }, {
+    "name" : "Content Management Policy Editing @content-management-policy-editing",
+    "children" : [ {
+      "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-213",
+      "uid" : "c836dd545ceb5e64",
+      "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171786252,
+        "stop" : 1606171808487,
+        "duration" : 22235
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-214",
+      "uid" : "3a5452efe7ea5df6",
+      "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171808501,
+        "stop" : 1606171830762,
+        "duration" : 22261
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-214",
+      "uid" : "a0b408f6535c1326",
+      "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171830778,
+        "stop" : 1606171852969,
+        "duration" : 22191
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-215",
+      "uid" : "1d9ba6ab96aabc28",
+      "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171852983,
+        "stop" : 1606171892228,
+        "duration" : 39245
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-215",
+      "uid" : "6441327d904e3a59",
+      "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171892253,
+        "stop" : 1606171931492,
+        "duration" : 39239
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "cb833964769cea8dbcf3e8744dd04026"
+  }, {
+    "name" : "dashboard-requests-filtering-by-process-date @dashboard-requests-filtering-by-process-date",
+    "children" : [ {
+      "name" : "I am able to filter the dashboard requests by time {\"time\":\"Custom Range\",\"dateStart\":\"2/10/2020 10:30 AM\",\"dateEnd\":\"2/10/2020 11:00 AM\",\"dateRange\":\"02/10/2020 10:30 AM - 02/10/2020 11:00 AM\"} @smoke @TEST-151_custom",
+      "uid" : "b2e3d105e7514282",
+      "parentUid" : "5b114aef7d0337d2e7d463eb13be6ae1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171815596,
+        "stop" : 1606171825924,
+        "duration" : 10328
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+      "uid" : "d63eabcba7303b18",
+      "parentUid" : "5b114aef7d0337d2e7d463eb13be6ae1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171826039,
+        "stop" : 1606171836988,
+        "duration" : 10949
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+      "uid" : "b2a888cb84ce7803",
+      "parentUid" : "5b114aef7d0337d2e7d463eb13be6ae1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171837098,
+        "stop" : 1606171848013,
+        "duration" : 10915
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+      "uid" : "19dfdec0feb08502",
+      "parentUid" : "5b114aef7d0337d2e7d463eb13be6ae1",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606171848132,
+        "stop" : 1606171858411,
+        "duration" : 10279
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "5b114aef7d0337d2e7d463eb13be6ae1"
+  }, {
+    "name" : "request-history-file-detail-view @request-history-file-detail-view",
+    "children" : [ {
+      "name" : "I am able to view more detail on a file @functional @smoke @TEST-169 @Fail-Code",
+      "uid" : "cf41d64db62430ea",
+      "parentUid" : "2f47f84d3c9757c328f7e00deb97ec25",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606171869624,
+        "stop" : 1606171892102,
+        "duration" : 22478
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2f47f84d3c9757c328f7e00deb97ec25"
+  } ],
+  "name" : "suites"
+}
