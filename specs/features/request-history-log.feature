@@ -28,6 +28,7 @@ Feature: request-history-log
       | riskFilter | typeFilter | fileIdFilter | appliedFilters | filterValues |
       | Safe       | png        |              | Safe_png       | SAFE_png     |
 
+
   @functional
     @smoke
     @TEST-189
@@ -37,9 +38,9 @@ Feature: request-history-log
     When I remove '<filterToRemove>'
     Then the result list shows files with the applied filtertypes '<appliedFilter>', '<filterValues>'
     Examples:
-      | filterOne | filterTwo | filterToRemove | appliedFilter |  filterValues |
-      | docx      | Safe      | docx           | Safe          |  SAFE     |
-      | png       | Safe      | Safe           | Png           | png       |
+      | filterOne | filterTwo | filterToRemove | appliedFilter | filterValues |
+      | docx      | Safe      | docx           | Safe          | SAFE         |
+      | png       | Safe      | Safe           | png           | png          |
 
 
   @filterfileid

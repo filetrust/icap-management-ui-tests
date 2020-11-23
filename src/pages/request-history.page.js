@@ -317,7 +317,7 @@ module.exports = {
         this.clickFileOutcomeAdd();
         try {
             I.say('Filter to set is: ' + value)
-            let element = `//span[text()='` + value + `']`;
+            let element = `//label/span[text()='` + value + `']`;
             I.click(element);
             this.closeFilterPopup();
             I.wait(5);
@@ -330,7 +330,7 @@ module.exports = {
     async checkResultFileTypesAreAccurate(filteredFile, col) {
         try {
             const text = await I.grabTextFrom(`//tbody`);
-            if (text == 'No Transaction Data Found') {
+            if (text === 'No Transaction Data Found') {
                 I.say('No data returned')
             } else {
                 I.say("Data is available")
@@ -374,14 +374,9 @@ module.exports = {
      checkFilters(appliedFilters, filterValues) {
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
-        // if (res.length === 1) {
-        //     const filterValue = this.containers.appliedFiltersFooter;
-        //     this.checkFilterByValue(res[0], filterValue);
-        // } else {
             for (let i = 0; i < filterRes.length; i++) {
                 let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
                 this.checkFilterByValue(res[i], filterValueLocator);
-            // }
         }
     },
 
