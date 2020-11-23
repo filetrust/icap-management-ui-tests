@@ -5,7 +5,7 @@ Feature: user-records-admin
     Background: Login
         Given I am logged into the ui
 
-    
+    @smoke
     @TEST-171
     @Fail-app
     Scenario Outline: I can add a new user to the ui
@@ -17,6 +17,7 @@ Feature: user-records-admin
             | tester1 | tester1@glasswalltest.co |
             | tester2 | tester2@glasswalltest.co |
 
+    @smoke
     @TEST-172
     @Fail-app
     Scenario Outline: I can delete another user from the page

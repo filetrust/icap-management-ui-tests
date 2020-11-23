@@ -4,6 +4,7 @@ Feature: request-history-file-detail-view
     in order to confirm that the solution works as expected
 
     @functional
+    @smoke
     @TEST-169
     @Fail-Code
     #Does not take to correct id record
@@ -12,4 +13,4 @@ Feature: request-history-file-detail-view
         And I have navigated to the Request History page
         When I click on a available file record with id ''
         Then the file detail view opens 
-        And the issue items, sanitisation items, remedy items, and content management policy sections are available
+        And the file result details and content management policy sections are available

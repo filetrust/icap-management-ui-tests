@@ -6,7 +6,7 @@ Feature: dashboard-requests-metrics-display
         Given I am logged into the ui
         And I have navigated to the Analytics page
 
-
+    @smoke
     @TEST-223
     @Fail-Code
     # No Steps Matching "I have navigated to the Analytics page"
@@ -22,7 +22,7 @@ Feature: dashboard-requests-metrics-display
     # | Allowed By NCFS   | Unclassified_file | 1              |
     # | Blocked By NCFS   | Malicious_file    | 1              |
 
-
+    @smoke
     @TEST-224
     @Fail-Code
     # No Steps Matching "I have navigated to the Analytics page"

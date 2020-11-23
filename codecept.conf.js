@@ -25,12 +25,7 @@ exports.config = {
       waitForAction: 2000
     },
     FileSystem: {},
-    AssertWrapper: {
-      require: "codeceptjs-assert"
-    },
-    ChaiWrapper: {
-      require: "codeceptjs-chai"
-    }
+      
   },
   include: {
     I: './src/utils/steps_file.js',

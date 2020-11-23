@@ -306,7 +306,7 @@ module.exports = {
     }
   },
 
-  assertFlagTypeForGivenContentFlagsForGivenDocType(fileType, flagType,contentFlags ) {
+  assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
     const element = this.fields.input[fileType][flagType][contentFlags]
     this.assertElementChecked(element)
   },
@@ -367,7 +367,11 @@ module.exports = {
   assertNumberOfOpenTab(expectedTabCount) {
     const numberOfOpenTabs = I.grabAllWindowHandles()
     numberOfOpenTabs.then((numberTabs) => {
-      I.assertEqual(numberTabs.length, expectedTabCount, 'Expected and actual tab count is not same')
+      if (numberTabs.length === expectedTabCount){
+        I.say('The number Of open tabs' + numberTabs.length+ 'is as expected ' +expectedTabCount)
+      }else {
+        I.say('Expected and actual tab count is not same')
+      }
     })
   },
 

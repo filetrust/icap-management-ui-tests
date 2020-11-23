@@ -1,0 +1,21 @@
+version: '2'
+services:
+  allure-server:
+    container_name: allure-server
+    image: kochetkovma/allure-server:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - /allure-server-store:/allure
+  codecept:
+    build:
+      context: ..
+      dockerfile: docker/codecept.Dockerfile
+    container_name: codeceptjs
+    user: ${USER_ID}
+    network_mode: host
+    environment:
+      - NO_OF_WORKERS=10
+      - CODECEPT_ARGS=--debug
+    volumes:
+     - ../:/tests
