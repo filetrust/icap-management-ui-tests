@@ -47,3 +47,15 @@ Then('the risk sector {string} is available and shows the count updated by {int}
 Given('I have navigated to the Analytics page',  () => {
         I.goToAnalytics();
 });
+When('I process a {string} through the icap server with an outcome as {string}',  (file, fileOutcome) =>{
+
+});
+Then(/^the Total Files processed is increased by '(.*)'$/, function () {
+
+});
+Then(/^the Total icap requests is increased by '(.*)'$/, function () {
+
+});
+Then(/^the max files per second processed is increased by '(.*)'$/, function () {
+
+});
