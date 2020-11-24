@@ -1,0 +1,274 @@
+{
+  "uid" : "9098576d0736f243",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+  "historyId" : "f345a21108f1bc51401fda803f4e22b0",
+  "time" : {
+    "start" : 1606178086383,
+    "stop" : 1606178103649,
+    "duration" : 17266
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSeeInField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2426:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:28:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSeeInField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2426:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:28:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+    "steps" : [ {
+      "name" : "requesthistoryPage: openDatePicker ",
+      "time" : {
+        "start" : 1606178098798,
+        "stop" : 1606178101218,
+        "duration" : 2420
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1606178098798,
+          "stop" : 1606178101117,
+          "duration" : 2319
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectTimePeriod \"1 Hour\"",
+      "time" : {
+        "start" : 1606178101218,
+        "stop" : 1606178103644,
+        "duration" : 2426
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"li[data-range-key='1 Hour']\"",
+        "time" : {
+          "start" : 1606178101218,
+          "stop" : 1606178103644,
+          "duration" : 2426
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isTimeApplied \"1\", \"current time\"",
+      "time" : {
+        "start" : 1606178103644,
+        "stop" : 1606178103649,
+        "duration" : 5
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSeeInField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2426:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:28:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+      "steps" : [ {
+        "name" : "I see in field \"//button[contains(.,'Date/Time')]\", \"23/11/2020 23:34 PM - 24/11/2020 0:34 AM\"",
+        "time" : {
+          "start" : 1606178103644,
+          "stop" : 1606178103648,
+          "duration" : 4
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Field \"//button[contains(.,'Date/Time')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSeeInField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2426:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:28:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "fa26084e1f580112",
+      "name" : "Last Seen Screenshot",
+      "source" : "fa26084e1f580112.png",
+      "type" : "image/png",
+      "size" : 35400
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-code"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-167"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "a2678bf56ebe000",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/37//#testresult/a2678bf56ebe000",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606171709369,
+          "stop" : 1606171725703,
+          "duration" : 16334
+        }
+      }, {
+        "uid" : "93f1ad73b8851b13",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/36//#testresult/93f1ad73b8851b13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606118617469,
+          "stop" : 1606118633556,
+          "duration" : 16087
+        }
+      }, {
+        "uid" : "9b6c6fb27040d886",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/35//#testresult/9b6c6fb27040d886",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605869081854,
+          "stop" : 1605869097815,
+          "duration" : 15961
+        }
+      }, {
+        "uid" : "63ba01cd8b33bfad",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/34//#testresult/63ba01cd8b33bfad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605862419259,
+          "stop" : 1605862435501,
+          "duration" : 16242
+        }
+      }, {
+        "uid" : "7cf21b0a61fa1bfa",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/33//#testresult/7cf21b0a61fa1bfa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605829127177,
+          "stop" : 1605829144093,
+          "duration" : 16916
+        }
+      }, {
+        "uid" : "91258725bf09c052",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/32//#testresult/91258725bf09c052",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605828796120,
+          "stop" : 1605828814535,
+          "duration" : 18415
+        }
+      }, {
+        "uid" : "b667f9dba3d99d1e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/31//#testresult/b667f9dba3d99d1e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605828255615,
+          "stop" : 1605828272404,
+          "duration" : 16789
+        }
+      }, {
+        "uid" : "2116d543e1a009a1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/30//#testresult/2116d543e1a009a1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605827787026,
+          "stop" : 1605827803865,
+          "duration" : 16839
+        }
+      }, {
+        "uid" : "e50193bbd44ee0cd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/29//#testresult/e50193bbd44ee0cd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1605800811397,
+          "stop" : 1605800828221,
+          "duration" : 16824
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@TEST-167", "@Fail-code", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "9098576d0736f243.json",
+  "parameterValues" : [ ]
+}
