@@ -14,7 +14,7 @@ module.exports = {
         customPaginatorGoTo: `input[class*='custom-paginator-goto']`,
     },
     options: {
-        countOfFiles: "div[class*='Pagination_pageCountSelector__'] > select"
+        countOfFiles: "//select"
     },
     buttons: {
         filterArrow: `button[class*='Filters_arrow__']`,
@@ -52,6 +52,7 @@ module.exports = {
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
+        dateTimePickerText: `div[id*='reportrange'] > span`,
         drp_calendar_left: `div[class*='drp-calendar left']`,
         drp_calendar_right: `div[class*='drp-calendar right']`,
         reportRange: `div[id*='reportrange']`,
@@ -109,6 +110,7 @@ module.exports = {
 
     selectCountOfFiles(itemCount) {
         const element = this.options.countOfFiles;
+        I.click(element);
         I.selectOption(element, itemCount);
     },
 
@@ -202,17 +204,18 @@ module.exports = {
     },
 
     isTimeApplied(start, end) {
-        var time = null;
+        let time = null;
         if (end === 'current time') {
             time = moment();
         } else {
-            time = datetimeTo
+            time = end;
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
+     //   I.seeInField(this.calendar.dateTimePickerText,  timeFrom + ` - ` + currentTime);
         //const range = (timeFrom + " - " + currentTime).toString();
-        I.see(timeFrom + ` - ` + currentTime)
-        //I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+      //  I.see(timeFrom + ` - ` + currentTime)
+        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     },
 
 
@@ -317,7 +320,7 @@ module.exports = {
         this.clickFileOutcomeAdd();
         try {
             I.say('Filter to set is: ' + value)
-            let element = `//span[text()='` + value + `']`;
+            let element = `//label/span[text()='` + value + `']`;
             I.click(element);
             this.closeFilterPopup();
             I.wait(5);
@@ -330,7 +333,7 @@ module.exports = {
     async checkResultFileTypesAreAccurate(filteredFile, col) {
         try {
             const text = await I.grabTextFrom(`//tbody`);
-            if (text == 'No Transaction Data Found') {
+            if (text === 'No Transaction Data Found') {
                 I.say('No data returned')
             } else {
                 I.say("Data is available")
@@ -347,24 +350,25 @@ module.exports = {
        let col;
        let text;
        try {
+           if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)){
            I.grabTextFrom(`//tbody/descendant::h2`).then((value) =>
            {
                I.say(value);
                text = value;
                if (text==='Error Getting Transaction Data' || text==='No Transaction Data Found') {
                    I.say('No data returned');
-               } else {
+               }
+           });
+           }
+           else {
                     Promise.all([
                        I.say("Data is available"),
                        col = this.getAppliedFilter(filter),
                        I.checkRow(filter, col),
                    ]);
                }
-           })
-          // text = await I.grabTextFrom(`//tbody/descendant::h2`);
-          //      I.say(text);
-
-       } catch (e) {
+           }
+           catch (e) {
            I.say('errors')
            console.warn(e);
        }
@@ -374,14 +378,9 @@ module.exports = {
      checkFilters(appliedFilters, filterValues) {
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
-        // if (res.length === 1) {
-        //     const filterValue = this.containers.appliedFiltersFooter;
-        //     this.checkFilterByValue(res[0], filterValue);
-        // } else {
             for (let i = 0; i < filterRes.length; i++) {
                 let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
                 this.checkFilterByValue(res[i], filterValueLocator);
-            // }
         }
     },
 

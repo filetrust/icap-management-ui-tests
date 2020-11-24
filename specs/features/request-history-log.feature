@@ -6,6 +6,7 @@ Feature: request-history-log
   Background:
     Given I am logged into the ui
 
+  @success
   @smoke
     @TEST-166
   Scenario Outline: I am able to change the number of files displayed on the page
@@ -16,8 +17,8 @@ Feature: request-history-log
       | itemCount | fileCount |
       | 25        | 4         |
 
+  @success
   @functional
-    @smoke
     @TEST-179
   Scenario Outline: Validate requests log view using a combination of multiple filters
     Given I have navigated to the Request History page
@@ -28,8 +29,8 @@ Feature: request-history-log
       | riskFilter | typeFilter | fileIdFilter | appliedFilters | filterValues |
       | Safe       | png        |              | Safe_png       | SAFE_png     |
 
+  @success
   @functional
-    @smoke
     @TEST-189
   Scenario Outline: I can remove individual filters
     Given I have navigated to the Request History page
@@ -37,9 +38,9 @@ Feature: request-history-log
     When I remove '<filterToRemove>'
     Then the result list shows files with the applied filtertypes '<appliedFilter>', '<filterValues>'
     Examples:
-      | filterOne | filterTwo | filterToRemove | appliedFilter |  filterValues |
-      | docx      | Safe      | docx           | Safe          |  SAFE     |
-      | png       | Safe      | Safe           | Png           | png       |
+      | filterOne | filterTwo | filterToRemove | appliedFilter | filterValues |
+      | docx      | Safe      | docx           | Safe          | SAFE         |
+      | png       | Safe      | Safe           | png           | png          |
 
 
   @filterfileid

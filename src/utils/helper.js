@@ -15,15 +15,15 @@ class MyHelper extends Helper {
     //         });
     //     }
 
-    _failed() {
-         recorder.catchWithoutStop({
-            fail: ('Test Failed'),
-            when: event.dispatcher.on(event.step.failed, (step,err) => {
-            if (event.step.comment)
-                failed = true;
-           })
-         })
-        }
+    // _failed() {
+    //      recorder.catchWithoutStop({
+    //         fail: ('Test Failed'),
+    //         when: event.dispatcher.on(event.step.failed, (step,err) => {
+    //         if (event.step.comment)
+    //             failed = true;
+    //        })
+    //      })
+    //     }
   
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
@@ -142,7 +142,7 @@ class MyHelper extends Helper {
                 break;
             }
         }else{
-            output.print('No Transactiona are available')
+            output.print('No Transactions are available')
         }} catch (err) {
             output.error(err);
         }
@@ -166,7 +166,7 @@ class MyHelper extends Helper {
             I.amInPath('output/downloads');
             I.seeInThisFile(content, 'utf8')
         } catch (err) {
-            output.error('The file does not contain required content:-  ' + content);
+            assert.fail('The file does not contain required content:-  ' + content);
         }
     }
 

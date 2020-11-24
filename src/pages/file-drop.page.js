@@ -69,6 +69,7 @@ module.exports = {
 
     clickXml() {
         const element = this.buttons.xml;
+        I.waitForClickable(element);
         I.click(element);
     },
 
@@ -130,5 +131,9 @@ module.exports = {
     assertAnalysisReportDownload(analysisReport) {
         I.amInPath('output/downloads');
         I.seeFileNameMatching(analysisReport);
-    }
+    },
+    checkMessageDisplayed(error) {
+        I.seeElementInDOM('//div[text()="'+error+'"]');
+    },
+
 }

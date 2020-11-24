@@ -55,7 +55,7 @@ Feature: user-records-admin
     @TEST-191
     @Fail-app
     Scenario: I cannot delete my own account
-        Given I have logged into the ui and has navigated to the Users page
+        Given I have logged into the ui and navigated to the Users page
         When I observe my account
         Then there will be no delete button next to my account
 

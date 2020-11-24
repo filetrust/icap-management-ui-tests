@@ -8,12 +8,12 @@ Feature: dashboard-requests-metrics-display
 
     @smoke
     @TEST-223
-    @Fail-Code
-    # No Steps Matching "I have navigated to the Analytics page"
+    @Fail-app
+    #  Element "div[data-test-id='lineChart'] > div > div > svg" was not found by text|CSS|XPath
     Scenario Outline: The file risk count is updated for every file processed based on the outcome
         Given I have confirmed the current risks counts for '<risk>'
         When I process a '<file>' through the icap server
-        Then the risk sector '<risk>' is available and shows the count updated by '<increasedValue>'
+        Then the risk sector '<risk>' is available and shows the count updated by <increasedValue>
         Examples:
             | risk              | file             | increasedValue |
             | Safe              | safe_file.xlsx   | 1              |
@@ -22,10 +22,10 @@ Feature: dashboard-requests-metrics-display
     # | Allowed By NCFS   | Unclassified_file | 1              |
     # | Blocked By NCFS   | Malicious_file    | 1              |
 
+    @Fail-app
     @smoke
     @TEST-224
-    @Fail-Code
-    # No Steps Matching "I have navigated to the Analytics page"
+    #Not all steps are done because of unfinished implementation
     Scenario Outline: The count of files requests processed is updated based on processing status
         Given I have confirmed the concurrent counts of total files requests processed
         When I process a '<file>' through the icap server with an outcome as '<fileOutcome>'

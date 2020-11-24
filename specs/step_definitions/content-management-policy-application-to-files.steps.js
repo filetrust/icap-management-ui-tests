@@ -7,8 +7,8 @@ const {
 } = inject();
 
 
-Given(/^I set a policy with the (.*) set to (.*) for a file type (.*)$/, (contentFlags, flagType, fileType) => {
-    if (fileType != 'jpg') {
+Given('I set a policy with the {string} set to {string} for a file type {string}', (contentFlags, flagType, fileType) => {
+    if (fileType !== 'jpg') {
         policyPage.setFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType)
         I.wait(2)
         policyPage.clickSaveChanges()
@@ -22,9 +22,9 @@ When(/^I process file (.*) file (.*) through the icap server$/, (fileType, file)
     icapProxyPage.assertFileDownload(file)
 })
 
-Then(/^The (.*) processing outcome is (.*)$/, (file, fileOutcome) => {
+Then('The {string} processing outcome is {string}', (file, fileOutcome) => {
     const filePath = `output/downloads/${file.trim()}`
-    if (fileOutcome == 'Sanitised') {
+    if (fileOutcome === 'Sanitised') {
     I.checkFileInFileDrop(filePath)
     filedropPage.isRequiredContentRefDisplayed('File is clean')
     }else {
