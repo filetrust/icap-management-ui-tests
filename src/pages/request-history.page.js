@@ -110,6 +110,7 @@ module.exports = {
 
     selectCountOfFiles(itemCount) {
         const element = this.options.countOfFiles;
+        I.click(element);
         I.selectOption(element, itemCount);
     },
 
