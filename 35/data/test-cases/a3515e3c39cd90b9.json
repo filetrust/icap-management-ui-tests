@@ -1,0 +1,277 @@
+{
+  "uid" : "a3515e3c39cd90b9",
+  "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-234",
+  "historyId" : "4138d12fbe7b076969e4188f29a5f462",
+  "time" : {
+    "start" : 1606178232307,
+    "stop" : 1606178247933,
+    "duration" : 15626
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: setUnprocessableFileAsRelay ",
+      "time" : {
+        "start" : 1606178243263,
+        "stop" : 1606178245580,
+        "duration" : 2317
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//label[@for='relay-Un-Processable-File-Types']\"",
+        "time" : {
+          "start" : 1606178243263,
+          "stop" : 1606178245480,
+          "duration" : 2217
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickFileDrop ",
+      "time" : {
+        "start" : 1606178245581,
+        "stop" : 1606178247919,
+        "duration" : 2338
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"a[href*='file-drop'] > div\"",
+        "time" : {
+          "start" : 1606178245581,
+          "stop" : 1606178247919,
+          "duration" : 2338
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: goToFileDrop ",
+      "time" : {
+        "start" : 1606178247919,
+        "stop" : 1606178247924,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='Button_button__']\"",
+        "time" : {
+          "start" : 1606178247919,
+          "stop" : 1606178247924,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"src/data/input/file1.docx\"",
+      "time" : {
+        "start" : 1606178247924,
+        "stop" : 1606178247933,
+        "duration" : 9
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"src/data/input/file1.docx\"",
+        "time" : {
+          "start" : 1606178247924,
+          "stop" : 1606178247932,
+          "duration" : 8
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "97cd3af1d2a910ef",
+      "name" : "Last Seen Screenshot",
+      "source" : "97cd3af1d2a910ef.png",
+      "type" : "image/png",
+      "size" : 22876
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 7,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "1856bb583b450e3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/34//#testresult/1856bb583b450e3",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606171853894,
+          "stop" : 1606171869496,
+          "duration" : 15602
+        }
+      }, {
+        "uid" : "d80005323822510b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/33//#testresult/d80005323822510b",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606118742521,
+          "stop" : 1606118758179,
+          "duration" : 15658
+        }
+      }, {
+        "uid" : "60ea355dd75b2dbb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/32//#testresult/60ea355dd75b2dbb",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605869248471,
+          "stop" : 1605869264135,
+          "duration" : 15664
+        }
+      }, {
+        "uid" : "bafe2acd362fa65f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/31//#testresult/bafe2acd362fa65f",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605862568915,
+          "stop" : 1605862584516,
+          "duration" : 15601
+        }
+      }, {
+        "uid" : "a7e38c02308b99f3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/30//#testresult/a7e38c02308b99f3",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605829282633,
+          "stop" : 1605829298310,
+          "duration" : 15677
+        }
+      }, {
+        "uid" : "a65a0642574a9bbb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/29//#testresult/a65a0642574a9bbb",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1605828950427,
+          "stop" : 1605828966614,
+          "duration" : 16187
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@TEST-234", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "a3515e3c39cd90b9.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,701 @@
+[ {
+  "uid" : "745c642514c126d5",
+  "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-214",
+  "time" : {
+    "start" : 1606178185725,
+    "stop" : 1606178207928,
+    "duration" : 22203
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "aef044f5922fab03",
+  "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Blocked By Policy\",\"filteredRisk\":\"Blocked By Policy\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178094972,
+    "stop" : 1606178106861,
+    "duration" : 11889
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "e38c90c4daf62dc6",
+  "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Safe\",\"file\":\"safe_file.xlsx\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+  "time" : {
+    "start" : 1606178081401,
+    "stop" : 1606178092862,
+    "duration" : 11461
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8aeed97f1cd833c0",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+  "time" : {
+    "start" : 1606178081508,
+    "stop" : 1606178098043,
+    "duration" : 16535
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "12ba52fbca14c43b",
+  "name" : "I can delete another user from the page {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @smoke @TEST-172 @Fail-app",
+  "time" : {
+    "start" : 1606178107104,
+    "stop" : 1606178117998,
+    "duration" : 10894
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6fc7c801486a3253",
+  "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Block\",\"updatedRouteOption\":\"Block\"} @smoke @TEST-187",
+  "time" : {
+    "start" : 1606178184924,
+    "stop" : 1606178198074,
+    "duration" : 13150
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3036e990dd479757",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-233",
+  "time" : {
+    "start" : 1606178211265,
+    "stop" : 1606178232195,
+    "duration" : 20930
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "e4788e88c8bf3f79",
+  "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @smoke @TEST-185 @Fail-app",
+  "time" : {
+    "start" : 1606178118198,
+    "stop" : 1606178129163,
+    "duration" : 10965
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "ef0810e430ce9375",
+  "name" : "The count of files requests processed is updated based on processing status {\"file\":\"blocked_file.doc\",\"fileOutcome\":\"Blocked By Policy\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"0\"} @smoke @TEST-224 @Fail-Code",
+  "time" : {
+    "start" : 1606178127934,
+    "stop" : 1606178138793,
+    "duration" : 10859
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "c55b64965007e753",
+  "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Relay\",\"updatedRouteOption\":\"Relay\"} @smoke @TEST-183",
+  "time" : {
+    "start" : 1606178131877,
+    "stop" : 1606178145151,
+    "duration" : 13274
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a0cf304723cf1424",
+  "name" : "The default routing option for unprocessable and blocked files is accurate @smoke @TEST-MISSING",
+  "time" : {
+    "start" : 1606178081461,
+    "stop" : 1606178099627,
+    "duration" : 18166
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ebfabdc06dc76834",
+  "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-215",
+  "time" : {
+    "start" : 1606178230161,
+    "stop" : 1606178269400,
+    "duration" : 39239
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9b654dc11aa23f2a",
+  "name" : "I can download the full analysis report of a processed file {\"supportedFile\":\"src/data/input/issues.docx\",\"analysisReport\":\"issues.docx.xml\"} @smoke @TEST-227",
+  "time" : {
+    "start" : 1606178081470,
+    "stop" : 1606178093978,
+    "duration" : 12508
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "a4bcacf1dd43c9f6",
+  "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Blocked By Policy\",\"filteredRisk\":\"Blocked By Policy\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178150814,
+    "stop" : 1606178161641,
+    "duration" : 10827
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f099d0390d9a3bdc",
+  "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Relay\",\"updatedRouteOption\":\"Relay\"} @smoke @TEST-187",
+  "time" : {
+    "start" : 1606178171712,
+    "stop" : 1606178184912,
+    "duration" : 13200
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "4bbccf79b7ddd0b1",
+  "name" : "I can see the result of a unrepaired file with the list of structural issues not removed {\"fileWithIssues\":\"src/data/input/file2.pdf\",\"nonrepairedObject\":\"Non-conforming image\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-229",
+  "time" : {
+    "start" : 1606178106196,
+    "stop" : 1606178117046,
+    "duration" : 10850
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "eb46c32ea1487d36",
+  "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-230",
+  "time" : {
+    "start" : 1606178128156,
+    "stop" : 1606178139005,
+    "duration" : 10849
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "55afb4cb370f2852",
+  "name" : "The count of files requests processed is updated based on processing status {\"file\":\"issues.docx\",\"fileOutcome\":\"Allowed By Policy\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"0\"} @smoke @TEST-224 @Fail-Code",
+  "time" : {
+    "start" : 1606178138970,
+    "stop" : 1606178149887,
+    "duration" : 10917
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7992a47faecec7e5",
+  "name" : "I can change the number of items displayed on a page {\"itemCount\":\"50\"} @smoke @TEST-217",
+  "time" : {
+    "start" : 1606178102829,
+    "stop" : 1606178122729,
+    "duration" : 19900
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7cb0bfb8f771bf88",
+  "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+  "time" : {
+    "start" : 1606178129633,
+    "stop" : 1606178157095,
+    "duration" : 27462
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ac5942e8afbcdf58",
+  "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+  "time" : {
+    "start" : 1606178216570,
+    "stop" : 1606178227490,
+    "duration" : 10920
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6da565e01fb8e296",
+  "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+  "time" : {
+    "start" : 1606178227614,
+    "stop" : 1606178238549,
+    "duration" : 10935
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6cf17a324830e070",
+  "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Allowed By Policy\",\"filteredRisk\":\"Allowed By Policy\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178128916,
+    "stop" : 1606178139722,
+    "duration" : 10806
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "ec55047146871deb",
+  "name" : "I can add a new user to the ui {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @smoke @TEST-171 @Fail-app",
+  "time" : {
+    "start" : 1606178081635,
+    "stop" : 1606178093992,
+    "duration" : 12357
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bd16613d41df9cb7",
+  "name" : "I am able to log out of the ui @smoke @TEST-",
+  "time" : {
+    "start" : 1606178162199,
+    "stop" : 1606178175321,
+    "duration" : 13122
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "77f32da20d2f5791",
+  "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Block\",\"updatedRouteOption\":\"Block\"} @smoke @TEST-183",
+  "time" : {
+    "start" : 1606178145173,
+    "stop" : 1606178158501,
+    "duration" : 13328
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c13a754194f84367",
+  "name" : "A duplicate user cannot be added {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @smoke @TEST-186 @Fail-app",
+  "time" : {
+    "start" : 1606178140341,
+    "stop" : 1606178151150,
+    "duration" : 10809
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "552daffeb6015efd",
+  "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @smoke @TEST-231 @Fail-Code",
+  "time" : {
+    "start" : 1606178139145,
+    "stop" : 1606178150037,
+    "duration" : 10892
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8893ff6418dbb388",
+  "name" : "I can add a new user to the ui {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @smoke @TEST-171 @Fail-app",
+  "time" : {
+    "start" : 1606178094998,
+    "stop" : 1606178106963,
+    "duration" : 11965
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "1a8acdfe2bffbb85",
+  "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+  "time" : {
+    "start" : 1606178081637,
+    "stop" : 1606178109558,
+    "duration" : 27921
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "95372faf626322cd",
+  "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-213",
+  "time" : {
+    "start" : 1606178163438,
+    "stop" : 1606178185704,
+    "duration" : 22266
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "c9e7209511b50e7b",
+  "name" : "I can activate a previous policy @smoke @TEST-219",
+  "time" : {
+    "start" : 1606178145206,
+    "stop" : 1606178167449,
+    "duration" : 22243
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "446a008f7b7d5755",
+  "name" : "I can change the number of items displayed on a page {\"itemCount\":\"25\"} @smoke @TEST-217",
+  "time" : {
+    "start" : 1606178081479,
+    "stop" : 1606178102680,
+    "duration" : 21201
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bf77e5e34a69f84f",
+  "name" : "I am able to change the number of files displayed on the page {\"itemCount\":\"25\",\"fileCount\":\"4\"} @smoke @TEST-166",
+  "time" : {
+    "start" : 1606178109594,
+    "stop" : 1606178120474,
+    "duration" : 10880
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "be1ca027c1968068",
+  "name" : "I can see the result of a repaired file with the issues removed {\"activeContentFile\":\"src/data/input/file1.docx\",\"activeContent\":\"Internal Hyperlinks present in CT_Bookmark\",\"repairedObject\":\"APP segment removed\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-228",
+  "time" : {
+    "start" : 1606178094915,
+    "stop" : 1606178106064,
+    "duration" : 11149
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7db0fe9a280499af",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+  "time" : {
+    "start" : 1606178113909,
+    "stop" : 1606178129431,
+    "duration" : 15522
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "5f7ac95c37fe8b3",
+  "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Blocked By Policy\",\"file\":\"blocked_file.doc\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+  "time" : {
+    "start" : 1606178093189,
+    "stop" : 1606178105839,
+    "duration" : 12650
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "701831b1327fc89b",
+  "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Blocked By NCFS\",\"filteredRisk\":\"Blocked By NCFS\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178161739,
+    "stop" : 1606178172576,
+    "duration" : 10837
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "4bc4cd08b924e318",
+  "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @smoke @TEST-212 @Fail-code",
+  "time" : {
+    "start" : 1606178081063,
+    "stop" : 1606178126730,
+    "duration" : 45667
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bdde43f6cb373ddc",
+  "name" : "I can change the outcome of Glasswall Blocked files {\"routeOption\":\"Refer\",\"updatedRouteOption\":\"Refer\"} @smoke @TEST-187",
+  "time" : {
+    "start" : 1606178198094,
+    "stop" : 1606178211246,
+    "duration" : 13152
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "83b2e9d8f8f6017a",
+  "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Blocked By NCFS\",\"filteredRisk\":\"Blocked By NCFS\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178106980,
+    "stop" : 1606178117860,
+    "duration" : 10880
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "6d44fa217b9f6d14",
+  "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"invalidurl\",\"message\":\"error\"} @smoke @TEST-158_159",
+  "time" : {
+    "start" : 1606178115776,
+    "stop" : 1606178131856,
+    "duration" : 16080
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1281e85ec6ab6ec4",
+  "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Safe\",\"filteredRisk\":\"Safe\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178081285,
+    "stop" : 1606178093676,
+    "duration" : 12391
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3d0f14ecee6b0849",
+  "name" : "I can view previous Policy details @smoke @TEST-218",
+  "time" : {
+    "start" : 1606178122880,
+    "stop" : 1606178145181,
+    "duration" : 22301
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "982cdc0c129981ea",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @Fail-code",
+  "time" : {
+    "start" : 1606178098202,
+    "stop" : 1606178113798,
+    "duration" : 15596
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "80b3a184296a2b47",
+  "name" : "The count of files requests processed is updated based on processing status {\"file\":\"safe_file.xlsx\",\"fileOutcome\":\"Safe\",\"TFUpdateByValue\":\"1\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"1\"} @smoke @TEST-224 @Fail-Code",
+  "time" : {
+    "start" : 1606178116956,
+    "stop" : 1606178127839,
+    "duration" : 10883
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "928883cea0918516",
+  "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/test2.pdf\",\"error\":\"This free service is currently limited to a maximum file size of 3.5MB\"} @smoke @TEST-231 @Fail-Code",
+  "time" : {
+    "start" : 1606178150187,
+    "stop" : 1606178161051,
+    "duration" : 10864
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "b040d7ac488afe92",
+  "name" : "I am able to update my password {\"CurrentPassword\":\"OldPassword1?\",\"NewPassword\":\"NewPassword2)\",\"ConfirmNewPassword\":\"NewPassword2)\"} @smoke @TEST-",
+  "time" : {
+    "start" : 1606178175341,
+    "stop" : 1606178209831,
+    "duration" : 34490
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9db114df21c890f",
+  "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-215",
+  "time" : {
+    "start" : 1606178269415,
+    "stop" : 1606178308628,
+    "duration" : 39213
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9975112ab3d25778",
+  "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Allowed By NCFS\",\"filteredRisk\":\"Allowed By NCFS\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178117956,
+    "stop" : 1606178128824,
+    "duration" : 10868
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "7f8f119169320a53",
+  "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Allowed By Policy\",\"filteredRisk\":\"Allowed By Policy\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178183617,
+    "stop" : 1606178194422,
+    "duration" : 10805
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "bbbebc17adb9e2c3",
+  "name" : "I am able to filter the dashboard requests by time {\"time\":\"Custom Range\",\"dateStart\":\"2/10/2020 10:30 AM\",\"dateEnd\":\"2/10/2020 11:00 AM\",\"dateRange\":\"02/10/2020 10:30 AM - 02/10/2020 11:00 AM\"} @smoke @TEST-151_custom",
+  "time" : {
+    "start" : 1606178194528,
+    "stop" : 1606178205433,
+    "duration" : 10905
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "403967e0864a3c27",
+  "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+  "time" : {
+    "start" : 1606178157117,
+    "stop" : 1606178184342,
+    "duration" : 27225
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "10027de0971606fe",
+  "name" : "I can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/input/file2.pdf\",\"pdfFile\":\"file2.pdf\"} @smoke @TEST-226 @Fail-code",
+  "time" : {
+    "start" : 1606178171942,
+    "stop" : 1606178182248,
+    "duration" : 10306
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "f8a12b943ab15cf2",
+  "name" : "I cannot delete my own account @smoke @TEST-191 @Fail-app",
+  "time" : {
+    "start" : 1606178151256,
+    "stop" : 1606178162066,
+    "duration" : 10810
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "8c3ee61c5119e4c3",
+  "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Safe\",\"filteredRisk\":\"Safe\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178139855,
+    "stop" : 1606178150704,
+    "duration" : 10849
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "9b08b87266c8cb8f",
+  "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"glasswallsolutions.com\",\"message\":\"success\"} @smoke @TEST-158_159",
+  "time" : {
+    "start" : 1606178099651,
+    "stop" : 1606178115748,
+    "duration" : 16097
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a3515e3c39cd90b9",
+  "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @smoke @TEST-234",
+  "time" : {
+    "start" : 1606178232307,
+    "stop" : 1606178247933,
+    "duration" : 15626
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "621b811ac628848c",
+  "name" : "I can change the outcome of unprocessable files {\"routeOption\":\"Refer\",\"updatedRouteOption\":\"Refer\"} @smoke @TEST-183",
+  "time" : {
+    "start" : 1606178158521,
+    "stop" : 1606178171695,
+    "duration" : 13174
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "749e0954744134a7",
+  "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @smoke @TEST-151_time",
+  "time" : {
+    "start" : 1606178205537,
+    "stop" : 1606178216457,
+    "duration" : 10920
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "3d015281145c4753",
+  "name" : "I can download the full XML analysis report for a file {\"supportedFile\":\"src/data/input/file1.docx\",\"xmlFile\":\"file1.xml\"} @smoke @TEST-225 @Fail-code",
+  "time" : {
+    "start" : 1606178160980,
+    "stop" : 1606178171834,
+    "duration" : 10854
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "b5da777f293371b1",
+  "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @smoke @TEST-185 @Fail-app",
+  "time" : {
+    "start" : 1606178129327,
+    "stop" : 1606178140227,
+    "duration" : 10900
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "68ae7aa2938311f3",
+  "name" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @functional @smoke @TEST-179",
+  "time" : {
+    "start" : 1606178120602,
+    "stop" : 1606178161847,
+    "duration" : 41245
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "1ccde9bbd9ad9e81",
+  "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"hyperlink\",\"flagType\":\"disallow\",\"fileType\":\"jpg\",\"file\":\"Complete+works+of+shakespeare+hidden+zip_Polyglot_image.jpg\",\"fileOutcome\":\"htmlReport\"} @smoke @TEST-212 @Fail-code",
+  "time" : {
+    "start" : 1606178126957,
+    "stop" : 1606178163282,
+    "duration" : 36325
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "c2fc57849831b16e",
+  "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Allowed By NCFS\",\"filteredRisk\":\"Allowed By NCFS\"} @smoke @TEST-192 @Fail-App",
+  "time" : {
+    "start" : 1606178172700,
+    "stop" : 1606178183512,
+    "duration" : 10812
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "eec993cd0fbf58b6",
+  "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Allowed By Policy\",\"file\":\"issues.docx\",\"increasedValue\":\"1\"} @smoke @TEST-223 @Fail-Code",
+  "time" : {
+    "start" : 1606178105964,
+    "stop" : 1606178116834,
+    "duration" : 10870
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "4535ca8ed4c58220",
+  "name" : "I am able to view more detail on a file @functional @smoke @TEST-169 @Fail-Code",
+  "time" : {
+    "start" : 1606178248059,
+    "stop" : 1606178270551,
+    "duration" : 22492
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "fd3097b77ceb9666",
+  "name" : "The count of files requests processed is updated based on processing status {\"file\":\"Unclassified_file\",\"fileOutcome\":\"Unclassified\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"1\"} @smoke @TEST-224 @Fail-Code",
+  "time" : {
+    "start" : 1606178149996,
+    "stop" : 1606178160860,
+    "duration" : 10864
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "376eb74242c2fb8",
+  "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"processStatus\":\"Your file has been processed\"} @smoke @TEST-230",
+  "time" : {
+    "start" : 1606178117185,
+    "stop" : 1606178128046,
+    "duration" : 10861
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "47c45a4e5dfbe750",
+  "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-214",
+  "time" : {
+    "start" : 1606178207947,
+    "stop" : 1606178230151,
+    "duration" : 22204
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
