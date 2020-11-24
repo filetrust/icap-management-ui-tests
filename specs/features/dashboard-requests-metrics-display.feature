@@ -9,6 +9,7 @@ Feature: dashboard-requests-metrics-display
     @smoke
     @TEST-223
     @Fail-Code
+    # Can't start within block inside another within block
     Scenario Outline: The file risk count is updated for every file processed based on the outcome
         Given I have confirmed the current risks counts for '<risk>'
         When I process a '<file>' through the icap server
@@ -23,8 +24,6 @@ Feature: dashboard-requests-metrics-display
 
     @smoke
     @TEST-224
-    @Fail-Code
-    # No Steps Matching "I have navigated to the Analytics page"
     Scenario Outline: The count of files requests processed is updated based on processing status
         Given I have confirmed the concurrent counts of total files requests processed
         When I process a '<file>' through the icap server with an outcome as '<fileOutcome>'
