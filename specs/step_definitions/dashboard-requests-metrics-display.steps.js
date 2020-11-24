@@ -14,7 +14,7 @@ Given('I have navigated to the Dashboard page', () => {
 });
 
 Given('I have confirmed the concurrent counts of total files requests processed', () => {
-    totalFilesNumber = analyticsPage.getTotalFileNumber();
+    totalFilesNumber = analyticsPage.getTotalFileProcessed();
     icapRequests = analyticsPage.getTotalIcapRequests();
     maxFilesPerSec = analyticsPage.getMaxFileProcessed();
 });
@@ -40,7 +40,7 @@ Then('the max files per second processed is increased by {int}', (MFUpdateByValu
     I.seeInField(analyticsPage.sections.maxFilesProcessed, maxFilesPerSec + MFUpdateByValue);
 });
 
-Then('the risk sector is available and shows the count updated by {int}', (risk, increasedValue) => {
+Then('the risk sector {string} is available and shows the count updated by {int}', (risk, increasedValue) => {
     I.seeInField(analyticsPage.getRiskSector(risk), riskMetricsCount + increasedValue)
 
 });

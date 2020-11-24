@@ -30,7 +30,6 @@ Feature: request-history-log
 
 
   @functional
-    @smoke
     @TEST-189
   Scenario Outline: I can remove individual filters
     Given I have navigated to the Request History page

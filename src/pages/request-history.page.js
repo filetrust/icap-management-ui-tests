@@ -202,7 +202,7 @@ module.exports = {
     },
 
     isTimeApplied(start, end) {
-        var time = null;
+        let time = null;
         if (end === 'current time') {
             time = moment();
         } else {
@@ -210,8 +210,9 @@ module.exports = {
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
+        I.seeInField(this.buttons.dateTime,  timeFrom + ` - ` + currentTime);
         //const range = (timeFrom + " - " + currentTime).toString();
-        I.see(timeFrom + ` - ` + currentTime)
+      //  I.see(timeFrom + ` - ` + currentTime)
         //I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     },
 
@@ -347,24 +348,25 @@ module.exports = {
        let col;
        let text;
        try {
+           if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)){
            I.grabTextFrom(`//tbody/descendant::h2`).then((value) =>
            {
                I.say(value);
                text = value;
                if (text==='Error Getting Transaction Data' || text==='No Transaction Data Found') {
                    I.say('No data returned');
-               } else {
+               }
+           });
+           }
+           else {
                     Promise.all([
                        I.say("Data is available"),
                        col = this.getAppliedFilter(filter),
                        I.checkRow(filter, col),
                    ]);
                }
-           })
-          // text = await I.grabTextFrom(`//tbody/descendant::h2`);
-          //      I.say(text);
-
-       } catch (e) {
+           }
+           catch (e) {
            I.say('errors')
            console.warn(e);
        }

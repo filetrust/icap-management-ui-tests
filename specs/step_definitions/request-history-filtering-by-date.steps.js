@@ -20,7 +20,7 @@ When(/^I open the date picker and select a (.*)$/, (timeInterval) => {
     requesthistoryPage.selectTimePeriod(timeInterval)
    });
 
-Then(/^the date range is updated to be from (.*) hrs earlier to (.*)$/, (datetimeFrom, datetimeTo) => {
+Then('the date range is updated to be from {string} hrs earlier to {string}', (datetimeFrom, datetimeTo) => {
     requesthistoryPage.isTimeApplied(datetimeFrom, datetimeTo)
 });
 

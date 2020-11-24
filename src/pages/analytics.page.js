@@ -382,5 +382,4 @@ module.exports = {
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     }
-
 }

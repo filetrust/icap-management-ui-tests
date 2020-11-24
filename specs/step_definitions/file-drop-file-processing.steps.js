@@ -1,7 +1,3 @@
-//<reference path="./steps.d.ts" />
-
-const assert = require('assert');
-
 const {
   I,
   filedropPage
@@ -35,6 +31,6 @@ When(/^I click Select a file and choose non processable file(.*)$/, (file) => {
   I.uploadFile(file.trim());
 });
 
-Then(/^the expected validation error is displayed as (.*)$/, (error) => {
-  I.seeInSource(error);
+Then('the expected validation error is displayed as {string}', (error) => {
+  I.seeInField(filedropPage.sections.notification,error);
 });

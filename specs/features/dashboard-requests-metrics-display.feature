@@ -9,11 +9,10 @@ Feature: dashboard-requests-metrics-display
     @smoke
     @TEST-223
     @Fail-Code
-    # No Steps Matching "I have navigated to the Analytics page"
     Scenario Outline: The file risk count is updated for every file processed based on the outcome
         Given I have confirmed the current risks counts for '<risk>'
         When I process a '<file>' through the icap server
-        Then the risk sector '<risk>' is available and shows the count updated by '<increasedValue>'
+        Then the risk sector '<risk>' is available and shows the count updated by <increasedValue>
         Examples:
             | risk              | file             | increasedValue |
             | Safe              | safe_file.xlsx   | 1              |

@@ -38,5 +38,4 @@ When('I view result and click on PDF button', () => {
 Then(/^the pdf report (.*) is downloaded$/, (pdfFile) => {
     I.amInPath("output/downloads");
     filedropPage.isFileDownloaded(pdfFile);
-
 });

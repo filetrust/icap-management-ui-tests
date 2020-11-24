@@ -69,6 +69,7 @@ module.exports = {
 
     clickXml() {
         const element = this.buttons.xml;
+        I.waitForClickable(element);
         I.click(element);
     },
 
