@@ -52,9 +52,10 @@ Feature: non-compliant-files-routing-mechanism
       | Block       | Block              |
       | Refer       | Refer              |
 
-
+  @Fail-app
     @smoke
     @TEST-233
+    #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'
@@ -71,8 +72,10 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
 
+  @Fail-app
   @smoke
     @TEST-234
+    #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
     Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'
