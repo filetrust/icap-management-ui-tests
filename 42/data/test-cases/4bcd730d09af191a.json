@@ -1,0 +1,515 @@
+{
+  "uid" : "4bcd730d09af191a",
+  "name" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @smoke @TEST-212 @Fail-code",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @smoke @TEST-212 @Fail-code",
+  "historyId" : "185c73c8e1599e932a6a137f40cde4f9",
+  "time" : {
+    "start" : 1606208338086,
+    "stop" : 1606208383588,
+    "duration" : 45502
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+    "steps" : [ {
+      "name" : "policyPage: setFlagTypeForGivenContentFlagsForGivenDocType \"embeddedFiles\", \"word\", \"sanitise\"",
+      "time" : {
+        "start" : 1606208350256,
+        "stop" : 1606208352616,
+        "duration" : 2360
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"label[for='word-id-2sanitise']\"",
+        "time" : {
+          "start" : 1606208350256,
+          "stop" : 1606208352616,
+          "duration" : 2360
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy with the 'embeddedFiles' set to 'sanitise' for a file type 'word' ",
+      "time" : {
+        "start" : 1606208352616,
+        "stop" : 1606208354717,
+        "duration" : 2101
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 2",
+        "time" : {
+          "start" : 1606208352616,
+          "stop" : 1606208354617,
+          "duration" : 2001
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickSaveChanges ",
+      "time" : {
+        "start" : 1606208354717,
+        "stop" : 1606208356949,
+        "duration" : 2232
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//button[text()='Save Changes']\"",
+        "time" : {
+          "start" : 1606208354717,
+          "stop" : 1606208356949,
+          "duration" : 2232
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onIcapProxyPage ",
+      "time" : {
+        "start" : 1606208356949,
+        "stop" : 1606208366250,
+        "duration" : 9301
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/\"",
+        "time" : {
+          "start" : 1606208356949,
+          "stop" : 1606208361246,
+          "duration" : 4297
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1606208361246,
+          "stop" : 1606208366250,
+          "duration" : 5004
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: downloadFile \"word\"",
+      "time" : {
+        "start" : 1606208366250,
+        "stop" : 1606208368581,
+        "duration" : 2331
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1606208366251,
+          "stop" : 1606208366252,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//a[@href=\"https://gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com/MacroRunCalculator.docm\"]\"",
+        "time" : {
+          "start" : 1606208366352,
+          "stop" : 1606208368580,
+          "duration" : 2228
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I process file word file MacroRunCalculator.docm through the icap server ",
+      "time" : {
+        "start" : 1606208368581,
+        "stop" : 1606208383586,
+        "duration" : 15005
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 15",
+        "time" : {
+          "start" : 1606208368581,
+          "stop" : 1606208383586,
+          "duration" : 15005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: assertFileDownload \"MacroRunCalculator.docm\"",
+      "time" : {
+        "start" : 1606208383586,
+        "stop" : 1606208383588,
+        "duration" : 2
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+      "steps" : [ {
+        "name" : "I am in path \"output/downloads\"",
+        "time" : {
+          "start" : 1606208383586,
+          "stop" : 1606208383586,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I see file \"MacroRunCalculator.docm\"",
+        "time" : {
+          "start" : 1606208383586,
+          "stop" : 1606208383587,
+          "duration" : 1
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads\n                    at FileSystem.seeFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/FileSystem.js:60:12)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:119:23",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "4e8a20d4a3483da6",
+      "name" : "Last Seen Screenshot",
+      "source" : "4e8a20d4a3483da6.png",
+      "type" : "image/png",
+      "size" : 205582
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-code"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "Content Management policy is correctly applied to processed files {\"contentFlags\":\"embeddedFiles\",\"flagType\":\"sanitise\",\"fileType\":\"word\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\"} @smoke @TEST-212 @Fail-code"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 17,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 17
+      },
+      "items" : [ {
+        "uid" : "fc3608f944a63432",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/41//#testresult/fc3608f944a63432",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606207390691,
+          "stop" : 1606207435799,
+          "duration" : 45108
+        }
+      }, {
+        "uid" : "8533fa87670d5b25",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/40//#testresult/8533fa87670d5b25",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606207059810,
+          "stop" : 1606207105165,
+          "duration" : 45355
+        }
+      }, {
+        "uid" : "b5d34fd3491d9107",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/39//#testresult/b5d34fd3491d9107",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606204618844,
+          "stop" : 1606204664417,
+          "duration" : 45573
+        }
+      }, {
+        "uid" : "a7e7e3f4ad0fb7bd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/38//#testresult/a7e7e3f4ad0fb7bd",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606204486894,
+          "stop" : 1606204532332,
+          "duration" : 45438
+        }
+      }, {
+        "uid" : "ec1a6ca52fdc6218",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/37//#testresult/ec1a6ca52fdc6218",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606203766947,
+          "stop" : 1606203812180,
+          "duration" : 45233
+        }
+      }, {
+        "uid" : "233279f279a376fc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/36//#testresult/233279f279a376fc",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606202095813,
+          "stop" : 1606202141943,
+          "duration" : 46130
+        }
+      }, {
+        "uid" : "4bc4cd08b924e318",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/35//#testresult/4bc4cd08b924e318",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606178081063,
+          "stop" : 1606178126730,
+          "duration" : 45667
+        }
+      }, {
+        "uid" : "1266958542bf5b04",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/34//#testresult/1266958542bf5b04",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606171703688,
+          "stop" : 1606171749009,
+          "duration" : 45321
+        }
+      }, {
+        "uid" : "b3204cf7cc6cc363",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/33//#testresult/b3204cf7cc6cc363",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1606118590827,
+          "stop" : 1606118636431,
+          "duration" : 45604
+        }
+      }, {
+        "uid" : "4ebf51eb566f84f3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/32//#testresult/4ebf51eb566f84f3",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605869092236,
+          "stop" : 1605869138232,
+          "duration" : 45996
+        }
+      }, {
+        "uid" : "a4eb1ae5758f2dbf",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/31//#testresult/a4eb1ae5758f2dbf",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605862415133,
+          "stop" : 1605862463880,
+          "duration" : 48747
+        }
+      }, {
+        "uid" : "69ec50e879c9ea7c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/30//#testresult/69ec50e879c9ea7c",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605829129790,
+          "stop" : 1605829175509,
+          "duration" : 45719
+        }
+      }, {
+        "uid" : "1701b0f3880fecda",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/29//#testresult/1701b0f3880fecda",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605828792807,
+          "stop" : 1605828837579,
+          "duration" : 44772
+        }
+      }, {
+        "uid" : "d44601cb407172b5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/28//#testresult/d44601cb407172b5",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605828253433,
+          "stop" : 1605828298616,
+          "duration" : 45183
+        }
+      }, {
+        "uid" : "1cb83bc4c88ae4c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/27//#testresult/1cb83bc4c88ae4c",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605827785251,
+          "stop" : 1605827834612,
+          "duration" : 49361
+        }
+      }, {
+        "uid" : "7d2ef4c6ad1b854d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/26//#testresult/7d2ef4c6ad1b854d",
+        "status" : "failed",
+        "statusDetails" : "File MacroRunCalculator.docm not found in /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads",
+        "time" : {
+          "start" : 1605800812207,
+          "stop" : 1605800858210,
+          "duration" : 46003
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@Fail-code", "@TEST-212", "@content-management-policy-application-to-files" ]
+  },
+  "source" : "4bcd730d09af191a.json",
+  "parameterValues" : [ ]
+}
