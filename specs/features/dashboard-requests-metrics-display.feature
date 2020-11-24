@@ -8,8 +8,8 @@ Feature: dashboard-requests-metrics-display
 
     @smoke
     @TEST-223
-    @Fail-Code
-    # Can't start within block inside another within block
+    @Fail-app
+    #  Element "div[data-test-id='lineChart'] > div > div > svg" was not found by text|CSS|XPath
     Scenario Outline: The file risk count is updated for every file processed based on the outcome
         Given I have confirmed the current risks counts for '<risk>'
         When I process a '<file>' through the icap server
@@ -22,9 +22,10 @@ Feature: dashboard-requests-metrics-display
     # | Allowed By NCFS   | Unclassified_file | 1              |
     # | Blocked By NCFS   | Malicious_file    | 1              |
 
+    @Fail-app
     @smoke
     @TEST-224
-    #Not all steps are done
+    #Not all steps are done because of unfinished implementation
     Scenario Outline: The count of files requests processed is updated based on processing status
         Given I have confirmed the concurrent counts of total files requests processed
         When I process a '<file>' through the icap server with an outcome as '<fileOutcome>'

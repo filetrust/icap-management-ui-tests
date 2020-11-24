@@ -32,5 +32,5 @@ When('I click Select a file and choose non processable file {string}', (file) =>
 });
 
 Then('the expected validation error is displayed as {string}', (error) => {
-  filedropPage.checkErrorDisplayed(error);
+  filedropPage.checkMessageDisplayed(error);
 });

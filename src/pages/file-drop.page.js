@@ -132,7 +132,8 @@ module.exports = {
         I.amInPath('output/downloads');
         I.seeFileNameMatching(analysisReport);
     },
-    checkErrorDisplayed(error) {
+    checkMessageDisplayed(error) {
         I.seeElementInDOM('//div[text()="'+error+'"]');
-    }
+    },
+
 }
