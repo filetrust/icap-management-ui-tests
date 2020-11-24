@@ -142,7 +142,7 @@ class MyHelper extends Helper {
                 break;
             }
         }else{
-            output.print('No Transactiona are available')
+            output.print('No Transactions are available')
         }} catch (err) {
             output.error(err);
         }
@@ -166,7 +166,7 @@ class MyHelper extends Helper {
             I.amInPath('output/downloads');
             I.seeInThisFile(content, 'utf8')
         } catch (err) {
-            output.error('The file does not contain required content:-  ' + content);
+            assert.fail('The file does not contain required content:-  ' + content);
         }
     }
 

@@ -131,5 +131,8 @@ module.exports = {
     assertAnalysisReportDownload(analysisReport) {
         I.amInPath('output/downloads');
         I.seeFileNameMatching(analysisReport);
+    },
+    checkErrorDisplayed(error) {
+        I.seeElementInDOM('//div[text()="'+error+'"]');
     }
 }
