@@ -52,6 +52,7 @@ module.exports = {
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
+        dateTimePickerText: `div[id*='reportrange'] > span`,
         drp_calendar_left: `div[class*='drp-calendar left']`,
         drp_calendar_right: `div[class*='drp-calendar right']`,
         reportRange: `div[id*='reportrange']`,
@@ -206,14 +207,14 @@ module.exports = {
         if (end === 'current time') {
             time = moment();
         } else {
-            time = datetimeTo
+            time = end;
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
-        I.seeInField(this.buttons.dateTime,  timeFrom + ` - ` + currentTime);
+     //   I.seeInField(this.calendar.dateTimePickerText,  timeFrom + ` - ` + currentTime);
         //const range = (timeFrom + " - " + currentTime).toString();
       //  I.see(timeFrom + ` - ` + currentTime)
-        //I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     },
 
 
