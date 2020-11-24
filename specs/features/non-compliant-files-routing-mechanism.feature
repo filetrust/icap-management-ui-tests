@@ -52,7 +52,7 @@ Feature: non-compliant-files-routing-mechanism
       | Block       | Block              |
       | Refer       | Refer              |
 
-   @success
+
     @smoke
     @TEST-233
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
@@ -70,7 +70,7 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | replace      | file | ''           | alternativeContent |
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
-  @success
+
   @smoke
     @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
