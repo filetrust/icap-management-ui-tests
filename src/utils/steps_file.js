@@ -60,9 +60,8 @@ module.exports = function () {
         },
 
         uploadFile: function (file) {
-
             this.attachFile(filedropPage.buttons.fileInput, file)
-            this.wait(5)
+            this.wait(7)
 
         },
 

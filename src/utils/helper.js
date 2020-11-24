@@ -15,15 +15,15 @@ class MyHelper extends Helper {
     //         });
     //     }
 
-    _failed() {
-         recorder.catchWithoutStop({
-            fail: ('Test Failed'),
-            when: event.dispatcher.on(event.step.failed, (step,err) => {
-            if (event.step.comment)
-                failed = true;
-           })
-         })
-        }
+    // _failed() {
+    //      recorder.catchWithoutStop({
+    //         fail: ('Test Failed'),
+    //         when: event.dispatcher.on(event.step.failed, (step,err) => {
+    //         if (event.step.comment)
+    //             failed = true;
+    //        })
+    //      })
+    //     }
   
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
