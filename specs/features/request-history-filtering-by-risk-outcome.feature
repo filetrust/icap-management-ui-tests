@@ -5,6 +5,7 @@ Feature: request-history-filtering-by-risk-outcome
     Background:
         Given I am logged into the ui
 
+    @success
     @functional
     @smoke
     @TEST-164

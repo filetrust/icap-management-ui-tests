@@ -24,6 +24,7 @@ Feature: dashboard-requests-metrics-display
 
     @smoke
     @TEST-224
+    #Not all steps are done
     Scenario Outline: The count of files requests processed is updated based on processing status
         Given I have confirmed the concurrent counts of total files requests processed
         When I process a '<file>' through the icap server with an outcome as '<fileOutcome>'

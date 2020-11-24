@@ -6,7 +6,7 @@ Feature: file-drop-file-process-result-view
         Given I am logged into the ui
         And I have navigated to the File Drop page
 
-   
+   @success
     @smoke
     @TEST-227
     Scenario Outline: I can download the full analysis report of a processed file
@@ -17,7 +17,7 @@ Feature: file-drop-file-process-result-view
             | supportedFile              | analysisReport  |
             | src/data/input/issues.docx | issues.docx.xml |
 
-    
+    @success
     @smoke
     @TEST-228
     Scenario Outline: I can see the result of a repaired file with the issues removed
@@ -29,7 +29,7 @@ Feature: file-drop-file-process-result-view
             | activeContentFile         | activeContent                              | repairedObject      | processStatus                |
             | src/data/input/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed | Your file has been processed |
 
-    
+    @success
     @smoke
     @TEST-229
     Scenario Outline: I can see the result of a unrepaired file with the list of structural issues not removed

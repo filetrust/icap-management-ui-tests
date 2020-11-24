@@ -6,6 +6,7 @@ Feature: content-management-policy-history
         Given I am logged into the portal
         Given I am on current policy screen
 
+    @success
     @smoke
     @TEST-217
     Scenario Outline: I can change the number of items displayed on a page

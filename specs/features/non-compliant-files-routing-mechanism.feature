@@ -6,6 +6,7 @@ Feature: non-compliant-files-routing-mechanism
     Given I am logged into the ui
     And I have navigated to the Current Policy page
 
+  @success
   @smoke
   @TEST-MISSING
   Scenario: The default routing option for unprocessable and blocked files is accurate
@@ -14,9 +15,10 @@ Feature: non-compliant-files-routing-mechanism
     Then I see the default set routing option for unprocessable files as ''
     Then I see the default set routing option for blocked files as ''
 
-
   @smoke
     @TEST-158_159
+    @Fail-app
+        #Assert is commented
   Scenario Outline: I can only update the non-compliant routes API URL with a valid one
     When I enter a valid URL '<url>' into the API URL box
     And I click save
@@ -26,6 +28,7 @@ Feature: non-compliant-files-routing-mechanism
       | glasswallsolutions.com | success |
       | invalidurl             | error   |
 
+  @success
   @smoke
     @TEST-183
   Scenario Outline: I can change the outcome of unprocessable files
@@ -37,6 +40,7 @@ Feature: non-compliant-files-routing-mechanism
       | Block       | Block              |
       | Refer       | Refer              |
 
+  @success
   @smoke
     @TEST-187
   Scenario Outline: I can change the outcome of Glasswall Blocked files
@@ -48,8 +52,9 @@ Feature: non-compliant-files-routing-mechanism
       | Block       | Block              |
       | Refer       | Refer              |
 
+   @success
     @smoke
-  @TEST-233
+    @TEST-233
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'
@@ -65,8 +70,9 @@ Feature: non-compliant-files-routing-mechanism
 #            | Refer               | replace      | file | ''           | alternativeContent |
 #            | Refer               | block        | file | 403          | HtmlReport         |
 
+  @success
   @smoke
-  @TEST-234
+    @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
     Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
     And the non-compliant file service has been defined as '<NcfsDecision>'

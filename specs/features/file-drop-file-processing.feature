@@ -7,7 +7,7 @@ Feature: file-drop-file-processing
         Given I am logged into the ui
         And I have navigated to the FileDrop page
 
-    
+    @success
     @smoke
     @TEST-230
     Scenario Outline: I can process a file through the file drop service
