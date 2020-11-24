@@ -14,7 +14,7 @@ module.exports = {
         customPaginatorGoTo: `input[class*='custom-paginator-goto']`,
     },
     options: {
-        countOfFiles: "div[class*='Pagination_pageCountSelector__'] > select"
+        countOfFiles: "//select"
     },
     buttons: {
         filterArrow: `button[class*='Filters_arrow__']`,
