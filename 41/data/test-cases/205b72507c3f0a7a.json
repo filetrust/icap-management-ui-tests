@@ -1,0 +1,215 @@
+{
+  "uid" : "205b72507c3f0a7a",
+  "name" : "I can change the number of items displayed on a page {\"itemCount\":\"50\"} @success @smoke @TEST-217",
+  "fullName" : "content-management-policy-history @content-management-policy-history.I can change the number of items displayed on a page {\"itemCount\":\"50\"} @success @smoke @TEST-217",
+  "historyId" : "6051025884af31b8287b94a950502b64",
+  "time" : {
+    "start" : 1606207411787,
+    "stop" : 1606207431619,
+    "duration" : 19832
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.selectOption (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1312:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.selectOption (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1312:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: clickOnHistoryPolicyTab ",
+      "time" : {
+        "start" : 1606207429387,
+        "stop" : 1606207431603,
+        "duration" : 2216
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"//button[text()='History']\"",
+        "time" : {
+          "start" : 1606207429387,
+          "stop" : 1606207431603,
+          "duration" : 2216
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: getTotalNumberOfRecordsOfPolicy ",
+      "time" : {
+        "start" : 1606207431603,
+        "stop" : 1606207431606,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"tbody.MuiTableBody-root > tr\"",
+        "time" : {
+          "start" : 1606207431603,
+          "stop" : 1606207431606,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: selectCountOfPolicies \"50\"",
+      "time" : {
+        "start" : 1606207431606,
+        "stop" : 1606207431619,
+        "duration" : 13
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.selectOption (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1312:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I select option \"div[class*='Pagination_pageCountSelector__'] > select\", \"50\"",
+        "time" : {
+          "start" : 1606207431606,
+          "stop" : 1606207431617,
+          "duration" : 11
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.selectOption (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1312:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I see number of elements \"tbody.MuiTableBody-root > tr\", 1",
+      "time" : {
+        "start" : 1606207431620,
+        "stop" : 1606207431628,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "4dabd7b26dcc7dbc",
+      "name" : "Last Seen Screenshot",
+      "source" : "4dabd7b26dcc7dbc.png",
+      "type" : "image/png",
+      "size" : 35233
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-217"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-history"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "tag",
+    "value" : "@success"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can change the number of items displayed on a page {\"itemCount\":\"50\"} @success @smoke @TEST-217"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "a9f9f3c69fd53c74",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/40//#testresult/a9f9f3c69fd53c74",
+        "status" : "failed",
+        "statusDetails" : "Selectable field \"div[class*='Pagination_pageCountSelector__'] > select\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606207080572,
+          "stop" : 1606207100378,
+          "duration" : 19806
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@success", "@content-management-policy-history", "@TEST-217" ]
+  },
+  "source" : "205b72507c3f0a7a.json",
+  "parameterValues" : [ ]
+}
