@@ -14,7 +14,7 @@ module.exports = {
         customPaginatorGoTo: `input[class*='custom-paginator-goto']`,
     },
     options: {
-        countOfFiles: "//select"
+        countOfFiles: "select[data-test-id='select-pageCountDropdown']"
     },
     buttons: {
         filterArrow: `button[class*='Filters_arrow__']`,
