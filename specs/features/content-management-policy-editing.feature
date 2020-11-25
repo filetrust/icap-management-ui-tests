@@ -57,7 +57,7 @@ Feature: Content Management Policy Editing
     And the NCFS draft policy is replaced with the current NCFS policy
 
   @TEST-
-  Scenario: I can publish a draft Adaptation Policy policy
+  Scenario Outline: I can publish a draft Adaptation Policy policy
     Given i am on the adaptation Policy screen
     And i change and save one of the <ContentFlags> for required file types <FileType> to <FlagType>
     When i click Publish and confirm publish action on the confirmation popup
@@ -68,7 +68,7 @@ Feature: Content Management Policy Editing
 
 
   @TEST-
-  Scenario: I can publish a draft Adaptation Policy policy
+  Scenario Outline: I can publish a draft Adaptation Policy policy
     Given i have updated the NCFS policy with options <blockedPolicyAction> and <NcfsDecision>
     And i have updated the Adaptation policy with <ContentFlags> for file type <FileType> to <FlagType>
     When i click Publish and confirm publish action on the confirmation popup
