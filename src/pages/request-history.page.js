@@ -350,24 +350,20 @@ module.exports = {
        let col;
        let text;
        try {
-           if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)){
-           I.grabTextFrom(`//tbody/descendant::h2`).then((value) =>
-           {
-               I.say(value);
-               text = value;
-               if (text==='Error Getting Transaction Data' || text==='No Transaction Data Found') {
+           I.grabNumberOfVisibleElements(`//tbody/tr/td[2]`).then((value) => {
+               if (value === 0) {
                    I.say('No data returned');
                }
-           });
-           }
-           else {
-                    Promise.all([
+               else {
+                   Promise.all([
                        I.say("Data is available"),
                        col = this.getAppliedFilter(filter),
                        I.checkRow(filter, col),
                    ]);
                }
-           }
+           });
+
+               }
            catch (e) {
            I.say('errors')
            console.warn(e);
