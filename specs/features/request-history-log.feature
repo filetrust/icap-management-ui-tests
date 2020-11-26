@@ -43,7 +43,7 @@ Feature: request-history-log
       | png       | Safe      | Safe           | png           | png          |
 
 
-  @filterfileid
+  @TEST-164
   Scenario Outline: I can filter the log using file id
     Given I have navigated to the Request History page
     When I click on the Add Filter button and add a file id filter as '<filter>'
