@@ -4,25 +4,25 @@
     "name" : "Content Management Policy Editing @content-management-policy-editing",
     "children" : [ {
       "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @success @functional @smoke @TEST-213",
-      "uid" : "ed3867f0d84a0781",
+      "uid" : "fa9b757b45436c6f",
       "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
       "status" : "failed",
       "time" : {
-        "start" : 1606399718233,
-        "stop" : 1606399720979,
-        "duration" : 2746
+        "start" : 1606402143681,
+        "stop" : 1606402146493,
+        "duration" : 2812
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @success @functional @smoke @TEST-214",
-      "uid" : "cd19e26b7288571d",
+      "uid" : "afec5b6a2640251a",
       "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721427,
-        "stop" : 1606399721427,
+        "start" : 1606402146932,
+        "stop" : 1606402146932,
         "duration" : 0
       },
       "flaky" : false,
@@ -30,12 +30,12 @@
       "parameters" : [ ]
     }, {
       "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @success @functional @smoke @TEST-214",
-      "uid" : "30e2461707e1ddc5",
+      "uid" : "557fd6f73fe49ba6",
       "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721430,
-        "stop" : 1606399721430,
+        "start" : 1606402146936,
+        "stop" : 1606402146936,
         "duration" : 0
       },
       "flaky" : false,
@@ -43,12 +43,12 @@
       "parameters" : [ ]
     }, {
       "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @success @functional @smoke @TEST-215",
-      "uid" : "2c23517415824bdb",
+      "uid" : "ef1577255cd9261c",
       "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721439,
-        "stop" : 1606399721439,
+        "start" : 1606402146937,
+        "stop" : 1606402146937,
         "duration" : 0
       },
       "flaky" : false,
@@ -56,12 +56,12 @@
       "parameters" : [ ]
     }, {
       "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @success @functional @smoke @TEST-215",
-      "uid" : "e7c16520089b5654",
+      "uid" : "65003e25b1ada535",
       "parentUid" : "cb833964769cea8dbcf3e8744dd04026",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721440,
-        "stop" : 1606399721440,
+        "start" : 1606402146939,
+        "stop" : 1606402146939,
         "duration" : 0
       },
       "flaky" : false,
@@ -73,42 +73,59 @@
     "name" : "request-history-file-detail-view @request-history-file-detail-view",
     "children" : [ {
       "name" : "I am able to view more detail on a file @functional @smoke @TEST-169 @Fail-Code",
-      "uid" : "861d6902289f683",
+      "uid" : "4531a63379d717f3",
       "parentUid" : "2f47f84d3c9757c328f7e00deb97ec25",
       "status" : "failed",
       "time" : {
-        "start" : 1606399718322,
-        "stop" : 1606399721006,
-        "duration" : 2684
+        "start" : 1606402143812,
+        "stop" : 1606402146508,
+        "duration" : 2696
       },
       "flaky" : true,
-      "newFailed" : true,
+      "newFailed" : false,
       "parameters" : [ ]
     } ],
     "uid" : "2f47f84d3c9757c328f7e00deb97ec25"
   }, {
+    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
+    "children" : [ {
+      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @success @functional @smoke @TEST-164",
+      "uid" : "94df524ff5072bc4",
+      "parentUid" : "deb4054e85d118f1d01bf0fc579b4159",
+      "status" : "failed",
+      "time" : {
+        "start" : 1606402143913,
+        "stop" : 1606402146502,
+        "duration" : 2589
+      },
+      "flaky" : true,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "deb4054e85d118f1d01bf0fc579b4159"
+  }, {
     "name" : "request-history-filtering-by-date @request-history-filtering-by-date",
     "children" : [ {
       "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
-      "uid" : "302184e350406216",
+      "uid" : "a4c766b94fb24f24",
       "parentUid" : "035179e06095b1264ae35ae53693096c",
       "status" : "failed",
       "time" : {
-        "start" : 1606399718368,
-        "stop" : 1606399720986,
-        "duration" : 2618
+        "start" : 1606402143924,
+        "stop" : 1606402146514,
+        "duration" : 2590
       },
       "flaky" : true,
-      "newFailed" : true,
+      "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
-      "uid" : "3b84f8aa81668e11",
+      "uid" : "1012439f5a0ece6f",
       "parentUid" : "035179e06095b1264ae35ae53693096c",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721408,
-        "stop" : 1606399721408,
+        "start" : 1606402146893,
+        "stop" : 1606402146893,
         "duration" : 0
       },
       "flaky" : false,
@@ -116,12 +133,12 @@
       "parameters" : [ ]
     }, {
       "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
-      "uid" : "1c848fcf3190b434",
+      "uid" : "e3657adba45c912",
       "parentUid" : "035179e06095b1264ae35ae53693096c",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399721409,
-        "stop" : 1606399721409,
+        "start" : 1606402146924,
+        "stop" : 1606402146924,
         "duration" : 0
       },
       "flaky" : false,
@@ -130,45 +147,28 @@
     } ],
     "uid" : "035179e06095b1264ae35ae53693096c"
   }, {
-    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
-    "children" : [ {
-      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @success @functional @smoke @TEST-164",
-      "uid" : "1759e54d0cc08dd2",
-      "parentUid" : "deb4054e85d118f1d01bf0fc579b4159",
-      "status" : "failed",
-      "time" : {
-        "start" : 1606399718380,
-        "stop" : 1606399720979,
-        "duration" : 2599
-      },
-      "flaky" : true,
-      "newFailed" : true,
-      "parameters" : [ ]
-    } ],
-    "uid" : "deb4054e85d118f1d01bf0fc579b4159"
-  }, {
     "name" : "request-history-log @request-history-log",
     "children" : [ {
       "name" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @success @functional @TEST-179",
-      "uid" : "5357c159febd39e0",
+      "uid" : "213c59e108c1d223",
       "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
       "status" : "failed",
       "time" : {
-        "start" : 1606399721299,
-        "stop" : 1606399723578,
-        "duration" : 2279
+        "start" : 1606402146884,
+        "stop" : 1606402149148,
+        "duration" : 2264
       },
       "flaky" : true,
-      "newFailed" : true,
+      "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\",\"filterValues\":\"SAFE\"} @success @functional @TEST-189",
-      "uid" : "8d480bb575fc405d",
+      "uid" : "a9c5f4e38eb195a0",
       "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399723748,
-        "stop" : 1606399723748,
+        "start" : 1606402149331,
+        "stop" : 1606402149331,
         "duration" : 0
       },
       "flaky" : false,
@@ -176,12 +176,12 @@
       "parameters" : [ ]
     }, {
       "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"png\",\"filterValues\":\"png\"} @success @functional @TEST-189",
-      "uid" : "a664d763a1cc18b0",
+      "uid" : "54903c306c94dc2f",
       "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399723752,
-        "stop" : 1606399723752,
+        "start" : 1606402149332,
+        "stop" : 1606402149332,
         "duration" : 0
       },
       "flaky" : false,
@@ -193,25 +193,25 @@
     "name" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type",
     "children" : [ {
       "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @success @functional @smoke @TEST-163",
-      "uid" : "db89891ae5562349",
+      "uid" : "78032b328de3126b",
       "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
       "status" : "failed",
       "time" : {
-        "start" : 1606399721413,
-        "stop" : 1606399723662,
-        "duration" : 2249
+        "start" : 1606402146927,
+        "stop" : 1606402149196,
+        "duration" : 2269
       },
       "flaky" : true,
-      "newFailed" : true,
+      "newFailed" : false,
       "parameters" : [ ]
     }, {
       "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @success @functional @smoke @TEST-163",
-      "uid" : "1101df6f41269645",
+      "uid" : "4afb0917177da065",
       "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
       "status" : "skipped",
       "time" : {
-        "start" : 1606399723863,
-        "stop" : 1606399723863,
+        "start" : 1606402149389,
+        "stop" : 1606402149389,
         "duration" : 0
       },
       "flaky" : false,
