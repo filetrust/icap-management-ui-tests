@@ -19,10 +19,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: |
+          
+      - name: Install dependencies and run all tests
+        run: |
           npm install    
-          npm install -g allure-commandline --save-dev      
-          npm test
+          npm install -g allure-commandline --save-dev     
+          npx codeceptjs run-multiple --grep @functional --all --plugins allure --override '{"helpers":{"Puppeteer":{"url":"http://management-ui.northeurope.cloudapp.azure.com/","show":false}}}'    
   
       - name: Get Allure history
         uses: actions/checkout@v2
