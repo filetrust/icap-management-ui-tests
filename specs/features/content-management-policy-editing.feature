@@ -7,9 +7,7 @@ Feature: Content Management Policy Editing
     Given I am logged into the portal
     Given I am on the policy screen
 
-  @success
-  @functional
-  @smoke
+  
   @TEST-213
   Scenario Outline: I can cancel any updates done to the draft policy
     Given I am on draft Adaptation policy screen
@@ -22,9 +20,7 @@ Feature: Content Management Policy Editing
       | word     | embeddedFiles | disallow      | sanitise        |
 
 
-  @success
-  @functional
-  @smoke
+  
   @TEST-214
   Scenario Outline: I can edit policy content flags
     When I change one of the <ContentFlags> for required file types <FileType> to <FlagType>
@@ -35,9 +31,7 @@ Feature: Content Management Policy Editing
       | word     | embeddedFiles      | sanitise |
       | excel    | externalHyperlinks | disallow |
 
-  @success
-  @functional
-  @smoke
+  
   @TEST-215
   Scenario Outline: A user is able to change all content flags for all file type in policy page
     When I change all the flag for <FileType> to <FlagType> on policy page
