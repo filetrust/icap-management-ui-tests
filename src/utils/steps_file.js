@@ -21,6 +21,12 @@ module.exports = function () {
             this.waitForElement(homePage.sections.menu);
         },
 
+        login: function (email, password) {
+            this.onLoginPage();
+            loginPage.loginWith(email, password);
+            this.waitForElement(homePage.sections.menu);
+        },
+
         enterValidCredential: function () {
             loginPage.loginWith(env.qa.email, env.qa.password);
         },
@@ -56,6 +62,26 @@ module.exports = function () {
         goToPolicyHistory: function () {
             homePage.clickPolicy();
             policyPage.clickHistoryTab();
+        },
+
+        goToDraftAdaptationPolicy: function () {
+            policyPage.clickDraftTab();
+           // policyPage.clickAdaptationPolicy();
+        },
+
+        goToCurrentAdaptationPolicy: function () {
+            policyPage.clickCurrentPolicyTab();
+            policyPage.clickAdaptationPolicy();
+        },
+
+        goToDraftNcfsPolicy: function () {
+            policyPage.clickDraftTab();
+            policyPage.clickNcfsPolicy();
+        },
+
+        goToCurrentNcfsPolicy: function () {
+            policyPage.clickCurrentPolicyTab();
+            policyPage.clickNcfsPolicy();
         },
 
         uploadFile: function (file) {

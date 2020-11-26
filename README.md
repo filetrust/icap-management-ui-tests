@@ -3,18 +3,46 @@
 
 # icap-management-ui-tests
 
-# Running Tests
+## Setup
 
-    Run all tests using: npm test
- 
-    Run a single test using tags
-    npx codeceptjs run --steps --grep <tag>
+### Prerequisites
+- [Docker desktop](https://www.docker.com/)
+- [Node.js](https://nodejs.org/en/) 
 
-    Run a single test using the file name
-    npx codeceptjs run <fileName>
+Clone this repository
 
-    Run a specific test using tags with reporting
-    npx codeceptjs run --steps --grep <tag>  --plugins allure
+#### Install the dependencies: 
+npm install (This will install CodeceptJS with Puppeteer and all the dependent packages)
+
+### Running the tests locally
+#### Run all tests using: 
+npm test
     
-    Run a specific test by search
-    npx codeceptjs run --grep "search-crieteria"
+#### Run a single test using tags (use option --steps to see detailed execution of steps)
+npx codeceptjs run --steps --grep '<tag>'
+
+#### Run a single test using the file name
+npx codeceptjs run <fileName>
+
+#### Run a specific test using tags with reporting
+npx codeceptjs run --steps --<tag>  --plugins allure
+To view the report, run: allure serve allure/results
+
+### Running the tests in docker container
+#### Build the containers:
+docker-compose -f docker/docker-compose.test.yml build
+docker-compose -f docker/docker-compose.test.yml up -d
+
+#### Execute tests
+docker exec codeceptjs codeceptjs run --plugins allure
+(use any tag options as required)
+
+#### To view the logs
+docker-compose -f docker/docker-compose.test.yml logs -f
+
+
+## References
+
+- [CodeceptJS](https://codecept.io)
+- [Puppeteer](https://pptr.dev/)
+- [Allure](http://allure.qatools.ru/)

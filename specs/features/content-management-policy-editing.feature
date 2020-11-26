@@ -5,19 +5,22 @@ Feature: Content Management Policy Editing
 
   Background:
     Given I am logged into the portal
-    Given I am on current policy screen
+    Given I am on the policy screen
 
   @success
   @functional
   @smoke
   @TEST-213
-  Scenario Outline: A user can cancel any updates that they have done to the policy by pressing cancel
-    When I change one of the <ContentFlags> for required file types <FileType> to <ChangedFlagType>
+  Scenario Outline: I can cancel any updates done to the draft policy
+    Given I am on draft Adaptation policy screen
+    And the current policy for <FileType> is set to <ContentFlag> and <CurrentFlagType>
+    When I change the contentFlag <ContentFlag> for <FileType> to <DraftFlagType>
     And I press the Cancel button
-    Then The <ContentFlags> for file types <FileType> defaults to <CurrentFlagType>
+    Then The contentFlag <ContentFlag> for <FileType> remains <CurrentFlagType>
     Examples:
-      | FileType | ContentFlags  | CurrentFlagType | ChangedFlagType |
-      | word     | embeddedFiles | disallow        | sanitise        |
+      | FileType | ContentFlag   | DraftFlagType | CurrentFlagType |
+      | word     | embeddedFiles | disallow      | sanitise        |
+
 
   @success
   @functional
@@ -57,7 +60,7 @@ Feature: Content Management Policy Editing
     And the NCFS draft policy is replaced with the current NCFS policy
 
   @TEST-
-  Scenario Outline: I can publish a draft Adaptation Policy policy
+  Scenario Outline: I can publish a draft Adaptation Policy
     Given i am on the adaptation Policy screen
     And i change and save one of the <ContentFlags> for required file types <FileType> to <FlagType>
     When i click Publish and confirm publish action on the confirmation popup
@@ -68,7 +71,7 @@ Feature: Content Management Policy Editing
 
 
   @TEST-
-  Scenario Outline: I can publish a draft Adaptation Policy policy
+  Scenario Outline: I can update and publish both Adaptation and NCFS policies at the same time
     Given i have updated the NCFS policy with options <blockedPolicyAction> and <NcfsDecision>
     And i have updated the Adaptation policy with <ContentFlags> for file type <FileType> to <FlagType>
     When i click Publish and confirm publish action on the confirmation popup

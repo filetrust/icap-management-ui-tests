@@ -4,8 +4,13 @@ module.exports = {
   //locators
 
   tabs: {
-    current: `section[class*='TabNav_TabNav__2M5TN'] > ul > li:nth-of-type(1) > button`,
-    history: `section[class*='TabNav_TabNav__2M5TN'] > ul > li:nth-of-type(2) > button`,
+    current: `[data-test-id="buttonPolicyCurrentTab"]`,
+    history: `[data-test-id='buttonPolicyHistoryTab']`,
+    draft: `[data-test-id='buttonPolicyDraftTab']`,
+    adaptation_policy: `[data-test-id="buttonCurrentAdaptationPolicyTab"]`,
+    ncfs_policy: `[data-test-id='buttonCurrentNcfsPolicyTab']`,
+
+
   },
   fields: {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
@@ -207,7 +212,7 @@ module.exports = {
   buttons: {
     cancelChanges: `//button[text()='Cancel Changes']`,
     saveChanges: `//button[text()='Save Changes']`,
-    policy : {
+    policy: {
       current: `//button[text()='Current']`,
       history: `//button[text()='History']`
     },
@@ -246,12 +251,30 @@ module.exports = {
     countOfPolicies: "div[class*='Pagination_pageCountSelector__'] > select"
   },
 
+
   //Methods
 
   /*
-   * Policy Setting
+   * Draft Policy Setting
    * ***************************************************************
    */
+
+  clickDraftTab() {
+    const element = this.tabs.draft;
+    I.click(element);
+  },
+
+  clickAdaptationPolicy() {
+    const element = this.tabs.adaptation_policy;
+    I.click(element);
+  },
+
+  clickNcfsPolicyTab() {
+    const element = this.tabs.ncfs_policy;
+    I.click(element);
+  },
+
+
   getContentFlagRule(type, rule) {
     return "label[for='" + type + "ContentManagement_" + rule + "']";
   },
@@ -298,6 +321,15 @@ module.exports = {
     I.click(element)
   },
 
+  setPolicyFlag(fileType, contentFlag, policy) {
+    const element = `label[for='`+fileType +contentFlag +policy`']`
+    I.clickElement(element)
+  },
+
+  getPolicyFlag(fileType, contentFlag, policy){
+    const element = `input[id='`+fileType +contentFlag +policy`']`
+    return element;
+  },
 
   assertSanitiseForAllFlag(docType) {
     const elements = this.fields.input[docType].sanitise
@@ -326,7 +358,7 @@ module.exports = {
   },
 
   assertElementChecked(element) {
-      I.seeAttributesOnElements(element, { checked: true})
+    I.seeAttributesOnElements(element, { checked: true })
   },
 
   clickSaveApiUrl() {
@@ -337,13 +369,15 @@ module.exports = {
     I.click(this.svg.deleteApiUrl)
   },
 
-  clickOnCurrentPolicyTab() {
+  clickCurrentPolicyTab() {
     I.click(this.buttons.policy.current)
   },
 
   enterTextInApiUrl(text) {
     I.fillField(this.fields.validateApiUrlInput, text)
   },
+
+
 
   /*
    * Policy History
@@ -367,9 +401,9 @@ module.exports = {
   assertNumberOfOpenTab(expectedTabCount) {
     const numberOfOpenTabs = I.grabAllWindowHandles()
     numberOfOpenTabs.then((numberTabs) => {
-      if (numberTabs.length === expectedTabCount){
-        I.say('The number Of open tabs' + numberTabs.length+ 'is as expected ' +expectedTabCount)
-      }else {
+      if (numberTabs.length === expectedTabCount) {
+        I.say('The number Of open tabs' + numberTabs.length + 'is as expected ' + expectedTabCount)
+      } else {
         I.say('Expected and actual tab count is not same')
       }
     })
@@ -403,8 +437,11 @@ module.exports = {
     I.seeElement(this.table.innerContent)
   },
 
-  // Pagination
-
+  /*
+   * Pagination
+   * ***************************************************************
+   */
+ 
   clickFirst() {
     const element = this.buttons.firstPage;
     I.click(element);
@@ -470,7 +507,7 @@ module.exports = {
     I.click(element);
   },
 
-  checkBlockedRouteRadio (glasswallBlockedRoute) {
+  checkBlockedRouteRadio(glasswallBlockedRoute) {
     switch (glasswallBlockedRoute) {
       case ('Relay'):
         this.setBlockedFileAsRelay();
@@ -500,9 +537,9 @@ module.exports = {
         throw "No such option";
     }
   },
-  assertCheckedBlockedRadioButton(radioValue){
+  assertCheckedBlockedRadioButton(radioValue) {
     let radioElement = null;
-    switch (radioValue){
+    switch (radioValue) {
       case ('Relay'):
         radioElement = this.radiobuttons.blockedFileRelay;
         break;
@@ -515,9 +552,9 @@ module.exports = {
     }
     I.seeCheckboxIsChecked(radioElement);
   },
-  assertCheckedUnprocessableRadioButton(radioValue){
+  assertCheckedUnprocessableRadioButton(radioValue) {
     let radioElement = null;
-    switch (radioValue){
+    switch (radioValue) {
       case ('Relay'):
         radioElement = this.radiobuttons.unprocessedFileRelay;
         break;
@@ -531,18 +568,18 @@ module.exports = {
     I.seeCheckboxIsChecked(radioElement);
   },
 
-  checkFileOutcomeIsAccurate(fileOutcome,file) {
-  if (fileOutcome == 'Sanitised') {
-    I.goToFileDrop()
-    I.uploadFile(file)
-    filedropPage.clickViewResult();
-    filedropPage.isRequiredContentRefDisplayed('File is clean')
-  } else if (fileOutcome == 'htmlReport') {
-    I.amInPath('output/downloads');
-    I.seeInThisFile('Document Access Blocked due to Policy', 'utf8')
-  }else {
-    I.say(`Set option `+fileOutcome+` is not available`)
-  }
+  checkFileOutcomeIsAccurate(fileOutcome, file) {
+    if (fileOutcome == 'Sanitised') {
+      I.goToFileDrop()
+      I.uploadFile(file)
+      filedropPage.clickViewResult();
+      filedropPage.isRequiredContentRefDisplayed('File is clean')
+    } else if (fileOutcome == 'htmlReport') {
+      I.amInPath('output/downloads');
+      I.seeInThisFile('Document Access Blocked due to Policy', 'utf8')
+    } else {
+      I.say(`Set option ` + fileOutcome + ` is not available`)
+    }
   }
 
 
