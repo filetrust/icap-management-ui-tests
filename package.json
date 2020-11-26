@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "report": "allure serve ./allure/results",
+        "report": "allure serve allure/results",
         "test": "(npx codeceptjs run-multiple --grep  @functional --all --plugins allure)",
         "test:prototype": "npx codeceptjs run-multiple --grep @smoke --all --plugins allure",
         "smoke": "npx codeceptjs run-multiple --grep '@smoke' --all --plugins allure",

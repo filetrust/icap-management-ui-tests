@@ -11,14 +11,19 @@ const env = require('../data/credentials.js');
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage('http://management-ui-main.northeurope.cloudapp.azure.com')
-            //(`http://localhost:3000`)
-            //('http://management-ui-main.northeurope.cloudapp.azure.com');
+            this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+            //this.amOnPage(`http://localhost:8080`)
         },
 
         loginNoPwd: function () {
             this.onLoginPage();
             loginPage.clickLogIn();
+            this.waitForElement(homePage.sections.menu);
+        },
+
+        login: function (email, password) {
+            this.onLoginPage();
+            loginPage.loginWith(email, password);
             this.waitForElement(homePage.sections.menu);
         },
 
@@ -57,6 +62,26 @@ module.exports = function () {
         goToPolicyHistory: function () {
             homePage.clickPolicy();
             policyPage.clickHistoryTab();
+        },
+
+        goToDraftAdaptationPolicy: function () {
+            policyPage.clickDraftTab();
+           // policyPage.clickAdaptationPolicy();
+        },
+
+        goToCurrentAdaptationPolicy: function () {
+            policyPage.clickCurrentPolicyTab();
+            policyPage.clickAdaptationPolicy();
+        },
+
+        goToDraftNcfsPolicy: function () {
+            policyPage.clickDraftTab();
+            policyPage.clickNcfsPolicy();
+        },
+
+        goToCurrentNcfsPolicy: function () {
+            policyPage.clickCurrentPolicyTab();
+            policyPage.clickNcfsPolicy();
         },
 
         uploadFile: function (file) {

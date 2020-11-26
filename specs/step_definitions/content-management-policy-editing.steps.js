@@ -1,3 +1,6 @@
+const { setPolicyFlag } = require("../../src/pages/policy.page");
+const assert = require('assert').strict;
+
 const {
     I,
     policyPage,
@@ -6,18 +9,27 @@ const {
     env
 } = inject();
 
+const setFlag = null;
+
 Given('I am logged into the portal', () => {
-    I.onLoginPage()
-    I.wait(2)
-    loginPage.loginWith(env.qa.email, env.qa.password);
+    I.login('','')
 });
 
-Given('I am on current policy screen', () => {
-    homePage.clickPolicy()
+Given('I am on the policy screen', () => {
+    I.goToContentManagementPolicy();
 });
 
-When(/^I change one of the (.*) for required file types (.*) to (.*)$/, (contentFlag, fileType, flagType) => {
-    policyPage.setFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
+Given('I am on draft Adaptation policy screen', () => {
+    I.goToDraftAdaptationPolicy()
+});
+
+Given(/^the current policy for (.*) is set to (.*) and (.*)$/, (FileType, ContentFlag, CurrentFlagType) => {
+    setFlag = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
+    I.say('The current policy flag element is: '+setFlag)
+});
+
+When(/^I change the contentFlag (.*) for (.*) to (.*)$/, (FileType, ContentFlag, DraftFlagType) => {
+    policyPage.setPolicyFlag(FileType, ContentFlag, DraftFlagType)
 });
 
 Then(/^The (.*) for required file types (.*) is set to (.*)$/, (contentFlag, fileType, flagType) => {
@@ -74,6 +86,9 @@ When('the save button is selected', () => {
     policyPage.clickSaveApiUrl()
 });
 
-Then(/^The (.*) for file types (.*) defaults to (.*)$/, (contentFlag, fileType, flagType) => {
-    policyPage.assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
+Then(/^The contentFlag (.*) for (.*) remains (.*)$/, (FileType, ContentFlag, CurrentFlagType) => {
+    I.goToCurrentAdaptationPolicy();
+   const flagEl = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
+    assert(flagEl==setFlag)
+   I.seeElement(setFlag)
 });

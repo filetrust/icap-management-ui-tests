@@ -57,10 +57,13 @@ exports.config = {
     },
     customLocator: {
       enabled: true,
-      attribute: 'data-test-id'
+      prefix: '$',
+      attribute: 'data-test-id',
+      showActual: true
     },
     customLocator: {
       enabled: true,
+      prefix: '$',
       attribute: 'data-range-key'
     },
 
