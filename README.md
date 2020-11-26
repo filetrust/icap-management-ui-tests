@@ -19,13 +19,13 @@ npm install (This will install CodeceptJS with Puppeteer and all the dependent p
 npm test
     
 #### Run a single test using tags (use option --steps to see detailed execution of steps)
-npx codeceptjs run --steps --grep '<tag>'
+npx codeceptjs run --steps --grep "tag"
 
 #### Run a single test using the file name
-npx codeceptjs run <fileName>
+npx codeceptjs run "fileName"
 
 #### Run a specific test using tags with reporting
-npx codeceptjs run --steps --<tag>  --plugins allure
+npx codeceptjs run --steps --"tag"  --plugins allure
 To view the report, run: allure serve allure/results
 
 ### Running the tests in docker container
