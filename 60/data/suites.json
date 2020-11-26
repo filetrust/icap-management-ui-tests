@@ -1,0 +1,155 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "request-history-filtering-by-date @request-history-filtering-by-date",
+    "children" : [ {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+      "uid" : "8d57255176c75e83",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398176539,
+        "stop" : 1606398192550,
+        "duration" : 16011
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+      "uid" : "5b025781d57b23fb",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398192587,
+        "stop" : 1606398207494,
+        "duration" : 14907
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+      "uid" : "ebd5b06a4a495989",
+      "parentUid" : "035179e06095b1264ae35ae53693096c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398207505,
+        "stop" : 1606398222993,
+        "duration" : 15488
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "035179e06095b1264ae35ae53693096c"
+  }, {
+    "name" : "request-history-file-detail-view @request-history-file-detail-view",
+    "children" : [ {
+      "name" : "I am able to view more detail on a file @functional @smoke @TEST-169 @Fail-Code",
+      "uid" : "5d3b8aa6859e3c88",
+      "parentUid" : "2f47f84d3c9757c328f7e00deb97ec25",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398176563,
+        "stop" : 1606398197421,
+        "duration" : 20858
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "2f47f84d3c9757c328f7e00deb97ec25"
+  }, {
+    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
+    "children" : [ {
+      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @success @functional @smoke @TEST-164",
+      "uid" : "623b706f9fda04d5",
+      "parentUid" : "deb4054e85d118f1d01bf0fc579b4159",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398176648,
+        "stop" : 1606398204110,
+        "duration" : 27462
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "deb4054e85d118f1d01bf0fc579b4159"
+  }, {
+    "name" : "request-history-log @request-history-log",
+    "children" : [ {
+      "name" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @success @functional @TEST-179",
+      "uid" : "fb59f895981ad3f7",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398204136,
+        "stop" : 1606398245341,
+        "duration" : 41205
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\",\"filterValues\":\"SAFE\"} @success @functional @TEST-189",
+      "uid" : "b832a30f2b84e934",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398245366,
+        "stop" : 1606398288891,
+        "duration" : 43525
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"png\",\"filterValues\":\"png\"} @success @functional @TEST-189",
+      "uid" : "c40e04693c7e6d1f",
+      "parentUid" : "bb013c60765ee8db3d0fa37aa66b6820",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398288921,
+        "stop" : 1606398332430,
+        "duration" : 43509
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "bb013c60765ee8db3d0fa37aa66b6820"
+  }, {
+    "name" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type",
+    "children" : [ {
+      "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @success @functional @smoke @TEST-163",
+      "uid" : "3f3f303493b8f4b0",
+      "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398223021,
+        "stop" : 1606398250245,
+        "duration" : 27224
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @success @functional @smoke @TEST-163",
+      "uid" : "9a46e6fba123ce8e",
+      "parentUid" : "a89ae962261ac178c78d0e0ce666c114",
+      "status" : "passed",
+      "time" : {
+        "start" : 1606398250267,
+        "stop" : 1606398277467,
+        "duration" : 27200
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "a89ae962261ac178c78d0e0ce666c114"
+  } ],
+  "name" : "suites"
+}
