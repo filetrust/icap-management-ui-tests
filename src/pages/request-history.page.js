@@ -348,21 +348,16 @@ module.exports = {
 
    async verifyResultIsAccurate(filter) {
        let col;
-       let text;
        try {
            I.grabNumberOfVisibleElements(`//tbody/tr/td[2]`).then((value) => {
                if (value === 0) {
                    I.say('No data returned');
                }
                else {
-                   Promise.all([
-                       I.say("Data is available"),
-                       col = this.getAppliedFilter(filter),
-                       I.checkRow(filter, col),
-                   ]);
+                           col = this.getAppliedFilter(filter);
+                          I.checkRow(filter, col).then(I.say("Data is available"));
                }
            });
-
                }
            catch (e) {
            I.say('errors')
