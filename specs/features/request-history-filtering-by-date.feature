@@ -21,7 +21,7 @@ Feature: request-history-filtering-by-date
             | 24 Hours     | 24           | current time |
 
 
-    # @TEST-2354
+    # @TEST-235
     # Scenario Outline: I can filter the request log using a custom range
     #     When I select a valid <datetimeFrom> and <datetimeTo>
     #     Then the selected custom range is applied to include <datetimeFrom> and <datetimeTo>

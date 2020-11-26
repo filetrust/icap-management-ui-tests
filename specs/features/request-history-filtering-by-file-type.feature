@@ -8,7 +8,7 @@ Feature: request-history-filtering-by-file-type
     @success
     @functional
     @smoke
-    @TEST-163
+    @TEST-180
     Scenario Outline: filter the log by file type
         Given I have navigated to the Request History page
         When I click on the Add Filter button and add a file type filter as '<filter>'

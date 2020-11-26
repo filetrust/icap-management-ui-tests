@@ -8,7 +8,7 @@ Feature: non-compliant-files-routing-mechanism
 
   @success
   @smoke
-  @TEST-MISSING
+  @TEST-238
   Scenario: The default routing option for unprocessable and blocked files is accurate
     Given I am a new user
     And I have navigated to the Current Policy page

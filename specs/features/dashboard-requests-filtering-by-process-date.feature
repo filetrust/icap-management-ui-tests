@@ -8,7 +8,7 @@ Feature: dashboard-requests-filtering-by-process-date
 
     @success
     @smoke
-    @TEST-151_custom
+    @TEST-151
     Scenario Outline: I am able to filter the dashboard requests by time
         When I make a time selection with '<time>'
         And I set the '<dateStart>' and '<dateEnd>'
@@ -20,7 +20,7 @@ Feature: dashboard-requests-filtering-by-process-date
 
     @success
     @smoke
-    @TEST-151_time
+    @TEST-152
     Scenario Outline: I am able to filter the dashboard requests by time
         When I make a time selection with '<timeInterval>'
         Then the requests for the selected '<timeInterval>' are displayed
