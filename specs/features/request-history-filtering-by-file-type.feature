@@ -16,8 +16,7 @@ Feature: request-history-filtering-by-file-type
         Examples:
             | filter | filteredFile |
             | docx   | Docx         |
-            | pdf    | Pdf          |
-
+            
 
 
 

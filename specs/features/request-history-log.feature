@@ -8,7 +8,7 @@ Feature: request-history-log
 
   @success
   @smoke
-    @TEST-166
+  @TEST-166
   Scenario Outline: I am able to change the number of files displayed on the page
     Given I have navigated to the Request History page
     When I click on the Items Shown drop down and select a number of items as '<itemCount>' and apply
@@ -19,7 +19,7 @@ Feature: request-history-log
 
   @success
   @functional
-    @TEST-179
+  @TEST-179
   Scenario Outline: Validate requests log view using a combination of multiple filters
     Given I have navigated to the Request History page
     When I click on the Add Filter button
@@ -31,7 +31,7 @@ Feature: request-history-log
 
   @success
   @functional
-    @TEST-189
+  @TEST-189
   Scenario Outline: I can remove individual filters
     Given I have navigated to the Request History page
     And '<filterOne>' and '<filterTwo>' are applied

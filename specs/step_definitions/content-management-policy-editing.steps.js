@@ -4,12 +4,9 @@ const assert = require('assert').strict;
 const {
     I,
     policyPage,
-    loginPage,
-    homePage,
-    env
-} = inject();
+   } = inject();
 
-const setFlag = null;
+let setFlag;
 
 Given('I am logged into the portal', () => {
     I.login('','')
@@ -21,18 +18,19 @@ Given('I am on the policy screen', () => {
 
 Given('I am on draft Adaptation policy screen', () => {
     I.goToDraftAdaptationPolicy()
+    //pause()
 });
 
-Given(/^the current policy for (.*) is set to (.*) and (.*)$/, (FileType, ContentFlag, CurrentFlagType) => {
+Given('the current policy for {string} is set to {string} and {string}', (FileType, ContentFlag, CurrentFlagType) => {
     setFlag = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
     I.say('The current policy flag element is: '+setFlag)
 });
 
-When(/^I change the contentFlag (.*) for (.*) to (.*)$/, (FileType, ContentFlag, DraftFlagType) => {
+When('I change one of the contentFlags {string} for {string} to {string}', (FileType, ContentFlag, DraftFlagType) => {
     policyPage.setPolicyFlag(FileType, ContentFlag, DraftFlagType)
 });
 
-Then(/^The (.*) for required file types (.*) is set to (.*)$/, (contentFlag, fileType, flagType) => {
+Then('The contentFlag {string} for required file types {string} is set to {string}', (contentFlag, fileType, flagType) => {
     policyPage.assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
 });
 
@@ -52,7 +50,7 @@ When('I press the Save button', () => {
     policyPage.clickSaveChanges()
 });
 
-When(/^I change all the flag for (.*) to (.*) on policy page$/, (fileType, flagType) => {
+When('I change all the flag for {string} to {string} on policy page', (fileType, flagType) => {
     if ( flagType === 'sanitise') {
         policyPage.clickSanitiseForAllFlag(fileType)
         policyPage.clickSaveChanges()
@@ -62,7 +60,7 @@ When(/^I change all the flag for (.*) to (.*) on policy page$/, (fileType, flagT
     }
 });
 
-When(/^All flags of the (.*) is changed to (.*)$/, (fileType, flagType) => {
+When('All flags of the {string} is changed to {string}', (fileType, flagType) => {
     if ( flagType === 'sanitise') {
         policyPage.assertSanitiseForAllFlag(fileType)
     } else if (flagType === 'disallow') {
@@ -86,7 +84,7 @@ When('the save button is selected', () => {
     policyPage.clickSaveApiUrl()
 });
 
-Then(/^The contentFlag (.*) for (.*) remains (.*)$/, (FileType, ContentFlag, CurrentFlagType) => {
+Then('The contentFlag {string} for {string} remains {string}', (FileType, ContentFlag, CurrentFlagType) => {
     I.goToCurrentAdaptationPolicy();
    const flagEl = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
     assert(flagEl==setFlag)

@@ -5,6 +5,7 @@ const event = require('codeceptjs').event;
 const fs = require('fs');
 const output = require('codeceptjs').output;
 const assert = require('assert').strict;
+let modalContents;
 
 class MyHelper extends Helper {
 
@@ -24,21 +25,27 @@ class MyHelper extends Helper {
     //        })
     //      })
     //     }
-  
+
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-               assert.fail(selector +' is not available');
-               } else {
-              output.print(selector +' is visible')
+                return output.print(selector);
+            } else {
+                return output.print(selector + ' is visible')
             }
         } catch (err) {
-          output.log(err);
-          
-          }
+            output.log(err);
+
+        }
     }
+    async getModal(element) {
+        const page = this.helpers['Puppeteer'].page;
+        await page.waitForSelector('.modal', { visible: true });
+        const button = await page.waitForSelector(element, { visible: true });
+    }
+
 
     async getTextFrom(selector, ...options) {
         const helper = this.helpers['Puppeteer'];
@@ -46,8 +53,8 @@ class MyHelper extends Helper {
             const numVisible = await helper.grabNumberOfVisibleElements(selector);
             if (numVisible) {
                 return await helper.grabTextFrom(selector, ...options);
-            }else {
-                output.print(selector +' is not visible')
+            } else {
+                output.print(selector + ' is not visible')
             }
         } catch (err) {
             output.log(err);
@@ -61,10 +68,10 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.click(selector);
             } else {
-                output.error('The element '+selector+' is not visible')
+                output.error('The element ' + selector + ' is not visible')
             }
         } catch (err) {
-            output.log(err);
+            output.print(err);
         }
     }
 
@@ -75,7 +82,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.fillfield(selector, value);
             } else {
-                output.error('The element '+selector+' is not visible')
+                output.error('The element ' + selector + ' is not visible')
             }
         } catch (err) {
             output.log(err);
@@ -83,23 +90,23 @@ class MyHelper extends Helper {
     }
 
     async clickRecord(i) {
+        const helper = this.helpers['Puppeteer'];
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         try {
             const tableRows = 'tbody tr';
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 1) {
-                output.log(rowCount +' rows are displayed');
-                return await helper.click(page.$eval(`${tableRows}:nth-child(${i})`));
-         } else {
-            output.warn('The table record is not available')
-        }}
-        catch (err) {
+            if (rowCount > 2) {
+                output.log(rowCount + ' rows are displayed');
+                return await this.clickElement('//tbody/tr[2]/th');
+            } else {
+                output.print('The table record is not available')
+            }
+        } catch (err) {
             output.log(err);
-           
-
         }
     }
+
 
     async checkRow(val, col) {
         const page = this.helpers['Puppeteer'].page;
@@ -131,19 +138,20 @@ class MyHelper extends Helper {
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             if (rowCount > 1) {
-            for (let i = 0; i < rowCount; i++) {
-                let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
-                let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
-                if (moment(parsed).isBetween(range.split("-"))) {
-                    output.print('The result list shows required files within the selected time: ' + range);
-                } else {
-                    assert.fail('The result files returned are not within the selected time: ' + range);
+                for (let i = 0; i < rowCount; i++) {
+                    let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
+                    let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
+                    if (moment(parsed).isBetween(range.split("-"))) {
+                        output.print('The result list shows required files within the selected time: ' + range);
+                    } else {
+                        assert.fail('The result files returned are not within the selected time: ' + range);
+                    }
+                    break;
                 }
-                break;
+            } else {
+                output.print('No Transactions are available')
             }
-        }else{
-            output.print('No Transactions are available')
-        }} catch (err) {
+        } catch (err) {
             output.error(err);
         }
     }
