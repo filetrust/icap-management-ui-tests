@@ -322,14 +322,24 @@ module.exports = {
   },
 
   setPolicyFlag(fileType, contentFlag, policy) {
-    const element = `label[for='`+fileType +contentFlag +policy`']`
-    I.clickElement(element)
+    const element = `label[for='`+fileType+contentFlag+policy`']`
+    I.click(element)
   },
 
-  getPolicyFlag(fileType, contentFlag, policy){
-    const element = `input[id='`+fileType +contentFlag +policy`']`
-    return element;
-  },
+//`label[for='wordEmbeddedFilesdisallow']`
+
+  // getPolicyFlag(fileType, contentFlag, policy){
+  //   const element = `input[id='`+fileType +contentFlag +policy`']`
+  //   let selected = I.seeAttributesOnElements(element, { checked: true })
+  //   let deselected = I.seeAttributesOnElements(element, { checked: false })
+  //   if(selected) {
+  //     I.say('The current policy flag status for '+ fileType +contentFlag +' is ' +policy)
+  //   }else if(deselected) {
+  //     I.say('The current policy flag status for '+ fileType +contentFlag +' is ' +policy)
+
+  //   }
+  //   return element;
+  // },
 
   assertSanitiseForAllFlag(docType) {
     const elements = this.fields.input[docType].sanitise

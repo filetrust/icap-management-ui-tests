@@ -5,6 +5,7 @@ const event = require('codeceptjs').event;
 const fs = require('fs');
 const output = require('codeceptjs').output;
 const assert = require('assert').strict;
+let modalContents;
 
 class MyHelper extends Helper {
 
@@ -30,15 +31,22 @@ class MyHelper extends Helper {
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-                assert.fail(selector + ' is not available');
+
+                return output.print(selector);
             } else {
-                output.print(selector + ' is visible')
+                return output.print(selector + ' is visible')
             }
         } catch (err) {
             output.log(err);
 
         }
     }
+    async getModal(element) {
+        const page = this.helpers['Puppeteer'].page;
+        await page.waitForSelector('.modal', { visible: true });
+        const button = await page.waitForSelector(element, { visible: true });
+    }
+
 
     async getTextFrom(selector, ...options) {
         const helper = this.helpers['Puppeteer'];
@@ -64,7 +72,7 @@ class MyHelper extends Helper {
                 output.error('The element ' + selector + ' is not visible')
             }
         } catch (err) {
-            output.log(err);
+            output.print(err);
         }
     }
 
@@ -83,21 +91,20 @@ class MyHelper extends Helper {
     }
 
     async clickRecord(i) {
+        const helper = this.helpers['Puppeteer'];
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         try {
             const tableRows = 'tbody tr';
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 1) {
+            if (rowCount > 2) {
                 output.log(rowCount + ' rows are displayed');
-                return await helper.click(page.$eval(`${tableRows}:nth-child(${i})`));
+                return await this.clickElement('//tbody/tr[2]/th');
             } else {
-                output.warn('The table record is not available')
+                output.print('The table record is not available')
             }
         } catch (err) {
             output.log(err);
-
-
         }
     }
 
@@ -109,7 +116,7 @@ class MyHelper extends Helper {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
                 if (rowCount > 1) {
                     for (let i = 0; i < rowCount; i++) {
-                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) td:nth-child(${col})`,
+                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
                             (e) => e.innerText)
                             if (this.compareThatEqual(text, val)) {
                                 console.log('The result list shows required files with the filter: ' + text);

@@ -39,6 +39,7 @@ module.exports = {
         firstPage: "",
         nextPage: "",
         lastPage: "",
+        fileDetailClose: `[data-test-id="buttonClose"]`,
     },
     table: {
         fileTableBody1: `th[class*='MuiTableCell-root MuiTableCell-body']`,
@@ -80,7 +81,7 @@ module.exports = {
         issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
         sanitisationItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(3)`,
         remedyItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(4)`,
-        fileDetailModal: `div[class*='FileInfo_inner__']`,
+        fileDetailModal: `.Modal_Modal__RCeBB`,
     },
 
     //Methods
@@ -212,9 +213,9 @@ module.exports = {
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
-     //   I.seeInField(this.calendar.dateTimePickerText,  timeFrom + ` - ` + currentTime);
+        //   I.seeInField(this.calendar.dateTimePickerText,  timeFrom + ` - ` + currentTime);
         //const range = (timeFrom + " - " + currentTime).toString();
-      //  I.see(timeFrom + ` - ` + currentTime)
+        //  I.see(timeFrom + ` - ` + currentTime)
         I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
     },
 
@@ -250,8 +251,10 @@ module.exports = {
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
+                return false;
                 I.say("No Transaction Data Found")
             } else {
+                return true;
                 I.say("The table data is available")
             }
         } catch (e) {
@@ -264,10 +267,10 @@ module.exports = {
         try {
             const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (el || el.length > 0) {
-            I.say('No Transaction Data Found')
+                I.say('No Transaction Data Found')
             } else {
                 I.say("Data is available")
-                I.checkIfReturnedFilesInDateRange(range, col) 
+                I.checkIfReturnedFilesInDateRange(range, col)
             }
         } catch (e) {
             console.warn(e);
@@ -346,37 +349,47 @@ module.exports = {
     },
 
 
-   async verifyResultIsAccurate(filter) {
-       let col;
-       try {
-           I.grabNumberOfVisibleElements(`//tbody/tr/td[2]`).then((value) => {
-               if (value === 0) {
-                   I.say('No data returned');
-               }
-               else {
-                           col = this.getAppliedFilter(filter);
-                          I.checkRow(filter, col).then(I.say("Data is available"));
-               }
-           });
-               }
-           catch (e) {
-           I.say('errors')
-           console.warn(e);
-       }
+
+    async verifyResultIsAccurate(filter) {
+        let col;
+        let text;
+        try {
+            if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)) {
+                I.grabTextFrom(`//tbody/descendant::h2`).then((value) => {
+                    I.say(value);
+                    text = value;
+                    if (text === 'Error Getting Transaction Data' || text === 'No Transaction Data Found') {
+                        I.say('No data returned');
+                    }
+                });
+            }
+            else {
+                Promise.all([
+                    I.say("Data is available"),
+                    col = this.getAppliedFilter(filter),
+                    I.checkRow(filter, col),
+                ]);
+            }
+        }
+        catch (e) {
+            I.say('errors')
+            console.warn(e);
+        }
     },
 
 
      checkFilters(appliedFilters, filterValues) {
+
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
-            for (let i = 0; i < filterRes.length; i++) {
-                let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
-                this.checkFilterByValue(res[i], filterValueLocator);
+        for (let i = 0; i < filterRes.length; i++) {
+            let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
+            this.checkFilterByValue(res[i], filterValueLocator);
         }
     },
 
-     checkFilterByValue(value, locator) {
-            I.seeTextEquals(value, locator);
+    checkFilterByValue(value, locator) {
+        I.seeTextEquals(value, locator);
     },
 
     checkFileValues(filteredFile) {
@@ -483,70 +496,84 @@ module.exports = {
         I.click(this.getFileRecord(fileId))
     },
 
-   async openAFileRecord() {
-    try{
-      const text = await I.grabTextFrom(`//tbody`);
-        if (text === 'No Transaction Data Found'){
-            I.say('No Transaction Data Found')
-        } else {
-            I.say("Transaction Data is available")
-            
-            I.clickRecord(2)
-     } 
-     } catch (e) {
-       console.warn(e); 
-    }},
+    async openAFileRecord() {
+       I.clickRecord(2)
+        //     this.openDatePicker();
+        //     this.selectTimePeriod('24 Hours')
+        //      try {
+        //     const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
+        //     //if (element || element.length >= 0) {
+        //         const text = await I.grabTextFrom(`//tbody`);
+        //        if (text === 'No Transaction Data Found' || text === 'Error Getting Transaction Data'){
+        //         I.say('No Transaction Data Found')
+        //     } else {
+        //         I.say("Transaction Data is available")
+                
+        //     }
+        // } catch (e) {
+        //     console.warn(e);
+        // }
+    },
 
-isFileDetailModalOpened() {
-    const element = this.modal.fileDetailModal;
-    I.seeElementExist(element)
-   
-},
+    isFileDetailModalOpened() {
+        const element =  this.modal.fileDetailModal;
+        //;
+       // I.getModal(element);
+       //I.getModal(element)
+        I.seeElementExist(element)
+
+    },
 
 
     checkFileDetailViewId(fileId) {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true){
-        within(this.modal.modalHeader, () => {
-            I.see(fileId);
-        })
-     } },
+        if (I.seeElementExist(el) === true) {
+            within(this.modal.modalHeader, () => {
+                I.see(fileId);
+            })
+        }
+    },
 
-    isIssueItemsSectionAvailable(){
+    isIssueItemsSectionAvailable() {
+        const el = I.getModal(this.modal.fileDetailModal)
+        //;
+        if (I.seeElementExist(el) === true) {
+            within(this.modal.fileDetailModal, () => {
+                const element = this.modal.issueItemsBanner;
+                I.seeElementExist(element)
+            });
+        }
+    },
+
+    isRemedyItemsSectionAvailable() {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true){
-        within(this.modal.fileDetailModal, () => {
-        const element = this.modal.issueItemsBanner;
-        I.seeElementExist(element)
-        });
-    }},
+        if (I.seeElementExist(el) === true) {
+            within(this.modal.fileDetailModal, () => {
+                const element = this.modal.remedyItemsBanner;
+                I.seeElementExist(element)
+            });
+        }
+    },
 
-    isRemedyItemsSectionAvailable(){
+    isCmpSectionAvailable() {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true){
-        within(this.modal.fileDetailModal, () => {
-        const element = this.modal.remedyItemsBanner;
-        I.seeElementExist(element)
-    });
-     } },
+        if (I.seeElementExist(el) === true) {
+            within(el, () => {
+                const element = this.modal.cmpDetailsBanner;
+                I.seeElementExist(element)
+            });
+        }
+    },
 
-    isCmpSectionAvailable(){
+    isSanitisationItemsSectionAvailable() {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true){
-        within(el, () => {
-        const element = this.modal.cmpDetailsBanner;
-        I.seeElementExist(element)
-    });
-    }},
+        if (I.seeElementExist(el) === true) {
+            within(this.modal.fileDetailModal, () => {
+                const element = this.modal.sanitisationItemsBanner;
+                I.seeElementExist(element)
+            });
+        }
+    },
 
-    isSanitisationItemsSectionAvailable(){
-        const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true){
-        within(this.modal.fileDetailModal, () => {
-        const element = this.modal.sanitisationItemsBanner;
-        I.seeElementExist(element)
-    });
-    }},
 
-    
 };

@@ -7,7 +7,7 @@ Feature: request-history-filtering-by-risk-outcome
 
     @success
     @functional
-    @smoke
+    @demo
     @TEST-163
     Scenario Outline: I can filter the log by file risks
         Given I have navigated to the Request History page

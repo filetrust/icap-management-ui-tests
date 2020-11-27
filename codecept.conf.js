@@ -15,10 +15,11 @@ exports.config = {
     },
     Puppeteer: {
       windowSize: '1536 x 826',
-      url: 'http://management-ui-main.northeurope.cloudapp.azure.com',
+      url: '',
       show: true,
       chrome: {
-        args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        //args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        args: ['--no-sandbox', '--window-size=1536,826'],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
@@ -71,7 +72,7 @@ exports.config = {
       enabled: true
     },
     autoDelay: {
-      enabled: true,
+      enabled: false,
       // delayBefore: 300,
       // delayAfter: 200
     }
