@@ -14,7 +14,7 @@ module.exports = {
         customPaginatorGoTo: `input[class*='custom-paginator-goto']`,
     },
     options: {
-        countOfFiles: "//select"
+        countOfFiles: "select[data-test-id='select-pageCountDropdown']"
     },
     buttons: {
         filterArrow: `button[class*='Filters_arrow__']`,
@@ -348,26 +348,17 @@ module.exports = {
 
    async verifyResultIsAccurate(filter) {
        let col;
-       let text;
        try {
-           if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)){
-           I.grabTextFrom(`//tbody/descendant::h2`).then((value) =>
-           {
-               I.say(value);
-               text = value;
-               if (text==='Error Getting Transaction Data' || text==='No Transaction Data Found') {
+           I.grabNumberOfVisibleElements(`//tbody/tr/td[2]`).then((value) => {
+               if (value === 0) {
                    I.say('No data returned');
                }
-           });
-           }
-           else {
-                    Promise.all([
-                       I.say("Data is available"),
-                       col = this.getAppliedFilter(filter),
-                       I.checkRow(filter, col),
-                   ]);
+               else {
+                           col = this.getAppliedFilter(filter);
+                          I.checkRow(filter, col).then(I.say("Data is available"));
                }
-           }
+           });
+               }
            catch (e) {
            I.say('errors')
            console.warn(e);

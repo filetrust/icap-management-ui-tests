@@ -24,20 +24,20 @@ class MyHelper extends Helper {
     //        })
     //      })
     //     }
-  
+
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-               assert.fail(selector +' is not available');
-               } else {
-              output.print(selector +' is visible')
+                assert.fail(selector + ' is not available');
+            } else {
+                output.print(selector + ' is visible')
             }
         } catch (err) {
-          output.log(err);
-          
-          }
+            output.log(err);
+
+        }
     }
 
     async getTextFrom(selector, ...options) {
@@ -46,8 +46,8 @@ class MyHelper extends Helper {
             const numVisible = await helper.grabNumberOfVisibleElements(selector);
             if (numVisible) {
                 return await helper.grabTextFrom(selector, ...options);
-            }else {
-                output.print(selector +' is not visible')
+            } else {
+                output.print(selector + ' is not visible')
             }
         } catch (err) {
             output.log(err);
@@ -61,7 +61,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.click(selector);
             } else {
-                output.error('The element '+selector+' is not visible')
+                output.error('The element ' + selector + ' is not visible')
             }
         } catch (err) {
             output.log(err);
@@ -75,7 +75,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.fillfield(selector, value);
             } else {
-                output.error('The element '+selector+' is not visible')
+                output.error('The element ' + selector + ' is not visible')
             }
         } catch (err) {
             output.log(err);
@@ -89,35 +89,36 @@ class MyHelper extends Helper {
             const tableRows = 'tbody tr';
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             if (rowCount > 1) {
-                output.log(rowCount +' rows are displayed');
+                output.log(rowCount + ' rows are displayed');
                 return await helper.click(page.$eval(`${tableRows}:nth-child(${i})`));
-         } else {
-            output.warn('The table record is not available')
-        }}
-        catch (err) {
+            } else {
+                output.warn('The table record is not available')
+            }
+        } catch (err) {
             output.log(err);
-           
+
 
         }
     }
 
-    async checkRow(val, col) {
+  async checkRow(val, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = 'tbody tr';
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 1) {
-                for (let i = 0; i < rowCount; i++) {
-                    const text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
-                        (e) => e.innerText)
-                    if (text === val) {
-                        console.log('The result list shows required files with the filter: ' + text);
-                    } else {
-                        output.error('The result is not as expected, filter found is: ' + text);
-                    } break;
+                if (rowCount > 1) {
+                    for (let i = 0; i < rowCount; i++) {
+                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) td:nth-child(${col})`,
+                            (e) => e.innerText)
+                            if (this.compareThatEqual(text, val)) {
+                                console.log('The result list shows required files with the filter: ' + text);
+                            } else {
+                                output.error('The result is not as expected, filter found is: ' + text);
+                                break;
+                            }
+                    }
                 }
-            }
         } catch (err) {
             output.log(err);
         }
@@ -131,25 +132,26 @@ class MyHelper extends Helper {
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             if (rowCount > 1) {
-            for (let i = 0; i < rowCount; i++) {
-                let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
-                let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
-                if (moment(parsed).isBetween(range.split("-"))) {
-                    output.print('The result list shows required files within the selected time: ' + range);
-                } else {
-                    assert.fail('The result files returned are not within the selected time: ' + range);
+                for (let i = 0; i < rowCount; i++) {
+                    let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
+                    let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
+                    if (moment(parsed).isBetween(range.split("-"))) {
+                        output.print('The result list shows required files within the selected time: ' + range);
+                    } else {
+                        assert.fail('The result files returned are not within the selected time: ' + range);
+                    }
+                    break;
                 }
-                break;
+            } else {
+                output.print('No Transactions are available')
             }
-        }else{
-            output.print('No Transactions are available')
-        }} catch (err) {
+        } catch (err) {
             output.error(err);
         }
     }
 
     compareThatEqual(word1, word2) {
-        return word1.toUpperCase() === word2.toUpperCase();
+        return word1.toString().toUpperCase() === word2.toString().toUpperCase();
     }
 
     checkFileIsDownloaded(file) {
@@ -181,8 +183,6 @@ class MyHelper extends Helper {
     }
 
 }
-
-
 
 
 module.exports = MyHelper;
