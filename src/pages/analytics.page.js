@@ -189,7 +189,7 @@ module.exports = {
 
     selectTimeInterval(timeInterval) {
         try {
-            I.click(this.inputs.reportrange);
+            I.click(this.inputs.dateFilter);
             I.click("li[data-range-key='"+ timeInterval + "']");
         }
         catch (err){

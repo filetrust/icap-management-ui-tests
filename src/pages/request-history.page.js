@@ -14,7 +14,7 @@ module.exports = {
         customPaginatorGoTo: `input[class*='custom-paginator-goto']`,
     },
     options: {
-        countOfFiles: "//select"
+        countOfFiles: "select[data-test-id='select-pageCountDropdown']"
     },
     buttons: {
         filterArrow: `button[class*='Filters_arrow__']`,
@@ -349,6 +349,7 @@ module.exports = {
     },
 
 
+
     async verifyResultIsAccurate(filter) {
         let col;
         let text;
@@ -378,6 +379,29 @@ module.exports = {
 
 
     checkFilters(appliedFilters, filterValues) {
+
+   async verifyResultIsAccurate(filter) {
+       let col;
+       try {
+           I.grabNumberOfVisibleElements(`//tbody/tr/td[2]`).then((value) => {
+               if (value === 0) {
+                   I.say('No data returned');
+               }
+               else {
+                           col = this.getAppliedFilter(filter);
+                          I.checkRow(filter, col).then(I.say("Data is available"));
+               }
+           });
+               }
+           catch (e) {
+           I.say('errors')
+           console.warn(e);
+       }
+    },
+
+
+     checkFilters(appliedFilters, filterValues) {
+
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
         for (let i = 0; i < filterRes.length; i++) {
