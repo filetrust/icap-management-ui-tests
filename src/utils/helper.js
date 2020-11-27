@@ -116,7 +116,7 @@ class MyHelper extends Helper {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
                 if (rowCount > 1) {
                     for (let i = 0; i < rowCount; i++) {
-                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) td:nth-child(${col})`,
+                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
                             (e) => e.innerText)
                             if (this.compareThatEqual(text, val)) {
                                 console.log('The result list shows required files with the filter: ' + text);
