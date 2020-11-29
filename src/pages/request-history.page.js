@@ -265,13 +265,14 @@ module.exports = {
 
     async isDataInRange(range, col) {
         try {
-            const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
-            if (el || el.length > 0) {
-                I.say('No Transaction Data Found')
-            } else {
-                I.say("Data is available")
-                I.checkIfReturnedFilesInDateRange(range, col)
-            }
+            I.grabNumberOfVisibleElements(this.table.emptyTableNotification).then(result => {
+                if (result) {
+                    I.say('No Transaction Data Found')
+                } else {
+                    I.say("Data is available")
+                    I.checkIfReturnedFilesInDateRange(range, col)
+                }
+            });
         } catch (e) {
             console.warn(e);
         }
