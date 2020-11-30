@@ -18,11 +18,8 @@ exports.config = {
       url: '',
       show: true,
       chrome: {
-        args: ['--headless','--no-sandbox', '--window-size=1536,826'],
-        prefs: 
-              ['--download.default_directory= /output/downloads'],
-           
-        //args: ['--no-sandbox', '--window-size=1536,826'],
+        //args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        args: ['--no-sandbox', '--window-size=1536,826'],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,

@@ -9,11 +9,190 @@ module.exports = {
     draft: `[data-test-id='buttonPolicyDraftTab']`,
     adaptation_policy: `[data-test-id="buttonCurrentAdaptationPolicyTab"]`,
     ncfs_policy: `[data-test-id='buttonCurrentNcfsPolicyTab']`,
+
+
   },
   fields: {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
+    label: {
+      word: {
+        sanitise: {
+          dynamicDataExchange: `label[for='word-id-1sanitise']`,
+          embeddedFiles: `label[for='word-id-2sanitise']`,
+          embeddedFiles2: `label[for='word-id-3sanitise']`,
+          externalHyperlinks: `label[for='word-id-4sanitise']`,
+          internalHyperlinks: `label[for='word-id-5sanitise']`,
+          macros: `label[for='word-id-6sanitise']`,
+          metadata: `label[for='word-id-7sanitise']`,
+          reviewComments: `label[for='word-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `label[for='word-id-1disallow']`,
+          embeddedFiles: `label[for='word-id-2disallow']`,
+          embeddedFiles2: `label[for='word-id-3disallow']`,
+          externalHyperlinks: `label[for='word-id-4disallow']`,
+          internalHyperlinks: `label[for='word-id-5disallow']`,
+          macros: `label[for='word-id-6disallow']`,
+          metadata: `label[for='word-id-7disallow']`,
+          reviewComments: `label[for='word-id-8disallow']`
+        }
+      },
+      excel: {
+        sanitise: {
+          dynamicDataExchange: `label[for='excel-id-1sanitise']`,
+          embeddedFiles: `label[for='excel-id-2sanitise']`,
+          embeddedFiles2: `label[for='excel-id-3sanitise']`,
+          externalHyperlinks: `label[for='excel-id-4sanitise']`,
+          internalHyperlinks: `label[for='excel-id-5sanitise']`,
+          macros: `label[for='excel-id-6sanitise']`,
+          metadata: `label[for='excel-id-7sanitise']`,
+          reviewComments: `label[for='excel-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `label[for='excel-id-1disallow']`,
+          embeddedFiles: `label[for='excel-id-2disallow']`,
+          embeddedFiles2: `label[for='excel-id-3disallow']`,
+          externalHyperlinks: `label[for='excel-id-4disallow']`,
+          internalHyperlinks: `label[for='excel-id-5disallow']`,
+          macros: `label[for='excel-id-6disallow']`,
+          metadata: `label[for='excel-id-7disallow']`,
+          reviewComments: `label[for='excel-id-8disallow']`,
+        }
+      },
+      powerpoint: {
+        sanitise: {
+          embeddedFiles: `label[for='powerpoint-id-1sanitise']`,
+          embeddedImages: `label[for='powerpoint-id-2sanitise']`,
+          externalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
+          internalHyperlinks: `label[for='powerpoint-id-3sanitise']`,
+          macros: `label[for='powerpoint-id-5sanitise']`,
+          metadata: `label[for='powerpoint-id-6sanitise']`,
+          reviewComments: `label[for='powerpoint-id-7sanitise']`
+        },
+        disallow: {
+          embeddedFiles: `label[for='powerpoint-id-1disallow']`,
+          embeddedImages: `label[for='powerpoint-id-2disallow']`,
+          externalHyperlinks: `label[for='powerpoint-id-3disallow']`,
+          internalHyperlinks: `label[for='powerpoint-id-4disallow']`,
+          macros: `label[for='powerpoint-id-5disallow']`,
+          metadata: `label[for='powerpoint-id-6disallow']`,
+          reviewComments: `label[for='powerpoint-id-7disallow']`
+        }
+      },
+      pdf: {
+        sanitise: {
+          acroform: `label[for='pdf-id-1sanitise']`,
+          actionsAll: `label[for='pdf-id-2sanitise']`,
+          embeddedFiles: `label[for='pdf-id-3sanitise']`,
+          embeddedImages: `label[for='pdf-id-4sanitise']`,
+          externalHyperlinks: `label[for='pdf-id-5sanitise']`,
+          internalHyperlinks: `label[for='pdf-id-6sanitise']`,
+          javascript: `label[for='pdf-id-7sanitise']`,
+          metadata: `label[for='pdf-id-8sanitise']`
+        },
+        disallow: {
+          acroform: `label[for='pdf-id-1disallow']`,
+          actionsAll: `label[for='pdf-id-2disallow']`,
+          embeddedFiles: `label[for='pdf-id-3disallow']`,
+          embeddedImages: `label[for='pdf-id-4disallow']`,
+          externalHyperlinks: `label[for='pdf-id-5disallow']`,
+          internalHyperlinks: `label[for='pdf-id-6disallow']`,
+          javascript: `label[for='pdf-id-7disallow']`,
+          metadata: `label[for='pdf-id-8disallow']`
+        }
+      }
+    },
+    input: {
+      word: {
+        sanitise: {
+          dynamicDataExchange: `input[id='word-id-1sanitise']`,
+          embeddedFiles: `input[id='word-id-2sanitise']`,
+          embeddedFiles2: `input[id='word-id-3sanitise']`,
+          externalHyperlinks: `input[id='word-id-4sanitise']`,
+          internalHyperlinks: `input[id='word-id-5sanitise']`,
+          macros: `input[id='word-id-6sanitise']`,
+          metadata: `input[id='word-id-7sanitise']`,
+          reviewComments: `input[id='word-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `input[id='word-id-1disallow']`,
+          embeddedFiles: `input[id='word-id-2disallow']`,
+          embeddedFiles2: `input[id='word-id-3disallow']`,
+          externalHyperlinks: `input[id='word-id-4disallow']`,
+          internalHyperlinks: `input[id='word-id-5disallow']`,
+          macros: `input[id='word-id-6disallow']`,
+          metadata: `input[id='word-id-7disallow']`,
+          reviewComments: `input[id='word-id-8disallow']`
+        }
+      },
+      excel: {
+        sanitise: {
+          dynamicDataExchange: `input[id='excel-id-1sanitise']`,
+          embeddedFiles: `input[id='excel-id-2sanitise']`,
+          embeddedFiles2: `input[id='excel-id-3sanitise']`,
+          externalHyperlinks: `input[id='excel-id-4sanitise']`,
+          internalHyperlinks: `input[id='excel-id-5sanitise']`,
+          macros: `input[id='excel-id-6sanitise']`,
+          metadata: `input[id='excel-id-7sanitise']`,
+          reviewComments: `input[id='excel-id-8sanitise']`
+        },
+        disallow: {
+          dynamicDataExchange: `input[id='excel-id-1disallow']`,
+          embeddedFiles: `input[id='excel-id-2disallow']`,
+          embeddedFiles2: `input[id='excel-id-3disallow']`,
+          externalHyperlinks: `input[id='excel-id-4disallow']`,
+          internalHyperlinks: `input[id='excel-id-5disallow']`,
+          macros: `input[id='excel-id-6disallow']`,
+          metadata: `input[id='excel-id-7disallow']`,
+          reviewComments: `input[id='excel-id-8disallow']`,
+        }
+      },
+      powerpoint: {
+        sanitise: {
+          embeddedFiles: `input[id='powerpoint-id-1sanitise']`,
+          embeddedImages: `input[id='powerpoint-id-2sanitise']`,
+          externalHyperlinks: `input[id='powerpoint-id-3sanitise']`,
+          internalHyperlinks: `input[id='powerpoint-id-3sanitise']`,
+          macros: `input[id='powerpoint-id-5sanitise']`,
+          metadata: `input[id='powerpoint-id-6sanitise']`,
+          reviewComments: `input[id='powerpoint-id-7sanitise']`
+        },
+        disallow: {
+          embeddedFiles: `input[id='powerpoint-id-1disallow']`,
+          embeddedImages: `input[id='powerpoint-id-2disallow']`,
+          externalHyperlinks: `input[id='powerpoint-id-3disallow']`,
+          internalHyperlinks: `input[id='powerpoint-id-4disallow']`,
+          macros: `input[id='powerpoint-id-5disallow']`,
+          metadata: `input[id='powerpoint-id-6disallow']`,
+          reviewComments: `input[id='powerpoint-id-7disallow']`
+        }
+      },
+      pdf: {
+        sanitise: {
+          acroform: `input[id='pdf-id-1sanitise']`,
+          actionsAll: `input[id='pdf-id-2sanitise']`,
+          embeddedFiles: `input[id='pdf-id-3sanitise']`,
+          embeddedImages: `input[id='pdf-id-4sanitise']`,
+          externalHyperlinks: `input[id='pdf-id-5sanitise']`,
+          internalHyperlinks: `input[id='pdf-id-6sanitise']`,
+          javascript: `input[id='pdf-id-7sanitise']`,
+          metadata: `input[id='pdf-id-8sanitise']`
+        },
+        disallow: {
+          acroform: `input[id='pdf-id-1disallow']`,
+          actionsAll: `input[id='pdf-id-2disallow']`,
+          embeddedFiles: `input[id='pdf-id-3disallow']`,
+          embeddedImages: `input[id='pdf-id-4disallow']`,
+          externalHyperlinks: `input[id='pdf-id-5disallow']`,
+          internalHyperlinks: `input[id='pdf-id-6disallow']`,
+          javascript: `input[id='pdf-id-7disallow']`,
+          metadata: `input[id='pdf-id-8disallow']`
+        }
+      }
+
+    },
     validateApiUrlInput: `div[class*='Input_Input__'] > input`,
     blockedFileRelay: "//label[@for='relay-Glasswall-Blocked-Files']",
     blockedFileBlock: "//label[@for='block-Glasswall-Blocked-Files']",
@@ -21,10 +200,6 @@ module.exports = {
     unprocessedFileRelay: "//label[@for='relay-Un-Processable-File-Types']",
     unprocessedFileBlock: "//label[@for='block-Un-Processable-File-Types']",
     unprocessedFileRefer: "//label[@for='refer-Un-Processable-File-Types']",
-  },
-  modal:{
-    deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
-    publishDraftPolicy: `div[class*='ConfirmDraftPublishModal_modalContainer__']`,
   },
   radiobuttons: {
     unprocessedFileRelay: "#relay-Un-Processable-File-Types",
@@ -35,13 +210,8 @@ module.exports = {
     blockedFileRefer: "#refer-Glasswall-Blocked-Files",
   },
   buttons: {
-    modal_cancel: `//button[text()='Cancel']`,
-    modal_delete: `//button[text()='Delete']`,
-    modal_publish: `//button[text()='Publish']`,
-    cancelChanges: `//button[contains(.,'Cancel Changes']`,
-    saveChanges: `//button[contains(.,'Save Changes')]`, 
-    publish: `//button[text()='Publish']`,
-    delete: `//button[text()='Delete']`,
+    cancelChanges: `//button[text()='Cancel Changes']`,
+    saveChanges: `//button[text()='Save Changes']`,
     policy: {
       current: `//button[text()='Current']`,
       history: `//button[text()='History']`
@@ -76,6 +246,7 @@ module.exports = {
   headers: {
     blockedFiles: `section[class*='PolicyForNonCompliantFiles_wrapBlocksToggle__'] > h3:nth-child(3)`,
   },
+
   options: {
     countOfPolicies: "div[class*='Pagination_pageCountSelector__'] > select"
   },
@@ -101,65 +272,6 @@ module.exports = {
   clickNcfsPolicyTab() {
     const element = this.tabs.ncfs_policy;
     I.click(element);
-  },
-
-  deletePolicy(){
-    this.clickDelete();
-    const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_delete)
-    })
-  },
-
-  cancelPolicyDeletion(){
-    const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_cancel)
-    })
-  },
-
-  async publishPolicy(){
-    const element = this.buttons.publish;
-    const elPublish = await I.grabNumberOfVisibleElements(element);
-    I.say(elPublish)
-      if(elPublish.length>0){
-       I.click(element);
-       I.wait(5)
-    const modalEl = this.modal.publishDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_publish)
-    })
-  }else{
-    I.say('The Publish button is not available')
-  }
-  },
-
-  async clickPublish(){
-    const element = this.buttons.publish;
-    const elPublish = await I.grabNumberOfVisibleElements(element);
-    I.say(elPublish)
-      if(elPublish.length>0){
-       I.click(element);
-       I.wait(5)
-    }else{
-      I.say('The Publish button is not available')
-    }
-  },
-
-  clickDelete(){
-    const element = this.buttons.delete
-    I.clickElement(element);
-  },
-
-  cancelPolicyPublishing(){
-    const modalEl = this.modal.publishDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_publish)
-    })
   },
 
 
@@ -209,27 +321,12 @@ module.exports = {
     I.click(element)
   },
 
-  async setPolicyFlag(fileType, contentFlag, flagType) {
-   try { 
-     const element = `label[for='` + fileType + contentFlag + flagType + `']`
-    I.clickElement(element)
-    const save =this.buttons.saveChanges;
-    const elSave = await I.grabNumberOfVisibleElements(save);
-    I.say(elSave)
-      if(elSave.length>0){
-       I.clickElement(save);
-       I.wait(5)
-      }else if (!elSave || elSave.length === 0){
-        I.say('The required policy is already selected')
-      }
-    } catch (e) {
-      I.say('Unable to set policy flag')
-      console.warn(e);
-    }
+  setPolicyFlag(fileType, contentFlag, policy) {
+    const element = `label[for='`+fileType+contentFlag+policy`']`
+    I.click(element)
   },
 
-
-  //`label[for='wordEmbeddedFilesdisallow']`
+//`label[for='wordEmbeddedFilesdisallow']`
 
   // getPolicyFlag(fileType, contentFlag, policy){
   //   const element = `input[id='`+fileType +contentFlag +policy`']`
@@ -354,7 +451,7 @@ module.exports = {
    * Pagination
    * ***************************************************************
    */
-
+ 
   clickFirst() {
     const element = this.buttons.firstPage;
     I.click(element);
@@ -482,21 +579,18 @@ module.exports = {
   },
 
   checkFileOutcomeIsAccurate(fileOutcome, file) {
-    if (fileOutcome === 'Sanitised') {
+    if (fileOutcome == 'Sanitised') {
       I.goToFileDrop()
       I.uploadFile(file)
       filedropPage.clickViewResult();
       filedropPage.isRequiredContentRefDisplayed('File is clean')
-    } else if (fileOutcome === 'htmlReport') {
+    } else if (fileOutcome == 'htmlReport') {
       I.amInPath('output/downloads');
       I.seeInThisFile('Document Access Blocked due to Policy', 'utf8')
     } else {
       I.say(`Set option ` + fileOutcome + ` is not available`)
     }
-  },
-
-
-  clickNcfsPolicy() {
-
   }
+
+
 };

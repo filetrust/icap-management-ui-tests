@@ -97,13 +97,6 @@ module.exports = function () {
             filedropPage.clickViewResult();
         },
 
-        checkFileInFileDropUrl: function (file){
-            this.amOnPage(`https://file-drop.co.uk/`)
-            this.uploadFile(file)
-            filedropPage.clickViewResult();
-        },
-
-
         uploadFileWithNoSanitiseData: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
         },
