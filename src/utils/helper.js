@@ -31,22 +31,20 @@ class MyHelper extends Helper {
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-
-                return output.print(selector);
+                return output.print('The element ' + selector + ' is not available');
             } else {
                 return output.print(selector + ' is visible')
             }
         } catch (err) {
             output.log(err);
-
         }
     }
+
     async getModal(element) {
         const page = this.helpers['Puppeteer'].page;
         await page.waitForSelector('.modal', { visible: true });
         const button = await page.waitForSelector(element, { visible: true });
     }
-
 
     async getTextFrom(selector, ...options) {
         const helper = this.helpers['Puppeteer'];
@@ -108,24 +106,24 @@ class MyHelper extends Helper {
         }
     }
 
-  async checkRow(val, col) {
+    async checkRow(val, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = 'tbody tr';
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-                if (rowCount > 1) {
-                    for (let i = 0; i < rowCount; i++) {
-                       let text= await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
-                            (e) => e.innerText)
-                            if (this.compareThatEqual(text, val)) {
-                                console.log('The result list shows required files with the filter: ' + text);
-                            } else {
-                                output.error('The result is not as expected, filter found is: ' + text);
-                                break;
-                            }
+            if (rowCount > 1) {
+                for (let i = 0; i < rowCount; i++) {
+                    let text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
+                        (e) => e.innerText)
+                    if (this.compareThatEqual(text, val)) {
+                        console.log('The result list shows required files with the filter: ' + text);
+                    } else {
+                        output.error('The result is not as expected, filter found is: ' + text);
+                        break;
                     }
                 }
+            }
         } catch (err) {
             output.log(err);
         }
@@ -185,10 +183,8 @@ class MyHelper extends Helper {
                 output.log('The file does not exist');
                 return;
             }
-
         })
     }
-
 }
 
 
