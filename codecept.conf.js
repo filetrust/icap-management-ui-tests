@@ -20,6 +20,8 @@ exports.config = {
       chrome: {
         //args: ['--headless','--no-sandbox', '--window-size=1536,826'],
         args: ['--no-sandbox', '--window-size=1536,826'],
+		prefs: 
+              ['--download.default_directory= /output/downloads'],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
