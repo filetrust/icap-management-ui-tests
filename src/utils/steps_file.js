@@ -11,7 +11,8 @@ const env = require('../data/credentials.js');
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+            //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+            this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
             //this.amOnPage(`http://localhost:8080`)
         },
 
@@ -60,13 +61,12 @@ module.exports = function () {
         },
 
         goToPolicyHistory: function () {
-            homePage.clickPolicy();
             policyPage.clickHistoryTab();
         },
 
         goToDraftAdaptationPolicy: function () {
             policyPage.clickDraftTab();
-           // policyPage.clickAdaptationPolicy();
+            policyPage.clickAdaptationPolicy();
         },
 
         goToCurrentAdaptationPolicy: function () {
@@ -90,14 +90,14 @@ module.exports = function () {
 
         },
 
-        checkFileInFileDrop: function (file){
+        checkFileInFileDrop: function (file) {
             this.loginNoPwd()
             this.goToFileDrop()
             this.uploadFile(file)
             filedropPage.clickViewResult();
         },
 
-        checkFileInFileDropUrl: function (file){
+        checkFileInFileDropUrl: function (file) {
             this.amOnPage(`https://file-drop.co.uk/`)
             this.uploadFile(file)
             filedropPage.clickViewResult();

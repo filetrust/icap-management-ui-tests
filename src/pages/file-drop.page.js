@@ -54,7 +54,7 @@ module.exports = {
 
     clickSelectFile() {
         const element = this.buttons.fileSelectButton;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickViewResult() {
@@ -64,24 +64,24 @@ module.exports = {
 
     clickRefresh() {
         const element = this.buttons.refresh;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickXml() {
         const element = this.buttons.xml;
         I.waitForClickable(element);
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickPdf() {
         const element = this.buttons.pdf;
         I.handleDownloads();
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickDownloadAnalysisReport() {
         const element = this.buttons.downloadAnalysisReport;
-        I.click(element);
+        I.clickElement(element);
     },
 
     getActiveContents() {

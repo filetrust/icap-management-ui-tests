@@ -328,7 +328,7 @@ module.exports = {
 
     clickApply() {
         const element = this.calendar.applyBtn;
-        I.click(element);
+        I.clickElement(element);
     },
 
 

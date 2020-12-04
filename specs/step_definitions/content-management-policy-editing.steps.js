@@ -4,89 +4,132 @@ const assert = require('assert').strict;
 const {
     I,
     policyPage,
-   } = inject();
+} = inject();
 
-let setFlag;
+let selectedEl = null;
 
 Given('I am logged into the portal', () => {
-    I.login('','')
+    I.login('', '')
 });
 
 Given('I am on the policy screen', () => {
     I.goToContentManagementPolicy();
 });
 
-Given('I am on draft Adaptation policy screen', () => {
+Given('I am on the draft adaptation Policy screen', () => {
     I.goToDraftAdaptationPolicy()
     //pause()
 });
 
-Given('the current policy for {string} is set to {string} and {string}', (FileType, ContentFlag, CurrentFlagType) => {
-    setFlag = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
-    I.say('The current policy flag element is: '+setFlag)
+/*
+* T213
+* ***************************************************************
+*/
+Given('the current policy for {string} is set to {string} and {string}', async (FileType, ContentFlag, CurrentFlagType) => {
+    selectedEl = await policyPage.getFlagElement(FileType, ContentFlag, CurrentFlagType)
 });
 
-When('I change one of the contentFlags {string} for {string} to {string}', (FileType, ContentFlag, DraftFlagType) => {
-    policyPage.setPolicyFlag(FileType, ContentFlag, DraftFlagType)
-});
-
-Then('The contentFlag {string} for required file types {string} is set to {string}', (contentFlag, fileType, flagType) => {
-    policyPage.assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlag, fileType, flagType)
-});
-
-When('I click on Current Policy in the navigation panel', () => {
-    policyPage.clickOnCurrentPolicyTab()
-});
-
-Then('I am taken to the current policy page', () => {
-    policyPage.assertCurrentPolicyPage()
+Given('I change the contentFlag for {string} to {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
+    policyPage.selectPolicyFlag(FileType, ContentFlag, DraftFlagType)
 });
 
 When('I press the Cancel button', () => {
     policyPage.clickCancelChanges()
 });
 
+Then('the current policy is not updated', () => {
+    policyPage.assertCurrentFlagIs(selectedEl)
+});
+
+/*
+* T214
+* ***************************************************************
+*/
+
 When('I press the Save button', () => {
     policyPage.clickSaveChanges()
 });
 
-When('I change all the flag for {string} to {string} on policy page', (fileType, flagType) => {
-    if ( flagType === 'sanitise') {
-        policyPage.clickSanitiseForAllFlag(fileType)
-        policyPage.clickSaveChanges()
-    } else if (flagType === 'disallow') {
-        policyPage.clickDisallowForAllFlag(fileType)
-        policyPage.clickSaveChanges()
-    }
+Then('the draft policy for {string} is saved as {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
+    policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
 });
 
-When('All flags of the {string} is changed to {string}', (fileType, flagType) => {
-    if ( flagType === 'sanitise') {
-        policyPage.assertSanitiseForAllFlag(fileType)
-    } else if (flagType === 'disallow') {
-        policyPage.assertDisallowForAllFlag(fileType)
-    }
+/*
+* T215
+* ***************************************************************
+*/
+When('I change all the flags to {string} on policy page', (flagType) => {
+    //I.setFlags()
+    policyPage.clickAllFlag()
+    policyPage.clickSaveChanges()
 });
 
-When('I click the delete button', () => {
-    policyPage.clickDeleteApiUrl()
+Then('All the flags are set to {string}', (flagType) => {
+    policyPage.assertSanitiseForAllFlag(flagType)
 });
 
-When('I have entered an invalid URL into the "API URL" box', () => {
-    policyPage.enterTextInApiUrl("INVALID TEXT")
+/*
+* T239
+* ***************************************************************
+*/
+When('I click the delete button and confirm delete action on the pop up', () => {
+    policyPage.deletePolicy()
 });
 
-When('I have entered an valid URL into the "API URL" box', () => {
-    policyPage.enterTextInApiUrl("validsolutions.com")
+Then('The policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, CurrentFlagType) => {
+    policyPage.assertCurrentFlagAs(FileType, ContentFlag, CurrentFlagType)
 });
 
-When('the save button is selected', () => {
-    policyPage.clickSaveApiUrl()
+/*
+* T240
+* ***************************************************************
+*/
+When('I save and publish', () => {
+    policyPage.clickSaveChanges();
+    policyPage.publishPolicy();
 });
 
-Then('The contentFlag {string} for {string} remains {string}', (FileType, ContentFlag, CurrentFlagType) => {
-    I.goToCurrentAdaptationPolicy();
-   const flagEl = policyPage.getPolicyFlag(FileType, ContentFlag, CurrentFlagType);
-    assert(flagEl==setFlag)
-   I.seeElement(setFlag)
+Then('The current policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
+    policyPage.assertCurrentFlagAs(FileType, ContentFlag, DraftFlagType)
+});
+
+
+/*
+* T213
+* ***************************************************************
+*/
+
+Then('the current policy for {string} is saved as {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
+    policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
+});
+
+/*
+* T239
+* ***************************************************************
+*/
+When('I click the delete button and confirm delete action on the pop up', () => {
+    policyPage.deletePolicy()
+});
+
+Then('The policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, CurrentFlagType) => {
+    policyPage.assertCurrentFlagAs(FileType, ContentFlag, CurrentFlagType)
+});
+
+/*
+* T241
+* ***************************************************************
+*/
+When('I have updated the NCFS policy url with {string}', (url) => {
+    I.goToDraftNcfsPolicy();
+    policyPage.enterTextInApiUrl(url);
+    policyPage.clickSaveChanges();
+});
+
+Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', (FileType, ContentFlag, FlagType, url) => {
+    I.goToCurrentNcfsPolicy()
+    I.seeInField(policyPage.fields.validateApiUrlInput, url);
+    I.goToCurrentAdaptationPolicy()
+    policyPage.assertCurrentFlagAs(FileType, ContentFlag, FlagType)
+
+
 });

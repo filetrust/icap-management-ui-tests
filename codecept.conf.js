@@ -16,10 +16,10 @@ exports.config = {
     Puppeteer: {
       windowSize: '1536 x 826',
       url: '',
-      show: true,
+      show: false,
       chrome: {
-        //args: ['--headless','--no-sandbox', '--window-size=1536,826'],
-        args: ['--no-sandbox', '--window-size=1536,826'],
+        args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        //args: ['--no-sandbox', '--window-size=1536,826'],
 		prefs: 
               ['--download.default_directory= /output/downloads'],
       },
@@ -41,7 +41,8 @@ exports.config = {
     policyPage: './src/pages/policy.page.js',
     requesthistoryPage: './src/pages/request-history.page.js',
     usersPage: './src/pages/users.page.js',
-    icapProxyPage: './src/pages/icap-proxy.page.js'
+    icapProxyPage: './src/pages/icap-proxy.page.js',
+    modal: './src/fragments/modal.js',
   },
   bootstrap: null,
   gherkin: {

@@ -17,3 +17,6 @@ nohup google-chrome \
 	--ignore-certificate-errors-spki-list \
 	--user-data-dir=/tmp \
 	--remote-debugging-address=0.0.0.0
+
+
+	

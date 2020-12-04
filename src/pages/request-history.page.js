@@ -111,7 +111,7 @@ module.exports = {
 
     selectCountOfFiles(itemCount) {
         const element = this.options.countOfFiles;
-        I.click(element);
+        I.clickElement(element);
         I.selectOption(element, itemCount);
     },
 
@@ -311,7 +311,7 @@ module.exports = {
         try {
             I.say('Filter to set is: ' + value)
             let element = `//span[contains(.,'` + value + `')]/parent::label/span[1]/span/input`
-            I.click(element);
+            I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
         } catch (e) {
@@ -324,7 +324,7 @@ module.exports = {
         try {
             I.say('Filter to set is: ' + value)
             let element = `//label/span[text()='` + value + `']`;
-            I.click(element);
+            I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
         } catch (e) {
@@ -378,7 +378,7 @@ module.exports = {
     },
 
 
-     checkFilters(appliedFilters, filterValues) {
+    checkFilters(appliedFilters, filterValues) {
 
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
@@ -455,22 +455,22 @@ module.exports = {
      */
     clickFirst() {
         const element = this.buttons.firstPage;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickPrevious() {
         const element = this.buttons.previousPage;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickLast() {
         const element = this.buttons.lastPage;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickNext() {
         const element = this.buttons.nextPage;
-        I.click(element);
+        I.clickElement(element);
     },
 
     setCustomPage(value) {
@@ -480,7 +480,7 @@ module.exports = {
 
     clickGo() {
         const element = this.buttons.go;
-        I.click(element);
+        I.clickElement(element);
     },
 
     /*
@@ -497,7 +497,7 @@ module.exports = {
     },
 
     async openAFileRecord() {
-       I.clickRecord(2)
+        I.clickRecord(2)
         //     this.openDatePicker();
         //     this.selectTimePeriod('24 Hours')
         //      try {
@@ -508,7 +508,7 @@ module.exports = {
         //         I.say('No Transaction Data Found')
         //     } else {
         //         I.say("Transaction Data is available")
-                
+
         //     }
         // } catch (e) {
         //     console.warn(e);
@@ -516,10 +516,10 @@ module.exports = {
     },
 
     isFileDetailModalOpened() {
-        const element =  this.modal.fileDetailModal;
+        const element = this.modal.fileDetailModal;
         //;
-       // I.getModal(element);
-       //I.getModal(element)
+        // I.getModal(element);
+        //I.getModal(element)
         I.seeElementExist(element)
 
     },
