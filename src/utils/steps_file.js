@@ -11,7 +11,6 @@ const env = require('../data/credentials.js');
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
             this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
         },
 
