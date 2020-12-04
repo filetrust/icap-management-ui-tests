@@ -13,7 +13,6 @@ module.exports = function () {
         onLoginPage: function () {
             //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
             this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
-            //this.amOnPage(`http://localhost:8080`)
         },
 
         loginNoPwd: function () {
