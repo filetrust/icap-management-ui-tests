@@ -1,6 +1,4 @@
-const {
-    I
-} = inject();
+const I = actor();
 
 module.exports = {
 

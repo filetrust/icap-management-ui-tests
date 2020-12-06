@@ -1,6 +1,5 @@
 const { output } = require("codeceptjs");
-
-const { I, modal } = inject();
+const I = actor();
 
 module.exports = {
   //locators

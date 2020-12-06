@@ -59,18 +59,7 @@ exports.config = {
     retryFailedStep: {
       enabled: false
     },
-    customLocator: {
-      enabled: true,
-      prefix: '$',
-      attribute: 'data-test-id',
-      showActual: true
-    },
-    customLocator: {
-      enabled: true,
-      prefix: '$',
-      attribute: 'data-range-key'
-    },
-
+    
     screenshotOnFail: {
       enabled: true
     },

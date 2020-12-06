@@ -1,10 +1,7 @@
 const MyHelper = require("../utils/helper");
 const moment = require('moment');
 const assert = require('assert');
-
-const {
-    I
-} = inject();
+const I = actor();
 
 module.exports = {
     //Locators

@@ -1,5 +1,5 @@
 var assert = require("assert");
-const faker = require("faker");
+
 
 const { I, loginPage, env } = inject();
 
