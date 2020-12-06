@@ -5,73 +5,63 @@ Feature: Content Management Policy Editing
 
   Background:
     Given I am logged into the portal
-    Given I am on the policy screen
+    And I am on the policy screen
+    And I am on the draft adaptation Policy screen
 
-
+  @functional
   @TEST-213
   Scenario Outline: I can cancel any updates done to the draft policy
-    Given I am on draft Adaptation policy screen
-    And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
-    When I change the contentFlag '<ContentFlag>' for '<FileType>' to '<DraftFlagType>'
+    Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
+    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I press the Cancel button
-    Then The contentFlag '<ContentFlag>' for '<FileType>' remains '<CurrentFlagType>'
+    Then the current policy is not updated
     Examples:
-      | FileType | ContentFlag   | DraftFlagType | CurrentFlagType |
-      | word     | EmbeddedFiles | disallow      | sanitise        |
+      | FileType   | ContentFlag | DraftFlagType | CurrentFlagType |
+      | powerpoint | Metadata    | sanitise      | disallow        |
 
 
+  @functional
   @TEST-214
   Scenario Outline: I can edit policy content flags
-    Given I am on draft Adaptation policy screen
-    When I change one of the contentFlags '<ContentFlag>' for required file types '<FileType>' to '<FlagType>'
+    Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
+    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I press the Save button
-    Then The contentFlag '<ContentFlag>' for required file types '<FileType>' is set to '<FlagType>'
+    Then the draft policy for '<FileType>' is saved as '<ContentFlag>' and '<DraftFlagType>'
     Examples:
-      | FileType | ContentFlag        | FlagType |
-      | word     | EmbeddedFiles      | sanitise |
-      | excel    | ExternalHyperlinks | disallow |
+      | FileType | ContentFlag        | DraftFlagType | CurrentFlagType |
+      | excel    | InternalHyperlinks | sanitise      | disallow        |
 
-
-  @TEST-215
-  Scenario Outline: A user is able to change all content flags for all file type in policy page
-    When I change all the flag for '<FileType>' to '<FlagType>' on policy page
-    Then All flags of the '<FileType>' is changed to '<FlagType>'
-    Examples:
-      | FileType | FlagType |
-      | word     | sanitise |
-      | pdf      | disallow |
-
-
-  @TEST-216
-  Scenario: The default Current Policy set is Sanitise
-  #    Then I see all content flags set to Sanitise
-
+  @functional
   @TEST-239
-  Scenario: I can delete a draft policy
-    Given I am on the adaptation Policy screen
-    When I click the delete button
-    And I confirm delete action on the pop up
-    Then the Adaptation draft policy is replaced with the Current Adaptation Policy
-    And the NCFS draft policy is replaced with the current NCFS policy
+  Scenario Outline: I can delete a draft policy
+    Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
+    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
+    And I press the Save button
+    And I click the delete button and confirm delete action on the pop up
+    Then the current policy is not updated
+    Examples:
+      | FileType | ContentFlag        | DraftFlagType | CurrentFlagType |
+      | excel    | ExternalHyperlinks | sanitise      | disallow        |
 
+  @functional
   @TEST-240
   Scenario Outline: I can publish a draft Adaptation Policy
-    Given I am on the adaptation Policy screen
-    And I change and save one of the '<ContentFlag>' for required file types '<FileType>' to '<FlagType>'
-    When I click Publish and confirm publish action on the confirmation popup
-    Then the current policy is updated with the updated policy settings as '<ContentFlag>' for '<FileType>' to '<FlagType>'
+    Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
+    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
+    And I save and publish
+    Then The current policy flag is set as '<FileType>' '<ContentFlag>' and '<DraftFlagType>'
     Examples:
-      | FileType | ContentFlag   | FlagType |
-      | word     | EmbeddedFiles | sanitise |
+      | FileType | ContentFlag | DraftFlagType | CurrentFlagType |
+      | pdf      | Acroform    | disallow      | sanitise        |
 
-
+  @functional
   @TEST-241
   Scenario Outline: I can update and publish both Adaptation and NCFS policies at the same time
-    Given i have updated the NCFS policy with options '<blockedPolicyAction>' and '<NcfsDecision>'
-    And i have updated the Adaptation policy with '<ContentFlag>' for file type '<FileType>' to '<FlagType>'
-    When i click Publish and confirm publish action on the confirmation popup
-    Then the current policy is updated for both policies with the new settings '<ContentFlag>', '<FileType>', '<FlagType>', '<blockedPolicyAction>' and '<NcfsDecision>'
+    Given I have updated the NCFS policy url with '<url>'
+    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
+    And I save and publish
+    Then the current policy is updated with the new settings '<FileType>', '<ContentFlag>', '<FlagType>', and '<url>'
     Examples:
-      | FileType | ContentFlag   | FlagType | blockedPolicyAction | NcfsDecision |
-      | word     | EmbeddedFiles | sanitise | Block               | Relay        |
+      | FileType | ContentFlag    | FlagType | url                                       |
+      | word     | EmbeddedImages | sanitise | icap-client-qa.uksouth.cloudapp.azure.com |
 

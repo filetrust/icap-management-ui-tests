@@ -1,4 +1,4 @@
-const { I } = inject();
+const I = actor();
 
 module.exports = {
 
@@ -328,7 +328,7 @@ module.exports = {
 
     clickApply() {
         const element = this.calendar.applyBtn;
-        I.click(element);
+        I.clickElement(element);
     },
 
 

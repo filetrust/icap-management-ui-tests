@@ -1,4 +1,4 @@
-const { I } = inject();
+const I = actor();
 
 module.exports = {
   //locators
@@ -41,7 +41,7 @@ module.exports = {
 
   clickForgotPasswordLink() {
     const element = this.links.passwordReset;
-    I.click(element);
+    I.clickElement(element);
   },
 
   /*
@@ -50,17 +50,17 @@ module.exports = {
    */
   clickLoginTermsButton() {
     const element = this.buttons.terms;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickCloseLoginTerms() {
     const element = this.buttons.closeLoginTerms;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickModalclosebutton() {
     const element = this.buttons.modalClose;
-    I.click(element);
+    I.clickElement(element);
   },
 
   /*
@@ -69,7 +69,7 @@ module.exports = {
    */
   clickLogIn() {
     const element = this.buttons.login;
-    I.click(element);
+    I.clickElement(element);
   },
 
   errorMsg() {
@@ -88,7 +88,7 @@ module.exports = {
    */
   clickAccountActivationLink() {
     const element = this.links.accountActivation;
-    I.click(element);
+    I.clickElement(element);
   },
 
   /*
@@ -98,6 +98,6 @@ module.exports = {
 
   clickSowChecklist() {
     const element = this.links.sowChecklist;
-    I.click(element);
+    I.clickElement(element);
   },
 };

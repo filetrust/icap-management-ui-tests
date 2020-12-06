@@ -5,7 +5,7 @@ const event = require('codeceptjs').event;
 const fs = require('fs');
 const output = require('codeceptjs').output;
 const assert = require('assert').strict;
-let modalContents;
+//const PuppeteerController = require('puppeteer-core-controller');
 
 class MyHelper extends Helper {
 
@@ -26,15 +26,30 @@ class MyHelper extends Helper {
     //      })
     //     }
 
+    async getElement(selector) {
+        const page = this.helpers['Puppeteer'].page;
+        return (await page.$(selector));
+    }
+
+    async getElementAttribute(selector) {
+        const page = this.helpers['Puppeteer'].page;
+        const element = this.getElement(selector);
+        const is_disabled = (await page.$$(selector)).length !== 0;
+        return is_disabled;
+    }
+
+
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
+        let elVisible;
         try {
-            const elVisible = await helper.grabNumberOfVisibleElements(selector);
+            elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-                return output.print('The element ' + selector + ' is not available');
-            } else {
-                return output.print(selector + ' is visible')
+                output.print('The element ' + selector + ' is not available');
+            } else if (elVisible) {
+                output.print(selector + ' is visible')
             }
+            return elVisible;
         } catch (err) {
             output.log(err);
         }
@@ -67,7 +82,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.click(selector);
             } else {
-                output.error('The element ' + selector + ' is not visible')
+                output.print('Skipping step, the element ' + selector + ' is not visible')
             }
         } catch (err) {
             output.print(err);
@@ -129,6 +144,22 @@ class MyHelper extends Helper {
         }
     }
 
+    async getElement() {
+        const page = this.helpers['Puppeteer'].page;
+        return (await page.$x(`//label[text()='Sanitise']`))[0];
+    }
+
+    async setFlags(element) {
+        const helper = this.helpers['Puppeteer'];
+        try {
+            let elCount = await this.getElement()
+            for (let i = 0; i < elCount; i++) {
+                this.clickElement((await page.$x(`//label[text()='Sanitise']`))[i])
+            }
+        } catch (err) {
+            output.log(err);
+        }
+    }
 
     async checkIfReturnedFilesInDateRange(range, col) {
         const page = this.helpers['Puppeteer'].page;
@@ -185,7 +216,8 @@ class MyHelper extends Helper {
             }
         })
     }
-}
 
+
+}
 
 module.exports = MyHelper;

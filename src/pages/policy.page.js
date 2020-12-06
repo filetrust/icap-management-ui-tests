@@ -1,4 +1,5 @@
-const { I } = inject();
+const { output } = require("codeceptjs");
+const I = actor();
 
 module.exports = {
   //locators
@@ -22,7 +23,7 @@ module.exports = {
     unprocessedFileBlock: "//label[@for='block-Un-Processable-File-Types']",
     unprocessedFileRefer: "//label[@for='refer-Un-Processable-File-Types']",
   },
-  modal:{
+  modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
     publishDraftPolicy: `div[class*='ConfirmDraftPublishModal_modalContainer__']`,
   },
@@ -35,16 +36,13 @@ module.exports = {
     blockedFileRefer: "#refer-Glasswall-Blocked-Files",
   },
   buttons: {
-    modal_cancel: `//button[text()='Cancel']`,
-    modal_delete: `//button[text()='Delete']`,
-    modal_publish: `//button[text()='Publish']`,
-    cancelChanges: `//button[contains(.,'Cancel Changes']`,
-    saveChanges: `//button[contains(.,'Save Changes')]`, 
-    publish: `//button[text()='Publish']`,
-    delete: `//button[text()='Delete']`,
+    cancelChanges: `button[class*='DraftPolicy_cancelButton__']`,
+    saveChanges: `//button[contains(.,'Save Changes')]`,
+    publish: `button[class*='DraftPolicy_publishButton__']`,
+    delete: `button[class*='DraftPolicy_deleteButton__']`,
     policy: {
-      current: `//button[text()='Current']`,
-      history: `//button[text()='History']`
+      current: `//button[contains(.,'Current']`,
+      history: `//button[contains(.,'History']`
     },
     view: "",
     viewPolicyFirst: `//tbody/tr[1]/th/button[text()='View']`,
@@ -81,6 +79,8 @@ module.exports = {
   },
 
 
+
+
   //Methods
 
   /*
@@ -90,74 +90,71 @@ module.exports = {
 
   clickDraftTab() {
     const element = this.tabs.draft;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickAdaptationPolicy() {
     const element = this.tabs.adaptation_policy;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickNcfsPolicyTab() {
     const element = this.tabs.ncfs_policy;
-    I.click(element);
+    I.clickElement(element);
   },
 
-  deletePolicy(){
-    this.clickDelete();
-    const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_delete)
-    })
-  },
+  // deletePolicy() {
+  //   this.clickDelete();
+  //   const modalEl = this.modal.deleteDraftPolicy;
+  //   I.waitForElement(modalEl)
+  //   within(modalEl, () => {
+  //     I.clickElement(this.buttons.modal_delete)
+  //   })
+  // },
 
-  cancelPolicyDeletion(){
+  cancelPolicyDeletion() {
     const modalEl = this.modal.deleteDraftPolicy;
     I.waitForElement(modalEl)
-    within(modalEl, () =>{
+    within(modalEl, () => {
       I.clickElement(this.buttons.modal_cancel)
     })
   },
 
-  async publishPolicy(){
+  publishPolicy() {
     const element = this.buttons.publish;
-    const elPublish = await I.grabNumberOfVisibleElements(element);
-    I.say(elPublish)
-      if(elPublish.length>0){
-       I.click(element);
-       I.wait(5)
-    const modalEl = this.modal.publishDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () =>{
-      I.clickElement(this.buttons.modal_publish)
-    })
-  }else{
-    I.say('The Publish button is not available')
-  }
+    I.clickElement(element);
+    I.wait(5)
+    modal.accept()
   },
 
-  async clickPublish(){
+  deletePolicy() {
+    const element = this.buttons.delete;
+    I.clickElement(element);
+    I.wait(5)
+    modal.confirmDelete()
+  },
+
+  async clickPublish() {
     const element = this.buttons.publish;
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
-      if(elPublish.length>0){
-       I.click(element);
-       I.wait(5)
-    }else{
+    if (elPublish.length > 0) {
+      I.clickElement(element);
+      I.wait(5)
+    } else {
       I.say('The Publish button is not available')
     }
   },
 
-  clickDelete(){
+  clickDelete() {
     const element = this.buttons.delete
     I.clickElement(element);
   },
 
-  cancelPolicyPublishing(){
+  cancelPolicyPublishing() {
     const modalEl = this.modal.publishDraftPolicy;
     I.waitForElement(modalEl)
-    within(modalEl, () =>{
+    within(modalEl, () => {
       I.clickElement(this.buttons.modal_publish)
     })
   },
@@ -180,27 +177,33 @@ module.exports = {
     }
     I.click(container);
     const element = this.getContentFlagRule(type, rule);
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickCancelChanges() {
     const element = this.buttons.cancelChanges;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickSaveChanges() {
     const element = this.buttons.saveChanges;
-    I.click(element);
+    I.clickElement(element);
   },
 
   assertCurrentPolicyPage() {
     I.seeElement(this.fields.contentFlags)
   },
 
-  clickSanitiseForAllFlag(docType) {
-    const elements = this.fields.label[docType].sanitise
-    for (let element in elements) {
-      I.click(elements[element])
+  async setAllFlags(flagType) {
+    let element = null;
+    if (flagType === 'sanitise') {
+      element = `label:nth-child(4)`
+      await I.setFlags(element)
+    } else {
+      if (flagType === 'disallow') {
+        element = `label:nth-child(2)`
+        await I.setFlags(element)
+      }
     }
   },
 
@@ -209,19 +212,12 @@ module.exports = {
     I.click(element)
   },
 
-  async setPolicyFlag(fileType, contentFlag, flagType) {
-   try { 
-     const element = `label[for='` + fileType + contentFlag + flagType + `']`
-    I.clickElement(element)
-    const save =this.buttons.saveChanges;
-    const elSave = await I.grabNumberOfVisibleElements(save);
-    I.say(elSave)
-      if(elSave.length>0){
-       I.clickElement(save);
-       I.wait(5)
-      }else if (!elSave || elSave.length === 0){
-        I.say('The required policy is already selected')
-      }
+  async selectPolicyFlag(fileType, contentFlag, flagType) {
+    try {
+      const element = `label[for='` + fileType + contentFlag + flagType + `']`
+      I.goToDraftAdaptationPolicy()
+      I.clickElement(element);
+      I.wait(3)
     } catch (e) {
       I.say('Unable to set policy flag')
       console.warn(e);
@@ -229,20 +225,101 @@ module.exports = {
   },
 
 
-  //`label[for='wordEmbeddedFilesdisallow']`
+  async getFlagElement(fileType, contentFlag, flagType) {
+    return `input[id='` + fileType + contentFlag + flagType + `']`;
+  },
 
-  // getPolicyFlag(fileType, contentFlag, policy){
-  //   const element = `input[id='`+fileType +contentFlag +policy`']`
-  //   let selected = I.seeAttributesOnElements(element, { checked: true })
-  //   let deselected = I.seeAttributesOnElements(element, { checked: false })
-  //   if(selected) {
-  //     I.say('The current policy flag status for '+ fileType +contentFlag +' is ' +policy)
-  //   }else if(deselected) {
-  //     I.say('The current policy flag status for '+ fileType +contentFlag +' is ' +policy)
+  async getSelected() {
+    const element = this.getFlagElement(fileType, contentFlag, flagType);
+    return await (await element.getProperty('checked')).jsonValue();
+  },
 
-  //   }
-  //   return element;
-  // },
+  async setFlag(onOrOff) {
+    const val = await this.getSelected();
+    if ((onOrOff && !val) || (!onOrOff && val)) {
+      const element = await this.getFlagElement();
+      await element.click();
+    }
+  },
+
+  async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
+    const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+    //const el = `input[id='` + fileType + contentFlag + flagType + `']`
+    try {
+      I.goToDraftAdaptationPolicy()
+      I.clickElement(flag);
+      I.clickElement(this.buttons.saveChanges)
+      I.wait(3)
+      this.publishPolicy()
+      I.wait(5)
+    } catch (e) {
+      I.say('Unable to set policy flag')
+      console.warn(e);
+    }
+  },
+
+  async selectFlag(fileType, contentFlag, flagType) {
+
+    try {
+      //const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+      // const el = `input[id='` + fileType + contentFlag + flagType + `']`
+      //   if (await this.getSelectedPolicyFlag(el) === true ){
+      I.goToDraftAdaptationPolicy()
+      //if (flagType == 'sanitise'){
+
+      const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+      I.clickElement(flag);
+      const elm = this.buttons.saveChanges;
+      if (!elm) {
+        if (flagType === 'sanitise') {
+          const flagdis = `label[for='` + fileType + contentFlag + `disallow']`
+          I.clickElement(flagdis);
+        } else if (flagType === 'disallow') {
+          const flagsan = `label[for='` + fileType + contentFlag + `sanitise']`
+          I.clickElement(flagsan);
+        }
+      } else {
+        output.print('The save cancel buttons are displayed')
+      }
+    } catch (e) {
+      I.say('Unable to set policy flag')
+      console.warn(e);
+    }
+  },
+
+  async getSelectedPolicyFlag(element) {
+    I.goToCurrentAdaptationPolicy()
+    try {
+      let selected = await I.grabAttributeFrom(element, 'checked')
+      output.print(selected)
+      return selected;
+    } catch (err) {
+      output.print(err);
+    }
+  },
+
+
+  async setCurrentPolicyFlag(fileType, contentFlag, flagType) {
+    const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+    const element = `input[id='` + fileType + contentFlag + flagType + `']`
+    // I.goToCurrentAdaptationPolicy()
+    // let selected = await I.grabAttributeFrom(element, { checked: true })
+    // try {
+    //     if (selected){
+    //       output.print('The required policy is already published')
+    //   }else {
+    //       I.goToDraftAdaptationPolicy()
+    //       I.clickElement(flag);
+    this.selectAnyFlag(fileType, contentFlag, flagType)
+    I.clickElement(this.buttons.saveChanges)
+    I.wait(3)
+    this.publishPolicy()
+    I.wait(5)
+    //   } } catch (e) {
+    // I.say('Unable to set policy flag')
+    // console.warn(e); }
+  },
+
 
   assertSanitiseForAllFlag(docType) {
     const elements = this.fields.input[docType].sanitise
@@ -251,15 +328,27 @@ module.exports = {
     }
   },
 
-  assertFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
-    const element = this.fields.input[fileType][flagType][contentFlags]
+  assertCurrentFlagAs(fileType, contentFlag, flagType) {
+    I.goToCurrentAdaptationPolicy();
+    const element = `input[id='` + fileType + contentFlag + flagType + `']`
     this.assertElementChecked(element)
   },
 
-  clickDisallowForAllFlag(docType) {
-    const elements = this.fields.label[docType].disallow
+  assertCurrentFlagIs(element) {
+    I.goToCurrentAdaptationPolicy();
+    this.assertElementChecked(element)
+  },
+
+  assertDraftFlagAs(fileType, contentFlag, flagType) {
+    I.goToDraftAdaptationPolicy();
+    const element = `input[id='` + fileType + contentFlag + flagType + `']`
+    this.assertElementChecked(element)
+  },
+
+  async clickAllFlag() {
+    const elements = await I.grabNumberOfVisibleElements(`label:nth-child(2)`)
     for (let element in elements) {
-      I.click(elements[element])
+      I.click(`label:nth-child(2)`)
     }
   },
 
@@ -283,7 +372,7 @@ module.exports = {
   },
 
   clickCurrentPolicyTab() {
-    I.click(this.buttons.policy.current)
+    I.click(this.tabs.current)
   },
 
   enterTextInApiUrl(text) {
@@ -298,17 +387,17 @@ module.exports = {
    */
   clickView() {
     const element = this.buttons.viewPolicyFirst;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickActivate() {
     const element = this.buttons.activatePolicyFirst;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickHistoryTab() {
     const element = this.tabs.history;
-    I.click(element);
+    I.clickElement(element);
   },
 
   assertNumberOfOpenTab(expectedTabCount) {
@@ -357,22 +446,22 @@ module.exports = {
 
   clickFirst() {
     const element = this.buttons.firstPage;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickPrevious() {
     const element = this.buttons.previousPage;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickLast() {
     const element = this.buttons.lastPage;
-    I.click(element);
+    I.clickElement(element);
   },
 
   clickNext() {
     const element = this.buttons.nextPage;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setCustomPage(value) {
@@ -382,7 +471,7 @@ module.exports = {
 
   clickGo() {
     const element = this.buttons.go;
-    I.click(element);
+    I.clickElement(element);
   },
 
   /*
@@ -392,32 +481,32 @@ module.exports = {
 
   setUnprocessableFileAsRelay() {
     const element = this.fields.unprocessedFileRelay;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setUnprocessableFileAsBlock() {
     const element = this.fields.unprocessedFileBlock;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setUnprocessableFileAsRefer() {
     const element = this.fields.unprocessedFileRefer;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setBlockedFileAsRelay() {
     const element = this.fields.blockedFileRelay;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setBlockedFileAsBlock() {
     const element = this.fields.blockedFileBlock;
-    I.click(element);
+    I.clickElement(element);
   },
 
   setBlockedFileAsRefer() {
     const element = this.fields.blockedFileRefer;
-    I.click(element);
+    I.clickElement(element);
   },
 
   checkBlockedRouteRadio(glasswallBlockedRoute) {
@@ -435,6 +524,7 @@ module.exports = {
         throw "No such option";
     }
   },
+
   checkUnprocessableRouteRadio(unprocessableRoute) {
     switch (unprocessableRoute) {
       case ('Relay'):
@@ -450,6 +540,7 @@ module.exports = {
         throw "No such option";
     }
   },
+
   assertCheckedBlockedRadioButton(radioValue) {
     let radioElement = null;
     switch (radioValue) {
@@ -465,6 +556,7 @@ module.exports = {
     }
     I.seeCheckboxIsChecked(radioElement);
   },
+
   assertCheckedUnprocessableRadioButton(radioValue) {
     let radioElement = null;
     switch (radioValue) {
@@ -495,8 +587,8 @@ module.exports = {
     }
   },
 
-
   clickNcfsPolicy() {
-
+    const element = this.tabs.ncfs_policy;
+    I.clickElement(element);
   }
-};
+}

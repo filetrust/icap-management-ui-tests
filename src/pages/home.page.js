@@ -1,4 +1,4 @@
-const {I} = inject();
+const I = actor();
 
 module.exports = {
     //Locators
@@ -35,37 +35,37 @@ module.exports = {
 
     clickAnalytics() {
         const element = this.links.analytics;
-        I.click(element);
+        I.clickElement(element);
     },
     clickRequestsHistory() {
         const element = this.links.requestsHistory;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickFileDrop() {
         const element = this.links.fileDrop;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickPolicy() {
         const element = this.links.policy;
-        I.click(element);
+        I.clickElement(element);
     },
 
     
     clickUsers() {
         const element = this.links.users;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickLogout() {
         const element = this.buttons.logout;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickAccountToggle() {
         const element = this.buttons.accountPopupToggle;
-        I.click(element);
+        I.clickElement(element);
     },
 
     hoverOnAccountToggle() {
@@ -75,7 +75,7 @@ module.exports = {
 
     clickChangePassword() {
         const element = this.buttons.changePassword;
-        I.click(element);
+        I.clickElement(element);
     },
 
     changePassword(currentPasswordValue, newPasswordValue, confirmNewPasswordValue) {

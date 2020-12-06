@@ -1,6 +1,4 @@
-const {
-    I
-} = inject();
+const I = actor();
 
 module.exports = {
 
@@ -40,12 +38,12 @@ module.exports = {
 
     clickForgotPasswordCancelButton() {
         const element = this.buttons.cancel;
-        I.click(element);
+        I.clickElement(element);
     },
 
     clickSendLink() {
         const element = this.buttons.sendLink;
-        I.click(element);
+        I.clickElement(element);
     },
 
     sendResetRequest(emailAddress) {

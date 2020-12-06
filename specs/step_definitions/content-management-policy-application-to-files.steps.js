@@ -2,8 +2,6 @@ const {
     I,
     icapProxyPage,
     policyPage,
-    homePage,
-    filedropPage
 } = inject();
 
 const assert = require('assert');
@@ -15,12 +13,10 @@ Given('I am logged into the portal', () => {
 Given('I am on the draft Adaptation policy screen', () => {
     I.goToContentManagementPolicy();
     I.goToDraftAdaptationPolicy()
-    //pause()
 });
 
 Given('I set a policy for file type {string} with {string} set to {string}', (fileType, contentFlag, flagType) => {
-    policyPage.setPolicyFlag(fileType, contentFlag, flagType);
-    policyPage.publishPolicy();
+    policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
 })
 
 When(/^I process file (.*) file (.*) through the icap server$/, (fileType, file) => {
@@ -36,7 +32,7 @@ Then('The {string} processing outcome is {string}', (file, fileOutcome) => {
         I.see('File is clean')
         I.say('The file is successfully processed and clean')
     } else if (fileOutcome === 'htmlReport') {
-       icapProxyPage.checkIfHtmlReportReturned() 
+        icapProxyPage.checkIfHtmlReportReturned()
     }
 
 
