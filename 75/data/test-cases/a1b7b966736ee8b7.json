@@ -1,0 +1,352 @@
+{
+  "uid" : "a1b7b966736ee8b7",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+  "historyId" : "75d8b8ec1dab2c5cc448ed504a3c91c7",
+  "time" : {
+    "start" : 1607290238058,
+    "stop" : 1607290251377,
+    "duration" : 13319
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33",
+  "statusTrace" : "Error: Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33\n                    at ExecutionContext._evaluateInternal (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:217:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async ElementHandle.evaluateHandle (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:120:16)\n                    at async Object.internalHandler.queryAll (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js:35:30)\n                    at async Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2280:15)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:27:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+  "flaky" : false,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33",
+    "statusTrace" : "Error: Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33\n                    at ExecutionContext._evaluateInternal (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:217:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async ElementHandle.evaluateHandle (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:120:16)\n                    at async Object.internalHandler.queryAll (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js:35:30)\n                    at async Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2280:15)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:27:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+    "steps" : [ {
+      "name" : "requesthistoryPage: openDatePicker ",
+      "time" : {
+        "start" : 1607290249245,
+        "stop" : 1607290251297,
+        "duration" : 2052
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1607290249245,
+          "stop" : 1607290251297,
+          "duration" : 2052
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectTimePeriod \"12 Hours\"",
+      "time" : {
+        "start" : 1607290251297,
+        "stop" : 1607290251377,
+        "duration" : 80
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33\n                    at ExecutionContext._evaluateInternal (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:217:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async ElementHandle.evaluateHandle (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:120:16)\n                    at async Object.internalHandler.queryAll (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js:35:30)\n                    at async Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2280:15)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:27:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+      "steps" : [ {
+        "name" : "I click \"$12 Hours\"",
+        "time" : {
+          "start" : 1607290251298,
+          "stop" : 1607290251376,
+          "duration" : 78
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33\n                    at ExecutionContext._evaluateInternal (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/ExecutionContext.js:217:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async ElementHandle.evaluateHandle (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:120:16)\n                    at async Object.internalHandler.queryAll (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/QueryHandler.js:35:30)\n                    at async Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2280:15)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:27:22\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:49:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "e548ef7b3f5fc412",
+      "name" : "Last Seen Screenshot",
+      "source" : "e548ef7b3f5fc412.png",
+      "type" : "image/png",
+      "size" : 40374
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-167"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "tag",
+    "value" : "@success"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 9,
+        "passed" : 23,
+        "unknown" : 0,
+        "total" : 33
+      },
+      "items" : [ {
+        "uid" : "43b844b5a6a40d64",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/68//#testresult/43b844b5a6a40d64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606686072973,
+          "stop" : 1606686088280,
+          "duration" : 15307
+        }
+      }, {
+        "uid" : "6105aae5bc779f6d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/66//#testresult/6105aae5bc779f6d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606472861927,
+          "stop" : 1606472876240,
+          "duration" : 14313
+        }
+      }, {
+        "uid" : "e4cc87a95271dd7b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/65//#testresult/e4cc87a95271dd7b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606472397673,
+          "stop" : 1606472412018,
+          "duration" : 14345
+        }
+      }, {
+        "uid" : "835c6bb7d5a763da",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/64//#testresult/835c6bb7d5a763da",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471592239,
+          "stop" : 1606471592239,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "3951537a1a41c320",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/63//#testresult/3951537a1a41c320",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471336070,
+          "stop" : 1606471336070,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "5aed88f7bb49e937",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/61//#testresult/5aed88f7bb49e937",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606402071188,
+          "stop" : 1606402089638,
+          "duration" : 18450
+        }
+      }, {
+        "uid" : "1012439f5a0ece6f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/1012439f5a0ece6f",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606402146893,
+          "stop" : 1606402146893,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "3b84f8aa81668e11",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/3b84f8aa81668e11",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606399721408,
+          "stop" : 1606399721408,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "5b025781d57b23fb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/60//#testresult/5b025781d57b23fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606398192587,
+          "stop" : 1606398207494,
+          "duration" : 14907
+        }
+      }, {
+        "uid" : "c93bfdc4647ff526",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/59//#testresult/c93bfdc4647ff526",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606390280646,
+          "stop" : 1606390299570,
+          "duration" : 18924
+        }
+      }, {
+        "uid" : "6241e9ab39bef96c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/58//#testresult/6241e9ab39bef96c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606388400193,
+          "stop" : 1606388419066,
+          "duration" : 18873
+        }
+      }, {
+        "uid" : "e113a89b2568ddc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/e113a89b2568ddc",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606387601803,
+          "stop" : 1606387601803,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "6b266168a1e9d6f8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/57//#testresult/6b266168a1e9d6f8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606387136435,
+          "stop" : 1606387151960,
+          "duration" : 15525
+        }
+      }, {
+        "uid" : "ecd815025accaa43",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/56//#testresult/ecd815025accaa43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606385086149,
+          "stop" : 1606385101702,
+          "duration" : 15553
+        }
+      }, {
+        "uid" : "130be99d454e0195",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/130be99d454e0195",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606371770694,
+          "stop" : 1606371770694,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "c18602130ff74fdc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/54//#testresult/c18602130ff74fdc",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606367589788,
+          "stop" : 1606367589788,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "913be853e8a7dda0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/51//#testresult/913be853e8a7dda0",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606364756504,
+          "stop" : 1606364756504,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "79e5137ddf107aa3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/53//#testresult/79e5137ddf107aa3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606318937416,
+          "stop" : 1606318955753,
+          "duration" : 18337
+        }
+      }, {
+        "uid" : "7b5e6595efb0beb8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/52//#testresult/7b5e6595efb0beb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606318502750,
+          "stop" : 1606318518442,
+          "duration" : 15692
+        }
+      }, {
+        "uid" : "d2ae7489eb3855cb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/51//#testresult/d2ae7489eb3855cb",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606291187280,
+          "stop" : 1606291187280,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@success", "@TEST-167", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "a1b7b966736ee8b7.json",
+  "parameterValues" : [ ]
+}
