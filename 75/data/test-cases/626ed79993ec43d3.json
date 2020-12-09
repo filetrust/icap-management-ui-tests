@@ -1,0 +1,438 @@
+{
+  "uid" : "626ed79993ec43d3",
+  "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success",
+  "historyId" : "75d8b8ec1dab2c5cc448ed504a3c91c7",
+  "time" : {
+    "start" : 1607549830380,
+    "stop" : 1607549844831,
+    "duration" : 14451
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "requesthistoryPage: openDatePicker ",
+      "time" : {
+        "start" : 1607549840638,
+        "stop" : 1607549842711,
+        "duration" : 2073
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1607549840638,
+          "stop" : 1607549842711,
+          "duration" : 2073
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectTimePeriod \"12 Hours\"",
+      "time" : {
+        "start" : 1607549842711,
+        "stop" : 1607549844819,
+        "duration" : 2108
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"li[data-range-key='12 Hours']\"",
+        "time" : {
+          "start" : 1607549842711,
+          "stop" : 1607549844819,
+          "duration" : 2108
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isTimeApplied \"12\", \"current time\"",
+      "time" : {
+        "start" : 1607549844819,
+        "stop" : 1607549844823,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see element \"//span[contains(.,'09/12/2020 9:37 AM - 09/12/2020 21:37 PM')]\"",
+        "time" : {
+          "start" : 1607549844819,
+          "stop" : 1607549844823,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the files processed for the selected period are displayed ",
+      "time" : {
+        "start" : 1607549844823,
+        "stop" : 1607549844828,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1607549844823,
+          "stop" : 1607549844828,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isDataInRange \"09/12/2020 9:37 AM - 09/12/2020 21:37 PM\", 1",
+      "time" : {
+        "start" : 1607549844828,
+        "stop" : 1607549844831,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"//td[contains(.,'No Transaction Data Found')]\"",
+        "time" : {
+          "start" : 1607549844828,
+          "stop" : 1607549844831,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "No Transaction Data Found",
+      "time" : {
+        "start" : 1607549844832,
+        "stop" : 1607549844832,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 11,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-167"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "tag",
+    "value" : "@success"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167 @success"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 6,
+        "passed" : 25,
+        "unknown" : 0,
+        "total" : 32
+      },
+      "items" : [ {
+        "uid" : "48dfad946bc0c63",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/74//#testresult/48dfad946bc0c63",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607518621371,
+          "stop" : 1607518635895,
+          "duration" : 14524
+        }
+      }, {
+        "uid" : "f84940a1b68fcf40",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/72//#testresult/f84940a1b68fcf40",
+        "status" : "failed",
+        "statusDetails" : "Evaluation failed: DOMException: Failed to execute 'querySelectorAll' on 'Element': '$12 Hours' is not a valid selector.\n                    at __puppeteer_evaluation_script__:1:33",
+        "time" : {
+          "start" : 1607290241066,
+          "stop" : 1607290253741,
+          "duration" : 12675
+        }
+      }, {
+        "uid" : "a669be458b2e24a6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/65//#testresult/a669be458b2e24a6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606686070105,
+          "stop" : 1606686084493,
+          "duration" : 14388
+        }
+      }, {
+        "uid" : "111650bc4fee9878",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/63//#testresult/111650bc4fee9878",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606472875213,
+          "stop" : 1606472889678,
+          "duration" : 14465
+        }
+      }, {
+        "uid" : "7b7b2e55c2e55f03",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/62//#testresult/7b7b2e55c2e55f03",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606472399665,
+          "stop" : 1606472414200,
+          "duration" : 14535
+        }
+      }, {
+        "uid" : "818a3b3f1dec3075",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/61//#testresult/818a3b3f1dec3075",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471590071,
+          "stop" : 1606471590071,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "75e22d4d9b0fb948",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/60//#testresult/75e22d4d9b0fb948",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471367149,
+          "stop" : 1606471367149,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "b4db0a3dcd1e12f6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/58//#testresult/b4db0a3dcd1e12f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606402067132,
+          "stop" : 1606402082766,
+          "duration" : 15634
+        }
+      }, {
+        "uid" : "ebcd93bad481d0c8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/57//#testresult/ebcd93bad481d0c8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606398197802,
+          "stop" : 1606398213484,
+          "duration" : 15682
+        }
+      }, {
+        "uid" : "d1f4a4b5cf3a0022",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/56//#testresult/d1f4a4b5cf3a0022",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606390279460,
+          "stop" : 1606390294977,
+          "duration" : 15517
+        }
+      }, {
+        "uid" : "7bcf335a0e0f9d0f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/7bcf335a0e0f9d0f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606388396116,
+          "stop" : 1606388411704,
+          "duration" : 15588
+        }
+      }, {
+        "uid" : "b0853c82b4bfc3fc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/54//#testresult/b0853c82b4bfc3fc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606387141256,
+          "stop" : 1606387157047,
+          "duration" : 15791
+        }
+      }, {
+        "uid" : "a1b71c0f791d50b3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/53//#testresult/a1b71c0f791d50b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606385092381,
+          "stop" : 1606385107991,
+          "duration" : 15610
+        }
+      }, {
+        "uid" : "58f3733129bde23b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/52//#testresult/58f3733129bde23b",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606371762920,
+          "stop" : 1606371762920,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "b9aa159c0a202f28",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/51//#testresult/b9aa159c0a202f28",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606367583505,
+          "stop" : 1606367583505,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2124dd2cf24b7832",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/48//#testresult/2124dd2cf24b7832",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606364787519,
+          "stop" : 1606364787519,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "ecd68c1ab43764db",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/50//#testresult/ecd68c1ab43764db",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606318933767,
+          "stop" : 1606318950241,
+          "duration" : 16474
+        }
+      }, {
+        "uid" : "9a98f4657679a9fb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/49//#testresult/9a98f4657679a9fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606318490434,
+          "stop" : 1606318506961,
+          "duration" : 16527
+        }
+      }, {
+        "uid" : "d6ba9f726aafec2f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/48//#testresult/d6ba9f726aafec2f",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606291189061,
+          "stop" : 1606291189062,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "b14bbb37a478ab4d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/47//#testresult/b14bbb37a478ab4d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1606217786981,
+          "stop" : 1606217801845,
+          "duration" : 14864
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@success", "@TEST-167", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "626ed79993ec43d3.json",
+  "parameterValues" : [ ]
+}
