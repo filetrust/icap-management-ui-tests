@@ -29,24 +29,22 @@ Then('the files processed for the selected period are displayed', async () => {
     requesthistoryPage.isDataInRange(displayedRange, col);
 });
 
-When(/^I select a valid (.*) and (.*)$/, (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
-
+When(/^I select a valid (.*) and (.*)$/, async (datetimeFrom, datetimeTo) => {
+    requesthistoryPage.openDatePicker();
+    await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
 Then(/^the selected custom range is applied to include (.*) and (.*)$/, (datetimeFrom, datetimeTo) => {
     requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
 });
 
+// When(/^I select a custom over 24 hours range from (.*) to (.*)$/, (datetimeFrom, datetimeTo) => {
+//     requesthistoryPage.setTimeFrom(datetimeFrom);
+//     requesthistoryPage.setTimeTo(datetimeTo);
+// });
 
-
-When(/^I select a custom over 24 hours range from (.*) to (.*)$/, (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.setTimeFrom(datetimeFrom);
-    requesthistoryPage.setTimeTo(datetimeTo);
-});
-
-Then('the expected {string} is displayed', () => {
-    I.seeInSource('') //TODO
-});
+// Then('the expected {string} is displayed', () => {
+//     I.seeInSource('') //TODO
+// });
 
 
