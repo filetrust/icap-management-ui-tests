@@ -46,6 +46,7 @@ module.exports = {
         fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`,
         file: `tr:nth-of-type(2)`,
         emptyTableNotification: `//td[contains(.,'No Transaction Data Found')]`,
+        errorTableNotification: `//td[contains(.,'Error Getting Transaction Data')]`,
         loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`
     },
     calendar: {
@@ -162,121 +163,100 @@ module.exports = {
         }
     },
 
+    getMonthName(monthNumber) {
+        let monthName;
+        switch (monthNumber) {
+            case '01':
+                monthName = 'JAN'
+                break;
+            case '02':
+                monthName = 'FEB'
+                break;
+            case '03':
+                monthName = 'MAR'
+                break;
+            case '04':
+                monthName = 'APR'
+                break;
+            case '05':
+                monthName = 'MAY'
+                break;
+            case '06':
+                monthName = 'JUN'
+                break;
+            case '07':
+                monthName = 'JUL'
+                break;
+            case '08':
+                monthName = 'AUG'
+                break;
+            case '09':
+                monthName = 'SEP'
+                break;
+            case '10':
+                monthName = 'OCT'
+                break;
+            case '11':
+                monthName = 'NOV'
+                break;
+            case '12':
+                monthName = 'DEC'
+                break;
+            default:
+                console.log(`Sorry, ${monthNumber} is not a month number`);
+        }
+        return monthName
+    },
+
+    parseDate(date) {
+        const dateTimeArray = date.split(' ');
+        const dateArray = dateTimeArray[0].split('/');
+        const timeArray = dateTimeArray[1].split(':');
+        const [hours, minutes] = timeArray
+        const [day, month, year] = dateArray
+        return {
+            day,
+            month,
+            year,
+            hours,
+            minutes
+        }
+    },
+
+    async selectMonthYear(month, year) {
+        let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
+        let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
+        while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${month}`) {
+            I.click(this.calendar.drp_arrow_left).catch(() => I.say(element + 'is not clickable'))
+            currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
+        }
+        return currentYearAndMonthValueRight
+    },
+
     async setTimePeriod(datetimeFrom, datetimeTo) {
         const element = this.buttons.customRange;
         I.click(element).catch(() => I.say(element + 'is not clickable'));
         try {
-            const minutesFrom = datetimeFrom.split(':')[1].split(' ')[0];
-            const hoursFrom = datetimeFrom.split(' ')[1].split(':')[0];
-            const dayFrom = datetimeFrom.split('/')[0];
-            const yearFrom = datetimeFrom.split('/')[2].split(' ')[0];
-            let monthFrom = datetimeFrom.split('/')[1];
-            switch (monthFrom) {
-                case '01':
-                    monthFrom = 'JAN'
-                    break;
-                case '02':
-                    monthFrom = 'FEB'
-                    break;
-                case '03':
-                    monthFrom = 'MAR'
-                    break;
-                case '04':
-                    monthFrom = 'APR'
-                    break;
-                case '05':
-                    monthFrom = 'MAY'
-                    break;
-                case '06':
-                    monthFrom = 'JUN'
-                    break;
-                case '07':
-                    monthFrom = 'JUL'
-                    break;
-                case '08':
-                    monthFrom = 'AUG'
-                    break;
-                case '09':
-                    monthFrom = 'SEP'
-                    break;
-                case '10':
-                    monthFrom = 'OCT'
-                    break;
-                case '11':
-                    monthFrom = 'NOV'
-                    break;
-                case '12':
-                    monthFrom = 'DEC'
-                    break;
-                default:
-                    console.log(`Sorry, ${monthFrom} is not a month number`);
-            }
-            // select month and year
-            let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
-            let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
-            while (currentYearAndMonthValueLeft !== `${monthFrom} ${yearFrom}` && currentYearAndMonthValueRight !== `${monthFrom} ${yearFrom}`) {
-                I.click(this.calendar.drp_arrow_left).catch(() => I.say(element + 'is not clickable'))
-                currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
-            }
+            const from = this.parseDate(datetimeFrom)
+            from.month = this.getMonthName(from.month);
+            const currentYearAndMonthValueRight = await this.selectMonthYear(from.month, from.year);
             const selectedRightMonth = currentYearAndMonthValueRight.split(" ")[0]
-            if (selectedRightMonth === monthFrom) {
-                I.click(locate(this.calendar.drp_day_right).withText(dayFrom))
+            if (selectedRightMonth === from.month) {
+                I.click(locate(this.calendar.drp_day_right).withText(from.day))
             } else {
-                I.click(locate(this.calendar.drp_day_left).withText(dayFrom))
+                I.click(locate(this.calendar.drp_day_left).withText(from.day))
             }
-            I.selectOption(this.calendar.drp_hour_left, hoursFrom);
-            I.selectOption(this.calendar.drp_minutes_left, minutesFrom);
-            const minutesTo = datetimeTo.split(':')[1].split(' ')[0];
-            const hoursTo = datetimeTo.split(' ')[1].split(':')[0];
-            const dayTo = datetimeTo.split('/')[0];
-            let monthTo = datetimeTo.split('/')[1];
-            switch (monthTo) {
-                case '01':
-                    monthTo = 'JAN'
-                    break;
-                case '02':
-                    monthTo = 'FEB'
-                    break;
-                case '03':
-                    monthTo = 'MAR'
-                    break;
-                case '04':
-                    monthTo = 'APR'
-                    break;
-                case '05':
-                    monthTo = 'MAY'
-                    break;
-                case '06':
-                    monthTo = 'JUN'
-                    break;
-                case '07':
-                    monthTo = 'JUL'
-                    break;
-                case '08':
-                    monthTo = 'AUG'
-                    break;
-                case '09':
-                    monthTo = 'SEP'
-                    break;
-                case '10':
-                    monthTo = 'OCT'
-                    break;
-                case '11':
-                    monthTo = 'NOV'
-                    break;
-                case '12':
-                    monthTo = 'DEC'
-                    break;
-                default:
-                    console.log(`Sorry, ${monthTo} is not a month number`);
-            }
-            if (selectedRightMonth === monthTo) {
-                I.click(locate(this.calendar.drp_day_right).withText(dayTo))
+            I.selectOption(this.calendar.drp_hour_left, from.hours);
+            I.selectOption(this.calendar.drp_minutes_left, from.minutes);
+            const to = this.parseDate(datetimeTo)
+            to.month = this.getMonthName(to.month);
+            if (selectedRightMonth === to.month) {
+                I.click(locate(this.calendar.drp_day_right).withText(to.day))
             } else {
-                I.click(locate(this.calendar.drp_day_left).withText(dayTo))
+                I.click(locate(this.calendar.drp_day_left).withText(to.day))
             }
-            I.selectOption(this.calendar.drp_hour_right, hoursTo);
-            I.selectOption(this.calendar.drp_minutes_right, minutesTo);
+            I.selectOption(this.calendar.drp_hour_right, to.hours);
+            I.selectOption(this.calendar.drp_minutes_right, to.minutes);
             I.click(this.buttons.apply)
         } catch (e) {
             I.say('Action unsuccessful')
@@ -394,6 +374,7 @@ module.exports = {
     async isDataInRange(range, col) {
         try {
             I.waitForInvisible(this.table.loading)
+            I.dontSeeElement(this.table.errorTableNotification);
             const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (el || el.length > 0) {
                 I.say('No Transaction Data Found')
