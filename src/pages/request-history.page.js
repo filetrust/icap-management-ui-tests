@@ -46,7 +46,7 @@ module.exports = {
         fileTableBodyRow: `tbody[class*='MuiTableBody-root'] > tr`,
         file: `tr:nth-of-type(2)`,
         emptyTableNotification: `//td[contains(.,'No Transaction Data Found')]`,
-
+        loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
@@ -393,6 +393,7 @@ module.exports = {
 
     async isDataInRange(range, col) {
         try {
+            I.waitForInvisible(this.table.loading)
             const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (el || el.length > 0) {
                 I.say('No Transaction Data Found')
