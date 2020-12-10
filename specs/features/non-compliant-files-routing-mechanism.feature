@@ -7,7 +7,7 @@ Feature: non-compliant-files-routing-mechanism
     And I have navigated to the Current Policy page
 
   @success
-  @smoke
+  @prototype
   @TEST-238
   Scenario: The default routing option for unprocessable and blocked files is accurate
     Given I am a new user
@@ -15,7 +15,8 @@ Feature: non-compliant-files-routing-mechanism
     Then I see the default set routing option for unprocessable files as ''
     Then I see the default set routing option for blocked files as ''
 
-  @smoke
+
+  @prototype
     @TEST-158_159
     @Fail-app
         #Assert is commented
@@ -28,8 +29,7 @@ Feature: non-compliant-files-routing-mechanism
       | glasswallsolutions.com | success |
       | invalidurl             | error   |
 
-  @success
-  @smoke
+  @functional
     @TEST-183
   Scenario Outline: I can change the outcome of unprocessable files
     When I change the route for unprocessable files to '<routeOption>' and save
@@ -37,23 +37,20 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | routeOption | updatedRouteOption |
       | Relay       | Relay              |
-      | Block       | Block              |
-      | Refer       | Refer              |
+ 
 
-  @success
-  @smoke
+ @functional
     @TEST-187
   Scenario Outline: I can change the outcome of Glasswall Blocked files
     When I change the route for blocked files to '<routeOption>' and save
     Then the route selection for blocked files is applied as '<updatedRouteOption>'
     Examples:
       | routeOption | updatedRouteOption |
-      | Relay       | Relay              |
       | Block       | Block              |
-      | Refer       | Refer              |
+ 
 
   @Fail-app
-    @smoke
+    @prototype
     @TEST-233
     #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
@@ -66,14 +63,11 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | blockedPolicyAction | NcfsDecision | file                                | responseCode | fileOutcome    |
       | Relay               | NA           | src/data/input/types/safe_file.xlsx | 204          | File is clean! |
-#      | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport  |
-#            | Refer               | relay        | file | 204          | Unmodified         |
-#            | Refer               | replace      | file | ''           | alternativeContent |
-#            | Refer               | block        | file | 403          | HtmlReport         |
+      | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport  |
 
 
   @Fail-app
-  @smoke
+  @prototype
     @TEST-234
     #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
@@ -85,9 +79,6 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | fileTypePolicyAction | NcfsDecision | file                      | responseCode | fileOutcome    |
       | Relay                | NA           | src/data/input/file1.docx | 204          | File is clean! |
-#      | Block                | NA           | src/data/input/types/blocked_file.doc | 403          | HtmlReport  |
-#      | Refer                | relay        | file                                  | 204          | Unmodified         |
-#      | Refer                | replace      | file                                  | ''           | alternativeContent |
-#      | Refer                | block        | file                                  | 403          | HtmlReport         |
+      | Block                | NA           | src/data/input/types/blocked_file.doc | 403          | HtmlReport  |
 
 

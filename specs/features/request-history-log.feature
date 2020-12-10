@@ -7,7 +7,7 @@ Feature: request-history-log
     Given I am logged into the ui
 
   @success
-  @smoke
+  @prototype
   @TEST-166
   Scenario Outline: I am able to change the number of files displayed on the page
     Given I have navigated to the Request History page
@@ -42,7 +42,7 @@ Feature: request-history-log
       | docx      | Safe      | docx           | Safe          | SAFE         |
       | png       | Safe      | Safe           | png           | png          |
 
-
+ @prototype
   @TEST-164
   Scenario Outline: I can filter the log using file id
     Given I have navigated to the Request History page

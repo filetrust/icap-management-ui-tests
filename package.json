@@ -5,8 +5,8 @@
     "scripts": {
         "report": "allure serve allure/results",
         "test": "(npx codeceptjs run-multiple --grep  @functional --all --plugins allure)",
-        "test:prototype": "npx codeceptjs run-multiple --grep @smoke --all --plugins allure",
-        "smoke": "npx codeceptjs run-multiple --grep '@smoke' --all --plugins allure",
+        "test:prototype": "npx codeceptjs run-multiple --grep @prototype --all --plugins allure",
+        "smoke": "npx codeceptjs run-multiple --grep '@prototype' --all --plugins allure",
         "codeceptjs": "codeceptjs run --steps",
         "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
         "codeceptjs:ui": "codecept-ui --app",

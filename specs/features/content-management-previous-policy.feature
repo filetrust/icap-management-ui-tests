@@ -6,16 +6,14 @@ Feature: content-management-previous-policy
         Given I am logged into the portal
         Given I am on current policy screen
 
-    @success
-    @smoke
+   @functional
     @TEST-218
     Scenario: I can view previous Policy details
         Given I am on the Policy History page
         When I click view on a previous policy
         Then the previous Policy is displayed
 
-   @success
-   @smoke
+   @functional
     @TEST-219
     Scenario: I can activate a previous policy
         Given I am on the Policy History page

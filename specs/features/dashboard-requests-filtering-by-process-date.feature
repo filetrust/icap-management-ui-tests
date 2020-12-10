@@ -7,7 +7,7 @@ Feature: dashboard-requests-filtering-by-process-date
         Given I have navigated to the Dashboard page
 
     @success
-    @smoke
+    @prototype
     @TEST-151
     Scenario Outline: I am able to filter the dashboard requests by time
         When I make a time selection with '<time>'
@@ -19,7 +19,7 @@ Feature: dashboard-requests-filtering-by-process-date
             | Custom Range | 2/10/2020 10:30 AM  | 2/10/2020 11:00 AM  | 02/10/2020 10:30 AM - 02/10/2020 11:00 AM |
 
     @success
-    @smoke
+    @prototype
     @TEST-152
     Scenario Outline: I am able to filter the dashboard requests by time
         When I make a time selection with '<timeInterval>'
