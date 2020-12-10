@@ -1,5 +1,6 @@
 const { output } = require("codeceptjs");
 const I = actor();
+const  modal  = require("../fragments/modal.js");
 
 module.exports = {
   //locators
@@ -102,15 +103,6 @@ module.exports = {
     const element = this.tabs.ncfs_policy;
     I.clickElement(element);
   },
-
-  // deletePolicy() {
-  //   this.clickDelete();
-  //   const modalEl = this.modal.deleteDraftPolicy;
-  //   I.waitForElement(modalEl)
-  //   within(modalEl, () => {
-  //     I.clickElement(this.buttons.modal_delete)
-  //   })
-  // },
 
   cancelPolicyDeletion() {
     const modalEl = this.modal.deleteDraftPolicy;
@@ -242,21 +234,66 @@ module.exports = {
     }
   },
 
+  // async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
+  //   const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+  //   const el = `input[id='` + fileType + contentFlag + flagType + `']`
+  //   const saveele = this.buttons.saveChanges
+  //   const pele = this.buttons.publish
+  //   try {
+      
+  //     I.goToDraftAdaptationPolicy()
+      
+  //       I.clickElements(flag,saveele)
+       
+  //      this.publishPolicy()
+  //     I.wait(5)   
+   
+  // } catch (e) {
+  //     I.say('Unable to set policy flag')
+   
+  //     console.warn(e);
+  //   }
+  // },
+  
+
   async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
-    //const el = `input[id='` + fileType + contentFlag + flagType + `']`
+    const el = `input[id='` + fileType + contentFlag + flagType + `']`
+    const ele = fileType + contentFlag + flagType 
     try {
+      let checked = await I.grabAttributeFrom(el, 'checked')
+      output.print(checked)
+      if (checked !== "null") {
+        output.print('The flag is already selected')
+      }else { 
       I.goToDraftAdaptationPolicy()
       I.clickElement(flag);
       I.clickElement(this.buttons.saveChanges)
       I.wait(3)
       this.publishPolicy()
-      I.wait(5)
-    } catch (e) {
+      I.wait(5)   
+      }
+ } catch (e) {
       I.say('Unable to set policy flag')
       console.warn(e);
     }
   },
+
+ async isChecked(element) {
+    let checked = null;
+    try{
+    checked = await I.grabAttributeFromAll(element)
+    //grabAttributeFrom(element, { checked: true })
+    output.print (checked)
+      if (checked === 1){
+        return true
+      }else {
+        return false
+      }}catch (e) {
+        console.warn(e);
+      }
+  },
+
 
   async selectFlag(fileType, contentFlag, flagType) {
 
