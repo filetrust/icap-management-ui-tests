@@ -1,0 +1,299 @@
+{
+  "uid" : "c693e103c8ac0bdd",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file2.pdf\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-233",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file2.pdf\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-233",
+  "historyId" : "10741fb3a59b136c4353875e0b91a045",
+  "time" : {
+    "start" : 1607617533511,
+    "stop" : 1607617550740,
+    "duration" : 17229
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: setBlockedFileAsBlock ",
+      "time" : {
+        "start" : 1607617543768,
+        "stop" : 1607617543772,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label[@for='block-Glasswall-Blocked-Files']\"",
+        "time" : {
+          "start" : 1607617543768,
+          "stop" : 1607617543772,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onLoginPage ",
+      "time" : {
+        "start" : 1607617543772,
+        "stop" : 1607617546658,
+        "duration" : 2886
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"http://management-ui.northeurope.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1607617543772,
+          "stop" : 1607617546658,
+          "duration" : 2886
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "loginPage: clickLogIn ",
+      "time" : {
+        "start" : 1607617546658,
+        "stop" : 1607617548689,
+        "duration" : 2031
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[@type='submit']\"",
+        "time" : {
+          "start" : 1607617546658,
+          "stop" : 1607617548689,
+          "duration" : 2031
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: loginNoPwd ",
+      "time" : {
+        "start" : 1607617548689,
+        "stop" : 1607617548695,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"section[class*='Toolbar_Toolbar__']\"",
+        "time" : {
+          "start" : 1607617548689,
+          "stop" : 1607617548694,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickFileDrop ",
+      "time" : {
+        "start" : 1607617548695,
+        "stop" : 1607617550725,
+        "duration" : 2030
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='file-drop'] > div\"",
+        "time" : {
+          "start" : 1607617548695,
+          "stop" : 1607617550725,
+          "duration" : 2030
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: goToFileDrop ",
+      "time" : {
+        "start" : 1607617550725,
+        "stop" : 1607617550730,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='Button_button__']\"",
+        "time" : {
+          "start" : 1607617550725,
+          "stop" : 1607617550729,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"src/data/input/file2.pdf\"",
+      "time" : {
+        "start" : 1607617550730,
+        "stop" : 1607617550740,
+        "duration" : 10
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"src/data/input/file2.pdf\"",
+        "time" : {
+          "start" : 1607617550730,
+          "stop" : 1607617550740,
+          "duration" : 10
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "4d0e6101cd29be62",
+      "name" : "Last Seen Screenshot",
+      "source" : "4d0e6101cd29be62.png",
+      "type" : "image/png",
+      "size" : 23215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-app"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-233"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@prototype"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file2.pdf\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-233"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@TEST-233", "@prototype", "@Fail-app", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "c693e103c8ac0bdd.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,209 @@
+{
+  "uid" : "c702e31146fa22e4",
+  "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/blocked_file.doc\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/blocked_file.doc\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-234",
+  "historyId" : "821498460f4734326f5c3beb31f99430",
+  "time" : {
+    "start" : 1607617563346,
+    "stop" : 1607617575693,
+    "duration" : 12347
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: setUnprocessableFileAsBlock ",
+      "time" : {
+        "start" : 1607617573587,
+        "stop" : 1607617573590,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label[@for='block-Un-Processable-File-Types']\"",
+        "time" : {
+          "start" : 1607617573587,
+          "stop" : 1607617573590,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickFileDrop ",
+      "time" : {
+        "start" : 1607617573590,
+        "stop" : 1607617575678,
+        "duration" : 2088
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='file-drop'] > div\"",
+        "time" : {
+          "start" : 1607617573590,
+          "stop" : 1607617575677,
+          "duration" : 2087
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: goToFileDrop ",
+      "time" : {
+        "start" : 1607617575678,
+        "stop" : 1607617575683,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='Button_button__']\"",
+        "time" : {
+          "start" : 1607617575678,
+          "stop" : 1607617575683,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"src/data/input/types/blocked_file.doc\"",
+      "time" : {
+        "start" : 1607617575683,
+        "stop" : 1607617575693,
+        "duration" : 10
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"src/data/input/types/blocked_file.doc\"",
+        "time" : {
+          "start" : 1607617575683,
+          "stop" : 1607617575693,
+          "duration" : 10
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "e7ad64d474ddc249",
+      "name" : "Last Seen Screenshot",
+      "source" : "e7ad64d474ddc249.png",
+      "type" : "image/png",
+      "size" : 23214
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-app"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@prototype"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/blocked_file.doc\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@prototype", "@TEST-234", "@Fail-app", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "c702e31146fa22e4.json",
+  "parameterValues" : [ ]
+}
