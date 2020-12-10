@@ -1,0 +1,510 @@
+{
+  "uid" : "c91d9d15d4c16cd0",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @Fail-app @smoke @TEST-233",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @Fail-app @smoke @TEST-233",
+  "historyId" : "4d85040d398da29ee4e43438c94928f4",
+  "time" : {
+    "start" : 1607598000748,
+    "stop" : 1607598018933,
+    "duration" : 18185
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"Field\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: setBlockedFileAsRelay ",
+      "time" : {
+        "start" : 1607598011937,
+        "stop" : 1607598011942,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label[@for='relay-Glasswall-Blocked-Files']\"",
+        "time" : {
+          "start" : 1607598011937,
+          "stop" : 1607598011942,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onLoginPage ",
+      "time" : {
+        "start" : 1607598011942,
+        "stop" : 1607598014869,
+        "duration" : 2927
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"http://management-ui.uksouth.cloudapp.azure.com/\"",
+        "time" : {
+          "start" : 1607598011942,
+          "stop" : 1607598014869,
+          "duration" : 2927
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "loginPage: clickLogIn ",
+      "time" : {
+        "start" : 1607598014869,
+        "stop" : 1607598016888,
+        "duration" : 2019
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[@type='submit']\"",
+        "time" : {
+          "start" : 1607598014869,
+          "stop" : 1607598016888,
+          "duration" : 2019
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: loginNoPwd ",
+      "time" : {
+        "start" : 1607598016888,
+        "stop" : 1607598016895,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"section[class*='Toolbar_Toolbar__']\"",
+        "time" : {
+          "start" : 1607598016889,
+          "stop" : 1607598016895,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "homePage: clickFileDrop ",
+      "time" : {
+        "start" : 1607598016895,
+        "stop" : 1607598018917,
+        "duration" : 2022
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='file-drop'] > div\"",
+        "time" : {
+          "start" : 1607598016895,
+          "stop" : 1607598018917,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: goToFileDrop ",
+      "time" : {
+        "start" : 1607598018917,
+        "stop" : 1607598018922,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='Button_button__']\"",
+        "time" : {
+          "start" : 1607598018917,
+          "stop" : 1607598018922,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"src/data/input/types/safe_file.xlsx\"",
+      "time" : {
+        "start" : 1607598018922,
+        "stop" : 1607598018933,
+        "duration" : 11
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"src/data/input/types/safe_file.xlsx\"",
+        "time" : {
+          "start" : 1607598018922,
+          "stop" : 1607598018932,
+          "duration" : 10
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"Field\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1302:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "d1d1f4a237152798",
+      "name" : "Last Seen Screenshot",
+      "source" : "d1d1f4a237152798.png",
+      "type" : "image/png",
+      "size" : 23215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@Fail-app"
+  }, {
+    "name" : "tag",
+    "value" : "@TEST-233"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@smoke"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @Fail-app @smoke @TEST-233"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 18,
+        "broken" : 0,
+        "skipped" : 6,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 24
+      },
+      "items" : [ {
+        "uid" : "b4e77de611972add",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/76//#testresult/b4e77de611972add",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607595158950,
+          "stop" : 1607595176078,
+          "duration" : 17128
+        }
+      }, {
+        "uid" : "a17275777779ff7b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/75//#testresult/a17275777779ff7b",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607549913480,
+          "stop" : 1607549930792,
+          "duration" : 17312
+        }
+      }, {
+        "uid" : "6cf93a677ef25fa9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/74//#testresult/6cf93a677ef25fa9",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607518707682,
+          "stop" : 1607518724953,
+          "duration" : 17271
+        }
+      }, {
+        "uid" : "5437ddb55f843c38",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/72//#testresult/5437ddb55f843c38",
+        "status" : "failed",
+        "statusDetails" : "Element \"Field\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607290325736,
+          "stop" : 1607290343302,
+          "duration" : 17566
+        }
+      }, {
+        "uid" : "777dcc9c2a18fedd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/65//#testresult/777dcc9c2a18fedd",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606686156824,
+          "stop" : 1606686167067,
+          "duration" : 10243
+        }
+      }, {
+        "uid" : "c208acdcd208d027",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/63//#testresult/c208acdcd208d027",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606472953357,
+          "stop" : 1606472963646,
+          "duration" : 10289
+        }
+      }, {
+        "uid" : "4f2853b55fe7599f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/62//#testresult/4f2853b55fe7599f",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606472482450,
+          "stop" : 1606472492720,
+          "duration" : 10270
+        }
+      }, {
+        "uid" : "5db3e06a566ca0ab",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/61//#testresult/5db3e06a566ca0ab",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471589903,
+          "stop" : 1606471589903,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "1356ef6256baa1a2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/60//#testresult/1356ef6256baa1a2",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606471365733,
+          "stop" : 1606471365733,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a898a95d1be7ee0b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/58//#testresult/a898a95d1be7ee0b",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606402151436,
+          "stop" : 1606402162371,
+          "duration" : 10935
+        }
+      }, {
+        "uid" : "128f3fdba6b46b67",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/57//#testresult/128f3fdba6b46b67",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606398286015,
+          "stop" : 1606398296955,
+          "duration" : 10940
+        }
+      }, {
+        "uid" : "ef7e00ad686a384e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/56//#testresult/ef7e00ad686a384e",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606390367582,
+          "stop" : 1606390378530,
+          "duration" : 10948
+        }
+      }, {
+        "uid" : "e6ace04e8914335d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/55//#testresult/e6ace04e8914335d",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606388481824,
+          "stop" : 1606388492257,
+          "duration" : 10433
+        }
+      }, {
+        "uid" : "6ded3200eccfd26a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/54//#testresult/6ded3200eccfd26a",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606387228368,
+          "stop" : 1606387239339,
+          "duration" : 10971
+        }
+      }, {
+        "uid" : "ffc7a0e526567ec1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/53//#testresult/ffc7a0e526567ec1",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606385179647,
+          "stop" : 1606385190611,
+          "duration" : 10964
+        }
+      }, {
+        "uid" : "c220b3d90e98ff92",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/52//#testresult/c220b3d90e98ff92",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606371762945,
+          "stop" : 1606371762945,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "8f49ddf6f6730ecb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/51//#testresult/8f49ddf6f6730ecb",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606367583545,
+          "stop" : 1606367583545,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "9351812ff1d26db5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/48//#testresult/9351812ff1d26db5",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1606364786459,
+          "stop" : 1606364786459,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "faecd9b2f1b5610c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/50//#testresult/faecd9b2f1b5610c",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606319024377,
+          "stop" : 1606319034763,
+          "duration" : 10386
+        }
+      }, {
+        "uid" : "cc180f1f089ce535",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/49//#testresult/cc180f1f089ce535",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"//label[@for='relay-Glasswall-Blocked-Files']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1606318580436,
+          "stop" : 1606318592328,
+          "duration" : 11892
+        }
+      } ]
+    },
+    "tags" : [ "@smoke", "@TEST-233", "@Fail-app", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "c91d9d15d4c16cd0.json",
+  "parameterValues" : [ ]
+}
