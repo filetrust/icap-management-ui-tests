@@ -1,0 +1,361 @@
+{
+  "uid" : "6678ee23b65b6858",
+  "name" : "I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213",
+  "historyId" : "782f80f34172c95bb9d26981072dcb0b",
+  "time" : {
+    "start" : 1607595147537,
+    "stop" : 1607595170893,
+    "duration" : 23356
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.seeAttributesOnElements (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1697:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.seeAttributesOnElements (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1697:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1607595163840,
+        "stop" : 1607595165856,
+        "duration" : 2016
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1607595163840,
+          "stop" : 1607595165856,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1607595165856,
+        "stop" : 1607595165858,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1607595165856,
+          "stop" : 1607595165858,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: selectPolicyFlag \"powerpoint\", \"Metadata\", \"sanitise\"",
+      "time" : {
+        "start" : 1607595165858,
+        "stop" : 1607595168865,
+        "duration" : 3007
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"label[for='powerpointMetadatasanitise']\"",
+        "time" : {
+          "start" : 1607595165858,
+          "stop" : 1607595165861,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 3",
+        "time" : {
+          "start" : 1607595165861,
+          "stop" : 1607595168864,
+          "duration" : 3003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCancelChanges ",
+      "time" : {
+        "start" : 1607595168865,
+        "stop" : 1607595168868,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"button[class*='DraftPolicy_cancelButton__']\"",
+        "time" : {
+          "start" : 1607595168865,
+          "stop" : 1607595168868,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1607595168868,
+        "stop" : 1607595170887,
+        "duration" : 2019
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1607595168868,
+          "stop" : 1607595170887,
+          "duration" : 2019
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1607595170887,
+        "stop" : 1607595170890,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1607595170887,
+          "stop" : 1607595170890,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='powerpointMetadatadisallow']\"",
+      "time" : {
+        "start" : 1607595170890,
+        "stop" : 1607595170893,
+        "duration" : 3
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.seeAttributesOnElements (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1697:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='powerpointMetadatadisallow']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1607595170890,
+          "stop" : 1607595170893,
+          "duration" : 3
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.seeAttributesOnElements (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1697:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "72281419ecd5b702",
+      "name" : "Last Seen Screenshot",
+      "source" : "72281419ecd5b702.png",
+      "type" : "image/png",
+      "size" : 6916
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 15,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-213"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "8b5ad748a17fafd0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/78//#testresult/8b5ad748a17fafd0",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607549889942,
+          "stop" : 1607549913235,
+          "duration" : 23293
+        }
+      }, {
+        "uid" : "3d5e6007497093fa",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/77//#testresult/3d5e6007497093fa",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607527480652,
+          "stop" : 1607527504031,
+          "duration" : 23379
+        }
+      }, {
+        "uid" : "38569d89444333e6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/77//#testresult/38569d89444333e6",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607518698669,
+          "stop" : 1607518722010,
+          "duration" : 23341
+        }
+      }, {
+        "uid" : "2fb35c9ec468e6d2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/75//#testresult/2fb35c9ec468e6d2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1607290333333,
+          "stop" : 1607290366911,
+          "duration" : 33578
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@TEST-213", "@functional" ]
+  },
+  "source" : "6678ee23b65b6858.json",
+  "parameterValues" : [ ]
+}

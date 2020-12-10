@@ -1,0 +1,227 @@
+{
+  "uid" : "77a0dc7abea913ca",
+  "name" : "I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @functional @TEST-241",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @functional @TEST-241",
+  "historyId" : "741b00c62ec4608572d1f8ab5675d283",
+  "time" : {
+    "start" : 1607595251420,
+    "stop" : 1607595269726,
+    "duration" : 18306
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.fillField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1243:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.fillField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1243:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1607595267701,
+        "stop" : 1607595269712,
+        "duration" : 2011
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1607595267701,
+          "stop" : 1607595269712,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickNcfsPolicy ",
+      "time" : {
+        "start" : 1607595269712,
+        "stop" : 1607595269716,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+        "time" : {
+          "start" : 1607595269712,
+          "stop" : 1607595269716,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: enterTextInApiUrl \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+      "time" : {
+        "start" : 1607595269716,
+        "stop" : 1607595269726,
+        "duration" : 10
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.fillField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1243:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I fill field \"div[class*='Input_Input__'] > input\", \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1607595269716,
+          "stop" : 1607595269725,
+          "duration" : 9
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.fillField (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1243:5)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "e090352f577f5759",
+      "name" : "Last Seen Screenshot",
+      "source" : "e090352f577f5759.png",
+      "type" : "image/png",
+      "size" : 27632
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-241"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @functional @TEST-241"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "2f3206def6f43ec7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/78//#testresult/2f3206def6f43ec7",
+        "status" : "failed",
+        "statusDetails" : "Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607549993545,
+          "stop" : 1607550011808,
+          "duration" : 18263
+        }
+      }, {
+        "uid" : "4dec6cacbacb1ad5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/77//#testresult/4dec6cacbacb1ad5",
+        "status" : "failed",
+        "statusDetails" : "Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607527584623,
+          "stop" : 1607527602932,
+          "duration" : 18309
+        }
+      }, {
+        "uid" : "aea4ccfb494a0590",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/77//#testresult/aea4ccfb494a0590",
+        "status" : "failed",
+        "statusDetails" : "Field \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1607518802517,
+          "stop" : 1607518820836,
+          "duration" : 18319
+        }
+      }, {
+        "uid" : "68083f5364ef6d91",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/75//#testresult/68083f5364ef6d91",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='wordEmbeddedImagessanitise']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1607290475698,
+          "stop" : 1607290529037,
+          "duration" : 53339
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@TEST-241", "@functional" ]
+  },
+  "source" : "77a0dc7abea913ca.json",
+  "parameterValues" : [ ]
+}
