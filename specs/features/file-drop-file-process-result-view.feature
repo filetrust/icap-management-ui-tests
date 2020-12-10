@@ -7,7 +7,7 @@ Feature: file-drop-file-process-result-view
         And I have navigated to the File Drop page
 
    @Fail-app
-    @smoke
+    @prototype
     @TEST-227
      #Clickable element "button[class*='DownloadAnalysisReport_button__']" was not found by text|CSS|XPath
     Scenario Outline: I can download the full analysis report of a processed file
@@ -19,7 +19,7 @@ Feature: file-drop-file-process-result-view
             | src/data/input/issues.docx | issues.docx.xml |
 
     @Fail-app
-    @smoke
+    @prototype
     @TEST-228
     # expected elements on page '[]' not to be empty
     Scenario Outline: I can see the result of a repaired file with the issues removed
@@ -32,7 +32,7 @@ Feature: file-drop-file-process-result-view
             | src/data/input/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed | Your file has been processed |
 
     @Fail-app
-    @smoke
+    @prototype
     @TEST-229
       #  expected elements on page '[]' not to be empty
     Scenario Outline: I can see the result of a unrepaired file with the list of structural issues not removed

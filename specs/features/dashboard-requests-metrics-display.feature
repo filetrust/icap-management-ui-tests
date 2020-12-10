@@ -6,7 +6,7 @@ Feature: dashboard-requests-metrics-display
         Given I am logged into the ui
         And I have navigated to the Analytics page
 
-    @smoke
+    @prototype
     @TEST-223
     @Fail-app
     #  Element "div[data-test-id='lineChart'] > div > div > svg" was not found by text|CSS|XPath
@@ -18,12 +18,10 @@ Feature: dashboard-requests-metrics-display
             | risk              | file             | increasedValue |
             | Safe              | safe_file.xlsx   | 1              |
             | Blocked By Policy | blocked_file.doc | 1              |
-            | Allowed By Policy | issues.docx      | 1              |
-    # | Allowed By NCFS   | Unclassified_file | 1              |
-    # | Blocked By NCFS   | Malicious_file    | 1              |
-
+     
+   
     @Fail-app
-    @smoke
+    @prototype
     @TEST-224
     #Not all steps are done because of unfinished implementation
     Scenario Outline: The count of files requests processed is updated based on processing status
@@ -35,7 +33,6 @@ Feature: dashboard-requests-metrics-display
         Examples:
             | file              | fileOutcome       | TFUpdateByValue | TRUpdateByValue | MFUpdateByValue |
             | safe_file.xlsx    | Safe              | 1               | 1               | 1               |
-            | blocked_file.doc  | Blocked By Policy | 0               | 1               | 0               |
             | issues.docx       | Allowed By Policy | 0               | 1               | 0               |
-            | Unclassified_file | Unclassified      | 0               | 1               | 1               |
+  
 

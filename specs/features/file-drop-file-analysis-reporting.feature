@@ -6,7 +6,7 @@ Feature: file-drop-file-analysis-reporting
         Given I am logged into the ui
         And I have navigated to the File Drop page
 
-    @smoke
+    @prototype
     @TEST-225
     @Fail-app
     # The report button does not currently work
@@ -18,7 +18,7 @@ Feature: file-drop-file-analysis-reporting
             | supportedFile             | xmlFile   |
             | src/data/input/file1.docx | file1.xml |
 
-    @smoke
+    @prototype
     @TEST-226
     @Fail-app
     # The report button does not currently work

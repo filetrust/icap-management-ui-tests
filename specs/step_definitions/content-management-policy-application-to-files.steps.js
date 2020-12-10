@@ -1,8 +1,5 @@
 const {
-    I,
-    icapProxyPage,
-    policyPage,
-} = inject();
+    I, icapProxyPage, policyPage } = inject();
 
 const assert = require('assert');
 
@@ -25,7 +22,7 @@ When(/^I process file (.*) file (.*) through the icap server$/, (fileType, file)
     I.wait(5)
 })
 
-Then('The {string} processing outcome is {string}', (file, fileOutcome) => {
+Then('The {string} processing outcome is as expected {string}', (file, fileOutcome) => {
     if (fileOutcome === 'Sanitised') {
         const filePath = `output/downloads/${file.trim()}`
         I.checkFileInFileDropUrl(filePath)
@@ -34,6 +31,4 @@ Then('The {string} processing outcome is {string}', (file, fileOutcome) => {
     } else if (fileOutcome === 'htmlReport') {
         icapProxyPage.checkIfHtmlReportReturned()
     }
-
-
 })   

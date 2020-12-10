@@ -6,7 +6,7 @@ Feature: dashboard-requests-filtering-by-file-risk
         Given I am logged into the ui
         And I have navigated to the analytics page
 
-    @smoke
+    @prototype
     @TEST-192
     @Fail-App
     #Assertion error (filtered risks displayed)
@@ -16,14 +16,7 @@ Feature: dashboard-requests-filtering-by-file-risk
         Examples:
             | chart      | fileRisk          | filteredRisk      |
             | pie        | Safe              | Safe              |
-            | pie        | Blocked By Policy | Blocked By Policy |
-            | pie        | Blocked By NCFS   | Blocked By NCFS   |
-            | pie        | Allowed By NCFS   | Allowed By NCFS   |
-            | pie        | Allowed By Policy | Allowed By Policy |
-            | line graph | Safe              | Safe              |
-            | line graph | Blocked By Policy | Blocked By Policy |
-            | line graph | Blocked By NCFS   | Blocked By NCFS   |
             | line graph | Allowed By NCFS   | Allowed By NCFS   |
-            | line graph | Allowed By Policy | Allowed By Policy |
+        
 
 

@@ -24,7 +24,7 @@ jobs:
         run: |
           npm install    
           npm install -g allure-commandline --save-dev     
-          npx codeceptjs run-multiple --grep @smoke --all --plugins allure --override '{"helpers":{"Puppeteer":{"url":"https://k8-proxy.github.io/p-ui-wireframes/","show":false}}}'    
+          npx codeceptjs run-multiple --grep @prototype --all --plugins allure --override '{"helpers":{"Puppeteer":{"url":"https://k8-proxy.github.io/p-ui-wireframes/","show":false}}}'    
              
       - name: Get Allure history
         uses: actions/checkout@v2
