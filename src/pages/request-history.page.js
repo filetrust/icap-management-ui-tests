@@ -1,6 +1,6 @@
 const MyHelper = require("../utils/helper");
 const moment = require('moment');
-const assert = require('assert');
+const assert = require('assert').strict;
 const I = actor();
 
 module.exports = {
@@ -374,16 +374,21 @@ module.exports = {
     async isDataInRange(range, col) {
         try {
             I.waitForInvisible(this.table.loading)
-            I.dontSeeElement(this.table.errorTableNotification);
-            const el = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
-            if (el || el.length > 0) {
+            const error = await I.grabNumberOfVisibleElements(this.table.errorTableNotification)
+            const empty = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
+            if (error) {
+                I.say('Error Getting Transaction Data')
+                err = assert.fail('Error Getting Transaction Data is displayed for requested range -' + range);
+            }
+            else if (empty) {
                 I.say('No Transaction Data Found')
-            } else {
+            }
+            else {
                 I.say("Data is available")
                 I.checkIfReturnedFilesInDateRange(range, col)
             }
-        } catch (e) {
-            console.warn(e);
+        } catch (err) {
+            assert.fail(err);
         }
     },
 
