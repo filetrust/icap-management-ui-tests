@@ -9,22 +9,6 @@ const assert = require('assert').strict;
 
 class MyHelper extends Helper {
 
-    // _before() {
-    //         recorder.retry({
-    //             retries: 2,
-    //             when: err => err.message.indexOf('TypeError: arg.toString is not a function') > -1,
-    //         });
-    //     }
-
-    // _failed() {
-    //      recorder.catchWithoutStop({
-    //         fail: ('Test Failed'),
-    //         when: event.dispatcher.on(event.step.failed, (step,err) => {
-    //         if (event.step.comment)
-    //             failed = true;
-    //        })
-    //      })
-    //     }
 
     async getElement(selector) {
         const page = this.helpers['Puppeteer'].page;
@@ -45,13 +29,13 @@ class MyHelper extends Helper {
         try {
             elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-              output.print('The element ' + selector + ' is not available');
-              return false;
+                output.print('The element ' + selector + ' is not available');
+                return false;
             } else if (elVisible) {
                 output.print(selector + ' is visible')
                 return true
             }
-          return elVisible;
+            return elVisible;
         } catch (err) {
             output.log(err);
         }
@@ -94,7 +78,7 @@ class MyHelper extends Helper {
     async clickElements(selector1, selector2) {
         const helper = this.helpers['Puppeteer'];
         const page = this.helpers['Puppeteer'].page;
-        
+
         try {
             await this.clickElement(selector1);
             page.waitForSelector(selector2);
@@ -156,42 +140,61 @@ class MyHelper extends Helper {
                     } else {
                         output.error('The result is not as expected, filter found is: ' + text);
                         break;
-                    } }}
-                   } catch (err) {
+                    }
+                }
+            }
+        } catch (err) {
             output.log(err);
         }
     }
 
-    getElementAttribute(sel,at) {
+    async getRowText(tr, col) {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        const tableRows = 'tbody tr';
+        let text = null;
+        try {
+            let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            if (rowCount > 1) {
+                text = await page.$eval(`${tableRows}:nth-child(${tr}) th:nth-child(${col})`,
+                    (e) => e.innerText)
+                output.print(text)
+            } return text;
+        } catch (err) {
+            output.log(err);
+        }
+    }
+
+    getElementAttribute(sel, at) {
         const helper = this.helpers['Puppeteer'];
-        helper.executeScript(function(sel,at) {
+        helper.executeScript(function (sel, at) {
             var x = document.getElementById(sel);
-        var attr = "";
-        var i;
-        for (i = 0; i < x.attributes.length; i++) {
-          attr = attr + x.attributes[i].name;
-          if (attr===at){
-            output.print('The attribute: '+at+ ' is available')
-          }
-        }return attr;
-    },sel,at)
-}
+            var attr = "";
+            var i;
+            for (i = 0; i < x.attributes.length; i++) {
+                attr = attr + x.attributes[i].name;
+                if (attr === at) {
+                    output.print('The attribute: ' + at + ' is available')
+                }
+            } return attr;
+        }, sel, at)
+    }
 
-getElementAttr(selector) {
-    const helper = this.helpers['Puppeteer'];
-    helper.executeScript( (selector) => {
-        var el = document.getElementById(selector);
-          for (var i = 0, atts = el.attributes, n = atts.length, arr = []; i < n; i++){
-              arr.push(atts[i].nodeName);
-              //if (atts[i].nodeName==='checked'){
-              return atts[i].nodeName
-          }
-    },selector);
-}
+    getElementAttr(selector) {
+        const helper = this.helpers['Puppeteer'];
+        helper.executeScript((selector) => {
+            var el = document.getElementById(selector);
+            for (var i = 0, atts = el.attributes, n = atts.length, arr = []; i < n; i++) {
+                arr.push(atts[i].nodeName);
+                //if (atts[i].nodeName==='checked'){
+                return atts[i].nodeName
+            }
+        }, selector);
+    }
 
-getText(selector,at){
-return this.getElementAttr(selector).contains(at)
-}
+    getText(selector, at) {
+        return this.getElementAttr(selector).contains(at)
+    }
 
     async setFlags(element) {
         const helper = this.helpers['Puppeteer'];

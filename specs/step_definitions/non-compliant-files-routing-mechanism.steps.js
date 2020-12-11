@@ -2,8 +2,10 @@ const {I, policyPage, filedropPage}= inject();
 
 let currentUrl = null;
 
-Given('I have navigated to the Current Policy page',  () => {
+Given('I have navigated to the Draft NCFS Policy page',  () => {
     I.goToContentManagementPolicy();
+    I.goToDraftNcfsPolicy();
+
 });
 Given('I am a new user', () => {
   //  I.loginNoPwd();
