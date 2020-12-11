@@ -379,11 +379,11 @@ module.exports = {
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
-                return false;
-                I.say("No Transaction Data Found")
+               I.say("No Transaction Data Found")
+               return false;
             } else {
-                return true;
                 I.say("The table data is available")
+                 return true;
             }
         } catch (e) {
             I.say('errors')

@@ -4,18 +4,17 @@ Feature: content-management-previous-policy
 
     Background:
         Given I am logged into the portal
-        Given I am on current policy screen
+        Given I have navigated to the Policy History page
 
    @functional
     @TEST-218
     Scenario: I can view previous Policy details
-        Given I am on the Policy History page
         When I click view on a previous policy
         Then the previous Policy is displayed
 
    @functional
     @TEST-219
     Scenario: I can activate a previous policy
-        Given I am on the Policy History page
         When I click activate on a previous policy
-        Then the previous Policy is activated
+        And I confirm publish action
+        Then the current policy is updated with the previous Policy

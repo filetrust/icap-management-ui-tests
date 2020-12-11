@@ -1,6 +1,6 @@
 const { output } = require("codeceptjs");
 const I = actor();
-const  modal  = require("../fragments/modal.js");
+const modal = require("../fragments/modal.js");
 
 module.exports = {
   //locators
@@ -23,18 +23,19 @@ module.exports = {
     unprocessedFileRelay: "//label[@for='relay-Un-Processable-File-Types']",
     unprocessedFileBlock: "//label[@for='block-Un-Processable-File-Types']",
     unprocessedFileRefer: "//label[@for='refer-Un-Processable-File-Types']",
+    policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`,
   },
   modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
     publishDraftPolicy: `div[class*='ConfirmDraftPublishModal_modalContainer__']`,
   },
   radiobuttons: {
-    unprocessedFileRelay: "#relay-Un-Processable-File-Types",
-    unprocessedFileBlock: "#block-Un-Processable-File-Types",
-    unprocessedFileRefer: "#refer-Un-Processable-File-Types",
-    blockedFileRelay: "#relay-Glasswall-Blocked-Files",
-    blockedFileBlock: "#block-Glasswall-Blocked-Files",
-    blockedFileRefer: "#refer-Glasswall-Blocked-Files",
+    unprocessedFileRelay: "#relay-unprocessableFileTypes",
+    unprocessedFileBlock: "#block-unprocessableFileTypes",
+    unprocessedFileRefer: "#refer-unprocessableFileTypes",
+    blockedFileRelay: "#relay-glasswallBlockedFiles",
+    blockedFileBlock: "#block-glasswallBlockedFiles",
+    blockedFileRefer: "#refer-glasswallBlockedFiles",
   },
   buttons: {
     cancelChanges: `button[class*='DraftPolicy_cancelButton__']`,
@@ -66,7 +67,8 @@ module.exports = {
   },
   table: {
     innerContent: `div[class*='Tab_innerContent__1vzeV']`,
-    tableRows: `tbody.MuiTableBody-root > tr`
+    tableRows: `tbody.MuiTableBody-root > tr`,
+    loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`
   },
   svg: {
     deleteApiUrl: `svg[id=Layer_1]`,
@@ -240,58 +242,59 @@ module.exports = {
   //   const saveele = this.buttons.saveChanges
   //   const pele = this.buttons.publish
   //   try {
-      
+
   //     I.goToDraftAdaptationPolicy()
-      
+
   //       I.clickElements(flag,saveele)
-       
+
   //      this.publishPolicy()
   //     I.wait(5)   
-   
+
   // } catch (e) {
   //     I.say('Unable to set policy flag')
-   
+
   //     console.warn(e);
   //   }
   // },
-  
+
 
   async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
     const el = `input[id='` + fileType + contentFlag + flagType + `']`
-    const ele = fileType + contentFlag + flagType 
+    const ele = fileType + contentFlag + flagType
     try {
       let checked = await I.grabAttributeFrom(el, 'checked')
       output.print(checked)
       if (checked !== "null") {
         output.print('The flag is already selected')
-      }else { 
-      I.goToDraftAdaptationPolicy()
-      I.clickElement(flag);
-      I.clickElement(this.buttons.saveChanges)
-      I.wait(3)
-      this.publishPolicy()
-      I.wait(5)   
+      } else {
+        I.goToDraftAdaptationPolicy()
+        I.clickElement(flag);
+        I.clickElement(this.buttons.saveChanges)
+        I.wait(3)
+        this.publishPolicy()
+        I.wait(5)
       }
- } catch (e) {
+    } catch (e) {
       I.say('Unable to set policy flag')
       console.warn(e);
     }
   },
 
- async isChecked(element) {
+  async isChecked(element) {
     let checked = null;
-    try{
-    checked = await I.grabAttributeFromAll(element)
-    //grabAttributeFrom(element, { checked: true })
-    output.print (checked)
-      if (checked === 1){
+    try {
+      checked = await I.grabAttributeFromAll(element)
+      //grabAttributeFrom(element, { checked: true })
+      output.print(checked)
+      if (checked === 1) {
         return true
-      }else {
+      } else {
         return false
-      }}catch (e) {
-        console.warn(e);
       }
+    } catch (e) {
+      console.warn(e);
+    }
   },
 
 
@@ -422,9 +425,40 @@ module.exports = {
    * Policy History
    * ***************************************************************
    */
-  clickView() {
-    const element = this.buttons.viewPolicyFirst;
-    I.clickElement(element);
+
+  async clickViewFirstPolicy() {
+    const element = `(//button[contains(text(),'View')])[1]`;
+    I.wait(5)
+    I.clickElement(element)[0]
+  },
+
+  async clickActivateFirstPolicy() {
+    const element = `(//button[contains(text(),'Activate')])[1]`;
+    try {
+      I.wait(5)
+      I.clickElement(element)[0]
+      I.wait(2);
+     
+    } catch (e) {
+      console.warn(e);
+    }
+  },
+
+  checkPreviousPolicyApplied(c_timestamp,p_timestamp){
+    if (c_timestamp===p_timestamp){
+      I.say('the current policy is updated with the previous one')
+    }else{
+      I.say('the previous policy is not applied')
+    }
+  },
+
+ async getPolicyHistoryTimeStamp(row,col){
+    return await I.getRowText(row, col)
+  },
+
+  async getCurrentPolicyTimeStamp(){
+    const ts_element = this.fields.policyTimestamp;
+    return await I.grabTextFrom(ts_element)
   },
 
   clickActivate() {
@@ -517,32 +551,32 @@ module.exports = {
    */
 
   setUnprocessableFileAsRelay() {
-    const element = this.fields.unprocessedFileRelay;
+    const element = this.radiobuttons.unprocessedFileRelay;
     I.clickElement(element);
   },
 
   setUnprocessableFileAsBlock() {
-    const element = this.fields.unprocessedFileBlock;
+    const element = this.radiobuttons.unprocessedFileBlock;
     I.clickElement(element);
   },
 
   setUnprocessableFileAsRefer() {
-    const element = this.fields.unprocessedFileRefer;
+    const element = this.radiobuttons.unprocessedFileRefer;
     I.clickElement(element);
   },
 
   setBlockedFileAsRelay() {
-    const element = this.fields.blockedFileRelay;
+    const element = this.radiobuttons.blockedFileRelay;
     I.clickElement(element);
   },
 
   setBlockedFileAsBlock() {
-    const element = this.fields.blockedFileBlock;
+    const element = this.radiobuttons.blockedFileBlock;
     I.clickElement(element);
   },
 
   setBlockedFileAsRefer() {
-    const element = this.fields.blockedFileRefer;
+    const element = this.radiobuttons.blockedFileRefer;
     I.clickElement(element);
   },
 
