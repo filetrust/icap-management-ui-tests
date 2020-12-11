@@ -35,8 +35,8 @@ Feature: request-history-filtering-by-date
 
     # @TEST-184
     # Scenario Outline: I cannot filter the date range to a time greater than 24 hours
-    #     When I select a custom over 24 hours range from <datetimeFrom> to <datetimeTo>
-    #     Then the expected "validationError" is displayed
+    #     When I select a custom time of <datetimeFrom>
+    #     Then I am unable to select <datetimeTo>
     #     Examples:
     #         | datetimeFrom        | datetimeTo          |
     #         | 2020-10-20T00:45:28 | 2020-10-26T13:45:28 |
