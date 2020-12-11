@@ -5,7 +5,7 @@ Feature: user-records-admin
     Background: Login
         Given I am logged into the ui
 
-    @smoke
+    @prototype
     @TEST-171
     @Fail-app
     Scenario Outline: I can add a new user to the ui
@@ -17,7 +17,7 @@ Feature: user-records-admin
             | tester1 | tester1@glasswalltest.co |
             | tester2 | tester2@glasswalltest.co |
 
-    @smoke
+    @prototype
     @TEST-172
     @Fail-app
     Scenario Outline: I can delete another user from the page
@@ -28,7 +28,7 @@ Feature: user-records-admin
             | name    | email                    |
             | tester2 | tester2@glasswalltest.co |
 
-    @smoke
+    @prototype
     @TEST-185
     @Fail-app
     Scenario Outline: A new user cannot be added with a invalid email
@@ -40,7 +40,7 @@ Feature: user-records-admin
             | InvalidUser1 | Invalid@email.com |
             | InvalidUser2 | Invalid           |
 
-    @smoke
+    @prototype
     @TEST-186
     @Fail-app
     Scenario Outline: A duplicate user cannot be added
@@ -51,7 +51,7 @@ Feature: user-records-admin
             | name    | email                    |
             | tester1 | tester1@glasswalltest.co |
 
-    @smoke
+    @prototype
     @TEST-191
     @Fail-app
     Scenario: I cannot delete my own account

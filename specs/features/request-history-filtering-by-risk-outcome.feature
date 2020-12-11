@@ -16,7 +16,4 @@ Feature: request-history-filtering-by-risk-outcome
         Examples:
             | filter            | filteredFile      |
             | Safe              | Safe              |
-            # | Blocked By Policy | Blocked By Policy |
-            # | Blocked By NCFS   | Blocked By NCFS   |
-            # | Allowed By Policy | Allowed by Policy |
-            # | Allowed By NCFS   | Allowed by NCFS   |
+  

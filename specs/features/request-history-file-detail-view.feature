@@ -4,7 +4,7 @@ Feature: request-history-file-detail-view
     in order to confirm that the solution works as expected
 
     @functional
-    @smoke
+    @prototype
     @TEST-169
     @Fail-Code
     #Does not take to correct id record

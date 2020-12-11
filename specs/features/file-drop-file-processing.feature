@@ -8,7 +8,7 @@ Feature: file-drop-file-processing
         And I have navigated to the FileDrop page
 
     @success
-    @smoke
+    @prototype
     @TEST-230
     Scenario Outline: I can process a file through the file drop service
         When I click Select a file and choose a supported file <supportedFile>
@@ -21,7 +21,7 @@ Feature: file-drop-file-processing
 
 
     @success
-    @smoke
+    @prototype
     @TEST-231
     Scenario Outline: An error message is produced when file drop is unable to process a file
         When I click Select a file and choose non processable file '<file>'

@@ -45,11 +45,13 @@ class MyHelper extends Helper {
         try {
             elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-                output.print('The element ' + selector + ' is not available');
+              output.print('The element ' + selector + ' is not available');
+              return false;
             } else if (elVisible) {
                 output.print(selector + ' is visible')
+                return true
             }
-            return elVisible;
+          return elVisible;
         } catch (err) {
             output.log(err);
         }
@@ -83,6 +85,24 @@ class MyHelper extends Helper {
                 return helper.click(selector);
             } else {
                 output.print('Skipping step, the element ' + selector + ' is not visible')
+            }
+        } catch (err) {
+            output.print(err);
+        }
+    }
+
+    async clickElements(selector1, selector2) {
+        const helper = this.helpers['Puppeteer'];
+        const page = this.helpers['Puppeteer'].page;
+        
+        try {
+            await this.clickElement(selector1);
+            page.waitForSelector(selector2);
+            const elVisible = await helper.grabNumberOfVisibleElements(selector2);
+            if (elVisible) {
+                return await helper.click(selector2);
+            } else {
+                output.print('Skipping step, the element ' + selector2 + ' is not visible')
             }
         } catch (err) {
             output.print(err);
@@ -136,18 +156,42 @@ class MyHelper extends Helper {
                     } else {
                         output.error('The result is not as expected, filter found is: ' + text);
                         break;
-                    }
-                }
-            }
-        } catch (err) {
+                    } }}
+                   } catch (err) {
             output.log(err);
         }
     }
 
-    async getElement() {
-        const page = this.helpers['Puppeteer'].page;
-        return (await page.$x(`//label[text()='Sanitise']`))[0];
-    }
+    getElementAttribute(sel,at) {
+        const helper = this.helpers['Puppeteer'];
+        helper.executeScript(function(sel,at) {
+            var x = document.getElementById(sel);
+        var attr = "";
+        var i;
+        for (i = 0; i < x.attributes.length; i++) {
+          attr = attr + x.attributes[i].name;
+          if (attr===at){
+            output.print('The attribute: '+at+ ' is available')
+          }
+        }return attr;
+    },sel,at)
+}
+
+getElementAttr(selector) {
+    const helper = this.helpers['Puppeteer'];
+    helper.executeScript( (selector) => {
+        var el = document.getElementById(selector);
+          for (var i = 0, atts = el.attributes, n = atts.length, arr = []; i < n; i++){
+              arr.push(atts[i].nodeName);
+              //if (atts[i].nodeName==='checked'){
+              return atts[i].nodeName
+          }
+    },selector);
+}
+
+getText(selector,at){
+return this.getElementAttr(selector).contains(at)
+}
 
     async setFlags(element) {
         const helper = this.helpers['Puppeteer'];
@@ -216,7 +260,6 @@ class MyHelper extends Helper {
             }
         })
     }
-
 
 }
 
