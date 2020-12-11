@@ -27,10 +27,10 @@ Feature: request-history-filtering-by-date
         Then the selected custom range is applied to include <datetimeFrom> and <datetimeTo>
         And the files processed for the selected period are displayed
         Examples:
-            | datetimeFrom       | datetimeTo         |
-            | 11/11/2020 0:21 AM | 11/11/2020 9:08 AM |
+            | datetimeFrom       | datetimeTo          |
+            | 11/11/2020 0:21 AM | 11/11/2020 9:08 AM  |
             | 11/11/2020 4:26 AM | 11/11/2020 16:26 PM |
-            | 25/10/2020 0:45 AM | 25/10/2020 0:45 AM |
+            | 25/10/2020 0:45 AM | 25/10/2020 0:45 AM  |
 
 
     # @TEST-184

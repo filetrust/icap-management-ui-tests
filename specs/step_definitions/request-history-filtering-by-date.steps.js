@@ -26,7 +26,7 @@ Then('the date range is updated to be from {string} hrs earlier to {string}', (d
 Then('the files processed for the selected period are displayed', async () => {
     displayedRange = await I.grabTextFrom(requesthistoryPage.calendar.reportRange)
     let col =1
-    requesthistoryPage.isDataInRange(displayedRange, col);
+    await requesthistoryPage.isDataInRange(displayedRange, col);
 });
 
 When(/^I select a valid (.*) and (.*)$/, async (datetimeFrom, datetimeTo) => {
