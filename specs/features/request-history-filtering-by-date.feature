@@ -33,13 +33,13 @@ Feature: request-history-filtering-by-date
             | 25/10/2020 0:45 AM | 25/10/2020 0:45 AM  |
 
 
-    # @TEST-184
-    # Scenario Outline: I cannot filter the date range to a time greater than 24 hours
-    #     When I select a custom time of <datetimeFrom>
-    #     Then I am unable to select <datetimeTo>
-    #     Examples:
-    #         | datetimeFrom        | datetimeTo          |
-    #         | 2020-10-20T00:45:28 | 2020-10-26T13:45:28 |
+    @TEST-184
+    Scenario Outline: I cannot filter the date range to a time greater than 24 hours
+        When I select a custom time of <datetimeFrom>
+        Then I am unable to select <datetimeTo>
+        Examples:
+            | datetimeFrom       | datetimeTo          |
+            | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
 
 
