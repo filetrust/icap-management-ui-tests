@@ -59,8 +59,8 @@ module.exports = {
         drp_month_and_year_left: `div[class*='drp-calendar left'] .month`,
         drp_month_and_year_right: `div[class*='drp-calendar right'] .month`,
         drp_arrow_left: `div[class*='drp-calendar left'] th.prev`,
-        drp_day_left: `div[class*='drp-calendar left'] td:not(.off)`,
-        drp_day_right: `div[class*='drp-calendar right'] td:not(.off)`,
+        drp_day_left: `div[class*='drp-calendar left'] td:not(.ends)`,
+        drp_day_right: `div[class*='drp-calendar right'] td:not(.ends)`,
         drp_hour_left: `div[class*='drp-calendar left'] .hourselect`,
         drp_hour_right: `div[class*='drp-calendar right'] .hourselect`,
         drp_minutes_left: `div[class*='drp-calendar left'] .minuteselect`,
@@ -227,36 +227,73 @@ module.exports = {
         let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
         while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${month}`) {
-            I.click(this.calendar.drp_arrow_left).catch(() => I.say(element + 'is not clickable'))
+            await I.click(this.calendar.drp_arrow_left).catch(() => I.say(this.calendar.drp_arrow_left + 'is not clickable'))
             currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         }
         return currentYearAndMonthValueRight
     },
 
+    async getRightMonth(month, year) {
+        const currentYearAndMonthValueRight = await this.selectMonthYear(month, year);
+        return currentYearAndMonthValueRight.split(" ")[0]
+    },
+
+    async setTimeFrom(datetimeFrom) {
+        const calendar = await I.grabNumberOfVisibleElements(this.calendar.drp_calendar_left)
+        if (!calendar) {
+            const element = this.buttons.customRange;
+            await I.click(element).catch(() => I.say(element + 'is not clickable'));
+        }
+        const from = this.parseDate(datetimeFrom)
+        from.month = this.getMonthName(from.month);
+        const selectedRightMonth = await this.getRightMonth(from.month, from.year)
+        if (selectedRightMonth === from.month) {
+            I.click(locate(this.calendar.drp_day_right).withText(from.day))
+        } else {
+            I.click(locate(this.calendar.drp_day_left).withText(from.day))
+        }
+        I.selectOption(this.calendar.drp_hour_left, from.hours);
+        I.selectOption(this.calendar.drp_minutes_left, from.minutes);
+    },
+
+    async setTimeTo(datetimeFrom, datetimeTo) {
+        const to = this.parseDate(datetimeTo)
+        to.month = this.getMonthName(to.month);
+        const from = this.parseDate(datetimeFrom)
+        from.month = this.getMonthName(from.month);
+        const selectedRightMonth = await this.getRightMonth(from.month, from.year)
+        if (selectedRightMonth === to.month) {
+            I.click(locate(this.calendar.drp_day_right).withText(to.day))
+        } else {
+            I.click(locate(this.calendar.drp_day_left).withText(to.day))
+        }
+        I.selectOption(this.calendar.drp_hour_right, to.hours);
+        I.selectOption(this.calendar.drp_minutes_right, to.minutes);
+    },
+
+    async unableSetTimeTo(datetimeTo) {
+        const to = this.parseDate(datetimeTo)
+        to.month = this.getMonthName(to.month);
+        let selectedRightMonth = await I.grabTextFrom(this.calendar.drp_month_and_year_right);
+        selectedRightMonth = selectedRightMonth.split(" ")[0];
+        let el;
+        if (selectedRightMonth === to.month) {
+            el = locate(this.calendar.drp_day_right).withText(to.day);
+        } else {
+            el = locate(this.calendar.drp_day_left).withText(to.day);
+        }
+        const classes = await I.grabAttributeFrom(el, 'class');
+        if (!classes.includes('disabled') && !classes.includes('all')) {
+            assert.fail(`It's possible to select more than 24 houts range - ${datetimeTo}`)
+        }
+    },
+
     async setTimePeriod(datetimeFrom, datetimeTo) {
         const element = this.buttons.customRange;
-        I.click(element).catch(() => I.say(element + 'is not clickable'));
+        await I.click(element).catch(() => I.say(element + 'is not clickable'));
         try {
-            const from = this.parseDate(datetimeFrom)
-            from.month = this.getMonthName(from.month);
-            const currentYearAndMonthValueRight = await this.selectMonthYear(from.month, from.year);
-            const selectedRightMonth = currentYearAndMonthValueRight.split(" ")[0]
-            if (selectedRightMonth === from.month) {
-                I.click(locate(this.calendar.drp_day_right).withText(from.day))
-            } else {
-                I.click(locate(this.calendar.drp_day_left).withText(from.day))
-            }
-            I.selectOption(this.calendar.drp_hour_left, from.hours);
-            I.selectOption(this.calendar.drp_minutes_left, from.minutes);
-            const to = this.parseDate(datetimeTo)
-            to.month = this.getMonthName(to.month);
-            if (selectedRightMonth === to.month) {
-                I.click(locate(this.calendar.drp_day_right).withText(to.day))
-            } else {
-                I.click(locate(this.calendar.drp_day_left).withText(to.day))
-            }
-            I.selectOption(this.calendar.drp_hour_right, to.hours);
-            I.selectOption(this.calendar.drp_minutes_right, to.minutes);
+            await this.setTimeFrom(datetimeFrom)
+            await this.setTimeTo(datetimeFrom, datetimeTo)
             I.click(this.buttons.apply)
         } catch (e) {
             I.say('Action unsuccessful')
@@ -276,17 +313,6 @@ module.exports = {
         let range = await I.grabTextFrom(this.calendar.reportRange);
         endtime = range.split("-")
         return startime;
-    },
-
-    setTimeTo(dateTo) {
-        const element = this.calendar.dateTimePicker;
-        within(element, () => {
-            if (dateTo === 'current time') {
-                I.type(this.getCurrentTime());
-            } else {
-                I.type(dateTo);
-            }
-        })
     },
 
     async isCustomRangeApplied(dateFrom, dateTo) {

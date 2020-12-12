@@ -38,13 +38,11 @@ Then(/^the selected custom range is applied to include (.*) and (.*)$/, (datetim
     requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
 });
 
-// When(/^I select a custom over 24 hours range from (.*) to (.*)$/, (datetimeFrom, datetimeTo) => {
-//     requesthistoryPage.setTimeFrom(datetimeFrom);
-//     requesthistoryPage.setTimeTo(datetimeTo);
-// });
+When(/^I select a custom time of (.*)$/, async (datetimeFrom) => {
+    requesthistoryPage.openDatePicker();
+    await requesthistoryPage.setTimeFrom(datetimeFrom);
+});
 
-// Then('the expected {string} is displayed', () => {
-//     I.seeInSource('') //TODO
-// });
-
-
+Then(/^I am unable to select (.*)$/, async (datetimeTo) => {
+    await requesthistoryPage.unableSetTimeTo(datetimeTo)
+});
