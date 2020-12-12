@@ -4,7 +4,7 @@ Feature: non-compliant-files-routing-mechanism
 
   Background:
     Given I am logged into the ui
-    And I have navigated to the Current Policy page
+    And I have navigated to the Draft NCFS Policy page
 
   @success
   @prototype
@@ -23,11 +23,12 @@ Feature: non-compliant-files-routing-mechanism
   Scenario Outline: I can only update the non-compliant routes API URL with a valid one
     When I enter a valid URL '<url>' into the API URL box
     And I click save
-    Then the API URL is updated and the validation message '<message>' is displayed
+    Then the correct validation result is applied '<result>' is displayed
     Examples:
       | url                    | message |
       | glasswallsolutions.com | success |
       | invalidurl             | error   |
+
 
   @functional
     @TEST-183

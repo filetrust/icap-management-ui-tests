@@ -12,6 +12,18 @@ module.exports = {
     });
   },
 
+  acceptActivate() {
+    within(this.root, function() {
+      I.clickElement(`button[class*='ConfirmPublishModal_confirmPublishButton__']`);
+    });
+  },
+
+  cancelActivate() {
+    within(this.root, function() {
+      I.clickElement(`button[class*='ConfirmPublishModal_cancelPublishButton__']`);
+    });
+  },
+
   confirmDelete() {
     within(this.root, function() {
       I.clickElement(`button[class*='ConfirmDraftDeleteModal_confirmDeleteButton__']`);
