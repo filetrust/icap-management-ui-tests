@@ -8,6 +8,7 @@ module.exports = {
 
   accept() {
     within(this.root, function() {
+      I.waitForElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`, 5)
       I.clickElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`);
     });
   },

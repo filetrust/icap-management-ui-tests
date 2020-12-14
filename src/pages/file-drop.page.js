@@ -57,6 +57,7 @@ module.exports = {
 
     clickViewResult() {
         const element = this.buttons.viewresultByXpath;
+        I.waitForElement(element, 15)
         I.clickElement(element);
     },
 
