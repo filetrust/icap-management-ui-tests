@@ -11,7 +11,7 @@ Feature: request-history-filtering-by-date
     @TEST-167
     @success
     Scenario Outline: I can filter the request log using the time interval
-        When I open the date picker and select a <timeInterval>
+        When I open the date picker and select a '<timeInterval>'
         Then the date range is updated to be from '<datetimeFrom>' hrs earlier to '<datetimeTo>'
         And the files processed for the selected period are displayed
         Examples:
@@ -23,8 +23,8 @@ Feature: request-history-filtering-by-date
     @functional
     @TEST-235
     Scenario Outline: I can filter the request log using a custom range
-        When I select a valid <datetimeFrom> and <datetimeTo>
-        Then the selected custom range is applied to include <datetimeFrom> and <datetimeTo>
+        When I select a valid '<datetimeFrom>' and '<datetimeTo>'
+        Then the selected custom range is applied to include '<datetimeFrom>' and '<datetimeTo>'
         And the files processed for the selected period are displayed
         Examples:
             | datetimeFrom       | datetimeTo          |
@@ -33,13 +33,13 @@ Feature: request-history-filtering-by-date
             | 25/10/2020 0:45 AM | 25/10/2020 0:45 AM  |
 
 
-    # @TEST-184
-    # Scenario Outline: I cannot filter the date range to a time greater than 24 hours
-    #     When I select a custom time of <datetimeFrom>
-    #     Then I am unable to select <datetimeTo>
-    #     Examples:
-    #         | datetimeFrom        | datetimeTo          |
-    #         | 2020-10-20T00:45:28 | 2020-10-26T13:45:28 |
+    @TEST-184
+    Scenario Outline: I cannot filter the date range to a time greater than 24 hours
+        When I select a custom time of '<datetimeFrom>'
+        Then I am unable to select '<datetimeTo>'
+        Examples:
+            | datetimeFrom       | datetimeTo          |
+            | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
 
 

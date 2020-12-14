@@ -14,7 +14,7 @@ Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();
 });
 
-When(/^I open the date picker and select a (.*)$/, (timeInterval) => {
+When('I open the date picker and select a {string}', (timeInterval) => {
     requesthistoryPage.openDatePicker();
     requesthistoryPage.selectTimePeriod(timeInterval)
    });
@@ -29,22 +29,20 @@ Then('the files processed for the selected period are displayed', async () => {
     await requesthistoryPage.isDataInRange(displayedRange, col);
 });
 
-When(/^I select a valid (.*) and (.*)$/, async (datetimeFrom, datetimeTo) => {
+When('I select a valid {string} and {string}', async (datetimeFrom, datetimeTo) => {
     requesthistoryPage.openDatePicker();
     await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
-Then(/^the selected custom range is applied to include (.*) and (.*)$/, (datetimeFrom, datetimeTo) => {
+Then('the selected custom range is applied to include {string} and {string}', (datetimeFrom, datetimeTo) => {
     requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
 });
 
-// When(/^I select a custom over 24 hours range from (.*) to (.*)$/, (datetimeFrom, datetimeTo) => {
-//     requesthistoryPage.setTimeFrom(datetimeFrom);
-//     requesthistoryPage.setTimeTo(datetimeTo);
-// });
+When('I select a custom time of {string}', async (datetimeFrom) => {
+    requesthistoryPage.openDatePicker();
+    await requesthistoryPage.setTimeFrom(datetimeFrom);
+});
 
-// Then('the expected {string} is displayed', () => {
-//     I.seeInSource('') //TODO
-// });
-
-
+Then('I am unable to select {string}', async (datetimeTo) => {
+    await requesthistoryPage.unableSetTimeTo(datetimeTo)
+});
