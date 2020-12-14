@@ -1,0 +1,525 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "I am able to update my password {\"CurrentPassword\":\"OldPassword1?\",\"NewPassword\":\"NewPassword2)\",\"ConfirmNewPassword\":\"NewPassword2)\"} @success @prototype @TEST-237",
+    "uid" : "d60477735d960fc8",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766131,
+      "stop" : 1607970766131,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @success @prototype @TEST-152",
+    "uid" : "1c5ac75305374795",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766152,
+      "stop" : 1607970766152,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/safe_file.xlsx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @Fail-app @prototype @TEST-233",
+    "uid" : "c1c1001c2c5fba9f",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759231,
+      "stop" : 1607970759231,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "The default routing option for unprocessable and blocked files is accurate @success @prototype @TEST-238",
+    "uid" : "ac6b24957ad52df2",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755299,
+      "stop" : 1607970758574,
+      "duration" : 3275
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Relay\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file1.docx\",\"responseCode\":\"204\",\"fileOutcome\":\"File is clean!\"} @Fail-app @prototype @TEST-234",
+    "uid" : "70144b3ef7bedd5b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759234,
+      "stop" : 1607970759234,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/input/file2.pdf\",\"pdfFile\":\"file2.pdf\"} @prototype @TEST-226 @Fail-app",
+    "uid" : "8a5f0317fe300f0d",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766180,
+      "stop" : 1607970766180,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @success @prototype @TEST-231",
+    "uid" : "fd5a2dd934a3b3af",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766149,
+      "stop" : 1607970766149,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"processStatus\":\"Your file has been processed\"} @success @prototype @TEST-230",
+    "uid" : "ecf4969d0face3be",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970759387,
+      "stop" : 1607970765781,
+      "duration" : 6394
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can filter the risk legend {\"chart\":\"pie\",\"fileRisk\":\"Safe\",\"filteredRisk\":\"Safe\"} @prototype @TEST-192 @Fail-App",
+    "uid" : "ceed48bcd188ef14",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755276,
+      "stop" : 1607970758602,
+      "duration" : 3326
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can add a new user to the ui {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @prototype @TEST-171 @Fail-app",
+    "uid" : "983050b746800880",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759217,
+      "stop" : 1607970759217,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "The count of files requests processed is updated based on processing status {\"file\":\"safe_file.xlsx\",\"fileOutcome\":\"Safe\",\"TFUpdateByValue\":\"1\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"1\"} @Fail-app @prototype @TEST-224",
+    "uid" : "2e402c3664d19d65",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759392,
+      "stop" : 1607970759392,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can change the number of items displayed on a page {\"itemCount\":\"50\"} @success @prototype @TEST-217",
+    "uid" : "74de540d528064c7",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759303,
+      "stop" : 1607970759303,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I cannot delete my own account @prototype @TEST-191 @Fail-app",
+    "uid" : "4695fa7ba0061b8e",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759241,
+      "stop" : 1607970759241,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A set routing policy for unprocessable files is correctly applied {\"fileTypePolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/types/blocked_file.doc\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-234",
+    "uid" : "36222359d8c0bd1f",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759235,
+      "stop" : 1607970759235,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to view more detail on a file @functional @prototype @TEST-169 @Fail-Code",
+    "uid" : "8ccc514ee9842319",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970759248,
+      "stop" : 1607970765775,
+      "duration" : 6527
+    },
+    "flaky" : true,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can see the result of a repaired file with the issues removed {\"activeContentFile\":\"src/data/input/file1.docx\",\"activeContent\":\"Internal Hyperlinks present in CT_Bookmark\",\"repairedObject\":\"APP segment removed\",\"processStatus\":\"Your file has been processed\"} @Fail-app @prototype @TEST-228",
+    "uid" : "22f50efa224ed204",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759364,
+      "stop" : 1607970759364,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can filter the risk legend {\"chart\":\"line graph\",\"fileRisk\":\"Allowed By NCFS\",\"filteredRisk\":\"Allowed By NCFS\"} @prototype @TEST-192 @Fail-App",
+    "uid" : "3647c984348fe699",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759237,
+      "stop" : 1607970759237,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @success @prototype @TEST-152",
+    "uid" : "a8ab8676a890a691",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766153,
+      "stop" : 1607970766153,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"glasswallsolutions.com\",\"message\":\"success\"} @prototype @TEST-158_159 @Fail-app",
+    "uid" : "d45d41a78af92619",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759208,
+      "stop" : 1607970759208,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can process a file through the file drop service {\"supportedFile\":\"src/data/input/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"processStatus\":\"Your file has been processed\"} @success @prototype @TEST-230",
+    "uid" : "3df2f3793b45fd6",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766149,
+      "stop" : 1607970766149,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can download the full XML analysis report for a file {\"supportedFile\":\"src/data/input/file1.docx\",\"xmlFile\":\"file1.xml\"} @prototype @TEST-225 @Fail-app",
+    "uid" : "81883f0cae7ae179",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970759408,
+      "stop" : 1607970765778,
+      "duration" : 6370
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A duplicate user cannot be added {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @prototype @TEST-186 @Fail-app",
+    "uid" : "7a22c641147c0956",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759240,
+      "stop" : 1607970759240,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser1\",\"email\":\"Invalid@email.com\"} @prototype @TEST-185 @Fail-app",
+    "uid" : "16f75017df609b4d",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759239,
+      "stop" : 1607970759239,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can filter the log using file id {\"filter\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\",\"filteredFile\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\"} @prototype @TEST-164",
+    "uid" : "829eedf69e4b99d3",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759208,
+      "stop" : 1607970759208,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to log out of the ui @success @prototype @TEST-236",
+    "uid" : "76c6c98b510a38db",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970759242,
+      "stop" : 1607970765772,
+      "duration" : 6530
+    },
+    "flaky" : true,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can download the full analysis report of a processed file {\"supportedFile\":\"src/data/input/issues.docx\",\"analysisReport\":\"issues.docx.xml\"} @Fail-app @prototype @TEST-227",
+    "uid" : "a6b8ccf4625305b",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755196,
+      "stop" : 1607970758875,
+      "duration" : 3679
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A new user cannot be added with a invalid email {\"name\":\"InvalidUser2\",\"email\":\"Invalid\"} @prototype @TEST-185 @Fail-app",
+    "uid" : "68deb467321a9e84",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759239,
+      "stop" : 1607970759240,
+      "duration" : 1
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"Block\",\"NcfsDecision\":\"NA\",\"file\":\"src/data/input/file2.pdf\",\"responseCode\":\"403\",\"fileOutcome\":\"HtmlReport\"} @Fail-app @prototype @TEST-233",
+    "uid" : "43b7817fd8f51260",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759233,
+      "stop" : 1607970759233,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to filter the dashboard requests by time {\"time\":\"Custom Range\",\"dateStart\":\"2/10/2020 10:30 AM\",\"dateEnd\":\"2/10/2020 11:00 AM\",\"dateRange\":\"02/10/2020 10:30 AM - 02/10/2020 11:00 AM\"} @success @prototype @TEST-151",
+    "uid" : "7bdeb1df1c456fdf",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970759238,
+      "stop" : 1607970765765,
+      "duration" : 6527
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Safe\",\"file\":\"safe_file.xlsx\",\"increasedValue\":\"1\"} @prototype @TEST-223 @Fail-app",
+    "uid" : "ee87f9e176065ae2",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755240,
+      "stop" : 1607970758819,
+      "duration" : 3579
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can add a new user to the ui {\"name\":\"tester1\",\"email\":\"tester1@glasswalltest.co\"} @prototype @TEST-171 @Fail-app",
+    "uid" : "e1d6f1601a1dfe5a",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755270,
+      "stop" : 1607970758647,
+      "duration" : 3377
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "The file risk count is updated for every file processed based on the outcome {\"risk\":\"Blocked By Policy\",\"file\":\"blocked_file.doc\",\"increasedValue\":\"1\"} @prototype @TEST-223 @Fail-app",
+    "uid" : "4d9d2d29f9b0c2b0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759388,
+      "stop" : 1607970759388,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can change the number of items displayed on a page {\"itemCount\":\"25\"} @success @prototype @TEST-217",
+    "uid" : "ce686aca607a33e0",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755146,
+      "stop" : 1607970758714,
+      "duration" : 3568
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to change the number of files displayed on the page {\"itemCount\":\"25\",\"fileCount\":\"4\"} @success @prototype @TEST-166",
+    "uid" : "28dc15df7277ae83",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "failed",
+    "time" : {
+      "start" : 1607970755257,
+      "stop" : 1607970758625,
+      "duration" : 3368
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can see the result of a unrepaired file with the list of structural issues not removed {\"fileWithIssues\":\"src/data/input/file2.pdf\",\"nonrepairedObject\":\"Non-conforming image\",\"processStatus\":\"Your file has been processed\"} @Fail-app @prototype @TEST-229",
+    "uid" : "7f2256829bed200a",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759371,
+      "stop" : 1607970759371,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I am able to filter the dashboard requests by time {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @success @prototype @TEST-152",
+    "uid" : "f4c60d41750e59e4",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766153,
+      "stop" : 1607970766153,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "An error message is produced when file drop is unable to process a file {\"file\":\"src/data/input/test2.pdf\",\"error\":\"This free service is currently limited to a maximum file size of 3.5MB\"} @success @prototype @TEST-231",
+    "uid" : "b2208877e7d41114",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970766150,
+      "stop" : 1607970766150,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "The count of files requests processed is updated based on processing status {\"file\":\"issues.docx\",\"fileOutcome\":\"Allowed By Policy\",\"TFUpdateByValue\":\"0\",\"TRUpdateByValue\":\"1\",\"MFUpdateByValue\":\"0\"} @Fail-app @prototype @TEST-224",
+    "uid" : "cf9f0727cb7c43ca",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759399,
+      "stop" : 1607970759399,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can only update the non-compliant routes API URL with a valid one {\"url\":\"invalidurl\",\"message\":\"error\"} @prototype @TEST-158_159 @Fail-app",
+    "uid" : "e27aaeb6a618330e",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759223,
+      "stop" : 1607970759223,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can delete another user from the page {\"name\":\"tester2\",\"email\":\"tester2@glasswalltest.co\"} @prototype @TEST-172 @Fail-app",
+    "uid" : "3a75d42ea4c01f9e",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "skipped",
+    "time" : {
+      "start" : 1607970759218,
+      "stop" : 1607970759218,
+      "duration" : 0
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ],
+  "name" : "timeline"
+}
