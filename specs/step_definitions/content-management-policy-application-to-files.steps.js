@@ -21,13 +21,13 @@ When('I process file {string} file {string} through the icap server', (fileType,
     icapProxyPage.downloadFile(fileType)
 })
 
-Then('The {string} processing outcome is as expected {string}', (file, fileOutcome) => {
+Then('The {string} processing outcome is as expected {string}', async (file, fileOutcome) => {
     if (fileOutcome === 'Sanitised') {
         const filePath = `output/downloads/${file.trim()}`
         I.checkFileInFileDropUrl(filePath)
         I.see('File is clean')
         I.say('The file is successfully processed and clean')
     } else if (fileOutcome === 'htmlReport') {
-        icapProxyPage.checkIfHtmlReportReturned()
+        await icapProxyPage.checkIfHtmlReportReturned()
     }
 })   
