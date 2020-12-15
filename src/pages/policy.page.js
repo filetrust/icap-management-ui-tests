@@ -116,8 +116,8 @@ module.exports = {
 
   publishPolicy() {
     const element = this.buttons.publish;
+    I.waitForElement(element, 5)
     I.clickElement(element);
-    I.wait(5)
     modal.accept()
   },
 
@@ -261,19 +261,16 @@ module.exports = {
   async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
     const el = `input[id='` + fileType + contentFlag + flagType + `']`
-    const ele = fileType + contentFlag + flagType
     try {
-      let checked = await I.grabAttributeFrom(el, 'checked')
-      output.print(checked)
-      if (checked !== "null") {
+      const checked = await I.grabAttributeFrom(el, 'checked')
+      if (checked === true) {
         output.print('The flag is already selected')
       } else {
-        I.goToDraftAdaptationPolicy()
+        I.waitForElement(flag, 5)
         I.clickElement(flag);
         I.clickElement(this.buttons.saveChanges)
-        I.wait(3)
         this.publishPolicy()
-        I.wait(5)
+        I.waitForElement(flag, 5)
       }
     } catch (e) {
       I.say('Unable to set policy flag')
