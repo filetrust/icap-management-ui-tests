@@ -1,6 +1,7 @@
 const MyHelper = require("../utils/helper");
 const moment = require('moment');
 const assert = require('assert').strict;
+const output = require('codeceptjs').output;
 const I = actor();
 
 module.exports = {
@@ -272,19 +273,26 @@ module.exports = {
     },
 
     async unableSetTimeTo(datetimeTo) {
-        const to = this.parseDate(datetimeTo)
-        to.month = this.getMonthName(to.month);
-        let selectedRightMonth = await I.grabTextFrom(this.calendar.drp_month_and_year_right);
-        selectedRightMonth = selectedRightMonth.split(" ")[0];
-        let el;
-        if (selectedRightMonth === to.month) {
-            el = locate(this.calendar.drp_day_right).withText(to.day);
-        } else {
-            el = locate(this.calendar.drp_day_left).withText(to.day);
-        }
-        const classes = await I.grabAttributeFrom(el, 'class');
-        if (!classes.includes('disabled') && !classes.includes('all')) {
-            assert.fail(`It's possible to select more than 24 houts range - ${datetimeTo}`)
+        try {
+            const to = this.parseDate(datetimeTo)
+            to.month = this.getMonthName(to.month);
+            let selectedRightMonth = await I.grabTextFrom(this.calendar.drp_month_and_year_right);
+            selectedRightMonth = selectedRightMonth.split(" ")[0];
+            let el;
+            if (selectedRightMonth === to.month) {
+                el = locate(this.calendar.drp_day_right).withText(to.day);
+            } else {
+                el = locate(this.calendar.drp_day_left).withText(to.day);
+            }
+            const classes = await I.grabAttributeFrom(el, 'class');
+            if (!classes.includes('disabled') && !classes.includes('all')) {
+                assert.fail(`It's possible to select more than 24 houts range - ${datetimeTo}`)
+            } else {
+                output.print(`It's not possible to select more than 24 hours range - ${datetimeTo}`)
+            }
+        } catch (e) {
+            I.say('Action unsuccessful')
+            console.warn(e);
         }
     },
 
@@ -385,11 +393,11 @@ module.exports = {
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
-               I.say("No Transaction Data Found")
-               return false;
+                I.say("No Transaction Data Found")
+                return false;
             } else {
                 I.say("The table data is available")
-                 return true;
+                return true;
             }
         } catch (e) {
             I.say('errors')
@@ -411,7 +419,7 @@ module.exports = {
             }
             else {
                 I.say("Data is available")
-                I.checkIfReturnedFilesInDateRange(range, col)
+                await I.checkIfReturnedFilesInDateRange(range, col)
             }
         } catch (err) {
             assert.fail(err);
@@ -489,8 +497,7 @@ module.exports = {
         }
     },
 
-
-
+   
     async verifyResultIsAccurate(filter) {
         let col;
         let text;
@@ -540,10 +547,10 @@ module.exports = {
     },
 
     async checkFileTypeValues(filteredFile) {
-        I.checkRow(filteredFile, 3)
+        await I.checkRow(filteredFile, 3)
     },
     async checkFileOutcomeValues(filteredFile) {
-        I.checkRow(filteredFile, 4);
+       await I.checkRow(filteredFile, 4);
 
     },
 
@@ -587,7 +594,7 @@ module.exports = {
         I.click(this.buttons.fileIdAdd);
     },
     async checkFileIdValues(filteredFile) {
-        I.checkRow(filteredFile, 2)
+       await I.checkRow(filteredFile, 2)
     },
 
     /*
@@ -637,30 +644,9 @@ module.exports = {
         I.click(this.getFileRecord(fileId))
     },
 
-    async openAFileRecord() {
-        I.clickRecord(2)
-        //     this.openDatePicker();
-        //     this.selectTimePeriod('24 Hours')
-        //      try {
-        //     const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
-        //     //if (element || element.length >= 0) {
-        //         const text = await I.grabTextFrom(`//tbody`);
-        //        if (text === 'No Transaction Data Found' || text === 'Error Getting Transaction Data'){
-        //         I.say('No Transaction Data Found')
-        //     } else {
-        //         I.say("Transaction Data is available")
-
-        //     }
-        // } catch (e) {
-        //     console.warn(e);
-        // }
-    },
 
     isFileDetailModalOpened() {
         const element = this.modal.fileDetailModal;
-        //;
-        // I.getModal(element);
-        //I.getModal(element)
         I.seeElementExist(element)
 
     },
@@ -677,7 +663,6 @@ module.exports = {
 
     isIssueItemsSectionAvailable() {
         const el = I.getModal(this.modal.fileDetailModal)
-        //;
         if (I.seeElementExist(el) === true) {
             within(this.modal.fileDetailModal, () => {
                 const element = this.modal.issueItemsBanner;
