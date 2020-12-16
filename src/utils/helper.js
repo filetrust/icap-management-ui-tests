@@ -208,28 +208,65 @@ class MyHelper extends Helper {
         }
     }
 
+    // convert 12 hours format to 24 hours
+    timeConversionSlicker(s) {
+        let AMPM = s.slice(-2);
+        let timeArr = s.slice(0, -2).split(":");
+        if (AMPM === "AM" && timeArr[0] === "12") {
+            // catching edge-case of 12AM
+            timeArr[0] = "00";
+        } else if (AMPM === "PM") {
+            // everything with PM can just be mod'd and added with 12 - the max will be 23
+            timeArr[0] = (timeArr[0] % 12) + 12
+        }
+        return timeArr.join(":");
+    }
+
+    exchangeDayMonth(dateString) {
+        return dateString.substr(3, 2) + "/" + dateString.substr(0, 2) + "/" + dateString.substr(6, 4);
+    }
+
+    parseRange(dateString, part) {
+        const i = (part === 'from') ? 0 : 1
+        let datePart = dateString.split('-')[i].trim()
+        let date = datePart.split(' ')[0].trim()
+        date = this.exchangeDayMonth(date)
+        const time = datePart.split(' ')[1].trim()
+        return `${date} ${time}`
+    }
+
     async checkIfReturnedFilesInDateRange(range, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
-        const tableRows = 'tbody tr';
+        const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 1) {
-                for (let i = 0; i < rowCount; i++) {
-                    let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
-                    let parsed = moment(timestamp, 'DD/MM/YYYY').toDate()
-                    if (moment(parsed).isBetween(range.split("-"))) {
-                        output.print('The result list shows required files within the selected time: ' + range);
-                    } else {
-                        assert.fail('The result files returned are not within the selected time: ' + range);
-                    }
-                    break;
+            for (let i = 0; i < rowCount; i++) {
+                // get item time
+                let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
+                // parse the item time
+                let date = timestamp.split(',')[0]
+                let time = timestamp.split(',')[1].trimStart()
+                let dayPart = time.split(' ')[1]
+                time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
+                time = this.timeConversionSlicker(time)
+                let itemDate = `${date} ${time}`
+                // parse range time
+                let dateFrom = this.parseRange(range, 'from')
+                let dateTo = this.parseRange(range, 'to')
+                // convert to ISO format to compare time
+                dateFrom = new Date(dateFrom).toISOString()
+                dateTo = new Date(dateTo).toISOString()
+                itemDate = new Date(itemDate).toISOString()
+                // verify if item timestamp in period
+                if (moment(itemDate).isBetween(dateFrom, dateTo, undefined, [])) {
+                    output.print(`The result list shows required files ${timestamp} within the selected time: ${range}`);
+                } else {
+                    assert.fail(`The result files ${timestamp} returned are not within the selected time: ${range}`);
                 }
-            } else {
-                output.print('No Transactions are available')
             }
         } catch (err) {
-            output.error(err);
+            assert.fail(err);
         }
     }
 
