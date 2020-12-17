@@ -1,6 +1,3 @@
-const { setPolicyFlag } = require("../../src/pages/policy.page");
-const assert = require('assert').strict;
-
 const {
     I,
     policyPage,
@@ -26,11 +23,12 @@ Given('I am on the draft adaptation Policy screen', () => {
 * ***************************************************************
 */
 Given('the current policy for {string} is set to {string} and {string}', async (FileType, ContentFlag, CurrentFlagType) => {
+    await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, CurrentFlagType);
     selectedEl = await policyPage.getFlagElement(FileType, ContentFlag, CurrentFlagType)
 });
 
-Given('I change the contentFlag for {string} to {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
-    policyPage.selectPolicyFlag(FileType, ContentFlag, DraftFlagType)
+Given('I change the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
+    await policyPage.setPolicyFlag(FileType, ContentFlag, FlagType);
 });
 
 When('I press the Cancel button', () => {
@@ -45,7 +43,6 @@ Then('the current policy is not updated', () => {
 * T214
 * ***************************************************************
 */
-
 When('I press the Save button', () => {
     policyPage.clickSaveChanges()
 });
@@ -93,36 +90,26 @@ Then('The current policy flag is set as {string} {string} and {string}', (FileTy
     policyPage.assertCurrentFlagAs(FileType, ContentFlag, DraftFlagType)
 });
 
-
 /*
 * T213
 * ***************************************************************
 */
-
 Then('the current policy for {string} is saved as {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
     policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
-});
-
-/*
-* T239
-* ***************************************************************
-*/
-When('I click the delete button and confirm delete action on the pop up', () => {
-    policyPage.deletePolicy()
-});
-
-Then('The policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, CurrentFlagType) => {
-    policyPage.assertCurrentFlagAs(FileType, ContentFlag, CurrentFlagType)
 });
 
 /*
 * T241
 * ***************************************************************
 */
-When('I have updated the NCFS policy url with {string}', (url) => {
+When('the current NCFS policy url is {string}', async (url) => {
     I.goToDraftNcfsPolicy();
-    policyPage.enterTextInApiUrl(url);
-    policyPage.clickSaveChanges();
+    await policyPage.updateUrlIfNeeded(url);
+});
+
+Then('I have updated the NCFS policy url with {string}', async (url) => {
+    I.goToDraftNcfsPolicy();
+    await policyPage.updateUrlIfNeeded(url);
 });
 
 Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', (FileType, ContentFlag, FlagType, url) => {
@@ -130,6 +117,4 @@ Then('the current policy is updated with the new settings {string}, {string}, {s
     I.seeInField(policyPage.fields.validateApiUrlInput, url);
     I.goToCurrentAdaptationPolicy()
     policyPage.assertCurrentFlagAs(FileType, ContentFlag, FlagType)
-
-
 });

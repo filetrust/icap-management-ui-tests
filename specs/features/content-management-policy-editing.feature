@@ -57,11 +57,14 @@ Feature: Content Management Policy Editing
   @functional
   @TEST-241
   Scenario Outline: I can update and publish both Adaptation and NCFS policies at the same time
-    Given I have updated the NCFS policy url with '<url>'
-    When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
+    Given the current NCFS policy url is '<CurrentUrl>'
+    And I am on the draft adaptation Policy screen
+    And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
+    When I have updated the NCFS policy url with '<url>'
+    And I am on the draft adaptation Policy screen
+    And I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
     And I save and publish
     Then the current policy is updated with the new settings '<FileType>', '<ContentFlag>', '<FlagType>', and '<url>'
     Examples:
-      | FileType | ContentFlag    | FlagType | url                                       |
-      | word     | EmbeddedImages | sanitise | icap-client-qa.uksouth.cloudapp.azure.com |
-
+      | FileType | ContentFlag    | FlagType | url                                       | CurrentFlagType | CurrentUrl       |
+      | word     | EmbeddedImages | sanitise | icap-client-qa.uksouth.cloudapp.azure.com | disallow        | testPrecondition |
