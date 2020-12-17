@@ -1,7 +1,6 @@
 const { output } = require("codeceptjs");
 const I = actor();
 const modal = require("../fragments/modal.js");
-const assert = require('assert').strict;
 
 module.exports = {
   //locators
