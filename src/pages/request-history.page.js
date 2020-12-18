@@ -400,7 +400,7 @@ module.exports = {
     async isDataInRange(range, col) {
         try {
             I.waitForInvisible(this.table.loading)
-            const error = await I.grabNumberOfVisibleElements(this.table.errorTableNotification)
+            const error = await I.grabNumberOfVisibleElements(this.table.errorTableNotification);
             const empty = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (error) {
                 I.say('Error Getting Transaction Data')
@@ -411,7 +411,7 @@ module.exports = {
             }
             else {
                 I.say("Data is available")
-                I.checkIfReturnedFilesInDateRange(range, col)
+                await I.checkIfReturnedFilesInDateRange(range, col)
             }
         } catch (err) {
             assert.fail(err);
