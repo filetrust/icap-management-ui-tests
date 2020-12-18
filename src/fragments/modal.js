@@ -27,6 +27,7 @@ module.exports = {
 
   confirmDelete() {
     within(this.root, function() {
+      I.waitForElement(`button[class*='ConfirmDraftDeleteModal_confirmDeleteButton__']`, 5)
       I.clickElement(`button[class*='ConfirmDraftDeleteModal_confirmDeleteButton__']`);
     });
   }

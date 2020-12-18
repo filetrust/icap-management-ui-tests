@@ -124,7 +124,6 @@ module.exports = {
   deletePolicy() {
     const element = this.buttons.delete;
     I.clickElement(element);
-    I.wait(5)
     modal.confirmDelete()
   },
 
@@ -278,6 +277,23 @@ module.exports = {
     }
   },
 
+  async setPolicyFlag(fileType, contentFlag, flagType) {
+    const flag = `label[for='` + fileType + contentFlag + flagType + `']`
+    const el = `input[id='` + fileType + contentFlag + flagType + `']`
+    try {
+      const checked = await I.grabAttributeFrom(el, 'checked')
+      if (checked === true) {
+        output.print('The flag is already selected')
+      } else {
+        I.waitForElement(flag, 5)
+        I.clickElement(flag);
+      }
+    } catch (e) {
+      I.say('Unable to set policy flag')
+      console.warn(e);
+    }
+  },
+
   async isChecked(element) {
     let checked = null;
     try {
@@ -416,7 +432,17 @@ module.exports = {
     I.fillField(this.fields.validateApiUrlInput, text)
   },
 
-
+  async updateUrlIfNeeded(text) {
+    const elText = await I.grabValueFrom(this.fields.validateApiUrlInput)
+    let message;
+    if (elText !== text) {
+      this.enterTextInApiUrl(text);
+      message = `API URL is changed to ${text}`
+    } else {
+      message = `API URL is already ${text}`
+    }
+    I.say(message)
+  },
 
   /*
    * Policy History
@@ -435,25 +461,25 @@ module.exports = {
       I.wait(5)
       I.clickElement(element)[0]
       I.wait(2);
-     
+
     } catch (e) {
       console.warn(e);
     }
   },
 
-  checkPreviousPolicyApplied(c_timestamp,p_timestamp){
-    if (c_timestamp===p_timestamp){
+  checkPreviousPolicyApplied(c_timestamp, p_timestamp) {
+    if (c_timestamp === p_timestamp) {
       I.say('the current policy is updated with the previous one')
-    }else{
+    } else {
       I.say('the previous policy is not applied')
     }
   },
 
- async getPolicyHistoryTimeStamp(row,col){
+  async getPolicyHistoryTimeStamp(row, col) {
     return await I.getRowText(row, col)
   },
 
-  async getCurrentPolicyTimeStamp(){
+  async getCurrentPolicyTimeStamp() {
     const ts_element = this.fields.policyTimestamp;
     return await I.grabTextFrom(ts_element)
   },
