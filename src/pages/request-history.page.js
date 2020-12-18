@@ -385,11 +385,11 @@ module.exports = {
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
-               I.say("No Transaction Data Found")
-               return false;
+                I.say("No Transaction Data Found")
+                return false;
             } else {
                 I.say("The table data is available")
-                 return true;
+                return true;
             }
         } catch (e) {
             I.say('errors')
@@ -397,25 +397,34 @@ module.exports = {
         }
     },
 
-    async isDataInRange(range, col) {
+    async isDataReturned() {
+        I.waitForInvisible(this.table.loading)
+        const isErr = await I.grabNumberOfVisibleElements(`//tbody/descendant::h2`)
+        if (isErr) {
+            const text = await I.grabTextFrom(`//tbody/descendant::h2`)
+            I.say(text);
+            if (text === 'Error Getting Transaction Data' || text === 'No Transaction Data Found') {
+                assert.fail(`No data returned. ${text}`)
+            }
+        }
+    },
+
+    async isDataDisplayed(range, col, check) {
         try {
-            I.waitForInvisible(this.table.loading)
-            const error = await I.grabNumberOfVisibleElements(this.table.errorTableNotification);
-            const empty = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
-            if (error) {
-                I.say('Error Getting Transaction Data')
-                err = assert.fail('Error Getting Transaction Data is displayed for requested range -' + range);
-            }
-            else if (empty) {
-                I.say('No Transaction Data Found')
-            }
-            else {
-                I.say("Data is available")
-                await I.checkIfReturnedFilesInDateRange(range, col)
-            }
+            await this.isDataReturned()
+            I.say("Data is available")
+            await check(range, col)
         } catch (err) {
             assert.fail(err);
         }
+    },
+
+    async isDataInRange(range, col) {
+        await this.isDataDisplayed(range, col, I.checkIfReturnedFilesInDateRange);
+    },
+
+    async checkRow(val, col) {
+        await this.isDataDisplayed(val, col, I.checkRowValue);
     },
 
     /*
@@ -481,7 +490,7 @@ module.exports = {
                 I.say('No data returned')
             } else {
                 I.say("Data is available")
-                I.checkRow(filteredFile, col)
+                await this.checkRow(filteredFile, col)
             }
         } catch (e) {
             I.say('errors')
@@ -489,38 +498,20 @@ module.exports = {
         }
     },
 
-
-
     async verifyResultIsAccurate(filter) {
         let col;
-        let text;
         try {
-            if (I.seeNumberOfElements(`//tbody/descendant::h2`, 1)) {
-                I.grabTextFrom(`//tbody/descendant::h2`).then((value) => {
-                    I.say(value);
-                    text = value;
-                    if (text === 'Error Getting Transaction Data' || text === 'No Transaction Data Found') {
-                        I.say('No data returned');
-                    }
-                });
-            }
-            else {
-                Promise.all([
-                    I.say("Data is available"),
-                    col = this.getAppliedFilter(filter),
-                    I.checkRow(filter, col),
-                ]);
-            }
+            await this.isDataReturned()
+            I.say("Data is available")
+            col = this.getAppliedFilter(filter)
+            await this.checkRow(filter, col)
         }
         catch (e) {
-            I.say('errors')
-            console.warn(e);
+            assert.fail(e)
         }
     },
 
-
     checkFilters(appliedFilters, filterValues) {
-
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
         for (let i = 0; i < filterRes.length; i++) {
@@ -540,11 +531,10 @@ module.exports = {
     },
 
     async checkFileTypeValues(filteredFile) {
-        I.checkRow(filteredFile, 3)
+        await this.checkRow(filteredFile, 3)
     },
     async checkFileOutcomeValues(filteredFile) {
-        I.checkRow(filteredFile, 4);
-
+        await this.checkRow(filteredFile, 4);
     },
 
     applyMultipleFilters(riskFilter, typeFilter) {
@@ -587,7 +577,7 @@ module.exports = {
         I.click(this.buttons.fileIdAdd);
     },
     async checkFileIdValues(filteredFile) {
-        I.checkRow(filteredFile, 2)
+        await this.checkRow(filteredFile, 2)
     },
 
     /*
