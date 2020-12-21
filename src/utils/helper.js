@@ -125,26 +125,22 @@ class MyHelper extends Helper {
         }
     }
 
-    async checkRow(val, col) {
+    async checkRowValue(val, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
-        const tableRows = 'tbody tr';
+        const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 1) {
-                for (let i = 0; i < rowCount; i++) {
-                    let text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`,
-                        (e) => e.innerText)
-                    if (this.compareThatEqual(text, val)) {
-                        console.log('The result list shows required files with the filter: ' + text);
-                    } else {
-                        output.error('The result is not as expected, filter found is: ' + text);
-                        break;
-                    }
+            for (let i = 0; i < rowCount; i++) {
+                let text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
+                if (this.compareThatEqual(text, val)) {
+                    console.log('The result list shows required files with the filter: ' + text);
+                } else {
+                    assert.fail('The result is not as expected, filter found is: ' + text);
                 }
             }
         } catch (err) {
-            output.log(err);
+            assert.fail(err);
         }
     }
 
