@@ -681,8 +681,8 @@ module.exports = {
     }
   },
 
-  clickNcfsPolicy() {
+  async clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
-    I.clickElement(element);
+    await I.clickElement(element);
   }
 }

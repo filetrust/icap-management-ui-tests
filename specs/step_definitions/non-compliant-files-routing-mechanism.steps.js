@@ -2,13 +2,16 @@ const {I, policyPage, filedropPage}= inject();
 
 let currentUrl = null;
 
-Given('I have navigated to the Draft NCFS Policy page',  () => {
+Given('I have navigated to the Draft NCFS Policy page', async () => {
     I.goToContentManagementPolicy();
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
 
 });
 Given('I am a new user', () => {
   //  I.loginNoPwd();
+});
+Given('I have navigated to the Current NCFS Policy page', async () => {
+    await I.goToCurrentNcfsPolicy()
 });
 Then(`I see the default set routing option for unprocessable files as ''`,  () =>{
     I.scrollTo(policyPage.blockedFileRefer);

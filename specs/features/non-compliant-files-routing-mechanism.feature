@@ -11,7 +11,7 @@ Feature: non-compliant-files-routing-mechanism
   @TEST-238
   Scenario: The default routing option for unprocessable and blocked files is accurate
     Given I am a new user
-    And I have navigated to the Current Policy page
+    And I have navigated to the Current NCFS Policy page
     Then I see the default set routing option for unprocessable files as ''
     Then I see the default set routing option for blocked files as ''
 

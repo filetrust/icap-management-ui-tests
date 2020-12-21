@@ -103,12 +103,12 @@ Then('the current policy for {string} is saved as {string} and {string}', (FileT
 * ***************************************************************
 */
 When('the current NCFS policy url is {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
     await policyPage.updateUrlIfNeeded(url);
 });
 
 Then('I have updated the NCFS policy url with {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
     await policyPage.updateUrlIfNeeded(url);
 });
 
