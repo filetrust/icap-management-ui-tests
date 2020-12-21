@@ -402,18 +402,25 @@ module.exports = {
         const isErr = await I.grabNumberOfVisibleElements(`//tbody/descendant::h2`)
         if (isErr) {
             const text = await I.grabTextFrom(`//tbody/descendant::h2`)
-            I.say(text);
-            if (text === 'Error Getting Transaction Data' || text === 'No Transaction Data Found') {
-                assert.fail(`No data returned. ${text}`)
+            if (text === 'Error Getting Transaction Data') {
+                I.say(text)
+                assert.fail(text)
+            }
+            if (text === 'No Transaction Data Found') {
+                return text
             }
         }
     },
 
     async isDataDisplayed(range, col, check) {
         try {
-            await this.isDataReturned()
-            I.say("Data is available")
-            await check(range, col)
+            const noData = await this.isDataReturned()
+            if (noData) {
+                I.say(noData)
+            } else {
+                I.say("Data is available")
+                await check(range, col)
+            }
         } catch (err) {
             assert.fail(err);
         }
