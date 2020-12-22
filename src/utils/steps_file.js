@@ -71,20 +71,19 @@ module.exports = function() {
       policyPage.clickAdaptationPolicy();
   },
 
-  goToDraftNcfsPolicy: function () {
+  goToDraftNcfsPolicy: async function () {
       policyPage.clickDraftTab();
-      policyPage.clickNcfsPolicy();
+      await policyPage.clickNcfsPolicy();
   },
 
-  goToCurrentNcfsPolicy: function () {
+  goToCurrentNcfsPolicy: async function () {
       policyPage.clickCurrentPolicyTab();
-      policyPage.clickNcfsPolicy();
+      await policyPage.clickNcfsPolicy();
   },
 
   uploadFile: function (file) {
       this.attachFile(filedropPage.buttons.fileInput, file)
       this.wait(7)
-
   },
 
   checkFileInFileDrop: function (file) {
