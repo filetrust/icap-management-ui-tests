@@ -17,9 +17,9 @@ Feature: non-compliant-files-routing-mechanism
 
 
   @prototype
-    @TEST-158_159
-    @Fail-app
-        #Assert is commented
+  @TEST-158_159
+  @Fail-app
+  #Assert is commented
   Scenario Outline: I can only update the non-compliant routes API URL with a valid one
     When I enter a valid URL '<url>' into the API URL box
     And I click save
@@ -31,32 +31,31 @@ Feature: non-compliant-files-routing-mechanism
 
 
   @functional
-    @TEST-183
+  @TEST-183
   Scenario Outline: I can change the outcome of unprocessable files
     When I change the route for unprocessable files to '<routeOption>' and save
     Then the route selection for unprocessable files is applied as '<updatedRouteOption>'
     Examples:
-      | routeOption | updatedRouteOption |
-      | Relay       | Relay              |
- 
+      | routeOption                  | updatedRouteOption |
+      | relay-unprocessableFileTypes | Relay              |
 
- @functional
-    @TEST-187
+
+  @functional
+  @TEST-187
   Scenario Outline: I can change the outcome of Glasswall Blocked files
     When I change the route for blocked files to '<routeOption>' and save
     Then the route selection for blocked files is applied as '<updatedRouteOption>'
     Examples:
-      | routeOption | updatedRouteOption |
-      | Block       | Block              |
- 
+      | routeOption                 | updatedRouteOption |
+      | block-glasswallBlockedFiles | Block              |
+
 
   @Fail-app
-    @prototype
-    @TEST-233
-    #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
+  @prototype
+  @TEST-233
+  #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
-    And the non-compliant file service has been defined as '<NcfsDecision>'
     When I submit a non compliant file '<file>' through the icap server
     And the file outcome status is blocked
     Then the response code received is '<responseCode>'
@@ -64,22 +63,21 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | blockedPolicyAction | NcfsDecision | file                                | responseCode | fileOutcome    |
       | Relay               | NA           | src/data/input/types/safe_file.xlsx | 204          | File is clean! |
-      | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport  |
+      | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport     |
 
 
   @Fail-app
   @prototype
-    @TEST-234
-    #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
+  @TEST-234
+  #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
     Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
-    And the non-compliant file service has been defined as '<NcfsDecision>'
     When I submit a unprocessable file '<file>' through the icap server
     Then the response code received is '<responseCode>'
     And the file outcome for the submitted file is '<fileOutcome>'
     Examples:
-      | fileTypePolicyAction | NcfsDecision | file                      | responseCode | fileOutcome    |
-      | Relay                | NA           | src/data/input/file1.docx | 204          | File is clean! |
-      | Block                | NA           | src/data/input/types/blocked_file.doc | 403          | HtmlReport  |
+      | fileTypePolicyAction | NcfsDecision | file                                  | responseCode | fileOutcome    |
+      | Relay                | NA           | src/data/input/file1.docx             | 204          | File is clean! |
+      | Block                | NA           | src/data/input/types/blocked_file.doc | 403          | HtmlReport     |
 
 

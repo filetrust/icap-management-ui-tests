@@ -217,7 +217,6 @@ module.exports = {
     }
   },
 
-
   async getFlagElement(fileType, contentFlag, flagType) {
     return `input[id='` + fileType + contentFlag + flagType + `']`;
   },
@@ -234,28 +233,6 @@ module.exports = {
       await element.click();
     }
   },
-
-  // async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
-  //   const flag = `label[for='` + fileType + contentFlag + flagType + `']`
-  //   const el = `input[id='` + fileType + contentFlag + flagType + `']`
-  //   const saveele = this.buttons.saveChanges
-  //   const pele = this.buttons.publish
-  //   try {
-
-  //     I.goToDraftAdaptationPolicy()
-
-  //       I.clickElements(flag,saveele)
-
-  //      this.publishPolicy()
-  //     I.wait(5)   
-
-  // } catch (e) {
-  //     I.say('Unable to set policy flag')
-
-  //     console.warn(e);
-  //   }
-  // },
-
 
   async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
@@ -573,9 +550,29 @@ module.exports = {
    * ***************************************************************
    */
 
-  setUnprocessableFileAsRelay() {
+  async setRouteFlag(routeOption) {
+      const element = `label[for='`+routeOption+`']`
+      const el = `input[id='`+routeOption+`']`
+     try { 
+       const checked = await I.grabAttributeFrom(el, 'checked');
+      if (checked !== true) {
+        I.click(element);
+        I.wait(5)
+        I.click(this.buttons.saveChanges)
+      } else if (checked === true){
+       // I.waitForElement(element, 5)
+         output.print('The flag is already selected')
+      }
+    } catch (e) {
+      I.say('Unable to set NCFS flag')
+      console.warn(e);
+    }
+  },
+
+  async setUnprocessableFileAsRelay() {
     const element = this.radiobuttons.unprocessedFileRelay;
-    I.clickElement(element);
+    await this.setRouteFlag()
+    //I.clickElement(element);
   },
 
   setUnprocessableFileAsBlock() {
@@ -619,7 +616,7 @@ module.exports = {
     }
   },
 
-  checkUnprocessableRouteRadio(unprocessableRoute) {
+  setUnprocessableRouteRadio(unprocessableRoute) {
     switch (unprocessableRoute) {
       case ('Relay'):
         this.setUnprocessableFileAsRelay();
@@ -633,6 +630,7 @@ module.exports = {
       default:
         throw "No such option";
     }
+
   },
 
   assertCheckedBlockedRadioButton(radioValue) {
@@ -653,6 +651,7 @@ module.exports = {
 
   assertCheckedUnprocessableRadioButton(radioValue) {
     let radioElement = null;
+    try{
     switch (radioValue) {
       case ('Relay'):
         radioElement = this.radiobuttons.unprocessedFileRelay;
@@ -665,6 +664,11 @@ module.exports = {
         break;
     }
     I.seeCheckboxIsChecked(radioElement);
+  } catch (e) {
+    I.say('Unable to verify NCFS flag')
+    console.warn(e);
+  }
+
   },
 
   checkFileOutcomeIsAccurate(fileOutcome, file) {
