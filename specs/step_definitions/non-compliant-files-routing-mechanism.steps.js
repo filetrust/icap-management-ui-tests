@@ -1,10 +1,10 @@
-const {I, policyPage, filedropPage}= inject();
+const {I, policyPage, filedropPage, sharepoint}= inject();
 
 let currentUrl = null;
 
 Given('I have navigated to the Draft NCFS Policy page', async () => {
     I.goToContentManagementPolicy();
-    await I.goToDraftNcfsPolicy();
+    I.goToDraftNcfsPolicy();
 
 });
 Given('I am a new user', () => {
@@ -51,35 +51,57 @@ Then('the route selection for unprocessable files is applied as {string}',  (upd
   policyPage.assertCheckedUnprocessableRadioButton(updatedRouteOption);
 });
 
-Given('I have set the routing option for Glasswall Blocked files to {string}',  (blockedPolicyAction) => {
-    policyPage.checkBlockedRouteRadio(blockedPolicyAction);
+Given('I have set the routing option for Glasswall Blocked files to {string}', async (blockedPolicyAction) => {
+    await policyPage.setAndPublishRouteFlag(blockedPolicyAction);
 });
-Given('the non-compliant file service has been defined as {string}',  (NcfsDecision) => {
 
+When('I download a non compliant file {string} through the icap server', async (file) => {
+ I.setHost()
+ await I.goToSharepoint()
+ I.wait(5)
+ I.seeInTitle("Communication site - ui-uploads - All Documents");
+ //sharepoint.goToDocuments();
+ sharepoint.selectFile(file);
+ sharepoint.downloadFile()
+ 
 });
-When('I submit a non compliant file {string} through the icap server',  (file) => {
-    I.checkFileInFileDrop(file);
-});
-When('the file outcome status is blocked',  () => {
 
+When('I submit a non compliant file {string} through the icap server', (file) => {
+   I.handleDownloads();
+   I.processFile(file.trim());
+   });
+
+Given('I set the policy for file type {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
+    I.goToDraftAdaptationPolicy();
+    await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
 });
+
 Then('the response code received is {string}', (responseCode) => {
-  //todo:  uncomment when implementation is done
+    //TODO
     // I.waitForResponse(response =>
     //     response.request().url.contains('/api/decide') &&
     //     response.request().method === 'POST' &&
     //     response.request().statusCode === responseCode);
 
 });
-Then('the file outcome for the submitted file is {string}', (fileOutcome) => {
-    filedropPage.clickViewResult();
-    filedropPage.isRequiredContentRefDisplayed(fileOutcome);
+Then('the file outcome for the submitted file {string} is {string}', (file, fileOutcome) => {
+    if (fileOutcome === 'relayed') {
+        const filePath = `output/downloads/${file.trim()}`
+        I.checkFileInFileDropUrl(filePath)
+        I.dontSee('File is clean')
+        I.say('The file is relayed unprocessed as expected')
+    } else if (fileOutcome === 'htmlReport') {
+      sharepoint.checkIfHtmlReportReturned()
+    }
 });
-Given('I have set the routing option for unprocessable files to {string}', (fileTypePolicyAction) => {
-    policyPage.checkUnprocessableRouteRadio(fileTypePolicyAction);
+Given('I have set the routing option for unprocessable files to {string}', async (policyAction) => {
+    await policyPage.setAndPublishRouteFlag(policyAction);
 });
-When('I submit a unprocessable file {string} through the icap server', (file) => {
-    I.goToFileDrop();
-    I.uploadFile(file);
-    I.wait(5);
+When('I download a non supported or unprocessable file {string} through the icap server', async (file) => {
+await I.goToSharepoint()
+ I.wait(5)
+ I.seeInTitle("Communication site - ui-uploads - All Documents");
+ //sharepoint.goToDocuments();
+ sharepoint.selectFile(file);
+ sharepoint.downloadFile()
 });

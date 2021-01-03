@@ -1,7 +1,5 @@
 #!/bin/bash
 
-npm install
-
 git clone https://github.com/filetrust/mvp-icap-service.git
 cd mvp-icap-service/c-icap/
 

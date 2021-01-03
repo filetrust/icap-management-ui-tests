@@ -1,10 +1,22 @@
+const {I}= inject();
 const Helper = require('@codeceptjs/helper');
+const puppeteer = require('puppeteer');
 var moment = require('moment');
 const recorder = require('codeceptjs').recorder;
 const event = require('codeceptjs').event;
 const fs = require('fs');
 const output = require('codeceptjs').output;
 const assert = require('assert').strict;
+var dockerCLI = require('docker-cli-js');
+var DockerOptions = dockerCLI.Options;
+var Docker = dockerCLI.Docker;
+const dockerJS = require('mydockerjs').docker 
+const spauth = require('node-sp-auth');
+const path = require('path');
+const Cpass = require('cpass').Cpass;
+
+const config = fs.readFileSync(path.join(__dirname, "../../config.json"), "UTF-8");
+const configObj = JSON.parse(config);
 //const PuppeteerController = require('puppeteer-core-controller');
 
 class MyHelper extends Helper {
@@ -296,6 +308,44 @@ class MyHelper extends Helper {
             }
         })
     }
+
+   processFile(file){
+    const script= `docker run -v c:/icap/uirepo/icap-management-ui-tests/src/data/input/:/opt -v c:/icap/uirepo/icap-management-ui-tests/output/downloads/:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-main.northeurope.cloudapp.azure.com -f /opt/`+file+` -o /home/`+file+` -v`
+    const { exec } = require("child_process");
+    exec(script, (error, data, getter) => {
+            if(error){
+                console.log("error",error.message);
+                return;
+            }
+            if(getter){
+                console.log("data",data);
+                return;
+            }
+            console.log("data",data);
+        });
+		
+   }
+
+  async goToSharepoint(){
+    
+    const {username, password, pageUrl} = configObj;
+    let cpass = new Cpass();
+    const data  = await spauth.getAuth(pageUrl, {
+      username: cpass.decode(username),
+      password: cpass.decode(password)
+    });
+    const page = this.helpers['Puppeteer'].page;
+    await page.setExtraHTTPHeaders(data.headers);
+    page.goto(configObj.pageUrl, {
+        waitUntil: 'networkidle0',
+        wait: '15'
+      });
+  }
+
+  setHost(){
+    let party = require('hostparty');
+    party.add('3.249.61.168', ['saaspoc1.sharepoint.com','saaspoc1-my.sharepoint.com','ukc-word-edit.officeapps.live.com','ukc-excel.officeapps.live.com','ukc-powerpoint.officeapps.live.com']);
+}
 
 }
 

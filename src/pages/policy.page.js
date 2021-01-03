@@ -17,13 +17,6 @@ module.exports = {
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
     validateApiUrlInput: `div[class*='Input_Input__'] > input`,
-    blockedFileRelay: "//label[@for='relay-Glasswall-Blocked-Files']",
-    blockedFileBlock: "//label[@for='block-Glasswall-Blocked-Files']",
-    blockedFileRefer: "//label[@for='refer-Glasswall-Blocked-Files']",
-    unprocessedFileRelay: "//label[@for='relay-Un-Processable-File-Types']",
-    unprocessedFileBlock: "//label[@for='block-Un-Processable-File-Types']",
-    unprocessedFileRefer: "//label[@for='refer-Un-Processable-File-Types']",
-    policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`,
   },
   modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
@@ -114,11 +107,15 @@ module.exports = {
     })
   },
 
-  publishPolicy() {
+  async publishPolicy() {
     const element = this.buttons.publish;
+    const elPublish = await I.grabNumberOfVisibleElements(element);
+    I.say(elPublish)
+    if (elPublish.length > 0) {
     I.waitForElement(element, 5)
     I.clickElement(element);
     modal.accept()
+    }
   },
 
   deletePolicy() {
@@ -245,7 +242,7 @@ module.exports = {
         I.waitForElement(flag, 5)
         I.clickElement(flag);
         I.clickElement(this.buttons.saveChanges)
-        this.publishPolicy()
+        await this.publishPolicy()
         I.waitForElement(flag, 5)
       }
     } catch (e) {
@@ -343,7 +340,7 @@ module.exports = {
     this.selectAnyFlag(fileType, contentFlag, flagType)
     I.clickElement(this.buttons.saveChanges)
     I.wait(3)
-    this.publishPolicy()
+    await this.publishPolicy()
     I.wait(5)
     //   } } catch (e) {
     // I.say('Unable to set policy flag')
@@ -569,6 +566,11 @@ module.exports = {
     }
   },
 
+  async setAndPublishRouteFlag(routeOption){
+    await this.setRouteFlag(routeOption)
+   await this.publishPolicy()
+  },
+
   async setUnprocessableFileAsRelay() {
     const element = this.radiobuttons.unprocessedFileRelay;
     await this.setRouteFlag()
@@ -687,6 +689,6 @@ module.exports = {
 
   async clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
-    await I.clickElement(element);
+    I.clickElement(element);
   }
 }

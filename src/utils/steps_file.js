@@ -86,6 +86,11 @@ module.exports = function() {
       this.wait(7)
   },
 
+  uploadSpFile: function (fileInput, file) {
+    this.attachFile(fileInput, file)
+    this.wait(7)
+},
+
   checkFileInFileDrop: function (file) {
       this.loginNoPwd()
       this.goToFileDrop()

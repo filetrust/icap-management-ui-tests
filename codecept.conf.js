@@ -18,8 +18,8 @@ exports.config = {
       url: '',
       show: true,
       chrome: {
-        //args: ['--headless','--no-sandbox', '--window-size=1536,826'],
-        args: ['--no-sandbox', '--window-size=1536,826'],
+        args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        //args: ['--no-sandbox', '--window-size=1536,826'],
 		prefs: 
               ['--download.default_directory= /output/downloads'],
       },
@@ -42,7 +42,9 @@ exports.config = {
     requesthistoryPage: './src/pages/request-history.page.js',
     usersPage: './src/pages/users.page.js',
     icapProxyPage: './src/pages/icap-proxy.page.js',
+    sharepoint: './src/pages/sharepoint.page.js',
     modal: './src/fragments/modal.js',
+
   },
   bootstrap: null,
   gherkin: {

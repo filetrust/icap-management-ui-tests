@@ -50,34 +50,26 @@ Feature: non-compliant-files-routing-mechanism
       | block-glasswallBlockedFiles | Block              |
 
 
-  @Fail-app
-  @prototype
+  @functional
   @TEST-233
-  #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
-    When I submit a non compliant file '<file>' through the icap server
-    And the file outcome status is blocked
-    Then the response code received is '<responseCode>'
-    And the file outcome for the submitted file is '<fileOutcome>'
+    And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
+    When I download a non compliant file '<file>' through the icap server
+    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
     Examples:
-      | blockedPolicyAction | NcfsDecision | file                                | responseCode | fileOutcome    |
-      | Relay               | NA           | src/data/input/types/safe_file.xlsx | 204          | File is clean! |
-      | Block               | NA           | src/data/input/file2.pdf            | 403          | HtmlReport     |
-
-
-  @Fail-app
-  @prototype
+      | blockedPolicyAction          | fileType | contentFlag   | flagType | file                  | fileOutcome |
+      | relay-glasswallBlockedFiles  | word     | EmbeddedFiles | disallow | issues.docx           | relayed     |
+      #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
+     
+  @functional
   @TEST-234
-  #Element "Field" was not found by text|CSS|XPath - due to fileDrop unavailability
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
-    Given I have set the routing option for unprocessable files to '<fileTypePolicyAction>'
-    When I submit a unprocessable file '<file>' through the icap server
-    Then the response code received is '<responseCode>'
-    And the file outcome for the submitted file is '<fileOutcome>'
+    Given I have set the routing option for unprocessable files to '<policyAction>'
+    When I download a non supported or unprocessable file '<file>' through the icap server
+    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
     Examples:
-      | fileTypePolicyAction | NcfsDecision | file                                  | responseCode | fileOutcome    |
-      | Relay                | NA           | src/data/input/file1.docx             | 204          | File is clean! |
-      | Block                | NA           | src/data/input/types/blocked_file.doc | 403          | HtmlReport     |
-
+      | policyAction                 | file                  | fileOutcome |
+      | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     |
+      #| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
 
