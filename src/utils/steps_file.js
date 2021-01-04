@@ -140,5 +140,15 @@ module.exports = function() {
       this.wait(5)
   },
 
+  sendFileICAP: function (fileName, icapDir, testsDir, inputDir, outputDir) {
+    const inputPath = `${process.cwd()}/${inputDir}`
+    const outputPath = `${process.cwd()}/${outputDir}`
+    // use NodeJS child process to run a bash command in sync way
+    require('child_process').execSync(`cd ${icapDir} && docker run -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-main.uksouth.cloudapp.azure.com -f '/opt/${fileName}' -o /home/${fileName} -v && cd ${testsDir}`, function(err) {
+        if (err) {
+            console.log('err ' + err);
+        }
+      });
+  },
   });
 }

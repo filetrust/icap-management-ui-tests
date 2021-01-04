@@ -137,7 +137,7 @@ class MyHelper extends Helper {
         }
     }
 
-    async checkRowValue(val, col) {
+    async checkRowsValue(val, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
@@ -241,6 +241,12 @@ class MyHelper extends Helper {
         date = this.exchangeDayMonth(date)
         const time = datePart.split(' ')[1].trim()
         return `${date} ${time}`
+    }
+
+    async getRowsQuantity() { // TODO: reuse it
+        const page = this.helpers['Puppeteer'].page;
+        const tableRows = "tbody[class*='MuiTableBody-root'] > tr";
+        return await page.$$eval(tableRows, rows => rows.length);
     }
 
     async checkIfReturnedFilesInDateRange(range, col) {
