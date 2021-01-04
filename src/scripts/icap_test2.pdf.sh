@@ -4,12 +4,15 @@ echo "Testing UI"
 icap_host="icap-client-main.northeurope.cloudapp.azure.com"
 icap_client="/usr/local/c-icap/bin/c-icap-client"
 icap_port="1344"
-input_folder="/src/data/input"
-output_folder="/output/files"
+input_folder="c:/icap/uirepo/icap-management-ui-tests/src/data/input"
+output_folder="c:/icap/uirepo/icap-management-ui-tests/src/data/output"
 service_name=gw_rebuild
 resp_url=""
-test_file="icaptest.ps1"
-run_id=$test_file
+test_files="
+test2.pdf
+Clean.png"
+
+run_id=$RANDOM
 output_folder=$output_folder/$run_id
 timings_log=$output_folder/timings.log
 echo Timing log location = $timings_log
@@ -29,3 +32,4 @@ do
 done
 test_end=$(date +%s%N)
 echo Test Duration : $((($test_end - $test_start)/1000000000)) s >> $timings_log
+sleep 10

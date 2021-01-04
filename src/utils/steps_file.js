@@ -8,9 +8,9 @@ const filedropPage = require("../pages/file-drop.page.js");
 module.exports = function() {
   return actor({
     onLoginPage: function () {
-        this.amOnPage('http://localhost:8080/')
+        //this.amOnPage('http://localhost:8080/')
       //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      //this.amOnPage(`http://management-ui.uksouth.cloudapp.azure.com/`)
+      this.amOnPage(`http://management-ui.uksouth.cloudapp.azure.com/`)
   },
 
   loginNoPwd: function () {
@@ -85,6 +85,11 @@ module.exports = function() {
       this.attachFile(filedropPage.buttons.fileInput, file)
       this.wait(7)
   },
+
+  uploadSpFile: function (fileInput, file) {
+    this.attachFile(fileInput, file)
+    this.wait(7)
+},
 
   checkFileInFileDrop: function (file) {
       this.loginNoPwd()

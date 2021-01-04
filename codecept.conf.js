@@ -42,7 +42,9 @@ exports.config = {
     requesthistoryPage: './src/pages/request-history.page.js',
     usersPage: './src/pages/users.page.js',
     icapProxyPage: './src/pages/icap-proxy.page.js',
+    sharepoint: './src/pages/sharepoint.page.js',
     modal: './src/fragments/modal.js',
+
   },
   bootstrap: null,
   gherkin: {

@@ -7,6 +7,9 @@ services:
       - 5050:5050
     volumes:
       - /allure-server-store:/allure
+  c-icap:
+    container_name: c-icap-client
+    image: glasswallsolutions/c-icap-client:manual-v1
   codecept:
     build:
       context: ..
