@@ -56,6 +56,8 @@ module.exports = {
         drp_calendar_right: `div[class*='drp-calendar right']`,
         reportRange: `div[id*='reportrange']`,
         drp_selected: `span.drp-selected`,
+        drp_selected_minutes_left: `div[class*='drp-calendar left'] .minuteselect option[selected='selected']`,
+        drp_selected_hours_left: `div[class*='drp-calendar left'] .hourselect option[selected='selected']`,
         drp_month_and_year_left: `div[class*='drp-calendar left'] .month`,
         drp_month_and_year_right: `div[class*='drp-calendar right'] .month`,
         drp_arrow_left: `div[class*='drp-calendar left'] th.prev`,
@@ -226,7 +228,7 @@ module.exports = {
     async selectMonthYear(month, year) {
         let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
-        while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${month}`) {
+        while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${year}`) {
             await I.click(this.calendar.drp_arrow_left).catch(() => I.say(this.calendar.drp_arrow_left + 'is not clickable'))
             currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         }
@@ -238,12 +240,30 @@ module.exports = {
         return currentYearAndMonthValueRight.split(" ")[0]
     },
 
-    async setTimeFrom(datetimeFrom) {
+    async selectCustomPriod() {
         const calendar = await I.grabNumberOfVisibleElements(this.calendar.drp_calendar_left)
         if (!calendar) {
             const element = this.buttons.customRange;
             await I.click(element).catch(() => I.say(element + 'is not clickable'));
         }
+    },
+
+    async setTimeFromEarleirOn(earleirOnMinutes) {
+        let hours = Number(await I.grabTextFrom(this.calendar.drp_selected_hours_left))
+        let minutes = Number(await I.grabTextFrom(this.calendar.drp_selected_minutes_left))
+        if (minutes - earleirOnMinutes < 0) {
+            minutes = 60 - earleirOnMinutes
+        } else {
+            hours = hours + 1
+            minutes = minutes - earleirOnMinutes
+            I.selectOption(this.calendar.drp_hour_left, hours.toString());
+        }
+        I.selectOption(this.calendar.drp_minutes_left, minutes.toString());
+        I.click(this.buttons.apply)
+    },
+
+    async setTimeFrom(datetimeFrom) {
+        await this.selectCustomPriod()
         const from = this.parseDate(datetimeFrom)
         from.month = this.getMonthName(from.month);
         const selectedRightMonth = await this.getRightMonth(from.month, from.year)
@@ -430,8 +450,8 @@ module.exports = {
         await this.isDataDisplayed(range, col, I.checkIfReturnedFilesInDateRange);
     },
 
-    async checkRow(val, col) {
-        await this.isDataDisplayed(val, col, I.checkRowValue);
+    async checkRows(val, col) {
+        await this.isDataDisplayed(val, col, I.checkRowsValue);
     },
 
     /*
@@ -497,7 +517,7 @@ module.exports = {
                 I.say('No data returned')
             } else {
                 I.say("Data is available")
-                await this.checkRow(filteredFile, col)
+                await this.checkRows(filteredFile, col)
             }
         } catch (e) {
             I.say('errors')
@@ -511,7 +531,7 @@ module.exports = {
             await this.isDataReturned()
             I.say("Data is available")
             col = this.getAppliedFilter(filter)
-            await this.checkRow(filter, col)
+            await this.checkRows(filter, col)
         }
         catch (e) {
             assert.fail(e)
@@ -538,10 +558,10 @@ module.exports = {
     },
 
     async checkFileTypeValues(filteredFile) {
-        await this.checkRow(filteredFile, 3)
+        await this.checkRows(filteredFile, 3)
     },
     async checkFileOutcomeValues(filteredFile) {
-        await this.checkRow(filteredFile, 4);
+        await this.checkRows(filteredFile, 4);
     },
 
     applyMultipleFilters(riskFilter, typeFilter) {
@@ -584,7 +604,7 @@ module.exports = {
         I.click(this.buttons.fileIdAdd);
     },
     async checkFileIdValues(filteredFile) {
-        await this.checkRow(filteredFile, 2)
+        await this.checkRows(filteredFile, 2)
     },
 
     /*

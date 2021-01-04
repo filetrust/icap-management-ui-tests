@@ -263,6 +263,18 @@ module.exports = {
     try {
       const checked = await I.grabAttributeFrom(el, 'checked')
       if (checked === true) {
+        const publishButton = this.buttons.publish;
+        const saveButton = this.buttons.saveChanges
+        const elPublish = await I.grabNumberOfVisibleElements(publishButton);
+        const elSave = await I.grabNumberOfVisibleElements(saveButton);
+        if (elSave > 0) {
+          await I.clickElement(saveButton)
+          this.publishPolicy()
+        }
+        if (elPublish > 0) {
+          this.publishPolicy()
+        }
+        I.waitForElement(flag, 5)
         output.print('The flag is already selected')
       } else {
         I.waitForElement(flag, 5)
