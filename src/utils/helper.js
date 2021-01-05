@@ -143,14 +143,17 @@ class MyHelper extends Helper {
         const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            let n = 0;
+            let text;
             for (let i = 0; i < rowCount; i++) {
-                let text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
+                text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 if (this.compareThatEqual(text, val)) {
-                    console.log('The result list shows required files with the filter: ' + text);
+                    n = n + 1;
                 } else {
                     assert.fail('The result is not as expected, filter found is: ' + text);
                 }
             }
+            console.log(`The result list shows ${rowCount} out of ${n} required files with the filter: ${text}`);
         } catch (err) {
             assert.fail(err);
         }
