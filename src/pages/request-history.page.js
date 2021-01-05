@@ -115,7 +115,7 @@ module.exports = {
     },
 
     closeFilterPopup() {
-        I.moveCursorTo('#root');
+        I.moveCursorTo('p[data-test-id="navLinkRequestHistory"]');
     },
 
     selectCountOfFiles(itemCount) {
