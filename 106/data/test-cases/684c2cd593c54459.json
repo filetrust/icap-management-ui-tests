@@ -1,0 +1,242 @@
+{
+  "uid" : "684c2cd593c54459",
+  "name" : "A set routing policy for unprocessable files is correctly applied {\"policyAction\":\"relay-unprocessableFileTypes\",\"file\":\"structuralIssues.xlsx\",\"fileOutcome\":\"relayed\"} @functional @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied {\"policyAction\":\"relay-unprocessableFileTypes\",\"file\":\"structuralIssues.xlsx\",\"fileOutcome\":\"relayed\"} @functional @TEST-234",
+  "historyId" : "d3e0d07955b168142aaea2e531bdc322",
+  "time" : {
+    "start" : 1609890730652,
+    "stop" : 1609890745025,
+    "duration" : 14373
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+  "statusTrace" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:101:1\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+    "statusTrace" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:101:1\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "policyPage: setRouteFlag \"relay-unprocessableFileTypes\"",
+      "time" : {
+        "start" : 1609890744952,
+        "stop" : 1609890744958,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='relay-unprocessableFileTypes']\", \"checked\"",
+        "time" : {
+          "start" : 1609890744952,
+          "stop" : 1609890744957,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1609890744958,
+        "stop" : 1609890744963,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1609890744958,
+          "stop" : 1609890744960,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "0",
+        "time" : {
+          "start" : 1609890744960,
+          "stop" : 1609890744960,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I download a non supported or unprocessable file 'structuralIssues.xlsx' through the icap server ",
+      "time" : {
+        "start" : 1609890744963,
+        "stop" : 1609890745025,
+        "duration" : 62
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:101:1\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I go to sharepoint ",
+        "time" : {
+          "start" : 1609890744963,
+          "stop" : 1609890745025,
+          "duration" : 62
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:101:1\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "7edff79e514533f7",
+      "name" : "Last Seen Screenshot",
+      "source" : "7edff79e514533f7.png",
+      "type" : "image/png",
+      "size" : 70380
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied {\"policyAction\":\"relay-unprocessableFileTypes\",\"file\":\"structuralIssues.xlsx\",\"fileOutcome\":\"relayed\"} @functional @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "9ae50d824d50e25b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/9ae50d824d50e25b",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609842578660,
+          "stop" : 1609842593028,
+          "duration" : 14368
+        }
+      }, {
+        "uid" : "c86c37b8a06ffbaa",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/c86c37b8a06ffbaa",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609842233430,
+          "stop" : 1609842247812,
+          "duration" : 14382
+        }
+      }, {
+        "uid" : "8729c3b501e9d3ef",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/8729c3b501e9d3ef",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609836445705,
+          "stop" : 1609836460050,
+          "duration" : 14345
+        }
+      }, {
+        "uid" : "825648c6ca1610b6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/100//#testresult/825648c6ca1610b6",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609709184314,
+          "stop" : 1609709198682,
+          "duration" : 14368
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-234", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "684c2cd593c54459.json",
+  "parameterValues" : [ ]
+}
