@@ -153,7 +153,7 @@ class MyHelper extends Helper {
                     assert.fail('The result is not as expected, filter found is: ' + text);
                 }
             }
-            console.log(`The result list shows ${rowCount} out of ${n} required files with the filter: ${text}`);
+            console.log(`The result list shows required files with the filter: ${text} displayed on page (${n}/${rowCount})`);
         } catch (err) {
             assert.fail(err);
         }
