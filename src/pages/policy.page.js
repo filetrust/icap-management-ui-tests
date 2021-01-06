@@ -111,10 +111,10 @@ module.exports = {
     const element = this.buttons.publish;
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
-    if (elPublish.length > 0) {
-    I.waitForElement(element, 5)
-    I.clickElement(element);
-    modal.accept()
+    if (elPublish > 0) {
+      I.waitForElement(element, 5)
+      I.clickElement(element);
+      modal.accept()
     }
   },
 
@@ -128,7 +128,7 @@ module.exports = {
     const element = this.buttons.publish;
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
-    if (elPublish.length > 0) {
+    if (elPublish > 0) {
       I.clickElement(element);
       I.wait(5)
     } else {
@@ -243,17 +243,17 @@ module.exports = {
         const elSave = await I.grabNumberOfVisibleElements(saveButton);
         if (elSave > 0) {
           await I.clickElement(saveButton)
-          this.publishPolicy()
+          await this.publishPolicy()
         }
         if (elPublish > 0) {
-          this.publishPolicy()
+          await this.publishPolicy()
         }
         I.waitForElement(flag, 5)
         output.print('The flag is already selected')
       } else {
         I.waitForElement(flag, 5)
-        I.clickElement(flag);
-        I.clickElement(this.buttons.saveChanges)
+        await I.clickElement(flag);
+        await I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
         I.waitForElement(flag, 5)
       }

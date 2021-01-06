@@ -1,6 +1,7 @@
 const MyHelper = require("../utils/helper");
 const moment = require('moment');
 const assert = require('assert').strict;
+const fs = require('fs');
 const I = actor();
 
 module.exports = {
@@ -251,7 +252,7 @@ module.exports = {
     async setTimeFromEarleirOn(earleirOnMinutes) {
         let hours = Number(await I.grabTextFrom(this.calendar.drp_selected_hours_left))
         let minutes = Number(await I.grabTextFrom(this.calendar.drp_selected_minutes_left))
-        if (minutes - earleirOnMinutes < 0) {
+        if (minutes - earleirOnMinutes < 0) { // TODO: the issue with hour and date for midnight
             minutes = 60 - earleirOnMinutes
         } else {
             hours = hours + 1
@@ -733,5 +734,12 @@ module.exports = {
         }
     },
 
-
+    cleanupFile(file) {
+        try {
+            fs.unlinkSync(`${file}`)
+            I.say(`Remove downloaded file - ${file}`);
+        } catch (error) {
+            console.error(error);
+        }
+    }
 };
