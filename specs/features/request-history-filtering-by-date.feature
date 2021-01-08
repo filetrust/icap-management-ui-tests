@@ -41,5 +41,15 @@ Feature: request-history-filtering-by-date
             | datetimeFrom       | datetimeTo          |
             | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
+    @TEST-242
+    Scenario: The request log is sorted by timestamp, newest to oldest
+        Then the request log is sorted from newest timestamp to oldest timestamp 
+
+
+    @TEST-243
+    Scenario: I can change the sort of the request log by pressing the arrow next to timestamp
+        When I click the arrow next to timestamp
+        Then the arrow will invert
+        And the transaction log will be sorted from oldest timestamp to newest timestamp
 
 
