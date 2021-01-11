@@ -159,11 +159,17 @@ class MyHelper extends Helper {
         }
     }
 
-    parseItemTimestamp(timestamp) {
+    parseItemTimestamp(timestamp, isSeconds) {
         // parse the item time
         let date = timestamp.split(',')[0]
         let time = timestamp.split(',')[1].trimStart()
-        time = `${time.split(':')[0]}:${time.split(':')[1]}:${time.split(':')[2]}`
+        let dayPart
+        if (isSeconds) {
+            time = `${time.split(':')[0]}:${time.split(':')[1]}:${time.split(':')[2]}`
+        } else {
+            time = timestamp.split(',')[1].trimStart()
+            dayPart= time.split(' ')[1]
+        }
         time = this.timeConversionSlicker(time)
         let itemDate = `${date} ${time}`
         itemDate = new Date(itemDate).toISOString()
@@ -183,10 +189,10 @@ class MyHelper extends Helper {
             let previousTimestamp;
             for (let i = 0; i < rowCount; i++) {
                 currentText = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(1)`, (e) => e.innerText);
-                currentTimestamp = this.parseItemTimestamp(currentText)
+                currentTimestamp = this.parseItemTimestamp(currentText, true)
                 if (i != 0) {
                     previousText = await page.$eval(`${tableRows}:nth-child(${i}) th:nth-child(1)`, (e) => e.innerText);
-                    previousTimestamp = this.parseItemTimestamp(previousText)
+                    previousTimestamp = this.parseItemTimestamp(previousText, true)
                 }
                 if (i !== 0) {
                     if (moment(previousTimestamp).isAfter(currentTimestamp)) {
@@ -322,7 +328,7 @@ class MyHelper extends Helper {
                 // get item time
                 let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 // parse the item time
-                let itemDate = this.parseItemTimestamp(timestamp)
+                let itemDate = this.parseItemTimestamp(timestamp, false)
                 // parse range time
                 let dateFrom = this.parseRange(range, 'from')
                 let dateTo = this.parseRange(range, 'to')
