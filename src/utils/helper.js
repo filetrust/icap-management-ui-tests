@@ -176,7 +176,7 @@ class MyHelper extends Helper {
         return itemDate
     }
 
-    async checkRowsTimestamp() {
+    async checkRowsTimestamp(isReverse) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
@@ -195,7 +195,13 @@ class MyHelper extends Helper {
                     previousTimestamp = this.parseItemTimestamp(previousText, true)
                 }
                 if (i !== 0) {
-                    if (moment(previousTimestamp).isAfter(currentTimestamp)) {
+                    let sortOrder
+                    if (isReverse) {
+                        sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
+                    } else {
+                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp)
+                    }
+                    if (sortOrder) {
                         n = n + 1;
                     } else {
                         assert.fail('The timestamp sorting is wrong. Upper: ' + previousText + ', bottom: ' + currentText);

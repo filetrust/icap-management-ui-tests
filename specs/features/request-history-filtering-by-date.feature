@@ -43,7 +43,7 @@ Feature: request-history-filtering-by-date
 
     @TEST-242
     Scenario: The request log is sorted by timestamp, newest to oldest
-        Then the request log is sorted from newest timestamp to oldest timestamp 
+        Then the request log is sorted from newest timestamp to oldest timestamp
 
 
     @TEST-243

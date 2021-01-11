@@ -38,6 +38,7 @@ module.exports = {
         nextPage: "",
         lastPage: "",
         fileDetailClose: `[data-test-id="buttonClose"]`,
+        sortTimestamp: "svg.MuiTableSortLabel-icon",
     },
     table: {
         fileTableBody1: `th[class*='MuiTableCell-root MuiTableCell-body']`,
@@ -776,6 +777,25 @@ module.exports = {
             }
         } catch (error) {
             console.error(error);
+        }
+    },
+
+    async clickOnTimestampArrow() {
+        const element = this.buttons.sortTimestamp;
+        await I.clickElement(element);
+    },
+
+    async verifyTimestampArrow(isDecimal) {
+        const el = this.buttons.sortTimestamp;
+        const classes = await I.grabAttributeFrom(el, 'class');
+        let logic;
+        if (isDecimal) {
+            logic = (classes.includes('MuiTableSortLabel-iconDirectionDesc') && !classes.includes('MuiTableSortLabel-iconDirectionAsc'))
+        } else {
+            logic = (classes.includes('MuiTableSortLabel-iconDirectionAsc') && !classes.includes('MuiTableSortLabel-iconDirectionDesc'))
+        }
+        if (!logic) {
+            assert.fail('Reverse timestamp arrow is displayed')
         }
     }
 };
