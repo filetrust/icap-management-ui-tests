@@ -164,11 +164,10 @@ class MyHelper extends Helper {
         let date = timestamp.split(',')[0]
         let time = timestamp.split(',')[1].trimStart()
         let dayPart
-        if (isSeconds) {
-            time = `${time.split(':')[0]}:${time.split(':')[1]}:${time.split(':')[2]}`
-        } else {
+        if (!isSeconds) {
             time = timestamp.split(',')[1].trimStart()
             dayPart= time.split(' ')[1]
+            time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
         }
         time = this.timeConversionSlicker(time)
         let itemDate = `${date} ${time}`
