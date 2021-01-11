@@ -450,12 +450,33 @@ module.exports = {
         }
     },
 
+    async isDataDisplayedByFileId(range, col, fileId, check, isFailIfNoData) {
+        try {
+            const noData = await this.isDataReturned()
+            if (noData) {
+                if (isFailIfNoData) {
+                    assert.fail(noData)
+                }
+                I.say(noData)
+            } else {
+                I.say("Data is available")
+                await check(range, col, fileId)
+            }
+        } catch (err) {
+            assert.fail(err);
+        }
+    },
+
     async isDataInRange(range, col) {
         await this.isDataDisplayed(range, col, I.checkIfReturnedFilesInDateRange);
     },
 
-    async checkRows(val, col, isFailIfNoData) {
-        await this.isDataDisplayed(val, col, I.checkRowsValue, isFailIfNoData);
+    async checkRows(val, col) {
+        await this.isDataDisplayed(val, col, I.checkRowsValue);
+    },
+
+    async checkRowByFileId(val, col, fileId, isFailIfNoData) {
+        await this.isDataDisplayedByFileId(val, col, fileId, I.checkRowValueByFileId, isFailIfNoData);
     },
 
     /*
@@ -561,11 +582,18 @@ module.exports = {
         I.seeInField(row, res[1]);
     },
 
-    async checkFileTypeValues(filteredFile, isFailIfNoData) {
-        await this.checkRows(filteredFile, 3, isFailIfNoData)
+    async checkFileTypeValues(filteredFile) {
+        await this.checkRows(filteredFile, 3)
     },
-    async checkFileOutcomeValues(filteredFile, isFailIfNoData) {
-        await this.checkRows(filteredFile, 4, isFailIfNoData);
+    async checkFileOutcomeValues(filteredFile) {
+        await this.checkRows(filteredFile, 4);
+    },
+
+    async checkFileTypeValueByFileId(filteredFile, fileId, isFailIfNoData) {
+        await this.checkRowByFileId(filteredFile, 3, fileId, isFailIfNoData)
+    },
+    async checkFileOutcomeValueByFileId(filteredFile, fileId, isFailIfNoData) {
+        await this.checkRowByFileId(filteredFile, 4, fileId, isFailIfNoData);
     },
 
     applyMultipleFilters(riskFilter, typeFilter) {
@@ -739,8 +767,13 @@ module.exports = {
 
     cleanupFile(file) {
         try {
-            fs.unlinkSync(`${file}`)
-            I.say(`Remove downloaded file - ${file}`);
+            const exists = fs.existsSync(file);
+            if (exists) {
+                fs.unlinkSync(file)
+                I.say(`Remove downloaded file - ${file}`);
+            } else {
+                I.say(`File was already removed - ${file}`);
+            }
         } catch (error) {
             console.error(error);
         }

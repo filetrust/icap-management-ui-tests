@@ -159,6 +159,22 @@ class MyHelper extends Helper {
         }
     }
 
+    async checkRowValueByFileId(val, col, fileId) {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        try {
+            const [elm] = await page.$x(`//th[contains(text(),'${fileId}')]/../th[position()=${col}]`);
+            const text = await page.evaluate(name => name.innerText, elm);
+            if (this.compareThatEqual(text, val)) {
+                console.log(`The file has required data ${val}`);
+            } else {
+                assert.fail(`The file does not have required data ${val}`);
+            }
+        } catch (err) {
+            assert.fail(err);
+        }
+    }
+
     async getRowText(tr, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');

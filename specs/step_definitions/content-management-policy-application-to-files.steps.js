@@ -9,6 +9,10 @@ const testsDir = '../icap-management-ui-tests/'
 const inputDir = 'src/data/input/'
 const outputDir = 'output/downloads/'
 
+Given('I remove the {string} file downloaded before if it exists', (file) => {
+    requesthistoryPage.cleanupFile(`${outputDir}${file.trim()}`);
+});
+
 Given('I am logged into the portal', () => {
     I.login('', '')
 });
@@ -22,9 +26,10 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
     await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
 })
 
-When('I process file {string} file {string} through the icap server', (fileType, file) => {
+When('I process file {string} file {string} through the icap server', async (fileType, file) => {
     if (isLocal) {
         fileId = I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
+        I.say(`I sent a file and received ${fileId}`);
     } else {
         I.onIcapProxyPage()
         icapProxyPage.downloadFile(fileType)
@@ -38,27 +43,15 @@ Then('The {string} with file type {string} processing outcome is as expected {st
         I.seeFile(file)
         const outputFile = fs.readFileSync(`${outputDir}${file.trim()}`, 'base64');
         const inputFile = fs.readFileSync(`${inputDir}${file.trim()}`, 'base64');
+        //TODO: how to improve - could we add the expected file?
         assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
-        assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same') //TODO: how to improve?
-
-        // TODO: improve using 'fileId'
-        // I.wait(90)
+        assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same')
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
         requesthistoryPage.selectTimePeriod('1 Hour')
-        requesthistoryPage.openDatePicker()
-        await requesthistoryPage.selectCustomPriod()
-        await requesthistoryPage.setTimeFromEarleirOn(2)
-
         // verify file in request history
-        const rowsQuantity = await I.getRowsQuantity()
-        if (rowsQuantity !== 1) {
-            assert.fail(`Row quantity is ${rowsQuantity}`)
-        };
-        await requesthistoryPage.checkFileTypeValues(fileExtension, true)
-        await requesthistoryPage.checkFileOutcomeValues(outcomeValue, true)
-        // remove downloaded file
-        requesthistoryPage.cleanupFile(`${outputDir}${file.trim()}`);
+        await requesthistoryPage.checkFileTypeValueByFileId(fileExtension, fileId, true)
+        await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
     } else {
         if (fileOutcome === 'Sanitised') {
             const filePath = `output/downloads/${file.trim()}`
