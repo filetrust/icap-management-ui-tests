@@ -433,10 +433,13 @@ module.exports = {
         }
     },
 
-    async isDataDisplayed(range, col, check) {
+    async isDataDisplayed(range, col, check, isFailIfNoData) {
         try {
             const noData = await this.isDataReturned()
             if (noData) {
+                if (isFailIfNoData) {
+                    assert.fail(noData)
+                }
                 I.say(noData)
             } else {
                 I.say("Data is available")
@@ -451,8 +454,8 @@ module.exports = {
         await this.isDataDisplayed(range, col, I.checkIfReturnedFilesInDateRange);
     },
 
-    async checkRows(val, col) {
-        await this.isDataDisplayed(val, col, I.checkRowsValue);
+    async checkRows(val, col, isFailIfNoData) {
+        await this.isDataDisplayed(val, col, I.checkRowsValue, isFailIfNoData);
     },
 
     /*
@@ -558,11 +561,11 @@ module.exports = {
         I.seeInField(row, res[1]);
     },
 
-    async checkFileTypeValues(filteredFile) {
-        await this.checkRows(filteredFile, 3)
+    async checkFileTypeValues(filteredFile, isFailIfNoData) {
+        await this.checkRows(filteredFile, 3, isFailIfNoData)
     },
-    async checkFileOutcomeValues(filteredFile) {
-        await this.checkRows(filteredFile, 4);
+    async checkFileOutcomeValues(filteredFile, isFailIfNoData) {
+        await this.checkRows(filteredFile, 4, isFailIfNoData);
     },
 
     applyMultipleFilters(riskFilter, typeFilter) {

@@ -1,6 +1,8 @@
 const assert = require('assert').strict;
+const fs = require('fs')
 const { I, icapProxyPage, policyPage, requesthistoryPage } = inject();
 let isLocal;
+let fileId;
 //isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
 const icapDir = '../p-ui-wireframes/'
 const testsDir = '../icap-management-ui-tests/'
@@ -22,7 +24,7 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
 
 When('I process file {string} file {string} through the icap server', (fileType, file) => {
     if (isLocal) {
-        I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
+        fileId = I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
     } else {
         I.onIcapProxyPage()
         icapProxyPage.downloadFile(fileType)
@@ -31,25 +33,30 @@ When('I process file {string} file {string} through the icap server', (fileType,
 
 Then('The {string} with file type {string} processing outcome is as expected {string} and {string}', async (file, fileExtension, fileOutcome, outcomeValue) => {
     if (isLocal) {
-        // verify file content
+        // verify file and content
         I.amInPath(outputDir)
         I.seeFile(file)
-        I.seeInThisFile('', 'utf8') // TODO: set file content after fixing ICAP client
-        // request history for last two minutes // TODO: improve this part after adding sorting for timestamp
-        I.wait(90) // TODO: the file is not immediately displayed in the table
+        const outputFile = fs.readFileSync(`${outputDir}${file.trim()}`, 'base64');
+        const inputFile = fs.readFileSync(`${inputDir}${file.trim()}`, 'base64');
+        assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
+        assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same') //TODO: how to improve?
+
+        // TODO: improve using 'fileId'
+        // I.wait(90)
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
         requesthistoryPage.selectTimePeriod('1 Hour')
         requesthistoryPage.openDatePicker()
         await requesthistoryPage.selectCustomPriod()
         await requesthistoryPage.setTimeFromEarleirOn(2)
+
         // verify file in request history
         const rowsQuantity = await I.getRowsQuantity()
         if (rowsQuantity !== 1) {
             assert.fail(`Row quantity is ${rowsQuantity}`)
         };
-        await requesthistoryPage.checkFileTypeValues(fileExtension)
-        await requesthistoryPage.checkFileOutcomeValues(outcomeValue)
+        await requesthistoryPage.checkFileTypeValues(fileExtension, true)
+        await requesthistoryPage.checkFileOutcomeValues(outcomeValue, true)
         // remove downloaded file
         requesthistoryPage.cleanupFile(`${outputDir}${file.trim()}`);
     } else {
