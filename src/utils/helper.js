@@ -159,6 +159,49 @@ class MyHelper extends Helper {
         }
     }
 
+    parseItemTimestamp(timestamp) {
+        // parse the item time
+        let date = timestamp.split(',')[0]
+        let time = timestamp.split(',')[1].trimStart()
+        time = `${time.split(':')[0]}:${time.split(':')[1]}:${time.split(':')[2]}`
+        time = this.timeConversionSlicker(time)
+        let itemDate = `${date} ${time}`
+        itemDate = new Date(itemDate).toISOString()
+        return itemDate
+    }
+
+    async checkRowsTimestamp() {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
+        try {
+            let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            let n = 0;
+            let currentText;
+            let previousText;
+            let currentTimestamp;
+            let previousTimestamp;
+            for (let i = 0; i < rowCount; i++) {
+                currentText = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(1)`, (e) => e.innerText);
+                currentTimestamp = this.parseItemTimestamp(currentText)
+                if (i != 0) {
+                    previousText = await page.$eval(`${tableRows}:nth-child(${i}) th:nth-child(1)`, (e) => e.innerText);
+                    previousTimestamp = this.parseItemTimestamp(previousText)
+                }
+                if (i !== 0) {
+                    if (moment(previousTimestamp).isAfter(currentTimestamp)) {
+                        n = n + 1;
+                    } else {
+                        assert.fail('The timestamp sorting is wrong. Upper: ' + previousText + ', bottom: ' + currentText);
+                    }
+                }
+            }
+            console.log(`The timestamp sorting well`);
+        } catch (err) {
+            assert.fail(err);
+        }
+    }
+
     async checkRowValueByFileId(val, col, fileId) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
@@ -278,6 +321,7 @@ class MyHelper extends Helper {
                 // get item time
                 let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 // parse the item time
+                //TODO: reuse function
                 let date = timestamp.split(',')[0]
                 let time = timestamp.split(',')[1].trimStart()
                 let dayPart = time.split(' ')[1]
@@ -305,6 +349,10 @@ class MyHelper extends Helper {
 
     compareThatEqual(word1, word2) {
         return word1.toString().toUpperCase() === word2.toString().toUpperCase();
+    }
+
+    compareThatLater(time1, time2) {
+        return Date.parse(time1) > Date.parse(time2);
     }
 
     checkFileIsDownloaded(file) {
@@ -354,6 +402,7 @@ class MyHelper extends Helper {
   async goToSharepoint(){
     
     const {username, password, pageUrl} = configObj;
+    console.log('configObj '+JSON.stringify(configObj))
     let cpass = new Cpass();
     const data  = await spauth.getAuth(pageUrl, {
       username: cpass.decode(username),

@@ -18,5 +18,5 @@ Feature: content-management-policy-application-to-files
         Examples:
             | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue      |
             | word     | EmbeddedFiles      | sanitise | MacroRunCalculator.docm        | Sanitised   | Docx          | Safe              |
-            #| pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Blocked by Policy |
+            | pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Blocked by Policy |
 

@@ -46,3 +46,7 @@ When('I select a custom time of {string}', async (datetimeFrom) => {
 Then('I am unable to select {string}', async (datetimeTo) => {
     await requesthistoryPage.unableSetTimeTo(datetimeTo)
 });
+
+Then('the request log is sorted from newest timestamp to oldest timestamp', async () => {
+    await I.checkRowsTimestamp()
+});
