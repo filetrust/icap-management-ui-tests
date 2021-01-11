@@ -315,19 +315,14 @@ class MyHelper extends Helper {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
+        let n = 0;
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             for (let i = 0; i < rowCount; i++) {
                 // get item time
                 let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 // parse the item time
-                //TODO: reuse function
-                let date = timestamp.split(',')[0]
-                let time = timestamp.split(',')[1].trimStart()
-                let dayPart = time.split(' ')[1]
-                time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
-                time = this.timeConversionSlicker(time)
-                let itemDate = `${date} ${time}`
+                let itemDate = this.parseItemTimestamp(timestamp)
                 // parse range time
                 let dateFrom = this.parseRange(range, 'from')
                 let dateTo = this.parseRange(range, 'to')
@@ -337,11 +332,12 @@ class MyHelper extends Helper {
                 itemDate = new Date(itemDate).toISOString()
                 // verify if item timestamp in period
                 if (moment(itemDate).isBetween(dateFrom, dateTo, undefined, [])) {
-                    output.print(`The result list shows required files ${timestamp} within the selected time: ${range}`);
+                    n = n + 1
                 } else {
                     assert.fail(`The result files ${timestamp} returned are not within the selected time: ${range}`);
                 }
             }
+            output.print(`The result list shows required files ${n} within the selected time: ${range}`);
         } catch (err) {
             assert.fail(err);
         }
