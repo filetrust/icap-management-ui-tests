@@ -218,6 +218,9 @@ class MyHelper extends Helper {
         page.waitForSelector('tbody');
         try {
             const [elm] = await page.$x(`//th[contains(text(),'${fileId}')]/../th[position()=${col}]`);
+            if(!elm) {
+                assert.fail(`File with ${fileId} file id is not displayed`);
+            }
             const text = await page.evaluate(name => name.innerText, elm);
             if (this.compareThatEqual(text, val)) {
                 console.log(`The file has required data ${val}`);
