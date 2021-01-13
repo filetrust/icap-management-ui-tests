@@ -1,0 +1,799 @@
+{
+  "uid" : "6bd2902885ce8558",
+  "name" : "I can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240",
+  "historyId" : "340113f509b9f58d3fc7abf6b060e30c",
+  "time" : {
+    "start" : 1610548994841,
+    "stop" : 1610549031828,
+    "duration" : 36987
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected all elements (input[id='pdfAcroformdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+  "statusTrace" : "undefined",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected all elements (input[id='pdfAcroformdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"pdf\", \"Acroform\", \"sanitise\"",
+      "time" : {
+        "start" : 1610549015365,
+        "stop" : 1610549015369,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='pdfAcroformsanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1610549015365,
+          "stop" : 1610549015368,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1610549015369,
+        "stop" : 1610549019496,
+        "duration" : 4127
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfAcroformsanitise']\", 5",
+        "time" : {
+          "start" : 1610549015369,
+          "stop" : 1610549015373,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='pdfAcroformsanitise']\"",
+        "time" : {
+          "start" : 1610549015373,
+          "stop" : 1610549017480,
+          "duration" : 2107
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610549017480,
+          "stop" : 1610549019496,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610549019496,
+        "stop" : 1610549019500,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610549019496,
+          "stop" : 1610549019499,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610549019499,
+          "stop" : 1610549019499,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1610549019500,
+        "stop" : 1610549021605,
+        "duration" : 2105
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610549019500,
+          "stop" : 1610549019503,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610549019503,
+          "stop" : 1610549021602,
+          "duration" : 2099
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610549021605,
+        "stop" : 1610549023633,
+        "duration" : 2028
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610549021605,
+          "stop" : 1610549021609,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610549021609,
+          "stop" : 1610549023631,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1610549023633,
+        "stop" : 1610549023637,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfAcroformsanitise']\", 5",
+        "time" : {
+          "start" : 1610549023633,
+          "stop" : 1610549023637,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setPolicyFlag \"pdf\", \"Acroform\", \"disallow\"",
+      "time" : {
+        "start" : 1610549023637,
+        "stop" : 1610549023643,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='pdfAcroformdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1610549023637,
+          "stop" : 1610549023639,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I change the contentFlag for 'pdf' to 'Acroform' and 'disallow' ",
+      "time" : {
+        "start" : 1610549023643,
+        "stop" : 1610549025747,
+        "duration" : 2104
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfAcroformdisallow']\", 5",
+        "time" : {
+          "start" : 1610549023643,
+          "stop" : 1610549023646,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='pdfAcroformdisallow']\"",
+        "time" : {
+          "start" : 1610549023646,
+          "stop" : 1610549025747,
+          "duration" : 2101
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickSaveChanges ",
+      "time" : {
+        "start" : 1610549025747,
+        "stop" : 1610549027764,
+        "duration" : 2017
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610549025747,
+          "stop" : 1610549027763,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610549027764,
+        "stop" : 1610549027767,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610549027764,
+          "stop" : 1610549027767,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1610549027767,
+        "stop" : 1610549029813,
+        "duration" : 2046
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1610549027767,
+          "stop" : 1610549029812,
+          "duration" : 2045
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1610549029813,
+        "stop" : 1610549031825,
+        "duration" : 2012
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1610549029813,
+          "stop" : 1610549031825,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='pdfAcroformdisallow']\"",
+      "time" : {
+        "start" : 1610549031825,
+        "stop" : 1610549031828,
+        "duration" : 3
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='pdfAcroformdisallow']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1610549031825,
+          "stop" : 1610549031828,
+          "duration" : 3
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "1",
+      "time" : {
+        "start" : 1610549031829,
+        "stop" : 1610549031829,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+      "time" : {
+        "start" : 1610549031829,
+        "stop" : 1610549031947,
+        "duration" : 118
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "e2aad042e2398bfe",
+        "name" : "Last Seen Screenshot",
+        "source" : "e2aad042e2398bfe.png",
+        "type" : "image/png",
+        "size" : 64799
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 34,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-240"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 15,
+        "broken" : 0,
+        "skipped" : 15,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 36
+      },
+      "items" : [ {
+        "uid" : "3c6ea689687b5b60",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/3c6ea689687b5b60",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='pdfAcroformdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1610544657737,
+          "stop" : 1610544692571,
+          "duration" : 34834
+        }
+      }, {
+        "uid" : "d4dcce9a173bd630",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/d4dcce9a173bd630",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='pdfAcroformdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1610538560009,
+          "stop" : 1610538586459,
+          "duration" : 26450
+        }
+      }, {
+        "uid" : "f29b6e754823ff8e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/f29b6e754823ff8e",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfAcroformsanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403279472,
+          "stop" : 1610403295878,
+          "duration" : 16406
+        }
+      }, {
+        "uid" : "cf952dcb73a059ab",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/cf952dcb73a059ab",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfAcroformsanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402376919,
+          "stop" : 1610402393309,
+          "duration" : 16390
+        }
+      }, {
+        "uid" : "9a9c1241d6ca6b6c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/9a9c1241d6ca6b6c",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfAcroformsanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316353686,
+          "stop" : 1610316370009,
+          "duration" : 16323
+        }
+      }, {
+        "uid" : "15e0f08ff45ede21",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/15e0f08ff45ede21",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfAcroformsanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119078681,
+          "stop" : 1610119095282,
+          "duration" : 16601
+        }
+      }, {
+        "uid" : "23e03a9a5fc41b04",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/23e03a9a5fc41b04",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='pdfAcroformdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1609890824223,
+          "stop" : 1609890858981,
+          "duration" : 34758
+        }
+      }, {
+        "uid" : "81ba631a6e6cee9f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/81ba631a6e6cee9f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842650414,
+          "stop" : 1609842680999,
+          "duration" : 30585
+        }
+      }, {
+        "uid" : "5c907fa85d3db9e3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/5c907fa85d3db9e3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842318721,
+          "stop" : 1609842349404,
+          "duration" : 30683
+        }
+      }, {
+        "uid" : "10c20cab2c57fb6f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/10c20cab2c57fb6f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609836530880,
+          "stop" : 1609836561494,
+          "duration" : 30614
+        }
+      }, {
+        "uid" : "b81e1357beaae675",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/102//#testresult/b81e1357beaae675",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1609757186802,
+          "stop" : 1609757186802,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "39edd6ebe91aef19",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/101//#testresult/39edd6ebe91aef19",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1609755337933,
+          "stop" : 1609755337933,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "9f91628025ad4849",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/100//#testresult/9f91628025ad4849",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609709492694,
+          "stop" : 1609709523340,
+          "duration" : 30646
+        }
+      }, {
+        "uid" : "a0ef112d85164eaa",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/97//#testresult/a0ef112d85164eaa",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608313492321,
+          "stop" : 1608313492321,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "d978835f088cdf4e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/96//#testresult/d978835f088cdf4e",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608234702039,
+          "stop" : 1608234702039,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "df71f3a2ad042e0d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/95//#testresult/df71f3a2ad042e0d",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608233519348,
+          "stop" : 1608233519348,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "352a13e4c39bffc6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/94//#testresult/352a13e4c39bffc6",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608149186956,
+          "stop" : 1608149186956,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "e3dfb586f16f09b6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/93//#testresult/e3dfb586f16f09b6",
+        "status" : "failed",
+        "statusDetails" : "element (button[class*='DraftPolicy_publishButton__']) still not present on page after 5 sec\n                waiting for selector `button[class*='DraftPolicy_publishButton__']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1608045163944,
+          "stop" : 1608045196324,
+          "duration" : 32380
+        }
+      }, {
+        "uid" : "51599fbcf84a3120",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/92//#testresult/51599fbcf84a3120",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608024180599,
+          "stop" : 1608024180599,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "7dc0b7566da8c6be",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/91//#testresult/7dc0b7566da8c6be",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1607970780690,
+          "stop" : 1607970780690,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-240", "@content-management-policy-editing", "@functional" ]
+  },
+  "source" : "6bd2902885ce8558.json",
+  "parameterValues" : [ ]
+}
