@@ -3,6 +3,7 @@ const homePage = require("../pages/home.page.js");
 const loginPage = require("../pages/login.page.js");
 const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
+const { output } = require("codeceptjs");
 
 
 module.exports = function() {
@@ -10,7 +11,7 @@ module.exports = function() {
     onLoginPage: function () {
         //this.amOnPage('http://localhost:8080/')
       //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      this.amOnPage(`http://management-ui.uksouth.cloudapp.azure.com/`)
+      this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
   },
 
   loginNoPwd: function () {
@@ -140,7 +141,7 @@ module.exports = function() {
       this.wait(5)
   },
 
-  sendFileICAP: function (fileName, icapDir, testsDir, inputDir, outputDir) {
+  sendFileICAP: async function (fileName, icapDir, testsDir, inputDir, outputDir) {
     const inputPath = `${process.cwd()}/${inputDir}`
     const outputPath = `${process.cwd()}/${outputDir}`
     const logsName = 'dockerLogs.log'
@@ -151,11 +152,13 @@ module.exports = function() {
     const fs = require('fs')
     cp.execSync(`cd ${icapDir} && rm -f {logsName} && touch -a ${logsName} && cd ${testsDir}`)
     // run icap client in docker
+    output.print('Sending file...')
     cp.execSync(`cd ${icapDir} && docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName} && cd ${testsDir}`)
+    output.print('File is sent...')
     // read logs from file
-    let output = fs.readFileSync(`${icapDir}/${logsName}`);
+    let logsOutput = fs.readFileSync(`${icapDir}/${logsName}`);
     // get file id from logs
-    let fileId = output
+    let fileId = logsOutput
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
         .split("\n")[0];

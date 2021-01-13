@@ -113,8 +113,8 @@ module.exports = {
     I.say(elPublish)
     if (elPublish > 0) {
       I.waitForElement(element, 5)
-      I.clickElement(element);
-      modal.accept()
+      await I.clickElement(element);
+      await modal.accept()
     }
   },
 
@@ -256,6 +256,7 @@ module.exports = {
         await I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
         I.waitForElement(flag, 5)
+        output.print('The flag is selected')
       }
     } catch (e) {
       I.say('Unable to set policy flag')

@@ -28,8 +28,8 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
 
 When('I process file {string} file {string} through the icap server', async (fileType, file) => {
     if (isLocal) {
-        fileId = I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
-        I.say(`I sent a file and received ${fileId}`);
+        fileId = await I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
+        await I.say(`I sent a file and received ${fileId}`);
     } else {
         I.onIcapProxyPage()
         icapProxyPage.downloadFile(fileType)
@@ -43,9 +43,9 @@ Then('The {string} with file type {string} processing outcome is as expected {st
         I.seeFile(file)
         const outputFile = fs.readFileSync(`${outputDir}${file.trim()}`, 'base64');
         const inputFile = fs.readFileSync(`${inputDir}${file.trim()}`, 'base64');
-        //TODO: how to improve - could we add the expected file?
-        assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
-        assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same')
+        //TODO: how to improve - could we add the expected file? is it better to check results in UI detail view? 
+        //assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
+        //assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same')
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
         requesthistoryPage.selectTimePeriod('1 Hour')
