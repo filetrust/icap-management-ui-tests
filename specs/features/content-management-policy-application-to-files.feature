@@ -16,7 +16,7 @@ Feature: content-management-policy-application-to-files
         When I process file '<fileType>' file '<file>' through the icap server
         Then The '<file>' with file type '<fileExtension>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
         Examples:
-            | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue |
-            | word     | EmbeddedFiles      | sanitise | MacroRunCalculator.docm        | Sanitised   | Docx          | Safe         |
-            | pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Safe         |
+            | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue      |
+            | word     | EmbeddedFiles      | sanitise | MacroRunCalculator.docm        | Sanitised   | Docx          | Safe              |
+            | pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Blocked by Policy |
 
