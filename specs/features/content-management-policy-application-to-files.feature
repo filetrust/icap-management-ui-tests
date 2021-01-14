@@ -17,6 +17,6 @@ Feature: content-management-policy-application-to-files
         Then The '<file>' with file type '<fileExtension>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
         Examples:
             | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue      |
-            | word     | EmbeddedFiles      | sanitise | MacroRunCalculator.docm        | Sanitised   | Docx          | Safe              |
+            | word     | InternalHyperlinks | sanitise | issues.docx                    | Sanitised   | Docx          | Safe              |
             | pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Blocked by Policy |
 
