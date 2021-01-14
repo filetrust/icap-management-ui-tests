@@ -1,0 +1,417 @@
+{
+  "uid" : "5b635599eeb03b1",
+  "name" : "I can filter the log using file id {\"filter\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\",\"filteredFile\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\"} @prototype @TEST-164",
+  "fullName" : "request-history-log @request-history-log.I can filter the log using file id {\"filter\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\",\"filteredFile\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\"} @prototype @TEST-164",
+  "historyId" : "41c2405ef353e0e6ec7bbf050e48b95e",
+  "time" : {
+    "start" : 1610624584244,
+    "stop" : 1610624598723,
+    "duration" : 14479
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "homePage: clickRequestsHistory ",
+      "time" : {
+        "start" : 1610624592637,
+        "stop" : 1610624594674,
+        "duration" : 2037
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1610624592637,
+          "stop" : 1610624594670,
+          "duration" : 2033
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1610624594674,
+        "stop" : 1610624598710,
+        "duration" : 4036
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1610624594674,
+          "stop" : 1610624596685,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610624596691,
+          "stop" : 1610624596697,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610624596697,
+          "stop" : 1610624598708,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: setFileId \"44444444 - 4444 - 4444 - 4444 - 44444444444\"",
+      "time" : {
+        "start" : 1610624598710,
+        "stop" : 1610624598723,
+        "duration" : 13
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I click \"button[data-test-id='buttonFilterFileId']\"",
+        "time" : {
+          "start" : 1610624598710,
+          "stop" : 1610624598723,
+          "duration" : 13
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedClick (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2284:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "7349783aa05f4764",
+      "name" : "Last Seen Screenshot",
+      "source" : "7349783aa05f4764.png",
+      "type" : "image/png",
+      "size" : 40575
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-164"
+  }, {
+    "name" : "tag",
+    "value" : "@prototype"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-log"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the log using file id {\"filter\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\",\"filteredFile\":\"44444444 - 4444 - 4444 - 4444 - 44444444444\"} @prototype @TEST-164"
+  }, {
+    "name" : "package",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 17,
+        "broken" : 0,
+        "skipped" : 14,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 31
+      },
+      "items" : [ {
+        "uid" : "beecc18050d7984d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/beecc18050d7984d",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610555674401,
+          "stop" : 1610555690049,
+          "duration" : 15648
+        }
+      }, {
+        "uid" : "e60dbe3e64bb52b4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/e60dbe3e64bb52b4",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610548848886,
+          "stop" : 1610548863455,
+          "duration" : 14569
+        }
+      }, {
+        "uid" : "7757b192127e685c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/7757b192127e685c",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610544496229,
+          "stop" : 1610544510649,
+          "duration" : 14420
+        }
+      }, {
+        "uid" : "bc7ae8a8da457e36",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/bc7ae8a8da457e36",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610538404120,
+          "stop" : 1610538419420,
+          "duration" : 15300
+        }
+      }, {
+        "uid" : "5b44d0eb816ce4e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/5b44d0eb816ce4e",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403223076,
+          "stop" : 1610403237739,
+          "duration" : 14663
+        }
+      }, {
+        "uid" : "91ea8c4e80a998c0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/91ea8c4e80a998c0",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402319504,
+          "stop" : 1610402334062,
+          "duration" : 14558
+        }
+      }, {
+        "uid" : "1a6b95c497cfc4c8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/1a6b95c497cfc4c8",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316287536,
+          "stop" : 1610316302437,
+          "duration" : 14901
+        }
+      }, {
+        "uid" : "d2a024eee23041b9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/d2a024eee23041b9",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119005029,
+          "stop" : 1610119020769,
+          "duration" : 15740
+        }
+      }, {
+        "uid" : "b4161d24fdadf015",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/b4161d24fdadf015",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1609890668669,
+          "stop" : 1609890683467,
+          "duration" : 14798
+        }
+      }, {
+        "uid" : "eacadc048a9ec993",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/102//#testresult/eacadc048a9ec993",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1609842532841,
+          "stop" : 1609842547544,
+          "duration" : 14703
+        }
+      }, {
+        "uid" : "b2347eae128994ef",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/101//#testresult/b2347eae128994ef",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1609842176498,
+          "stop" : 1609842190897,
+          "duration" : 14399
+        }
+      }, {
+        "uid" : "18503aa648a3d573",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/100//#testresult/18503aa648a3d573",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1609836401083,
+          "stop" : 1609836415741,
+          "duration" : 14658
+        }
+      }, {
+        "uid" : "d6b9f63f0ae81d18",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/99//#testresult/d6b9f63f0ae81d18",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1609757190344,
+          "stop" : 1609757190344,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "d48271bb86b93219",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/98//#testresult/d48271bb86b93219",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1609755332587,
+          "stop" : 1609755332588,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "8d656f39545d9d15",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/97//#testresult/8d656f39545d9d15",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1609709134754,
+          "stop" : 1609709149487,
+          "duration" : 14733
+        }
+      }, {
+        "uid" : "4a4d2cea6e250100",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/94//#testresult/4a4d2cea6e250100",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608313489145,
+          "stop" : 1608313489145,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "c1ed3dec1406d83e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/93//#testresult/c1ed3dec1406d83e",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608234701107,
+          "stop" : 1608234701107,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "136cf83a10b66ca0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/92//#testresult/136cf83a10b66ca0",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608233515752,
+          "stop" : 1608233515752,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "f919397abd889b4b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/91//#testresult/f919397abd889b4b",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1608149186652,
+          "stop" : 1608149186652,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "e21e4e7112b3a48c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/90//#testresult/e21e4e7112b3a48c",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"button[data-test-id='buttonFilterFileId']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1608045007357,
+          "stop" : 1608045021864,
+          "duration" : 14507
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-log", "@TEST-164", "@prototype" ]
+  },
+  "source" : "5b635599eeb03b1.json",
+  "parameterValues" : [ ]
+}
