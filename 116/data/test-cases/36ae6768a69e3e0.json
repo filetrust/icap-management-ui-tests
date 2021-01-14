@@ -1,0 +1,600 @@
+{
+  "uid" : "36ae6768a69e3e0",
+  "name" : "Content Management policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.Content Management policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "historyId" : "6b3fa763b734b0d1d63e25e68dfe4e54",
+  "time" : {
+    "start" : 1610628703020,
+    "stop" : 1610628734638,
+    "duration" : 31618
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"pdf\", \"ExternalHyperlinks\", \"disallow\"",
+      "time" : {
+        "start" : 1610628717390,
+        "stop" : 1610628717393,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='pdfExternalHyperlinksdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1610628717390,
+          "stop" : 1610628717393,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1610628717393,
+        "stop" : 1610628717398,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628717393,
+          "stop" : 1610628717396,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610628717396,
+          "stop" : 1610628717397,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610628717398,
+        "stop" : 1610628717403,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628717398,
+          "stop" : 1610628717400,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610628717400,
+          "stop" : 1610628717400,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1610628717403,
+        "stop" : 1610628719515,
+        "duration" : 2112
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610628717403,
+          "stop" : 1610628717409,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628717409,
+          "stop" : 1610628719513,
+          "duration" : 2104
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610628719515,
+        "stop" : 1610628721571,
+        "duration" : 2056
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610628719515,
+          "stop" : 1610628719526,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610628719526,
+          "stop" : 1610628721569,
+          "duration" : 2043
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1610628721571,
+        "stop" : 1610628721574,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfExternalHyperlinksdisallow']\", 5",
+        "time" : {
+          "start" : 1610628721571,
+          "stop" : 1610628721574,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onIcapProxyPage ",
+      "time" : {
+        "start" : 1610628721574,
+        "stop" : 1610628730603,
+        "duration" : 9029
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/\"",
+        "time" : {
+          "start" : 1610628721574,
+          "stop" : 1610628725597,
+          "duration" : 4023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610628725597,
+          "stop" : 1610628730602,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: downloadFile \"pdf\"",
+      "time" : {
+        "start" : 1610628730603,
+        "stop" : 1610628732627,
+        "duration" : 2024
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1610628730603,
+          "stop" : 1610628730603,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//a[@href=\"https://gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com/Execute+Java+Script_JS_PDF.pdf\"]\"",
+        "time" : {
+          "start" : 1610628730604,
+          "stop" : 1610628732627,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: checkIfHtmlReportReturned ",
+      "time" : {
+        "start" : 1610628732627,
+        "stop" : 1610628732629,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab current url ",
+        "time" : {
+          "start" : 1610628732627,
+          "stop" : 1610628732629,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then The 'Execute+Java+Script_JS_PDF.pdf' with file type 'Pdf' processing outcome is as expected 'htmlReport' and 'Blocked by Policy' ",
+      "time" : {
+        "start" : 1610628732629,
+        "stop" : 1610628734638,
+        "duration" : 2009
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of open tabs ",
+        "time" : {
+          "start" : 1610628732629,
+          "stop" : 1610628732629,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I switch to next tab ",
+        "time" : {
+          "start" : 1610628732630,
+          "stop" : 1610628734635,
+          "duration" : 2005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I see \"Document Access Blocked due to Policy\"",
+        "time" : {
+          "start" : 1610628734635,
+          "stop" : 1610628734638,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "The file is blocked",
+        "time" : {
+          "start" : 1610628734638,
+          "stop" : 1610628734638,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 29,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "Content Management policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "800dea5180238774",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/800dea5180238774",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610624607623,
+          "stop" : 1610624640378,
+          "duration" : 32755
+        }
+      }, {
+        "uid" : "7994c9cde1c02a2f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/7994c9cde1c02a2f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610555697508,
+          "stop" : 1610555730220,
+          "duration" : 32712
+        }
+      }, {
+        "uid" : "8257caf3feb9495e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/8257caf3feb9495e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610544523412,
+          "stop" : 1610544556569,
+          "duration" : 33157
+        }
+      }, {
+        "uid" : "e0a1ad2b1e3bb3e4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/e0a1ad2b1e3bb3e4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610538430757,
+          "stop" : 1610538462550,
+          "duration" : 31793
+        }
+      }, {
+        "uid" : "fd3b11b9ca3ed1c2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/fd3b11b9ca3ed1c2",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403217201,
+          "stop" : 1610403229679,
+          "duration" : 12478
+        }
+      }, {
+        "uid" : "3a1076b196029253",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/3a1076b196029253",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402314880,
+          "stop" : 1610402327355,
+          "duration" : 12475
+        }
+      }, {
+        "uid" : "d21db857009a4764",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/d21db857009a4764",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316291471,
+          "stop" : 1610316303752,
+          "duration" : 12281
+        }
+      }, {
+        "uid" : "fa21620146a5338b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/fa21620146a5338b",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119014944,
+          "stop" : 1610119028307,
+          "duration" : 13363
+        }
+      }, {
+        "uid" : "4bf727792b3347ad",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/4bf727792b3347ad",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609890692096,
+          "stop" : 1609890719725,
+          "duration" : 27629
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "36ae6768a69e3e0.json",
+  "parameterValues" : [ ]
+}

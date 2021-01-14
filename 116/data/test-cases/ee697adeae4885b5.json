@@ -1,0 +1,807 @@
+{
+  "uid" : "ee697adeae4885b5",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233",
+  "historyId" : "cca143684352ed9f09d19dc9b984fa8e",
+  "time" : {
+    "start" : 1610628702533,
+    "stop" : 1610628739209,
+    "duration" : 36676
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+  "statusTrace" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+    "statusTrace" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)",
+    "steps" : [ {
+      "name" : "policyPage: setRouteFlag \"relay-glasswallBlockedFiles\"",
+      "time" : {
+        "start" : 1610628717781,
+        "stop" : 1610628717785,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='relay-glasswallBlockedFiles']\", \"checked\"",
+        "time" : {
+          "start" : 1610628717781,
+          "stop" : 1610628717784,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I have set the routing option for Glasswall Blocked files to 'relay-glasswallBlockedFiles' ",
+      "time" : {
+        "start" : 1610628717785,
+        "stop" : 1610628726834,
+        "duration" : 9049
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"label[for='relay-glasswallBlockedFiles']\"",
+        "time" : {
+          "start" : 1610628717785,
+          "stop" : 1610628719813,
+          "duration" : 2028
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610628719813,
+          "stop" : 1610628724815,
+          "duration" : 5002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610628724815,
+          "stop" : 1610628726834,
+          "duration" : 2019
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610628726834,
+        "stop" : 1610628726849,
+        "duration" : 15
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628726834,
+          "stop" : 1610628726838,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610628726838,
+          "stop" : 1610628726838,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I have set the routing option for Glasswall Blocked files to 'relay-glasswallBlockedFiles' ",
+      "time" : {
+        "start" : 1610628726849,
+        "stop" : 1610628728888,
+        "duration" : 2039
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610628726849,
+          "stop" : 1610628726853,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628726853,
+          "stop" : 1610628728882,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610628728888,
+        "stop" : 1610628730919,
+        "duration" : 2031
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610628728888,
+          "stop" : 1610628728891,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610628728891,
+          "stop" : 1610628730915,
+          "duration" : 2024
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1610628730919,
+        "stop" : 1610628732931,
+        "duration" : 2012
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1610628730919,
+          "stop" : 1610628732931,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1610628732931,
+        "stop" : 1610628734953,
+        "duration" : 2022
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1610628732931,
+          "stop" : 1610628734953,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"EmbeddedFiles\", \"disallow\"",
+      "time" : {
+        "start" : 1610628734953,
+        "stop" : 1610628734957,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordEmbeddedFilesdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1610628734953,
+          "stop" : 1610628734956,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set the policy for file type 'word' to 'EmbeddedFiles' and 'disallow' ",
+      "time" : {
+        "start" : 1610628734957,
+        "stop" : 1610628734961,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628734957,
+          "stop" : 1610628734959,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610628734959,
+          "stop" : 1610628734961,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610628734961,
+        "stop" : 1610628734967,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628734961,
+          "stop" : 1610628734963,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610628734964,
+          "stop" : 1610628734964,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set the policy for file type 'word' to 'EmbeddedFiles' and 'disallow' ",
+      "time" : {
+        "start" : 1610628734967,
+        "stop" : 1610628737078,
+        "duration" : 2111
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610628734967,
+          "stop" : 1610628734970,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628734970,
+          "stop" : 1610628737075,
+          "duration" : 2105
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610628737078,
+        "stop" : 1610628739104,
+        "duration" : 2026
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610628737078,
+          "stop" : 1610628737081,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610628737081,
+          "stop" : 1610628739102,
+          "duration" : 2021
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set the policy for file type 'word' to 'EmbeddedFiles' and 'disallow' ",
+      "time" : {
+        "start" : 1610628739104,
+        "stop" : 1610628739108,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedFilesdisallow']\", 5",
+        "time" : {
+          "start" : 1610628739104,
+          "stop" : 1610628739108,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I download a non compliant file 'issues.docx' through the icap server ",
+      "time" : {
+        "start" : 1610628739108,
+        "stop" : 1610628739209,
+        "duration" : 101
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)",
+      "steps" : [ {
+        "name" : "I set host ",
+        "time" : {
+          "start" : 1610628739108,
+          "stop" : 1610628739144,
+          "duration" : 36
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I go to sharepoint ",
+        "time" : {
+          "start" : 1610628739144,
+          "stop" : 1610628739209,
+          "duration" : 65
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Unable to resolve namespace authentiation type. Type received: Unknown\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/node-sp-auth/lib/src/auth/resolvers/OnlineUserCredentials.js:97:19\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.goToSharepoint (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:342:19)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "24fb443c8d3d7a35",
+      "name" : "Last Seen Screenshot",
+      "source" : "24fb443c8d3d7a35.png",
+      "type" : "image/png",
+      "size" : 57979
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 38,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-233"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for Glasswall blocked files is correctly applied {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 15,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 15
+      },
+      "items" : [ {
+        "uid" : "4c73514c7a98fa66",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/4c73514c7a98fa66",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1610624616382,
+          "stop" : 1610624652339,
+          "duration" : 35957
+        }
+      }, {
+        "uid" : "c9805b24ca86a1b8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/c9805b24ca86a1b8",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1610555696849,
+          "stop" : 1610555732702,
+          "duration" : 35853
+        }
+      }, {
+        "uid" : "c3d1e44f9ddbf4d7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/c3d1e44f9ddbf4d7",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1610548867740,
+          "stop" : 1610548907587,
+          "duration" : 39847
+        }
+      }, {
+        "uid" : "cc615c8732019d63",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/cc615c8732019d63",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1610544529154,
+          "stop" : 1610544565226,
+          "duration" : 36072
+        }
+      }, {
+        "uid" : "98c0a9abe121ca81",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/98c0a9abe121ca81",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1610538440018,
+          "stop" : 1610538473312,
+          "duration" : 33294
+        }
+      }, {
+        "uid" : "b66f45a323d4cb0e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/b66f45a323d4cb0e",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403230216,
+          "stop" : 1610403242529,
+          "duration" : 12313
+        }
+      }, {
+        "uid" : "6a8d2d0362a6d9d7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/6a8d2d0362a6d9d7",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402327600,
+          "stop" : 1610402339937,
+          "duration" : 12337
+        }
+      }, {
+        "uid" : "aa8b18287df26e73",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/aa8b18287df26e73",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316305202,
+          "stop" : 1610316317452,
+          "duration" : 12250
+        }
+      }, {
+        "uid" : "8d586193e01648bb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/8d586193e01648bb",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119027509,
+          "stop" : 1610119039761,
+          "duration" : 12252
+        }
+      }, {
+        "uid" : "6e0f5f80ddcb1c0c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/6e0f5f80ddcb1c0c",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609890690573,
+          "stop" : 1609890730513,
+          "duration" : 39940
+        }
+      }, {
+        "uid" : "a8bfe5063001dd57",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/a8bfe5063001dd57",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609842546840,
+          "stop" : 1609842578536,
+          "duration" : 31696
+        }
+      }, {
+        "uid" : "5f2dcfe42959755a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/5f2dcfe42959755a",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609842201460,
+          "stop" : 1609842233307,
+          "duration" : 31847
+        }
+      }, {
+        "uid" : "a984e21a6b9d7600",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/a984e21a6b9d7600",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609836413817,
+          "stop" : 1609836445552,
+          "duration" : 31735
+        }
+      }, {
+        "uid" : "1e7974349691b38c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/100//#testresult/1e7974349691b38c",
+        "status" : "failed",
+        "statusDetails" : "Unable to resolve namespace authentiation type. Type received: Unknown",
+        "time" : {
+          "start" : 1609709152335,
+          "stop" : 1609709184182,
+          "duration" : 31847
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-233", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "ee697adeae4885b5.json",
+  "parameterValues" : [ ]
+}

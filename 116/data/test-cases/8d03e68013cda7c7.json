@@ -1,0 +1,592 @@
+{
+  "uid" : "8d03e68013cda7c7",
+  "name" : "Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"sanitise\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"sanitise\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "historyId" : "a89b0c5a20c1431e0f18664f1382d1b2",
+  "time" : {
+    "start" : 1610628662048,
+    "stop" : 1610628702479,
+    "duration" : 40431
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+  "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+    "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"EmbeddedFiles\", \"sanitise\"",
+      "time" : {
+        "start" : 1610628678122,
+        "stop" : 1610628678127,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordEmbeddedFilessanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1610628678122,
+          "stop" : 1610628678126,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'word' with 'EmbeddedFiles' set to 'sanitise' ",
+      "time" : {
+        "start" : 1610628678127,
+        "stop" : 1610628682240,
+        "duration" : 4113
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedFilessanitise']\", 5",
+        "time" : {
+          "start" : 1610628678127,
+          "stop" : 1610628678130,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='wordEmbeddedFilessanitise']\"",
+        "time" : {
+          "start" : 1610628678130,
+          "stop" : 1610628680223,
+          "duration" : 2093
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610628680223,
+          "stop" : 1610628682239,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610628682240,
+        "stop" : 1610628682246,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628682240,
+          "stop" : 1610628682243,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610628682243,
+          "stop" : 1610628682243,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'word' with 'EmbeddedFiles' set to 'sanitise' ",
+      "time" : {
+        "start" : 1610628682246,
+        "stop" : 1610628684343,
+        "duration" : 2097
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610628682246,
+          "stop" : 1610628682249,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610628682249,
+          "stop" : 1610628684339,
+          "duration" : 2090
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610628684343,
+        "stop" : 1610628686368,
+        "duration" : 2025
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610628684343,
+          "stop" : 1610628684346,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610628684346,
+          "stop" : 1610628686366,
+          "duration" : 2020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'word' with 'EmbeddedFiles' set to 'sanitise' ",
+      "time" : {
+        "start" : 1610628686368,
+        "stop" : 1610628686371,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedFilessanitise']\", 5",
+        "time" : {
+          "start" : 1610628686368,
+          "stop" : 1610628686371,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onIcapProxyPage ",
+      "time" : {
+        "start" : 1610628686371,
+        "stop" : 1610628696373,
+        "duration" : 10002
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/\"",
+        "time" : {
+          "start" : 1610628686371,
+          "stop" : 1610628691370,
+          "duration" : 4999
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610628691370,
+          "stop" : 1610628696373,
+          "duration" : 5003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: downloadFile \"word\"",
+      "time" : {
+        "start" : 1610628696373,
+        "stop" : 1610628698397,
+        "duration" : 2024
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1610628696373,
+          "stop" : 1610628696374,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//a[@href=\"https://gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com/MacroRunCalculator.docm\"]\"",
+        "time" : {
+          "start" : 1610628696374,
+          "stop" : 1610628698397,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: checkFileInFileDropUrl \"output/downloads/MacroRunCalculator.docm\"",
+      "time" : {
+        "start" : 1610628698397,
+        "stop" : 1610628702478,
+        "duration" : 4081
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://file-drop.co.uk/\"",
+        "time" : {
+          "start" : 1610628698397,
+          "stop" : 1610628702478,
+          "duration" : 4081
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"output/downloads/MacroRunCalculator.docm\"",
+      "time" : {
+        "start" : 1610628702478,
+        "stop" : 1610628702479,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"output/downloads/MacroRunCalculator.docm\"",
+        "time" : {
+          "start" : 1610628702478,
+          "stop" : 1610628702479,
+          "duration" : 1
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "491937f9d662aaad",
+      "name" : "Last Seen Screenshot",
+      "source" : "491937f9d662aaad.png",
+      "type" : "image/png",
+      "size" : 349314
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 27,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"sanitise\",\"file\":\"MacroRunCalculator.docm\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 10,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 10
+      },
+      "items" : [ {
+        "uid" : "31c5f78cef1b4886",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/31c5f78cef1b4886",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+        "time" : {
+          "start" : 1610555655506,
+          "stop" : 1610555697105,
+          "duration" : 41599
+        }
+      }, {
+        "uid" : "886a9d16ff8172d3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/886a9d16ff8172d3",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+        "time" : {
+          "start" : 1610548836002,
+          "stop" : 1610548867937,
+          "duration" : 31935
+        }
+      }, {
+        "uid" : "a53497868d02367b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/a53497868d02367b",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+        "time" : {
+          "start" : 1610544489436,
+          "stop" : 1610544523036,
+          "duration" : 33600
+        }
+      }, {
+        "uid" : "7385be61bce90fe9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/7385be61bce90fe9",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+        "time" : {
+          "start" : 1610538386738,
+          "stop" : 1610538430461,
+          "duration" : 43723
+        }
+      }, {
+        "uid" : "6022e79af125bdd2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/6022e79af125bdd2",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='wordEmbeddedFilessanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403204088,
+          "stop" : 1610403217056,
+          "duration" : 12968
+        }
+      }, {
+        "uid" : "277e617e31865d4f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/277e617e31865d4f",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='wordEmbeddedFilessanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402300744,
+          "stop" : 1610402314709,
+          "duration" : 13965
+        }
+      }, {
+        "uid" : "7188f3bcb30de5c3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/7188f3bcb30de5c3",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='wordEmbeddedFilessanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316278554,
+          "stop" : 1610316291308,
+          "duration" : 12754
+        }
+      }, {
+        "uid" : "70addd87e726b6ba",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/70addd87e726b6ba",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='wordEmbeddedFilessanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119000553,
+          "stop" : 1610119014714,
+          "duration" : 14161
+        }
+      }, {
+        "uid" : "ef47f51cac66973e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/ef47f51cac66973e",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/MacroRunCalculator.docm can not be found on local system",
+        "time" : {
+          "start" : 1609890657319,
+          "stop" : 1609890691798,
+          "duration" : 34479
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "8d03e68013cda7c7.json",
+  "parameterValues" : [ ]
+}
