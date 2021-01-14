@@ -142,23 +142,23 @@ module.exports = function() {
       this.wait(5)
   },
 
-  sendFileICAP: async function (fileName, icapDir, testsDir, inputDir, outputDir) {
+  sendFileICAP: async function (fileName, inputDir, outputDir) {
     const inputPath = `${process.cwd()}/${inputDir}`
     const outputPath = `${process.cwd()}/${outputDir}`
-    const logsName = 'dockerLogs.log'
+    const logsName = `${outputDir}dockerLogs.log`
     const icapClient = 'icap-client-main.uksouth.cloudapp.azure.com'
     // use NodeJS child process to run a bash command in sync way
     // create a file for logs
     const cp = require('child_process')
     const fs = require('fs')
-    await I.cleanupFile(`${icapDir}${logsName}`);
-    await I.createFile(`${icapDir}${logsName}`)
+    await I.cleanupFile(`${logsName}`);
+    await I.createFile(`${logsName}`)
     // run icap client in docker
     output.print('Sending file...')
-    await cp.execSync(`cd ${icapDir} && docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName} && cd ${testsDir}`)
+    await cp.execSync(`docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName}`)
     output.print('File is sent...')
     // read logs from file
-    let logsOutput = fs.readFileSync(`${icapDir}${logsName}`);
+    let logsOutput = fs.readFileSync(`${logsName}`);
     // get file id from logs
     let fileId = logsOutput
         .toString()

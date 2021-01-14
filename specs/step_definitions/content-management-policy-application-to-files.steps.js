@@ -4,8 +4,6 @@ const { I, icapProxyPage, policyPage, requesthistoryPage } = inject();
 let isLocal;
 let fileId;
 //isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
-const icapDir = '../p-ui-wireframes/'
-const testsDir = '../icap-management-ui-tests/'
 const inputDir = 'src/data/input/'
 const outputDir = 'output/downloads/'
 
@@ -28,7 +26,7 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
 
 When('I process file {string} file {string} through the icap server', async (fileType, file) => {
     if (isLocal) {
-        fileId = await I.sendFileICAP(file, icapDir, testsDir, inputDir, outputDir)
+        fileId = await I.sendFileICAP(file, inputDir, outputDir)
         await I.say(`I sent a file and received ${fileId}`);
     } else {
         I.onIcapProxyPage()
