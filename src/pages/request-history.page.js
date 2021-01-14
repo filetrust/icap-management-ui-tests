@@ -766,20 +766,6 @@ module.exports = {
         }
     },
 
-    cleanupFile(file) {
-        try {
-            const exists = fs.existsSync(file);
-            if (exists) {
-                fs.unlinkSync(file)
-                I.say(`Remove downloaded file - ${file}`);
-            } else {
-                I.say(`File was already removed - ${file}`);
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    },
-
     async clickOnTimestampArrow() {
         const element = this.buttons.sortTimestamp;
         await I.clickElement(element);

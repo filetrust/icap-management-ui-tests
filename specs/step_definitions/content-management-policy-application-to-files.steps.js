@@ -10,7 +10,7 @@ const inputDir = 'src/data/input/'
 const outputDir = 'output/downloads/'
 
 Given('I remove the {string} file downloaded before if it exists', (file) => {
-    requesthistoryPage.cleanupFile(`${outputDir}${file.trim()}`);
+    I.cleanupFile(`${outputDir}${file.trim()}`);
 });
 
 Given('I am logged into the portal', () => {

@@ -429,8 +429,35 @@ class MyHelper extends Helper {
   setHost(){
     let party = require('hostparty');
     party.add('3.249.61.168', ['saaspoc1.sharepoint.com','saaspoc1-my.sharepoint.com','ukc-word-edit.officeapps.live.com','ukc-excel.officeapps.live.com','ukc-powerpoint.officeapps.live.com']);
-}
+  }
 
+  cleanupFile(file) {
+    try {
+        const exists = fs.existsSync(file);
+        if (exists) {
+            fs.unlinkSync(file)
+            console.log(`Remove downloaded file - ${file}`);
+        } else {
+            console.log(`File was already removed - ${file}`);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
+  createFile(file) {
+    try {
+        const exists = fs.existsSync(file);
+        if (exists) {
+            console.log(`File exists - ${file}`);
+        } else {
+            fs.writeFileSync(file)
+            console.log(`File was created - ${file}`);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
 }
 
 module.exports = MyHelper;
