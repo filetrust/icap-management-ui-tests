@@ -1,0 +1,864 @@
+{
+  "uid" : "e43d7961855aad95",
+  "name" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @success @functional @TEST-179",
+  "fullName" : "request-history-log @request-history-log.Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @success @functional @TEST-179",
+  "historyId" : "e28ff50c94b88a9f0b6946f99da0a0e2",
+  "time" : {
+    "start" : 1610648352701,
+    "stop" : 1610648391296,
+    "duration" : 38595
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "The result is not as expected, filter found is: Png",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Png\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:153:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:447:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:476:9)\n                    at async Object.verifyResultIsAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:560:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-log.steps.js:30:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "The result is not as expected, filter found is: Png",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Png\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:153:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:447:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:476:9)\n                    at async Object.verifyResultIsAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:560:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-log.steps.js:30:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "homePage: clickRequestsHistory ",
+      "time" : {
+        "start" : 1610648360926,
+        "stop" : 1610648362960,
+        "duration" : 2034
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1610648360926,
+          "stop" : 1610648362957,
+          "duration" : 2031
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1610648362960,
+        "stop" : 1610648366998,
+        "duration" : 4038
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1610648362960,
+          "stop" : 1610648364972,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610648364977,
+          "stop" : 1610648364982,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610648364982,
+          "stop" : 1610648366995,
+          "duration" : 2013
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1610648366998,
+        "stop" : 1610648369029,
+        "duration" : 2031
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(2) > p\"",
+        "time" : {
+          "start" : 1610648366998,
+          "stop" : 1610648369027,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: Safe",
+        "time" : {
+          "start" : 1610648369029,
+          "stop" : 1610648369029,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1610648369029,
+        "stop" : 1610648371080,
+        "duration" : 2051
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label/span[text()='Safe']\"",
+        "time" : {
+          "start" : 1610648369029,
+          "stop" : 1610648371080,
+          "duration" : 2051
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1610648371080,
+        "stop" : 1610648373091,
+        "duration" : 2011
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1610648371080,
+          "stop" : 1610648373091,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1610648373091,
+        "stop" : 1610648378099,
+        "duration" : 5008
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610648373091,
+          "stop" : 1610648378096,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1610648378099,
+        "stop" : 1610648380125,
+        "duration" : 2026
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610648378099,
+          "stop" : 1610648378106,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1610648378106,
+          "stop" : 1610648380120,
+          "duration" : 2014
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1610648380125,
+        "stop" : 1610648382173,
+        "duration" : 2048
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(1) > p\"",
+        "time" : {
+          "start" : 1610648380125,
+          "stop" : 1610648382172,
+          "duration" : 2047
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: png",
+        "time" : {
+          "start" : 1610648382173,
+          "stop" : 1610648382173,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"png\"",
+      "time" : {
+        "start" : 1610648382173,
+        "stop" : 1610648384232,
+        "duration" : 2059
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//span[contains(.,'png')]/parent::label/span[1]/span/input\"",
+        "time" : {
+          "start" : 1610648382173,
+          "stop" : 1610648384232,
+          "duration" : 2059
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1610648384232,
+        "stop" : 1610648386253,
+        "duration" : 2021
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1610648384232,
+          "stop" : 1610648386253,
+          "duration" : 2021
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"png\"",
+      "time" : {
+        "start" : 1610648386253,
+        "stop" : 1610648391258,
+        "duration" : 5005
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610648386253,
+          "stop" : 1610648391258,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: checkFilterByValue \"png\", \"//div/span[contains(.,'png')]\"",
+      "time" : {
+        "start" : 1610648391258,
+        "stop" : 1610648391279,
+        "duration" : 21
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see text equals \"SAFE\", \"//div/span[contains(.,'Safe')]\"",
+        "time" : {
+          "start" : 1610648391258,
+          "stop" : 1610648391273,
+          "duration" : 15
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I see text equals \"png\", \"//div/span[contains(.,'png')]\"",
+        "time" : {
+          "start" : 1610648391273,
+          "stop" : 1610648391279,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isDataReturned ",
+      "time" : {
+        "start" : 1610648391279,
+        "stop" : 1610648391288,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+        "time" : {
+          "start" : 1610648391279,
+          "stop" : 1610648391282,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1610648391282,
+          "stop" : 1610648391284,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Data is available",
+        "time" : {
+          "start" : 1610648391284,
+          "stop" : 1610648391284,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+        "time" : {
+          "start" : 1610648391284,
+          "stop" : 1610648391286,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1610648391286,
+          "stop" : 1610648391288,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Data is available",
+        "time" : {
+          "start" : 1610648391288,
+          "stop" : 1610648391288,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the applied filtertypes 'Safe_png', 'SAFE_png' ",
+      "time" : {
+        "start" : 1610648391288,
+        "stop" : 1610648391296,
+        "duration" : 8
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Png\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:153:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:447:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:476:9)\n                    at async Object.verifyResultIsAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:560:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-log.steps.js:30:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I check rows value \"Safe_png\", 3",
+        "time" : {
+          "start" : 1610648391288,
+          "stop" : 1610648391296,
+          "duration" : 8
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Png\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:153:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:447:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:476:9)\n                    at async Object.verifyResultIsAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:560:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-log.steps.js:30:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "bdbe52ab91f2e9d2",
+      "name" : "Last Seen Screenshot",
+      "source" : "bdbe52ab91f2e9d2.png",
+      "type" : "image/png",
+      "size" : 42261
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 39,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-179"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-log"
+  }, {
+    "name" : "tag",
+    "value" : "@success"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testMethod",
+    "value" : "Validate requests log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"png\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_png\",\"filterValues\":\"SAFE_png\"} @success @functional @TEST-179"
+  }, {
+    "name" : "package",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 25,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 44,
+        "unknown" : 0,
+        "total" : 69
+      },
+      "items" : [ {
+        "uid" : "e8585451d40a307d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/e8585451d40a307d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610633357730,
+          "stop" : 1610633397692,
+          "duration" : 39962
+        }
+      }, {
+        "uid" : "7121c0ed0ef140d1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/116//#testresult/7121c0ed0ef140d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610628690360,
+          "stop" : 1610628728877,
+          "duration" : 38517
+        }
+      }, {
+        "uid" : "8c2039ff9bff5a30",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/8c2039ff9bff5a30",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610624603091,
+          "stop" : 1610624642229,
+          "duration" : 39138
+        }
+      }, {
+        "uid" : "2e9506c844e0aed2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/2e9506c844e0aed2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610555684509,
+          "stop" : 1610555723107,
+          "duration" : 38598
+        }
+      }, {
+        "uid" : "6da286094e8669dc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/6da286094e8669dc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610548863182,
+          "stop" : 1610548902650,
+          "duration" : 39468
+        }
+      }, {
+        "uid" : "fb5b51316c72f65e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/fb5b51316c72f65e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610544516941,
+          "stop" : 1610544556958,
+          "duration" : 40017
+        }
+      }, {
+        "uid" : "ff322e246efdaf74",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/ff322e246efdaf74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610538418512,
+          "stop" : 1610538456997,
+          "duration" : 38485
+        }
+      }, {
+        "uid" : "da7cf553b20dc0ee",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/da7cf553b20dc0ee",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610403230582,
+          "stop" : 1610403269247,
+          "duration" : 38665
+        }
+      }, {
+        "uid" : "1eec7787dfa1a04b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/1eec7787dfa1a04b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610402328006,
+          "stop" : 1610402366575,
+          "duration" : 38569
+        }
+      }, {
+        "uid" : "fd43740c71aa828",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/fd43740c71aa828",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610316304567,
+          "stop" : 1610316343139,
+          "duration" : 38572
+        }
+      }, {
+        "uid" : "3939c6c9b56993f9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/3939c6c9b56993f9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610119027792,
+          "stop" : 1610119067318,
+          "duration" : 39526
+        }
+      }, {
+        "uid" : "3ccff605499db802",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/3ccff605499db802",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609890687333,
+          "stop" : 1609890725922,
+          "duration" : 38589
+        }
+      }, {
+        "uid" : "37081794f075129d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/37081794f075129d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842534677,
+          "stop" : 1609842573195,
+          "duration" : 38518
+        }
+      }, {
+        "uid" : "bdd21f96c7b309ca",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/bdd21f96c7b309ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842194090,
+          "stop" : 1609842232696,
+          "duration" : 38606
+        }
+      }, {
+        "uid" : "b16e781b403e798b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/b16e781b403e798b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609836410621,
+          "stop" : 1609836449207,
+          "duration" : 38586
+        }
+      }, {
+        "uid" : "97d1b08d6f3df807",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/102//#testresult/97d1b08d6f3df807",
+        "status" : "failed",
+        "statusDetails" : "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "time" : {
+          "start" : 1609757184473,
+          "stop" : 1609757186833,
+          "duration" : 2360
+        }
+      }, {
+        "uid" : "53f567fb85699a00",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/101//#testresult/53f567fb85699a00",
+        "status" : "failed",
+        "statusDetails" : "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "time" : {
+          "start" : 1609755335365,
+          "stop" : 1609755337750,
+          "duration" : 2385
+        }
+      }, {
+        "uid" : "f41e7331aa7402ce",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/100//#testresult/f41e7331aa7402ce",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609709140124,
+          "stop" : 1609709178643,
+          "duration" : 38519
+        }
+      }, {
+        "uid" : "daa010001d891582",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/97//#testresult/daa010001d891582",
+        "status" : "failed",
+        "statusDetails" : "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "time" : {
+          "start" : 1608313489514,
+          "stop" : 1608313491931,
+          "duration" : 2417
+        }
+      }, {
+        "uid" : "674de178422ccc37",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/96//#testresult/674de178422ccc37",
+        "status" : "failed",
+        "statusDetails" : "net::ERR_CONNECTION_REFUSED at http://localhost:8080/",
+        "time" : {
+          "start" : 1608234699670,
+          "stop" : 1608234702049,
+          "duration" : 2379
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-log", "@success", "@TEST-179", "@functional" ]
+  },
+  "source" : "e43d7961855aad95.json",
+  "parameterValues" : [ ]
+}
