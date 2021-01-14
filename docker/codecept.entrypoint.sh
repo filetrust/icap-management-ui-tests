@@ -27,23 +27,17 @@ sh -c 'echo "Include gw_rebuild.conf" >>  /usr/local/c-icap/etc/c-icap.conf'
 if [[ -s /usr/local/c-icap/bin/c-icap-client ]];
 then
 echo "#################################"
-echo "#################################"
-echo "#################################"
 echo "C_ICAP SUCCESSFULLY INSTALLED ;) "
-echo "#################################"
-echo "#################################"
 echo "#################################"
 
 sleep 3
 cd ../
 else
-echo "#################################"
-echo "#################################"
+
 echo "#################################"
 echo "   C_ICAP INSTALLATION FAILED ;/ "
 echo "#################################"
-echo "#################################"
-echo "#################################"
+
 read -p "Are you sure you want to continue? <y/N> " prompt
 if [[ $prompt =~ [yY](es)* ]]
 then
