@@ -319,7 +319,7 @@ class MyHelper extends Helper {
     }
 
    processFile(file){
-    const script= `docker run -v c:/icap/uirepo/icap-management-ui-tests/src/data/input/:/opt -v c:/icap/uirepo/icap-management-ui-tests/output/downloads/:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-main.northeurope.cloudapp.azure.com -f /opt/`+file+` -o /home/`+file+` -v`
+    const script= `docker run -v c:/icap/uirepo/icap-management-ui-tests/src/data/input/:/opt -v c:/icap/uirepo/icap-management-ui-tests/output/downloads/:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-qa-main.uksouth.cloudapp.azure.com -f /opt/`+file+` -o /home/`+file+` -v`
     const { exec } = require("child_process");
     exec(script, (error, data, getter) => {
             if(error){
