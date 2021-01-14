@@ -56,7 +56,7 @@ Given('I have set the routing option for Glasswall Blocked files to {string}', a
 });
 
 When('I download a non compliant file {string} through the icap server', async (file) => {
- I.setHost()
+I.setHost()
  await I.goToSharepoint()
  I.wait(5)
  I.seeInTitle("Communication site - ui-uploads - All Documents");
@@ -66,7 +66,7 @@ When('I download a non compliant file {string} through the icap server', async (
  
 });
 
-When('I submit a non compliant file {string} through the icap server', (file) => {
+When('I submit a non supported or unprocessable file {string} through the icap server', (file) => {
    I.handleDownloads();
    I.processFile(file.trim());
    });

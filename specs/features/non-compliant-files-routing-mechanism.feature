@@ -66,7 +66,7 @@ Feature: non-compliant-files-routing-mechanism
   @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
     Given I have set the routing option for unprocessable files to '<policyAction>'
-    When I download a non supported or unprocessable file '<file>' through the icap server
+    When I submit a non supported or unprocessable file '<file>' through the icap server
     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
     Examples:
       | policyAction                 | file                  | fileOutcome |

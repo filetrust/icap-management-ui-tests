@@ -9,8 +9,8 @@ module.exports = function() {
   return actor({
     onLoginPage: function () {
         //this.amOnPage('http://localhost:8080/')
-      //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      this.amOnPage(`http://management-ui.uksouth.cloudapp.azure.com/`)
+      this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+      //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
   },
 
   loginNoPwd: function () {
@@ -148,7 +148,7 @@ module.exports = function() {
     // create a file for logs
     require('child_process').execSync(`cd ${icapDir} && rm -f {logsName} && touch -a ${logsName} && cd ${testsDir}`)
     // run icap client in docker
-    require('child_process').execSync(`cd ${icapDir} && docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-main.uksouth.cloudapp.azure.com -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName} && cd ${testsDir}`)
+    require('child_process').execSync(`cd ${icapDir} && docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-qa-main.uksouth.cloudapp.azure.com -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName} && cd ${testsDir}`)
     // read logs from file
     let output = fs.readFileSync(`${icapDir}/${logsName}`);
     // get file id from logs
