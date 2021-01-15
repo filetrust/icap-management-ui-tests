@@ -11,8 +11,8 @@ module.exports = function() {
   return actor({
     onLoginPage: function () {
         //this.amOnPage('http://localhost:8080/')
-      this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
+      //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+      this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
   },
 
   loginNoPwd: function () {
