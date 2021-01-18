@@ -17,13 +17,11 @@ Feature: non-compliant-files-routing-mechanism
 
 
   @functional
-  @TEST-158_159
+  @TEST-158
   Scenario Outline: I can update the non-compliant routes API URL with a valid one
-    Given I am on the draft adaptation Policy screen
-    And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
-    When I enter a valid URL '<url>' into the API URL box
-    And I click save
-    Then the current NCFS policy is updated with the new url '<url>'
+    When I enter a valid URL '<url>' into the API URL box and save
+    And I publish the policy
+    Then the API URL is updated to the new url '<url>'
     Examples:
       | url                                       |
       | icap-client-qa.uksouth.cloudapp.azure.com |
