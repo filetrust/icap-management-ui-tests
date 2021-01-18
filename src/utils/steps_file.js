@@ -5,6 +5,7 @@ const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
+const assert = require('assert').strict;
 
 
 module.exports = function() {
@@ -152,19 +153,27 @@ module.exports = function() {
     const outputDir = path.join('output', 'downloads');
     const inputPath = path.join(process.cwd(), inputDir);
     const outputPath =  path.join(process.cwd(), outputDir);
-    //const logsName = path.join('output', 'dockerLogs.log');
-    const logsName = 'output/dockerLogs.log';
-    console.log(`inputDir: ${inputDir}, outputDir: ${outputDir}, inputPath: ${inputPath}, outputPath: ${outputPath}, logsName: ${logsName}`)
-    const icapClient = 'icap-client-main.uksouth.cloudapp.azure.com'
+    const logsName = path.join('output', 'docker.log');
+    const errLogsName = path.join('output', 'dockerErr.log');
+    const icapClient = 'icap-client-qa-main.uksouth.cloudapp.azure.com' // icap-client-qa.uksouth.cloudapp.azure.com
     // use NodeJS child process to run a bash command in sync way
     // create a file for logs
     await I.cleanupFile(`${logsName}`);
     await I.createFile(`${logsName}`)
+    // await I.cleanupFile(`${errLogsName}`);
+    // await I.createFile(`${errLogsName}`)
     // run icap client in docker
     output.print('Sending file...')
-    console.log(`Command to send the file: docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName}`)
-    await cp.execSync(`docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName}`)
+    console.log(`Command to send the file: docker run --rm --name=qa-icap-client -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} > output/docker.log 2> output/dockerErr.log`)
+    await cp.execSync(`docker run --rm --name=qa-icap-client -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v 2> output/docker.log`)
+    //await cp.execSync(`docker logs qa-icap-client > output/docker.log 2> output/dockerErr.log`) //docker logs -f qa-icap-client > ${logsName}
+    //await cp.execSync(`docker rm -f qa-icap-client`)
     output.print('File is sent...')
+    //let errLogsOutput = fs.readFileSync(`${errLogsName}`);
+    //if (errLogsOutput.toString().length > 0) {
+      //  assert.fail(errLogsOutput)
+    //}
+    //console.log('errLogsOutput: '+errLogsOutput)
     // read logs from file
     let logsOutput = fs.readFileSync(`${logsName}`);
     // get file id from logs
