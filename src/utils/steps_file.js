@@ -142,15 +142,21 @@ module.exports = function() {
       this.wait(5)
   },
 
-  sendFileICAP: async function (fileName, inputDir, outputDir) {
-    const inputPath = `${process.cwd()}/${inputDir}`
-    const outputPath = `${process.cwd()}/${outputDir}`
-    const logsName = `${outputDir}dockerLogs.log`
+  sendFileICAP: async function (fileName) {
+    const cp = require('child_process')
+    const fs = require('fs')
+    const path = require('path');
+    //const inputDir = 'src/data/input/'
+    const inputDir = path.join('src', 'data', 'input');
+    //const outputDir = 'output/downloads/'
+    const outputDir = path.join('output', 'downloads');
+    const inputPath = path.join(process.cwd(), inputDir)
+    const outputPath =  path.join(process.cwd(), outputDir)
+    const logsName = path.join('output', 'dockerLogs.log');
+    console.log(`inputDir: ${inputDir}, outputDir: ${outputDir}, inputPath: ${inputPath}, outputPath: ${outputPath}, logsName: ${logsName}`)
     const icapClient = 'icap-client-main.uksouth.cloudapp.azure.com'
     // use NodeJS child process to run a bash command in sync way
     // create a file for logs
-    const cp = require('child_process')
-    const fs = require('fs')
     await I.cleanupFile(`${logsName}`);
     await I.createFile(`${logsName}`)
     // run icap client in docker

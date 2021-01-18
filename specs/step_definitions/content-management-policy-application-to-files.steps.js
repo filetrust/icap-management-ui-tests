@@ -1,14 +1,15 @@
 const assert = require('assert').strict;
-const fs = require('fs')
+const fs = require('fs');
+const path = require('path');
 const { I, icapProxyPage, policyPage, requesthistoryPage } = inject();
 let isLocal;
 let fileId;
 //isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
-const inputDir = 'src/data/input/'
-const outputDir = 'output/downloads/'
 
 Given('I remove the {string} file downloaded before if it exists', (file) => {
-    I.cleanupFile(`${outputDir}${file.trim()}`);
+    const downloadedFile = path.join('output', 'downloads', file);
+    console.log(`downloadedFile: ${downloadedFile}`)
+    I.cleanupFile(downloadedFile);
 });
 
 Given('I am logged into the portal', () => {
@@ -26,7 +27,7 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
 
 When('I process file {string} file {string} through the icap server', async (fileType, file) => {
     if (isLocal) {
-        fileId = await I.sendFileICAP(file, inputDir, outputDir)
+        fileId = await I.sendFileICAP(file)
         await I.say(`I sent a file and received ${fileId}`);
     } else {
         I.onIcapProxyPage()
@@ -37,10 +38,14 @@ When('I process file {string} file {string} through the icap server', async (fil
 Then('The {string} with file type {string} processing outcome is as expected {string} and {string}', async (file, fileExtension, fileOutcome, outcomeValue) => {
     if (isLocal) {
         // verify file and content
+        const outputDir = path.join('output', 'downloads');
         I.amInPath(outputDir)
         I.seeFile(file)
-        const outputFile = fs.readFileSync(`${outputDir}${file.trim()}`, 'base64');
-        const inputFile = fs.readFileSync(`${inputDir}${file.trim()}`, 'base64');
+        // const outputPath = path.join('output', 'downloads', file);
+        // const inputPath = path.join('src', 'data', 'input', file);
+        // const outputFile = fs.readFileSync(outputPath, 'base64');
+        // const inputFile = fs.readFileSync(inputPath, 'base64');
+        // console.log(`length i: ${inputFile.length}, o: ${outputFile.length}`)
         //TODO: how to improve - could we add the expected file? is it better to check results in UI detail view? 
         //assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
         //assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same')
