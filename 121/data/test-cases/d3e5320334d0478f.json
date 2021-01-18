@@ -1,0 +1,417 @@
+{
+  "uid" : "d3e5320334d0478f",
+  "name" : "Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "historyId" : "25a1363023ccf102a82a492ed9872f42",
+  "time" : {
+    "start" : 1610957895431,
+    "stop" : 1610957927274,
+    "duration" : 31843
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+  "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+    "statusTrace" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+    "steps" : [ {
+      "name" : "Given I remove the 'issues.docx' file downloaded before if it exists ",
+      "time" : {
+        "start" : 1610957911156,
+        "stop" : 1610957911157,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I cleanup file \"output/downloads/issues.docx\"",
+        "time" : {
+          "start" : 1610957911156,
+          "stop" : 1610957911156,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"InternalHyperlinks\", \"sanitise\"",
+      "time" : {
+        "start" : 1610957911157,
+        "stop" : 1610957911161,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordInternalHyperlinkssanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1610957911157,
+          "stop" : 1610957911161,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'word' with 'InternalHyperlinks' set to 'sanitise' ",
+      "time" : {
+        "start" : 1610957911161,
+        "stop" : 1610957911173,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610957911161,
+          "stop" : 1610957911163,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610957911163,
+          "stop" : 1610957911165,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 5",
+        "time" : {
+          "start" : 1610957911168,
+          "stop" : 1610957911173,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: onIcapProxyPage ",
+      "time" : {
+        "start" : 1610957911173,
+        "stop" : 1610957921328,
+        "duration" : 10155
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://engineering.glasswallsolutions.com.glasswall-icap.com/docs/products/cloud-sdk/sample-files/\"",
+        "time" : {
+          "start" : 1610957911173,
+          "stop" : 1610957916326,
+          "duration" : 5153
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1610957916326,
+          "stop" : 1610957921328,
+          "duration" : 5002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "icapProxyPage: downloadFile \"word\"",
+      "time" : {
+        "start" : 1610957921328,
+        "stop" : 1610957923362,
+        "duration" : 2034
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1610957921328,
+          "stop" : 1610957921329,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//a[@href=\"https://gw-demo-sample-files-eu1.s3-eu-west-1.amazonaws.com.glasswall-icap.com/MacroRunCalculator.docm\"]\"",
+        "time" : {
+          "start" : 1610957921330,
+          "stop" : 1610957923362,
+          "duration" : 2032
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: checkFileInFileDropUrl \"output/downloads/issues.docx\"",
+      "time" : {
+        "start" : 1610957923362,
+        "stop" : 1610957927273,
+        "duration" : 3911
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"https://file-drop.co.uk/\"",
+        "time" : {
+          "start" : 1610957923362,
+          "stop" : 1610957927272,
+          "duration" : 3910
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I: uploadFile \"output/downloads/issues.docx\"",
+      "time" : {
+        "start" : 1610957927273,
+        "stop" : 1610957927274,
+        "duration" : 1
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"output/downloads/issues.docx\"",
+        "time" : {
+          "start" : 1610957927273,
+          "stop" : 1610957927273,
+          "duration" : 0
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system\n                    at Puppeteer.attachFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1299:13)\n                    at Step.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:66:47)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/actor.js:117:23",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "785e45e00924d20d",
+      "name" : "Last Seen Screenshot",
+      "source" : "785e45e00924d20d.png",
+      "type" : "image/png",
+      "size" : 349314
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 18,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "Content Management policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "3c818bed66ec60fe",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/120//#testresult/3c818bed66ec60fe",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+        "time" : {
+          "start" : 1610707136504,
+          "stop" : 1610707167997,
+          "duration" : 31493
+        }
+      }, {
+        "uid" : "aa5d1b559495c555",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/119//#testresult/aa5d1b559495c555",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+        "time" : {
+          "start" : 1610654230910,
+          "stop" : 1610654262123,
+          "duration" : 31213
+        }
+      }, {
+        "uid" : "d95b973f8ef48c98",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/118//#testresult/d95b973f8ef48c98",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+        "time" : {
+          "start" : 1610648326633,
+          "stop" : 1610648356961,
+          "duration" : 30328
+        }
+      }, {
+        "uid" : "2190ecc58cba8ee4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/2190ecc58cba8ee4",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+        "time" : {
+          "start" : 1610633329161,
+          "stop" : 1610633362407,
+          "duration" : 33246
+        }
+      }, {
+        "uid" : "f0222683eb2b7db2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/f0222683eb2b7db2",
+        "status" : "failed",
+        "statusDetails" : "File at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx can not be found on local system",
+        "time" : {
+          "start" : 1610624576074,
+          "stop" : 1610624607261,
+          "duration" : 31187
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "d3e5320334d0478f.json",
+  "parameterValues" : [ ]
+}
