@@ -3,14 +3,16 @@ const homePage = require("../pages/home.page.js");
 const loginPage = require("../pages/login.page.js");
 const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
+const { output } = require("codeceptjs");
+const I = actor();
 
 
 module.exports = function() {
   return actor({
     onLoginPage: function () {
         //this.amOnPage('http://localhost:8080/')
-      this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com/`)
+      //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
+      this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
   },
 
   loginNoPwd: function () {
@@ -140,19 +142,31 @@ module.exports = function() {
       this.wait(5)
   },
 
-  sendFileICAP: function (fileName, icapDir, testsDir, inputDir, outputDir) {
-    const inputPath = `${process.cwd()}/${inputDir}`
-    const outputPath = `${process.cwd()}/${outputDir}`
-    const logsName = 'dockerLogs.log'
+  sendFileICAP: async function (fileName) {
+    const cp = require('child_process')
+    const fs = require('fs')
+    const path = require('path');
+    //const inputDir = 'src/data/input/'
+    const inputDir = path.join('src', 'data', 'input');
+    //const outputDir = 'output/downloads/'
+    const outputDir = path.join('output', 'downloads');
+    const inputPath = path.join(process.cwd(), inputDir)
+    const outputPath =  path.join(process.cwd(), outputDir)
+    const logsName = path.join('output', 'dockerLogs.log');
+    console.log(`inputDir: ${inputDir}, outputDir: ${outputDir}, inputPath: ${inputPath}, outputPath: ${outputPath}, logsName: ${logsName}`)
+    const icapClient = 'icap-client-main.uksouth.cloudapp.azure.com'
     // use NodeJS child process to run a bash command in sync way
     // create a file for logs
-    require('child_process').execSync(`cd ${icapDir} && rm -f {logsName} && touch -a ${logsName} && cd ${testsDir}`)
+    await I.cleanupFile(`${logsName}`);
+    await I.createFile(`${logsName}`)
     // run icap client in docker
-    require('child_process').execSync(`cd ${icapDir} && docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-qa-main.uksouth.cloudapp.azure.com -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName} && cd ${testsDir}`)
+    output.print('Sending file...')
+    await cp.execSync(`docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName}`)
+    output.print('File is sent...')
     // read logs from file
-    let output = fs.readFileSync(`${icapDir}/${logsName}`);
+    let logsOutput = fs.readFileSync(`${logsName}`);
     // get file id from logs
-    let fileId = output
+    let fileId = logsOutput
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
         .split("\n")[0];

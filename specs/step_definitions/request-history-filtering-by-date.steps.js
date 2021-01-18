@@ -46,3 +46,20 @@ When('I select a custom time of {string}', async (datetimeFrom) => {
 Then('I am unable to select {string}', async (datetimeTo) => {
     await requesthistoryPage.unableSetTimeTo(datetimeTo)
 });
+
+Then('the request log is sorted from newest timestamp to oldest timestamp', async () => {
+    await requesthistoryPage.verifyTimestampArrow(true)
+    await I.checkRowsTimestamp(false)
+});
+
+When('I click the arrow next to timestamp', async () => {
+    await requesthistoryPage.clickOnTimestampArrow()
+});
+
+Then('the arrow will invert', async () => {
+    await requesthistoryPage.verifyTimestampArrow(false)
+});
+
+Then('the transaction log will be sorted from oldest timestamp to newest timestamp', async () => {
+    await I.checkRowsTimestamp(true)
+});

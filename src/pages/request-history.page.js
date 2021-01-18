@@ -38,6 +38,7 @@ module.exports = {
         nextPage: "",
         lastPage: "",
         fileDetailClose: `[data-test-id="buttonClose"]`,
+        sortTimestamp: "svg.MuiTableSortLabel-icon",
     },
     table: {
         fileTableBody1: `th[class*='MuiTableCell-root MuiTableCell-body']`,
@@ -450,12 +451,33 @@ module.exports = {
         }
     },
 
+    async isDataDisplayedByFileId(range, col, fileId, check, isFailIfNoData) {
+        try {
+            const noData = await this.isDataReturned()
+            if (noData) {
+                if (isFailIfNoData) {
+                    assert.fail(noData)
+                }
+                I.say(noData)
+            } else {
+                I.say("Data is available")
+                await check(range, col, fileId)
+            }
+        } catch (err) {
+            assert.fail(err);
+        }
+    },
+
     async isDataInRange(range, col) {
         await this.isDataDisplayed(range, col, I.checkIfReturnedFilesInDateRange);
     },
 
-    async checkRows(val, col, isFailIfNoData) {
-        await this.isDataDisplayed(val, col, I.checkRowsValue, isFailIfNoData);
+    async checkRows(val, col) {
+        await this.isDataDisplayed(val, col, I.checkRowsValue);
+    },
+
+    async checkRowByFileId(val, col, fileId, isFailIfNoData) {
+        await this.isDataDisplayedByFileId(val, col, fileId, I.checkRowValueByFileId, isFailIfNoData);
     },
 
     /*
@@ -561,11 +583,18 @@ module.exports = {
         I.seeInField(row, res[1]);
     },
 
-    async checkFileTypeValues(filteredFile, isFailIfNoData) {
-        await this.checkRows(filteredFile, 3, isFailIfNoData)
+    async checkFileTypeValues(filteredFile) {
+        await this.checkRows(filteredFile, 3)
     },
-    async checkFileOutcomeValues(filteredFile, isFailIfNoData) {
-        await this.checkRows(filteredFile, 4, isFailIfNoData);
+    async checkFileOutcomeValues(filteredFile) {
+        await this.checkRows(filteredFile, 4);
+    },
+
+    async checkFileTypeValueByFileId(filteredFile, fileId, isFailIfNoData) {
+        await this.checkRowByFileId(filteredFile, 3, fileId, isFailIfNoData)
+    },
+    async checkFileOutcomeValueByFileId(filteredFile, fileId, isFailIfNoData) {
+        await this.checkRowByFileId(filteredFile, 4, fileId, isFailIfNoData);
     },
 
     applyMultipleFilters(riskFilter, typeFilter) {
@@ -737,12 +766,22 @@ module.exports = {
         }
     },
 
-    cleanupFile(file) {
-        try {
-            fs.unlinkSync(`${file}`)
-            I.say(`Remove downloaded file - ${file}`);
-        } catch (error) {
-            console.error(error);
+    async clickOnTimestampArrow() {
+        const element = this.buttons.sortTimestamp;
+        await I.clickElement(element);
+    },
+
+    async verifyTimestampArrow(isDecimal) {
+        const el = this.buttons.sortTimestamp;
+        const classes = await I.grabAttributeFrom(el, 'class');
+        let logic;
+        if (isDecimal) {
+            logic = (classes.includes('MuiTableSortLabel-iconDirectionDesc') && !classes.includes('MuiTableSortLabel-iconDirectionAsc'))
+        } else {
+            logic = (classes.includes('MuiTableSortLabel-iconDirectionAsc') && !classes.includes('MuiTableSortLabel-iconDirectionDesc'))
+        }
+        if (!logic) {
+            assert.fail('Reverse timestamp arrow is displayed')
         }
     }
 };

@@ -159,6 +159,79 @@ class MyHelper extends Helper {
         }
     }
 
+    parseItemTimestamp(timestamp, isSeconds) {
+        // parse the item time
+        let date = timestamp.split(',')[0]
+        let time = timestamp.split(',')[1].trimStart()
+        let dayPart
+        if (!isSeconds) {
+            time = timestamp.split(',')[1].trimStart()
+            dayPart= time.split(' ')[1]
+            time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
+        }
+        time = this.timeConversionSlicker(time)
+        let itemDate = `${date} ${time}`
+        itemDate = new Date(itemDate).toISOString()
+        return itemDate
+    }
+
+    async checkRowsTimestamp(isReverse) {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
+        try {
+            let rowCount = await page.$$eval(tableRows, rows => rows.length);
+            let n = 0;
+            let currentText;
+            let previousText;
+            let currentTimestamp;
+            let previousTimestamp;
+            for (let i = 0; i < rowCount; i++) {
+                currentText = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(1)`, (e) => e.innerText);
+                currentTimestamp = this.parseItemTimestamp(currentText, true)
+                if (i != 0) {
+                    previousText = await page.$eval(`${tableRows}:nth-child(${i}) th:nth-child(1)`, (e) => e.innerText);
+                    previousTimestamp = this.parseItemTimestamp(previousText, true)
+                }
+                if (i !== 0) {
+                    let sortOrder
+                    if (isReverse) {
+                        sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
+                    } else {
+                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp)
+                    }
+                    if (sortOrder) {
+                        n = n + 1;
+                    } else {
+                        assert.fail('The timestamp sorting is wrong. Upper: ' + previousText + ', bottom: ' + currentText);
+                    }
+                }
+            }
+            console.log(`The timestamp sorting well`);
+        } catch (err) {
+            assert.fail(err);
+        }
+    }
+
+    async checkRowValueByFileId(val, col, fileId) {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        try {
+            const [elm] = await page.$x(`//th[contains(text(),'${fileId}')]/../th[position()=${col}]`);
+            if(!elm) {
+                assert.fail(`File with ${fileId} file id is not displayed`);
+            }
+            const text = await page.evaluate(name => name.innerText, elm);
+            if (this.compareThatEqual(text, val)) {
+                console.log(`The file has required data ${val}`);
+            } else {
+                assert.fail(`The file does not have required data ${val}`);
+            }
+        } catch (err) {
+            assert.fail(err);
+        }
+    }
+
     async getRowText(tr, col) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
@@ -256,18 +329,14 @@ class MyHelper extends Helper {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         const tableRows = `tbody[class*='MuiTableBody-root'] > tr`;
+        let n = 0;
         try {
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             for (let i = 0; i < rowCount; i++) {
                 // get item time
                 let timestamp = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
                 // parse the item time
-                let date = timestamp.split(',')[0]
-                let time = timestamp.split(',')[1].trimStart()
-                let dayPart = time.split(' ')[1]
-                time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
-                time = this.timeConversionSlicker(time)
-                let itemDate = `${date} ${time}`
+                let itemDate = this.parseItemTimestamp(timestamp, false)
                 // parse range time
                 let dateFrom = this.parseRange(range, 'from')
                 let dateTo = this.parseRange(range, 'to')
@@ -277,11 +346,12 @@ class MyHelper extends Helper {
                 itemDate = new Date(itemDate).toISOString()
                 // verify if item timestamp in period
                 if (moment(itemDate).isBetween(dateFrom, dateTo, undefined, [])) {
-                    output.print(`The result list shows required files ${timestamp} within the selected time: ${range}`);
+                    n = n + 1
                 } else {
                     assert.fail(`The result files ${timestamp} returned are not within the selected time: ${range}`);
                 }
             }
+            output.print(`The result list shows required files ${n} within the selected time: ${range}`);
         } catch (err) {
             assert.fail(err);
         }
@@ -289,6 +359,10 @@ class MyHelper extends Helper {
 
     compareThatEqual(word1, word2) {
         return word1.toString().toUpperCase() === word2.toString().toUpperCase();
+    }
+
+    compareThatLater(time1, time2) {
+        return Date.parse(time1) > Date.parse(time2);
     }
 
     checkFileIsDownloaded(file) {
@@ -338,6 +412,7 @@ class MyHelper extends Helper {
   async goToSharepoint(){
     
     const {username, password, pageUrl} = configObj;
+    console.log('configObj '+JSON.stringify(configObj))
     let cpass = new Cpass();
     const data  = await spauth.getAuth(pageUrl, {
       username: cpass.decode(username),
@@ -354,8 +429,35 @@ class MyHelper extends Helper {
   setHost(){
     let party = require('hostparty');
     party.add('3.249.61.168', ['saaspoc1.sharepoint.com','saaspoc1-my.sharepoint.com','ukc-word-edit.officeapps.live.com','ukc-excel.officeapps.live.com','ukc-powerpoint.officeapps.live.com']);
-}
+  }
 
+  cleanupFile(file) {
+    try {
+        const exists = fs.existsSync(file);
+        if (exists) {
+            fs.unlinkSync(file)
+            console.log(`Remove downloaded file - ${file}`);
+        } else {
+            console.log(`File was already removed - ${file}`);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
+
+  createFile(file) {
+    try {
+        const exists = fs.existsSync(file);
+        if (exists) {
+            console.log(`File exists - ${file}`);
+        } else {
+            fs.writeFileSync(file)
+            console.log(`File was created - ${file}`);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  }
 }
 
 module.exports = MyHelper;

@@ -6,10 +6,10 @@ module.exports = {
   confirmPublishButton: `button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`,
 
 
-  accept() {
-    within(this.root, function() {
+  async accept() {
+    await within(this.root, async function() {
       I.waitForElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`, 5)
-      I.clickElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`);
+      await I.clickElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`);
     });
   },
 
