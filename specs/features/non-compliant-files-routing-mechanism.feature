@@ -16,19 +16,17 @@ Feature: non-compliant-files-routing-mechanism
     Then I see the default set routing option for blocked files as ''
 
 
-  @prototype
+  @functional
   @TEST-158_159
-  @Fail-app
-  #Assert is commented
-  Scenario Outline: I can only update the non-compliant routes API URL with a valid one
+  Scenario Outline: I can update the non-compliant routes API URL with a valid one
+    Given I am on the draft adaptation Policy screen
+    And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I enter a valid URL '<url>' into the API URL box
     And I click save
-    Then the correct validation result is applied '<result>' is displayed
+    Then the current NCFS policy is updated with the new url '<url>'
     Examples:
-      | url                    | message |
-      | glasswallsolutions.com | success |
-      | invalidurl             | error   |
-
+      | url                                       |
+      | icap-client-qa.uksouth.cloudapp.azure.com |
 
   @functional
   @TEST-183
@@ -58,10 +56,10 @@ Feature: non-compliant-files-routing-mechanism
     When I download a non compliant file '<file>' through the icap server
     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
     Examples:
-      | blockedPolicyAction          | fileType | contentFlag   | flagType | file                  | fileOutcome |
-      | relay-glasswallBlockedFiles  | word     | EmbeddedFiles | disallow | issues.docx           | relayed     |
-      #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
-     
+      | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
+      | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
+  #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
+
   @functional
   @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied
@@ -71,5 +69,5 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                 | file                  | fileOutcome |
       | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     |
-      #| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
+#| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
 
