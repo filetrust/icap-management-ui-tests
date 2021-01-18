@@ -7,9 +7,7 @@ Feature: request-history-filtering-by-date
         Given I have navigated to the Request History page
 
     @functional
-    @smoke
     @TEST-167
-    @success
     Scenario Outline: I can filter the request log using the time interval
         When I open the date picker and select a '<timeInterval>'
         Then the date range is updated to be from '<datetimeFrom>' hrs earlier to '<datetimeTo>'
@@ -28,11 +26,11 @@ Feature: request-history-filtering-by-date
         And the files processed for the selected period are displayed
         Examples:
             | datetimeFrom       | datetimeTo          |
-            | 11/11/2020 0:21 AM | 11/11/2020 9:08 AM  |
-            | 11/11/2020 4:26 AM | 11/11/2020 16:26 PM |
-            | 25/10/2020 0:45 AM | 25/10/2020 0:45 AM  |
+            | 11/01/2021 0:56 AM | 12/01/2021 0:56 AM  |
+            | 18/01/2021 4:26 AM | 18/01/2021 16:26 PM |
+            | 25/10/2020 0:45 AM | 26/10/2020 0:45 AM  |
 
-
+    @functional
     @TEST-184
     Scenario Outline: I cannot filter the date range to a time greater than 24 hours
         When I select a custom time of '<datetimeFrom>'
@@ -41,11 +39,12 @@ Feature: request-history-filtering-by-date
             | datetimeFrom       | datetimeTo          |
             | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
+    @functional
     @TEST-242
     Scenario: The request log is sorted by timestamp, newest to oldest
         Then the request log is sorted from newest timestamp to oldest timestamp
 
-
+    @functional
     @TEST-243
     Scenario: I can change the sort of the request log by pressing the arrow next to timestamp
         When I click the arrow next to timestamp

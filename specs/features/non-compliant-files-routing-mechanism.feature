@@ -46,26 +46,26 @@ Feature: non-compliant-files-routing-mechanism
       | block-glasswallBlockedFiles | Block              |
 
 
-  @functional
-  @TEST-233
-  Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
-    Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
-    And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
-    When I download a non compliant file '<file>' through the icap server
-    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
-    Examples:
-      | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
-      | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
-  #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
+#   @functional
+#   @TEST-233
+#   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
+#     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
+#     And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
+#     When I download a non compliant file '<file>' through the icap server
+#     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
+#     Examples:
+#       | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
+#       | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
+#   #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
 
-  @functional
-  @TEST-234
-  Scenario Outline: A set routing policy for unprocessable files is correctly applied
-    Given I have set the routing option for unprocessable files to '<policyAction>'
-    When I submit a non supported or unprocessable file '<file>' through the icap server
-    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
-    Examples:
-      | policyAction                 | file                  | fileOutcome |
-      | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     |
-#| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
+#   @functional
+#   @TEST-234
+#   Scenario Outline: A set routing policy for unprocessable files is correctly applied
+#     Given I have set the routing option for unprocessable files to '<policyAction>'
+#     When I submit a non supported or unprocessable file '<file>' through the icap server
+#     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
+#     Examples:
+#       | policyAction                 | file                  | fileOutcome |
+#       | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     |
+# #| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
 

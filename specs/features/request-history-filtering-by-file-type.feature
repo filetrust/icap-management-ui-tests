@@ -5,9 +5,8 @@ Feature: request-history-filtering-by-file-type
     Background:
         Given I am logged into the ui
 
-    @success
+
     @functional
-    @demo
     @TEST-180
     Scenario Outline: filter the log by file type
         Given I have navigated to the Request History page
