@@ -17,7 +17,7 @@ Feature: Content Management Policy Editing
     Then the current policy is not updated
     Examples:
       | FileType   | ContentFlag | DraftFlagType | CurrentFlagType |
-      | powerpoint | Metadata    | sanitise      | disallow        |
+      | powerpoint | Metadata    | disallow     | sanitise        |
 
 
   @functional
@@ -61,7 +61,7 @@ Feature: Content Management Policy Editing
     And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I have updated the NCFS policy url with '<url>'
     And I am on the draft adaptation Policy screen
-    And I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
+    And I update the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
     Then the current policy is updated with the new settings '<FileType>', '<ContentFlag>', '<FlagType>', and '<url>'
     Examples:
       | FileType | ContentFlag    | FlagType | url                                       | CurrentFlagType | CurrentUrl       |

@@ -31,7 +31,7 @@ Given('the current policy for {string} is set to {string} and {string}', async (
 });
 
 When('I change the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
-    await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
+    await policyPage.setPolicyFlag(FileType, ContentFlag, FlagType);
 });
 
 When('I press the Cancel button', () => {
@@ -84,9 +84,9 @@ Then('The policy flag is set as {string} {string} and {string}', (FileType, Cont
 * T240
 * ***************************************************************
 */
-When('I save and publish', () => {
+When('I save and publish', async () => {
     policyPage.clickSaveChanges();
-    policyPage.publishPolicy();
+    await policyPage.publishPolicy();
 });
 
 Then('The current policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
@@ -110,13 +110,17 @@ Given('the current NCFS policy url is {string}', async (url) => {
     await policyPage.updateUrlIfNeeded(url);
 });
 
-Then('I have updated the NCFS policy url with {string}', async (url) => {
+When('I update the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
+    await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
+});
+
+
+When('I have updated the NCFS policy url with {string}', async (url) => {
     I.goToDraftNcfsPolicy();
     let id = randomId
     newUrl= url+id
     policyPage.enterTextInApiUrl(newUrl) ;
     I.wait(5)
-
 });
 
 Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', (FileType, ContentFlag, FlagType, url) => {

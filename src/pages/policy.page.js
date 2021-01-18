@@ -112,8 +112,8 @@ module.exports = {
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
     if (elPublish > 0) {
-      //I.waitForElement(element, 5)
-      I.wait(5)
+      I.waitForElement(element, 5)
+      //I.wait(5)
       await I.clickElement(element);
       await modal.accept()
     }
@@ -250,14 +250,14 @@ module.exports = {
           await this.publishPolicy()
         }
         I.waitForElement(flag, 5)
-        output.print('The flag is already selected')
+        output.print('The flag is selected as pre-condition')
       } else {
         I.waitForElement(flag, 5)
         await I.clickElement(flag);
         await I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
         I.waitForElement(flag, 5)
-        output.print('The flag is selected')
+        output.print('The new flag is selected')
       }
     } catch (e) {
       I.say('Unable to set policy flag')
