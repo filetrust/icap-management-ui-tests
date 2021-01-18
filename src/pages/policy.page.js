@@ -17,6 +17,7 @@ module.exports = {
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
     apiUrlInput: `div[class*='Input_Input__'] > input`,
+    policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`
   },
   modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
