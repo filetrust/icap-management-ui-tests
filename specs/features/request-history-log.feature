@@ -29,7 +29,7 @@ Feature: request-history-log
       | riskFilter | typeFilter | fileIdFilter | appliedFilters | filterValues |
       | Safe       | docx        |              | Safe_docx       | SAFE_docx     |
 
-  @success
+
   @functional
   @TEST-189
   Scenario Outline: I can remove individual filters
