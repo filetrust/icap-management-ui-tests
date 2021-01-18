@@ -1,0 +1,1192 @@
+{
+  "uid" : "fb5cd59db30a3e1",
+  "name" : "I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\",\"CurrentFlagType\":\"disallow\",\"CurrentUrl\":\"testPrecondition\"} @functional @TEST-241",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\",\"CurrentFlagType\":\"disallow\",\"CurrentUrl\":\"testPrecondition\"} @functional @TEST-241",
+  "historyId" : "50639b0821007ada71cbc395edb4eb7f",
+  "time" : {
+    "start" : 1610980472780,
+    "stop" : 1610980529563,
+    "duration" : 56783
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "",
+  "statusTrace" : "undefined",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1610980492010,
+        "stop" : 1610980494021,
+        "duration" : 2011
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1610980492010,
+          "stop" : 1610980494021,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickNcfsPolicy ",
+      "time" : {
+        "start" : 1610980494021,
+        "stop" : 1610980496050,
+        "duration" : 2029
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+        "time" : {
+          "start" : 1610980494021,
+          "stop" : 1610980496049,
+          "duration" : 2028
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: updateUrlIfNeeded \"testPrecondition\"",
+      "time" : {
+        "start" : 1610980496050,
+        "stop" : 1610980496069,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab value from \"div[class*='Input_Input__'] > input\"",
+        "time" : {
+          "start" : 1610980496050,
+          "stop" : 1610980496067,
+          "duration" : 17
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: enterTextInApiUrl \"testPrecondition\"",
+      "time" : {
+        "start" : 1610980496069,
+        "stop" : 1610980498359,
+        "duration" : 2290
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I fill field \"div[class*='Input_Input__'] > input\", \"testPrecondition\"",
+        "time" : {
+          "start" : 1610980496069,
+          "stop" : 1610980498359,
+          "duration" : 2290
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "API URL is changed to testPrecondition",
+        "time" : {
+          "start" : 1610980498359,
+          "stop" : 1610980498359,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1610980498359,
+        "stop" : 1610980500370,
+        "duration" : 2011
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1610980498359,
+          "stop" : 1610980500370,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1610980500370,
+        "stop" : 1610980502396,
+        "duration" : 2026
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1610980500370,
+          "stop" : 1610980502396,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"EmbeddedImages\", \"disallow\"",
+      "time" : {
+        "start" : 1610980502396,
+        "stop" : 1610980502400,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordEmbeddedImagesdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1610980502396,
+          "stop" : 1610980502400,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the current policy for 'word' is set to 'EmbeddedImages' and 'disallow' ",
+      "time" : {
+        "start" : 1610980502400,
+        "stop" : 1610980506515,
+        "duration" : 4115
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedImagesdisallow']\", 5",
+        "time" : {
+          "start" : 1610980502400,
+          "stop" : 1610980502403,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='wordEmbeddedImagesdisallow']\"",
+        "time" : {
+          "start" : 1610980502403,
+          "stop" : 1610980504500,
+          "duration" : 2097
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610980504500,
+          "stop" : 1610980506515,
+          "duration" : 2015
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610980506515,
+        "stop" : 1610980506519,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610980506515,
+          "stop" : 1610980506519,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1610980506519,
+          "stop" : 1610980506519,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the current policy for 'word' is set to 'EmbeddedImages' and 'disallow' ",
+      "time" : {
+        "start" : 1610980506519,
+        "stop" : 1610980508614,
+        "duration" : 2095
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1610980506519,
+          "stop" : 1610980506522,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610980506522,
+          "stop" : 1610980508611,
+          "duration" : 2089
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1610980508614,
+        "stop" : 1610980510646,
+        "duration" : 2032
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1610980508614,
+          "stop" : 1610980508617,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1610980508617,
+          "stop" : 1610980510643,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the current policy for 'word' is set to 'EmbeddedImages' and 'disallow' ",
+      "time" : {
+        "start" : 1610980510646,
+        "stop" : 1610980510650,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedImagesdisallow']\", 5",
+        "time" : {
+          "start" : 1610980510646,
+          "stop" : 1610980510650,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1610980510650,
+        "stop" : 1610980512658,
+        "duration" : 2008
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1610980510650,
+          "stop" : 1610980512658,
+          "duration" : 2008
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickNcfsPolicy ",
+      "time" : {
+        "start" : 1610980512658,
+        "stop" : 1610980514681,
+        "duration" : 2023
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+        "time" : {
+          "start" : 1610980512658,
+          "stop" : 1610980514680,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: updateUrlIfNeeded \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+      "time" : {
+        "start" : 1610980514681,
+        "stop" : 1610980514699,
+        "duration" : 18
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab value from \"div[class*='Input_Input__'] > input\"",
+        "time" : {
+          "start" : 1610980514681,
+          "stop" : 1610980514697,
+          "duration" : 16
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: enterTextInApiUrl \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+      "time" : {
+        "start" : 1610980514699,
+        "stop" : 1610980517322,
+        "duration" : 2623
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I fill field \"div[class*='Input_Input__'] > input\", \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1610980514699,
+          "stop" : 1610980517322,
+          "duration" : 2623
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "API URL is changed to icap-client-qa.uksouth.cloudapp.azure.com",
+        "time" : {
+          "start" : 1610980517322,
+          "stop" : 1610980517322,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1610980517322,
+        "stop" : 1610980519347,
+        "duration" : 2025
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1610980517322,
+          "stop" : 1610980519347,
+          "duration" : 2025
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1610980519347,
+        "stop" : 1610980521364,
+        "duration" : 2017
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1610980519347,
+          "stop" : 1610980521364,
+          "duration" : 2017
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setPolicyFlag \"word\", \"EmbeddedImages\", \"sanitise\"",
+      "time" : {
+        "start" : 1610980521364,
+        "stop" : 1610980521371,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordEmbeddedImagessanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1610980521364,
+          "stop" : 1610980521367,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I change the contentFlag for 'word' to 'EmbeddedImages' and 'sanitise' ",
+      "time" : {
+        "start" : 1610980521371,
+        "stop" : 1610980523474,
+        "duration" : 2103
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='wordEmbeddedImagessanitise']\", 5",
+        "time" : {
+          "start" : 1610980521371,
+          "stop" : 1610980521374,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='wordEmbeddedImagessanitise']\"",
+        "time" : {
+          "start" : 1610980521374,
+          "stop" : 1610980523474,
+          "duration" : 2100
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickSaveChanges ",
+      "time" : {
+        "start" : 1610980523474,
+        "stop" : 1610980525491,
+        "duration" : 2017
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1610980523474,
+          "stop" : 1610980525491,
+          "duration" : 2017
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1610980525491,
+        "stop" : 1610980525494,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1610980525491,
+          "stop" : 1610980525494,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1610980525494,
+        "stop" : 1610980527526,
+        "duration" : 2032
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1610980525494,
+          "stop" : 1610980527526,
+          "duration" : 2032
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickNcfsPolicy ",
+      "time" : {
+        "start" : 1610980527526,
+        "stop" : 1610980529540,
+        "duration" : 2014
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+        "time" : {
+          "start" : 1610980527526,
+          "stop" : 1610980529540,
+          "duration" : 2014
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the current policy is updated with the new settings 'word', 'EmbeddedImages', 'sanitise', and 'icap-client-qa.uksouth.cloudapp.azure.com' ",
+      "time" : {
+        "start" : 1610980529540,
+        "stop" : 1610980529562,
+        "duration" : 22
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see in field \"div[class*='Input_Input__'] > input\", \"icap-client-qa.uksouth.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1610980529540,
+          "stop" : 1610980529562,
+          "duration" : 22
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "1",
+      "time" : {
+        "start" : 1610980529563,
+        "stop" : 1610980529563,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+      "time" : {
+        "start" : 1610980529563,
+        "stop" : 1610980529658,
+        "duration" : 95
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3339aae45587241a",
+        "name" : "Last Seen Screenshot",
+        "source" : "3339aae45587241a.png",
+        "type" : "image/png",
+        "size" : 72564
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 60,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-241"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can update and publish both Adaptation and NCFS policies at the same time {\"FileType\":\"word\",\"ContentFlag\":\"EmbeddedImages\",\"FlagType\":\"sanitise\",\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\",\"CurrentFlagType\":\"disallow\",\"CurrentUrl\":\"testPrecondition\"} @functional @TEST-241"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 20,
+        "broken" : 0,
+        "skipped" : 5,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 26
+      },
+      "items" : [ {
+        "uid" : "fec3364ff0190c30",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/121//#testresult/fec3364ff0190c30",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610958099999,
+          "stop" : 1610958149605,
+          "duration" : 49606
+        }
+      }, {
+        "uid" : "c4744f19db8acecc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/120//#testresult/c4744f19db8acecc",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610707340507,
+          "stop" : 1610707394399,
+          "duration" : 53892
+        }
+      }, {
+        "uid" : "441addeeeb98711c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/119//#testresult/441addeeeb98711c",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610654424459,
+          "stop" : 1610654480477,
+          "duration" : 56018
+        }
+      }, {
+        "uid" : "53616da1936c035f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/118//#testresult/53616da1936c035f",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610648524109,
+          "stop" : 1610648578945,
+          "duration" : 54836
+        }
+      }, {
+        "uid" : "e100fb39dc8cef4b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/e100fb39dc8cef4b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610633519682,
+          "stop" : 1610633584494,
+          "duration" : 64812
+        }
+      }, {
+        "uid" : "6c2b5ee7dced972",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/116//#testresult/6c2b5ee7dced972",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610628866305,
+          "stop" : 1610628920022,
+          "duration" : 53717
+        }
+      }, {
+        "uid" : "73dcd76f0dddc8c4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/73dcd76f0dddc8c4",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610624777863,
+          "stop" : 1610624834829,
+          "duration" : 56966
+        }
+      }, {
+        "uid" : "b6484b7acd230f14",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/b6484b7acd230f14",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610555866632,
+          "stop" : 1610555920397,
+          "duration" : 53765
+        }
+      }, {
+        "uid" : "9e011be11d23bdda",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/9e011be11d23bdda",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610549031948,
+          "stop" : 1610549087784,
+          "duration" : 55836
+        }
+      }, {
+        "uid" : "cd8d67405d32d3d8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/cd8d67405d32d3d8",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610544692768,
+          "stop" : 1610544750072,
+          "duration" : 57304
+        }
+      }, {
+        "uid" : "dd387d4b575e9809",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/dd387d4b575e9809",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610538586563,
+          "stop" : 1610538643341,
+          "duration" : 56778
+        }
+      }, {
+        "uid" : "d7eff225d5d82321",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/d7eff225d5d82321",
+        "status" : "failed",
+        "statusDetails" : "Element \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403296002,
+          "stop" : 1610403314374,
+          "duration" : 18372
+        }
+      }, {
+        "uid" : "80a7bb0e58dfd852",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/80a7bb0e58dfd852",
+        "status" : "failed",
+        "statusDetails" : "Element \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402393424,
+          "stop" : 1610402411721,
+          "duration" : 18297
+        }
+      }, {
+        "uid" : "b2a04589209c14a0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/b2a04589209c14a0",
+        "status" : "failed",
+        "statusDetails" : "Element \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316370127,
+          "stop" : 1610316389363,
+          "duration" : 19236
+        }
+      }, {
+        "uid" : "e2f0bd70f8aca8fe",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/e2f0bd70f8aca8fe",
+        "status" : "failed",
+        "statusDetails" : "Element \"div[class*='Input_Input__'] > input\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119095407,
+          "stop" : 1610119114684,
+          "duration" : 19277
+        }
+      }, {
+        "uid" : "626becb151a21fa4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/626becb151a21fa4",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1609890859108,
+          "stop" : 1609890915001,
+          "duration" : 55893
+        }
+      }, {
+        "uid" : "d756f6f062ffef5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/d756f6f062ffef5",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='wordEmbeddedImagessanitise']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1609842681025,
+          "stop" : 1609842738642,
+          "duration" : 57617
+        }
+      }, {
+        "uid" : "ddc4ca44aac015d8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/ddc4ca44aac015d8",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1609842349426,
+          "stop" : 1609842399187,
+          "duration" : 49761
+        }
+      }, {
+        "uid" : "878d7c76fdea539",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/878d7c76fdea539",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1609836561518,
+          "stop" : 1609836611206,
+          "duration" : 49688
+        }
+      }, {
+        "uid" : "3ea659ec9973dd74",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/102//#testresult/3ea659ec9973dd74",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1609757186804,
+          "stop" : 1609757186804,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@TEST-241", "@functional" ]
+  },
+  "source" : "fb5cd59db30a3e1.json",
+  "parameterValues" : [ ]
+}
