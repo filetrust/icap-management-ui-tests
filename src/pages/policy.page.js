@@ -16,7 +16,7 @@ module.exports = {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
-    validateApiUrlInput: `div[class*='Input_Input__'] > input`,
+    apiUrlInput: `div[class*='Input_Input__'] > input`,
   },
   modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
@@ -112,7 +112,8 @@ module.exports = {
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
     if (elPublish > 0) {
-      I.waitForElement(element, 5)
+      //I.waitForElement(element, 5)
+      I.wait(5)
       await I.clickElement(element);
       await modal.accept()
     }
@@ -416,11 +417,13 @@ module.exports = {
   },
 
   enterTextInApiUrl(text) {
-    I.fillField(this.fields.validateApiUrlInput, text)
+    I.fillField(this.fields.apiUrlInput, text)
+    I.wait(3)
+    I.click(this.buttons.saveChanges)
   },
 
   async updateUrlIfNeeded(text) {
-    const elText = await I.grabValueFrom(this.fields.validateApiUrlInput)
+    const elText = await I.grabValueFrom(this.fields.apiUrlInput)
     let message;
     if (elText !== text) {
       this.enterTextInApiUrl(text);
