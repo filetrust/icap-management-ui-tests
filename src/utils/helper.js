@@ -451,7 +451,7 @@ class MyHelper extends Helper {
         if (exists) {
             console.log(`File exists - ${file}`);
         } else {
-            fs.writeFileSync(file)
+            fs.writeFileSync(file, '')
             console.log(`File was created - ${file}`);
         }
     } catch (error) {
