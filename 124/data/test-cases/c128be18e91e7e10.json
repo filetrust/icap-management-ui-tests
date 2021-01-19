@@ -1,0 +1,800 @@
+{
+  "uid" : "c128be18e91e7e10",
+  "name" : "I can filter the request log using a custom range {\"datetimeFrom\":\"25/10/2020 0:45 AM\",\"datetimeTo\":\"25/10/2020 0:45 AM\"} @functional @TEST-235",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.I can filter the request log using a custom range {\"datetimeFrom\":\"25/10/2020 0:45 AM\",\"datetimeTo\":\"25/10/2020 0:45 AM\"} @functional @TEST-235",
+  "historyId" : "7c25eaa261926cc91bc587971e3df687",
+  "time" : {
+    "start" : 1611054650179,
+    "stop" : 1611054689632,
+    "duration" : 39453
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "requesthistoryPage: openDatePicker ",
+      "time" : {
+        "start" : 1611054666387,
+        "stop" : 1611054668458,
+        "duration" : 2071
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1611054666387,
+          "stop" : 1611054668458,
+          "duration" : 2071
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: setTimePeriod \"25/10/2020 0:45 AM\", \"25/10/2020 0:45 AM\"",
+      "time" : {
+        "start" : 1611054668458,
+        "stop" : 1611054670470,
+        "duration" : 2012
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \".ranges li:nth-child(4)\"",
+        "time" : {
+          "start" : 1611054668458,
+          "stop" : 1611054670470,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: selectCustomPriod ",
+      "time" : {
+        "start" : 1611054670470,
+        "stop" : 1611054670474,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"div[class*='drp-calendar left']\"",
+        "time" : {
+          "start" : 1611054670470,
+          "stop" : 1611054670473,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: selectMonthYear \"OCT\", \"2020\"",
+      "time" : {
+        "start" : 1611054670474,
+        "stop" : 1611054670477,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1611054670474,
+          "stop" : 1611054670477,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When I select a valid '25/10/2020 0:45 AM' and '25/10/2020 0:45 AM' ",
+      "time" : {
+        "start" : 1611054670477,
+        "stop" : 1611054681116,
+        "duration" : 10639
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1611054670477,
+          "stop" : 1611054670480,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I click \"div[class*='drp-calendar left'] th.prev\"",
+        "time" : {
+          "start" : 1611054670480,
+          "stop" : 1611054672620,
+          "duration" : 2140
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1611054672620,
+          "stop" : 1611054672626,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I click \"div[class*='drp-calendar left'] th.prev\"",
+        "time" : {
+          "start" : 1611054672626,
+          "stop" : 1611054674771,
+          "duration" : 2145
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1611054674771,
+          "stop" : 1611054674775,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar left')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '25')]}",
+        "time" : {
+          "start" : 1611054674777,
+          "stop" : 1611054676806,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .hourselect\", \"0\"",
+        "time" : {
+          "start" : 1611054676806,
+          "stop" : 1611054678964,
+          "duration" : 2158
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .minuteselect\", \"45\"",
+        "time" : {
+          "start" : 1611054678964,
+          "stop" : 1611054681116,
+          "duration" : 2152
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 8,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: selectMonthYear \"OCT\", \"2020\"",
+      "time" : {
+        "start" : 1611054681116,
+        "stop" : 1611054681120,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1611054681116,
+          "stop" : 1611054681120,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "When I select a valid '25/10/2020 0:45 AM' and '25/10/2020 0:45 AM' ",
+      "time" : {
+        "start" : 1611054681120,
+        "stop" : 1611054689616,
+        "duration" : 8496
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1611054681120,
+          "stop" : 1611054681125,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar left')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '25')]}",
+        "time" : {
+          "start" : 1611054681139,
+          "stop" : 1611054683176,
+          "duration" : 2037
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .hourselect\", \"0\"",
+        "time" : {
+          "start" : 1611054683176,
+          "stop" : 1611054685325,
+          "duration" : 2149
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .minuteselect\", \"45\"",
+        "time" : {
+          "start" : 1611054685325,
+          "stop" : 1611054687472,
+          "duration" : 2147
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I click \"button[class*='applyBtn']\"",
+        "time" : {
+          "start" : 1611054687472,
+          "stop" : 1611054689616,
+          "duration" : 2144
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 5,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: isCustomRangeApplied \"25/10/2020 0:45 AM\", \"25/10/2020 0:45 AM\"",
+      "time" : {
+        "start" : 1611054689616,
+        "stop" : 1611054689620,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1611054689616,
+          "stop" : 1611054689620,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 1,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And the files processed for the selected period are displayed ",
+      "time" : {
+        "start" : 1611054689620,
+        "stop" : 1611054689623,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1611054689620,
+          "stop" : 1611054689623,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "The required range is applied 25/10/2020 0:45 AM - 25/10/2020 0:45 AM as selected 25/10/2020 0:45 AM - 25/10/2020 0:45 AM",
+        "time" : {
+          "start" : 1611054689623,
+          "stop" : 1611054689623,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "requesthistoryPage: isDataReturned ",
+      "time" : {
+        "start" : 1611054689623,
+        "stop" : 1611054689628,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+        "time" : {
+          "start" : 1611054689623,
+          "stop" : 1611054689626,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1611054689626,
+          "stop" : 1611054689628,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0
+    }, {
+      "name" : "And the files processed for the selected period are displayed ",
+      "time" : {
+        "start" : 1611054689628,
+        "stop" : 1611054689632,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1611054689628,
+          "stop" : 1611054689631,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      }, {
+        "name" : "No Transaction Data Found",
+        "time" : {
+          "start" : 1611054689632,
+          "stop" : 1611054689632,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "shouldDisplayMessage" : false,
+        "hasContent" : false,
+        "stepsCount" : 0,
+        "attachmentsCount" : 0
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "shouldDisplayMessage" : false,
+      "hasContent" : true,
+      "stepsCount" : 2,
+      "attachmentsCount" : 0
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "shouldDisplayMessage" : false,
+    "hasContent" : true,
+    "stepsCount" : 36,
+    "attachmentsCount" : 0
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-235"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can filter the request log using a custom range {\"datetimeFrom\":\"25/10/2020 0:45 AM\",\"datetimeTo\":\"25/10/2020 0:45 AM\"} @functional @TEST-235"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 14,
+        "passed" : 26,
+        "unknown" : 0,
+        "total" : 40
+      },
+      "items" : [ {
+        "uid" : "a2a79720f32b8527",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/123//#testresult/a2a79720f32b8527",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611053646917,
+          "stop" : 1611053683590,
+          "duration" : 36673
+        }
+      }, {
+        "uid" : "3536233a69a4315a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/122//#testresult/3536233a69a4315a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610980381570,
+          "stop" : 1610980416162,
+          "duration" : 34592
+        }
+      }, {
+        "uid" : "c144265b2ae0693e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/121//#testresult/c144265b2ae0693e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610958006839,
+          "stop" : 1610958040067,
+          "duration" : 33228
+        }
+      }, {
+        "uid" : "c2407114749e78df",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/120//#testresult/c2407114749e78df",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610707243695,
+          "stop" : 1610707279236,
+          "duration" : 35541
+        }
+      }, {
+        "uid" : "731038155d07497c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/119//#testresult/731038155d07497c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610654338850,
+          "stop" : 1610654376680,
+          "duration" : 37830
+        }
+      }, {
+        "uid" : "d168ad3f9046c6c6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/118//#testresult/d168ad3f9046c6c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610648436593,
+          "stop" : 1610648478152,
+          "duration" : 41559
+        }
+      }, {
+        "uid" : "57303a3a588f25",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/57303a3a588f25",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610633437223,
+          "stop" : 1610633471246,
+          "duration" : 34023
+        }
+      }, {
+        "uid" : "9766d67b28063249",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/116//#testresult/9766d67b28063249",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610628772202,
+          "stop" : 1610628805295,
+          "duration" : 33093
+        }
+      }, {
+        "uid" : "f3a199d72849d48",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/f3a199d72849d48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610624692005,
+          "stop" : 1610624726142,
+          "duration" : 34137
+        }
+      }, {
+        "uid" : "ee53abbb13593125",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/ee53abbb13593125",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610555769081,
+          "stop" : 1610555802412,
+          "duration" : 33331
+        }
+      }, {
+        "uid" : "1cf6fbb9f9c7db7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/1cf6fbb9f9c7db7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610548948099,
+          "stop" : 1610548982635,
+          "duration" : 34536
+        }
+      }, {
+        "uid" : "653f58216873aa55",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/653f58216873aa55",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610544602034,
+          "stop" : 1610544636727,
+          "duration" : 34693
+        }
+      }, {
+        "uid" : "ba4ccb0a14f9e40",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/ba4ccb0a14f9e40",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610538503323,
+          "stop" : 1610538536468,
+          "duration" : 33145
+        }
+      }, {
+        "uid" : "8a6cd6cf687d73af",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/8a6cd6cf687d73af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610403311340,
+          "stop" : 1610403344724,
+          "duration" : 33384
+        }
+      }, {
+        "uid" : "db2cd097fc9f1c69",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/db2cd097fc9f1c69",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610402408213,
+          "stop" : 1610402441353,
+          "duration" : 33140
+        }
+      }, {
+        "uid" : "54a95d32c952535a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/54a95d32c952535a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610316390744,
+          "stop" : 1610316423804,
+          "duration" : 33060
+        }
+      }, {
+        "uid" : "1ffbbf123d397a36",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/1ffbbf123d397a36",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610119113800,
+          "stop" : 1610119147022,
+          "duration" : 33222
+        }
+      }, {
+        "uid" : "ad9e3b9742310ee0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/ad9e3b9742310ee0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609890783977,
+          "stop" : 1609890823711,
+          "duration" : 39734
+        }
+      }, {
+        "uid" : "9ad19c0ace356d35",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/9ad19c0ace356d35",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842616038,
+          "stop" : 1609842649906,
+          "duration" : 33868
+        }
+      }, {
+        "uid" : "dfd3ad0c91b6cf37",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/dfd3ad0c91b6cf37",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842279420,
+          "stop" : 1609842313536,
+          "duration" : 34116
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-235", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "c128be18e91e7e10.json",
+  "parameterValues" : [ ]
+}
