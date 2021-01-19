@@ -2,6 +2,7 @@ const MyHelper = require("../utils/helper");
 const moment = require('moment');
 const assert = require('assert').strict;
 const fs = require('fs');
+const { output } = require("codeceptjs");
 const I = actor();
 
 module.exports = {
@@ -88,11 +89,12 @@ module.exports = {
     },
     modal: {
         modalHeader: `section[class*='FileInfo_FileInfo__'] > header`,
-        cmpDetailsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(5) > div > label`,
+        cmpDetailsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Content Management Policy')]`,
         issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
-        sanitisationItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(3)`,
+        sanitisationItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Sanitisation Items')]`,
         remedyItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(4)`,
-        fileDetailModal: `.Modal_Modal__RCeBB`,
+        fileDetailModal: `section[class^='Modal_Modal']`,
+        itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`
     },
 
     //Methods
@@ -147,7 +149,7 @@ module.exports = {
 
     openDatePicker() {
         const element = this.calendar.reportRange;
-        I.click(element).catch(() => I.say(element + 'is not clickable'));
+        I.click(element).catch(() => I.say(element + ' is not clickable'));
     },
 
     selectTimePeriod(period) {
@@ -708,8 +710,7 @@ module.exports = {
 
     isFileDetailModalOpened() {
         const element = this.modal.fileDetailModal;
-        I.seeElementExist(element)
-
+        I.waitForVisible(element)
     },
 
 
@@ -743,24 +744,22 @@ module.exports = {
         }
     },
 
-    isCmpSectionAvailable() {
+    async isCmpSectionAvailable() {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true) {
-            within(el, () => {
-                const element = this.modal.cmpDetailsBanner;
-                I.seeElementExist(element)
-            });
-        }
+        (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
+        const elBanner = this.modal.cmpDetailsBanner;
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Content Management Policy is displayed!') : output.log('Content Management Policy is displayed');
     },
 
-    isSanitisationItemsSectionAvailable() {
+    async isSanitisationItemsSectionAvailable(issue) {
         const el = this.modal.fileDetailModal;
-        if (I.seeElementExist(el) === true) {
-            within(this.modal.fileDetailModal, () => {
-                const element = this.modal.sanitisationItemsBanner;
-                I.seeElementExist(element)
-            });
-        }
+        (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
+        const elBanner = this.modal.sanitisationItemsBanner;
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Sanitisation Items are displayed!') : I.click(elBanner);
+        const items = `${this.modal.sanitisationItemsBanner}${this.modal.itemHeaders}`
+        I.waitForVisible(items)
+        const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//table//td[contains(text(),'${issue}')]`;
+        (await I.seeElementExist(elIssue) !== true) ? assert.fail(`No ${issue} is displayed!`) : output.log(`${issue} is displayed`);
     },
 
     async clickOnTimestampArrow() {
