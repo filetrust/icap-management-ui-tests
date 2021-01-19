@@ -1,0 +1,682 @@
+{
+  "uid" : "598cb86eb3921c52",
+  "name" : "I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213",
+  "historyId" : "782f80f34172c95bb9d26981072dcb0b",
+  "time" : {
+    "start" : 1611053568591,
+    "stop" : 1611053599415,
+    "duration" : 30824
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "expected all elements (input[id='powerpointMetadatadisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+  "statusTrace" : "undefined",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "expected all elements (input[id='powerpointMetadatadisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"powerpoint\", \"Metadata\", \"disallow\"",
+      "time" : {
+        "start" : 1611053586992,
+        "stop" : 1611053586997,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='powerpointMetadatadisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1611053586992,
+          "stop" : 1611053586997,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'powerpoint' is set to 'Metadata' and 'disallow' ",
+      "time" : {
+        "start" : 1611053586997,
+        "stop" : 1611053591154,
+        "duration" : 4157
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='powerpointMetadatadisallow']\", 5",
+        "time" : {
+          "start" : 1611053586997,
+          "stop" : 1611053587002,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='powerpointMetadatadisallow']\"",
+        "time" : {
+          "start" : 1611053587002,
+          "stop" : 1611053589133,
+          "duration" : 2131
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611053589133,
+          "stop" : 1611053591153,
+          "duration" : 2020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1611053591154,
+        "stop" : 1611053591167,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611053591161,
+          "stop" : 1611053591166,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1611053591167,
+          "stop" : 1611053591167,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'powerpoint' is set to 'Metadata' and 'disallow' ",
+      "time" : {
+        "start" : 1611053591167,
+        "stop" : 1611053593290,
+        "duration" : 2123
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1611053591167,
+          "stop" : 1611053591170,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611053591171,
+          "stop" : 1611053593284,
+          "duration" : 2113
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1611053593290,
+        "stop" : 1611053595328,
+        "duration" : 2038
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1611053593290,
+          "stop" : 1611053593294,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1611053593294,
+          "stop" : 1611053595324,
+          "duration" : 2030
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'powerpoint' is set to 'Metadata' and 'disallow' ",
+      "time" : {
+        "start" : 1611053595328,
+        "stop" : 1611053595334,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='powerpointMetadatadisallow']\", 5",
+        "time" : {
+          "start" : 1611053595328,
+          "stop" : 1611053595334,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setPolicyFlag \"powerpoint\", \"Metadata\", \"sanitise\"",
+      "time" : {
+        "start" : 1611053595334,
+        "stop" : 1611053595346,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='powerpointMetadatasanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1611053595334,
+          "stop" : 1611053595344,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCancelChanges ",
+      "time" : {
+        "start" : 1611053595346,
+        "stop" : 1611053595349,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"button[class*='DraftPolicy_cancelButton__']\"",
+        "time" : {
+          "start" : 1611053595346,
+          "stop" : 1611053595348,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1611053595349,
+        "stop" : 1611053597394,
+        "duration" : 2045
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1611053595349,
+          "stop" : 1611053597394,
+          "duration" : 2045
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1611053597394,
+        "stop" : 1611053599406,
+        "duration" : 2012
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1611053597394,
+          "stop" : 1611053599406,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='powerpointMetadatadisallow']\"",
+      "time" : {
+        "start" : 1611053599406,
+        "stop" : 1611053599414,
+        "duration" : 8
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='powerpointMetadatadisallow']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1611053599406,
+          "stop" : 1611053599414,
+          "duration" : 8
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "3742f372d68df075",
+      "name" : "Last Seen Screenshot",
+      "source" : "3742f372d68df075.png",
+      "type" : "image/png",
+      "size" : 64743
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 27,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-213"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "I can cancel any updates done to the draft policy {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-213"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 27,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 19,
+        "unknown" : 0,
+        "total" : 46
+      },
+      "items" : [ {
+        "uid" : "20e3e79e67602e74",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/122//#testresult/20e3e79e67602e74",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610980332026,
+          "stop" : 1610980363823,
+          "duration" : 31797
+        }
+      }, {
+        "uid" : "993670143765bf15",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/121//#testresult/993670143765bf15",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610957960470,
+          "stop" : 1610957988397,
+          "duration" : 27927
+        }
+      }, {
+        "uid" : "8f6bf66a197a2c44",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/120//#testresult/8f6bf66a197a2c44",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610707201211,
+          "stop" : 1610707227885,
+          "duration" : 26674
+        }
+      }, {
+        "uid" : "19a828fdbc2b4127",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/119//#testresult/19a828fdbc2b4127",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610654291028,
+          "stop" : 1610654318581,
+          "duration" : 27553
+        }
+      }, {
+        "uid" : "ef798525a90fb3de",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/118//#testresult/ef798525a90fb3de",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610648390237,
+          "stop" : 1610648421191,
+          "duration" : 30954
+        }
+      }, {
+        "uid" : "f880362140b49027",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/f880362140b49027",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610633390721,
+          "stop" : 1610633417422,
+          "duration" : 26701
+        }
+      }, {
+        "uid" : "713aa323fadf5d60",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/116//#testresult/713aa323fadf5d60",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610628734682,
+          "stop" : 1610628765999,
+          "duration" : 31317
+        }
+      }, {
+        "uid" : "6a8ac443f823bf69",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/6a8ac443f823bf69",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610624640425,
+          "stop" : 1610624671239,
+          "duration" : 30814
+        }
+      }, {
+        "uid" : "8c0db74e27792fe7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/8c0db74e27792fe7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610555730263,
+          "stop" : 1610555760964,
+          "duration" : 30701
+        }
+      }, {
+        "uid" : "2fcbc91bedb19011",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/2fcbc91bedb19011",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610548896879,
+          "stop" : 1610548924017,
+          "duration" : 27138
+        }
+      }, {
+        "uid" : "410361bc63826280",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/410361bc63826280",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610544556681,
+          "stop" : 1610544587555,
+          "duration" : 30874
+        }
+      }, {
+        "uid" : "3568e211e6b47583",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/3568e211e6b47583",
+        "status" : "passed",
+        "time" : {
+          "start" : 1610538462589,
+          "stop" : 1610538489147,
+          "duration" : 26558
+        }
+      }, {
+        "uid" : "3e9c6119804d851",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/3e9c6119804d851",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610403229911,
+          "stop" : 1610403246340,
+          "duration" : 16429
+        }
+      }, {
+        "uid" : "7c8a2ea32ac19894",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/7c8a2ea32ac19894",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610402327508,
+          "stop" : 1610402343929,
+          "duration" : 16421
+        }
+      }, {
+        "uid" : "ee5c4692987e6d90",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/108//#testresult/ee5c4692987e6d90",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610316303895,
+          "stop" : 1610316320715,
+          "duration" : 16820
+        }
+      }, {
+        "uid" : "da52959d6938c647",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/107//#testresult/da52959d6938c647",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='powerpointMetadatadisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1610119028431,
+          "stop" : 1610119045679,
+          "duration" : 17248
+        }
+      }, {
+        "uid" : "fdafb6c95bee430",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/106//#testresult/fdafb6c95bee430",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609890719751,
+          "stop" : 1609890754625,
+          "duration" : 34874
+        }
+      }, {
+        "uid" : "e2d53f80e77ba65",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/105//#testresult/e2d53f80e77ba65",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='powerpointMetadatadisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1609842566591,
+          "stop" : 1609842593177,
+          "duration" : 26586
+        }
+      }, {
+        "uid" : "29b94769a4839d72",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/104//#testresult/29b94769a4839d72",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609842226562,
+          "stop" : 1609842257336,
+          "duration" : 30774
+        }
+      }, {
+        "uid" : "8bbb5ab8d6bf862e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/103//#testresult/8bbb5ab8d6bf862e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1609836442980,
+          "stop" : 1609836469579,
+          "duration" : 26599
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@TEST-213", "@functional" ]
+  },
+  "source" : "598cb86eb3921c52.json",
+  "parameterValues" : [ ]
+}
