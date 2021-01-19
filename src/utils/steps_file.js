@@ -5,6 +5,7 @@ const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
+const assert = require('assert').strict;
 
 
 module.exports = function() {
@@ -150,30 +151,27 @@ module.exports = function() {
     const cp = require('child_process')
     const fs = require('fs')
     const path = require('path');
-    //const inputDir = 'src/data/input/'
+
     const inputDir = path.join('src', 'data', 'input');
-    //const outputDir = 'output/downloads/'
     const outputDir = path.join('output', 'downloads');
-    const inputPath = path.join(process.cwd(), inputDir)
-    const outputPath =  path.join(process.cwd(), outputDir)
-    const logsName = path.join('output', 'dockerLogs.log');
-    console.log(`inputDir: ${inputDir}, outputDir: ${outputDir}, inputPath: ${inputPath}, outputPath: ${outputPath}, logsName: ${logsName}`)
-    const icapClient = 'icap-client-main.uksouth.cloudapp.azure.com'
+    const inputPath = path.join(process.cwd(), inputDir);
+    const outputPath =  path.join(process.cwd(), outputDir);
+    const icapLogs = path.join('output', 'icap.log')
+
+    const icapClient = 'icap-client-qa-main.uksouth.cloudapp.azure.com' // icap-client-qa.uksouth.cloudapp.azure.com
+    
     // use NodeJS child process to run a bash command in sync way
-    // create a file for logs
-    await I.cleanupFile(`${logsName}`);
-    await I.createFile(`${logsName}`)
-    // run icap client in docker
     output.print('Sending file...')
-    await cp.execSync(`docker run --name=qa-icap-client --rm -v ${inputPath}:/opt -v ${outputPath}:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i ${icapClient} -f '/opt/${fileName}' -o /home/${fileName} -v &> ${logsName}`)
-    output.print('File is sent...')
-    // read logs from file
-    let logsOutput = fs.readFileSync(`${logsName}`);
-    // get file id from logs
-    let fileId = logsOutput
+    console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
+    let fileId;
+    await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
+    const icapOutput = fs.readFileSync(`${icapLogs}`);
+    output.print('icapLogs: '+icapOutput)
+    fileId = icapOutput
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
         .split("\n")[0];
+    output.print('File is sent...')
     return fileId;
   },
   });

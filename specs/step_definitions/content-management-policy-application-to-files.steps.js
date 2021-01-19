@@ -6,7 +6,7 @@ let isLocal;
 let fileId;
 isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
 
-Given('I remove the {string} file downloaded before if it exists', (file) => {
+Given('I remove the {string} file downloaded before if it exists', async (file) => {
     const downloadedFile = path.join('output', 'downloads', file);
     console.log(`downloadedFile: ${downloadedFile}`)
     I.cleanupFile(downloadedFile);
