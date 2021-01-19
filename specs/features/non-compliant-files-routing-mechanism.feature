@@ -18,7 +18,7 @@ Feature: non-compliant-files-routing-mechanism
 
   @functional
   @TEST-158
-  Scenario Outline: I can update the non-compliant routes API URL with a valid one
+  Scenario Outline: User can update the non-compliant routes API URL 
     When I enter a valid URL '<url>' into the API URL box and save
     And I publish the policy
     Then the API URL is updated to the new url '<url>'
@@ -28,7 +28,7 @@ Feature: non-compliant-files-routing-mechanism
 
   @functional
   @TEST-183
-  Scenario Outline: I can change the outcome of unprocessable files
+  Scenario Outline: User can change the outcome of unprocessable files
     When I change the route for unprocessable files to '<routeOption>' and save
     Then the route selection for unprocessable files is applied as '<updatedRouteOption>'
     Examples:
@@ -38,7 +38,7 @@ Feature: non-compliant-files-routing-mechanism
 
   @functional
   @TEST-187
-  Scenario Outline: I can change the outcome of Glasswall Blocked files
+  Scenario Outline: User can change the outcome of Glasswall Blocked files
     When I change the route for blocked files to '<routeOption>' and save
     Then the route selection for blocked files is applied as '<updatedRouteOption>'
     Examples:
@@ -48,7 +48,7 @@ Feature: non-compliant-files-routing-mechanism
 
 #   @functional
 #   @TEST-233
-#   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied
+#   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
 #     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
 #     And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
 #     When I download a non compliant file '<file>' through the icap server
@@ -60,7 +60,7 @@ Feature: non-compliant-files-routing-mechanism
 
 #   @functional
 #   @TEST-234
-#   Scenario Outline: A set routing policy for unprocessable files is correctly applied
+#   Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
 #     Given I have set the routing option for unprocessable files to '<policyAction>'
 #     When I submit a non supported or unprocessable file '<file>' through the icap server
 #     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'

@@ -9,7 +9,7 @@ Background:
 
     @functional
     @TEST-169
-    Scenario Outline: I am able to view more detail on a file
+    Scenario Outline: User can view more details on a file including processed sanitisation
         When I click on a available file record with id '<fileId>'
         Then the file detail view opens
         And the file result details and the sanitisation issues content is displayed to show item '<issue>'
@@ -18,8 +18,28 @@ Background:
             | 11aded86-a598-4c42-a8c8-094c01012ae0 | 97976586 |
 
     @functional
+    @TEST-169
+    Scenario Outline: User can view structural issues on a file
+        When I click on a available file record with id '<fileId>'
+        Then the file detail view opens
+        And the file result details and the issues content is displayed to show issue '<issue>'
+        Examples:
+            | fileId                               | issue    |
+            | 11aded86-a598-4c42-a8c8-094c01012ae0 |  |
+
+    @functional
+    @TEST-169
+    Scenario Outline: User can view remedy items removed on a file
+        When I click on a available file record with id '<fileId>'
+        Then the file detail view opens
+        And the file result details and the remedy content is displayed to show item '<item>'
+        Examples:
+            | fileId                               | item    |
+            | 11aded86-a598-4c42-a8c8-094c01012ae0 |   |
+
+    @functional
     @TEST-169_b
-    Scenario Outline: I am able to view more detail on a file
+    Scenario Outline: User can view the details of the content management policy applied on a file
         When I click on a available file record with id '<fileId>'
         Then the content management policy section is available
         Examples:

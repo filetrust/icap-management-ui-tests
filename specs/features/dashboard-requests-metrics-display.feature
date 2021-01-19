@@ -10,7 +10,7 @@ Feature: dashboard-requests-metrics-display
     @TEST-223
     @Fail-app
     #  Element "div[data-test-id='lineChart'] > div > div > svg" was not found by text|CSS|XPath
-    Scenario Outline: The file risk count is updated for every file processed based on the outcome
+    Scenario Outline: User can see the count of files processed by risk updated for every file processed
         Given I have confirmed the current risks counts for '<risk>'
         When I process a '<file>' through the icap server
         Then the risk sector '<risk>' is available and shows the count updated by <increasedValue>
@@ -36,3 +36,4 @@ Feature: dashboard-requests-metrics-display
             | issues.docx       | Allowed By Policy | 0               | 1               | 0               |
   
 
+#the count of maximum files processed per second is updated for processed files

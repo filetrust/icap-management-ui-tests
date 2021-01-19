@@ -8,13 +8,13 @@ Feature: content-management-previous-policy
 
    @functional
     @TEST-218
-    Scenario: I can view previous Policy details
+    Scenario: User can view previous Policy details
         When I click view on a previous policy
         Then the previous Policy is displayed
 
    @functional
     @TEST-219
-    Scenario: I can activate a previous policy
+    Scenario: User can activate a previous policy
         When I click activate on a previous policy
         And I confirm publish action
         Then the current policy is updated with the previous Policy

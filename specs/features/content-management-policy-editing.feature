@@ -10,7 +10,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @TEST-213
-  Scenario Outline: I can cancel any updates done to the draft policy
+  Scenario Outline: User can cancel a draft policy creation
     Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I press the Cancel button
@@ -22,7 +22,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @TEST-214
-  Scenario Outline: I can edit policy content flags
+  Scenario Outline: User can update the current Adaptation policy settings
     Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I press the Save button
@@ -33,7 +33,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @TEST-239
-  Scenario Outline: I can delete a draft policy
+  Scenario Outline: User can delete a draft policy
     Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I press the Save button
@@ -45,7 +45,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @TEST-240
-  Scenario Outline: I can publish a draft Adaptation Policy
+  Scenario Outline: User can publish a draft Adaptation Policy
     Given the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I change the contentFlag for '<FileType>' to '<ContentFlag>' and '<DraftFlagType>'
     And I save and publish
@@ -56,7 +56,7 @@ Feature: Content Management Policy Editing
 
   @functional
   @TEST-241
-  Scenario Outline: I can update and publish both Adaptation and NCFS policies at the same time
+  Scenario Outline: User can update and publish both Adaptation and NCFS policies at the same time
     Given I am on the draft adaptation Policy screen
     And the current policy for '<FileType>' is set to '<ContentFlag>' and '<CurrentFlagType>'
     When I have updated the NCFS policy url with '<url>'

@@ -5,7 +5,7 @@ Feature: user-session-admin
 
     @functional
     @TEST-login
-    Scenario Outline: I am able to log into the ui
+    Scenario Outline: User can log into the ui
         Given I am on the login screen
         When I enter login details '<username>' and '<password>'
         And I click login
@@ -17,7 +17,7 @@ Feature: user-session-admin
 
     @functional
     @TEST-236
-    Scenario: I am able to log out of the ui
+    Scenario: User can log out of the ui
         Given I am logged into the ui
         When I hover over my profile and select Log Out
         Then I am taken to the Login Screen

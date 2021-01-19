@@ -10,7 +10,7 @@ Feature: file-drop-file-processing
     @success
     @prototype
     @TEST-230
-    Scenario Outline: I can process a file through the file drop service
+    Scenario Outline: User can process a supported file through the file drop service
         When I click Select a file and choose a supported file <supportedFile>
         Then the File is processed with the process status displayed as <processStatus>
         And I can view more detailed results with file attributes <fileName> and <fileType>
@@ -23,7 +23,7 @@ Feature: file-drop-file-processing
     @success
     @prototype
     @TEST-231
-    Scenario Outline: An error message is produced when file drop is unable to process a file
+    Scenario Outline: User cannot process a non-supported file or unprocessable file size through the file drop service
         When I click Select a file and choose non processable file '<file>'
         Then the expected validation error is displayed as '<error>'
         Examples:
@@ -31,5 +31,3 @@ Feature: file-drop-file-processing
             | src/data/input/icaptest.ps1 | Please use a supported file type                                       |
             | src/data/input/test2.pdf    | This free service is currently limited to a maximum file size of 3.5MB |
 
-    @TEST-232
-    Scenario: A file processed through file drop is sanitised independent of set UI policy
