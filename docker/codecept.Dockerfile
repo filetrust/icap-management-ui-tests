@@ -29,6 +29,8 @@ RUN apt-get install automake
 RUN apt-get install automake1.11
 RUN apt-get install libtool
 
+RUN apt-get install -y c-icap
+
 #RUN apt-get install -yq build-essential libboost-all-dev cmake flex
 
 
