@@ -20,15 +20,13 @@ When('I click on a available file record with id {string}', (fileId) => {
 
 Then('the file detail view opens', () => {
     I.wait(5)
-    requesthistoryPage.isFileDetailModalOpened()
-    //requesthistoryPage.checkFileDetailViewId(fileId)
-   
+    requesthistoryPage.isFileDetailModalOpened()   
 });
 
-Then('the file result details and content management policy sections are available', () => {
-    //TODO
-    // requesthistoryPage.isIssueItemsSectionAvailable();
-    // requesthistoryPage.isRemedyItemsSectionAvailable();
-    // requesthistoryPage.isSanitisationItemsSectionAvailable();
-    // requesthistoryPage.isCmpSectionAvailable();
+Then('the content management policy section is available', () => {
+    //requesthistoryPage.isCmpSectionAvailable();
+});
+
+Then('the file result details and the sanitisation issues content is displayed to show item {string}', (issue) => {
+    //requesthistoryPage.isSanitisationItemsSectionAvailable();
 });

@@ -2,8 +2,11 @@ const {
     I,
     policyPage,
 } = inject();
+const faker = require('faker');
 
 let selectedEl = null;
+let randomId = faker.random.number()
+let nUrl;
 
 Given('I am logged into the portal', () => {
     I.login('', '')
@@ -27,7 +30,7 @@ Given('the current policy for {string} is set to {string} and {string}', async (
     selectedEl = await policyPage.getFlagElement(FileType, ContentFlag, CurrentFlagType)
 });
 
-Given('I change the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
+When('I change the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
     await policyPage.setPolicyFlag(FileType, ContentFlag, FlagType);
 });
 
@@ -81,9 +84,9 @@ Then('The policy flag is set as {string} {string} and {string}', (FileType, Cont
 * T240
 * ***************************************************************
 */
-When('I save and publish', () => {
+When('I save and publish', async () => {
     policyPage.clickSaveChanges();
-    policyPage.publishPolicy();
+    await policyPage.publishPolicy();
 });
 
 Then('The current policy flag is set as {string} {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
@@ -102,19 +105,28 @@ Then('the current policy for {string} is saved as {string} and {string}', (FileT
 * T241
 * ***************************************************************
 */
-When('the current NCFS policy url is {string}', async (url) => {
-    await I.goToDraftNcfsPolicy();
+Given('the current NCFS policy url is {string}', async (url) => {
+    I.goToDraftNcfsPolicy();
     await policyPage.updateUrlIfNeeded(url);
 });
 
-Then('I have updated the NCFS policy url with {string}', async (url) => {
-    await I.goToDraftNcfsPolicy();
-    await policyPage.updateUrlIfNeeded(url);
+When('I update the contentFlag for {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
+    await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
+});
+
+
+When('I have updated the NCFS policy url with {string}', async (url) => {
+    I.goToDraftNcfsPolicy();
+    let id = randomId
+    newUrl= url+id
+    policyPage.enterTextInApiUrl(newUrl) ;
+    I.wait(5)
 });
 
 Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', (FileType, ContentFlag, FlagType, url) => {
+    url = newUrl
     I.goToCurrentNcfsPolicy()
-    I.seeInField(policyPage.fields.validateApiUrlInput, url);
+    I.seeInField(policyPage.fields.apiUrlInput, url);
     I.goToCurrentAdaptationPolicy()
     policyPage.assertCurrentFlagAs(FileType, ContentFlag, FlagType)
 });

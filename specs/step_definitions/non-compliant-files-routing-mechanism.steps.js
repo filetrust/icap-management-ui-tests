@@ -1,6 +1,8 @@
 const {I, policyPage, filedropPage, sharepoint}= inject();
-
+const faker = require('faker');
 let currentUrl = null;
+
+let randomId = faker.random.number()
 
 Given('I have navigated to the Draft NCFS Policy page', async () => {
     I.goToContentManagementPolicy();
@@ -25,17 +27,22 @@ Then(`I see the default set routing option for blocked files as ''`,  () => {
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.blockedFileRefer);
     I.dontSeeCheckboxIsChecked(policyPage.radiobuttons.blockedFileRelay);
 });
-When('I enter a valid URL {string} into the API URL box',  (url) =>{
-    currentUrl = url;
-    policyPage.enterTextInApiUrl(url);
+
+When('I enter a valid URL {string} into the API URL box and save',  (url) =>{
+    let id = randomId
+    newUrl= url+id
+    policyPage.enterTextInApiUrl(newUrl);
 });
-When('I click save',  () => {
-    policyPage.clickSaveApiUrl();
+
+When('I publish the policy', async () => {
+    await policyPage.publishPolicy();
 });
-Then('the API URL is updated and the validation message {string} is displayed',  (message) => {
-    //todo: uncomment when implementation is done
-  //  I.seeInField(policyPage.fields.validateApiUrlInput, currentUrl);
-  //  I.see(message);
+
+Then('the API URL is updated to the new url {string}',  (message) => {
+    I.goToCurrentNcfsPolicy()
+    url = newUrl
+    I.seeInField(policyPage.fields.apiUrlInput, url);
+
 });
 When('I change the route for blocked files to {string} and save', async (routeOption) => {
     await policyPage.setRouteFlag(routeOption);
@@ -77,11 +84,7 @@ Given('I set the policy for file type {string} to {string} and {string}', async 
 });
 
 Then('the response code received is {string}', (responseCode) => {
-    //TODO
-    // I.waitForResponse(response =>
-    //     response.request().url.contains('/api/decide') &&
-    //     response.request().method === 'POST' &&
-    //     response.request().statusCode === responseCode);
+    
 
 });
 Then('the file outcome for the submitted file {string} is {string}', (file, fileOutcome) => {

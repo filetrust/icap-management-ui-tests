@@ -4,7 +4,7 @@ const path = require('path');
 const { I, icapProxyPage, policyPage, requesthistoryPage } = inject();
 let isLocal;
 let fileId;
-//isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
+isLocal = true; // TODO: uncomment to run locally using  ICAP client in Docker
 
 Given('I remove the {string} file downloaded before if it exists', (file) => {
     const downloadedFile = path.join('output', 'downloads', file);

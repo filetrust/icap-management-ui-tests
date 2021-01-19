@@ -9,7 +9,7 @@ Feature: dashboard-requests-filtering-by-process-date
     @success
     @prototype
     @TEST-151
-    Scenario Outline: I am able to filter the dashboard requests by time
+    Scenario Outline: User can view the performance metrics by date/time using a custom range 
         When I make a time selection with '<time>'
         And I set the '<dateStart>' and '<dateEnd>'
         Then the requests for the selected '<time>' are displayed
@@ -21,7 +21,7 @@ Feature: dashboard-requests-filtering-by-process-date
     @success
     @prototype
     @TEST-152
-    Scenario Outline: I am able to filter the dashboard requests by time
+    Scenario Outline: User can view the performance metrics by date/time using a default time interval(1, 12 or 24 hrs)
         When I make a time selection with '<timeInterval>'
         Then the requests for the selected '<timeInterval>' are displayed
         And the date range is displayed date from '<datetimeFrom>' hrs earlier to '<datetimeTo>'

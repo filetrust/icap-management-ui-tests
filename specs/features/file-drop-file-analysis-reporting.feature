@@ -10,7 +10,7 @@ Feature: file-drop-file-analysis-reporting
     @TEST-225
     @Fail-app
     # The report button does not currently work
-    Scenario Outline: I can download the full XML analysis report for a file
+    Scenario Outline: User can download the full XML analysis report for a file
         Given I have uploaded a file '<supportedFile>'
         When  I view result and click on XML button
         Then the XML report <xmlFile> is downloaded
@@ -22,7 +22,7 @@ Feature: file-drop-file-analysis-reporting
     @TEST-226
     @Fail-app
     # The report button does not currently work
-    Scenario Outline: I can download the full PDF analysis report for a file
+    Scenario Outline: User can download the full PDF analysis report for a file
         Given I have uploaded a file '<supportedFile>'
         When  I view result and click on PDF button
         Then the pdf report <pdfFile> is downloaded

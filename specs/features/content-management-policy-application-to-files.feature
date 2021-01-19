@@ -10,7 +10,7 @@ Feature: content-management-policy-application-to-files
 
     @functional
     @TEST-212
-    Scenario Outline: Content Management policy is correctly applied to processed files
+    Scenario Outline: The current Content Management Policy is correctly applied to processed files 
         Given I remove the '<file>' file downloaded before if it exists
         Given I set a policy for file type '<fileType>' with '<contentFlag>' set to '<flagType>'
         When I process file '<fileType>' file '<file>' through the icap server

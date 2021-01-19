@@ -9,7 +9,7 @@ Feature: content-management-policy-history
     @success
     @prototype
     @TEST-217
-    Scenario Outline: I can change the number of items displayed on a page
+    Scenario Outline: User can change the number of previous polcy records displayed on a page
         Given I have navigated to the Policy History page
         When Items Shown is changed to <itemCount>
         Then Up to <itemCount> previous policies are displayed
