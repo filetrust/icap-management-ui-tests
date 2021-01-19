@@ -19,19 +19,19 @@ COPY . .
 
 RUN chmod +x /usr/local/bin/codecept.entrypoint.sh
 
-RUN apt-get update -yq
-RUN apt-get upgrade -yq
-RUN apt-get install git
-RUN apt-get install gcc
-RUN apt-get install -yq doxygen
-RUN apt-get install make
-RUN apt-get install automake
-RUN apt-get install automake1.11
-RUN apt-get install libtool
-
-RUN apt-get install -y c-icap
-
-#RUN apt-get install -yq build-essential libboost-all-dev cmake flex
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update -yq && \
+    apt-get install -y apt-utils && \
+    apt-get upgrade -yq && \
+    apt-get install git && \
+    apt-get install gcc && \
+    apt-get install -yq doxygen && \
+    apt-get install make && \
+    apt-get install automake && \
+    apt-get install automake1.11 && \
+    apt-get install libtool && \
+    #apt-get -yq install apt-utils && \
+    apt-get install -yq c-icap
 
 
 ENTRYPOINT ["/usr/local/bin/codecept.entrypoint.sh"]

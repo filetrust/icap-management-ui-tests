@@ -28,6 +28,10 @@ module.exports = function() {
       this.waitForElement(homePage.sections.menu);
   },
 
+  enterLoginDetails: function (user,password) {
+    loginPage.loginWith(user,password);
+},
+
   enterValidCredential: function () {
       loginPage.loginWith(env.qa.email, env.qa.password);
   },

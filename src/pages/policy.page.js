@@ -16,7 +16,8 @@ module.exports = {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
-    validateApiUrlInput: `div[class*='Input_Input__'] > input`,
+    apiUrlInput: `div[class*='Input_Input__'] > input`,
+    policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`
   },
   modal: {
     deleteDraftPolicy: `div[class*='ConfirmDraftDeleteModal_modalContainer__']`,
@@ -113,6 +114,7 @@ module.exports = {
     I.say(elPublish)
     if (elPublish > 0) {
       I.waitForElement(element, 5)
+      //I.wait(5)
       await I.clickElement(element);
       await modal.accept()
     }
@@ -249,14 +251,14 @@ module.exports = {
           await this.publishPolicy()
         }
         I.waitForElement(flag, 5)
-        output.print('The flag is already selected')
+        output.print('The flag is selected as pre-condition')
       } else {
         I.waitForElement(flag, 5)
         await I.clickElement(flag);
         await I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
         I.waitForElement(flag, 5)
-        output.print('The flag is selected')
+        output.print('The new flag is selected')
       }
     } catch (e) {
       I.say('Unable to set policy flag')
@@ -416,11 +418,13 @@ module.exports = {
   },
 
   enterTextInApiUrl(text) {
-    I.fillField(this.fields.validateApiUrlInput, text)
+    I.fillField(this.fields.apiUrlInput, text)
+    I.wait(3)
+    I.click(this.buttons.saveChanges)
   },
 
   async updateUrlIfNeeded(text) {
-    const elText = await I.grabValueFrom(this.fields.validateApiUrlInput)
+    const elText = await I.grabValueFrom(this.fields.apiUrlInput)
     let message;
     if (elText !== text) {
       this.enterTextInApiUrl(text);

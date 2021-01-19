@@ -6,6 +6,18 @@ Given('I hover over my profile and select Change Password', () => {
     homePage.clickChangePassword();
 });
 
+When('I enter login details {string} and {string}', (username, password) => {
+    I.enterLoginDetails(username, password);
+});
+
+When('I click login', (username, password) => {
+    loginPage.clickLogIn();
+});
+
+Then('The home screen is displayed', () => {
+    I.seeElement(homePage.sections.menu);
+});
+
 When('I log out', () => {
     homePage.clickAccountToggle();
     homePage.clickLogout();
@@ -31,5 +43,9 @@ When('I fill in {string}, {string}, {string}, and click Save', (currentPassword,
 });
 Given('I am logged into the ui', () => {
     I.loginNoPwd();
+});
+
+Given('I am on the login screen', () => {
+    I.onLoginPage();
 });
 

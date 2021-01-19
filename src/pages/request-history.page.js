@@ -708,9 +708,6 @@ module.exports = {
 
     isFileDetailModalOpened() {
         const element = this.modal.fileDetailModal;
-        //;
-        // I.getModal(element);
-        //I.getModal(element)
         I.seeElementExist(element)
 
     },
