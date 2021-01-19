@@ -1,0 +1,239 @@
+{
+  "uid" : "e0c4ab0e5e7ce7bd",
+  "name" : "User can log into the ui {\"username\":\"user@testuksouth.com\",\"password\":\"Password123\"} @functional @TEST-login",
+  "fullName" : "user-session-admin @user-session-admin.User can log into the ui {\"username\":\"user@testuksouth.com\",\"password\":\"Password123\"} @functional @TEST-login",
+  "historyId" : "d94d800ebba4a807aee016385d2c377",
+  "time" : {
+    "start" : 1611080091223,
+    "stop" : 1611080104565,
+    "duration" : 13342
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I: onLoginPage ",
+      "time" : {
+        "start" : 1611080093990,
+        "stop" : 1611080097998,
+        "duration" : 4008
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am on page \"http://management-ui-qa.uksouth.cloudapp.azure.com\"",
+        "time" : {
+          "start" : 1611080093990,
+          "stop" : 1611080097998,
+          "duration" : 4008
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "loginPage: loginWith \"user@testuksouth.com\", \"Password123\"",
+      "time" : {
+        "start" : 1611080097998,
+        "stop" : 1611080104558,
+        "duration" : 6560
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I fill field \"input[name='email']\", \"user@testuksouth.com\"",
+        "time" : {
+          "start" : 1611080097998,
+          "stop" : 1611080100355,
+          "duration" : 2357
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I fill field \"input[name='password']\", \"Password123\"",
+        "time" : {
+          "start" : 1611080100355,
+          "stop" : 1611080102535,
+          "duration" : 2180
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[@type='submit']\"",
+        "time" : {
+          "start" : 1611080102535,
+          "stop" : 1611080104558,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "loginPage: clickLogIn ",
+      "time" : {
+        "start" : 1611080104558,
+        "stop" : 1611080104561,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[@type='submit']\"",
+        "time" : {
+          "start" : 1611080104558,
+          "stop" : 1611080104561,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then The home screen is displayed ",
+      "time" : {
+        "start" : 1611080104561,
+        "stop" : 1611080104565,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see element \"section[class*='Toolbar_Toolbar__']\"",
+        "time" : {
+          "start" : 1611080104561,
+          "stop" : 1611080104564,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-login"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@user-session-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can log into the ui {\"username\":\"user@testuksouth.com\",\"password\":\"Password123\"} @functional @TEST-login"
+  }, {
+    "name" : "package",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "35083679cd8efd27",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/35083679cd8efd27",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063763494,
+          "stop" : 1611063780927,
+          "duration" : 17433
+        }
+      } ]
+    },
+    "tags" : [ "@user-session-admin", "@TEST-login", "@functional" ]
+  },
+  "source" : "e0c4ab0e5e7ce7bd.json",
+  "parameterValues" : [ ]
+}
