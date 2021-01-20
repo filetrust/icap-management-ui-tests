@@ -3,45 +3,51 @@ Feature: request-history-file-detail-view
     As a admin I need to validate request histrory file details view for issue, sanitization and remedy items as well as applied content management policy
     in order to confirm that the solution works as expected
 
-Background:
+    Background:
         Given I am logged into the ui
         Given I have navigated to the Request History page
 
     @functional
     @TEST-169
-    Scenario Outline: User can view more details on a file including processed sanitisation
+    Scenario Outline: User can view more details on a previously processed file
         When I click on a available file record with id '<fileId>'
         Then the file detail view opens
         And the file result details and the sanitisation issues content is displayed to show item '<issue>'
         Examples:
-            | fileId                               | issue    |
-            | 11aded86-a598-4c42-a8c8-094c01012ae0 | 97976586 |
+            | fileId                               | issue    | datetimeFrom        | datetimeTo          |
+            | 11aded86-a598-4c42-a8c8-094c01012ae0 | 97976586 | 18/01/2021 19:00 PM | 18/01/2021 23:59 PM |
+
 
     @functional
-    @TEST-169
+    @TEST-169_2
     Scenario Outline: User can view structural issues on a file
-        When I click on a available file record with id '<fileId>'
-        Then the file detail view opens
-        And the file result details and the issues content is displayed to show issue '<issue>'
+        Given I process a file '<file>' through the icap server
+        And The transaction is available in the transaction log
+        When I click on the transaction record to open the detail view
+        Then The issues content is displayed on the details view to show issue '<issue>'
         Examples:
-            | fileId                               | issue    |
-            | 11aded86-a598-4c42-a8c8-094c01012ae0 |  |
+            | file                  | issue                                      |
+            | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
     @functional
-    @TEST-169
-    Scenario Outline: User can view remedy items removed on a file
-        When I click on a available file record with id '<fileId>'
-        Then the file detail view opens
-        And the file result details and the remedy content is displayed to show item '<item>'
+    @TEST-169_3
+    Scenario Outline: User can view Sanitisation and Remedy items removed on a file
+        Given I process a file '<file>' through the icap server
+        And The transaction is available in the transaction log
+        When I click on the transaction record to open the detail view
+        Then The Sanitisation issues content is displayed on the details view to show issue '<issue>'
+        And The Remedy items content is displayed on the details view to show issue '<item>'
         Examples:
-            | fileId                               | item    |
-            | 11aded86-a598-4c42-a8c8-094c01012ae0 |   |
+            | file        | issue                          | item                                                     |
+            | issues.docx | Embedded file content present. | First XREF table entry malformed and will be regenerated |
 
     @functional
-    @TEST-169_b
+    @TEST-169_4
     Scenario Outline: User can view the details of the content management policy applied on a file
-        When I click on a available file record with id '<fileId>'
+        Given I process a file '<file>' through the icap server
+        And The transaction is available in the transaction log
+        When I click on the transaction record to open the detail view
         Then the content management policy section is available
         Examples:
-            | fileId                               |
-            | 11aded86-a598-4c42-a8c8-094c01012ae0 |
+            | file        |
+            | issues.docx |
