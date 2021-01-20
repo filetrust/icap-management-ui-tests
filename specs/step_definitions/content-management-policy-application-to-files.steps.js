@@ -41,14 +41,6 @@ Then('The {string} with file type {string} processing outcome is as expected {st
         const outputDir = path.join('output', 'downloads');
         I.amInPath(outputDir)
         I.seeFile(file)
-        // const outputPath = path.join('output', 'downloads', file);
-        // const inputPath = path.join('src', 'data', 'input', file);
-        // const outputFile = fs.readFileSync(outputPath, 'base64');
-        // const inputFile = fs.readFileSync(inputPath, 'base64');
-        // console.log(`length i: ${inputFile.length}, o: ${outputFile.length}`)
-        //TODO: how to improve - could we add the expected file? is it better to check results in UI detail view? 
-        //assert.notStrictEqual(inputFile.length, outputFile.length, 'Output and input files length is the same')
-        //assert.notStrictEqual(inputFile, outputFile, 'Output and input files content is the same')
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
         requesthistoryPage.selectTimePeriod('1 Hour')
