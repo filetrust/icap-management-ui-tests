@@ -30,7 +30,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install automake && \
     apt-get install automake1.11 && \
     apt-get install libtool && \
-    #apt-get -yq install apt-utils && \
     apt-get install -yq c-icap
 
 

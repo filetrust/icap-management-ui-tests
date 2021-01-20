@@ -13,7 +13,7 @@ module.exports = {
     sowChecklist: `a[href*='sow']`,
   },
   buttons: {
-    login: `//button[@type='submit']`,
+    login: `//button[contains(.,'Log In')]`,
     terms: `p[class*='Login_linkTerms__1B6HH'] > a`,
     closeLoginTerms: "",
     modalClose: "",
