@@ -43,7 +43,8 @@ Then('The {string} with file type {string} processing outcome is as expected {st
         I.seeFile(file)
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
-        requesthistoryPage.selectTimePeriod('1 Hour')
+        requesthistoryPage.selectTimePeriod('12 Hours')
+        I.wait(5)
         // verify file in request history
         await requesthistoryPage.checkFileTypeValueByFileId(fileExtension, fileId, true)
         await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
