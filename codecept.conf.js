@@ -16,19 +16,19 @@ exports.config = {
     Puppeteer: {
       windowSize: '1536 x 826',
       url: '',
-      show: true,
+      show: false,
       chrome: {
-        args: ['--headless','--no-sandbox', '--window-size=1536,826'],
+        args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--waitForTimeout: 60000', '--disable-setuid-sandbox'],
         //args: ['--no-sandbox', '--window-size=1536,826'],
-		prefs: 
-              ['--download.default_directory= /output/downloads'],
+        prefs:
+          ['--download.default_directory= /output/downloads'],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
       waitForAction: 2000
     },
     FileSystem: {},
-      
+
   },
   include: {
     I: './src/utils/steps_file.js',
@@ -61,7 +61,7 @@ exports.config = {
     retryFailedStep: {
       enabled: false
     },
-    
+
     screenshotOnFail: {
       enabled: true
     },

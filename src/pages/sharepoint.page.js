@@ -44,6 +44,7 @@ module.exports = {
 
     async checkIfHtmlReportReturned() {
         try{
+            
         let url = await I.grabCurrentUrl();
         console.log(`Current URL is [${url}]`);
         let tabs = await I.grabNumberOfOpenTabs();
