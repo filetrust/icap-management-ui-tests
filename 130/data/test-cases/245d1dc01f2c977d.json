@@ -1,0 +1,449 @@
+{
+  "uid" : "245d1dc01f2c977d",
+  "name" : "User can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @TEST-163",
+  "fullName" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome.User can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @TEST-163",
+  "historyId" : "a7363740807794568df3635683d5df8b",
+  "time" : {
+    "start" : 1611225985317,
+    "stop" : 1611226009252,
+    "duration" : 23935
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "The result is not as expected, filter found is: Allowed by Policy",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Allowed by Policy\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:155:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:450:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:479:9)\n                    at async Object.checkFileOutcomeValues (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:593:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-risk-outcome.steps.js:11:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "The result is not as expected, filter found is: Allowed by Policy",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Allowed by Policy\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:155:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:450:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:479:9)\n                    at async Object.checkFileOutcomeValues (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:593:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-risk-outcome.steps.js:11:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "homePage: clickRequestsHistory ",
+      "time" : {
+        "start" : 1611225994040,
+        "stop" : 1611225996106,
+        "duration" : 2066
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1611225994040,
+          "stop" : 1611225996103,
+          "duration" : 2063
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1611225996106,
+        "stop" : 1611226000162,
+        "duration" : 4056
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1611225996106,
+          "stop" : 1611225998126,
+          "duration" : 2020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611225998129,
+          "stop" : 1611225998134,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611225998134,
+          "stop" : 1611226000157,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1611226000162,
+        "stop" : 1611226002211,
+        "duration" : 2049
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(2) > p\"",
+        "time" : {
+          "start" : 1611226000162,
+          "stop" : 1611226002209,
+          "duration" : 2047
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: Safe",
+        "time" : {
+          "start" : 1611226002210,
+          "stop" : 1611226002210,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1611226002211,
+        "stop" : 1611226002215,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label/span[text()='Safe']\"",
+        "time" : {
+          "start" : 1611226002211,
+          "stop" : 1611226002215,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1611226002215,
+        "stop" : 1611226004230,
+        "duration" : 2015
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1611226002215,
+          "stop" : 1611226004230,
+          "duration" : 2015
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1611226004230,
+        "stop" : 1611226009235,
+        "duration" : 5005
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1611226004230,
+          "stop" : 1611226009235,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isDataReturned ",
+      "time" : {
+        "start" : 1611226009235,
+        "stop" : 1611226009240,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+        "time" : {
+          "start" : 1611226009235,
+          "stop" : 1611226009238,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1611226009238,
+          "stop" : 1611226009240,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Data is available",
+        "time" : {
+          "start" : 1611226009240,
+          "stop" : 1611226009240,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list only shows filtered files with the selected risk as 'Safe' ",
+      "time" : {
+        "start" : 1611226009240,
+        "stop" : 1611226009252,
+        "duration" : 12
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Allowed by Policy\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:155:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:450:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:479:9)\n                    at async Object.checkFileOutcomeValues (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:593:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-risk-outcome.steps.js:11:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I check rows value \"Safe\", 4",
+        "time" : {
+          "start" : 1611226009240,
+          "stop" : 1611226009251,
+          "duration" : 11
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Allowed by Policy\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:155:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:450:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:479:9)\n                    at async Object.checkFileOutcomeValues (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:593:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-risk-outcome.steps.js:11:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "a9cd1e3b75851dda",
+      "name" : "Last Seen Screenshot",
+      "source" : "a9cd1e3b75851dda.png",
+      "type" : "image/png",
+      "size" : 62298
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 21,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-163"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-risk-outcome"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @TEST-163"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "cafdcfb9a18afc72",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/cafdcfb9a18afc72",
+        "status" : "failed",
+        "statusDetails" : "The result is not as expected, filter found is: Unknown",
+        "time" : {
+          "start" : 1611158717965,
+          "stop" : 1611158743266,
+          "duration" : 25301
+        }
+      }, {
+        "uid" : "d7d8794efcf1344b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/d7d8794efcf1344b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611153332542,
+          "stop" : 1611153356956,
+          "duration" : 24414
+        }
+      }, {
+        "uid" : "3fd557713cdab452",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/3fd557713cdab452",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080091081,
+          "stop" : 1611080118284,
+          "duration" : 27203
+        }
+      }, {
+        "uid" : "640fb191675267d9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/640fb191675267d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063763407,
+          "stop" : 1611063794576,
+          "duration" : 31169
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-163", "@request-history-filtering-by-risk-outcome", "@functional" ]
+  },
+  "source" : "245d1dc01f2c977d.json",
+  "parameterValues" : [ ]
+}
