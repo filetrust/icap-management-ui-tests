@@ -75,6 +75,8 @@ class MyHelper extends Helper {
 
     async clickElement(selector) {
         const helper = this.helpers['Puppeteer'];
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector(selector);
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (elVisible) {

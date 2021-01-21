@@ -92,6 +92,7 @@ module.exports = {
 
   clickAdaptationPolicy() {
     const element = this.tabs.adaptation_policy;
+    I.waitForElement(element,30)
     I.clickElement(element);
   },
 
