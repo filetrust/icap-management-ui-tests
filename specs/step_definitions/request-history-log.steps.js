@@ -16,16 +16,13 @@ When('I click on the Add Filter button', () => {
     requesthistoryPage.clickMoreFiltersButton();
     requesthistoryPage.clickAddFilterButton();
 });
-When('add multiple filter selections as {string}, {string}, {string}', (riskFilter, typeFilter, fileIdFilter) => {
+When('add multiple filter selections as {string}, {string}, {string}', (riskFilter, typeFilter) => {
     requesthistoryPage.selectFileOutcome(riskFilter);
 
     requesthistoryPage.clickAddFilterButton();
     requesthistoryPage.selectFileType(typeFilter);
-
- //   requesthistoryPage.clickAddFilterButton();
-//    requesthistoryPage.setFileId(fileIdFilter);
 });
-Then('the result list shows files with the applied filtertypes {string}, {string}',async (appliedFilter, filterValues) => {
+Then('the result list shows files with the applied filtertypes {string}, {string}', async (appliedFilter, filterValues) => {
     requesthistoryPage.checkFilters(appliedFilter, filterValues);
     await requesthistoryPage.verifyResultIsAccurate(appliedFilter)
 });
@@ -37,10 +34,18 @@ When('I remove {string}', (filterName) => {
     requesthistoryPage.removeAppliedFilter(filterName);
 });
 
-When('I click on the Add Filter button and add a file id filter as {string}', (filter) => {
-    requesthistoryPage.setFileId(filter);
+When('I have selected a time range {string} and {string}', async (datetimeFrom, datetimeTo) => {
+    requesthistoryPage.openDatePicker();
+    await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
-Then('the result list only shows the filtered file as {string}', (filteredFile) => {
-    requesthistoryPage.checkFileIdValues(filteredFiles);
+
+When('I click on the Add Filter button and add a file id filter with Id {string}', (fileId) => {
+    requesthistoryPage.setFileId(fileId);
+    I.waitForElement(requesthistoryPage.table.tableHeaders,60)
+});
+
+Then('the result list only shows the filtered file with id {string}', (fileId) => {
+    I.wait(5)
+    requesthistoryPage.checkFileIdValues(fileId);
 });
