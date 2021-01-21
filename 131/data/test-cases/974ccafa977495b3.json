@@ -1,0 +1,394 @@
+{
+  "uid" : "974ccafa977495b3",
+  "name" : "User can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.User can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240",
+  "historyId" : "e5bc633567725d2cb47393cf7988d9fb",
+  "time" : {
+    "start" : 1611244326667,
+    "stop" : 1611244361514,
+    "duration" : 34847
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded",
+  "statusTrace" : "Error: element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded",
+    "statusTrace" : "Error: element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"pdf\", \"Acroform\", \"sanitise\"",
+      "time" : {
+        "start" : 1611244348202,
+        "stop" : 1611244348206,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='pdfAcroformsanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1611244348202,
+          "stop" : 1611244348206,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1611244348206,
+        "stop" : 1611244352341,
+        "duration" : 4135
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfAcroformsanitise']\", 5",
+        "time" : {
+          "start" : 1611244348206,
+          "stop" : 1611244348210,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='pdfAcroformsanitise']\"",
+        "time" : {
+          "start" : 1611244348210,
+          "stop" : 1611244350318,
+          "duration" : 2108
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611244350318,
+          "stop" : 1611244352341,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1611244352341,
+        "stop" : 1611244352345,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611244352341,
+          "stop" : 1611244352345,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1611244352345,
+          "stop" : 1611244352345,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1611244352345,
+        "stop" : 1611244354473,
+        "duration" : 2128
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1611244352345,
+          "stop" : 1611244352349,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611244352349,
+          "stop" : 1611244354469,
+          "duration" : 2120
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1611244354473,
+        "stop" : 1611244356509,
+        "duration" : 2036
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1611244354473,
+          "stop" : 1611244354478,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1611244354478,
+          "stop" : 1611244356506,
+          "duration" : 2028
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'pdf' is set to 'Acroform' and 'sanitise' ",
+      "time" : {
+        "start" : 1611244356510,
+        "stop" : 1611244361514,
+        "duration" : 5004
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='pdfAcroformsanitise']\", 5",
+        "time" : {
+          "start" : 1611244356510,
+          "stop" : 1611244361511,
+          "duration" : 5001
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "dccd3f2205b4e13d",
+      "name" : "Last Seen Screenshot",
+      "source" : "dccd3f2205b4e13d.png",
+      "type" : "image/png",
+      "size" : 23968
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-240"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can publish a draft Adaptation Policy {\"FileType\":\"pdf\",\"ContentFlag\":\"Acroform\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @functional @TEST-240"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "50406f053e1af07f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/50406f053e1af07f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611226124384,
+          "stop" : 1611226164545,
+          "duration" : 40161
+        }
+      }, {
+        "uid" : "15c1780754a5d99e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/15c1780754a5d99e",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='pdfAcroformsanitise']) still not present on page after 5 sec\n                waiting for selector `label[for='pdfAcroformsanitise']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611158863820,
+          "stop" : 1611158899111,
+          "duration" : 35291
+        }
+      }, {
+        "uid" : "8e2d8a4461905453",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/8e2d8a4461905453",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfAcroformsanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153411578,
+          "stop" : 1611153428338,
+          "duration" : 16760
+        }
+      }, {
+        "uid" : "b89fe7e5af60f726",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/b89fe7e5af60f726",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080225908,
+          "stop" : 1611080265042,
+          "duration" : 39134
+        }
+      }, {
+        "uid" : "fd413b87b51f6e57",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/fd413b87b51f6e57",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063905797,
+          "stop" : 1611063936505,
+          "duration" : 30708
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-240", "@content-management-policy-editing", "@functional" ]
+  },
+  "source" : "974ccafa977495b3.json",
+  "parameterValues" : [ ]
+}
