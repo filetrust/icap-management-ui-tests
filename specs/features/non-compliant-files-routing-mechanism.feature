@@ -18,7 +18,7 @@ Feature: non-compliant-files-routing-mechanism
 
   @functional
   @TEST-158
-  Scenario Outline: User can update the non-compliant routes API URL 
+  Scenario Outline: User can update the non-compliant routes API URL
     When I enter a valid URL '<url>' into the API URL box and save
     And I publish the policy
     Then the API URL is updated to the new url '<url>'
@@ -46,26 +46,27 @@ Feature: non-compliant-files-routing-mechanism
       | block-glasswallBlockedFiles | Block              |
 
 
-#   @functional
-#   @TEST-233
-#   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
-#     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
-#     And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
-#     When I download a non compliant file '<file>' through the icap server
-#     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
-#     Examples:
-#       | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
-#       | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
-#   #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
+  @functional
+  @TEST-233
+  Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
+    Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
+    And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
+    When I download a non compliant file '<file>' through the icap server
+    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
+    Examples:
+      | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
+      | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
+  #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
 
-#   @functional
-#   @TEST-234
-#   Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
-#     Given I have set the routing option for unprocessable files to '<policyAction>'
-#     When I submit a non supported or unprocessable file '<file>' through the icap server
-#     Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
-#     Examples:
-#       | policyAction                 | file                  | fileOutcome |
-#       | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     |
-# #| block-unprocessableFileTypes | icaptest.ps1           | htmlReport  |
+
+  @functional
+  @TEST-234
+  Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
+    Given I have set the routing option for unprocessable files to '<policyAction>'
+    When I submit a non supported or unprocessable file '<file>' through the icap server
+    Then The file '<file>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
+    Examples:
+      | policyAction                 | file                  | fileOutcome | outcomeValue      |
+      #| relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     | Allowed by Policy |
+      | block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
 

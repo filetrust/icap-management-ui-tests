@@ -167,12 +167,65 @@ module.exports = function() {
     await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
     const icapOutput = fs.readFileSync(`${icapLogs}`);
     output.print('icapLogs: '+icapOutput)
-    fileId = icapOutput
+    const statusCode = icapOutput
+        .toString()
+        .split('ICAP/1.0 ')[1]
+        .split(" ")[0];
+        if (statusCode === '200' || statusCode === '201') {
+            fileId = icapOutput
+            .toString()
+            .split('X-Adaptation-File-Id: ')[1]
+            .split("\n")[0];
+            output.print('File is sent...')
+            return fileId;
+        } else if (statusCode === '204') {
+            output.print('File is sent...')
+            output.print('File is Unmodified')
+        } else {
+            assert.fail(`${statusCode} code was received`)
+        }
+  },
+
+  submitFile: async function (fileName) {
+    const cp = require('child_process')
+    const fs = require('fs')
+    const path = require('path');
+    const inputDir = path.join('src', 'data', 'input');
+    const outputDir = path.join('output', 'downloads');
+    const inputPath = path.join(process.cwd(), inputDir);
+    const outputPath =  path.join(process.cwd(), outputDir);
+    const icapLogs = path.join('output', 'icap.log')
+
+    const icapClient = 'icap-client-qa-main.uksouth.cloudapp.azure.com' // icap-client-qa.uksouth.cloudapp.azure.com
+    
+    // use NodeJS child process to run a bash command in sync way
+    output.print('Sending file...')
+    console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
+   
+    await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
+    const icapOutput = fs.readFileSync(`${icapLogs}`);
+    output.print('icapLogs: '+icapOutput)
+    output.print('File is sent...')
+    return icapOutput;
+  },
+
+  getResponseCode: function (icapResp) {
+    const responseCode = icapResp
+    .toString()
+    .split('ICAP/1.0 ')[1]
+    .split("\n")[0];
+    output.print('The responde code is: '+ responseCode)
+    return responseCode;
+  },
+
+  getFileId: function (icapResp) { 
+    let fileId = icapResp
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
         .split("\n")[0];
-    output.print('File is sent...')
+    output.print('The file id: '+fileId)
     return fileId;
   },
+
   });
 }

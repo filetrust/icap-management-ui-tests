@@ -92,6 +92,7 @@ module.exports = {
         cmpDetailsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Content Management Policy')]`,
         issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
         sanitisationItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Sanitisation Items')]`,
+        issueItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Issue Items')]`,
         remedyItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(4)`,
         fileDetailModal: `section[class^='Modal_Modal']`,
         itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`
@@ -685,6 +686,23 @@ module.exports = {
         return "//tr[contains(., '" + fileId + "')]"
     },
 
+    getFileRecordByTypeAndRisk(type, risk) {
+        return `//tbody/tr[1]//th[contains(., '${type}')]/../th[contains(., '${risk}')]`
+    },
+
+    verifyFileRecord(fileId) {
+        I.seeElementExist(this.getFileRecord(fileId))
+    },
+
+    verifyFileRecordByTypeAndRisk(type, risk) {
+        I.seeElementExist(this.getFileRecordByTypeAndRisk(type, risk))
+    },
+
+    async getIdByTypeAndRisk(type, risk) {
+        const el = this.getFileRecordByTypeAndRisk(type, risk)
+        return await I.grabTextFrom(`${el}/../th[2]`)
+    },
+
     openFileRecord(fileId) {
         I.click(this.getFileRecord(fileId))
     },
@@ -760,6 +778,17 @@ module.exports = {
         I.waitForVisible(items)
         const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//table//td[contains(text(),'${issue}')]`;
         (await I.seeElementExist(elIssue) !== true) ? assert.fail(`No ${issue} is displayed!`) : output.log(`${issue} is displayed`);
+    },
+
+    async isIssueItemsSectionShowsDescription(description) {
+        const el = this.modal.fileDetailModal;
+        (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
+        const elBanner = this.modal.issueItemsBanner;
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Issue Items are displayed!') : I.click(elBanner);
+        const items = `${this.modal.issueItemsBanner}${this.modal.itemHeaders}`
+        I.waitForVisible(items)
+        const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Issue Items")]//table//td[contains(text(),"${description}")]`;
+        (await I.seeElementExist(elIssue) !== true) ? assert.fail(`No ${description} is displayed!`) : output.log(`${description} is displayed`);
     },
 
     async clickOnTimestampArrow() {
