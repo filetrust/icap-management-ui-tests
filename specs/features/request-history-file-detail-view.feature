@@ -39,8 +39,8 @@ Feature: request-history-file-detail-view
         Then The Sanitisation issues content is displayed on the details view to show issue '<issue>'
         And The Remedy items content is displayed on the details view to show issue '<item>'
         Examples:
-            | file        | issue                          | item                                                     |
-            | issues.docx | Embedded file content present. | First XREF table entry malformed and will be regenerated |
+            | file             | issue                          | item                                                     |
+            | EmbeddedFile.pdf | Embedded file content present. | First XREF table entry malformed and will be regenerated |
 
     @functional
     @TEST-169_4
