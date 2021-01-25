@@ -67,6 +67,6 @@ Feature: non-compliant-files-routing-mechanism
     Then The file '<file>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
     Examples:
       | policyAction                 | file                  | fileOutcome | outcomeValue      |
-      #| relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     | Allowed by Policy |
-      | block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
+      | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     | Allowed by Policy |
+      #| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
 

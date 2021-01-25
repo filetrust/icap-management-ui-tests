@@ -24,8 +24,8 @@ Feature: request-history-file-detail-view
         Given I process a file '<file>' through the icap server
         And The transaction with '<type>' type and '<risk>' risk is available in the transaction log
         When I click on the transaction record to open the detail view
-        Then The issues content section is displayed on the details view
-        And Expanding the content section shows the issue "<issue>"
+        Then The issues content is displayed on the details view 
+        And Expanding the content section shows the issue '<issue>'
         Examples:
             | file                  | issue                                      | type | risk              |
             | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached | Xlsx | Allowed by Policy |

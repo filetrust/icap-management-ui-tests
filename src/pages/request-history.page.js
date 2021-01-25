@@ -50,7 +50,8 @@ module.exports = {
         file: `tr:nth-of-type(2)`,
         emptyTableNotification: `//td[contains(.,'No Transaction Data Found')]`,
         errorTableNotification: `//td[contains(.,'Error Getting Transaction Data')]`,
-        loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`
+        loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`,
+        tableHeaders: `tr[class*='MuiTableRow-head'] > th`,
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
@@ -164,6 +165,7 @@ module.exports = {
             } else {
                 I.say("Unable to find the required option");
             }
+            I.waitForElement(tableHeaders, 30)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -315,11 +317,12 @@ module.exports = {
 
     async setTimePeriod(datetimeFrom, datetimeTo) {
         const element = this.buttons.customRange;
-        await I.click(element).catch(() => I.say(element + 'is not clickable'));
+        I.click(element).catch(() => I.say(element + 'is not clickable'));
         try {
             await this.setTimeFrom(datetimeFrom)
             await this.setTimeTo(datetimeFrom, datetimeTo)
             I.click(this.buttons.apply)
+            I.waitForElement(this.table.tableHeaders,60)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -627,7 +630,7 @@ module.exports = {
         I.click(this.buttons.fileIdMenu);
         I.fillField(this.fields.inputFilterFileID, value);
         I.click(this.buttons.fileIdAdd);
-        this.closeFilterPopup();
+       
     },
 
     filterByFileId(fileId) {
@@ -640,6 +643,7 @@ module.exports = {
         I.click(this.buttons.fileIdAdd);
     },
     async checkFileIdValues(filteredFile) {
+        I.wait(5)
         await this.checkRows(filteredFile, 2)
     },
 

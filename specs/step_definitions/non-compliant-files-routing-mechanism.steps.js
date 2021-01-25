@@ -93,31 +93,26 @@ Then('The file {string} processing outcome is as expected {string} and {string}'
         I.amInPath(filePath)
         I.dontSeeFile(file)
     }else if (fileOutcome === 'htmlReport') {
+        if(respCode === '403 Forbidden'){
+            I.say('Success, Response code is 403 as expected')
+        }else{
+            I.say('Failed, Response code is '+respCode)
+        }
        // I.amInPath(filePath)
         //I.seeFile(file)
         I.goToRequestHistory();
         requesthistoryPage.openDatePicker();
-        requesthistoryPage.selectTimePeriod('12 Hour')
+        requesthistoryPage.selectTimePeriod('1 Hour')
         await requesthistoryPage.checkFileOutcomeValueByFileId(fileOutcome, outcomeValue, fileId, true)
     }
 });
 
 Given('I set the policy for file type {string} to {string} and {string}', async (FileType, ContentFlag, FlagType) => {
-    I.goToDraftAdaptationPolicy();
+    await I.goToDraftAdaptationPolicy();
     await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
 });
 
-Then('The downloaded file outcome is {string}', (responseCode) => {
-    if (fileOutcome === 'Sanitise') {
-        const filePath = `output/downloads/${file.trim()}`
-        I.checkFileInFileDropUrl(filePath)
-        I.dontSee('File is clean')
-        I.say('The file is relayed unprocessed as expected')
-    } else if (fileOutcome === 'htmlReport') {
-        sharepoint.checkIfHtmlReportReturned()
-    }
 
-});
 
 Given('I have set the routing option for unprocessable files to {string}', async (policyAction) => {
     await policyPage.setAndPublishRouteFlag(policyAction);
@@ -130,4 +125,16 @@ When('I download a non supported or unprocessable file {string} through the icap
     //sharepoint.goToDocuments();
     sharepoint.selectFile(file);
     sharepoint.downloadFile()
+});
+
+Then('The downloaded file outcome is {string}', (responseCode) => {
+    if (fileOutcome === 'Sanitise') {
+        const filePath = `output/downloads/${file.trim()}`
+        I.checkFileInFileDropUrl(filePath)
+        I.dontSee('File is clean')
+        I.say('The file is clean')
+    } else if (fileOutcome === 'htmlReport') {
+        sharepoint.checkIfHtmlReportReturned()
+    }
+
 });
