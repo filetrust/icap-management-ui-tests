@@ -91,7 +91,6 @@ module.exports = {
     modal: {
         modalHeader: `section[class*='FileInfo_FileInfo__'] > header`,
         cmpDetailsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Content Management Policy')]`,
-        issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
         sanitisationItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Sanitisation Items')]`,
         issueItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Issue Items')]`,
         remedyItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Remedy Items')]`,
