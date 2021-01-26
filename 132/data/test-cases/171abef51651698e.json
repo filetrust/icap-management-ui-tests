@@ -1,0 +1,208 @@
+{
+  "uid" : "171abef51651698e",
+  "name" : "The request log is sorted by timestamp, newest to oldest @functional @TEST-242",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.The request log is sorted by timestamp, newest to oldest @functional @TEST-242",
+  "historyId" : "d76d1d7b5f341b4966f00661528ba674",
+  "time" : {
+    "start" : 1611690678755,
+    "stop" : 1611690689017,
+    "duration" : 10262
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"",
+  "statusTrace" : "Error: Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"\n                    at ElementHandle.$eval (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:649:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:192:31)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"",
+    "statusTrace" : "Error: Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"\n                    at ElementHandle.$eval (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:649:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:192:31)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "requesthistoryPage: verifyTimestampArrow true",
+      "time" : {
+        "start" : 1611690689006,
+        "stop" : 1611690689010,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"svg.MuiTableSortLabel-icon\", \"class\"",
+        "time" : {
+          "start" : 1611690689006,
+          "stop" : 1611690689010,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the request log is sorted from newest timestamp to oldest timestamp ",
+      "time" : {
+        "start" : 1611690689010,
+        "stop" : 1611690689016,
+        "duration" : 6
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"\n                    at ElementHandle.$eval (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:649:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:192:31)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I check rows timestamp ",
+        "time" : {
+          "start" : 1611690689010,
+          "stop" : 1611690689016,
+          "duration" : 6
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"\n                    at ElementHandle.$eval (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/puppeteer/lib/cjs/puppeteer/common/JSHandle.js:649:19)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:192:31)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b6784aeb1ec586e4",
+      "name" : "Last Seen Screenshot",
+      "source" : "b6784aeb1ec586e4.png",
+      "type" : "image/png",
+      "size" : 36783
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-242"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "The request log is sorted by timestamp, newest to oldest @functional @TEST-242"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "eb47799cc463f7d1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/eb47799cc463f7d1",
+        "status" : "failed",
+        "statusDetails" : "Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"",
+        "time" : {
+          "start" : 1611244275950,
+          "stop" : 1611244286205,
+          "duration" : 10255
+        }
+      }, {
+        "uid" : "5af2a5051eadc93b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/5af2a5051eadc93b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611226083225,
+          "stop" : 1611226093459,
+          "duration" : 10234
+        }
+      }, {
+        "uid" : "4a3dc53267fb804d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/4a3dc53267fb804d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611158822012,
+          "stop" : 1611158833236,
+          "duration" : 11224
+        }
+      }, {
+        "uid" : "a72780bd99f208e4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/a72780bd99f208e4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611153434288,
+          "stop" : 1611153445475,
+          "duration" : 11187
+        }
+      }, {
+        "uid" : "bb8d05a06f69c494",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/bb8d05a06f69c494",
+        "status" : "failed",
+        "statusDetails" : "Error: failed to find element matching selector \"tbody[class*='MuiTableBody-root'] > tr:nth-child(1) th:nth-child(1)\"",
+        "time" : {
+          "start" : 1611080191490,
+          "stop" : 1611080201728,
+          "duration" : 10238
+        }
+      }, {
+        "uid" : "3467b320ddd9c0eb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/3467b320ddd9c0eb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063866952,
+          "stop" : 1611063878136,
+          "duration" : 11184
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-242", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "171abef51651698e.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,255 @@
+{
+  "uid" : "56394d82dda251e",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "historyId" : "5961c35b13e7be5a530c16bd92e417d8",
+  "time" : {
+    "start" : 1611690575050,
+    "stop" : 1611690604796,
+    "duration" : 29746
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I remove the 'issues.docx' file downloaded before if it exists ",
+      "time" : {
+        "start" : 1611690604772,
+        "stop" : 1611690604773,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I cleanup file \"output/downloads/issues.docx\"",
+        "time" : {
+          "start" : 1611690604772,
+          "stop" : 1611690604773,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"InternalHyperlinks\", \"sanitise\"",
+      "time" : {
+        "start" : 1611690604773,
+        "stop" : 1611690604777,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='wordInternalHyperlinkssanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1611690604773,
+          "stop" : 1611690604777,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'word' with 'InternalHyperlinks' set to 'sanitise' ",
+      "time" : {
+        "start" : 1611690604777,
+        "stop" : 1611690604796,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611690604777,
+          "stop" : 1611690604779,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611690604779,
+          "stop" : 1611690604782,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 5",
+        "time" : {
+          "start" : 1611690604790,
+          "stop" : 1611690604795,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "75a9efc25a8ae19f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/75a9efc25a8ae19f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611244176530,
+          "stop" : 1611244202969,
+          "duration" : 26439
+        }
+      }, {
+        "uid" : "53e1b34071e8978f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/53e1b34071e8978f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611225985468,
+          "stop" : 1611226008570,
+          "duration" : 23102
+        }
+      }, {
+        "uid" : "d87d2ffcadac1779",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/d87d2ffcadac1779",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611158717926,
+          "stop" : 1611158739740,
+          "duration" : 21814
+        }
+      }, {
+        "uid" : "f792c62c50bbe0bc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/f792c62c50bbe0bc",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='wordInternalHyperlinkssanitise']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153332278,
+          "stop" : 1611153346088,
+          "duration" : 13810
+        }
+      }, {
+        "uid" : "30ab3cc3cbcb87fe",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/30ab3cc3cbcb87fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080090934,
+          "stop" : 1611080105734,
+          "duration" : 14800
+        }
+      }, {
+        "uid" : "60c0f677a3fc071b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/60c0f677a3fc071b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063763344,
+          "stop" : 1611063782389,
+          "duration" : 19045
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "56394d82dda251e.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,513 @@
+{
+  "uid" : "ee3510404daa97c1",
+  "name" : "User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239",
+  "historyId" : "9dcc691121a47a40bcf1066c48d5fa58",
+  "time" : {
+    "start" : 1611690701618,
+    "stop" : 1611690743797,
+    "duration" : 42179
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"excel\", \"ExternalHyperlinks\", \"disallow\"",
+      "time" : {
+        "start" : 1611690726897,
+        "stop" : 1611690726901,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='excelExternalHyperlinksdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1611690726897,
+          "stop" : 1611690726900,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'excel' is set to 'ExternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1611690726901,
+        "stop" : 1611690726913,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611690726901,
+          "stop" : 1611690726903,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611690726903,
+          "stop" : 1611690726905,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='excelExternalHyperlinksdisallow']\", 5",
+        "time" : {
+          "start" : 1611690726906,
+          "stop" : 1611690726913,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setPolicyFlag \"excel\", \"ExternalHyperlinks\", \"sanitise\"",
+      "time" : {
+        "start" : 1611690726913,
+        "stop" : 1611690726919,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='excelExternalHyperlinkssanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1611690726913,
+          "stop" : 1611690726916,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I change the contentFlag for 'excel' to 'ExternalHyperlinks' and 'sanitise' ",
+      "time" : {
+        "start" : 1611690726919,
+        "stop" : 1611690729053,
+        "duration" : 2134
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='excelExternalHyperlinkssanitise']\", 5",
+        "time" : {
+          "start" : 1611690726919,
+          "stop" : 1611690726924,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='excelExternalHyperlinkssanitise']\"",
+        "time" : {
+          "start" : 1611690726924,
+          "stop" : 1611690729053,
+          "duration" : 2129
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickSaveChanges ",
+      "time" : {
+        "start" : 1611690729053,
+        "stop" : 1611690731080,
+        "duration" : 2027
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611690729053,
+          "stop" : 1611690731080,
+          "duration" : 2027
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: deletePolicy ",
+      "time" : {
+        "start" : 1611690731080,
+        "stop" : 1611690733222,
+        "duration" : 2142
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"button[class*='DraftPolicy_deleteButton__']\"",
+        "time" : {
+          "start" : 1611690731080,
+          "stop" : 1611690733219,
+          "duration" : 2139
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1611690733222,
+        "stop" : 1611690735259,
+        "duration" : 2037
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftDeleteModal_confirmDeleteButton__']\", 5",
+        "time" : {
+          "start" : 1611690733222,
+          "stop" : 1611690733227,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftDeleteModal_confirmDeleteButton__']\"",
+        "time" : {
+          "start" : 1611690733227,
+          "stop" : 1611690735258,
+          "duration" : 2031
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1611690735259,
+        "stop" : 1611690737273,
+        "duration" : 2014
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1611690735259,
+          "stop" : 1611690737273,
+          "duration" : 2014
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1611690737273,
+        "stop" : 1611690743793,
+        "duration" : 6520
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+        "time" : {
+          "start" : 1611690737273,
+          "stop" : 1611690741763,
+          "duration" : 4490
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1611690741764,
+          "stop" : 1611690743793,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='excelExternalHyperlinksdisallow']\"",
+      "time" : {
+        "start" : 1611690743793,
+        "stop" : 1611690743797,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='excelExternalHyperlinksdisallow']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1611690743793,
+          "stop" : 1611690743797,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 25,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-239"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "5006434e3e0dcab1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/5006434e3e0dcab1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611244289878,
+          "stop" : 1611244326631,
+          "duration" : 36753
+        }
+      }, {
+        "uid" : "a76d5e8f9b55a590",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/a76d5e8f9b55a590",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611226092543,
+          "stop" : 1611226124296,
+          "duration" : 31753
+        }
+      }, {
+        "uid" : "90a700ef92d6729b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/90a700ef92d6729b",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611158828294,
+          "stop" : 1611158863710,
+          "duration" : 35416
+        }
+      }, {
+        "uid" : "2ff830a14cf4788d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/2ff830a14cf4788d",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='excelExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153394210,
+          "stop" : 1611153411454,
+          "duration" : 17244
+        }
+      }, {
+        "uid" : "e2fb64d39cc9afc7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/e2fb64d39cc9afc7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080185851,
+          "stop" : 1611080225893,
+          "duration" : 40042
+        }
+      }, {
+        "uid" : "78dbaa2144a4ca63",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/78dbaa2144a4ca63",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='excelExternalHyperlinksdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1611063866610,
+          "stop" : 1611063905656,
+          "duration" : 39046
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@functional", "@TEST-239" ]
+  },
+  "source" : "ee3510404daa97c1.json",
+  "parameterValues" : [ ]
+}
