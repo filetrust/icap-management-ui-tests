@@ -1,0 +1,405 @@
+{
+  "uid" : "2f534db64a0d8d56",
+  "name" : "The default routing option for unprocessable and blocked files is accurate @success @prototype @TEST-238",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.The default routing option for unprocessable and blocked files is accurate @success @prototype @TEST-238",
+  "historyId" : "59502c48e27acf0f13c6de6830ad3efc",
+  "time" : {
+    "start" : 1611690572331,
+    "stop" : 1611690591248,
+    "duration" : 18917
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedIsChecked (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2372:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedIsChecked (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2372:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "policyPage: clickCurrentPolicyTab ",
+      "time" : {
+        "start" : 1611690587225,
+        "stop" : 1611690589235,
+        "duration" : 2010
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+        "time" : {
+          "start" : 1611690587225,
+          "stop" : 1611690589235,
+          "duration" : 2010
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickNcfsPolicy ",
+      "time" : {
+        "start" : 1611690589235,
+        "stop" : 1611690589238,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+        "time" : {
+          "start" : 1611690589235,
+          "stop" : 1611690589238,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then I see the default set routing option for unprocessable files as '' ",
+      "time" : {
+        "start" : 1611690589238,
+        "stop" : 1611690591248,
+        "duration" : 2010
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedIsChecked (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2372:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I scroll to ",
+        "time" : {
+          "start" : 1611690589238,
+          "stop" : 1611690591242,
+          "duration" : 2004
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I dont see checkbox is checked \"#block-unprocessableFileTypes\"",
+        "time" : {
+          "start" : 1611690591242,
+          "stop" : 1611690591247,
+          "duration" : 5
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedIsChecked (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2372:3)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "42b1fc07a1902c77",
+      "name" : "Last Seen Screenshot",
+      "source" : "42b1fc07a1902c77.png",
+      "type" : "image/png",
+      "size" : 26666
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-238"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@prototype"
+  }, {
+    "name" : "tag",
+    "value" : "@success"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "The default routing option for unprocessable and blocked files is accurate @success @prototype @TEST-238"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 48,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 48
+      },
+      "items" : [ {
+        "uid" : "affc3bd42422a0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/affc3bd42422a0",
+        "status" : "failed",
+        "statusDetails" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611244166494,
+          "stop" : 1611244183682,
+          "duration" : 17188
+        }
+      }, {
+        "uid" : "e6e19842245fd826",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/e6e19842245fd826",
+        "status" : "failed",
+        "statusDetails" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611225995671,
+          "stop" : 1611226012766,
+          "duration" : 17095
+        }
+      }, {
+        "uid" : "311b50b0d974f588",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/311b50b0d974f588",
+        "status" : "failed",
+        "statusDetails" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611158706044,
+          "stop" : 1611158726410,
+          "duration" : 20366
+        }
+      }, {
+        "uid" : "eeb71ba947dbf4a6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/125//#testresult/eeb71ba947dbf4a6",
+        "status" : "failed",
+        "statusDetails" : "Checkable \"#block-unprocessableFileTypes\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153306022,
+          "stop" : 1611153327725,
+          "duration" : 21703
+        }
+      }, {
+        "uid" : "922461e22bd6613a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/124//#testresult/922461e22bd6613a",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1611080071577,
+          "stop" : 1611080098369,
+          "duration" : 26792
+        }
+      }, {
+        "uid" : "640a317701370a66",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/123//#testresult/640a317701370a66",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1611063754182,
+          "stop" : 1611063776497,
+          "duration" : 22315
+        }
+      }, {
+        "uid" : "8729f7fed13cee3a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/122//#testresult/8729f7fed13cee3a",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1611055308043,
+          "stop" : 1611055329026,
+          "duration" : 20983
+        }
+      }, {
+        "uid" : "56eca9e597666cf7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/121//#testresult/56eca9e597666cf7",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1611054539695,
+          "stop" : 1611054560721,
+          "duration" : 21026
+        }
+      }, {
+        "uid" : "c03c3346ca0251bf",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/120//#testresult/c03c3346ca0251bf",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1611053534282,
+          "stop" : 1611053560429,
+          "duration" : 26147
+        }
+      }, {
+        "uid" : "fffd48e993d059eb",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/119//#testresult/fffd48e993d059eb",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610980266160,
+          "stop" : 1610980288499,
+          "duration" : 22339
+        }
+      }, {
+        "uid" : "ad99cea2608f20cc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/118//#testresult/ad99cea2608f20cc",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610957892475,
+          "stop" : 1610957914697,
+          "duration" : 22222
+        }
+      }, {
+        "uid" : "53bde111053582ec",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/117//#testresult/53bde111053582ec",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610707128405,
+          "stop" : 1610707155861,
+          "duration" : 27456
+        }
+      }, {
+        "uid" : "7ff558f87a787086",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/116//#testresult/7ff558f87a787086",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610654227853,
+          "stop" : 1610654250153,
+          "duration" : 22300
+        }
+      }, {
+        "uid" : "a78cc61988eddb4f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/115//#testresult/a78cc61988eddb4f",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610648316730,
+          "stop" : 1610648341509,
+          "duration" : 24779
+        }
+      }, {
+        "uid" : "5c1c57509d5fd549",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/114//#testresult/5c1c57509d5fd549",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610633322712,
+          "stop" : 1610633347022,
+          "duration" : 24310
+        }
+      }, {
+        "uid" : "e1b167ab1f056636",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/113//#testresult/e1b167ab1f056636",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610628659665,
+          "stop" : 1610628682261,
+          "duration" : 22596
+        }
+      }, {
+        "uid" : "6868051db0de51c1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/112//#testresult/6868051db0de51c1",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610624572944,
+          "stop" : 1610624594879,
+          "duration" : 21935
+        }
+      }, {
+        "uid" : "8e4096a05d9f7609",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/111//#testresult/8e4096a05d9f7609",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610555662070,
+          "stop" : 1610555683365,
+          "duration" : 21295
+        }
+      }, {
+        "uid" : "f89152f372626b18",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/110//#testresult/f89152f372626b18",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610548835747,
+          "stop" : 1610548858944,
+          "duration" : 23197
+        }
+      }, {
+        "uid" : "822f9308a562720a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/109//#testresult/822f9308a562720a",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1610544479585,
+          "stop" : 1610544507087,
+          "duration" : 27502
+        }
+      } ]
+    },
+    "tags" : [ "@success", "@prototype", "@TEST-238", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "2f534db64a0d8d56.json",
+  "parameterValues" : [ ]
+}
