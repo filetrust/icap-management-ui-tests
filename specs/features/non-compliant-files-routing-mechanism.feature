@@ -46,20 +46,20 @@ Feature: non-compliant-files-routing-mechanism
       | block-glasswallBlockedFiles | Block              |
 
 
-  @functional
+  #@functional
   @TEST-233
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
     Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
     And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
     When I download a non compliant file '<file>' through the icap server
-    Then the file outcome for the submitted file '<file>' is '<fileOutcome>'
+    Then The file outcome for the submitted file '<file>' is '<fileOutcome>' with '<outcomeValue>'
     Examples:
-      | blockedPolicyAction         | fileType | contentFlag   | flagType | file        | fileOutcome |
-      | relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | issues.docx | relayed     |
-  #| block-glasswallBlockedFiles | png      | EmbeddedFiles | disallow | Clean.png   | htmlReport |
+      | blockedPolicyAction         | fileType | contentFlag   | flagType | file      | fileOutcome | outcomeValue      |
+      #| relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | acos.docx | relayed     | Allowed by Policy|
+      | block-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | acos.docx | htmlReport  | Blocked by Policy |
 
 
-  @functional
+  #@functional
   @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
     Given I have set the routing option for unprocessable files to '<policyAction>'
@@ -68,5 +68,5 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                 | file                  | fileOutcome | outcomeValue      |
       | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     | Allowed by Policy |
-      #| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
+#| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
 

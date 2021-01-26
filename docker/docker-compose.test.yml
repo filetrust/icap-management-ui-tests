@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   allure-server:
     container_name: allure-server
@@ -7,6 +7,11 @@ services:
       - 5050:5050
     volumes:
       - /allure-server-store:/allure
+  icap-client:
+    build:
+      context: ..
+      dockerfile: docker/icap.Dockerfile
+    container_name: icap
   codecept:
     build:
       context: ..
@@ -19,3 +24,16 @@ services:
       - CODECEPT_ARGS=--debug
     volumes:
      - ../:/tests
+    extra_hosts:
+    - "www.gov.uk:34.244.17.60"
+    - "saaspoc1.sharepoint.com:34.244.17.60"
+    - "ukc-word-edit.officeapps.live.com:34.244.17.60"
+    - "saaspoc1-my.sharepoint.com:34.244.17.60"
+    - "ukc-excel.officeapps.live.com:34.244.17.60"
+    - "ukc-powerpoint.officeapps.live.com:34.244.17.60"
+    - "browser.pipe.aria.microsoft.com:34.244.17.60"
+    # hostAliases:
+    #  - ip: 34.244.17.60
+    #  - hostnames:
+    #    - "www.gov.uk"
+    #    - "assets.publishing.service.gov.uk"

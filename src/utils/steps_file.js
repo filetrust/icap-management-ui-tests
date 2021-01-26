@@ -6,14 +6,14 @@ const filedropPage = require("../pages/file-drop.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
 const assert = require('assert').strict;
-
+const icapClient = '78.159.113.47'
 
 module.exports = function() {
   return actor({
     onLoginPage: function () {
         //this.amOnPage('http://localhost:8080/')
-      //this.amOnPage('http://management-ui.northeurope.cloudapp.azure.com')
-      this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
+      this.amOnPage('http://78.159.113.47:31829/')
+      //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
   },
 
   loginNoPwd: function () {
@@ -68,9 +68,9 @@ module.exports = function() {
       policyPage.clickHistoryTab();
   },
 
-  goToDraftAdaptationPolicy: function () {
-      policyPage.clickDraftTab();
-      policyPage.clickAdaptationPolicy();
+  goToDraftAdaptationPolicy: async function () {
+      await policyPage.clickDraftTab();
+     policyPage.clickAdaptationPolicy();
   },
 
   goToCurrentAdaptationPolicy: function () {
@@ -110,8 +110,7 @@ module.exports = function() {
       this.uploadFile(file)
       filedropPage.clickViewResult();
   },
-
-
+  
   uploadFileWithNoSanitiseData: function (file) {
       this.attachFile(filedropPage.buttons.fileInput, file)
   },
@@ -157,14 +156,12 @@ module.exports = function() {
     const inputPath = path.join(process.cwd(), inputDir);
     const outputPath =  path.join(process.cwd(), outputDir);
     const icapLogs = path.join('output', 'icap.log')
-
-    const icapClient = 'icap-client-qa-main.uksouth.cloudapp.azure.com' // icap-client-qa.uksouth.cloudapp.azure.com
     
     // use NodeJS child process to run a bash command in sync way
     output.print('Sending file...')
-    console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
+    console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
     let fileId;
-    await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
+    await cp.execSync(`c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
     const icapOutput = fs.readFileSync(`${icapLogs}`);
     output.print('icapLogs: '+icapOutput)
     fileId = icapOutput
@@ -185,7 +182,7 @@ module.exports = function() {
     const outputPath =  path.join(process.cwd(), outputDir);
     const icapLogs = path.join('output', 'icap.log')
 
-    const icapClient = 'icap-client-qa-main.uksouth.cloudapp.azure.com' // icap-client-qa.uksouth.cloudapp.azure.com
+     // icap-client-qa.uksouth.cloudapp.azure.com
     
     // use NodeJS child process to run a bash command in sync way
     output.print('Sending file...')
@@ -198,17 +195,27 @@ module.exports = function() {
     return icapOutput;
   },
 
-  getResponseCode: function (icapResp) {
-    const responseCode = icapResp
+  getIcapHeaderCode: function (icapResp) {
+    let icapCode = icapResp
     .toString()
     .split('ICAP/1.0 ')[1]
+    .split("\n")[0];
+    output.print('The icap header code is: '+ icapCode)
+    return icapCode;
+  },
+
+  getResponseCode: function (icapResp) {
+   let responseCode = icapResp
+    .toString()
+    .split('HTTP/1.0 ')[1]
     .split("\n")[0];
     output.print('The responde code is: '+ responseCode)
     return responseCode;
   },
 
   getFileId: function (icapResp) { 
-    let fileId = icapResp
+    let fileId;
+    fileId = icapResp
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
         .split("\n")[0];

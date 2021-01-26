@@ -127,6 +127,6 @@ Then('the current policy is updated with the new settings {string}, {string}, {s
     url = newUrl
     I.goToCurrentNcfsPolicy()
     I.seeInField(policyPage.fields.apiUrlInput, url);
-    I.goToCurrentAdaptationPolicy()
+    policyPage.goToCurrentAdaptationPolicy()
     policyPage.assertCurrentFlagAs(FileType, ContentFlag, FlagType)
 });
