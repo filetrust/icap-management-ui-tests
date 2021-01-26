@@ -1,0 +1,399 @@
+{
+  "uid" : "5eef530101c228db",
+  "name" : "User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239",
+  "historyId" : "9dcc691121a47a40bcf1066c48d5fa58",
+  "time" : {
+    "start" : 1611691274910,
+    "stop" : 1611691309417,
+    "duration" : 34507
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+  "statusTrace" : "Error: element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+    "statusTrace" : "Error: element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"excel\", \"ExternalHyperlinks\", \"disallow\"",
+      "time" : {
+        "start" : 1611691300198,
+        "stop" : 1611691300212,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='excelExternalHyperlinksdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1611691300198,
+          "stop" : 1611691300212,
+          "duration" : 14
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'excel' is set to 'ExternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1611691300212,
+        "stop" : 1611691300222,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611691300212,
+          "stop" : 1611691300219,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611691300219,
+          "stop" : 1611691300222,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: publishPolicy ",
+      "time" : {
+        "start" : 1611691300222,
+        "stop" : 1611691300226,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611691300222,
+          "stop" : 1611691300225,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "1",
+        "time" : {
+          "start" : 1611691300225,
+          "stop" : 1611691300225,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'excel' is set to 'ExternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1611691300226,
+        "stop" : 1611691302374,
+        "duration" : 2148
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 5",
+        "time" : {
+          "start" : 1611691300226,
+          "stop" : 1611691300229,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611691300229,
+          "stop" : 1611691302370,
+          "duration" : 2141
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"section[class*='Modal_Modal__']\" ",
+      "time" : {
+        "start" : 1611691302374,
+        "stop" : 1611691304409,
+        "duration" : 2035
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+        "time" : {
+          "start" : 1611691302374,
+          "stop" : 1611691302379,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+        "time" : {
+          "start" : 1611691302379,
+          "stop" : 1611691304405,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'excel' is set to 'ExternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1611691304409,
+        "stop" : 1611691309416,
+        "duration" : 5007
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='excelExternalHyperlinksdisallow']\", 5",
+        "time" : {
+          "start" : 1611691304409,
+          "stop" : 1611691309411,
+          "duration" : 5002
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:274:23)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-editing.steps.js:34:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "17ec95d634d0982d",
+      "name" : "Last Seen Screenshot",
+      "source" : "17ec95d634d0982d.png",
+      "type" : "image/png",
+      "size" : 26651
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 16,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-239"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can delete a draft policy {\"FileType\":\"excel\",\"ContentFlag\":\"ExternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-239"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 3,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "ee3510404daa97c1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/ee3510404daa97c1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611690701618,
+          "stop" : 1611690743797,
+          "duration" : 42179
+        }
+      }, {
+        "uid" : "5006434e3e0dcab1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/5006434e3e0dcab1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611244289878,
+          "stop" : 1611244326631,
+          "duration" : 36753
+        }
+      }, {
+        "uid" : "a76d5e8f9b55a590",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/a76d5e8f9b55a590",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611226092543,
+          "stop" : 1611226124296,
+          "duration" : 31753
+        }
+      }, {
+        "uid" : "90a700ef92d6729b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/90a700ef92d6729b",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelExternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelExternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611158828294,
+          "stop" : 1611158863710,
+          "duration" : 35416
+        }
+      }, {
+        "uid" : "2ff830a14cf4788d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/2ff830a14cf4788d",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='excelExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153394210,
+          "stop" : 1611153411454,
+          "duration" : 17244
+        }
+      }, {
+        "uid" : "e2fb64d39cc9afc7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/e2fb64d39cc9afc7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080185851,
+          "stop" : 1611080225893,
+          "duration" : 40042
+        }
+      }, {
+        "uid" : "78dbaa2144a4ca63",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/78dbaa2144a4ca63",
+        "status" : "failed",
+        "statusDetails" : "expected all elements (input[id='excelExternalHyperlinksdisallow']) to have attributes {\"checked\":true} \"0\" to equal \"1\"",
+        "time" : {
+          "start" : 1611063866610,
+          "stop" : 1611063905656,
+          "duration" : 39046
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@functional", "@TEST-239" ]
+  },
+  "source" : "5eef530101c228db.json",
+  "parameterValues" : [ ]
+}

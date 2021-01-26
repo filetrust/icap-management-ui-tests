@@ -1,0 +1,566 @@
+{
+  "uid" : "38d76f1183e05c62",
+  "name" : "User can filter the transactions log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"docx\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_docx\",\"filterValues\":\"SAFE_docx\"} @functional @TEST-179",
+  "fullName" : "request-history-log @request-history-log.User can filter the transactions log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"docx\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_docx\",\"filterValues\":\"SAFE_docx\"} @functional @TEST-179",
+  "historyId" : "632dc698f5ce21828d1bfc3fa1422fb0",
+  "time" : {
+    "start" : 1611691182355,
+    "stop" : 1611691218592,
+    "duration" : 36237
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSee (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2336:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : true,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSee (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2336:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1611691194366,
+        "stop" : 1611691198407,
+        "duration" : 4041
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1611691194366,
+          "stop" : 1611691196380,
+          "duration" : 2014
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611691196386,
+          "stop" : 1611691196391,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611691196391,
+          "stop" : 1611691198402,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1611691198407,
+        "stop" : 1611691200490,
+        "duration" : 2083
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(2) > p\"",
+        "time" : {
+          "start" : 1611691198407,
+          "stop" : 1611691200488,
+          "duration" : 2081
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: Safe",
+        "time" : {
+          "start" : 1611691200490,
+          "stop" : 1611691200490,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1611691200490,
+        "stop" : 1611691200495,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//label/span[text()='Safe']\"",
+        "time" : {
+          "start" : 1611691200490,
+          "stop" : 1611691200495,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1611691200495,
+        "stop" : 1611691202512,
+        "duration" : 2017
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1611691200495,
+          "stop" : 1611691202511,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileOutcome \"Safe\"",
+      "time" : {
+        "start" : 1611691202512,
+        "stop" : 1611691207520,
+        "duration" : 5008
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1611691202512,
+          "stop" : 1611691207517,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1611691207520,
+        "stop" : 1611691209542,
+        "duration" : 2022
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611691207520,
+          "stop" : 1611691207525,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611691207526,
+          "stop" : 1611691209538,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1611691209542,
+        "stop" : 1611691211566,
+        "duration" : 2024
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(1) > p\"",
+        "time" : {
+          "start" : 1611691209542,
+          "stop" : 1611691211565,
+          "duration" : 2023
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: docx",
+        "time" : {
+          "start" : 1611691211566,
+          "stop" : 1611691211566,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1611691211566,
+        "stop" : 1611691211571,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//span[contains(.,'docx')]/parent::label/span[1]/span/input\"",
+        "time" : {
+          "start" : 1611691211566,
+          "stop" : 1611691211571,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1611691211571,
+        "stop" : 1611691213581,
+        "duration" : 2010
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1611691211571,
+          "stop" : 1611691213581,
+          "duration" : 2010
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1611691213581,
+        "stop" : 1611691218586,
+        "duration" : 5005
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1611691213581,
+          "stop" : 1611691218586,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: checkFilterByValue \"docx\", \"//div/span[contains(.,'docx')]\"",
+      "time" : {
+        "start" : 1611691218586,
+        "stop" : 1611691218592,
+        "duration" : 6
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSee (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2336:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I see text equals \"SAFE\", \"//div/span[contains(.,'Safe')]\"",
+        "time" : {
+          "start" : 1611691218586,
+          "stop" : 1611691218591,
+          "duration" : 5
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.proceedSee (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2336:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "b5ab54e971864905",
+      "name" : "Last Seen Screenshot",
+      "source" : "b5ab54e971864905.png",
+      "type" : "image/png",
+      "size" : 35877
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 27,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-179"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-log"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the transactions log view using a combination of multiple filters {\"riskFilter\":\"Safe\",\"typeFilter\":\"docx\",\"fileIdFilter\":\"\",\"appliedFilters\":\"Safe_docx\",\"filterValues\":\"SAFE_docx\"} @functional @TEST-179"
+  }, {
+    "name" : "package",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 7,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "8f3b3daeb1611739",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/8f3b3daeb1611739",
+        "status" : "failed",
+        "statusDetails" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611690602814,
+          "stop" : 1611690637869,
+          "duration" : 35055
+        }
+      }, {
+        "uid" : "19e5ce224ec04e72",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/19e5ce224ec04e72",
+        "status" : "failed",
+        "statusDetails" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611244204751,
+          "stop" : 1611244239226,
+          "duration" : 34475
+        }
+      }, {
+        "uid" : "404543cf1d8429ec",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/404543cf1d8429ec",
+        "status" : "failed",
+        "statusDetails" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611226009370,
+          "stop" : 1611226044703,
+          "duration" : 35333
+        }
+      }, {
+        "uid" : "b6c443ce39eee79f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/b6c443ce39eee79f",
+        "status" : "failed",
+        "statusDetails" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611158743414,
+          "stop" : 1611158777889,
+          "duration" : 34475
+        }
+      }, {
+        "uid" : "c43a55ac513436dc",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/c43a55ac513436dc",
+        "status" : "failed",
+        "statusDetails" : "Element \"//div/span[contains(.,'Safe')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153356997,
+          "stop" : 1611153391871,
+          "duration" : 34874
+        }
+      }, {
+        "uid" : "4ba46e2065b724b4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/4ba46e2065b724b4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080118338,
+          "stop" : 1611080156954,
+          "duration" : 38616
+        }
+      }, {
+        "uid" : "dac321f5c7ee08d8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/dac321f5c7ee08d8",
+        "status" : "failed",
+        "statusDetails" : "The result is not as expected, filter found is: Docx",
+        "time" : {
+          "start" : 1611063794615,
+          "stop" : 1611063833234,
+          "duration" : 38619
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-log", "@TEST-179", "@functional" ]
+  },
+  "source" : "38d76f1183e05c62.json",
+  "parameterValues" : [ ]
+}

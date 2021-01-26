@@ -1,0 +1,447 @@
+{
+  "uid" : "6704f98b0a5f0c23",
+  "name" : "User can update the current Adaptation policy settings {\"FileType\":\"excel\",\"ContentFlag\":\"InternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-214",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.User can update the current Adaptation policy settings {\"FileType\":\"excel\",\"ContentFlag\":\"InternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-214",
+  "historyId" : "220fe86bdf959cf55ec0a3cb6cdf8ab4",
+  "time" : {
+    "start" : 1611691241516,
+    "stop" : 1611691274891,
+    "duration" : 33375
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "policyPage: setAndPublishPolicyFlag \"excel\", \"InternalHyperlinks\", \"disallow\"",
+      "time" : {
+        "start" : 1611691266680,
+        "stop" : 1611691266690,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='excelInternalHyperlinksdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1611691266680,
+          "stop" : 1611691266688,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given the current policy for 'excel' is set to 'InternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1611691266690,
+        "stop" : 1611691266704,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611691266690,
+          "stop" : 1611691266692,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611691266692,
+          "stop" : 1611691266694,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='excelInternalHyperlinksdisallow']\", 5",
+        "time" : {
+          "start" : 1611691266695,
+          "stop" : 1611691266704,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setPolicyFlag \"excel\", \"InternalHyperlinks\", \"sanitise\"",
+      "time" : {
+        "start" : 1611691266704,
+        "stop" : 1611691266708,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='excelInternalHyperlinkssanitise']\", \"checked\"",
+        "time" : {
+          "start" : 1611691266704,
+          "stop" : 1611691266706,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I change the contentFlag for 'excel' to 'InternalHyperlinks' and 'sanitise' ",
+      "time" : {
+        "start" : 1611691266708,
+        "stop" : 1611691268837,
+        "duration" : 2129
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"label[for='excelInternalHyperlinkssanitise']\", 5",
+        "time" : {
+          "start" : 1611691266708,
+          "stop" : 1611691266712,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='excelInternalHyperlinkssanitise']\"",
+        "time" : {
+          "start" : 1611691266712,
+          "stop" : 1611691268837,
+          "duration" : 2125
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickSaveChanges ",
+      "time" : {
+        "start" : 1611691268837,
+        "stop" : 1611691270856,
+        "duration" : 2019
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611691268837,
+          "stop" : 1611691270856,
+          "duration" : 2019
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickDraftTab ",
+      "time" : {
+        "start" : 1611691270856,
+        "stop" : 1611691272871,
+        "duration" : 2015
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+        "time" : {
+          "start" : 1611691270856,
+          "stop" : 1611691272871,
+          "duration" : 2015
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: clickAdaptationPolicy ",
+      "time" : {
+        "start" : 1611691272871,
+        "stop" : 1611691274888,
+        "duration" : 2017
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+        "time" : {
+          "start" : 1611691272871,
+          "stop" : 1611691272875,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+        "time" : {
+          "start" : 1611691272875,
+          "stop" : 1611691274887,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: assertElementChecked \"input[id='excelInternalHyperlinkssanitise']\"",
+      "time" : {
+        "start" : 1611691274888,
+        "stop" : 1611691274891,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see attributes on elements \"input[id='excelInternalHyperlinkssanitise']\", {\"checked\":true}",
+        "time" : {
+          "start" : 1611691274888,
+          "stop" : 1611691274891,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 20,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-214"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can update the current Adaptation policy settings {\"FileType\":\"excel\",\"ContentFlag\":\"InternalHyperlinks\",\"DraftFlagType\":\"sanitise\",\"CurrentFlagType\":\"disallow\"} @functional @TEST-214"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "9cb3248b5b1607fe",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/9cb3248b5b1607fe",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelInternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelInternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611690663073,
+          "stop" : 1611690701466,
+          "duration" : 38393
+        }
+      }, {
+        "uid" : "9bdf89c7a0071f57",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/9bdf89c7a0071f57",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelInternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelInternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611244254824,
+          "stop" : 1611244289738,
+          "duration" : 34914
+        }
+      }, {
+        "uid" : "fa9f485832abe911",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/fa9f485832abe911",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611226061896,
+          "stop" : 1611226092529,
+          "duration" : 30633
+        }
+      }, {
+        "uid" : "a83f0ec5da766695",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/a83f0ec5da766695",
+        "status" : "failed",
+        "statusDetails" : "element (label[for='excelInternalHyperlinksdisallow']) still not present on page after 5 sec\n                waiting for selector `label[for='excelInternalHyperlinksdisallow']` failed: timeout 5000ms exceeded",
+        "time" : {
+          "start" : 1611158792633,
+          "stop" : 1611158828174,
+          "duration" : 35541
+        }
+      }, {
+        "uid" : "406dd5825b3e655e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/406dd5825b3e655e",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='excelInternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153376811,
+          "stop" : 1611153394067,
+          "duration" : 17256
+        }
+      }, {
+        "uid" : "ad13dc027605886",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/ad13dc027605886",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080150998,
+          "stop" : 1611080185837,
+          "duration" : 34839
+        }
+      }, {
+        "uid" : "71190a017e79ca48",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/71190a017e79ca48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063831731,
+          "stop" : 1611063866580,
+          "duration" : 34849
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-policy-editing", "@TEST-214", "@functional" ]
+  },
+  "source" : "6704f98b0a5f0c23.json",
+  "parameterValues" : [ ]
+}

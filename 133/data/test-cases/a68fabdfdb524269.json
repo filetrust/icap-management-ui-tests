@@ -1,0 +1,177 @@
+{
+  "uid" : "a68fabdfdb524269",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233",
+  "historyId" : "80ca64cb848e99a3fb871be7f8dc0284",
+  "time" : {
+    "start" : 1611691198293,
+    "stop" : 1611691212288,
+    "duration" : 13995
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabAttributeFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1764:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.setRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:572:24)\n                    at async Object.setAndPublishRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:588:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:64:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabAttributeFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1764:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.setRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:572:24)\n                    at async Object.setAndPublishRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:588:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:64:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "policyPage: setRouteFlag \"relay-glasswallBlockedFiles\"",
+      "time" : {
+        "start" : 1611691212283,
+        "stop" : 1611691212288,
+        "duration" : 5
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabAttributeFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1764:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.setRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:572:24)\n                    at async Object.setAndPublishRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:588:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:64:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='relay-glasswallBlockedFiles']\", \"checked\"",
+        "time" : {
+          "start" : 1611691212283,
+          "stop" : 1611691212285,
+          "duration" : 2
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.grabAttributeFrom (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1764:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.setRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:572:24)\n                    at async Object.setAndPublishRouteFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:588:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:64:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "453bf1bc63b49dc0",
+      "name" : "Last Seen Screenshot",
+      "source" : "453bf1bc63b49dc0.png",
+      "type" : "image/png",
+      "size" : 26652
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-233"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"blockedPolicyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"EmbeddedFiles\",\"flagType\":\"disallow\",\"file\":\"issues.docx\",\"fileOutcome\":\"relayed\"} @functional @TEST-233"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 6,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "7d0c0865ee1c93b0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/7d0c0865ee1c93b0",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611690620125,
+          "stop" : 1611690632977,
+          "duration" : 12852
+        }
+      }, {
+        "uid" : "63216c46e0b1ecf",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/63216c46e0b1ecf",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611244218097,
+          "stop" : 1611244230385,
+          "duration" : 12288
+        }
+      }, {
+        "uid" : "aef4a905e36d60e4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/aef4a905e36d60e4",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611226022953,
+          "stop" : 1611226035717,
+          "duration" : 12764
+        }
+      }, {
+        "uid" : "7054dc2f06f22169",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/7054dc2f06f22169",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611158756876,
+          "stop" : 1611158769160,
+          "duration" : 12284
+        }
+      }, {
+        "uid" : "d1a923113e411972",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/d1a923113e411972",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='relay-glasswallBlockedFiles']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153372422,
+          "stop" : 1611153385636,
+          "duration" : 13214
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-233", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "a68fabdfdb524269.json",
+  "parameterValues" : [ ]
+}

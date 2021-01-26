@@ -1,0 +1,264 @@
+{
+  "uid" : "3fe741094a878502",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "historyId" : "f887a3ab509277e6e16437f6229e4819",
+  "time" : {
+    "start" : 1611691182128,
+    "stop" : 1611691207223,
+    "duration" : 25095
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I remove the 'Execute+Java+Script_JS_PDF.pdf' file downloaded before if it exists ",
+      "time" : {
+        "start" : 1611691207199,
+        "stop" : 1611691207200,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I cleanup file \"output/downloads/Execute+Java+Script_JS_PDF.pdf\"",
+        "time" : {
+          "start" : 1611691207199,
+          "stop" : 1611691207199,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "policyPage: setAndPublishPolicyFlag \"pdf\", \"ExternalHyperlinks\", \"disallow\"",
+      "time" : {
+        "start" : 1611691207200,
+        "stop" : 1611691207204,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab attribute from \"input[id='pdfExternalHyperlinksdisallow']\", \"checked\"",
+        "time" : {
+          "start" : 1611691207200,
+          "stop" : 1611691207203,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1611691207204,
+        "stop" : 1611691207223,
+        "duration" : 19
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1611691207204,
+          "stop" : 1611691207207,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1611691207207,
+          "stop" : 1611691207210,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='pdfExternalHyperlinksdisallow']\", 5",
+        "time" : {
+          "start" : 1611691207218,
+          "stop" : 1611691207222,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "dc68f82684003b7b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/dc68f82684003b7b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611690604828,
+          "stop" : 1611690628095,
+          "duration" : 23267
+        }
+      }, {
+        "uid" : "55e3ad14a22e080b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/55e3ad14a22e080b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611244202998,
+          "stop" : 1611244223373,
+          "duration" : 20375
+        }
+      }, {
+        "uid" : "62754d42f2a819d0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/62754d42f2a819d0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611226008595,
+          "stop" : 1611226029736,
+          "duration" : 21141
+        }
+      }, {
+        "uid" : "1c73f24d39a508be",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/1c73f24d39a508be",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611158739770,
+          "stop" : 1611158757237,
+          "duration" : 17467
+        }
+      }, {
+        "uid" : "a85f32ddddd19a4a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/a85f32ddddd19a4a",
+        "status" : "failed",
+        "statusDetails" : "Element \"input[id='pdfExternalHyperlinksdisallow']\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1611153346404,
+          "stop" : 1611153359791,
+          "duration" : 13387
+        }
+      }, {
+        "uid" : "f60419a68b7b8192",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/f60419a68b7b8192",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080105763,
+          "stop" : 1611080124199,
+          "duration" : 18436
+        }
+      }, {
+        "uid" : "928d32e5079b5a12",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/928d32e5079b5a12",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063782421,
+          "stop" : 1611063800884,
+          "duration" : 18463
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "3fe741094a878502.json",
+  "parameterValues" : [ ]
+}
