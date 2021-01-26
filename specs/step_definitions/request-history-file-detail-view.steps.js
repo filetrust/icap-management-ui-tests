@@ -42,15 +42,6 @@ When('I click on the transaction record to open the detail view', () => {
     requesthistoryPage.openFileRecord(fileId)
 });
 
-When('I select a valid {string} and {string}', async (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.openDatePicker();
-    await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
-});
-
-When('I click on a available file record with id {string}', (fileId) => {
-    requesthistoryPage.openFileRecord(fileId)
-});
-
 Then('The issues content is displayed on the details view', () => {
     requesthistoryPage.isFileDetailModalOpened()
 });
@@ -68,5 +59,9 @@ Then('the content management policy section is available', async () => {
 });
 
 Then('the file result details and the sanitisation issues content is displayed to show item {string}', async (issue) => {
-    await requesthistoryPage.isSanitisationItemsSectionAvailable(issue);
+    await requesthistoryPage.isSanitisationItemsShowsDescription(issue);
 });
+
+Then('The Remedy items content is displayed on the details view to show issue {string}', async (item) => {
+    await requesthistoryPage.isRemedyItemsShowsDescription(item);
+})

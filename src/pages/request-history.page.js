@@ -94,7 +94,7 @@ module.exports = {
         issueItemsBanner: `.FileInfo_block__:nth-child(2) .MuiFormControlLabel-root`,
         sanitisationItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Sanitisation Items')]`,
         issueItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Issue Items')]`,
-        remedyItemsBanner: `div[class*='FileInfo_inner__'] > div:nth-of-type(4)`,
+        remedyItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Remedy Items')]`,
         fileDetailModal: `section[class^='Modal_Modal']`,
         itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`
     },
@@ -774,15 +774,15 @@ module.exports = {
         (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Content Management Policy is displayed!') : output.log('Content Management Policy is displayed');
     },
 
-    async isSanitisationItemsSectionAvailable(issue) {
+    async isSanitisationItemsShowsDescription(description) {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
         const elBanner = this.modal.sanitisationItemsBanner;
         (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Sanitisation Items are displayed!') : I.click(elBanner);
         const items = `${this.modal.sanitisationItemsBanner}${this.modal.itemHeaders}`
         I.waitForVisible(items)
-        const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//table//td[contains(text(),'${issue}')]`;
-        (await I.seeElementExist(elIssue) !== true) ? assert.fail(`No ${issue} is displayed!`) : output.log(`${issue} is displayed`);
+        const elDescription = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Sanitisation Items")]//table//td[contains(text(),"${description}")]`;
+        (await I.seeElementExist(elDescription) !== true) ? assert.fail(`No ${description} is displayed!`) : output.log(`${description} is displayed`);
     },
 
     async isIssueItemsSectionShowsDescription(description) {
@@ -794,6 +794,17 @@ module.exports = {
         I.waitForVisible(items)
         const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Issue Items")]//table//td[contains(text(),"${description}")]`;
         (await I.seeElementExist(elIssue) !== true) ? assert.fail(`No ${description} is displayed!`) : output.log(`${description} is displayed`);
+    },
+
+    async isRemedyItemsShowsDescription(description) {
+        const el = this.modal.fileDetailModal;
+        (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
+        const elBanner = this.modal.remedyItemsBanner;
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Remedy Items are displayed!') : I.click(elBanner);
+        const items = `${this.modal.remedyItemsBanner}${this.modal.itemHeaders}`
+        I.waitForVisible(items)
+        const elDescription = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Remedy Items")]//table//td[contains(text(),"${description}")]`;
+        (await I.seeElementExist(elDescription) !== true) ? assert.fail(`No ${description} is displayed!`) : output.log(`${description} is displayed`);
     },
 
     async clickOnTimestampArrow() {
