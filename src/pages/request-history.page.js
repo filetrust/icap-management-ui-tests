@@ -151,6 +151,7 @@ module.exports = {
 
     openDatePicker() {
         const element = this.calendar.reportRange;
+        I.waitForVisible(element, 30)
         I.click(element).catch(() => I.say(element + ' is not clickable'));
     },
 
@@ -165,7 +166,7 @@ module.exports = {
             } else {
                 I.say("Unable to find the required option");
             }
-            I.waitForElement(tableHeaders, 30)
+            I.waitForVisible(this.table.tableHeaders, 30)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -694,8 +695,8 @@ module.exports = {
         return `//tbody/tr[1]//th[contains(., '${type}')]/../th[contains(., '${risk}')]`
     },
 
-    verifyFileRecord(fileId) {
-        I.seeElementExist(this.getFileRecord(fileId))
+    async verifyFileRecord(fileId) {
+        await I.seeElementExist(this.getFileRecord(fileId))
     },
 
     verifyFileRecordByTypeAndRisk(type, risk) {

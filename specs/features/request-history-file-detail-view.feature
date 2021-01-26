@@ -22,13 +22,13 @@ Feature: request-history-file-detail-view
     @TEST-169_2
     Scenario Outline: User can view structural issues on a file
         Given I process a file '<file>' through the icap server
-        And The transaction with '<type>' type and '<risk>' risk is available in the transaction log
+        And The transaction is available in the transaction log
         When I click on the transaction record to open the detail view
         Then The issues content is displayed on the details view 
-        And Expanding the content section shows the issue '<issue>'
+        And Expanding the content section shows the issue "<issue>"
         Examples:
-            | file                  | issue                                      | type | risk              |
-            | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached | Xlsx | Allowed by Policy |
+            | file                  | issue                                      |
+            | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
     @functional
     @TEST-169_3
@@ -36,7 +36,7 @@ Feature: request-history-file-detail-view
         Given I process a file '<file>' through the icap server
         And The transaction is available in the transaction log
         When I click on the transaction record to open the detail view
-        Then The Sanitisation issues content is displayed on the details view to show issue '<issue>'
+        Then the file result details and the sanitisation issues content is displayed to show item '<issue>'
         And The Remedy items content is displayed on the details view to show issue '<item>'
         Examples:
             | file             | issue                          | item                                                     |
