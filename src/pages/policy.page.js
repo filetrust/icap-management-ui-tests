@@ -85,7 +85,7 @@ module.exports = {
    * ***************************************************************
    */
 
-  clickDraftTab() {
+  async clickDraftTab() {
     const element = this.tabs.draft;
     I.clickElement(element);
   },
@@ -93,17 +93,18 @@ module.exports = {
   clickAdaptationPolicy() {
     const element = this.tabs.adaptation_policy;
     I.waitForElement(element,30)
-    I.clickElement(element);
+   I.clickElement(element);
   },
 
   clickNcfsPolicyTab() {
     const element = this.tabs.ncfs_policy;
+    I.waitForElement(element,30)
     I.clickElement(element);
   },
 
   cancelPolicyDeletion() {
     const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl)
+    I.waitForElement(modalEl,30)
     within(modalEl, () => {
       I.clickElement(this.buttons.modal_cancel)
     })
@@ -114,9 +115,9 @@ module.exports = {
     const elPublish = await I.grabNumberOfVisibleElements(element);
     I.say(elPublish)
     if (elPublish > 0) {
-      I.waitForElement(element, 5)
+      I.waitForElement(element, 15)
       //I.wait(5)
-      await I.clickElement(element);
+      I.clickElement(element);
       await modal.accept()
     }
   },
@@ -152,6 +153,15 @@ module.exports = {
     })
   },
 
+ async goToDraftAdaptationPolicy () {
+    await this.clickDraftTab();
+    this.clickAdaptationPolicy();
+},
+
+goToCurrentAdaptationPolicy () {
+    this.clickCurrentPolicyTab();
+    this.clickAdaptationPolicy();
+},
 
   getContentFlagRule(type, rule) {
     return "label[for='" + type + "ContentManagement_" + rule + "']";
@@ -208,7 +218,7 @@ module.exports = {
   async selectPolicyFlag(fileType, contentFlag, flagType) {
     try {
       const element = `label[for='` + fileType + contentFlag + flagType + `']`
-      I.goToDraftAdaptationPolicy()
+      this.goToDraftAdaptationPolicy()
       I.clickElement(element);
       I.wait(3)
     } catch (e) {
@@ -238,6 +248,7 @@ module.exports = {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
     const el = `input[id='` + fileType + contentFlag + flagType + `']`
     try {
+      I.waitForElement(el, 30)
       const checked = await I.grabAttributeFrom(el, 'checked')
       if (checked === true) {
         const publishButton = this.buttons.publish;
@@ -245,20 +256,20 @@ module.exports = {
         const elPublish = await I.grabNumberOfVisibleElements(publishButton);
         const elSave = await I.grabNumberOfVisibleElements(saveButton);
         if (elSave > 0) {
-          await I.clickElement(saveButton)
+          I.clickElement(saveButton)
           await this.publishPolicy()
         }
         if (elPublish > 0) {
           await this.publishPolicy()
         }
-        I.waitForElement(flag, 5)
+        I.waitForElement(flag, 30)
         output.print('The flag is selected as pre-condition')
       } else {
-        I.waitForElement(flag, 5)
-        await I.clickElement(flag);
-        await I.clickElement(this.buttons.saveChanges)
+        I.waitForElement(flag, 30)
+        I.clickElement(flag);
+        I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
-        I.waitForElement(flag, 5)
+        I.waitForElement(flag, 30)
         output.print('The new flag is selected')
       }
     } catch (e) {
@@ -275,7 +286,7 @@ module.exports = {
       if (checked === true) {
         output.print('The flag is already selected')
       } else {
-        I.waitForElement(flag, 5)
+        I.waitForElement(flag, 30)
         I.clickElement(flag);
       }
     } catch (e) {
@@ -307,7 +318,7 @@ module.exports = {
       //const flag = `label[for='` + fileType + contentFlag + flagType + `']`
       // const el = `input[id='` + fileType + contentFlag + flagType + `']`
       //   if (await this.getSelectedPolicyFlag(el) === true ){
-      I.goToDraftAdaptationPolicy()
+      this.goToDraftAdaptationPolicy()
       //if (flagType == 'sanitise'){
 
       const flag = `label[for='` + fileType + contentFlag + flagType + `']`
@@ -331,7 +342,7 @@ module.exports = {
   },
 
   async getSelectedPolicyFlag(element) {
-    I.goToCurrentAdaptationPolicy()
+    this.goToCurrentAdaptationPolicy()
     try {
       let selected = await I.grabAttributeFrom(element, 'checked')
       output.print(selected)
@@ -345,22 +356,11 @@ module.exports = {
   async setCurrentPolicyFlag(fileType, contentFlag, flagType) {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
     const element = `input[id='` + fileType + contentFlag + flagType + `']`
-    // I.goToCurrentAdaptationPolicy()
-    // let selected = await I.grabAttributeFrom(element, { checked: true })
-    // try {
-    //     if (selected){
-    //       output.print('The required policy is already published')
-    //   }else {
-    //       I.goToDraftAdaptationPolicy()
-    //       I.clickElement(flag);
     this.selectAnyFlag(fileType, contentFlag, flagType)
     I.clickElement(this.buttons.saveChanges)
     I.wait(3)
     await this.publishPolicy()
     I.wait(5)
-    //   } } catch (e) {
-    // I.say('Unable to set policy flag')
-    // console.warn(e); }
   },
 
 
@@ -372,18 +372,18 @@ module.exports = {
   },
 
   assertCurrentFlagAs(fileType, contentFlag, flagType) {
-    I.goToCurrentAdaptationPolicy();
+    this.goToCurrentAdaptationPolicy();
     const element = `input[id='` + fileType + contentFlag + flagType + `']`
     this.assertElementChecked(element)
   },
 
   assertCurrentFlagIs(element) {
-    I.goToCurrentAdaptationPolicy();
+    this.goToCurrentAdaptationPolicy();
     this.assertElementChecked(element)
   },
 
   assertDraftFlagAs(fileType, contentFlag, flagType) {
-    I.goToDraftAdaptationPolicy();
+    this.goToDraftAdaptationPolicy();
     const element = `input[id='` + fileType + contentFlag + flagType + `']`
     this.assertElementChecked(element)
   },
@@ -707,6 +707,7 @@ module.exports = {
 
   async clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
+    I.waitForElement(element,30)
     I.clickElement(element);
   }
 }

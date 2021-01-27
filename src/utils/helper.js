@@ -1,4 +1,4 @@
-const {I}= inject();
+const { I, sharepoint } = inject();
 const Helper = require('@codeceptjs/helper');
 const puppeteer = require('puppeteer');
 var moment = require('moment');
@@ -10,14 +10,18 @@ const assert = require('assert').strict;
 var dockerCLI = require('docker-cli-js');
 var DockerOptions = dockerCLI.Options;
 var Docker = dockerCLI.Docker;
-const dockerJS = require('mydockerjs').docker 
+const dockerJS = require('mydockerjs').docker
 const spauth = require('node-sp-auth');
 const path = require('path');
 const Cpass = require('cpass').Cpass;
-
 const config = fs.readFileSync(path.join(__dirname, "../../config.json"), "UTF-8");
 const configObj = JSON.parse(config);
-//const PuppeteerController = require('puppeteer-core-controller');
+const { Download, IAuthOptions } = require('sp-download');
+//const request = require('request-promise');
+var request = require('request');
+const sprequest = require('sp-request');
+
+
 
 class MyHelper extends Helper {
 
@@ -76,7 +80,6 @@ class MyHelper extends Helper {
     async clickElement(selector) {
         const helper = this.helpers['Puppeteer'];
         const page = this.helpers['Puppeteer'].page;
-        page.waitForSelector(selector);
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (elVisible) {
@@ -149,7 +152,7 @@ class MyHelper extends Helper {
             let text;
             for (let i = 0; i < rowCount; i++) {
                 text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
-                if (this.compareThatEqual(text, val)) {
+                if (text===val) {
                     n = n + 1;
                 } else {
                     assert.fail('The result is not as expected, filter found is: ' + text);
@@ -168,7 +171,7 @@ class MyHelper extends Helper {
         let dayPart
         if (!isSeconds) {
             time = timestamp.split(',')[1].trimStart()
-            dayPart= time.split(' ')[1]
+            dayPart = time.split(' ')[1]
             time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
         }
         time = this.timeConversionSlicker(time)
@@ -220,7 +223,7 @@ class MyHelper extends Helper {
         page.waitForSelector('tbody');
         try {
             const [elm] = await page.$x(`//th[contains(text(),'${fileId}')]/../th[position()=${col}]`);
-            if(!elm) {
+            if (!elm) {
                 assert.fail(`File with ${fileId} file id is not displayed`);
             }
             const text = await page.evaluate(name => name.innerText, elm);
@@ -394,72 +397,56 @@ class MyHelper extends Helper {
         })
     }
 
-   processFile(file){
-    const script= `docker run -v c:/icap/uirepo/icap-management-ui-tests/src/data/input/:/opt -v c:/icap/uirepo/icap-management-ui-tests/output/downloads/:/home glasswallsolutions/c-icap-client:manual-v1 -s 'gw_rebuild' -i icap-client-qa-main.uksouth.cloudapp.azure.com -f /opt/`+file+` -o /home/`+file+` -v`
-    const { exec } = require("child_process");
-    exec(script, (error, data, getter) => {
-            if(error){
-                console.log("error",error.message);
-                return;
-            }
-            if(getter){
-                console.log("data",data);
-                return;
-            }
-            console.log("data",data);
+    async goToSharepoint() {
+        
+        const { username, password, pageUrl } = configObj;
+        console.log('configObj ' + JSON.stringify(configObj))
+        let cpass = new Cpass();
+        const data = await spauth.getAuth(pageUrl, {
+            username: cpass.decode(username),
+            password: cpass.decode(password)
         });
-		
-   }
-
-  async goToSharepoint(){
-    
-    const {username, password, pageUrl} = configObj;
-    console.log('configObj '+JSON.stringify(configObj))
-    let cpass = new Cpass();
-    const data  = await spauth.getAuth(pageUrl, {
-      username: cpass.decode(username),
-      password: cpass.decode(password)
-    });
-    const page = this.helpers['Puppeteer'].page;
-    await page.setExtraHTTPHeaders(data.headers);
-    page.goto(configObj.pageUrl, {
-        waitUntil: 'networkidle0',
-        wait: '15'
-      });
-  }
-
-  setHost(){
-    let party = require('hostparty');
-    party.add('3.249.61.168', ['saaspoc1.sharepoint.com','saaspoc1-my.sharepoint.com','ukc-word-edit.officeapps.live.com','ukc-excel.officeapps.live.com','ukc-powerpoint.officeapps.live.com']);
-  }
-
-  cleanupFile(file) {
-    try {
-        const exists = fs.existsSync(file);
-        if (exists) {
-            fs.unlinkSync(file)
-            console.log(`Remove downloaded file - ${file}`);
-        } else {
-            console.log(`File was already removed - ${file}`);
-        }
-    } catch (error) {
-        console.error(error);
+        const page = this.helpers['Puppeteer'].page;
+        await page.setExtraHTTPHeaders(data.headers);
+       
+        await page.goto(configObj.pageUrl, {
+            waitUntil: 'networkidle0',
+            wait: '60'
+        });
     }
-  }
-
-  createFile(file) {
-    try {
-        const exists = fs.existsSync(file);
-        if (exists) {
-            console.log(`File exists - ${file}`);
-        } else {
-            fs.writeFileSync(file, '')
-            console.log(`File was created - ${file}`);
+        
+        setHost(){
+            let party = require('hostparty');
+            party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
         }
-    } catch (error) {
-        console.error(error);
+
+        cleanupFile(file) {
+            try {
+                const exists = fs.existsSync(file);
+                if (exists) {
+                    fs.unlinkSync(file)
+                    console.log(`Remove downloaded file - ${file}`);
+                } else {
+                    console.log(`File was already removed - ${file}`);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+        createFile(file) {
+            try {
+                const exists = fs.existsSync(file);
+                if (exists) {
+                    console.log(`File exists - ${file}`);
+                } else {
+                    fs.writeFileSync(file, '')
+                    console.log(`File was created - ${file}`);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        }
     }
-  }
-}
 
 module.exports = MyHelper;
