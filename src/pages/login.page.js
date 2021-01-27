@@ -69,7 +69,8 @@ module.exports = {
    */
   clickLogIn() {
     const element = this.buttons.login;
-    I.clickElement(element);
+    I.waitForVisible(element)
+    I.click(element);
   },
 
   errorMsg() {

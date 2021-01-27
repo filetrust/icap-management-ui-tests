@@ -164,12 +164,23 @@ module.exports = function() {
     await cp.execSync(`c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
     const icapOutput = fs.readFileSync(`${icapLogs}`);
     output.print('icapLogs: '+icapOutput)
-    fileId = icapOutput
+    const statusCode = icapOutput
         .toString()
-        .split('X-Adaptation-File-Id: ')[1]
-        .split("\n")[0];
-    output.print('File is sent...')
-    return fileId;
+        .split('ICAP/1.0 ')[1]
+        .split(" ")[0];
+        if (statusCode === '200' || statusCode === '201') {
+            fileId = icapOutput
+            .toString()
+            .split('X-Adaptation-File-Id: ')[1]
+            .split("\n")[0];
+            output.print('File is sent...')
+            return fileId;
+        } else if (statusCode === '204') {
+            output.print('File is sent...')
+            output.print('File is Unmodified')
+        } else {
+            assert.fail(`${statusCode} code was received`)
+        }
   },
 
   submitFile: async function (fileName) {

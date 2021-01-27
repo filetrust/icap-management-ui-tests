@@ -2,31 +2,66 @@ const {
     I,
     requesthistoryPage
 } = inject();
+const path = require('path');
+let fileId;
 
 Given("I am logged into the ui", () => {
     I.loginNoPwd();
-
 });
 
 Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();
-    //pause();
 });
 
-When('I click on a available file record with id {string}', (fileId) => {
-    //requesthistoryPage.filterByFileId(fileId)
-    requesthistoryPage.openAFileRecord()
+Given('I process a file {string} through the icap server', async (file) => {
+    const downloadedFile = path.join('output', 'downloads', file);
+    await I.cleanupFile(downloadedFile);
+    fileId = await I.sendFileICAP(file);
+    await console.log(`I sent a file and received ${fileId}`);
+});
+
+Given('The transaction with {string} type and {string} risk is available in the transaction log', async (type, risk) => {
+    requesthistoryPage.openDatePicker()
+    requesthistoryPage.selectTimePeriod('1 Hour')
+    requesthistoryPage.verifyFileRecordByTypeAndRisk(type, risk)
+    fileId = await requesthistoryPage.getIdByTypeAndRisk(type, risk)
+    console.log(`File ID is ${fileId}`)
+});
+
+Given('The transaction is available in the transaction log', async () => {
+    // workaround for broken filter
+    requesthistoryPage.openDatePicker()
+    requesthistoryPage.selectTimePeriod('12 Hours')
+    requesthistoryPage.openDatePicker()
+    requesthistoryPage.selectTimePeriod('1 Hour')
+
+    await requesthistoryPage.verifyFileRecord(fileId)
+});
+
+When('I click on the transaction record to open the detail view', () => {
+    requesthistoryPage.openFileRecord(fileId)
+});
+
+Then('The issues content is displayed on the details view', () => {
+    requesthistoryPage.isFileDetailModalOpened()
 });
 
 Then('the file detail view opens', () => {
-    I.wait(5)
-    requesthistoryPage.isFileDetailModalOpened()   
+    requesthistoryPage.isFileDetailModalOpened()
 });
 
-Then('the content management policy section is available', () => {
-    //requesthistoryPage.isCmpSectionAvailable();
+Then("Expanding the content section shows the issue {string}", async (issue) => {
+    await requesthistoryPage.isIssueItemsSectionShowsDescription(issue)
 });
 
-Then('the file result details and the sanitisation issues content is displayed to show item {string}', (issue) => {
-    //requesthistoryPage.isSanitisationItemsSectionAvailable();
+Then('the content management policy section is available', async () => {
+    await requesthistoryPage.isCmpSectionAvailable();
 });
+
+Then('the file result details and the sanitisation issues content is displayed to show item {string}', async (issue) => {
+    await requesthistoryPage.isSanitisationItemsShowsDescription(issue);
+});
+
+Then('The Remedy items content is displayed on the details view to show issue {string}', async (item) => {
+    await requesthistoryPage.isRemedyItemsShowsDescription(item);
+})
