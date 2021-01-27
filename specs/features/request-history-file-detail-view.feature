@@ -19,19 +19,19 @@ Feature: request-history-file-detail-view
             | file        | issue    |
             | issues.docx | 97976586 |
 
-    @functional
+    #@functional
     @TEST-169_2
     Scenario Outline: User can view structural issues on a file
         Given I process a file '<file>' through the icap server
         And The transaction is available in the transaction log
         When I click on the transaction record to open the detail view
-        Then The issues content is displayed on the details view 
+        Then The issues content is displayed on the details view
         And Expanding the content section shows the issue "<issue>"
         Examples:
             | file                  | issue                                      |
             | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
-    @functional
+    #@functional
     @TEST-169_3
     Scenario Outline: User can view Sanitisation and Remedy items removed on a file
         Given I process a file '<file>' through the icap server
@@ -43,7 +43,7 @@ Feature: request-history-file-detail-view
             | file             | issue                          | item                                                     |
             | EmbeddedFile.pdf | Embedded file content present. | First XREF table entry malformed and will be regenerated |
 
-    @functional
+    #@functional
     @TEST-169_4
     Scenario Outline: User can view the details of the content management policy applied on a file
         Given I process a file '<file>' through the icap server

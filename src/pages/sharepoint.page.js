@@ -23,6 +23,7 @@ module.exports = {
     downloadFile() {
         I.handleDownloads()
         I.clickElement(this.links.downloadTab)
+        I.wait(5)
     },
 
     goToDocuments(){
@@ -39,6 +40,7 @@ module.exports = {
 
     assertFileDownload(file) {
         I.amInPath('output/downloads')
+        I.waitForFile(file,15)
         I.seeFile(file)
     },
 

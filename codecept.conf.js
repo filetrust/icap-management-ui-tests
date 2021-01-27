@@ -14,15 +14,21 @@ exports.config = {
       require: "./src/utils/helper.js"
     },
     Puppeteer: {
+      //browser: 'firefox',
       windowSize: '1536 x 826',
       url: '',
       show: false,
       chrome: {
-        args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--waitForTimeout: 60000', '--disable-setuid-sandbox'],
+        args: ['--headless', '--no-sandbox', '--window-size=1536,826'],
         //args: ['--no-sandbox', '--window-size=1536,826'],
         prefs:
           ['--download.default_directory= /output/downloads'],
       },
+      firefox: {
+        args: [
+            '--ignore-certificate-errors'
+        ],
+    },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
       waitForAction: 2000
@@ -77,4 +83,5 @@ exports.config = {
       browsers: ['puppeteer']
     }
   },
+  tests: './specs/*_test.js',
 }

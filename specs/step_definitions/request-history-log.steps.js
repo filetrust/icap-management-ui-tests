@@ -22,9 +22,14 @@ When('add multiple filter selections as {string}, {string}, {string}', (riskFilt
     requesthistoryPage.clickAddFilterButton();
     requesthistoryPage.selectFileType(typeFilter);
 });
+Then('the result list shows files with the applied filtertypes {string},{string}', async (fileType, fileRisk) => {
+    let fileCol = 3;
+    await requesthistoryPage.checkResultFileTypesAreAccurate(fileType, fileCol);
+    await requesthistoryPage.checkFileOutcomeValues(fileRisk);
+});
+
 Then('the result list shows files with the applied filtertypes {string}, {string}', async (appliedFilter, filterValues) => {
-    requesthistoryPage.checkFilters(appliedFilter, filterValues);
-    await requesthistoryPage.verifyResultIsAccurate(appliedFilter)
+    await requesthistoryPage.checkFileOutcomeValues(filterValues);
 });
 
 Given('{string} and {string} are applied', (typeFilter, riskFilter) => {
