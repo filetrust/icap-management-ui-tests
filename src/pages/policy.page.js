@@ -248,7 +248,7 @@ goToCurrentAdaptationPolicy () {
     const flag = `label[for='` + fileType + contentFlag + flagType + `']`
     const el = `input[id='` + fileType + contentFlag + flagType + `']`
     try {
-      I.waitForElement(el, 30)
+      I.waitForElement(el, 60)
       const checked = await I.grabAttributeFrom(el, 'checked')
       if (checked === true) {
         const publishButton = this.buttons.publish;
@@ -262,14 +262,14 @@ goToCurrentAdaptationPolicy () {
         if (elPublish > 0) {
           await this.publishPolicy()
         }
-        I.waitForElement(flag, 30)
+        I.waitForElement(flag, 60)
         output.print('The flag is selected as pre-condition')
       } else {
-        I.waitForElement(flag, 30)
+        I.waitForElement(flag, 60)
         I.clickElement(flag);
         I.clickElement(this.buttons.saveChanges)
         await this.publishPolicy()
-        I.waitForElement(flag, 30)
+        I.waitForElement(flag, 60)
         output.print('The new flag is selected')
       }
     } catch (e) {

@@ -6,7 +6,7 @@ const path = require('path');
 let fileId;
 
 Given("I am logged into the ui", () => {
-    I.loginNoPwd();
+    I.login();
 });
 
 Given("I have navigated to the Request History page", () => {
@@ -29,17 +29,22 @@ Given('The transaction with {string} type and {string} risk is available in the 
 });
 
 Given('The transaction is available in the transaction log', async () => {
-    // workaround for broken filter
+    I.viewTransactions()
     requesthistoryPage.openDatePicker()
     requesthistoryPage.selectTimePeriod('12 Hours')
-    requesthistoryPage.openDatePicker()
-    requesthistoryPage.selectTimePeriod('1 Hour')
-
     await requesthistoryPage.verifyFileRecord(fileId)
+});
+
+Given('A previous transaction is available in the transaction log', async () => {
+    I.viewTransactions()
 });
 
 When('I click on the transaction record to open the detail view', () => {
     requesthistoryPage.openFileRecord(fileId)
+});
+
+When('I click on a available file record to open the detail view', () => {
+    requesthistoryPage.openExistingFileRecord()
 });
 
 Then('The issues content is displayed on the details view', () => {
@@ -48,6 +53,10 @@ Then('The issues content is displayed on the details view', () => {
 
 Then('the file detail view opens', () => {
     requesthistoryPage.isFileDetailModalOpened()
+});
+
+Then('The file details view shows all required sections', async () => {
+    await requesthistoryPage.checkRequiredSectionsAreAvailable();
 });
 
 Then("Expanding the content section shows the issue {string}", async (issue) => {

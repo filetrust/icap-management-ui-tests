@@ -44,7 +44,6 @@ When('I have selected a time range {string} and {string}', async (datetimeFrom, 
     await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
-
 When('I click on the Add Filter button and add a file id filter with Id {string}', (fileId) => {
     requesthistoryPage.setFileId(fileId);
     I.waitForElement(requesthistoryPage.table.tableHeaders,60)

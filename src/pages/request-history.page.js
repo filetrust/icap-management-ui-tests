@@ -711,23 +711,8 @@ module.exports = {
         I.click(this.getFileRecord(fileId))
     },
 
-    async openAFileRecord() {
+    async openExistingFileRecord() {
         I.clickRecord(2)
-        //     this.openDatePicker();
-        //     this.selectTimePeriod('24 Hours')
-        //      try {
-        //     const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
-        //     //if (element || element.length >= 0) {
-        //         const text = await I.grabTextFrom(`//tbody`);
-        //        if (text === 'No Transaction Data Found' || text === 'Error Getting Transaction Data'){
-        //         I.say('No Transaction Data Found')
-        //     } else {
-        //         I.say("Transaction Data is available")
-
-        //     }
-        // } catch (e) {
-        //     console.warn(e);
-        // }
     },
 
     isFileDetailModalOpened() {
@@ -823,5 +808,16 @@ module.exports = {
         if (!logic) {
             assert.fail('Reverse timestamp arrow is displayed')
         }
-    }
+    },
+    async checkRequiredSectionsAreAvailable() {
+        const el = this.modal.fileDetailModal;
+        (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
+        const iBanner = this.modal.issueItemsBanner;
+        (await I.seeElementExist(iBanner) !== true) ? I.say('Issue Items are not available') : I.say('Issue Items section is available');
+        const rBanner = this.modal.remedyItemsBanner;
+        (await I.seeElementExist(rBanner) !== true) ? I.say('Remedy Items section is not available') : I.say('Remedy Items section is available');
+        const sBanner = this.modal.sanitisationItemsBanner;
+        (await I.seeElementExist(sBanner) !== true) ? I.say('Sanitisation Items section is not displayed!') : I.say('Sanitisation Items section is displayed!');
+    },
+
 };

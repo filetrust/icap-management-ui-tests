@@ -10,10 +10,10 @@ Scenario('I process a supported file using icap client tool for rebuild successf
     const filePath = `output/downloads`
     I.handleDownloads();
     const resp = await I.submitFile(file)
-    const noModifMsg = I.getIcapHeaderCode(resp)
+    const icapCode = I.getIcapHeaderCode(resp)
     const respCode = await I.getResponseCode(resp)
     let fileId = await I.getFileId(resp)
-    expect(noModifMsg).to.equal('200 OK')
+    expect(icapCode).to.equal('200 OK')
     expect(respCode).to.equal('200 OK')
     I.say('Submitted file is sanitised as expected')
     // I.amInPath(filePath)
@@ -31,9 +31,9 @@ Scenario('I process a non supported file using icap client tool', async () => {
     const filePath = `output/downloads`
     I.handleDownloads();
     const resp = await I.submitFile(file)
-    const noModifMsg = I.getIcapHeaderCode(resp)
-    if(noModifMsg === '204 Unmodified'){
-    I.say('The responde is: '+noModifMsg)
+    const icapCode = I.getIcapHeaderCode(resp)
+    if(icapCode === '204 Unmodified'){
+    I.say('The responde is: '+icapCode)
     I.say('Submitted file is relayed')
     }else{
     const respCode = await I.getResponseCode(resp)

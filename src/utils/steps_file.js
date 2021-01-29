@@ -5,28 +5,33 @@ const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
+const env = require('../data/credentials.js')
 const assert = require('assert').strict;
+//const icapClient = 'icap-client-develop.uksouth.cloudapp.azure.com'
 const icapClient = '78.159.113.47'
 
 module.exports = function() {
   return actor({
     onLoginPage: function () {
-        //this.amOnPage('http://localhost:8080/')
+        //this.amOnPage('https://management-ui-test-01.uksouth.cloudapp.azure.com/')
       this.amOnPage('http://78.159.113.47:31829/')
       //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
+      //this.amOnPage(`https://management-ui-develop.uksouth.cloudapp.azure.com`)
   },
 
-  loginNoPwd: function () {
-      this.onLoginPage();
-      loginPage.clickLogIn();
-      this.waitForElement(homePage.sections.menu);
-  },
 
   login: function (email, password) {
       this.onLoginPage();
       loginPage.loginWith(email, password);
       this.waitForElement(homePage.sections.menu);
   },
+
+  login: function () {
+    this.onLoginPage();
+    loginPage.clickLogIn()
+    //loginPage.loginWith(env.qa.userId, env.qa.password);
+    this.waitForElement(homePage.sections.menu);
+},
 
   enterLoginDetails: function (user,password) {
     loginPage.loginWith(user,password);
@@ -88,6 +93,12 @@ module.exports = function() {
       await policyPage.clickNcfsPolicy();
   },
 
+  viewTransactions: function () {
+    this.login();
+    this.goToRequestHistory()
+},
+
+
   uploadFile: function (file) {
       this.attachFile(filedropPage.buttons.fileInput, file)
       this.wait(7)
@@ -99,7 +110,7 @@ module.exports = function() {
 },
 
   checkFileInFileDrop: function (file) {
-      this.loginNoPwd()
+      this.login()
       this.goToFileDrop()
       this.uploadFile(file)
       filedropPage.clickViewResult();
@@ -156,7 +167,7 @@ module.exports = function() {
     const inputPath = path.join(process.cwd(), inputDir);
     const outputPath =  path.join(process.cwd(), outputDir);
     const icapLogs = path.join('output', 'icap.log')
-    
+    //I.handleDownloads();
     // use NodeJS child process to run a bash command in sync way
     output.print('Sending file...')
     console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
@@ -192,13 +203,8 @@ module.exports = function() {
     const inputPath = path.join(process.cwd(), inputDir);
     const outputPath =  path.join(process.cwd(), outputDir);
     const icapLogs = path.join('output', 'icap.log')
-
-     // icap-client-qa.uksouth.cloudapp.azure.com
-    
-    // use NodeJS child process to run a bash command in sync way
     output.print('Sending file...')
     console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
-   
     await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
     const icapOutput = fs.readFileSync(`${icapLogs}`);
     output.print('icapLogs: '+icapOutput)

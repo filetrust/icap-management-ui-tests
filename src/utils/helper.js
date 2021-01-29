@@ -152,7 +152,7 @@ class MyHelper extends Helper {
             let text;
             for (let i = 0; i < rowCount; i++) {
                 text = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(${col})`, (e) => e.innerText);
-                if (text===val) {
+                if (text === val) {
                     n = n + 1;
                 } else {
                     assert.fail('The result is not as expected, filter found is: ' + text);
@@ -398,7 +398,7 @@ class MyHelper extends Helper {
     }
 
     async goToSharepoint() {
-        
+
         const { username, password, pageUrl } = configObj;
         console.log('configObj ' + JSON.stringify(configObj))
         let cpass = new Cpass();
@@ -408,45 +408,45 @@ class MyHelper extends Helper {
         });
         const page = this.helpers['Puppeteer'].page;
         await page.setExtraHTTPHeaders(data.headers);
-       
+
         await page.goto(configObj.pageUrl, {
             waitUntil: 'networkidle0',
             wait: '60'
         });
     }
-        
-        setHost(){
-            let party = require('hostparty');
-            party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
-        }
 
-        cleanupFile(file) {
-            try {
-                const exists = fs.existsSync(file);
-                if (exists) {
-                    fs.unlinkSync(file)
-                    console.log(`Remove downloaded file - ${file}`);
-                } else {
-                    console.log(`File was already removed - ${file}`);
-                }
-            } catch (error) {
-                console.error(error);
-            }
-        }
+    setHost() {
+        let party = require('hostparty');
+        party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
+    }
 
-        createFile(file) {
-            try {
-                const exists = fs.existsSync(file);
-                if (exists) {
-                    console.log(`File exists - ${file}`);
-                } else {
-                    fs.writeFileSync(file, '')
-                    console.log(`File was created - ${file}`);
-                }
-            } catch (error) {
-                console.error(error);
+    cleanupFile(file) {
+        try {
+            const exists = fs.existsSync(file);
+            if (exists) {
+                fs.unlinkSync(file)
+                console.log(`Remove downloaded file - ${file}`);
+            } else {
+                console.log(`File was already removed - ${file}`);
             }
+        } catch (error) {
+            console.error(error);
         }
     }
+
+    createFile(file) {
+        try {
+            const exists = fs.existsSync(file);
+            if (exists) {
+                console.log(`File exists - ${file}`);
+            } else {
+                fs.writeFileSync(file, '')
+                console.log(`File was created - ${file}`);
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+}
 
 module.exports = MyHelper;

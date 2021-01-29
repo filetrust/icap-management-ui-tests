@@ -39,7 +39,7 @@ Feature: request-history-log
       | filterOne | filterTwo | filterToRemove | appliedFilter | filterValues |
       | docx      | Safe      | docx           | Safe          | Safe         |
 
-  #@functional
+  @functional
   @TEST-164
   Scenario Outline: User can filter the log using file id
     When I have selected a time range '<datetimeFrom>' and '<datetimeTo>'
@@ -47,4 +47,4 @@ Feature: request-history-log
     Then the result list only shows the filtered file with id '<fileId>'
     Examples:
       | fileId                               | datetimeFrom        | datetimeTo          |
-      | 96843b86-6641-4952-9e7b-baf80509b8ee | 20/01/2021 10:00 AM | 20/01/2021 20:00 PM |
+      | 4b254ed6-7817-4b42-9621-9c64c6302566 | 28/01/2021 10:00 AM | 28/01/2021 18:28 PM |

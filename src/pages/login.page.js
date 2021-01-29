@@ -3,9 +3,10 @@ const I = actor();
 module.exports = {
   //locators
   fields: {
-    email: `input[name='email']`,
+    email: `input[name='username']`,
     password: `input[name='password']`,
     loginError: "validation-error",
+    userid: `input[name='username']`
   },
   links: {
     passwordReset: `a[href*='pass-reminder']`,
@@ -69,7 +70,9 @@ module.exports = {
    */
   clickLogIn() {
     const element = this.buttons.login;
-    I.waitForVisible(element)
+    //I.waitForVisible(element)
+    I.wait(5)
+    //I.pressKey('Enter')
     I.click(element);
   },
 
@@ -80,7 +83,8 @@ module.exports = {
   loginWith(email, password) {
     I.fillField(this.fields.email, email);
     I.fillField(this.fields.password, password);
-    I.click(this.buttons.login);
+    I.pressKey('Enter')
+    //I.click(this.buttons.login);
   },
 
   /*

@@ -6,14 +6,14 @@ Feature: non-compliant-files-routing-mechanism
     Given I am logged into the ui
     And I have navigated to the Draft NCFS Policy page
 
-  @success
-  @prototype
-  @TEST-238
-  Scenario: The default routing option for unprocessable and blocked files is accurate
-    Given I am a new user
-    And I have navigated to the Current NCFS Policy page
-    Then I see the default set routing option for unprocessable files as ''
-    Then I see the default set routing option for blocked files as ''
+  # @success
+  # @prototype
+  # @TEST-238
+  # Scenario: The default routing option for unprocessable and blocked files is accurate
+  #   Given I am a new user
+  #   And I have navigated to the Current NCFS Policy page
+  #   Then I see the default set routing option for unprocessable files as ''
+  #   Then I see the default set routing option for blocked files as ''
 
 
   @functional
@@ -45,28 +45,31 @@ Feature: non-compliant-files-routing-mechanism
       | routeOption                 | updatedRouteOption |
       | block-glasswallBlockedFiles | Block              |
 
-
-  #@functional
+  @functional
   @TEST-233
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
-    Given I have set the routing option for Glasswall Blocked files to '<blockedPolicyAction>'
+    Given The file '<file>' is not in download folder
+    And I have set the routing option for Glasswall Blocked files to '<policyAction>'
     And I set the policy for file type '<fileType>' to '<contentFlag>' and '<flagType>'
-    When I download a non compliant file '<file>' through the icap server
+    When I submit a non compliant file '<file>' through the icap server
     Then The file outcome for the submitted file '<file>' is '<fileOutcome>' with '<outcomeValue>'
     Examples:
-      | blockedPolicyAction         | fileType | contentFlag   | flagType | file      | fileOutcome | outcomeValue      |
-      #| relay-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | acos.docx | relayed     | Allowed by Policy|
-      | block-glasswallBlockedFiles | word     | EmbeddedFiles | disallow | acos.docx | htmlReport  | Blocked by Policy |
+      | policyAction                | fileType | contentFlag        | flagType | file       | fileOutcome | outcomeValue      |
+      | relay-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | relayed     | Allowed by Policy |
+      | block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
 
 
-  #@functional
+  @functional
   @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
-    Given I have set the routing option for unprocessable files to '<policyAction>'
+    Given The file '<file>' is not in download folder
+    And I have set the routing option for unprocessable files to '<policyAction>'
+    And The file '<file>' is not in download folder
     When I submit a non supported or unprocessable file '<file>' through the icap server
-    Then The file '<file>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
+    Then The file outcome for the submitted file '<file>' is '<fileOutcome>' with '<outcomeValue>'
     Examples:
       | policyAction                 | file                  | fileOutcome | outcomeValue      |
-      | relay-unprocessableFileTypes | structuralIssues.xlsx | relayed     | Allowed by Policy |
-#| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Blocked by Policy |
+      | relay-glasswallBlockedFiles  | structuralIssues.xlsx | relayed     | Allowed by Policy |
+      | block-glasswallBlockedFiles  | structuralIssues.xlsx | htmlReport  | Blocked by Policy |
+      | block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Unknown           |
 

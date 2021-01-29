@@ -19,7 +19,7 @@ exports.config = {
       url: '',
       show: false,
       chrome: {
-        args: ['--headless', '--no-sandbox', '--window-size=1536,826'],
+        args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
         //args: ['--no-sandbox', '--window-size=1536,826'],
         prefs:
           ['--download.default_directory= /output/downloads'],

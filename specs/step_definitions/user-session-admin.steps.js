@@ -35,14 +35,14 @@ When('I hover over my profile and select Log Out', () => {
     homePage.clickLogout();
 });
 Then('I am taken to the Login Screen', () => {
-    I.seeElement(loginPage.fields.email);
+    I.seeElement(loginPage.fields.password);
 });
 When('I fill in {string}, {string}, {string}, and click Save', (currentPassword, newPassword, confirmNewPassword) => {
     homePage.changePassword(currentPassword, newPassword, confirmNewPassword);
 
 });
 Given('I am logged into the ui', () => {
-    I.loginNoPwd();
+    I.login();
 });
 
 Given('I am on the login screen', () => {
