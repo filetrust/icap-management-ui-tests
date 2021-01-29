@@ -1,0 +1,545 @@
+{
+  "uid" : "6099fb4df9571f73",
+  "name" : "User can filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @TEST-180",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.User can filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @TEST-180",
+  "historyId" : "d4a7b7b490a7a017d9fc106a046bc80e",
+  "time" : {
+    "start" : 1611946298767,
+    "stop" : 1611946330609,
+    "duration" : 31842
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "The result is not as expected, filter found is: Unknown",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Unknown\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:158:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:453:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:482:9)\n                    at async Object.checkResultFileTypesAreAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:552:17)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-file-type.steps.js:13:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+  "flaky" : true,
+  "newFailed" : true,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "The result is not as expected, filter found is: Unknown",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Unknown\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:158:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:453:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:482:9)\n                    at async Object.checkResultFileTypesAreAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:552:17)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-file-type.steps.js:13:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+    "steps" : [ {
+      "name" : "homePage: clickRequestsHistory ",
+      "time" : {
+        "start" : 1611946315416,
+        "stop" : 1611946317448,
+        "duration" : 2032
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1611946315416,
+          "stop" : 1611946317444,
+          "duration" : 2028
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1611946317448,
+        "stop" : 1611946321499,
+        "duration" : 4051
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1611946317448,
+          "stop" : 1611946319463,
+          "duration" : 2015
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611946319470,
+          "stop" : 1611946319479,
+          "duration" : 9
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1611946319479,
+          "stop" : 1611946321494,
+          "duration" : 2015
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_popup__']\" ",
+      "time" : {
+        "start" : 1611946321499,
+        "stop" : 1611946323526,
+        "duration" : 2027
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"button:nth-child(1) > p\"",
+        "time" : {
+          "start" : 1611946321499,
+          "stop" : 1611946323523,
+          "duration" : 2024
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Filter to set is: docx",
+        "time" : {
+          "start" : 1611946323526,
+          "stop" : 1611946323526,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1611946323526,
+        "stop" : 1611946323529,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"//span[contains(.,'docx')]/parent::label/span[1]/span/input\"",
+        "time" : {
+          "start" : 1611946323526,
+          "stop" : 1611946323529,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: closeFilterPopup ",
+      "time" : {
+        "start" : 1611946323529,
+        "stop" : 1611946325540,
+        "duration" : 2011
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+        "time" : {
+          "start" : 1611946323529,
+          "stop" : 1611946325540,
+          "duration" : 2011
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: selectFileType \"docx\"",
+      "time" : {
+        "start" : 1611946325540,
+        "stop" : 1611946330543,
+        "duration" : 5003
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1611946325540,
+          "stop" : 1611946330543,
+          "duration" : 5003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Docx\", 3",
+      "time" : {
+        "start" : 1611946330543,
+        "stop" : 1611946330551,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"//tbody\"",
+        "time" : {
+          "start" : 1611946330544,
+          "stop" : 1611946330551,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Data is available",
+        "time" : {
+          "start" : 1611946330551,
+          "stop" : 1611946330551,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "requesthistoryPage: isDataReturned ",
+      "time" : {
+        "start" : 1611946330551,
+        "stop" : 1611946330562,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+        "time" : {
+          "start" : 1611946330551,
+          "stop" : 1611946330557,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+        "time" : {
+          "start" : 1611946330557,
+          "stop" : 1611946330562,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Data is available",
+        "time" : {
+          "start" : 1611946330562,
+          "stop" : 1611946330562,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the selected types as 'Docx' ",
+      "time" : {
+        "start" : 1611946330562,
+        "stop" : 1611946330609,
+        "duration" : 47
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Unknown\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:158:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:453:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:482:9)\n                    at async Object.checkResultFileTypesAreAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:552:17)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-file-type.steps.js:13:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+      "steps" : [ {
+        "name" : "I check rows value \"Docx\", 3",
+        "time" : {
+          "start" : 1611946330562,
+          "stop" : 1611946330582,
+          "duration" : 20
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: The result is not as expected, filter found is: Unknown\n                    at MyHelper.checkRowsValue (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:158:28)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayed (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:453:17)\n                    at async Object.checkRows (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:482:9)\n                    at async Object.checkResultFileTypesAreAccurate (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:552:17)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-file-type.steps.js:13:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:51:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "556b9f80b76d4a68",
+      "name" : "Last Seen Screenshot",
+      "source" : "556b9f80b76d4a68.png",
+      "type" : "image/png",
+      "size" : 61595
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 24,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-180"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-file-type"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @TEST-180"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 11
+      },
+      "items" : [ {
+        "uid" : "2a35985a4c3f466b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/135//#testresult/2a35985a4c3f466b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611745338624,
+          "stop" : 1611745367475,
+          "duration" : 28851
+        }
+      }, {
+        "uid" : "1b4748c7ef18dea3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/134//#testresult/1b4748c7ef18dea3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611692283512,
+          "stop" : 1611692310287,
+          "duration" : 26775
+        }
+      }, {
+        "uid" : "182a0da3d2ea8f48",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/133//#testresult/182a0da3d2ea8f48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611691281057,
+          "stop" : 1611691306067,
+          "duration" : 25010
+        }
+      }, {
+        "uid" : "62bedeaad704d6ca",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/132//#testresult/62bedeaad704d6ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611690701701,
+          "stop" : 1611690726865,
+          "duration" : 25164
+        }
+      }, {
+        "uid" : "686e320ca388261c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/131//#testresult/686e320ca388261c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611244298768,
+          "stop" : 1611244322156,
+          "duration" : 23388
+        }
+      }, {
+        "uid" : "e48a20f1e5322e8d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/130//#testresult/e48a20f1e5322e8d",
+        "status" : "failed",
+        "statusDetails" : "The result is not as expected, filter found is: Xlsx",
+        "time" : {
+          "start" : 1611226105773,
+          "stop" : 1611226129084,
+          "duration" : 23311
+        }
+      }, {
+        "uid" : "4161bbf8953c4809",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/129//#testresult/4161bbf8953c4809",
+        "status" : "failed",
+        "statusDetails" : "The result is not as expected, filter found is: Unknown",
+        "time" : {
+          "start" : 1611158845615,
+          "stop" : 1611158868986,
+          "duration" : 23371
+        }
+      }, {
+        "uid" : "5166080dc2cc6524",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/128//#testresult/5166080dc2cc6524",
+        "status" : "failed",
+        "statusDetails" : "The result is not as expected, filter found is: Pdf",
+        "time" : {
+          "start" : 1611153458780,
+          "stop" : 1611153483073,
+          "duration" : 24293
+        }
+      }, {
+        "uid" : "5121f852220b772e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/127//#testresult/5121f852220b772e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611080214299,
+          "stop" : 1611080240252,
+          "duration" : 25953
+        }
+      }, {
+        "uid" : "ca18a47221203856",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/126//#testresult/ca18a47221203856",
+        "status" : "passed",
+        "time" : {
+          "start" : 1611063890542,
+          "stop" : 1611063916005,
+          "duration" : 25463
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-filtering-by-file-type", "@TEST-180", "@functional" ]
+  },
+  "source" : "6099fb4df9571f73.json",
+  "parameterValues" : [ ]
+}
