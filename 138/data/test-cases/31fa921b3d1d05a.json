@@ -1,0 +1,135 @@
+{
+  "uid" : "31fa921b3d1d05a",
+  "name" : "I process a non supported file using icap client tool @ns @fileprocess @functional",
+  "fullName" : "File Processing:.I process a non supported file using icap client tool @ns @fileprocess @functional",
+  "historyId" : "256a5d27131ad370fb0704fd5d033148",
+  "time" : {
+    "start" : 1612272382176,
+    "stop" : 1612272384315,
+    "duration" : 2139
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Command failed: c-icap-client -i icap-client-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"icaptest.ps1\" -o \"undefined\" -v 2> output/icap.log",
+  "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"icaptest.ps1\" -o \"undefined\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:219:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:216:19)\n                    at Test.<anonymous> (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/icapserver_test.js:37:26)\n                    at Context.test.fn (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/scenario.js:78:14)\n                    at callFnAsync (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:386:21)\n                    at Test.Runnable.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:330:7)\n                    at Runner.runTest (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:621:10)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:745:12\n                    at next (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:538:14)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:548:7\n                    at next (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:430:14)\n                    at cbHookRun (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:495:7)\n                    at done (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:302:5)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:363:11",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Command failed: c-icap-client -i icap-client-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"icaptest.ps1\" -o \"undefined\" -v 2> output/icap.log",
+    "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"icaptest.ps1\" -o \"undefined\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:219:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:216:19)\n                    at Test.<anonymous> (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/icapserver_test.js:37:26)\n                    at Context.test.fn (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/scenario.js:78:14)\n                    at callFnAsync (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:386:21)\n                    at Test.Runnable.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:330:7)\n                    at Runner.runTest (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:621:10)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:745:12\n                    at next (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:538:14)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:548:7\n                    at next (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:430:14)\n                    at cbHookRun (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runner.js:495:7)\n                    at done (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:302:5)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/mocha/lib/runnable.js:363:11",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "813f3b581ae46e73",
+      "name" : "Last Seen Screenshot",
+      "source" : "813f3b581ae46e73.png",
+      "type" : "image/png",
+      "size" : 6912
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@ns"
+  }, {
+    "name" : "suite",
+    "value" : "File Processing:"
+  }, {
+    "name" : "testClass",
+    "value" : "File Processing:"
+  }, {
+    "name" : "testMethod",
+    "value" : "I process a non supported file using icap client tool @ns @fileprocess @functional"
+  }, {
+    "name" : "package",
+    "value" : "File Processing:"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 5,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 5
+      },
+      "items" : [ {
+        "uid" : "e0e53c9ff526d1f3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/137//#testresult/e0e53c9ff526d1f3",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"icaptest.ps1\" -o \"undefined\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1612267420255,
+          "stop" : 1612267422428,
+          "duration" : 2173
+        }
+      }, {
+        "uid" : "2457ce56bfb8f0ef",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/136//#testresult/2457ce56bfb8f0ef",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i 78.159.113.47 -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/input/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1611946344704,
+          "stop" : 1611946346896,
+          "duration" : 2192
+        }
+      }, {
+        "uid" : "269474c9db9eb8b7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/135//#testresult/269474c9db9eb8b7",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i 78.159.113.47 -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/input/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1611745358439,
+          "stop" : 1611745360621,
+          "duration" : 2182
+        }
+      }, {
+        "uid" : "2f09f8536edc0fbe",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/134//#testresult/2f09f8536edc0fbe",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i 78.159.113.47 -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/input/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1611692302092,
+          "stop" : 1611692304284,
+          "duration" : 2192
+        }
+      } ]
+    },
+    "tags" : [ "@ns", "@fileprocess", "@functional" ]
+  },
+  "source" : "31fa921b3d1d05a.json",
+  "parameterValues" : [ ]
+}
