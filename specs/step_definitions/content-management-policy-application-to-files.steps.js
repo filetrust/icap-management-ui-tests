@@ -28,9 +28,6 @@ Given('I set a policy for file type {string} with {string} set to {string}', asy
 })
 
 When('I process file {string} through the icap server using Icap client', async (file) => {
-        // I.cleanupFile(file);
-        // I.wait(5)
-        //
         fileId = await I.sendFileICAP(file)
         await I.say(`I sent a file and received ${fileId}`);
 })

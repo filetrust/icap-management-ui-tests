@@ -19,4 +19,3 @@ Feature: content-management-policy-application-to-files
             | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue      |
             | word     | InternalHyperlinks | sanitise | issues.docx                    | Sanitised   | Docx          | Safe              |
             | pdf      | ExternalHyperlinks | disallow | Execute+Java+Script_JS_PDF.pdf | htmlReport  | Pdf           | Blocked by Policy |
-

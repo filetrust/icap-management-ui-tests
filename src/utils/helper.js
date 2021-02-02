@@ -17,9 +17,7 @@ const Cpass = require('cpass').Cpass;
 const config = fs.readFileSync(path.join(__dirname, "../../config.json"), "UTF-8");
 const configObj = JSON.parse(config);
 const { Download, IAuthOptions } = require('sp-download');
-//const request = require('request-promise');
-var request = require('request');
-const sprequest = require('sp-request');
+var rmdir = require('rmdir');
 
 
 
@@ -447,6 +445,14 @@ class MyHelper extends Helper {
             console.error(error);
         }
     }
+
+    removeFiles(filePath) {
+        var path = filePath;
+        rmdir(path, function (err, dirs, files) {
+            console.log('all files are removed');
+        });
+    }
+
 }
 
 module.exports = MyHelper;
