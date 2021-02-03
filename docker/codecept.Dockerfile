@@ -3,8 +3,8 @@ FROM codeception/codeceptjs:latest
 ENV  PATH="${PATH}:/node_modules/.bin"
 COPY . /codecept
 
-RUN chown -R pptruser:pptruser /codecept
-RUN runuser -l pptruser -c 'npm install --loglevel=warn --prefix /codecept'
+#RUN chown -R pptruser:pptruser /codecept
+#RUN runuser -l pptruser -c 'npm install --loglevel=warn --prefix /codecept'
 
 RUN ln -sf /codecept/bin/codecept.js /usr/local/bin/codeceptjs
 RUN chmod +x /usr/local/bin/codeceptjs
@@ -32,6 +32,6 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install libtool && \
     apt-get install -yq c-icap
 
-    RUN PUPPETEER_PRODUCT=firefox npm install
+RUN PUPPETEER_PRODUCT=firefox npm install
 
 ENTRYPOINT ["/usr/local/bin/codecept.entrypoint.sh"]

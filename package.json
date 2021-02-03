@@ -4,10 +4,11 @@
     "private": true,
     "scripts": {
         "report": "allure serve allure/results",
-        "test": "(npx codeceptjs run-multiple --grep  @functional --all --plugins allure)",
+        "codeceptjs": "(npx codeceptjs run-multiple --grep  @functional --all --plugins allure)",
         "test:prototype": "npx codeceptjs run-multiple --grep @prototype --all --plugins allure",
         "smoke": "npx codeceptjs run-multiple --grep '@prototype' --all --plugins allure",
-        "codeceptjs": "codeceptjs run --steps",
+        "build": "docker-compose -f docker/docker-compose.test.yml build && docker-compose -f docker/docker-compose.test.yml up -d",
+        "test": "npm run build && npm run codeceptjs",
         "codeceptjs:headless": "HEADLESS=true codeceptjs run --steps",
         "codeceptjs:ui": "codecept-ui --app",
         "codeceptjs:demo": "codeceptjs run --steps -c node_modules/@codeceptjs/examples/codecept.puppeteer.conf.js",
@@ -40,6 +41,7 @@
         "node-sp-auth": "^3.0.1",
         "puppeteer-firefox": "^0.5.0",
         "request": "^2.88.2",
+        "rmdir": "^1.2.0",
         "sp-download": "^1.2.1"
     }
 }

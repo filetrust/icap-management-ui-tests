@@ -75,7 +75,7 @@ When('I download a non compliant file {string} through the icap server', async (
     I.usePuppeteerTo('get response', async({page}) =>{
        await page.on("response", async response => {
             console.log(response.headers());
-         
+
    fileId = response.headers()
         .toString()
         .split('X-Adaptation-File-Id: ')[1]
@@ -157,4 +157,4 @@ Then('The file outcome for the submitted file {string} is {string} with {string}
         I.say('The file is blocked')
     }
 
-});
+}); 

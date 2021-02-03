@@ -16,7 +16,8 @@ module.exports = {
         saveNewPassword: `button[class*='ChangePassword_button__']`
     },
     sections: {
-        menu: `section[class*='Toolbar_Toolbar__']`,
+        menu: `nav[class*='NavigationItems_NavigationItems__'] > ul`,
+
     },
     links: {
         analytics: `a[href*="analytics"] > div`,
@@ -25,6 +26,7 @@ module.exports = {
         policy: `a[href*='policy'] > div`,
         configuration: `a[href*='configuration'] > div`,
         users: `a[href*='users'] > div`,
+        userLink: `div[data-test-id="userLink"]`
     },
 
     //Methods

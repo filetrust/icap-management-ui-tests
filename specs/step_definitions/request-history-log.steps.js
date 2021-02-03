@@ -12,13 +12,20 @@ When('I click on the Items Shown drop down and select a number of items as {stri
 Then('the count of files displayed is as selected {int} and will show in the items show dropdown', (fileCount) => {
     I.seeNumberOfElements(requesthistoryPage.table.fileTableBodyRow, fileCount)
 });
+
+Given('There are transactions available in the transaction log', async () => {
+    I.viewTransactions()
+    requesthistoryPage.openDatePicker()
+    requesthistoryPage.selectTimePeriod('24 Hours')
+    await requesthistoryPage.isDataAvailable ()
+});
+
 When('I click on the Add Filter button', () => {
     requesthistoryPage.clickMoreFiltersButton();
     requesthistoryPage.clickAddFilterButton();
 });
 When('add multiple filter selections as {string}, {string}, {string}', (riskFilter, typeFilter) => {
     requesthistoryPage.selectFileOutcome(riskFilter);
-
     requesthistoryPage.clickAddFilterButton();
     requesthistoryPage.selectFileType(typeFilter);
 });
@@ -43,7 +50,6 @@ When('I have selected a time range {string} and {string}', async (datetimeFrom, 
     requesthistoryPage.openDatePicker();
     await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
-
 
 When('I click on the Add Filter button and add a file id filter with Id {string}', (fileId) => {
     requesthistoryPage.setFileId(fileId);

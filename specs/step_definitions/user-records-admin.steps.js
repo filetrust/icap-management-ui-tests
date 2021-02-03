@@ -11,7 +11,7 @@ let userName;
 const MY_EMAIL = 'ahewitt@glasswallsolutions.com';
 
 Given('I am logged into the ui', () => {
-    I.loginNoPwd();
+    I.login();
 });
 
 Given('I have logged into the ui and navigated to the Users page', () => {

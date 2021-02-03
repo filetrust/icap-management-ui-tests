@@ -4,7 +4,7 @@ const {
 } = inject();
 
 Given("I am logged into the ui", () => {
-  I.loginNoPwd();
+  I.login();
   I.wait(5);
 });
 

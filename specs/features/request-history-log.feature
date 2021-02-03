@@ -21,6 +21,7 @@ Feature: request-history-log
   @functional
   @TEST-179
   Scenario Outline: User can filter the transactions log view using a combination of multiple filters
+    Given There are transactions available in the transaction log
     When I click on the Add Filter button
     And add multiple filter selections as '<riskFilter>', '<typeFilter>', '<fileIdFilter>'
     Then the result list shows files with the applied filtertypes '<fileType>','<fileRisk>'
@@ -32,14 +33,15 @@ Feature: request-history-log
   @functional
   @TEST-189
   Scenario Outline: User can remove applied filters
-    When '<filterOne>' and '<filterTwo>' are applied
-    And I remove '<filterToRemove>'
+    Given There are transactions available in the transaction log
+    And '<filterOne>' and '<filterTwo>' are applied
+    When I remove '<filterToRemove>'
     Then the result list shows files with the applied filtertypes '<appliedFilter>', '<filterValues>'
     Examples:
       | filterOne | filterTwo | filterToRemove | appliedFilter | filterValues |
       | docx      | Safe      | docx           | Safe          | Safe         |
 
-  #@functional
+  @functional
   @TEST-164
   Scenario Outline: User can filter the log using file id
     When I have selected a time range '<datetimeFrom>' and '<datetimeTo>'
@@ -47,4 +49,4 @@ Feature: request-history-log
     Then the result list only shows the filtered file with id '<fileId>'
     Examples:
       | fileId                               | datetimeFrom        | datetimeTo          |
-      | 96843b86-6641-4952-9e7b-baf80509b8ee | 20/01/2021 10:00 AM | 20/01/2021 20:00 PM |
+      | 4b254ed6-7817-4b42-9621-9c64c6302566 | 28/01/2021 10:00 AM | 28/01/2021 18:28 PM |

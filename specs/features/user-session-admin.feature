@@ -5,14 +5,11 @@ Feature: user-session-admin
 
     @functional
     @TEST-login
-    Scenario Outline: User can log into the ui
+    Scenario: User can log into the ui
         Given I am on the login screen
-        When I enter login details '<username>' and '<password>'
+        When I enter login details
         And I click login
         Then The home screen is displayed
-        Examples:
-            | username             | password    |
-            | user@testuksouth.com | Password123 |
 
 
     @functional

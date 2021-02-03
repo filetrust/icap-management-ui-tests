@@ -14,8 +14,14 @@ Clone this repository
 #### Install the dependencies: 
 npm install (This will install CodeceptJS with Puppeteer and all the dependent packages)
 
+#### Add SharePoint and Management UI login details 
+Current Sharepoint URL in use is: "https://saaspoc1.sharepoint.com"
+Create an encoder.js file (this is used to encode your username and password, use sample encoder_sample.js in the root directory
+Add your username and password in it, and run "node encoder.js", after this you can remove the file.
+Use the encoded username and password in config.json
+
 ### Running the tests locally
-#### Run all tests using: 
+#### Run all functional tests using: 
 npm test
     
 #### Run a single test using tags (use option --steps to see detailed execution of steps)
