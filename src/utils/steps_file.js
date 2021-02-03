@@ -31,12 +31,17 @@ module.exports = function () {
         },
 
 
-        login: function (email, password) {
+        loginAs: function (email, password) {
             this.onLoginPage();
             loginPage.loginWith(email, password);
             this.waitForElement(homePage.sections.menu);
         },
 
+        login: function () {
+            this.onLoginPage();
+            loginPage.loginWith(env.qa.userId, env.qa.password);
+            this.waitForElement(homePage.sections.menu);
+        },
 
         enterLoginDetails: function (user, password) {
             this.fillField(loginPage.fields.userid, user);

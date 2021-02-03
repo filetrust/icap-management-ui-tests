@@ -14,7 +14,7 @@ Given('The file {string} is not in download folder', async (file) => {
 });
 
 Given('I am logged into the portal', () => {
-    I.login('', '')
+    I.login()
 });
 
 Given('I am on the draft Adaptation policy screen', () => {

@@ -7,8 +7,8 @@ Given('I hover over my profile and select Change Password', () => {
 });
 
 When('I enter login details', () => {
-    username = env.qa.userId
-    password = env.qa.password
+   const username = env.qa.userId
+   const password = env.qa.password
     I.enterLoginDetails(username, password);
 });
 
@@ -41,7 +41,7 @@ When('I fill in {string}, {string}, {string}, and click Save', (currentPassword,
 
 });
 Given('I am logged into the ui', () => {
-    I.login(env.qa.userId, env.qa.password);
+    I.login();
 });
 
 Given('I am on the login screen', () => {

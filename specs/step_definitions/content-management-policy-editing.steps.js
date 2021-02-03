@@ -9,7 +9,7 @@ let randomId = faker.random.number()
 let nUrl;
 
 Given('I am logged into the portal', () => {
-    I.login('', '')
+    I.login()
 });
 
 Given('I am on the policy screen', () => {
