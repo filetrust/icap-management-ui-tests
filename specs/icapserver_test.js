@@ -111,6 +111,3 @@ Scenario('I process a supported file and get a 200 response', async () => {
     });
 }).tag('@sh');
 
-
-//processFile()
-//}).tag('@sh');

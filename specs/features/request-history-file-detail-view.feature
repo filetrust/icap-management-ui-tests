@@ -8,7 +8,7 @@ Feature: request-history-file-detail-view
         Given I have navigated to the Request History page
 
     @functional
-    @TEST-169_2
+    @TEST-169_1
     Scenario: User can view more details on a previously processed file
         Given A previous transaction is available in the transaction log 
         When I click on a available file record to open the detail view

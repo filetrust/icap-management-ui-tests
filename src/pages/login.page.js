@@ -72,8 +72,8 @@ module.exports = {
     const element = this.buttons.login;
     //I.waitForVisible(element)
     I.wait(5)
-    //I.pressKey('Enter')
-    I.click(element);
+    I.pressKey('Enter')
+    
   },
 
   errorMsg() {

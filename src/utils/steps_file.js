@@ -6,8 +6,10 @@ const filedropPage = require("../pages/file-drop.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
 const env = require('../data/credentials.js')
+//const { ui_user, ui_password} = configObj;
 const assert = require('assert').strict;
 const cp = require('child_process')
+//let cpass = new Cpass();
 const fs = require('fs')
 const path = require('path');
 const inputDir = path.join('src', 'data', 'input');
@@ -16,16 +18,16 @@ const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
 const fileDropUrl = `https://file-drop.co.uk/`;
-const icapClient = 'icap-client-develop.uksouth.cloudapp.azure.com'
-//const icapClient = '78.159.113.47'
+//const icapClient = 'icap-client-develop.uksouth.cloudapp.azure.com'
+const icapClient = '54.78.130.213'
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
             //this.amOnPage('https://management-ui-test-01.uksouth.cloudapp.azure.com/')
-            //this.amOnPage('http://78.159.113.47:31829/')
+            this.amOnPage('http://54.78.130.213:31829/')
             //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
-            this.amOnPage(`https://management-ui-develop.uksouth.cloudapp.azure.com`)
+            //this.amOnPage(`https://management-ui-develop.uksouth.cloudapp.azure.com`)
         },
 
 
@@ -35,19 +37,15 @@ module.exports = function () {
             this.waitForElement(homePage.sections.menu);
         },
 
-        login: function () {
-            this.onLoginPage();
-            loginPage.clickLogIn()
-            //loginPage.loginWith(env.qa.userId, env.qa.password);
-            this.waitForElement(homePage.sections.menu);
-        },
 
         enterLoginDetails: function (user, password) {
-            loginPage.loginWith(user, password);
+            this.fillField(loginPage.fields.userid, user);
+            this.fillField(loginPage.fields.password, password);
         },
 
         enterValidCredential: function () {
-            loginPage.loginWith(env.qa.email, env.qa.password);
+           // loginPage.loginWith(env.qa.email, env.qa.password);
+            
         },
         enterInvalidPassword: function () {
             loginPage.setPassword(faker.random.number());
@@ -166,10 +164,7 @@ module.exports = function () {
             this.wait(5)
         },
 
-        sendFileICAP: async function (fileName) {
-            const cp = require('child_process')
-            const fs = require('fs')
-            const path = require('path');
+        sendFileICAP: async function (fileName) { 
             const inputDir = path.join('src', 'data', 'input');
             const outputDir = path.join('output', 'downloads');
             const inputPath = path.join(process.cwd(), inputDir);

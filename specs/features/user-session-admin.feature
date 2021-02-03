@@ -3,16 +3,13 @@ Feature: user-session-admin
     As a admin I need to validate that user can successfully logout or change a password in order to confirm that the solution works as expected
 
 
-    #@functional
+    @functional
     @TEST-login
-    Scenario Outline: User can log into the ui
+    Scenario: User can log into the ui
         Given I am on the login screen
-        When I enter login details '<username>' and '<password>'
+        When I enter login details
         And I click login
         Then The home screen is displayed
-        Examples:
-            | username | password |
-            |          |          |
 
 
     @functional
