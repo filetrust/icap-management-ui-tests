@@ -2,7 +2,7 @@
 
 const { I, requesthistoryPage } = inject();
 
-Given('There existing transactions available', async () => {
+Given('There are existing transactions available', async () => {
    I.viewTransactions('24 Hours')
 });
 

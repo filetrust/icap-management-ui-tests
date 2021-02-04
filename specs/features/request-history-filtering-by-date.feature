@@ -44,13 +44,14 @@ Feature: request-history-filtering-by-date
     @functional
     @TEST-242
     Scenario: The request log is sorted by timestamp, newest to oldest
-        And There existing transactions available
+        And There are existing transactions available
         Then the request log is sorted from newest timestamp to oldest timestamp
 
     @portal
     @functional
     @TEST-243
     Scenario: Transactions can be sorted by time
+        Given There are existing transactions available
         When I click the arrow next to timestamp
         Then the arrow will invert
         And the transaction log will be sorted from oldest timestamp to newest timestamp
