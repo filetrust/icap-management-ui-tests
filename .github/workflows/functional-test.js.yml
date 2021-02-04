@@ -24,7 +24,8 @@ jobs:
         run: |
           npm install    
           npm install -g allure-commandline --save-dev     
-          npm test
+          sudo apt-get install -y c-icap
+          npm run codeceptjs
   
       - name: Get Allure history
         uses: actions/checkout@v2

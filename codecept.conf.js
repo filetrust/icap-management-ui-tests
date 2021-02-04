@@ -38,7 +38,7 @@ exports.config = {
   },
   include: {
     I: './src/utils/steps_file.js',
-    env: './src/data/credentials.js',
+    env: './src/utils/config.js',
     homePage: './src/pages/home.page.js',
     loginPage: './src/pages/login.page.js',
     analyticsPage: './src/pages/analytics.page.js',

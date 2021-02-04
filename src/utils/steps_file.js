@@ -6,7 +6,9 @@ const filedropPage = require("../pages/file-drop.page.js");
 const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
-const env = require('../data/credentials.js')
+const env = require ("../utils/config")
+//require('../data/credentials.js')
+
 //const { ui_user, ui_password} = configObj;
 const assert = require('assert').strict;
 const cp = require('child_process')
@@ -40,7 +42,7 @@ module.exports = function () {
 
         login: function () {
             this.onLoginPage();
-            loginPage.loginWith(env.qa.userId, env.qa.password);
+            loginPage.loginWith(env.qa.user, env.qa.password);
             this.waitForElement(homePage.sections.menu);
         },
 
