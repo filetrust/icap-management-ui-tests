@@ -73,10 +73,10 @@ module.exports = {
         drp_minutes_right: `div[class*='drp-calendar right'] .minuteselect`
     },
     popup: {
-        filterFileId: `button:nth-child(3) > p`,
+        filterFileId: `button:nth-child(1) > p`,
         filterType: `div[class*='Filters_popup__'] > button:nth-child(3)`,
-        fileTypeByCss: `button:nth-child(1) > p`,
-        riskByCss: `button:nth-child(2) > p`,
+        fileTypeByCss: `button:nth-child(2) > p`,
+        riskByCss: `button:nth-child(3) > p`,
         filterFileOutcomes: `div[class*='Filters_popup__'] > button:nth-child(2)`,
         filterMenu: `div[class*='Filters_popup__']`,
         filterMenuByTxt: `//div[@id='root']/div/div/section/div/div[3]`,
@@ -165,7 +165,7 @@ module.exports = {
             } else {
                 I.say("Unable to find the required option");
             }
-            I.waitForVisible(this.table.tableHeaders, 30)
+            I.waitForVisible(this.table.tableHeaders, 60)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -366,7 +366,7 @@ module.exports = {
         await I.grabTextFrom(element);
     },
 
-    isTimeApplied(start, end) {
+   async isTimeApplied(start, end) {
         let time = null;
         if (end === 'current time') {
             time = moment();
@@ -375,11 +375,10 @@ module.exports = {
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
-        //   I.seeInField(this.calendar.dateTimePickerText,  timeFrom + ` - ` + currentTime);
-        //const range = (timeFrom + " - " + currentTime).toString();
-        //  I.see(timeFrom + ` - ` + currentTime)
-        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+        const datefield = `//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`
+        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: '+timeFrom + ` - ` + currentTime ) : I.say('The selected period is correctly displayed');
     },
+
 
 
     getCurrentTime() {

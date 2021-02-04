@@ -7,6 +7,7 @@ Feature: request-history-file-detail-view
         Given I am logged into the ui
         Given I have navigated to the Request History page
 
+    @portal
     @functional
     @TEST-169_1
     Scenario: User can view more details on a previously processed file

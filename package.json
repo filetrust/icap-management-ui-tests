@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "report": "allure serve allure/results",
-        "codeceptjs": "(npx codeceptjs run-multiple --grep  @functional --all --plugins allure)",
+        "codeceptjs": "(npx codeceptjs run-multiple --grep  @portal --all --plugins allure)",
         "test:prototype": "npx codeceptjs run-multiple --grep @prototype --all --plugins allure",
         "smoke": "npx codeceptjs run-multiple --grep '@prototype' --all --plugins allure",
         "build": "docker-compose -f docker/docker-compose.test.yml build && docker-compose -f docker/docker-compose.test.yml up -d",

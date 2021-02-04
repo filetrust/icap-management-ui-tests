@@ -1,7 +1,6 @@
 #!/bin/bash
 
 npm install
-docker build -f ./docker/Dockerfile.node8 -t cpass.node8 .
 
 nohup google-chrome \
 	--no-sandbox \

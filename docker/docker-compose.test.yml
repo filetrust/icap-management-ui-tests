@@ -7,11 +7,6 @@ services:
       - 5050:5050
     volumes:
       - /allure-server-store:/allure
-  icap-client:
-    build:
-      context: ..
-      dockerfile: docker/icap.Dockerfile
-    container_name: icap
   codecept:
     build:
       context: ..

@@ -222,7 +222,7 @@ class MyHelper extends Helper {
         try {
             const [elm] = await page.$x(`//th[contains(text(),'${fileId}')]/../th[position()=${col}]`);
             if (!elm) {
-                assert.fail(`File with ${fileId} file id is not displayed`);
+                assert.fail(`File with ${fileId} is not displayed`);
             }
             const text = await page.evaluate(name => name.innerText, elm);
             if (this.compareThatEqual(text, val)) {
