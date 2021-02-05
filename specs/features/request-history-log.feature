@@ -7,6 +7,7 @@ Feature: request-history-log
     Given I am logged into the ui
     Given I have navigated to the Request History page
 
+
   @success
   @prototype
   @TEST-166
@@ -41,6 +42,7 @@ Feature: request-history-log
       | filterOne | filterTwo | filterToRemove | appliedFilter | filterValues |
       | docx      | Safe      | docx           | Safe          | Safe         |
 
+  @portal
   @functional
   @TEST-164
   Scenario Outline: User can filter the log using file id
@@ -49,4 +51,4 @@ Feature: request-history-log
     Then the result list only shows the filtered file with id '<fileId>'
     Examples:
       | fileId                               | datetimeFrom        | datetimeTo          |
-      | 4b254ed6-7817-4b42-9621-9c64c6302566 | 28/01/2021 10:00 AM | 28/01/2021 18:28 PM |
+      | 6df836fe-c044-4c01-9470-99211cb79afd | 3/02/2021 10:00 AM | 3/02/2021 16:33 PM |

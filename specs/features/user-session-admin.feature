@@ -2,7 +2,7 @@
 Feature: user-session-admin
     As a admin I need to validate that user can successfully logout or change a password in order to confirm that the solution works as expected
 
-
+    @portal
     @functional
     @TEST-login
     Scenario: User can log into the ui
@@ -11,7 +11,7 @@ Feature: user-session-admin
         And I click login
         Then The home screen is displayed
 
-
+    @portal
     @functional
     @TEST-236
     Scenario: User can log out of the ui

@@ -6,6 +6,7 @@ Feature: request-history-filtering-by-date
         Given I am logged into the ui
         Given I have navigated to the Request History page
 
+    @portal
     @functional
     @TEST-167
     Scenario Outline: User can filter the request log using a default time interval(1, 12 or 24 hrs)
@@ -18,6 +19,7 @@ Feature: request-history-filtering-by-date
             | 12 Hours     | 12           | current time |
             | 24 Hours     | 24           | current time |
 
+    @portal
     @functional
     @TEST-235
     Scenario Outline: User can filter the request log using a custom range and see all transactions within that range
@@ -27,7 +29,8 @@ Feature: request-history-filtering-by-date
         Examples:
             | datetimeFrom       | datetimeTo          |
             | 11/01/2021 0:56 AM | 12/01/2021 0:56 AM  |
-           
+
+    @portal      
     @functional
     @TEST-184
     Scenario Outline: User cannot filter the date range to a time greater than 24 hours
@@ -37,14 +40,18 @@ Feature: request-history-filtering-by-date
             | datetimeFrom       | datetimeTo          |
             | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
+    @portal
     @functional
     @TEST-242
     Scenario: The request log is sorted by timestamp, newest to oldest
+        And There are existing transactions available
         Then the request log is sorted from newest timestamp to oldest timestamp
 
+    @portal
     @functional
     @TEST-243
     Scenario: Transactions can be sorted by time
+        Given There are existing transactions available
         When I click the arrow next to timestamp
         Then the arrow will invert
         And the transaction log will be sorted from oldest timestamp to newest timestamp

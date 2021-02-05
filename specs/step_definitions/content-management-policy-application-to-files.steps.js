@@ -24,7 +24,6 @@ Given('I am on the draft Adaptation policy screen', () => {
 
 Given('I set a policy for file type {string} with {string} set to {string}', async (fileType, contentFlag, flagType) => {
     await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
-    
 })
 
 When('I process file {string} through the icap server using Icap client', async (file) => {
@@ -33,23 +32,10 @@ When('I process file {string} through the icap server using Icap client', async 
 })
 
 Then('The {string} with file type {string} processing outcome is as expected {string} and {string}', async (file, fileExtension, fileOutcome, outcomeValue) => {
-        // verify file and content
-        const outputDir = path.join('output', 'downloads');
-        const outputFile = path.join(outputDir, file);
-        if (fileOutcome === 'Sanitised') {
-        // I.amInPath(outputDir)
-        // I.checkFileInFileDropUrl(outputFile)
-        // I.see('File is clean')
-    } else if (fileOutcome === 'htmlReport') {
-        // I.amInPath(outputDir)
-        // I.seeFile(outputFile)
-        //  I.seeInThisFile('Document Access Blocked due to Policy', 'UTF8')
-    }
-        I.viewTransactions();
+        I.goToRequestHistory()
+        //I.searchFileById(fileId)
         requesthistoryPage.openDatePicker();
-        requesthistoryPage.selectTimePeriod('12 Hours')
-        I.wait(5)
-        // verify file in request history
+        requesthistoryPage.selectTimePeriod('1 Hour')
         await requesthistoryPage.checkFileTypeValueByFileId(fileExtension, fileId, true)
         await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
 })

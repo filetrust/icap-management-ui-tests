@@ -8,6 +8,7 @@ Feature: Content Management Policy Editing
     And I am on the policy screen
     And I am on the draft adaptation Policy screen
 
+  @portal
   @functional
   @TEST-213
   Scenario Outline: User can cancel a draft policy creation
@@ -19,7 +20,7 @@ Feature: Content Management Policy Editing
       | FileType   | ContentFlag | DraftFlagType | CurrentFlagType |
       | powerpoint | Metadata    | disallow     | sanitise        |
 
-
+  @portal
   @functional
   @TEST-214
   Scenario Outline: User can update the current Adaptation policy settings
@@ -31,6 +32,7 @@ Feature: Content Management Policy Editing
       | FileType | ContentFlag        | DraftFlagType | CurrentFlagType |
       | excel    | InternalHyperlinks | sanitise      | disallow        |
 
+  @portal
   @functional
   @TEST-239
   Scenario Outline: User can delete a draft policy
@@ -43,6 +45,7 @@ Feature: Content Management Policy Editing
       | FileType | ContentFlag        | DraftFlagType | CurrentFlagType |
       | excel    | ExternalHyperlinks | sanitise      | disallow        |
 
+  @portal
   @functional
   @TEST-240
   Scenario Outline: User can publish a draft Adaptation Policy
@@ -54,6 +57,7 @@ Feature: Content Management Policy Editing
       | FileType | ContentFlag | DraftFlagType | CurrentFlagType |
       | pdf      | Acroform    | disallow      | sanitise        |
 
+  @portal
   @functional
   @TEST-241
   Scenario Outline: User can update and publish both Adaptation and NCFS policies at the same time

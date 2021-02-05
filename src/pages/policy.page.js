@@ -16,7 +16,7 @@ module.exports = {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
-    apiUrlInput: `div[class*='Input_Input__'] > input`,
+    apiUrlInput: `input[data-test-id="inputApiUrl"]`,
     policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`
   },
   modal: {

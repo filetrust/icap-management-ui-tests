@@ -24,7 +24,7 @@ jobs:
         run: |
           npm install    
           npm install -g allure-commandline --save-dev     
-          npm test
+          npm run codeceptjs
   
       - name: Get Allure history
         uses: actions/checkout@v2
@@ -49,6 +49,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USER: ExampleUser
+          PASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
           PUBLISH_BRANCH: allure-report
           PUBLISH_DIR: allure-history
           CI: true

@@ -15,7 +15,7 @@ Feature: non-compliant-files-routing-mechanism
   #   Then I see the default set routing option for unprocessable files as ''
   #   Then I see the default set routing option for blocked files as ''
 
-
+  @portal
   @functional
   @TEST-158
   Scenario Outline: User can update the non-compliant routes API URL
@@ -26,6 +26,7 @@ Feature: non-compliant-files-routing-mechanism
       | url                                       |
       | icap-client-qa.uksouth.cloudapp.azure.com |
 
+  @portal
   @functional
   @TEST-183
   Scenario Outline: User can change the outcome of unprocessable files
@@ -35,7 +36,7 @@ Feature: non-compliant-files-routing-mechanism
       | routeOption                  | updatedRouteOption |
       | relay-unprocessableFileTypes | Relay              |
 
-
+  @portal
   @functional
   @TEST-187
   Scenario Outline: User can change the outcome of Glasswall Blocked files

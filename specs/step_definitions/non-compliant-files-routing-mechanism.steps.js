@@ -60,7 +60,7 @@ Then('the route selection for unprocessable files is applied as {string}', (upda
 });
 
 Given('I have set the routing option for Glasswall Blocked files to {string}', async (blockedPolicyAction) => {
-   await policyPage.setAndPublishRouteFlag(blockedPolicyAction);
+    await policyPage.setAndPublishRouteFlag(blockedPolicyAction);
 });
 
 When('I download a non compliant file {string} through the icap server', async (file) => {
@@ -72,49 +72,48 @@ When('I download a non compliant file {string} through the icap server', async (
     // //sharepoint.goToDocuments();
     sharepoint.selectFile(file);
     sharepoint.downloadFile()
-    I.usePuppeteerTo('get response', async({page}) =>{
-       await page.on("response", async response => {
+    I.usePuppeteerTo('get response', async ({ page }) => {
+        await page.on("response", async response => {
             console.log(response.headers());
 
-   fileId = response.headers()
-        .toString()
-        .split('X-Adaptation-File-Id: ')[1]
-        .split("\n")[0];;
-        console.log('The fileId is ' +fileId)
-        //response.abort()
- });
+            fileId = response.headers()
+                .toString()
+                .split('X-Adaptation-File-Id: ')[1]
+                .split("\n")[0];;
+            console.log('The fileId is ' + fileId)
+            //response.abort()
         });
- });
+    });
+});
 
 When('I submit a non supported or unprocessable file {string} through the icap server', async (file) => {
     I.handleDownloads();
     resp = await I.submitFile(file)
 });
 
-Then('The file {string} processing outcome is as expected {string} and {string}', async (file, fileOutcome, outcomeValue) => {
-    const respCode = await I.getResponseCode(resp)
-    fileId = await I.getFileId(resp)
-    const filePath = `output/downloads`
+When('I submit a non compliant file {string} through the icap server', async (file) => {
+    I.handleDownloads();
+    resp = await I.submitFile(file)
+});
+
+Then('The file outcome for the submitted file {string} is {string} with {string}', async (file, fileOutcome, outcomeValue) => {
+    const icapCode = await I.getIcapHeaderCode(resp)
     if (fileOutcome === 'relayed') {
-        if (respCode === '204 Unmodified') {
+        if (icapCode === '204 Unmodified') {
             I.say('Success, Response code is 204 as expected')
         } else {
-            I.say('Failed, Response code is ' + respCode)
+            I.say('Failed, Response code is ' + icapCode)
         }
-        I.amInPath(filePath)
-        I.dontSeeFile(file)
     } else if (fileOutcome === 'htmlReport') {
+        fileId = await I.getFileId(resp)
+        const respCode = await I.getResponseCode(resp)
         if (respCode === '403 Forbidden') {
             I.say('Success, Response code is 403 as expected')
         } else {
             I.say('Failed, Response code is ' + respCode)
         }
-        // I.amInPath(filePath)
-        //I.seeFile(file)
-        I.goToRequestHistory();
-        requesthistoryPage.openDatePicker();
-        requesthistoryPage.selectTimePeriod('1 Hour')
-        await requesthistoryPage.checkFileOutcomeValueByFileId(fileOutcome, outcomeValue, fileId, true)
+        I.viewTransactions('1 Hour')
+        await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
     }
 });
 
@@ -126,11 +125,11 @@ Given('I set the policy for file type {string} to {string} and {string}', async 
 
 
 Given('I have set the routing option for unprocessable files to {string}', async (policyAction) => {
-   // await policyPage.setAndPublishRouteFlag(policyAction);
+    // await policyPage.setAndPublishRouteFlag(policyAction);
 });
 
 When('I download a non supported or unprocessable file {string} through the icap server', async (file) => {
-   await I.downloadFile(file)
+    await I.downloadFile(file)
     I.wait(5)
     //await I.goToSharepoint()
     // I.wait(5)
@@ -139,22 +138,3 @@ When('I download a non supported or unprocessable file {string} through the icap
     // sharepoint.downloadFile()
 });
 
-Then('The file outcome for the submitted file {string} is {string} with {string}', async (file, fileOutcome, outcomeValue) => {
-    const filePath = `output/downloads/${file.trim()}`
-    if (fileOutcome === 'relayed') {
-        I.checkFileInFileDropUrl(filePath)
-        I.dontSee('File is clean')
-        I.say('The file is relayed unprocessed')
-    } else {
-    //if (fileOutcome === 'htmlReport') {
-        I.amInPath('output/downloads')
-        //I.waitForFile(file, 15)
-        I.dontSeeFile(file)
-        I.goToRequestHistory();
-        requesthistoryPage.openDatePicker();
-        requesthistoryPage.selectTimePeriod('1 Hour')
-        await requesthistoryPage.checkFileOutcomeValueByFileId(fileOutcome, outcomeValue, fileId, true)
-        I.say('The file is blocked')
-    }
-
-}); 

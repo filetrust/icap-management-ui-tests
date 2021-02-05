@@ -10,7 +10,7 @@ Feature('File Processing');
 
 
 Scenario('I process a supported file using icap client tool for rebuild successfully', async () => {
-    const file = 'issues.docx'
+    const file = '22.pdf'
     const filePath = `output/downloads`
     I.handleDownloads();
     const resp = await I.submitFile(file)
@@ -75,7 +75,7 @@ Scenario('I process a supported file and get a 200 response', async () => {
                         });
                     } else {
                         console.log(file);
-                        I.submitFile(fileIn, fileOut)
+                        I.processFile(fileIn, fileOut)
                         // const icapCode = I.getIcapHeaderCode(resp)
                         // const respCode = I.getResponseCode(resp)
                         // expect(icapCode).to.equal('200 OK')

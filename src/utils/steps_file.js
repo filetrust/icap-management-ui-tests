@@ -3,9 +3,12 @@ const homePage = require("../pages/home.page.js");
 const loginPage = require("../pages/login.page.js");
 const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
+const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
-const env = require('../data/credentials.js')
+const env = require ("../utils/config")
+//require('../data/credentials.js')
+
 //const { ui_user, ui_password} = configObj;
 const assert = require('assert').strict;
 const cp = require('child_process')
@@ -39,7 +42,7 @@ module.exports = function () {
 
         login: function () {
             this.onLoginPage();
-            loginPage.loginWith(env.qa.userId, env.qa.password);
+            loginPage.loginWith(env.qa.user, env.qa.password);
             this.waitForElement(homePage.sections.menu);
         },
 
@@ -49,8 +52,8 @@ module.exports = function () {
         },
 
         enterValidCredential: function () {
-           // loginPage.loginWith(env.qa.email, env.qa.password);
-            
+            // loginPage.loginWith(env.qa.email, env.qa.password);
+
         },
         enterInvalidPassword: function () {
             loginPage.setPassword(faker.random.number());
@@ -58,6 +61,11 @@ module.exports = function () {
 
         goToPasswordResetPage: function () {
             this.click(loginPage.clickForgotPasswordLink());
+        },
+
+        logout: function (){
+            homePage.clickAccountToggle();
+            homePage.clickLogout();
         },
 
         goToAnalytics: function () {
@@ -105,11 +113,16 @@ module.exports = function () {
             await policyPage.clickNcfsPolicy();
         },
 
-        viewTransactions: function () {
-            this.login();
+        viewTransactions: function (period) {
             this.goToRequestHistory()
+            requesthistoryPage.openDatePicker();
+            requesthistoryPage.selectTimePeriod(period)
         },
 
+        searchFileById: function (id){
+            requesthistoryPage.setFileId(id);
+            this.waitForElement(requesthistoryPage.table.tableHeaders,60)
+        },
 
         uploadFile: function (file) {
             this.attachFile(filedropPage.buttons.fileInput, file)
@@ -169,7 +182,7 @@ module.exports = function () {
             this.wait(5)
         },
 
-        sendFileICAP: async function (fileName) { 
+        sendFileICAP: async function (fileName) {
             const inputDir = path.join('src', 'data', 'input');
             const outputDir = path.join('output', 'downloads');
             const inputPath = path.join(process.cwd(), inputDir);
@@ -183,6 +196,7 @@ module.exports = function () {
             await cp.execSync(`c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             output.print('icapLogs: ' + icapOutput)
+            this.wait(60)
             const statusCode = icapOutput
                 .toString()
                 .split('ICAP/1.0 ')[1]
@@ -208,11 +222,12 @@ module.exports = function () {
             await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             output.print('icapLogs: ' + icapOutput)
+            this.wait(60)
             output.print('File is sent...')
             return icapOutput;
         },
 
-        submitFile: async function (filePath, output) {
+        processFile: async function (filePath, output) {
             //output.print
             console.log('Sending file...')
             console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${filePath}" -o "${output}" -v 2> ${icapLogs}`)
@@ -220,6 +235,7 @@ module.exports = function () {
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             //output.print
             console.log('icapLogs: ' + icapOutput)
+            this.wait(60)
             //output.print
             console.log('File is sent...')
             return icapOutput;
