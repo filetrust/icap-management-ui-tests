@@ -27,10 +27,10 @@ Feature: request-history-filtering-by-date
         Then the selected custom range is applied to include '<datetimeFrom>' and '<datetimeTo>'
         And the files processed for the selected period are displayed
         Examples:
-            | datetimeFrom       | datetimeTo          |
-            | 11/01/2021 0:56 AM | 12/01/2021 0:56 AM  |
+            | datetimeFrom        | datetimeTo          |
+            | 28/01/2021 10:00 AM | 29/01/2021 10:00 AM |
 
-    @portal      
+    @portal
     @functional
     @TEST-184
     Scenario Outline: User cannot filter the date range to a time greater than 24 hours

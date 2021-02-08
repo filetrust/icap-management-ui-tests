@@ -3,55 +3,71 @@ Feature: user-records-admin
     As a admin I need to validate successful user record addition, editing and deletion in order to confirm that the solution works as expected
 
     Background: Login
-       Given I have logged into the ui and navigated to the Users page
+        Given I have logged into the ui and navigated to the Users page
 
-    # @prototype
-    # @TEST-171
-    # @Fail-app
-    # Scenario Outline: I can add a new user to the ui
-    #     When I add a new user with a valid '<email>'
-    #     Then The new user record is saved
-    #     Examples:
-    #         | username    |firstname    |lastname| email                    |
-    #         | tester1 |autotest|  |tester1@glasswalltest.co
-    #         | tester2 | | |tester2@glasswalltest.co
-
-    @prototype
-    @TEST-172
-    @Fail-app
-    Scenario Outline: I can delete another user from the page
-        When I delete an existing user '<name>'
-        Then The user record is no longer available
+    @functional
+    @TEST-171
+    @portal
+    Scenario Outline: I can add a new user to the ui
+        When I add a new user with details username '<username>', firstname '<firstname>', lastname '<lastname>' and email '<email>'
+        And I click Save Changes
+        Then The new user record is saved with a green tick
         Examples:
-            | name    | email                    |
-            | tester2 | tester2@glasswalltest.co |
+            | username | firstname  | lastname   | email                    |
+            | tester1  | autotestfn | autotestln | tester1@glasswalltest.co |
 
-    @prototype
+    @functional
     @TEST-185
-    @Fail-app
+    @portal
     Scenario Outline: A new user cannot be added with a invalid email
-        When I add a new user with a invalid '<email>'
+        When I add a new user with details username '<username>', firstname '<firstname>', lastname '<lastname>' and email '<email>'
+        And I click Save Changes
         Then the record is not saved and the expected validation error is displayed
         Examples:
-            | name         | email             |
-            | InvalidUser1 | Invalid@email.com |
-            | InvalidUser2 | Invalid           |
+            | username   | firstname    | lastname     | email        |
+            | autotester | autotesterfn | autotesterln | autotester1@ |
 
-    @prototype
+    @functional
     @TEST-186
-    @Fail-app
+    @portal
     Scenario Outline: A duplicate user cannot be added
-        When I add a new user with '<email>' that is already used
+        Given A user record with the email '<email>' already exist
+        When I add a new user record with username '<username>', firstname '<firstname>', lastname '<lastname>' and the existing email '<email>'
+        And I click Save Changes
         Then the expected validation error is displayed and the record is not saved
         Examples:
-            | name    | email                    |
-            | tester1 | tester1@glasswalltest.co |
+            | username      | firstname       | lastname        | email                      |
+            | dupautotester | dupautotesterfn | dupautotesterln | dupautotester1@icaptest.co |
 
-    @prototype
+    @functional
     @TEST-191
-    @Fail-app
+    @portal
     Scenario: I cannot delete my own account
+    
         When I observe my account
         Then there will be no delete button next to my account
 
-    Scenario: I can update a user record
+    @functional
+    @TEST-172
+    @portal
+    Scenario Outline: I can delete another user from the page
+        Given A user exist with the email address '<email>'
+        When I delete the existing user with email '<email>'
+        And I click Save Changes
+        Then The user record with email '<email>' is no longer available
+        Examples:
+            | email                           |
+            | recordtodelete@glasswalltest.co |
+
+
+    @functional
+    @portal
+    @TEST-update
+    Scenario Outline: A existing user record can be update
+        Given A user record exist with username '<username>', firstname '<firstname>', lastname '<lastname>' and email '<email>'
+        When I click the edit on the user record and change the firstname to '<newfirstname>'
+        And I click Save Changes
+        Then The updated user record is saved
+        Examples:
+            | username     | firstname  | lastname   | email                          | newfirstname |
+            | usertoupdate | fntoupdate | lntoupdate | emailtoupdate@glasswalltest.co | newfname     |
