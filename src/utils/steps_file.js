@@ -43,7 +43,7 @@ module.exports = function () {
 
         login: function () {
             this.onLoginPage();
-            loginPage.loginWith(env.qa.user, env.qa.password);
+            loginPage.loginWith(process.env.USER, process.env.PASSWORD);
             this.waitForElement(homePage.sections.menu);
         },
 
