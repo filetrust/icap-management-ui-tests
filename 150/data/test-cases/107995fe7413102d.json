@@ -1,0 +1,688 @@
+{
+  "uid" : "107995fe7413102d",
+  "name" : "User can filter the log using file id {\"fileId\":\"6df836fe-c044-4c01-9470-99211cb79afd\",\"datetimeFrom\":\"3/02/2021 10:00 AM\",\"datetimeTo\":\"3/02/2021 16:33 PM\"} @portal @functional @TEST-164",
+  "fullName" : "request-history-log @request-history-log.User can filter the log using file id {\"fileId\":\"6df836fe-c044-4c01-9470-99211cb79afd\",\"datetimeFrom\":\"3/02/2021 10:00 AM\",\"datetimeTo\":\"3/02/2021 16:33 PM\"} @portal @functional @TEST-164",
+  "historyId" : "5bc83bcb9c1cd5df7ff75fcd0e7afb28",
+  "time" : {
+    "start" : 1612808347600,
+    "stop" : 1612808408918,
+    "duration" : 61318
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I have selected a time range '3/02/2021 10:00 AM' and '3/02/2021 16:33 PM' ",
+      "time" : {
+        "start" : 1612808369428,
+        "stop" : 1612808388234,
+        "duration" : 18806
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: openDatePicker ",
+        "time" : {
+          "start" : 1612808369428,
+          "stop" : 1612808371482,
+          "duration" : 2054
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for visible \"div[id*='reportrange']\", 30",
+          "time" : {
+            "start" : 1612808369428,
+            "stop" : 1612808369433,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1612808369434,
+            "stop" : 1612808371481,
+            "duration" : 2047
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: setTimePeriod \"3/02/2021 10:00 AM\", \"3/02/2021 16:33 PM\"",
+        "time" : {
+          "start" : 1612808371482,
+          "stop" : 1612808373511,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \".ranges li:nth-child(4)\"",
+          "time" : {
+            "start" : 1612808371482,
+            "stop" : 1612808373503,
+            "duration" : 2021
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"div[class*='drp-calendar left']\"",
+          "time" : {
+            "start" : 1612808373506,
+            "stop" : 1612808373510,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: getRightMonth \"FEB\", \"2021\"",
+        "time" : {
+          "start" : 1612808373511,
+          "stop" : 1612808373515,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+          "time" : {
+            "start" : 1612808373511,
+            "stop" : 1612808373515,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1612808373515,
+          "stop" : 1612808373519,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar right')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '3')]}",
+        "time" : {
+          "start" : 1612808373524,
+          "stop" : 1612808375558,
+          "duration" : 2034
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .hourselect\", \"10\"",
+        "time" : {
+          "start" : 1612808375559,
+          "stop" : 1612808377695,
+          "duration" : 2136
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .minuteselect\", \"00\"",
+        "time" : {
+          "start" : 1612808377695,
+          "stop" : 1612808379807,
+          "duration" : 2112
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: setTimeTo \"3/02/2021 10:00 AM\", \"3/02/2021 16:33 PM\"",
+        "time" : {
+          "start" : 1612808379807,
+          "stop" : 1612808379812,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+          "time" : {
+            "start" : 1612808379807,
+            "stop" : 1612808379811,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1612808379812,
+          "stop" : 1612808379815,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar right')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '3')]}",
+        "time" : {
+          "start" : 1612808379831,
+          "stop" : 1612808381863,
+          "duration" : 2032
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .hourselect\", \"16\"",
+        "time" : {
+          "start" : 1612808381863,
+          "stop" : 1612808383987,
+          "duration" : 2124
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .minuteselect\", \"33\"",
+        "time" : {
+          "start" : 1612808383988,
+          "stop" : 1612808386102,
+          "duration" : 2114
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"button[class*='applyBtn']\"",
+        "time" : {
+          "start" : 1612808386102,
+          "stop" : 1612808388225,
+          "duration" : 2123
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"tr[class*='MuiTableRow-head'] > th\", 60",
+        "time" : {
+          "start" : 1612808388225,
+          "stop" : 1612808388231,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 20,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Within \"div[class*='Filters_wrap__']\" ",
+      "time" : {
+        "start" : 1612808388234,
+        "stop" : 1612808392273,
+        "duration" : 4039
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click button[class*='Filters_moreFilters__']",
+        "time" : {
+          "start" : 1612808388234,
+          "stop" : 1612808390247,
+          "duration" : 2013
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1612808390251,
+          "stop" : 1612808390257,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+        "time" : {
+          "start" : 1612808390257,
+          "stop" : 1612808392270,
+          "duration" : 2013
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I click on the Add Filter button and add a file id filter with Id '6df836fe-c044-4c01-9470-99211cb79afd' ",
+      "time" : {
+        "start" : 1612808392273,
+        "stop" : 1612808398904,
+        "duration" : 6631
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: setFileId \"6df836fe-c044-4c01-9470-99211cb79afd\"",
+        "time" : {
+          "start" : 1612808392273,
+          "stop" : 1612808398898,
+          "duration" : 6625
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"button[data-test-id='buttonFilterFileId']\"",
+          "time" : {
+            "start" : 1612808392273,
+            "stop" : 1612808394303,
+            "duration" : 2030
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I fill field \"input[name='fileId']\", \"6df836fe-c044-4c01-9470-99211cb79afd\"",
+          "time" : {
+            "start" : 1612808394303,
+            "stop" : 1612808396873,
+            "duration" : 2570
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"//button[contains(.,'+ ADD')]\"",
+          "time" : {
+            "start" : 1612808396873,
+            "stop" : 1612808398897,
+            "duration" : 2024
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"tr[class*='MuiTableRow-head'] > th\", 60",
+        "time" : {
+          "start" : 1612808398898,
+          "stop" : 1612808398904,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list only shows the filtered file with id '6df836fe-c044-4c01-9470-99211cb79afd' ",
+      "time" : {
+        "start" : 1612808398904,
+        "stop" : 1612808408918,
+        "duration" : 10014
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1612808398904,
+          "stop" : 1612808403910,
+          "duration" : 5006
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: checkFileIdValues \"6df836fe-c044-4c01-9470-99211cb79afd\"",
+        "time" : {
+          "start" : 1612808403910,
+          "stop" : 1612808408918,
+          "duration" : 5008
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait 5",
+          "time" : {
+            "start" : 1612808403910,
+            "stop" : 1612808408911,
+            "duration" : 5001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+          "time" : {
+            "start" : 1612808408911,
+            "stop" : 1612808408915,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1612808408915,
+            "stop" : 1612808408917,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "I grab text from \"//tbody/descendant::h2\"",
+      "time" : {
+        "start" : 1612808408919,
+        "stop" : 1612808408922,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "No Transaction Data Found",
+      "time" : {
+        "start" : 1612808408945,
+        "stop" : 1612808408945,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 39,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-164"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-log"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the log using file id {\"fileId\":\"6df836fe-c044-4c01-9470-99211cb79afd\",\"datetimeFrom\":\"3/02/2021 10:00 AM\",\"datetimeTo\":\"3/02/2021 16:33 PM\"} @portal @functional @TEST-164"
+  }, {
+    "name" : "package",
+    "value" : "request-history-log @request-history-log"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "4af59ad09ccfce44",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/4af59ad09ccfce44",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1612807543159,
+          "stop" : 1612807546226,
+          "duration" : 3067
+        }
+      }, {
+        "uid" : "4b4291a29e7de618",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/4b4291a29e7de618",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1612806034958,
+          "stop" : 1612806037706,
+          "duration" : 2748
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-log", "@portal", "@TEST-164", "@functional" ]
+  },
+  "source" : "107995fe7413102d.json",
+  "parameterValues" : [ ]
+}
