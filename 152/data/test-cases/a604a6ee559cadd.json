@@ -1,0 +1,202 @@
+{
+  "uid" : "a604a6ee559cadd",
+  "name" : "User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187",
+  "historyId" : "55aca0239424a21ca13ab33639d2083b",
+  "time" : {
+    "start" : 1612811910857,
+    "stop" : 1612811931626,
+    "duration" : 20769
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I change the route for blocked files to 'block-glasswallBlockedFiles' and save ",
+      "time" : {
+        "start" : 1612811931614,
+        "stop" : 1612811931621,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setRouteFlag \"block-glasswallBlockedFiles\"",
+        "time" : {
+          "start" : 1612811931614,
+          "stop" : 1612811931621,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-glasswallBlockedFiles']\", \"checked\"",
+          "time" : {
+            "start" : 1612811931614,
+            "stop" : 1612811931618,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the route selection for blocked files is applied as 'Block' ",
+      "time" : {
+        "start" : 1612811931621,
+        "stop" : 1612811931626,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: assertCheckedBlockedRadioButton \"Block\"",
+        "time" : {
+          "start" : 1612811931621,
+          "stop" : 1612811931626,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I see checkbox is checked \"#block-glasswallBlockedFiles\"",
+          "time" : {
+            "start" : 1612811931621,
+            "stop" : 1612811931626,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-187"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "fefc089557d13d82",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/fefc089557d13d82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808409011,
+          "stop" : 1612808429540,
+          "duration" : 20529
+        }
+      }, {
+        "uid" : "1d02fa086133e30a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/1d02fa086133e30a",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807546540,
+          "stop" : 1612807546540,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "43d3c20891cbc0f5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/43d3c20891cbc0f5",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806038249,
+          "stop" : 1612806038249,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-187", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "a604a6ee559cadd.json",
+  "parameterValues" : [ ]
+}
