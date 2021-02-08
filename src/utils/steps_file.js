@@ -31,7 +31,7 @@ module.exports = function () {
             //this.amOnPage('https://management-ui-test-01.uksouth.cloudapp.azure.com/')
             //this.amOnPage('http://54.78.130.213:31829/')
             //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
-            this.amOnPage(env.qa.url)
+            this.amOnPage(process.env.URL)
         },
 
 

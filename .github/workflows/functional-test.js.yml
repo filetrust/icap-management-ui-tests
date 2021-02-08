@@ -50,6 +50,7 @@ jobs:
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           URL: ${{ secrets.UI_URL }}
+          run: echo URL
           ICAP: ${{ secrets.ICAP_URL }}
           USER: ${{ secrets.UI_USER_ID }}
           PASSWORD: ${{ secrets.UI_SECRET_ID }}
