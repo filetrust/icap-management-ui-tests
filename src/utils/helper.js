@@ -174,7 +174,7 @@ class MyHelper extends Helper {
         }
         time = this.timeConversionSlicker(time)
         let itemDate = `${date} ${time}`
-        itemDate = new Date(itemDate).toISOString()
+        //itemDate = new Date(itemDate).toISOString()
         return itemDate
     }
 
@@ -211,6 +211,25 @@ class MyHelper extends Helper {
                 }
             }
             console.log(`The timestamp sorting well`);
+        } catch (err) {
+            assert.fail(err);
+        }
+    }
+
+    async checkUserRecordStatus(col, data) {
+        const page = this.helpers['Puppeteer'].page;
+        page.waitForSelector('tbody');
+        
+        
+        
+        try {
+            const [elm] = await page.$x(`//th[contains(text(),'${data}')]/../th[position()=${col}]`);
+            if (!elm) {
+                assert.fail(`The user record with ${data} is not displayed`);
+            }else{
+                I.say('element is found')
+            }
+           
         } catch (err) {
             assert.fail(err);
         }

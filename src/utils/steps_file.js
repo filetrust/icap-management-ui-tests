@@ -1,12 +1,13 @@
 'use strict';
 const homePage = require("../pages/home.page.js");
+const usersPage = require("../pages/users.page.js");
 const loginPage = require("../pages/login.page.js");
 const policyPage = require("../pages/policy.page.js");
 const filedropPage = require("../pages/file-drop.page.js");
 const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
-const env = require ("../utils/config")
+const env = require("../utils/config")
 //require('../data/credentials.js')
 
 //const { ui_user, ui_password} = configObj;
@@ -21,16 +22,16 @@ const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
 const fileDropUrl = `https://file-drop.co.uk/`;
-//const icapClient = 'icap-client-develop.uksouth.cloudapp.azure.com'
-const icapClient = '54.78.130.213'
+const icapClient = 'icap-client-uks-develop.uksouth.cloudapp.azure.com'
+//const icapClient = '54.78.130.213'
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
             //this.amOnPage('https://management-ui-test-01.uksouth.cloudapp.azure.com/')
-            this.amOnPage('http://54.78.130.213:31829/')
+            //this.amOnPage('http://54.78.130.213:31829/')
             //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
-            //this.amOnPage(`https://management-ui-develop.uksouth.cloudapp.azure.com`)
+            this.amOnPage(`https://management-ui-uks-develop.uksouth.cloudapp.azure.com`)
         },
 
 
@@ -63,7 +64,7 @@ module.exports = function () {
             this.click(loginPage.clickForgotPasswordLink());
         },
 
-        logout: function (){
+        logout: function () {
             homePage.clickAccountToggle();
             homePage.clickLogout();
         },
@@ -79,6 +80,12 @@ module.exports = function () {
 
         goToUsers: function () {
             homePage.clickUsers();
+        },
+
+        addAUser: function (userName, fName, lName, userEmail) {
+            usersPage.addUser(userName, fName, lName, userEmail)
+            usersPage.checkUserDetailsSaved(userEmail)
+            //I.see(userEmail)
         },
 
         goToRequestHistory: function () {
@@ -119,9 +126,9 @@ module.exports = function () {
             requesthistoryPage.selectTimePeriod(period)
         },
 
-        searchFileById: function (id){
+        searchFileById: function (id) {
             requesthistoryPage.setFileId(id);
-            this.waitForElement(requesthistoryPage.table.tableHeaders,60)
+            this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
 
         uploadFile: function (file) {
@@ -175,6 +182,11 @@ module.exports = function () {
 
         fail(message) {
             assert.fail(message);
+        },
+
+        clearField: function (locator) {
+            this.doubleClick(locator);  
+            this.pressKey('Backspace'); 
         },
 
         onIcapProxyPage: function () {
