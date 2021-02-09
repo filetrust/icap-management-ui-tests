@@ -33,7 +33,7 @@ Scenario('I process a supported file using icap client tool for rebuild successf
 Scenario('I process a non supported file using icap client tool', async () => {
     const file = 'icaptest.ps1'
     const filePath = `output/downloads`
-    I.handleDownloads();
+    //I.cleanupFile(file);
     const resp = await I.submitFile(file)
     const icapCode = I.getIcapHeaderCode(resp)
     if (icapCode === '204 Unmodified') {
@@ -50,10 +50,18 @@ Scenario('I process a non supported file using icap client tool', async () => {
     }
 }).tag('@ns').tag('@fileprocess').tag('@functional');
 
+Scenario('Process supported office files and verify successful', async () => {
+    var inPath = './src/data/pdf';
+    var outputPath = './output/downloads'
+    const resp = await I.processFilesSet(inPath, outputPath);
+    I.getFileProcessingResult(resp);
+}).tag('@pd').tag('@fileprocess').tag('@functional');
+
+
 Scenario('I process a supported file and get a 200 response', async () => {
     //I.walk('./src/data/set', 'done')
-    var walkPath = './src/data/set';
-    var outputPath = './src/data/output'
+    var walkPath = './src/data/pdf';
+    var outputPath = './output/downloads'
     var walk = function (dir, done) {
         fs.readdir(dir, function (error, list) {
             if (error) {
@@ -67,21 +75,16 @@ Scenario('I process a supported file and get a 200 response', async () => {
                 }
                 fileIn = dir + '/' + file;
                 var fileOut = outputPath + '/' + file;
-                //I.removeFiles(outputPath);
-                fs.stat(file, function (error, stat) {
+                I.cleanupFile(fileOut);
+                fs.stat(file, async function (error, stat) {
                     if (stat && stat.isDirectory()) {
                         walk(file, function (error) {
                             next();
                         });
                     } else {
                         console.log(file);
-                        I.processFile(fileIn, fileOut)
-                        // const icapCode = I.getIcapHeaderCode(resp)
-                        // const respCode = I.getResponseCode(resp)
-                        // expect(icapCode).to.equal('200 OK')
-                        // expect(respCode).to.equal('200 OK')
-                        // I.checkFileInFileDropUrl(fileOut)
-                        // I.see('File is clean')
+                        const resp = await I.processFile(fileIn, fileOut);
+                        I.getFileProcessingResult(resp);
                         next();
                     }
                 });

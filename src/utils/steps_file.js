@@ -8,32 +8,23 @@ const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
 const env = require("../utils/config")
-//require('../data/credentials.js')
-
-//const { ui_user, ui_password} = configObj;
 const assert = require('assert').strict;
 const cp = require('child_process')
-//let cpass = new Cpass();
 const fs = require('fs')
 const path = require('path');
-const inputDir = path.join('src', 'data', 'input');
+const inputDir = path.join('src', 'data', 'multiset');
 const outputDir = path.join('output', 'downloads');
 const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
-const fileDropUrl = `https://file-drop.co.uk/`;
-const icapClient = 'icap-client-uks-develop.uksouth.cloudapp.azure.com'
-//const icapClient = '54.78.130.213'
+const fileDropUrl = `http://54.78.215.70`;
+const icapClient = process.env.ICAPURL;
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            //this.amOnPage('https://management-ui-test-01.uksouth.cloudapp.azure.com/')
-            //this.amOnPage('http://54.78.130.213:31829/')
-            //this.amOnPage(`http://management-ui-qa.uksouth.cloudapp.azure.com`)
             this.amOnPage(process.env.URL)
         },
-
 
         loginAs: function (email, password) {
             this.onLoginPage();
@@ -53,7 +44,7 @@ module.exports = function () {
         },
 
         enterValidCredential: function () {
-            // loginPage.loginWith(env.qa.email, env.qa.password);
+            loginPage.loginWith(process.env.USER, process.env.PASSWORD);
 
         },
         enterInvalidPassword: function () {
@@ -74,7 +65,8 @@ module.exports = function () {
         },
 
         goToFileDrop: function () {
-            homePage.clickFileDrop();
+            this.amOnPage(fileDropUrl)
+            //homePage.clickFileDrop();
             this.waitForElement(filedropPage.buttons.fileSelectButton)
         },
 
@@ -162,17 +154,17 @@ module.exports = function () {
             let path = null;
             switch (fileType) {
                 case ('Safe_file'):
-                    path = 'src/data/input/types/safe_file.xlsx';
+                    path = 'src/data/multiset/types/safe_file.xlsx';
                     break;
                 case ('Blocked_file'):
-                    path = 'src/data/input/types/blocked_file.doc';
+                    path = 'src/data/multiset/types/blocked_file.doc';
                     break;
                 //todo: add file
                 case ('Dangerous_file'):
-                    path = 'src/data/input/types/dangerous_file.doc';
+                    path = 'src/data/multiset/types/dangerous_file.doc';
                     break;
                 case ('Unclassified_file'):
-                    path = 'src/data/input/unsupported_icaptest.ps1';
+                    path = 'src/data/multiset/unsupported_icaptest.ps1';
                     break;
                 default:
                     throw 'There is not such file type.'
@@ -185,8 +177,8 @@ module.exports = function () {
         },
 
         clearField: function (locator) {
-            this.doubleClick(locator);  
-            this.pressKey('Backspace'); 
+            this.doubleClick(locator);
+            this.pressKey('Backspace');
         },
 
         onIcapProxyPage: function () {
@@ -195,12 +187,6 @@ module.exports = function () {
         },
 
         sendFileICAP: async function (fileName) {
-            const inputDir = path.join('src', 'data', 'input');
-            const outputDir = path.join('output', 'downloads');
-            const inputPath = path.join(process.cwd(), inputDir);
-            const outputPath = path.join(process.cwd(), outputDir);
-            const icapLogs = path.join('output', 'icap.log')
-            //I.handleDownloads();
             // use NodeJS child process to run a bash command in sync way
             output.print('Sending file...')
             console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
@@ -253,7 +239,6 @@ module.exports = function () {
             return icapOutput;
         },
 
-
         getIcapHeaderCode: function (icapResp) {
             let icapCode = icapResp
                 .toString()
@@ -268,7 +253,11 @@ module.exports = function () {
                 .toString()
                 .split('HTTP/1.0 ')[1]
                 .split("\n")[0];
-            output.print('The responde code is: ' + responseCode)
+            if (responseCode) {
+                output.print('The responde code is: ' + responseCode)
+            } else {
+                output.print('The responde hearder is not available')
+            }
             return responseCode;
         },
 
@@ -282,6 +271,85 @@ module.exports = function () {
             return fileId;
         },
 
+        cleanupFile(file) {
+            try {
+                const exists = fs.existsSync(file);
+                if (exists) {
+                    fs.unlinkSync(file)
+                    console.log(`Remove downloaded file - ${file}`);
+                } else {
+                    console.log(`File was already removed - ${file}`);
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        },
+
+        getFileProcessingResult: function (resp) {
+            const icapCode = this.getIcapHeaderCode(resp)
+            if (icapCode === '204 Unmodified') {
+                I.say('The submitted file is relayed as the responde code is: ' + icapCode)
+            } else {
+                const respCode = this.getResponseCode(resp)
+                if (respCode === '403 Forbidden') {
+                    I.say('Submitted file is blocked as the responde code is: ' + respCode)
+                } else {
+                    I.say('Submitted file response is: ' + respCode)
+                }
+            }
+        },
+
+        processFilesSet: async function (inPath, outputPath) {
+            var find = function (dir, done) {
+                fs.readdir(dir, function (error, list) {
+                    if (error) {
+                        return done(error);
+                    }
+                    var i = 0;
+                    (function next() {
+                        var file = list[i++];
+                        if (!file) {
+                            return done(null);
+                        }
+                        var fileIn = dir + '/' + file;
+                        var fileOut = outputPath + '/' + file;
+                        //I.removeFiles(outputPath);
+                        fs.stat(file, async function (I,error, stat) {
+                            if (stat && stat.isDirectory()) {
+                                find(file, function (error) {
+                                    next();
+                                });
+                            } else {
+                                console.log(file);
+                              
+                                next();
+                            }return file;
+                        });
+                    })();
+                }); 
+            };
+            // optional command line params
+            //      source for find path
+            process.argv.forEach(function (val, index, array) {
+                if (val.indexOf('source') !== -1) {
+                    inPath = val.split('=')[1];
+                }
+            });
+
+            console.log('-------------------------------------------------------------');
+            console.log('processing...');
+            console.log('-------------------------------------------------------------');
+
+            find(inPath, function (error) {
+                if (error) {
+                    throw error;
+                } else {
+                    console.log('-------------------------------------------------------------');
+                    console.log('finished.');
+                    console.log('-------------------------------------------------------------');
+                }
+            });
+        }
 
     });
 }

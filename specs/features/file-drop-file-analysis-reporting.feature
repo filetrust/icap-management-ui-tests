@@ -6,26 +6,25 @@ Feature: file-drop-file-analysis-reporting
         Given I am logged into the ui
         And I have navigated to the File Drop page
 
-    @prototype
+    @functional
     @TEST-225
-    @Fail-app
-    # The report button does not currently work
+    @portal
     Scenario Outline: User can download the full XML analysis report for a file
         Given I have uploaded a file '<supportedFile>'
-        When  I view result and click on XML button
-        Then the XML report <xmlFile> is downloaded
+        When  I click on Download XML Report button
+        Then the XML report '<xmlFile>' is downloaded
+        #And The content is as expected
         Examples:
-            | supportedFile             | xmlFile   |
-            | src/data/input/file1.docx | file1.xml |
+            | supportedFile                | xmlFile   |
+            | src/data/multiset/file1.docx | file1.xml |
 
     @prototype
     @TEST-226
     @Fail-app
-    # The report button does not currently work
     Scenario Outline: User can download the full PDF analysis report for a file
         Given I have uploaded a file '<supportedFile>'
         When  I view result and click on PDF button
-        Then the pdf report <pdfFile> is downloaded
+        Then the pdf report '<pdfFile>' is downloaded
         Examples:
-            | supportedFile            | pdfFile   |
-            | src/data/input/file2.pdf | file2.pdf |
+            | supportedFile               | pdfFile   |
+            | src/data/multiset/file2.pdf | file2.pdf |

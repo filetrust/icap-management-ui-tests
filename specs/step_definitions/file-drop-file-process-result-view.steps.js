@@ -13,7 +13,7 @@ Given("I have navigated to the File Drop page", () => {
     I.goToFileDrop();
 });
 
-Given(/^I have processed a supported file (.*)$/, (supportedFile) => {
+Given('I have processed a supported file {string}', (supportedFile) => {
     I.uploadFile(supportedFile);
 });
 
@@ -28,7 +28,7 @@ Then(/^The full analysis report is downloaded and available as (.*)$/, (analysis
     I.seeFileNameMatching(analysisReport);
 });
 
-When(/^I process a supported sanitisation file (.*) with remedy items$/, (activeContentFile) => {
+When('I process a supported sanitisation file {string} with remedy items', (activeContentFile) => {
     I.uploadFile(activeContentFile);
     I.wait(5);
 });
@@ -37,21 +37,21 @@ Then('the notification message is displayed as {string}', (processStatus) => {
     filedropPage.checkMessageDisplayed(processStatus.trim());
 });
 
-Then(/^I see the list of sanitised active contents with expected(.*)$/, (activeContent) => {
-    I.see(activeContent.trim(), filedropPage.sections.activeContentView)
+Then('I see the list of sanitised active contents with expected issue {string}', (activeContent) => {
+     filedropPage.isRequiredContentRefDisplayed(activeContent)
 });
 
-Then(/^I see the list of objects and structures repaired with expected(.*)$/, (repairedObject) => {
-    I.see(repairedObject.trim())
+Then('I see the list of objects and structures repaired with expected item {string}', (repairedObject) => {
+    filedropPage.isRequiredContentRefDisplayed(repairedObject)
 });
 
-When(/^I process a supported file (.*) with structural Issues$/, (fileWithIssues) => {
+When('I process a supported file {string} with structural Issues', (fileWithIssues) => {
     I.uploadFile(fileWithIssues);
     I.wait(5);
 })
 
-Then(/^I see the list of objects and structures not repaired(.*)$/, (nonrepairedObject) => {
-    I.see(nonrepairedObject.trim())
+Then('I see the list of objects and structures not repaired {string}', (nonrepairedObject) => {
+    filedropPage.isRequiredContentRefDisplayed(nonrepairedObject)
 });
 
 When('I view result and click on Download Processed File', () => {
@@ -61,7 +61,7 @@ When('I view result and click on Download Processed File', () => {
 
 });
 
-Then(/^I have the file successfully downloaded as (.*)$/, (downloadedFileName) => {
+Then('I have the file successfully downloaded as {string}', (downloadedFileName) => {
     I.amInPath('output/downloads');
     I.seeFileNameMatching(downloadedFileName);
 });

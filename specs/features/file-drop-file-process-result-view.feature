@@ -6,39 +6,35 @@ Feature: file-drop-file-process-result-view
         Given I am logged into the ui
         And I have navigated to the File Drop page
 
-   @Fail-app
+    @Fail-app
     @prototype
     @TEST-227
-     #Clickable element "button[class*='DownloadAnalysisReport_button__']" was not found by text|CSS|XPath
+    #Clickable element "button[class*='DownloadAnalysisReport_button__']" was not found by text|CSS|XPath
     Scenario Outline: User can download the full analysis report of a processed file
-        Given I have processed a supported file <supportedFile>
+        Given I have processed a supported file '<supportedFile>'
         When I view result and click on Download Analysis Report
-        Then The full analysis report is downloaded and available as <analysisReport>
+        Then The full analysis report is downloaded and available as '<analysisReport>'
         Examples:
-            | supportedFile              | analysisReport  |
-            | src/data/input/issues.docx | issues.docx.xml |
+            | supportedFile                 | analysisReport  |
+            | src/data/multiset/issues.docx | issues.docx.xml |
 
-    @Fail-app
-    @prototype
+    @functional
+    @portal
     @TEST-228
-    # expected elements on page '[]' not to be empty
     Scenario Outline: User can see the result of a repaired file with the issues removed
-        When I process a supported sanitisation file <activeContentFile> with remedy items
-        Then the notification message is displayed as '<processStatus>'
-        And I see the list of sanitised active contents with expected <activeContent>
-        And I see the list of objects and structures repaired with expected <repairedObject>
+        When I process a supported sanitisation file '<activeContentFile>' with remedy items
+        Then I see the list of sanitised active contents with expected issue '<activeContent>'
+        And I see the list of objects and structures repaired with expected item '<repairedObject>'
         Examples:
-            | activeContentFile         | activeContent                              | repairedObject      | processStatus                |
-            | src/data/input/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed | Your file has been processed |
+            | activeContentFile            | activeContent                              | repairedObject      | 
+            | src/data/multiset/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed | 
 
-    @Fail-app
-    @prototype
+    @functional
+    @portal
     @TEST-229
-      #  expected elements on page '[]' not to be empty
     Scenario Outline: User can see the result of a unrepaired file with the list of structural issues not removed
-        When I process a supported file <fileWithIssues> with structural Issues
-        Then the notification message is displayed as '<processStatus>'
-        And I see the list of objects and structures not repaired <nonrepairedObject>
+        When I process a supported file '<fileWithIssues>' with structural Issues
+        Then I see the list of objects and structures not repaired '<nonrepairedObject>'
         Examples:
-            | fileWithIssues           | nonrepairedObject    | processStatus                |
-            | src/data/input/file2.pdf | Non-conforming image | Your file has been processed |
+            | fileWithIssues              | nonrepairedObject    | 
+            | src/data/multiset/file2.pdf | Non-conforming image |
