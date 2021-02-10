@@ -46,7 +46,7 @@ class MyHelper extends Helper {
                 output.print('The element ' + selector + ' is not available');
                 return false;
             } else if (elVisible) {
-                output.print(selector + ' is visible')
+                output.print('The required element ' + selector + ' is visible')
                 return true
             }
             return elVisible;
@@ -437,19 +437,7 @@ class MyHelper extends Helper {
         party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
     }
 
-    cleanupFile(file) {
-        try {
-            const exists = fs.existsSync(file);
-            if (exists) {
-                fs.unlinkSync(file)
-                console.log(`Remove downloaded file - ${file}`);
-            } else {
-                console.log(`File was already removed - ${file}`);
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    
 
     createFile(file) {
         try {

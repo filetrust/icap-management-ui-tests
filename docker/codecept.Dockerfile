@@ -21,17 +21,6 @@ RUN chmod +x /usr/local/bin/codecept.entrypoint.sh
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -yq && \
-    apt-get install -y apt-utils && \
-    apt-get upgrade -yq && \
-    apt-get install git && \
-    apt-get install gcc && \
-    apt-get install -yq doxygen && \
-    apt-get install make && \
-    apt-get install automake && \
-    apt-get install automake1.11 && \
-    apt-get install libtool && \
     apt-get install -yq c-icap
-
-#RUN PUPPETEER_PRODUCT=firefox npm install
 
 ENTRYPOINT ["/usr/local/bin/codecept.entrypoint.sh"]

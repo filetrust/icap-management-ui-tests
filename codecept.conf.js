@@ -17,10 +17,10 @@ exports.config = {
       //browser: 'firefox',
       windowSize: '1536 x 826',
       url: '',
-      show: false,
+      show: true,
       chrome: {
-        args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
-        //args: ['--no-sandbox', '--window-size=1536,826','--ignore-certificate-errors'],
+        //args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
+        args: ['--no-sandbox', '--window-size=1536,826','--ignore-certificate-errors'],
         prefs:
           ['--download.default_directory= /output/downloads'],
       },

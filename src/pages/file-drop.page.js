@@ -6,7 +6,7 @@ module.exports = {
 
     sections: {
         filedropModal: `div[class*='StyledDropzone_border__']`,
-        analysisReportView: `div[class*='RenderResults_RenderResults__']`,
+        analysisReportView: `div[data-test-id="divFileDropResults"]`,
         fileSize: `tr:nth-child(2) > td:nth-child(2)`,
         fileName: `tr:nth-child(2) > td:nth-child(1)`,
         fileType: `tr:nth-child(2) > td:nth-child(3)`,
@@ -16,18 +16,19 @@ module.exports = {
         unrepairedObjectsView: `div[class*='RenderAnalysis_RenderAnalysis__'] > div:nth-of-type(3)`,
         fileiscleanElement: `div[class*='SectionTitle_SectionTitle__']`,
         notification: `div[class*='react-toast-notifications__toast__content']`,
-        fileProcessStatus: `div[class*='FileDrop_message__']`
+        fileProcessStatus: `div[class*='FileDrop_message__']`,
+        error: `.react-toast-notifications__toast__content`
     },
     buttons: {
-        fileSelectButton: `button[class*='Button_button__']`,
-        pdf: `//button[contains(.,'PDF')]`,
-        xml: `//button[contains(.,'XML')]`,
+        fileSelectButton: `button[data-test-id="buttonFileDropSelectFile"]`,
+        pdfReport: `//button[contains(.,'PDF')]`,
+        xmlReport: `//button[contains(text(),'Download XML Report')]`,
         refresh: `button[class*='IconButton_IconButton__']`,
         downloadAnalysisReport: `button[class*='DownloadAnalysisReport_button__']`,
         viewresult: `button[data-test-id='buttonFileDropViewResult']`,
         viewresultByXpath: `//button[contains(.,'VIEW RESULT')]`,
         fileInput: `input[type = file]`,
-        downloadFile: ''
+        downloadFile: `//button[contains(text(),'Download Protected File')]`
     },
     table:{
         fileAttribute: `table[class*='FileAttributes_table__']`,
@@ -66,14 +67,20 @@ module.exports = {
         I.clickElement(element);
     },
 
-    clickXml() {
-        const element = this.buttons.xml;
+    clickDownloadXmlReport() {
+        const element = this.buttons.xmlReport;
         I.waitForClickable(element);
         I.clickElement(element);
     },
 
-    clickPdf() {
-        const element = this.buttons.pdf;
+    clickDownloadProtectedFile() {
+        const element = this.buttons.downloadFile;
+        I.waitForClickable(element);
+        I.clickElement(element);
+    },
+
+    clickDownloadPdfReport() {
+        const element = this.buttons.pdfReport;
         I.handleDownloads();
         I.clickElement(element);
     },
@@ -83,31 +90,59 @@ module.exports = {
         I.clickElement(element);
     },
 
-    getActiveContents() {
+    async getActiveContents() {
         const element = this.sections.activeContentView
-        I.grabTextFrom(element)
+       await I.grabTextFrom(element)
     },
-    getRemediedContents() {
+   async getRemediedContents() {
         const element = this.sections.repairedObjestsView
-        I.grabTextFrom(element)
+        await I.grabTextFrom(element)
     },
-    getNonRepairedContents() {
+    async getNonRepairedContents() {
         const element = this.sections.unrepairedObjectsView
-        I.grabTextFrom(element)
+       await I.grabTextFrom(element)
     },
 
-   getFileName() {
+   async getFileName() {
         const element = this.table.cell.fileName;
-        I.grabTextFrom(element)
+        await I.grabTextFrom(element)
     },
 
-     getFileSize() {
+    async isFileNameAttributeDisplayed(fileName){
+        const name = await I.grabTextFrom(this.table.cell.fileName)
+        if(name === fileName)
+        I.say('The file name attribute is: '+name)
+        else{
+          I.say('The result view does not show the file name attribute')
+        }
+    },
+
+    async getFileSize() {
          const element = this.table.cell.fileSize;
-         I.grabTextFrom(element)
+        await I.grabTextFrom(element)
      },
-      getFileType() {
+
+     async isFileSizeAttributeDisplayed(fileSize){
+        const size = await I.grabTextFrom(this.table.cell.fileSize)
+        if(size === fileSize)
+        I.say('The file size attribute is: '+size)
+        else{
+          I.say('The result view does not show the file size attributes')
+        }
+    },
+
+     async isFileTypeAttributeDisplayed(fileType){
+        const type = await I.grabTextFrom(this.table.cell.fileType)
+        if(type === fileType)
+        I.say('The file type attribute is: '+type)
+        else{
+          I.say('The result view does not show the file type attributes')
+        }
+    },
+
+      async getFileType() {
           const element = this.table.cell.fileType;
-         I.grabTextFrom(element)
+         await I.grabTextFrom(element)
       },
 
        async getResultViewContent() {
@@ -131,8 +166,16 @@ module.exports = {
         I.amInPath('output/downloads');
         I.seeFileNameMatching(analysisReport);
     },
-    checkMessageDisplayed(error) {
-        I.seeElementInDOM('//div[text()="'+error+'"]');
-    },
+    async checkMessageDisplayed(error) {
+       // I.seeElementInDOM('//div[text()="'+error+'"]');
+        const element = this.sections.error;
+        const errorMessage = await I.grabTextFrom(element)
+        if (errorMessage===error){
+            I.say('The expected error message: '+errorMessage+ ' is displayed')
+        }else{
+            I.say('The error message: '+errorMessage+ ' is not as expected')
+        };
+        }
 
+   
 }

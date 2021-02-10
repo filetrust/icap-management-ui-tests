@@ -21,11 +21,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install dependencies and run all tests
+        env:
+          URL: ${{ secrets.UI_URL }}
+          ICAP: ${{ secrets.ICAP_URL }}
+          USER: ${{ secrets.UI_USER_ID }}
+          PASSWORD: ${{ secrets.UI_SECRET_ID }}
+          AWSUSER: ${{ secrets.AWSUI_AWSUSER_ID }}
+          AWSPASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
         run: |
+          sudo apt-get -y install c-icap
           npm install    
           npm install -g allure-commandline --save-dev     
           npm run codeceptjs
-  
+
       - name: Get Allure history
         uses: actions/checkout@v2
         if: always()
@@ -49,12 +57,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v2
         env:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          URL: ${{ secrets.UI_URL }}
-          ICAP: ${{ secrets.ICAP_URL }}
-          USER: ${{ secrets.UI_USER_ID }}
-          PASSWORD: ${{ secrets.UI_SECRET_ID }}
-          AWSUSER: ${{ secrets.AWSUI_AWSUSER_ID }}
-          AWSPASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
           PUBLISH_BRANCH: allure-report
           PUBLISH_DIR: allure-history
           CI: true

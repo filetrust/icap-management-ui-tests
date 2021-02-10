@@ -15,27 +15,22 @@ Given('I have uploaded a file {string}', (supportedFile) => {
     I.uploadFile(supportedFile.trim());
 });
 
-When('I view result and click on XML button', () => {
+When('I click on Download XML Report button', () => {
    I.handleDownloads();
-   filedropPage.clickXml();
-
+   filedropPage.clickDownloadXmlReport();
 });
 
-Then(/^the XML report (.*) is downloaded$/, (xmlFile) => {
+Then('the XML report {string} is downloaded', (xmlFile) => {
     I.amInPath("output/downloads");
     filedropPage.isFileDownloaded(xmlFile)
-
-        //console.log
-    //I.seeFileNameMatching(xmlFile);
 });
-
 
 When('I view result and click on PDF button', () => {
     I.handleDownloads();
     filedropPage.clickPdf();
 });
 
-Then(/^the pdf report (.*) is downloaded$/, (pdfFile) => {
+Then('the pdf report {string} is downloaded', (pdfFile) => {
     I.amInPath("output/downloads");
     filedropPage.isFileDownloaded(pdfFile);
 });
