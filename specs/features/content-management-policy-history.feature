@@ -4,16 +4,16 @@ Feature: content-management-policy-history
 
     Background:
         Given I am logged into the portal
-        Given I am on current policy screen
 
-    @success
-    @prototype
+    @functional
+    @portal
     @TEST-217
     Scenario Outline: User can change the number of previous polcy records displayed on a page
         Given I have navigated to the Policy History page
-        When Items Shown is changed to <itemCount>
-        Then Up to <itemCount> previous policies are displayed
+        When Items Shown is changed to '<itemCount>'
+        Then Up to <rowCount> previous policies are displayed
         Examples:
-            | itemCount |
-            | 25        |
-            | 50        |
+            | itemCount | rowCount |
+            | 25        | 25       |
+            | 50        | 50       |
+            | 100       | 100      |

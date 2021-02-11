@@ -219,17 +219,17 @@ class MyHelper extends Helper {
     async checkUserRecordStatus(col, data) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
-        
-        
-        
+
+
+
         try {
             const [elm] = await page.$x(`//th[contains(text(),'${data}')]/../th[position()=${col}]`);
             if (!elm) {
                 assert.fail(`The user record with ${data} is not displayed`);
-            }else{
+            } else {
                 I.say('element is found')
             }
-           
+
         } catch (err) {
             assert.fail(err);
         }
@@ -437,7 +437,7 @@ class MyHelper extends Helper {
         party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
     }
 
-    
+
 
     createFile(file) {
         try {
@@ -459,6 +459,7 @@ class MyHelper extends Helper {
             console.log('all files are removed');
         });
     }
+
 
 }
 

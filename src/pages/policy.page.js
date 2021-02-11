@@ -1,3 +1,4 @@
+const { assert } = require("chai");
 const { output } = require("codeceptjs");
 const I = actor();
 const modal = require("../fragments/modal.js");
@@ -40,7 +41,7 @@ module.exports = {
       current: `//button[contains(.,'Current']`,
       history: `//button[contains(.,'History']`
     },
-    view: "",
+    
     viewPolicyFirst: `//tbody/tr[1]/th/button[text()='View']`,
     activate: "",
     activatePolicyFirst: `//tbody/tr[1]/th/button[text()='Activate']`,
@@ -72,7 +73,10 @@ module.exports = {
     blockedFiles: `section[class*='PolicyForNonCompliantFiles_wrapBlocksToggle__'] > h3:nth-child(3)`,
   },
   options: {
-    countOfPolicies: "div[class*='Pagination_pageCountSelector__'] > select"
+    countOfPolicies: `.MuiInputBase-root.MuiTablePagination-input.MuiTablePagination-selectRoot > svg`,
+    countSelection_50:  `ul[class*='MuiList-root'] > li:nth-of-type(2)`,
+    countView: `.MuiTypography-root:nth-child(4)`,
+    
   },
 
 
@@ -499,22 +503,27 @@ goToCurrentAdaptationPolicy () {
 
   async getTotalNumberOfRecordsOfPolicy() {
     const numberOfRecordsOfPolicy = await I.grabNumberOfVisibleElements(this.table.tableRows);
+    I.say('Rows count is '+numberOfRecordsOfPolicy)
     return numberOfRecordsOfPolicy
   },
 
   selectCountOfPolicies(itemCount) {
     const element = this.options.countOfPolicies;
-    I.selectOption(element, itemCount);
+    I.clickElement(element)
+    let countSelection = `//li[contains(.,'`+ itemCount +`')]`
+    I.clickElement(countSelection);
+    I.waitForElement(element, 60)
+
   },
 
-  assertPoliciesItemShownCount(itemCount, availableRecords) {
-    availableRecords.then((records) => {
-      if (records > itemCount) {
-        I.seeNumberOfElements(this.table.tableRows, itemCount)
+  async isRecordCountAccurate(recordsCount) {
+    const displayedCount = await I.grabTextFrom(this.options.countView);
+    let itemsCount = await this.getTotalNumberOfRecordsOfPolicy();
+      if (itemsCount === recordsCount && displayedCount.includes('1-'+itemsCount)) {
+        I.say('The selected number of record is correctly displayed as: '+itemsCount)
       } else {
-        I.seeNumberOfElements(this.table.tableRows, records)
+        assert.fail('The number of records displayed '+itemsCount+ ' is not as expected')
       }
-    })
   },
 
   clickOnHistoryPolicyTab() {

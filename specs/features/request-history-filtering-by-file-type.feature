@@ -16,7 +16,11 @@ Feature: request-history-filtering-by-file-type
         Examples:
             | filter | filteredFile |
             | docx   | Docx         |
-            
+            | xlsx   | Xlsx         |
+            | pptx   | Pptx         |
+            | pdf    | Pdf          |
+            | rtf    | Rtf          |
+            | png    | Png          |
 
 
 
