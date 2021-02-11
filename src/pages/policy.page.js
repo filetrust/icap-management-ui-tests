@@ -503,14 +503,14 @@ goToCurrentAdaptationPolicy () {
 
   async getTotalNumberOfRecordsOfPolicy() {
     const numberOfRecordsOfPolicy = await I.grabNumberOfVisibleElements(this.table.tableRows);
-    I.say('Rows count is '+numberOfRecordsOfPolicy)
+    I.say(`Rows count is ${numberOfRecordsOfPolicy}`)
     return numberOfRecordsOfPolicy
   },
 
   selectCountOfPolicies(itemCount) {
     const element = this.options.countOfPolicies;
     I.clickElement(element)
-    let countSelection = `//li[contains(.,'`+ itemCount +`')]`
+    let countSelection = `//li[contains(.,'${itemCount}')]`
     I.clickElement(countSelection);
     I.waitForElement(element, 60)
 
@@ -519,10 +519,10 @@ goToCurrentAdaptationPolicy () {
   async isRecordCountAccurate(recordsCount) {
     const displayedCount = await I.grabTextFrom(this.options.countView);
     let itemsCount = await this.getTotalNumberOfRecordsOfPolicy();
-      if (itemsCount === recordsCount && displayedCount.includes('1-'+itemsCount)) {
-        I.say('The selected number of record is correctly displayed as: '+itemsCount)
+      if (itemsCount === recordsCount && displayedCount.includes(`1-${itemCount}`)) {
+        I.say(`The selected number of record is correctly displayed as: ${itemCount}`)
       } else {
-        assert.fail('The number of records displayed '+itemsCount+ ' is not as expected')
+        assert.fail(`The number of records displayed ${itemCount} is not as expected`)
       }
   },
 

@@ -18,7 +18,7 @@ const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
 const fileDropUrl = `http://54.78.215.70`;
-const icapClient = process.env.ICAPURL_T02;
+const icapClient = process.env.ICAPURL_DEV;
 
 module.exports = function () {
     return actor({
@@ -260,7 +260,7 @@ module.exports = function () {
                 if (responseCode !== null) {
                     output.print('The response code is: ' + responseCode)
                 } else {
-                    output.print('The response hearder is not available')
+                    output.print('The response header is not available')
                 }
             } return responseCode;
         },
