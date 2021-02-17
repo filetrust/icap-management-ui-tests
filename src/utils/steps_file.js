@@ -18,12 +18,12 @@ const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
 const fileDropUrl = process.env.FILEDROP_URL_NEU;
-const icapClient = process.env.ICAP_URL_DEV;
+const icapClient = process.env.ICAP_URL_NEU;
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.UI_URL_DEV)
+            this.amOnPage(process.env.UI_URL_NEU)
         },
 
         loginAs: function (email, password) {
