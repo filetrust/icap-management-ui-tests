@@ -43,7 +43,6 @@ Feature: user-records-admin
     @TEST-191
     @portal
     Scenario: I cannot delete my own account
-    
         When I observe my account
         Then there will be no delete button next to my account
 

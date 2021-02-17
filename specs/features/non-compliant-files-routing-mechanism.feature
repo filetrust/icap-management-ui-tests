@@ -47,6 +47,7 @@ Feature: non-compliant-files-routing-mechanism
       | block-glasswallBlockedFiles | Block              |
 
   @functional
+  @fileprocess
   @TEST-233
   Scenario Outline: A set routing policy for Glasswall blocked files is correctly applied to submitted files
     Given The file '<file>' is not in download folder
@@ -59,13 +60,12 @@ Feature: non-compliant-files-routing-mechanism
       | relay-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | relayed     | Allowed by Policy |
       | block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
 
-
+  @fileprocess
   @functional
   @TEST-234
   Scenario Outline: A set routing policy for unprocessable files is correctly applied to submitted files
     Given The file '<file>' is not in download folder
     And I have set the routing option for unprocessable files to '<policyAction>'
-    And The file '<file>' is not in download folder
     When I submit a non supported or unprocessable file '<file>' through the icap server
     Then The file outcome for the submitted file '<file>' is '<fileOutcome>' with '<outcomeValue>'
     Examples:

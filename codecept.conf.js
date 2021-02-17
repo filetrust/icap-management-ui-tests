@@ -17,18 +17,18 @@ exports.config = {
       //browser: 'firefox',
       windowSize: '1536 x 826',
       url: '',
-      show: true,
+      show: false,
       chrome: {
-        //args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
-        args: ['--no-sandbox', '--window-size=1536,826','--ignore-certificate-errors'],
+        args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
+        //args: ['--no-sandbox', '--window-size=1536,826','--ignore-certificate-errors'],
         prefs:
           ['--download.default_directory= /output/downloads'],
       },
       firefox: {
         args: [
-            '--ignore-certificate-errors'
+          '--ignore-certificate-errors'
         ],
-    },
+      },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
       waitForTimeout: 60000,
       waitForAction: 2000
@@ -50,6 +50,7 @@ exports.config = {
     icapProxyPage: './src/pages/icap-proxy.page.js',
     sharepoint: './src/pages/sharepoint.page.js',
     modal: './src/fragments/modal.js',
+    icapclient: './src/utils/icap_client.js'
 
   },
   bootstrap: null,

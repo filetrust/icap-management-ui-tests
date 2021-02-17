@@ -17,13 +17,13 @@ const outputDir = path.join('output', 'downloads');
 const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
-const fileDropUrl = `http://54.78.215.70`;
-const icapClient = process.env.ICAPURL;
+const fileDropUrl = process.env.FILEDROP_URL_NEU;
+const icapClient = process.env.ICAP_URL_DEV;
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.URL)
+            this.amOnPage(process.env.UI_URL_DEV)
         },
 
         loginAs: function (email, password) {
@@ -74,8 +74,8 @@ module.exports = function () {
             homePage.clickUsers();
         },
 
-        addAUser: function (userName, fName, lName, userEmail) {
-            usersPage.addUser(userName, fName, lName, userEmail)
+        addAUser: async function (userName, fName, lName, userEmail) {
+            await usersPage.addUser(userName, fName, lName, userEmail)
             usersPage.checkUserDetailsSaved(userEmail)
             //I.see(userEmail)
         },
@@ -114,6 +114,7 @@ module.exports = function () {
 
         viewTransactions: function (period) {
             this.goToRequestHistory()
+            I.refreshPage()
             requesthistoryPage.openDatePicker();
             requesthistoryPage.selectTimePeriod(period)
         },
@@ -233,42 +234,46 @@ module.exports = function () {
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             //output.print
             console.log('icapLogs: ' + icapOutput)
-            this.wait(60)
             //output.print
             console.log('File is sent...')
             return icapOutput;
         },
 
         getIcapHeaderCode: function (icapResp) {
-            let icapCode = icapResp
-                .toString()
-                .split('ICAP/1.0 ')[1]
-                .split("\n")[0];
-            output.print('The icap header code is: ' + icapCode)
-            return icapCode;
+            let icapCode;
+            if (icapResp.includes('ICAP/1.0')) {
+                icapCode = icapResp
+                    .toString()
+                    .split('ICAP/1.0 ')[1]
+                    .split("\n")[0];
+                output.print('The icap header code is: ' + icapCode)
+            } return icapCode;
         },
 
         getResponseCode: function (icapResp) {
-            let responseCode = icapResp
-                .toString()
-                .split('HTTP/1.0 ')[1]
-                .split("\n")[0];
-            if (responseCode) {
-                output.print('The responde code is: ' + responseCode)
-            } else {
-                output.print('The responde hearder is not available')
-            }
-            return responseCode;
+            let responseCode;
+            if (icapResp.includes('HTTP/1.0')) {
+                responseCode = icapResp
+                    .toString()
+                    .split('HTTP/1.0 ')[1]
+                    .split("\n")[0];
+                if (responseCode !== null) {
+                    output.print('The response code is: ' + responseCode)
+                } else {
+                    output.print('The response header is not available')
+                }
+            } return responseCode;
         },
 
         getFileId: function (icapResp) {
             let fileId;
-            fileId = icapResp
-                .toString()
-                .split('X-Adaptation-File-Id: ')[1]
-                .split("\n")[0];
-            output.print('The file id: ' + fileId)
-            return fileId;
+            if (icapResp.includes('X-Adaptation-File-Id')) {
+                fileId = icapResp
+                    .toString()
+                    .split('X-Adaptation-File-Id: ')[1]
+                    .split("\n")[0];
+                output.print('The file id: ' + fileId)
+            } return fileId;
         },
 
         cleanupFile(file) {
@@ -287,11 +292,15 @@ module.exports = function () {
 
         getFileProcessingResult: function (resp) {
             const icapCode = this.getIcapHeaderCode(resp)
-            if (icapCode === '204 Unmodified') {
+            if (icapCode === null) {
+                assert.fail('File processing not succesful')
+            } else if (icapCode === '204 Unmodified') {
                 I.say('The submitted file is relayed as the responde code is: ' + icapCode)
             } else {
                 const respCode = this.getResponseCode(resp)
-                if (respCode === '403 Forbidden') {
+                if (respCode === null || respCode === 'undefined') {
+                    assert.fail('File processing not succesful')
+                } else if (respCode === '403 Forbidden') {
                     I.say('Submitted file is blocked as the responde code is: ' + respCode)
                 } else {
                     I.say('Submitted file response is: ' + respCode)
@@ -299,57 +308,11 @@ module.exports = function () {
             }
         },
 
-        processFilesSet: async function (inPath, outputPath) {
-            var find = function (dir, done) {
-                fs.readdir(dir, function (error, list) {
-                    if (error) {
-                        return done(error);
-                    }
-                    var i = 0;
-                    (function next() {
-                        var file = list[i++];
-                        if (!file) {
-                            return done(null);
-                        }
-                        var fileIn = dir + '/' + file;
-                        var fileOut = outputPath + '/' + file;
-                        //I.removeFiles(outputPath);
-                        fs.stat(file, async function (I,error, stat) {
-                            if (stat && stat.isDirectory()) {
-                                find(file, function (error) {
-                                    next();
-                                });
-                            } else {
-                                console.log(file);
-                              
-                                next();
-                            }return file;
-                        });
-                    })();
-                }); 
-            };
-            // optional command line params
-            //      source for find path
-            process.argv.forEach(function (val, index, array) {
-                if (val.indexOf('source') !== -1) {
-                    inPath = val.split('=')[1];
-                }
-            });
+        checkFileProcessedState: function (filePath, file, text) {
+            I.amInPath(filePath)
+            I.checkFileExist(filePath + file)
+            I.seeInThisFile(text)
 
-            console.log('-------------------------------------------------------------');
-            console.log('processing...');
-            console.log('-------------------------------------------------------------');
-
-            find(inPath, function (error) {
-                if (error) {
-                    throw error;
-                } else {
-                    console.log('-------------------------------------------------------------');
-                    console.log('finished.');
-                    console.log('-------------------------------------------------------------');
-                }
-            });
         }
-
     });
 }

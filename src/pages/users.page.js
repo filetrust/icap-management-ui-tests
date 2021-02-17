@@ -1,4 +1,5 @@
-const I = actor();
+const { I } = inject();
+
 
 module.exports = {
 
@@ -17,8 +18,8 @@ module.exports = {
         delete: `/td[6]/*[@id="Layer_1"]`,
         saveChanges: `button[class*='Users_saveButton__']`,
         cancelChanges: `button[class*='Users_cancelButton__']`,
-        editIcon: `//td[1]/div/*[@id="Pencil"]` 
-    },  
+        editIcon: `//td[1]/div/*[@id="Pencil"]`
+    },
     table: {
         userTable: `//tbody`,
     },
@@ -34,22 +35,22 @@ module.exports = {
         I.clickElement(element);
     },
 
-    setNewUserName(userName) {
+    async setNewUserName(userName) {
         const element = this.fields.userName;
         I.click(element)
-        I.type(userName);
+        await I.typeIn(element, userName);
     },
 
-    setFirstName(firstName) {
+    async setFirstName(firstName) {
         const element = this.fields.firstName;
         I.click(element)
-        I.type(firstName);
+        await I.typeIn(element, firstName);
     },
 
-    setLastName(lName) {
+    async setLastName(lName) {
         const element = this.fields.lastName;
         I.click(element)
-        I.type(lName)
+        await I.typeIn(element, lName)
         //I.fillInField(element, lName);
     },
 
@@ -60,33 +61,33 @@ module.exports = {
     async getNewUserRowEmailInput() {
         return this.getUserRecord(2);
     },
-    setNewUserEmail(userEmail) {
+    async setNewUserEmail(userEmail) {
         const element = this.fields.email;
         I.click(element)
-        I.type(userEmail);
+        await I.typeIn(element, userEmail);
     },
 
-    addUser(userName,fName, lName, userEmail) {
+    async addUser(userName, fName, lName, userEmail) {
         this.clickAddUserBtn();
-        this.setNewUserName(userName);
-        this.setFirstName(fName);
-        this.setLastName(lName);
-        this.setNewUserEmail(userEmail);
+        await this.setNewUserName(userName);
+        await this.setFirstName(fName);
+        await this.setLastName(lName);
+        await this.setNewUserEmail(userEmail);
         this.clickSaveChanges();
         this.waitForUsersTable()
     },
 
-    addUserDetails(userName,fName, lName, userEmail) {
+    async addUserDetails(userName, fName, lName, userEmail) {
         this.clickAddUserBtn();
-        this.setNewUserName(userName);
-        this.setFirstName(fName);
-        this.setLastName(lName);
-        this.setNewUserEmail(userEmail);
+        await this.setNewUserName(userName);
+        await this.setFirstName(fName);
+        await this.setLastName(lName);
+        await this.setNewUserEmail(userEmail);
     },
 
-    clickUserEditIcon(data){
-        const user_record = `//tr[contains(.,'`+data+`')]`;
-        const userEditIcon= user_record+this.buttons.editIcon;
+    clickUserEditIcon(data) {
+        const user_record = `//tr[contains(.,'` + data + `')]`;
+        const userEditIcon = user_record + this.buttons.editIcon;
         I.clickElement(userEditIcon);
     },
 
@@ -105,22 +106,22 @@ module.exports = {
     },
 
     deleteUser(email) {
-        const user_record = `//tr[contains(.,'`+email+`')]`
-        const deleteUserButton = user_record+this.buttons.delete;
+        const user_record = `//tr[contains(.,'` + email + `')]`
+        const deleteUserButton = user_record + this.buttons.delete;
         I.click(deleteUserButton);
     },
-   
+
     getUserDeleteIcon(name) {
-        const user_record = `//tr[contains(.,'`+name+`')]`
-        const deleteUserButton = user_record+this.buttons.delete;
+        const user_record = `//tr[contains(.,'` + name + `')]`
+        const deleteUserButton = user_record + this.buttons.delete;
         return deleteUserButton.toString();
     },
 
-    clickSaveChanges (){
+    clickSaveChanges() {
         const element = this.buttons.saveChanges;
-        I.waitForElement(element,5)
+        I.waitForElement(element, 5)
         I.click(element);
-      
+
     },
 
     getUserRecord(n) {
@@ -137,45 +138,45 @@ module.exports = {
 
     findUserByEmail(email) {
         waitForUsersTable()
-        const element = `//tr[contains(.,'`+email+`')]`;
+        const element = `//tr[contains(.,'` + email + `')]`;
         return element;
     },
 
     findUserByName(name) {
         waitForUsersTable()
-        return `//tr[contains(.,'`+name+`')]`;
+        return `//tr[contains(.,'` + name + `')]`;
     },
 
-    waitForUsersTable(){
+    waitForUsersTable() {
         const element = this.table.userTable
-        I.waitForElement(element,60);
+        I.waitForElement(element, 60);
         I.waitForElement(this.buttons.addUser, 60);
     },
 
-   confirmUserDetailsAvailable(data){
+    confirmUserDetailsAvailable(data) {
         this.waitForUsersTable();
-        I.seeElement(`//tr[contains(.,'`+data+`')]`);
+        I.seeElement(`//tr[contains(.,'` + data + `')]`);
     },
 
-    confirmUserRecordNotAvailable(data){
+    confirmUserRecordNotAvailable(data) {
         this.waitForUsersTable()
-        I.dontSeeElement(`//tr[contains(.,'`+data+`')]`);
-    },       
+        I.dontSeeElement(`//tr[contains(.,'` + data + `')]`);
+    },
 
-    confirmUserDeleteIconNotAvailable(data){
+    confirmUserDeleteIconNotAvailable(data) {
         this.waitForUsersTable()
-        I.dontSeeElement(`//tr[contains(.,'`+data+`')]`+this.buttons.delete);
-    },       
+        I.dontSeeElement(`//tr[contains(.,'` + data + `')]` + this.buttons.delete);
+    },
 
-    async isErrorMessageDisplayed(error){
+    async isErrorMessageDisplayed(error) {
         const element = this.fields.error;
         const errorMessage = await I.grabTextFrom(element)
-        if (errorMessage===error){
-            I.say('The expected error message: '+errorMessage+ ' is displayed')
-        }else{
-            I.say('The error message: '+errorMessage+ ' is not as expected')
+        if (errorMessage === error) {
+            I.say('The expected error message: ' + errorMessage + ' is displayed')
+        } else {
+            I.say('The error message: ' + errorMessage + ' is not as expected')
         };
-        }
+    }
 
 
 

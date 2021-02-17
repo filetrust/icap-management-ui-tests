@@ -1,3 +1,4 @@
+const { assert } = require("chai");
 const { output } = require("codeceptjs");
 const I = actor();
 const modal = require("../fragments/modal.js");
@@ -40,7 +41,7 @@ module.exports = {
       current: `//button[contains(.,'Current']`,
       history: `//button[contains(.,'History']`
     },
-    view: "",
+
     viewPolicyFirst: `//tbody/tr[1]/th/button[text()='View']`,
     activate: "",
     activatePolicyFirst: `//tbody/tr[1]/th/button[text()='Activate']`,
@@ -72,7 +73,10 @@ module.exports = {
     blockedFiles: `section[class*='PolicyForNonCompliantFiles_wrapBlocksToggle__'] > h3:nth-child(3)`,
   },
   options: {
-    countOfPolicies: "div[class*='Pagination_pageCountSelector__'] > select"
+    countOfPolicies: `.MuiInputBase-root.MuiTablePagination-input.MuiTablePagination-selectRoot > svg`,
+    countSelection_50: `ul[class*='MuiList-root'] > li:nth-of-type(2)`,
+    countView: `.MuiTypography-root:nth-child(4)`,
+
   },
 
 
@@ -92,19 +96,19 @@ module.exports = {
 
   clickAdaptationPolicy() {
     const element = this.tabs.adaptation_policy;
-    I.waitForElement(element,30)
-   I.clickElement(element);
+    I.waitForElement(element, 30)
+    I.clickElement(element);
   },
 
   clickNcfsPolicyTab() {
     const element = this.tabs.ncfs_policy;
-    I.waitForElement(element,30)
+    I.waitForElement(element, 30)
     I.clickElement(element);
   },
 
   cancelPolicyDeletion() {
     const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl,30)
+    I.waitForElement(modalEl, 30)
     within(modalEl, () => {
       I.clickElement(this.buttons.modal_cancel)
     })
@@ -153,15 +157,15 @@ module.exports = {
     })
   },
 
- async goToDraftAdaptationPolicy () {
+  async goToDraftAdaptationPolicy() {
     await this.clickDraftTab();
     this.clickAdaptationPolicy();
-},
+  },
 
-goToCurrentAdaptationPolicy () {
+  goToCurrentAdaptationPolicy() {
     this.clickCurrentPolicyTab();
     this.clickAdaptationPolicy();
-},
+  },
 
   getContentFlagRule(type, rule) {
     return "label[for='" + type + "ContentManagement_" + rule + "']";
@@ -499,22 +503,35 @@ goToCurrentAdaptationPolicy () {
 
   async getTotalNumberOfRecordsOfPolicy() {
     const numberOfRecordsOfPolicy = await I.grabNumberOfVisibleElements(this.table.tableRows);
+    I.say(`Rows count is ${numberOfRecordsOfPolicy}`)
     return numberOfRecordsOfPolicy
   },
 
   selectCountOfPolicies(itemCount) {
     const element = this.options.countOfPolicies;
-    I.selectOption(element, itemCount);
+    I.clickElement(element)
+    let countSelection = `//li[contains(.,'${itemCount}')]`
+    I.clickElement(countSelection);
+    I.waitForElement(element, 60)
+
   },
 
-  assertPoliciesItemShownCount(itemCount, availableRecords) {
-    availableRecords.then((records) => {
-      if (records > itemCount) {
-        I.seeNumberOfElements(this.table.tableRows, itemCount)
+  async isRecordCountAccurate(recordsCount) {
+    const displayedCount = await I.grabTextFrom(this.options.countView);
+    let itemCount = await this.getTotalNumberOfRecordsOfPolicy();
+    var totalR = displayedCount
+      .split(`1-${itemCount} of `)[1]
+      .split("\n")[0];
+    console.log(`The total records available is: ${totalR}`)
+    if (totalR > itemCount) {
+      if (itemCount === recordsCount && displayedCount.includes(`1-${itemCount}`)) {
+        I.say(`The selected number of record is correctly displayed as: ${itemCount}`)
       } else {
-        I.seeNumberOfElements(this.table.tableRows, records)
+        assert.fail(`The number of records displayed ${itemCount} is not as expected`)
       }
-    })
+    } else if (totalR <= itemCount) {
+      I.say(`The total available records is less than the selected count; ${itemCount} records are displayed`)
+    }
   },
 
   clickOnHistoryPolicyTab() {
@@ -566,17 +583,17 @@ goToCurrentAdaptationPolicy () {
    */
 
   async setRouteFlag(routeOption) {
-      const element = `label[for='`+routeOption+`']`
-      const el = `input[id='`+routeOption+`']`
-     try { 
-       const checked = await I.grabAttributeFrom(el, 'checked');
+    const element = `label[for='` + routeOption + `']`
+    const el = `input[id='` + routeOption + `']`
+    try {
+      const checked = await I.grabAttributeFrom(el, 'checked');
       if (checked !== true) {
         I.click(element);
         I.wait(5)
         I.click(this.buttons.saveChanges)
-      } else if (checked === true){
-       // I.waitForElement(element, 5)
-         output.print('The flag is already selected')
+      } else if (checked === true) {
+        // I.waitForElement(element, 5)
+        output.print('The flag is already selected')
       }
     } catch (e) {
       I.say('Unable to set NCFS flag')
@@ -584,9 +601,9 @@ goToCurrentAdaptationPolicy () {
     }
   },
 
-  async setAndPublishRouteFlag(routeOption){
+  async setAndPublishRouteFlag(routeOption) {
     await this.setRouteFlag(routeOption)
-   await this.publishPolicy()
+    await this.publishPolicy()
   },
 
   async setUnprocessableFileAsRelay() {
@@ -671,23 +688,23 @@ goToCurrentAdaptationPolicy () {
 
   assertCheckedUnprocessableRadioButton(radioValue) {
     let radioElement = null;
-    try{
-    switch (radioValue) {
-      case ('Relay'):
-        radioElement = this.radiobuttons.unprocessedFileRelay;
-        break;
-      case ('Refer'):
-        radioElement = this.radiobuttons.unprocessedFileRefer;
-        break;
-      case ('Block'):
-        radioElement = this.radiobuttons.unprocessedFileBlock;
-        break;
+    try {
+      switch (radioValue) {
+        case ('Relay'):
+          radioElement = this.radiobuttons.unprocessedFileRelay;
+          break;
+        case ('Refer'):
+          radioElement = this.radiobuttons.unprocessedFileRefer;
+          break;
+        case ('Block'):
+          radioElement = this.radiobuttons.unprocessedFileBlock;
+          break;
+      }
+      I.seeCheckboxIsChecked(radioElement);
+    } catch (e) {
+      I.say('Unable to verify NCFS flag')
+      console.warn(e);
     }
-    I.seeCheckboxIsChecked(radioElement);
-  } catch (e) {
-    I.say('Unable to verify NCFS flag')
-    console.warn(e);
-  }
 
   },
 
@@ -707,7 +724,7 @@ goToCurrentAdaptationPolicy () {
 
   async clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
-    I.waitForElement(element,30)
+    I.waitForElement(element, 30)
     I.clickElement(element);
   }
 }

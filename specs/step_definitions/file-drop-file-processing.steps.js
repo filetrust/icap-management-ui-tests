@@ -5,12 +5,8 @@ const {
 const chai = require('chai');
 const expect = chai.expect;
 
-Given("I am logged into the ui", () => {
-  I.login();
-  I.wait(5);
-});
 
-Given("I have navigated to the FileDrop page", () => {
+Given("I am on the FileDrop page", () => {
   I.goToFileDrop();
 });
 
@@ -23,12 +19,12 @@ Then('the File is processed with the process status displayed as {string}', (pro
   I.see(processStatus.trim(), filedropPage.sections.fileProcessStatus);
 });
 
-Then('I can view more detailed results with file attributes {string}, {string} and {string}', async (fileName,fileType,fileSize) => {
+Then('I can view more detailed results with file attributes {string}, {string} and {string}', async (fileName, fileType, fileSize) => {
   I.seeElementExist(filedropPage.sections.analysisReportView);
   await filedropPage.isFileNameAttributeDisplayed(fileName);
   await filedropPage.isFileTypeAttributeDisplayed(fileType);
   await filedropPage.isFileSizeAttributeDisplayed(fileSize);
-  });
+});
 
 When('I click Select a file and choose non processable file {string}', (file) => {
   I.attachFile(filedropPage.buttons.fileInput, file.trim())
@@ -40,9 +36,10 @@ Then('the expected validation error is displayed as {string}', async (error) => 
 
 When('I click on Download Protected File button', () => {
   I.handleDownloads();
-  filedropPage.clickDownloadXmlReport();
+  filedropPage.clickDownloadProtectedFile();
 });
 Then('the file {string} is downloaded', (file) => {
   I.amInPath("output/downloads");
   filedropPage.isFileDownloaded(file)
 });
+

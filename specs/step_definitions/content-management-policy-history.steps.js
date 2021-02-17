@@ -5,10 +5,6 @@ const {
 
 let availablePolicyRecords;
 
-Given('I am on the Policy History page', () => {
-    policyPage.clickOnHistoryPolicyTab()
-});
-
 Then('I am taken to the Policy History page', () => {
     policyPage.assertHistoryPolicyPage()
 });
@@ -17,19 +13,17 @@ Then('the previous policy can now be located in the "Policy history" page', () =
     policyPage.clickOnHistoryPolicyTab()
 });
 
-Then('the user is taken to the Policy History page', () => {
-    policyPage.assertHistoryPolicyPage()
-});
-
 Given('I have navigated to the Policy History page', () => {
-    policyPage.clickOnHistoryPolicyTab()
+    I.goToContentManagementPolicy();
+    I.goToPolicyHistory();
 });
 
-When(/^Items Shown is changed to (.*)$/, (itemCount) => {
-    availablePolicyRecords = policyPage.getTotalNumberOfRecordsOfPolicy()
-    policyPage.selectCountOfPolicies(itemCount)
+When('Items Shown is changed to {string}', (itemCount) => {
+    policyPage.selectCountOfPolicies(itemCount);
+    I.wait(3)
 });
 
-Then('Up to {int} previous policies are displayed', (itemCount) => {
-    policyPage.assertPoliciesItemShownCount(itemCount, availablePolicyRecords)
+Then('Up to {int} previous policies are displayed', async (rowCount) => {
+    //availablePolicyRecords = policyPage.getTotalNumberOfRecordsOfPolicy()
+   await policyPage.isRecordCountAccurate(rowCount)
 });
