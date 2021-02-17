@@ -33,11 +33,9 @@ jobs:
           PASSWORD: ${{ secrets.UI_SECRET_ID }}
           AWSUSER: ${{ secrets.AWSUI_AWSUSER_ID }}
           AWSPASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
-        run: |
-          sudo apt-get -y install c-icap
-          npm install    
+        run: |  
           npm install -g allure-commandline --save-dev     
-          npm run codeceptjs
+          npm test
 
       - name: Get Allure history
         uses: actions/checkout@v2
