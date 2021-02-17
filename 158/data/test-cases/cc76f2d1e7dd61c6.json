@@ -1,0 +1,349 @@
+{
+  "uid" : "cc76f2d1e7dd61c6",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @fileprocess @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @fileprocess @TEST-212",
+  "historyId" : "b5cf91d41082fde4c7deef817304eaf5",
+  "time" : {
+    "start" : 1613576795812,
+    "stop" : 1613576827057,
+    "duration" : 31245
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log",
+  "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log",
+    "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "And I set a policy for file type 'word' with 'InternalHyperlinks' set to 'sanitise' ",
+      "time" : {
+        "start" : 1613576818510,
+        "stop" : 1613576827057,
+        "duration" : 8547
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"InternalHyperlinks\", \"sanitise\"",
+        "time" : {
+          "start" : 1613576818511,
+          "stop" : 1613576818531,
+          "duration" : 20
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"input[id='wordInternalHyperlinkssanitise']\", 60",
+          "time" : {
+            "start" : 1613576818511,
+            "stop" : 1613576818517,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab attribute from \"input[id='wordInternalHyperlinkssanitise']\", \"checked\"",
+          "time" : {
+            "start" : 1613576818519,
+            "stop" : 1613576818531,
+            "duration" : 12
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 60",
+        "time" : {
+          "start" : 1613576818531,
+          "stop" : 1613576818534,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='wordInternalHyperlinkssanitise']\"",
+        "time" : {
+          "start" : 1613576818534,
+          "stop" : 1613576820676,
+          "duration" : 2142
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1613576820676,
+          "stop" : 1613576822725,
+          "duration" : 2049
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1613576822725,
+          "stop" : 1613576822731,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1613576822725,
+            "stop" : 1613576822730,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "1",
+          "time" : {
+            "start" : 1613576822731,
+            "stop" : 1613576822731,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1613576822731,
+          "stop" : 1613576822745,
+          "duration" : 14
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613576822745,
+          "stop" : 1613576824990,
+          "duration" : 2245
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1613576824994,
+          "stop" : 1613576827051,
+          "duration" : 2057
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1613576824994,
+            "stop" : 1613576824999,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1613576824999,
+            "stop" : 1613576827038,
+            "duration" : 2039
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 60",
+        "time" : {
+          "start" : 1613576827051,
+          "stop" : 1613576827056,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 15,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "e47d9eac92ca567",
+      "name" : "Last Seen Screenshot",
+      "source" : "e47d9eac92ca567.png",
+      "type" : "image/png",
+      "size" : 56110
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 16,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @fileprocess @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "2c69ec23b60cd2f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/2c69ec23b60cd2f",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/issues.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/issues.docx\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613574396169,
+          "stop" : 1613574688386,
+          "duration" : 292217
+        }
+      } ]
+    },
+    "tags" : [ "@fileprocess", "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "cc76f2d1e7dd61c6.json",
+  "parameterValues" : [ ]
+}
