@@ -11,12 +11,13 @@ Feature: request-history-file-detail-view
     # @functional
     # @TEST-169_1
     # Scenario: User can view more details on a previously processed file
-    #     Given A previous transaction is available in the transaction log 
+    #     Given A previous transaction is available in the transaction log
     #     When I click on a available file record to open the detail view
     #     Then The file details view shows all required sections
 
 
     @functional
+    @fileprocess
     @TEST-169_2
     Scenario Outline: User can view structural issues on a file
         Given I process a file '<file>' through the icap server
@@ -29,6 +30,7 @@ Feature: request-history-file-detail-view
             | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
     @functional
+    @fileprocess
     @TEST-169_3
     Scenario Outline: User can view Sanitisation and Remedy items removed on a file
         Given I process a file '<file>' through the icap server

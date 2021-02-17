@@ -28,7 +28,7 @@ Feature: request-history-filtering-by-date
         And the files processed for the selected period are displayed
         Examples:
             | datetimeFrom        | datetimeTo          |
-            | 28/01/2021 10:00 AM | 29/01/2021 10:00 AM |
+            | 11/02/2021 10:00 AM | 12/02/2021 10:00 AM |
 
     @portal
     @functional

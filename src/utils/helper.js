@@ -460,6 +460,10 @@ class MyHelper extends Helper {
         });
     }
 
+    async typeIn(element, val) {
+        const page = this.helpers['Puppeteer'].page;
+        await page.type(element, val);
+    }
 
 }
 

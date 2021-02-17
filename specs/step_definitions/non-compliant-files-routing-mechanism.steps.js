@@ -1,6 +1,7 @@
 const { I, policyPage, filedropPage, requesthistoryPage, sharepoint } = inject();
 const faker = require('faker');
 const chai = require('chai');
+const { assert } = require('chai');
 const expect = chai.expect;
 
 let currentUrl = null;
@@ -15,7 +16,6 @@ Given('I have navigated to the Draft NCFS Policy page', async () => {
 
 });
 Given('I am a new user', () => {
-    //  I.loginNoPwd();
 });
 Given('I have navigated to the Current NCFS Policy page', async () => {
     await I.goToCurrentNcfsPolicy()
@@ -87,12 +87,10 @@ When('I download a non compliant file {string} through the icap server', async (
 });
 
 When('I submit a non supported or unprocessable file {string} through the icap server', async (file) => {
-    I.handleDownloads();
     resp = await I.submitFile(file)
 });
 
 When('I submit a non compliant file {string} through the icap server', async (file) => {
-    I.handleDownloads();
     resp = await I.submitFile(file)
 });
 
@@ -110,9 +108,8 @@ Then('The file outcome for the submitted file {string} is {string} with {string}
         if (respCode === '403 Forbidden') {
             I.say('Success, Response code is 403 as expected')
         } else {
-            I.say('Failed, Response code is ' + respCode)
-        }
-        I.viewTransactions('1 Hour')
+            assert.fail('Failed, Response code is ' + respCode)
+        } I.viewTransactions('1 Hour')
         await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
     }
 });
@@ -125,7 +122,7 @@ Given('I set the policy for file type {string} to {string} and {string}', async 
 
 
 Given('I have set the routing option for unprocessable files to {string}', async (policyAction) => {
-    // await policyPage.setAndPublishRouteFlag(policyAction);
+    await policyPage.setAndPublishRouteFlag(policyAction);
 });
 
 When('I download a non supported or unprocessable file {string} through the icap server', async (file) => {

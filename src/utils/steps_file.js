@@ -17,13 +17,13 @@ const outputDir = path.join('output', 'downloads');
 const inputPath = path.join(process.cwd(), inputDir);
 const outputPath = path.join(process.cwd(), outputDir);
 const icapLogs = path.join('output', 'icap.log')
-const fileDropUrl = `http://54.78.215.70`;
-const icapClient = process.env.ICAPURL_DEV;
+const fileDropUrl = process.env.FILEDROP_URL_NEU;
+const icapClient = process.env.ICAP_URL_DEV;
 
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.URL_DEV)
+            this.amOnPage(process.env.UI_URL_DEV)
         },
 
         loginAs: function (email, password) {
@@ -74,8 +74,8 @@ module.exports = function () {
             homePage.clickUsers();
         },
 
-        addAUser: function (userName, fName, lName, userEmail) {
-            usersPage.addUser(userName, fName, lName, userEmail)
+        addAUser: async function (userName, fName, lName, userEmail) {
+            await usersPage.addUser(userName, fName, lName, userEmail)
             usersPage.checkUserDetailsSaved(userEmail)
             //I.see(userEmail)
         },
@@ -114,6 +114,7 @@ module.exports = function () {
 
         viewTransactions: function (period) {
             this.goToRequestHistory()
+            I.refreshPage()
             requesthistoryPage.openDatePicker();
             requesthistoryPage.selectTimePeriod(period)
         },
@@ -233,7 +234,6 @@ module.exports = function () {
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             //output.print
             console.log('icapLogs: ' + icapOutput)
-            this.wait(60)
             //output.print
             console.log('File is sent...')
             return icapOutput;

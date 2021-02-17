@@ -3,12 +3,12 @@ Feature: file-drop-file-analysis-reporting
     As a admin I need to validate the successful download of a PDF or XML analysis report in order to confirm that the solution works as expected
 
     Background:
-        Given I am logged into the ui
-        And I have navigated to the File Drop page
+        Given I am on the FileDrop page
 
     @functional
-    @TEST-225
     @portal
+    @filedrop
+    @TEST-225
     Scenario Outline: User can download the full XML analysis report for a file
         Given I have uploaded a file '<supportedFile>'
         When  I click on Download XML Report button
@@ -18,13 +18,14 @@ Feature: file-drop-file-analysis-reporting
             | supportedFile                | xmlFile   |
             | src/data/multiset/file1.docx | file1.xml |
 
-    @prototype
+    @functional
+    @portal
     @TEST-226
-    @Fail-app
+    @filedrop
     Scenario Outline: User can download the full PDF analysis report for a file
         Given I have uploaded a file '<supportedFile>'
-        When  I view result and click on PDF button
+        When  I click on PDF button
         Then the pdf report '<pdfFile>' is downloaded
         Examples:
-            | supportedFile               | pdfFile   |
-            | src/data/multiset/file2.pdf | file2.pdf |
+            | supportedFile                | pdfFile   |
+            | src/data/multiset/file1.docx | file1.xml |

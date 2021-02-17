@@ -23,7 +23,7 @@ When('I view result and click on Download Analysis Report', () => {
     filedropPage.clickDownloadAnalysisReport();
 });
 
-Then(/^The full analysis report is downloaded and available as (.*)$/, (analysisReport) => {
+Then('The full analysis report is downloaded and available as {string}', (analysisReport) => {
     I.amInPath('output/downloads');
     I.seeFileNameMatching(analysisReport);
 });
@@ -38,7 +38,7 @@ Then('the notification message is displayed as {string}', (processStatus) => {
 });
 
 Then('I see the list of sanitised active contents with expected issue {string}', (activeContent) => {
-     filedropPage.isRequiredContentRefDisplayed(activeContent)
+    filedropPage.isRequiredContentRefDisplayed(activeContent)
 });
 
 Then('I see the list of objects and structures repaired with expected item {string}', (repairedObject) => {

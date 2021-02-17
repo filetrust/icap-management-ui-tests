@@ -16,8 +16,8 @@ Given('I have uploaded a file {string}', (supportedFile) => {
 });
 
 When('I click on Download XML Report button', () => {
-   I.handleDownloads();
-   filedropPage.clickDownloadXmlReport();
+    I.handleDownloads();
+    filedropPage.clickDownloadXmlReport();
 });
 
 Then('the XML report {string} is downloaded', (xmlFile) => {
@@ -25,9 +25,9 @@ Then('the XML report {string} is downloaded', (xmlFile) => {
     filedropPage.isFileDownloaded(xmlFile)
 });
 
-When('I view result and click on PDF button', () => {
+When('I click on PDF button', () => {
     I.handleDownloads();
-    filedropPage.clickPdf();
+    filedropPage.clickPdfReport();
 });
 
 Then('the pdf report {string} is downloaded', (pdfFile) => {
