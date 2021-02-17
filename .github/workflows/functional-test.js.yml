@@ -34,6 +34,7 @@ jobs:
           AWSUSER: ${{ secrets.AWSUI_AWSUSER_ID }}
           AWSPASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
         run: |  
+          npm install
           npm install -g allure-commandline --save-dev     
           npm test
 
