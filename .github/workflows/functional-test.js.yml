@@ -37,6 +37,7 @@ jobs:
           sudo apt-get install -y c-icap
           npm install -g allure-commandline --save-dev     
           npm install
+          c-icap-client -i $ICAP_URL_NEU
           npx codeceptjs run-multiple --steps --grep @functional --all --plugins allure
 
       - name: Get Allure history
