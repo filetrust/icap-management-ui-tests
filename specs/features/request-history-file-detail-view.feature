@@ -16,7 +16,7 @@ Feature: request-history-file-detail-view
     #     Then The file details view shows all required sections
 
 
-    @functional
+    #@functional
     @fileprocess
     @TEST-169_2
     Scenario Outline: User can view structural issues on a file
@@ -29,7 +29,7 @@ Feature: request-history-file-detail-view
             | file                  | issue                                      |
             | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
-    @functional
+    #@functional
     @fileprocess
     @TEST-169_3
     Scenario Outline: User can view Sanitisation and Remedy items removed on a file
