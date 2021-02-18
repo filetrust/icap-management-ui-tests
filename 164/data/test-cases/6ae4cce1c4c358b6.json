@@ -1,0 +1,628 @@
+{
+  "uid" : "6ae4cce1c4c358b6",
+  "name" : "User can filter the log by file type {\"filter\":\"rtf\",\"filteredFile\":\"Rtf\"} @portal @functional @TEST-180",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.User can filter the log by file type {\"filter\":\"rtf\",\"filteredFile\":\"Rtf\"} @portal @functional @TEST-180",
+  "historyId" : "419472935c2c610ef24ac98f701fbc67",
+  "time" : {
+    "start" : 1613651768484,
+    "stop" : 1613651813078,
+    "duration" : 44594
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I: goToRequestHistory ",
+      "time" : {
+        "start" : 1613651782312,
+        "stop" : 1613651784356,
+        "duration" : 2044
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1613651782312,
+          "stop" : 1613651784356,
+          "duration" : 2044
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And There are existing transactions available ",
+      "time" : {
+        "start" : 1613651784356,
+        "stop" : 1613651797688,
+        "duration" : 13332
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: viewTransactions \"24 Hours\"",
+        "time" : {
+          "start" : 1613651784356,
+          "stop" : 1613651797688,
+          "duration" : 13332
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='request-history'] > div\"",
+          "time" : {
+            "start" : 1613651784356,
+            "stop" : 1613651787361,
+            "duration" : 3005
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I refresh page ",
+          "time" : {
+            "start" : 1613651787362,
+            "stop" : 1613651790478,
+            "duration" : 3116
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"div[id*='reportrange']\", 30",
+          "time" : {
+            "start" : 1613651790478,
+            "stop" : 1613651790486,
+            "duration" : 8
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1613651790486,
+            "stop" : 1613651793253,
+            "duration" : 2767
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"li[data-range-key='24 Hours']\"",
+          "time" : {
+            "start" : 1613651793253,
+            "stop" : 1613651796599,
+            "duration" : 3346
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head'] > th\", 60",
+          "time" : {
+            "start" : 1613651796599,
+            "stop" : 1613651797686,
+            "duration" : 1087
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 6,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the selected types as 'Rtf' ",
+      "time" : {
+        "start" : 1613651797688,
+        "stop" : 1613651803926,
+        "duration" : 6238
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Within \"div[class*='Filters_wrap__']\" ",
+        "time" : {
+          "start" : 1613651797688,
+          "stop" : 1613651801836,
+          "duration" : 4148
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click button[class*='Filters_moreFilters__']",
+          "time" : {
+            "start" : 1613651797689,
+            "stop" : 1613651799785,
+            "duration" : 2096
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+          "time" : {
+            "start" : 1613651799789,
+            "stop" : 1613651799794,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+          "time" : {
+            "start" : 1613651799794,
+            "stop" : 1613651801832,
+            "duration" : 2038
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Within \"div[class*='Filters_popup__']\" ",
+        "time" : {
+          "start" : 1613651801836,
+          "stop" : 1613651803926,
+          "duration" : 2090
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"button:nth-child(2) > p\"",
+          "time" : {
+            "start" : 1613651801836,
+            "stop" : 1613651803924,
+            "duration" : 2088
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Filter to set is: rtf",
+          "time" : {
+            "start" : 1613651803926,
+            "stop" : 1613651803926,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click on the Add Filter button and add a file type filter as 'rtf' ",
+      "time" : {
+        "start" : 1613651803926,
+        "stop" : 1613651813054,
+        "duration" : 9128
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: selectFileType \"rtf\"",
+        "time" : {
+          "start" : 1613651803926,
+          "stop" : 1613651813054,
+          "duration" : 9128
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"//span[contains(.,'rtf')]/parent::label/span[1]/span/input\"",
+          "time" : {
+            "start" : 1613651803926,
+            "stop" : 1613651806040,
+            "duration" : 2114
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+          "time" : {
+            "start" : 1613651806040,
+            "stop" : 1613651808049,
+            "duration" : 2009
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 5",
+          "time" : {
+            "start" : 1613651808049,
+            "stop" : 1613651813054,
+            "duration" : 5005
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the selected types as 'Rtf' ",
+      "time" : {
+        "start" : 1613651813054,
+        "stop" : 1613651813078,
+        "duration" : 24
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Rtf\", 3",
+        "time" : {
+          "start" : 1613651813054,
+          "stop" : 1613651813062,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"//tbody\"",
+          "time" : {
+            "start" : 1613651813054,
+            "stop" : 1613651813061,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Data is available",
+          "time" : {
+            "start" : 1613651813062,
+            "stop" : 1613651813062,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: checkRows \"Rtf\", 3",
+        "time" : {
+          "start" : 1613651813062,
+          "stop" : 1613651813067,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+          "time" : {
+            "start" : 1613651813062,
+            "stop" : 1613651813064,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1613651813065,
+            "stop" : 1613651813067,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Data is available",
+          "time" : {
+            "start" : 1613651813067,
+            "stop" : 1613651813067,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check rows value \"Rtf\", 3",
+        "time" : {
+          "start" : 1613651813067,
+          "stop" : 1613651813078,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 32,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-180"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-file-type"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the log by file type {\"filter\":\"rtf\",\"filteredFile\":\"Rtf\"} @portal @functional @TEST-180"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 6,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "83888ea2aee2a503",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/83888ea2aee2a503",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651129696,
+          "stop" : 1613651171437,
+          "duration" : 41741
+        }
+      }, {
+        "uid" : "788141b345dbb35b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/788141b345dbb35b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644431134,
+          "stop" : 1613644470902,
+          "duration" : 39768
+        }
+      }, {
+        "uid" : "4b6b543823dbb3e2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/4b6b543823dbb3e2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578664418,
+          "stop" : 1613578702392,
+          "duration" : 37974
+        }
+      }, {
+        "uid" : "362b65baaec4a712",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/362b65baaec4a712",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576957566,
+          "stop" : 1613576997236,
+          "duration" : 39670
+        }
+      }, {
+        "uid" : "7716366a0ce4665c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/7716366a0ce4665c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613574555704,
+          "stop" : 1613574595305,
+          "duration" : 39601
+        }
+      }, {
+        "uid" : "9b7f664858cbfdc5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/9b7f664858cbfdc5",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058950385,
+          "stop" : 1613058950385,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "b9f1726e9e165658",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/b9f1726e9e165658",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056729254,
+          "stop" : 1613056729254,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-filtering-by-file-type", "@portal", "@TEST-180", "@functional" ]
+  },
+  "source" : "6ae4cce1c4c358b6.json",
+  "parameterValues" : [ ]
+}
