@@ -39,6 +39,7 @@ jobs:
           npm install
           c-icap-client -i $ICAP_URL_NEU
           npx codeceptjs run-multiple --steps --grep @pdf --all --plugins allure
+          cat output/icap.log
 
       - name: Get Allure history
         uses: actions/checkout@v2
