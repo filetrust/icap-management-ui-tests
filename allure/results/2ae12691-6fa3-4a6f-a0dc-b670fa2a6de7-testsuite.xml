@@ -1,0 +1,224 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1613624349034' stop='1613624385288'>
+    <name>user-session-admin @user-session-admin</name>
+    <title>user-session-admin @user-session-admin</title>
+    <test-cases>
+        <test-case start='1613624349036' status='passed' stop='1613624366617'>
+            <name>User can log into the ui @portal @functional @TEST-login</name>
+            <title>User can log into the ui @portal @functional @TEST-login</title>
+            <labels>
+                <label name='tag' value='@user-session-admin'/>
+                <label name='tag' value='@portal'/>
+                <label name='tag' value='@functional'/>
+                <label name='tag' value='@TEST-login'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1613624351249' status='passed' stop='1613624355245'>
+                    <name>Given I am on the login screen </name>
+                    <title>Given I am on the login screen </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624351249' status='passed' stop='1613624355245'>
+                            <name>I: onLoginPage </name>
+                            <title>I: onLoginPage </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624351250' status='passed' stop='1613624355245'>
+                                    <name>I am on page "https://management-ui-neu-main.northeurope.cloudapp.azure.com"</name>
+                                    <title>I am on page "https://management-ui-neu-main.northeurope.cloudapp.azure.com"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624355245' status='passed' stop='1613624359592'>
+                    <name>When I enter login details </name>
+                    <title>When I enter login details </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624355245' status='passed' stop='1613624359592'>
+                            <name>I: enterLoginDetails </name>
+                            <title>I: enterLoginDetails </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624355245' status='passed' stop='1613624357402'>
+                                    <name>I fill field "input[name='username']", "testuser"</name>
+                                    <title>I fill field "input[name='username']", "testuser"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624357402' status='passed' stop='1613624359592'>
+                                    <name>I fill field "input[name='password']", "Password2"</name>
+                                    <title>I fill field "input[name='password']", "Password2"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624359592' status='passed' stop='1613624366612'>
+                    <name>And I click login </name>
+                    <title>And I click login </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624359592' status='passed' stop='1613624366612'>
+                            <name>loginPage: clickLogIn </name>
+                            <title>loginPage: clickLogIn </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624359592' status='passed' stop='1613624364595'>
+                                    <name>I wait 5</name>
+                                    <title>I wait 5</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624364595' status='passed' stop='1613624366612'>
+                                    <name>I press key "Enter"</name>
+                                    <title>I press key "Enter"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624366612' status='passed' stop='1613624366617'>
+                    <name>Then The home screen is displayed </name>
+                    <title>Then The home screen is displayed </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624366612' status='passed' stop='1613624366617'>
+                            <name>I see element "div[data-test-id="userLink"]"</name>
+                            <title>I see element "div[data-test-id="userLink"]"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1613624366633' status='passed' stop='1613624385275'>
+            <name>User can log out of the ui @portal @functional @TEST-236</name>
+            <title>User can log out of the ui @portal @functional @TEST-236</title>
+            <labels>
+                <label name='tag' value='@user-session-admin'/>
+                <label name='tag' value='@portal'/>
+                <label name='tag' value='@functional'/>
+                <label name='tag' value='@TEST-236'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1613624368811' status='passed' stop='1613624381083'>
+                    <name>Given I am logged into the ui </name>
+                    <title>Given I am logged into the ui </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624368811' status='passed' stop='1613624374737'>
+                            <name>I: onLoginPage </name>
+                            <title>I: onLoginPage </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624368811' status='passed' stop='1613624374737'>
+                                    <name>I am on page "https://management-ui-neu-main.northeurope.cloudapp.azure.com"</name>
+                                    <title>I am on page "https://management-ui-neu-main.northeurope.cloudapp.azure.com"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624374737' status='passed' stop='1613624381074'>
+                            <name>loginPage: loginWith </name>
+                            <title>loginPage: loginWith </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624374738' status='passed' stop='1613624376881'>
+                                    <name>I fill field "input[name='username']", "testuser"</name>
+                                    <title>I fill field "input[name='username']", "testuser"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624376881' status='passed' stop='1613624379059'>
+                                    <name>I fill field "input[name='password']", "Password2"</name>
+                                    <title>I fill field "input[name='password']", "Password2"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624379059' status='passed' stop='1613624381074'>
+                                    <name>I press key "Enter"</name>
+                                    <title>I press key "Enter"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624381074' status='passed' stop='1613624381083'>
+                            <name>I: login </name>
+                            <title>I: login </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624381074' status='passed' stop='1613624381083'>
+                                    <name>I wait for element "nav[class*='NavigationItems_NavigationItems__'] > ul"</name>
+                                    <title>I wait for element "nav[class*='NavigationItems_NavigationItems__'] > ul"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624381083' status='passed' stop='1613624385270'>
+                    <name>When I hover over my profile and select Log Out </name>
+                    <title>When I hover over my profile and select Log Out </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624381083' status='passed' stop='1613624383129'>
+                            <name>homePage: clickAccountToggle </name>
+                            <title>homePage: clickAccountToggle </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624381083' status='passed' stop='1613624383129'>
+                                    <name>I click element "div[data-test-id='userLink']"</name>
+                                    <title>I click element "div[data-test-id='userLink']"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624383129' status='passed' stop='1613624385270'>
+                            <name>homePage: clickLogout </name>
+                            <title>homePage: clickLogout </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624383130' status='passed' stop='1613624385270'>
+                                    <name>I click element "button[data-test-id='userLinksButtonLogout']"</name>
+                                    <title>I click element "button[data-test-id='userLinksButtonLogout']"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624385270' status='passed' stop='1613624385275'>
+                    <name>Then I am taken to the Login Screen </name>
+                    <title>Then I am taken to the Login Screen </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624385270' status='passed' stop='1613624385275'>
+                            <name>I see element "input[name='password']"</name>
+                            <title>I see element "input[name='password']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

@@ -1,0 +1,190 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1613624317867' stop='1613624375649'>
+    <name>content-management-previous-policy @content-management-previous-policy</name>
+    <title>content-management-previous-policy @content-management-previous-policy</title>
+    <test-cases>
+        <test-case start='1613624317872' status='passed' stop='1613624344262'>
+            <name>User can view previous Policy details @portal @functional @TEST-218</name>
+            <title>User can view previous Policy details @portal @functional @TEST-218</title>
+            <labels>
+                <label name='tag' value='@content-management-previous-policy'/>
+                <label name='tag' value='@portal'/>
+                <label name='tag' value='@functional'/>
+                <label name='tag' value='@TEST-218'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1613624337143' status='passed' stop='1613624344255'>
+                    <name>When I click view on a previous policy </name>
+                    <title>When I click view on a previous policy </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624337143' status='passed' stop='1613624344255'>
+                            <name>policyPage: clickViewFirstPolicy </name>
+                            <title>policyPage: clickViewFirstPolicy </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624337143' status='passed' stop='1613624342147'>
+                                    <name>I wait 5</name>
+                                    <title>I wait 5</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624342147' status='passed' stop='1613624344255'>
+                                    <name>I click element "(//button[contains(text(),'View')])[1]"</name>
+                                    <title>I click element "(//button[contains(text(),'View')])[1]"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624344255' status='passed' stop='1613624344262'>
+                    <name>Then the previous Policy is displayed </name>
+                    <title>Then the previous Policy is displayed </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624344255' status='passed' stop='1613624344261'>
+                            <name>I see element "section[class*='Modal_Modal__']"</name>
+                            <title>I see element "section[class*='Modal_Modal__']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+        <test-case start='1613624344294' status='passed' stop='1613624375634'>
+            <name>User can activate a previous policy @portal @functional @TEST-219</name>
+            <title>User can activate a previous policy @portal @functional @TEST-219</title>
+            <labels>
+                <label name='tag' value='@content-management-previous-policy'/>
+                <label name='tag' value='@portal'/>
+                <label name='tag' value='@functional'/>
+                <label name='tag' value='@TEST-219'/>
+            </labels>
+            <parameters/>
+            <steps>
+                <step start='1613624360295' status='passed' stop='1613624369350'>
+                    <name>When I click activate on a previous policy </name>
+                    <title>When I click activate on a previous policy </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624360295' status='passed' stop='1613624369350'>
+                            <name>policyPage: clickActivateFirstPolicy </name>
+                            <title>policyPage: clickActivateFirstPolicy </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624360295' status='passed' stop='1613624365299'>
+                                    <name>I wait 5</name>
+                                    <title>I wait 5</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624365299' status='passed' stop='1613624367344'>
+                                    <name>I click element "(//button[contains(text(),'Activate')])[1]"</name>
+                                    <title>I click element "(//button[contains(text(),'Activate')])[1]"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624367344' status='passed' stop='1613624369346'>
+                                    <name>I wait 2</name>
+                                    <title>I wait 2</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624369350' status='passed' stop='1613624371399'>
+                    <name>Within "section[class*='Modal_Modal__']" </name>
+                    <title>Within "section[class*='Modal_Modal__']" </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624369350' status='passed' stop='1613624371397'>
+                            <name>I click element "button[class*='ConfirmPublishModal_confirmPublishButton__']"</name>
+                            <title>I click element "button[class*='ConfirmPublishModal_confirmPublishButton__']"</title>
+                            <attachments/>
+                            <steps/>
+                        </step>
+                    </steps>
+                </step>
+                <step start='1613624371399' status='passed' stop='1613624375634'>
+                    <name>Then the current policy is updated with the previous Policy </name>
+                    <title>Then the current policy is updated with the previous Policy </title>
+                    <attachments/>
+                    <steps>
+                        <step start='1613624371399' status='passed' stop='1613624371408'>
+                            <name>policyPage: getPolicyHistoryTimeStamp </name>
+                            <title>policyPage: getPolicyHistoryTimeStamp </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624371399' status='passed' stop='1613624371407'>
+                                    <name>I get row text 1, 1</name>
+                                    <title>I get row text 1, 1</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624371408' status='passed' stop='1613624373542'>
+                            <name>policyPage: clickCurrentPolicyTab </name>
+                            <title>policyPage: clickCurrentPolicyTab </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624371408' status='passed' stop='1613624373541'>
+                                    <name>I click "[data-test-id="buttonPolicyCurrentTab"]"</name>
+                                    <title>I click "[data-test-id="buttonPolicyCurrentTab"]"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624373542' status='passed' stop='1613624375626'>
+                            <name>policyPage: clickAdaptationPolicy </name>
+                            <title>policyPage: clickAdaptationPolicy </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624373542' status='passed' stop='1613624373548'>
+                                    <name>I wait for element "[data-test-id="buttonCurrentAdaptationPolicyTab"]", 30</name>
+                                    <title>I wait for element "[data-test-id="buttonCurrentAdaptationPolicyTab"]", 30</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624373549' status='passed' stop='1613624375626'>
+                                    <name>I click element "[data-test-id="buttonCurrentAdaptationPolicyTab"]"</name>
+                                    <title>I click element "[data-test-id="buttonCurrentAdaptationPolicyTab"]"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                        <step start='1613624375626' status='passed' stop='1613624375634'>
+                            <name>policyPage: getCurrentPolicyTimeStamp </name>
+                            <title>policyPage: getCurrentPolicyTimeStamp </title>
+                            <attachments/>
+                            <steps>
+                                <step start='1613624375626' status='passed' stop='1613624375634'>
+                                    <name>I grab text from "tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)"</name>
+                                    <title>I grab text from "tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)"</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                                <step start='1613624375634' status='passed' stop='1613624375634'>
+                                    <name>the previous policy is not applied</name>
+                                    <title>the previous policy is not applied</title>
+                                    <attachments/>
+                                    <steps/>
+                                </step>
+                            </steps>
+                        </step>
+                    </steps>
+                </step>
+            </steps>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>
