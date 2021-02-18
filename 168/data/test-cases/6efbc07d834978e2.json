@@ -1,0 +1,637 @@
+{
+  "uid" : "6efbc07d834978e2",
+  "name" : "User can filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @portal @functional @TEST-180",
+  "fullName" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type.User can filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @portal @functional @TEST-180",
+  "historyId" : "de5ad65f690e500e5e6649bf668557c5",
+  "time" : {
+    "start" : 1613654177509,
+    "stop" : 1613654229450,
+    "duration" : 51941
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "I: goToRequestHistory ",
+      "time" : {
+        "start" : 1613654190771,
+        "stop" : 1613654192800,
+        "duration" : 2029
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click element \"a[href*='request-history'] > div\"",
+        "time" : {
+          "start" : 1613654190771,
+          "stop" : 1613654192799,
+          "duration" : 2028
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And There are existing transactions available ",
+      "time" : {
+        "start" : 1613654192800,
+        "stop" : 1613654213881,
+        "duration" : 21081
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: viewTransactions \"24 Hours\"",
+        "time" : {
+          "start" : 1613654192800,
+          "stop" : 1613654213881,
+          "duration" : 21081
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='request-history'] > div\"",
+          "time" : {
+            "start" : 1613654192800,
+            "stop" : 1613654196252,
+            "duration" : 3452
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I refresh page ",
+          "time" : {
+            "start" : 1613654196252,
+            "stop" : 1613654200670,
+            "duration" : 4418
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"div[id*='reportrange']\", 30",
+          "time" : {
+            "start" : 1613654200670,
+            "stop" : 1613654200676,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1613654200677,
+            "stop" : 1613654204200,
+            "duration" : 3523
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"li[data-range-key='24 Hours']\"",
+          "time" : {
+            "start" : 1613654204201,
+            "stop" : 1613654208479,
+            "duration" : 4278
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head'] > th\", 60",
+          "time" : {
+            "start" : 1613654208479,
+            "stop" : 1613654213879,
+            "duration" : 5400
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 6,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the selected types as 'Pdf' ",
+      "time" : {
+        "start" : 1613654213881,
+        "stop" : 1613654220140,
+        "duration" : 6259
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Within \"div[class*='Filters_wrap__']\" ",
+        "time" : {
+          "start" : 1613654213881,
+          "stop" : 1613654218017,
+          "duration" : 4136
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click button[class*='Filters_moreFilters__']",
+          "time" : {
+            "start" : 1613654213881,
+            "stop" : 1613654215946,
+            "duration" : 2065
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"//button[contains(.,'+ Add Filter')]\"",
+          "time" : {
+            "start" : 1613654215950,
+            "stop" : 1613654215968,
+            "duration" : 18
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"//button[contains(.,'+ Add Filter')]\"",
+          "time" : {
+            "start" : 1613654215968,
+            "stop" : 1613654218013,
+            "duration" : 2045
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Within \"div[class*='Filters_popup__']\" ",
+        "time" : {
+          "start" : 1613654218017,
+          "stop" : 1613654220140,
+          "duration" : 2123
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"button:nth-child(2) > p\"",
+          "time" : {
+            "start" : 1613654218017,
+            "stop" : 1613654220138,
+            "duration" : 2121
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Filter to set is: pdf",
+          "time" : {
+            "start" : 1613654220140,
+            "stop" : 1613654220140,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click on the Add Filter button and add a file type filter as 'pdf' ",
+      "time" : {
+        "start" : 1613654220140,
+        "stop" : 1613654229366,
+        "duration" : 9226
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: selectFileType \"pdf\"",
+        "time" : {
+          "start" : 1613654220140,
+          "stop" : 1613654229366,
+          "duration" : 9226
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"//span[contains(.,'pdf')]/parent::label/span[1]/span/input\"",
+          "time" : {
+            "start" : 1613654220140,
+            "stop" : 1613654222352,
+            "duration" : 2212
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I move cursor to \"p[data-test-id=\"navLinkRequestHistory\"]\"",
+          "time" : {
+            "start" : 1613654222352,
+            "stop" : 1613654224363,
+            "duration" : 2011
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 5",
+          "time" : {
+            "start" : 1613654224363,
+            "stop" : 1613654229366,
+            "duration" : 5003
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the result list shows files with the selected types as 'Pdf' ",
+      "time" : {
+        "start" : 1613654229366,
+        "stop" : 1613654229450,
+        "duration" : 84
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: checkResultFileTypesAreAccurate \"Pdf\", 3",
+        "time" : {
+          "start" : 1613654229366,
+          "stop" : 1613654229381,
+          "duration" : 15
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"//tbody\"",
+          "time" : {
+            "start" : 1613654229366,
+            "stop" : 1613654229380,
+            "duration" : 14
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Data is available",
+          "time" : {
+            "start" : 1613654229380,
+            "stop" : 1613654229380,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: checkRows \"Pdf\", 3",
+        "time" : {
+          "start" : 1613654229381,
+          "stop" : 1613654229391,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+          "time" : {
+            "start" : 1613654229381,
+            "stop" : 1613654229384,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1613654229388,
+            "stop" : 1613654229391,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Data is available",
+          "time" : {
+            "start" : 1613654229391,
+            "stop" : 1613654229391,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check rows value \"Pdf\", 3",
+        "time" : {
+          "start" : 1613654229391,
+          "stop" : 1613654229450,
+          "duration" : 59
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 32,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-180"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-file-type"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @portal @functional @TEST-180"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 9
+      },
+      "items" : [ {
+        "uid" : "68dbcf8b067bda4d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/68dbcf8b067bda4d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651723818,
+          "stop" : 1613651768462,
+          "duration" : 44644
+        }
+      }, {
+        "uid" : "db7322c629e743df",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/db7322c629e743df",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651088106,
+          "stop" : 1613651129680,
+          "duration" : 41574
+        }
+      }, {
+        "uid" : "b2bb2d4bfa23cfc5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/b2bb2d4bfa23cfc5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644391365,
+          "stop" : 1613644431116,
+          "duration" : 39751
+        }
+      }, {
+        "uid" : "bfd4c90eb0ebb299",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/bfd4c90eb0ebb299",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578625790,
+          "stop" : 1613578664400,
+          "duration" : 38610
+        }
+      }, {
+        "uid" : "1758d9b6b8ff5e65",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/1758d9b6b8ff5e65",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576917802,
+          "stop" : 1613576957544,
+          "duration" : 39742
+        }
+      }, {
+        "uid" : "9f05afb2eda7c108",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/9f05afb2eda7c108",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613574516102,
+          "stop" : 1613574555690,
+          "duration" : 39588
+        }
+      }, {
+        "uid" : "bb869fd8df123295",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/bb869fd8df123295",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058950360,
+          "stop" : 1613058950360,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "ae0aa0424e06a8c4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/ae0aa0424e06a8c4",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056729253,
+          "stop" : 1613056729253,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@request-history-filtering-by-file-type", "@portal", "@TEST-180", "@functional" ]
+  },
+  "source" : "6efbc07d834978e2.json",
+  "parameterValues" : [ ]
+}

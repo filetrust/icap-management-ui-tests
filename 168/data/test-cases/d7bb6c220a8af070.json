@@ -1,0 +1,403 @@
+{
+  "uid" : "d7bb6c220a8af070",
+  "name" : "The request log is sorted by timestamp, newest to oldest @portal @functional @TEST-242",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.The request log is sorted by timestamp, newest to oldest @portal @functional @TEST-242",
+  "historyId" : "f384d791755f0a05e914ee7391427cc3",
+  "time" : {
+    "start" : 1613654191624,
+    "stop" : 1613654229360,
+    "duration" : 37736
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM\n                    at MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:209:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM\n                    at MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:209:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+    "steps" : [ {
+      "name" : "And There are existing transactions available ",
+      "time" : {
+        "start" : 1613654206745,
+        "stop" : 1613654229278,
+        "duration" : 22533
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: viewTransactions \"24 Hours\"",
+        "time" : {
+          "start" : 1613654206745,
+          "stop" : 1613654229278,
+          "duration" : 22533
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='request-history'] > div\"",
+          "time" : {
+            "start" : 1613654206745,
+            "stop" : 1613654210360,
+            "duration" : 3615
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I refresh page ",
+          "time" : {
+            "start" : 1613654210360,
+            "stop" : 1613654215931,
+            "duration" : 5571
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"div[id*='reportrange']\", 30",
+          "time" : {
+            "start" : 1613654215931,
+            "stop" : 1613654215937,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1613654215937,
+            "stop" : 1613654219576,
+            "duration" : 3639
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"li[data-range-key='24 Hours']\"",
+          "time" : {
+            "start" : 1613654219576,
+            "stop" : 1613654224245,
+            "duration" : 4669
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head'] > th\", 60",
+          "time" : {
+            "start" : 1613654224245,
+            "stop" : 1613654229278,
+            "duration" : 5033
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 6,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the request log is sorted from newest timestamp to oldest timestamp ",
+      "time" : {
+        "start" : 1613654229278,
+        "stop" : 1613654229360,
+        "duration" : 82
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM\n                    at MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:209:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+      "steps" : [ {
+        "name" : "requesthistoryPage: verifyTimestampArrow true",
+        "time" : {
+          "start" : 1613654229278,
+          "stop" : 1613654229282,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"svg.MuiTableSortLabel-icon\", \"class\"",
+          "time" : {
+            "start" : 1613654229278,
+            "stop" : 1613654229282,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check rows timestamp ",
+        "time" : {
+          "start" : 1613654229282,
+          "stop" : 1613654229360,
+          "duration" : 78
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: The timestamp sorting is wrong. Upper: 2/18/2021, 1:04:45 PM, bottom: 2/18/2021, 1:04:45 PM\n                    at MyHelper.checkRowsTimestamp (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:209:32)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/request-history-filtering-by-date.steps.js:52:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "be076279f4afc1d9",
+      "name" : "Last Seen Screenshot",
+      "source" : "be076279f4afc1d9.png",
+      "type" : "image/png",
+      "size" : 101573
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 12,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-242"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "The request log is sorted by timestamp, newest to oldest @portal @functional @TEST-242"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 5,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 14
+      },
+      "items" : [ {
+        "uid" : "5c8b237ee592887d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/5c8b237ee592887d",
+        "status" : "failed",
+        "statusDetails" : "The timestamp sorting is wrong. Upper: 2/18/2021, 12:30:45 PM, bottom: 2/18/2021, 12:30:45 PM",
+        "time" : {
+          "start" : 1613651737314,
+          "stop" : 1613651766186,
+          "duration" : 28872
+        }
+      }, {
+        "uid" : "eb7d92ede6824f4a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/eb7d92ede6824f4a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651099731,
+          "stop" : 1613651125033,
+          "duration" : 25302
+        }
+      }, {
+        "uid" : "91ec77ec4776f1ca",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/91ec77ec4776f1ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644399180,
+          "stop" : 1613644423978,
+          "duration" : 24798
+        }
+      }, {
+        "uid" : "13da1ab79a931fd3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/13da1ab79a931fd3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578663380,
+          "stop" : 1613578687684,
+          "duration" : 24304
+        }
+      }, {
+        "uid" : "e3860895c2e26e43",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/e3860895c2e26e43",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576959206,
+          "stop" : 1613576983779,
+          "duration" : 24573
+        }
+      }, {
+        "uid" : "b06c120c976d26e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/b06c120c976d26e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613575095685,
+          "stop" : 1613575120162,
+          "duration" : 24477
+        }
+      }, {
+        "uid" : "994c4a2a5d61cc47",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/994c4a2a5d61cc47",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058950546,
+          "stop" : 1613058950546,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "b073a82dbf10d861",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/b073a82dbf10d861",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056728814,
+          "stop" : 1613056728814,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2e0970770593c577",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/2e0970770593c577",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908411798,
+          "stop" : 1612908411798,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "347a7fb8ca5dba1f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/347a7fb8ca5dba1f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612811986523,
+          "stop" : 1612812009290,
+          "duration" : 22767
+        }
+      }, {
+        "uid" : "f1cbf4260b9e0a7b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/f1cbf4260b9e0a7b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808478684,
+          "stop" : 1612808501310,
+          "duration" : 22626
+        }
+      }, {
+        "uid" : "c98b879a40485564",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/c98b879a40485564",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807546545,
+          "stop" : 1612807546545,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "16ca340bd8570a26",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/16ca340bd8570a26",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806038212,
+          "stop" : 1612806038212,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-242", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "d7bb6c220a8af070.json",
+  "parameterValues" : [ ]
+}

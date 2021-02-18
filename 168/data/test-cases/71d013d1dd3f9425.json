@@ -1,0 +1,548 @@
+{
+  "uid" : "71d013d1dd3f9425",
+  "name" : "A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234",
+  "historyId" : "77e51764c7d3678d6cd1f4399611742d",
+  "time" : {
+    "start" : 1613654521635,
+    "stop" : 1613654633926,
+    "duration" : 112291
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "And I have set the routing option for unprocessable files to 'block-unprocessableFileTypes' ",
+      "time" : {
+        "start" : 1613654541883,
+        "stop" : 1613654552446,
+        "duration" : 10563
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishRouteFlag \"block-unprocessableFileTypes\"",
+        "time" : {
+          "start" : 1613654541883,
+          "stop" : 1613654541887,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-unprocessableFileTypes']\", \"checked\"",
+          "time" : {
+            "start" : 1613654541883,
+            "stop" : 1613654541887,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1613654541887,
+          "stop" : 1613654541891,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1613654541887,
+            "stop" : 1613654541890,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "1",
+          "time" : {
+            "start" : 1613654541890,
+            "stop" : 1613654541890,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1613654541891,
+          "stop" : 1613654541894,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613654541894,
+          "stop" : 1613654543934,
+          "duration" : 2040
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1613654543938,
+          "stop" : 1613654552445,
+          "duration" : 8507
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1613654543938,
+            "stop" : 1613654543943,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1613654543943,
+            "stop" : 1613654545969,
+            "duration" : 2026
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 10,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I submit a non supported or unprocessable file 'icaptest.ps1' through the icap server ",
+      "time" : {
+        "start" : 1613654552446,
+        "stop" : 1613654612474,
+        "duration" : 60028
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 60",
+        "time" : {
+          "start" : 1613654552446,
+          "stop" : 1613654612473,
+          "duration" : 60027
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Success, Response code is 403 as expected",
+        "time" : {
+          "start" : 1613654612474,
+          "stop" : 1613654612474,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then The file outcome for the submitted file 'icaptest.ps1' is 'htmlReport' with 'Unknown' ",
+      "time" : {
+        "start" : 1613654612474,
+        "stop" : 1613654633926,
+        "duration" : 21452
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: viewTransactions \"1 Hour\"",
+        "time" : {
+          "start" : 1613654612474,
+          "stop" : 1613654633913,
+          "duration" : 21439
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='request-history'] > div\"",
+          "time" : {
+            "start" : 1613654612474,
+            "stop" : 1613654614518,
+            "duration" : 2044
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I refresh page ",
+          "time" : {
+            "start" : 1613654614518,
+            "stop" : 1613654621410,
+            "duration" : 6892
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"div[id*='reportrange']\", 30",
+          "time" : {
+            "start" : 1613654621410,
+            "stop" : 1613654621415,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1613654621416,
+            "stop" : 1613654626083,
+            "duration" : 4667
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"li[data-range-key='1 Hour']\"",
+          "time" : {
+            "start" : 1613654626083,
+            "stop" : 1613654631669,
+            "duration" : 5586
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head'] > th\", 60",
+          "time" : {
+            "start" : 1613654631670,
+            "stop" : 1613654633913,
+            "duration" : 2243
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 6,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: checkFileOutcomeValueByFileId \"Unknown\", \"4def226e-1e5f-4f67-882a-3049f6933735\", true",
+        "time" : {
+          "start" : 1613654633913,
+          "stop" : 1613654633919,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\"",
+          "time" : {
+            "start" : 1613654633913,
+            "stop" : 1613654633916,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1613654633916,
+            "stop" : 1613654633919,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "Data is available",
+          "time" : {
+            "start" : 1613654633919,
+            "stop" : 1613654633919,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check row value by file id \"Unknown\", 4, \"4def226e-1e5f-4f67-882a-3049f6933735\"",
+        "time" : {
+          "start" : 1613654633919,
+          "stop" : 1613654633926,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 12,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 27,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "5a0411011ca99031",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/5a0411011ca99031",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613651808279,
+          "stop" : 1613651842557,
+          "duration" : 34278
+        }
+      }, {
+        "uid" : "41679ceebb8d7139",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/41679ceebb8d7139",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613651181159,
+          "stop" : 1613651215085,
+          "duration" : 33926
+        }
+      }, {
+        "uid" : "dc38aa4ad3f050b8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/dc38aa4ad3f050b8",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613644492477,
+          "stop" : 1613644526108,
+          "duration" : 33631
+        }
+      }, {
+        "uid" : "8f88112d8a0b1882",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/8f88112d8a0b1882",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613578591683,
+          "stop" : 1613578591683,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2949b7a9403a9401",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/2949b7a9403a9401",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613577023351,
+          "stop" : 1613577047798,
+          "duration" : 24447
+        }
+      }, {
+        "uid" : "ac0d572bbea6c6ba",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/ac0d572bbea6c6ba",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574484237,
+          "stop" : 1613574484237,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@fileprocess", "@TEST-234", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "71d013d1dd3f9425.json",
+  "parameterValues" : [ ]
+}

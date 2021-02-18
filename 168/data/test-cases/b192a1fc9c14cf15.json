@@ -1,0 +1,578 @@
+{
+  "uid" : "b192a1fc9c14cf15",
+  "name" : "A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"policyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"file1.docx\",\"fileOutcome\":\"relayed\",\"outcomeValue\":\"Allowed by Policy\"} @functional @fileprocess @TEST-233",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"policyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"file1.docx\",\"fileOutcome\":\"relayed\",\"outcomeValue\":\"Allowed by Policy\"} @functional @fileprocess @TEST-233",
+  "historyId" : "799b9911a0e8ea34e89251b96343c2ae",
+  "time" : {
+    "start" : 1613654109503,
+    "stop" : 1613654212598,
+    "duration" : 103095
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "And I have set the routing option for Glasswall Blocked files to 'relay-glasswallBlockedFiles' ",
+      "time" : {
+        "start" : 1613654129892,
+        "stop" : 1613654143104,
+        "duration" : 13212
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishRouteFlag \"relay-glasswallBlockedFiles\"",
+        "time" : {
+          "start" : 1613654129892,
+          "stop" : 1613654129904,
+          "duration" : 12
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='relay-glasswallBlockedFiles']\", \"checked\"",
+          "time" : {
+            "start" : 1613654129892,
+            "stop" : 1613654129903,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I click \"label[for='relay-glasswallBlockedFiles']\"",
+        "time" : {
+          "start" : 1613654129904,
+          "stop" : 1613654131953,
+          "duration" : 2049
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1613654131953,
+          "stop" : 1613654136958,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1613654136958,
+          "stop" : 1613654138978,
+          "duration" : 2020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1613654138978,
+          "stop" : 1613654138981,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1613654138978,
+            "stop" : 1613654138981,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "1",
+          "time" : {
+            "start" : 1613654138981,
+            "stop" : 1613654138981,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1613654138981,
+          "stop" : 1613654138994,
+          "duration" : 13
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613654138994,
+          "stop" : 1613654141054,
+          "duration" : 2060
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1613654141057,
+          "stop" : 1613654143104,
+          "duration" : 2047
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1613654141057,
+            "stop" : 1613654141061,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1613654141061,
+            "stop" : 1613654143096,
+            "duration" : 2035
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 13,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set the policy for file type 'word' to 'InternalHyperlinks' and 'disallow' ",
+      "time" : {
+        "start" : 1613654143104,
+        "stop" : 1613654152593,
+        "duration" : 9489
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: goToDraftAdaptationPolicy ",
+        "time" : {
+          "start" : 1613654143104,
+          "stop" : 1613654145120,
+          "duration" : 2016
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+          "time" : {
+            "start" : 1613654143104,
+            "stop" : 1613654145120,
+            "duration" : 2016
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: clickAdaptationPolicy ",
+        "time" : {
+          "start" : 1613654145120,
+          "stop" : 1613654147177,
+          "duration" : 2057
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1613654145120,
+            "stop" : 1613654145124,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+          "time" : {
+            "start" : 1613654145124,
+            "stop" : 1613654147176,
+            "duration" : 2052
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"InternalHyperlinks\", \"disallow\"",
+        "time" : {
+          "start" : 1613654147177,
+          "stop" : 1613654147185,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"input[id='wordInternalHyperlinksdisallow']\", 60",
+          "time" : {
+            "start" : 1613654147177,
+            "stop" : 1613654147181,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab attribute from \"input[id='wordInternalHyperlinksdisallow']\", \"checked\"",
+          "time" : {
+            "start" : 1613654147181,
+            "stop" : 1613654147185,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613654147185,
+          "stop" : 1613654147188,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1613654147188,
+          "stop" : 1613654147190,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinksdisallow']\", 60",
+        "time" : {
+          "start" : 1613654152588,
+          "stop" : 1613654152593,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 11,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I submit a non compliant file 'file1.docx' through the icap server ",
+      "time" : {
+        "start" : 1613654152593,
+        "stop" : 1613654212598,
+        "duration" : 60005
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 60",
+        "time" : {
+          "start" : 1613654152593,
+          "stop" : 1613654212597,
+          "duration" : 60004
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Success, Response code is 204 as expected",
+        "time" : {
+          "start" : 1613654212597,
+          "stop" : 1613654212597,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 29,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-233"
+  }, {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for Glasswall blocked files is correctly applied to submitted files {\"policyAction\":\"relay-glasswallBlockedFiles\",\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"file1.docx\",\"fileOutcome\":\"relayed\",\"outcomeValue\":\"Allowed by Policy\"} @functional @fileprocess @TEST-233"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "1cc23a9d7d2fe3d3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/1cc23a9d7d2fe3d3",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/file1.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/file1.docx\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613651669747,
+          "stop" : 1613651710249,
+          "duration" : 40502
+        }
+      }, {
+        "uid" : "dc5550d5f2ff4bed",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/dc5550d5f2ff4bed",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/file1.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/file1.docx\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613651039161,
+          "stop" : 1613651079547,
+          "duration" : 40386
+        }
+      }, {
+        "uid" : "8ffafb0c19a31897",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/8ffafb0c19a31897",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/file1.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/file1.docx\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613644357958,
+          "stop" : 1613644395925,
+          "duration" : 37967
+        }
+      }, {
+        "uid" : "946c2e93dc161b9f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/946c2e93dc161b9f",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613578591679,
+          "stop" : 1613578591679,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "11687ab8102af42",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/11687ab8102af42",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/file1.docx\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/file1.docx\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613576885757,
+          "stop" : 1613576923309,
+          "duration" : 37552
+        }
+      }, {
+        "uid" : "9445db4efa87d3bd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/9445db4efa87d3bd",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574484228,
+          "stop" : 1613574484228,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-233", "@fileprocess", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "b192a1fc9c14cf15.json",
+  "parameterValues" : [ ]
+}
