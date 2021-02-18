@@ -5,7 +5,7 @@ Feature: file-drop-file-analysis-reporting
     Background:
         Given I am on the FileDrop page
 
-    @functional
+    #@functional
     @portal
     @filedrop
     @TEST-225
@@ -18,7 +18,7 @@ Feature: file-drop-file-analysis-reporting
             | supportedFile                | xmlFile   |
             | src/data/multiset/file1.docx | file1.xml |
 
-    @functional
+    #@functional
     @portal
     @TEST-226
     @filedrop

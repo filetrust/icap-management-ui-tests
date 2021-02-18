@@ -5,18 +5,8 @@ Feature: file-drop-file-process-result-view
     Background:
         Given I am on the FileDrop page
 
-    @portal
-    @functional
-    @TEST-227
-    Scenario Outline: User can download the full analysis report of a processed file
-        Given I have processed a supported file '<supportedFile>'
-        When I view result and click on Download Analysis Report
-        Then The full analysis report is downloaded and available as '<analysisReport>'
-        Examples:
-            | supportedFile                 | analysisReport  |
-            | src/data/multiset/issues.docx | issues.docx.xml |
 
-    @functional
+    #@functional
     @portal
     @filedrop
     @TEST-228
@@ -28,7 +18,7 @@ Feature: file-drop-file-process-result-view
             | activeContentFile            | activeContent                              | repairedObject      |
             | src/data/multiset/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed |
 
-    @functional
+    #@functional
     @portal
     @filedrop
     @TEST-229

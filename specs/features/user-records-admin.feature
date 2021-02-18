@@ -39,7 +39,7 @@ Feature: user-records-admin
             | username      | firstname       | lastname        | email                      |
             | dupautotester | dupautotesterfn | dupautotesterln | dupautotester1@icaptest.co |
 
-    @functional
+    #@functional
     @TEST-191
     @portal
     Scenario: I cannot delete my own account

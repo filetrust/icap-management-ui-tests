@@ -19,7 +19,7 @@ Feature: request-history-log
       | 25        | 4         |
 
   @portal
-  @functional
+  #@functional
   @TEST-179
   Scenario Outline: User can filter the transactions log view using a combination of multiple filters
     Given There are transactions available in the transaction log
@@ -31,7 +31,7 @@ Feature: request-history-log
       | Safe       | docx       |              | Safe_docx      | Docx     | Safe     |
 
   @portal
-  @functional
+  #@functional
   @TEST-189
   Scenario Outline: User can remove applied filters
     Given There are transactions available in the transaction log

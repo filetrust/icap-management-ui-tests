@@ -8,7 +8,7 @@ Feature: content-management-policy-application-to-files
         Given I am on the draft Adaptation policy screen
 
 
-    @functional
+    #@functional
     @fileprocess
     @TEST-212
     Scenario Outline: The current Content Management Policy is correctly applied to processed files

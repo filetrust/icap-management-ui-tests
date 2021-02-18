@@ -22,5 +22,6 @@ RUN chmod +x /usr/local/bin/codecept.entrypoint.sh
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -yq && \
     apt-get install -yq c-icap
+RUN npm install
 
 ENTRYPOINT ["/usr/local/bin/codecept.entrypoint.sh"]

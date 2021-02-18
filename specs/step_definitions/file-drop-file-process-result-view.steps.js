@@ -18,7 +18,6 @@ Given('I have processed a supported file {string}', (supportedFile) => {
 });
 
 When('I view result and click on Download Analysis Report', () => {
-    filedropPage.clickViewResult();
     I.handleDownloads();
     filedropPage.clickDownloadAnalysisReport();
 });
@@ -55,7 +54,6 @@ Then('I see the list of objects and structures not repaired {string}', (nonrepai
 });
 
 When('I view result and click on Download Processed File', () => {
-    filedropPage.clickViewResult();
     I.handleDownloads();
     filedropPage.clickDownloadFile();
 
