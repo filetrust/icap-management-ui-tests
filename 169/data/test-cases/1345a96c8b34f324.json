@@ -1,0 +1,680 @@
+{
+  "uid" : "1345a96c8b34f324",
+  "name" : "A duplicate user cannot be added {\"username\":\"dupautotester\",\"firstname\":\"dupautotesterfn\",\"lastname\":\"dupautotesterln\",\"email\":\"dupautotester1@icaptest.co\"} @functional @TEST-186 @portal",
+  "fullName" : "user-records-admin @user-records-admin.A duplicate user cannot be added {\"username\":\"dupautotester\",\"firstname\":\"dupautotesterfn\",\"lastname\":\"dupautotesterln\",\"email\":\"dupautotester1@icaptest.co\"} @functional @TEST-186 @portal",
+  "historyId" : "3045a66e817313f280ef7edad9ca2f0c",
+  "time" : {
+    "start" : 1613656436299,
+    "stop" : 1613656469407,
+    "duration" : 33108
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given A user record with the email 'dupautotester1@icaptest.co' already exist ",
+      "time" : {
+        "start" : 1613656452285,
+        "stop" : 1613656456617,
+        "duration" : 4332
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: addAUser \"dusernamed8065\", \"dfirstname8065\", \"dlastname8065\", \"8065dupautotester1@icaptest.co\"",
+        "time" : {
+          "start" : 1613656452285,
+          "stop" : 1613656456617,
+          "duration" : 4332
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"td[class*='Users_newUserCell__']\"",
+          "time" : {
+            "start" : 1613656452285,
+            "stop" : 1613656454388,
+            "duration" : 2103
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\"",
+          "time" : {
+            "start" : 1613656454388,
+            "stop" : 1613656456473,
+            "duration" : 2085
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\", \"dusernamed8065\"",
+          "time" : {
+            "start" : 1613656456473,
+            "stop" : 1613656456617,
+            "duration" : 144
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I add a new user record with username 'dupautotester', firstname 'dupautotesterfn', lastname 'dupautotesterln' and the existing email 'dupautotester1@icaptest.co' ",
+      "time" : {
+        "start" : 1613656456617,
+        "stop" : 1613656460888,
+        "duration" : 4271
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: addUserDetails \"dupautotester\", \"dupautotesterfn\", \"dupautotesterln\", \"8065dupautotester1@icaptest.co\"",
+        "time" : {
+          "start" : 1613656456617,
+          "stop" : 1613656460888,
+          "duration" : 4271
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"td[class*='Users_newUserCell__']\"",
+          "time" : {
+            "start" : 1613656456617,
+            "stop" : 1613656458712,
+            "duration" : 2095
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\"",
+          "time" : {
+            "start" : 1613656458712,
+            "stop" : 1613656460807,
+            "duration" : 2095
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\", \"dupautotester\"",
+          "time" : {
+            "start" : 1613656460808,
+            "stop" : 1613656460887,
+            "duration" : 79
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I click Save Changes ",
+      "time" : {
+        "start" : 1613656460888,
+        "stop" : 1613656462989,
+        "duration" : 2101
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: clickSaveChanges ",
+        "time" : {
+          "start" : 1613656460888,
+          "stop" : 1613656462989,
+          "duration" : 2101
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='Users_saveButton__']\", 5",
+          "time" : {
+            "start" : 1613656460888,
+            "stop" : 1613656460892,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"button[class*='Users_saveButton__']\"",
+          "time" : {
+            "start" : 1613656460892,
+            "stop" : 1613656462989,
+            "duration" : 2097
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the expected validation error is displayed and the record is not saved ",
+      "time" : {
+        "start" : 1613656462989,
+        "stop" : 1613656469407,
+        "duration" : 6418
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait 2",
+        "time" : {
+          "start" : 1613656462989,
+          "stop" : 1613656464992,
+          "duration" : 2003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "usersPage: isErrorMessageDisplayed \"Email Addresses must be unique. A user with email: 8065dupautotester1@icaptest.co already exists\"",
+        "time" : {
+          "start" : 1613656464992,
+          "stop" : 1613656464999,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \".Toastify__toast-body\"",
+          "time" : {
+            "start" : 1613656464992,
+            "stop" : 1613656464999,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: setFirstName \"dupautotesterfn\"",
+        "time" : {
+          "start" : 1613656464999,
+          "stop" : 1613656469407,
+          "duration" : 4408
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\"",
+          "time" : {
+            "start" : 1613656464999,
+            "stop" : 1613656467121,
+            "duration" : 2122
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\", \"dfirstname8065\"",
+          "time" : {
+            "start" : 1613656467121,
+            "stop" : 1613656467226,
+            "duration" : 105
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\"",
+          "time" : {
+            "start" : 1613656467226,
+            "stop" : 1613656469326,
+            "duration" : 2100
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\", \"dupautotesterfn\"",
+          "time" : {
+            "start" : 1613656469327,
+            "stop" : 1613656469407,
+            "duration" : 80
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "The error message: First Names must not be blank. is not as expected",
+          "time" : {
+            "start" : 1613656469407,
+            "stop" : 1613656469407,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 9,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "usersPage: setLastName \"dupautotesterln\"",
+      "time" : {
+        "start" : 1613656469408,
+        "stop" : 1613656473758,
+        "duration" : 4350
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\"",
+        "time" : {
+          "start" : 1613656469408,
+          "stop" : 1613656471512,
+          "duration" : 2104
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\", \"dlastname8065\"",
+        "time" : {
+          "start" : 1613656471512,
+          "stop" : 1613656471578,
+          "duration" : 66
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\"",
+        "time" : {
+          "start" : 1613656471579,
+          "stop" : 1613656473671,
+          "duration" : 2092
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\", \"dupautotesterln\"",
+        "time" : {
+          "start" : 1613656473671,
+          "stop" : 1613656473745,
+          "duration" : 74
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "usersPage: setNewUserEmail \"8065dupautotester1@icaptest.co\"",
+      "time" : {
+        "start" : 1613656473758,
+        "stop" : 0,
+        "duration" : -1613656473758
+      },
+      "status" : "unknown",
+      "steps" : [ {
+        "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(4) > form > div > input\"",
+        "time" : {
+          "start" : 1613656473758,
+          "stop" : 1613656473759,
+          "duration" : 1
+        },
+        "status" : "failed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 31,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-186"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@user-records-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "A duplicate user cannot be added {\"username\":\"dupautotester\",\"firstname\":\"dupautotesterfn\",\"lastname\":\"dupautotesterln\",\"email\":\"dupautotester1@icaptest.co\"} @functional @TEST-186 @portal"
+  }, {
+    "name" : "package",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 5,
+        "passed" : 9,
+        "unknown" : 0,
+        "total" : 15
+      },
+      "items" : [ {
+        "uid" : "514aa09c2a235304",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/514aa09c2a235304",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654224943,
+          "stop" : 1613654258897,
+          "duration" : 33954
+        }
+      }, {
+        "uid" : "85a17407a5286b89",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/85a17407a5286b89",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651768212,
+          "stop" : 1613651800726,
+          "duration" : 32514
+        }
+      }, {
+        "uid" : "b286f1e5582bda6c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/b286f1e5582bda6c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651134277,
+          "stop" : 1613651167799,
+          "duration" : 33522
+        }
+      }, {
+        "uid" : "835adb1ef387537f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/835adb1ef387537f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644439038,
+          "stop" : 1613644472363,
+          "duration" : 33325
+        }
+      }, {
+        "uid" : "f1fbe33c7181cf48",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/f1fbe33c7181cf48",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578668213,
+          "stop" : 1613578701292,
+          "duration" : 33079
+        }
+      }, {
+        "uid" : "54d789122fb97877",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/54d789122fb97877",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576963608,
+          "stop" : 1613576997683,
+          "duration" : 34075
+        }
+      }, {
+        "uid" : "c9f4f50e0058f0ab",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/c9f4f50e0058f0ab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613574564574,
+          "stop" : 1613574597937,
+          "duration" : 33363
+        }
+      }, {
+        "uid" : "62114f7f8ea74b86",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/62114f7f8ea74b86",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058953393,
+          "stop" : 1613058953393,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2c0276cdb4165b8a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/2c0276cdb4165b8a",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056732166,
+          "stop" : 1613056732166,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2318c052c382eb83",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/2318c052c382eb83",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908412110,
+          "stop" : 1612908412110,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a3d4905f2319ae0f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/a3d4905f2319ae0f",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1612811977884,
+          "stop" : 1612812009779,
+          "duration" : 31895
+        }
+      }, {
+        "uid" : "eda81dfd2167cbb8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/eda81dfd2167cbb8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808471523,
+          "stop" : 1612808517986,
+          "duration" : 46463
+        }
+      }, {
+        "uid" : "e02a17808de28689",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/e02a17808de28689",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807549018,
+          "stop" : 1612807549018,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "ded812eeb96e5941",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/ded812eeb96e5941",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806040667,
+          "stop" : 1612806040667,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-186", "@user-records-admin", "@functional" ]
+  },
+  "source" : "1345a96c8b34f324.json",
+  "parameterValues" : [ ]
+}
