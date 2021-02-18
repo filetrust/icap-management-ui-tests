@@ -1,0 +1,234 @@
+{
+  "uid" : "15cc85e04ef378e",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @fileprocess @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @fileprocess @TEST-212",
+  "historyId" : "ba27aa279d34dc22f5c67244bc1d69fb",
+  "time" : {
+    "start" : 1613644300747,
+    "stop" : 1613644320246,
+    "duration" : 19499
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log",
+  "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log",
+    "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "And I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1613644320218,
+        "stop" : 1613644320246,
+        "duration" : 28
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.sendFileICAP (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:195:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:30:26\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishPolicyFlag \"pdf\", \"ExternalHyperlinks\", \"disallow\"",
+        "time" : {
+          "start" : 1613644320218,
+          "stop" : 1613644320226,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"input[id='pdfExternalHyperlinksdisallow']\", 60",
+          "time" : {
+            "start" : 1613644320218,
+            "stop" : 1613644320223,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab attribute from \"input[id='pdfExternalHyperlinksdisallow']\", \"checked\"",
+          "time" : {
+            "start" : 1613644320223,
+            "stop" : 1613644320226,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613644320226,
+          "stop" : 1613644320228,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1613644320228,
+          "stop" : 1613644320231,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='pdfExternalHyperlinksdisallow']\", 60",
+        "time" : {
+          "start" : 1613644320242,
+          "stop" : 1613644320246,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : true,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "597d57e8db3e5f01",
+      "name" : "Last Seen Screenshot",
+      "source" : "597d57e8db3e5f01.png",
+      "type" : "image/png",
+      "size" : 56100
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 7,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @fileprocess @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 4,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "a6269e5be0f6fed1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/a6269e5be0f6fed1",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613578535904,
+          "stop" : 1613578556420,
+          "duration" : 20516
+        }
+      }, {
+        "uid" : "6efe32d18bdb8549",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/6efe32d18bdb8549",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613576827246,
+          "stop" : 1613576851858,
+          "duration" : 24612
+        }
+      }, {
+        "uid" : "647587b173eff44b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/647587b173eff44b",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344 -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/Execute+Java+Script_JS_PDF.pdf\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/Execute+Java+Script_JS_PDF.pdf\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613574688522,
+          "stop" : 1613574990242,
+          "duration" : 301720
+        }
+      } ]
+    },
+    "tags" : [ "@fileprocess", "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "15cc85e04ef378e.json",
+  "parameterValues" : [ ]
+}

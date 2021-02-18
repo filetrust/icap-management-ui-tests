@@ -1,0 +1,340 @@
+{
+  "uid" : "dc38aa4ad3f050b8",
+  "name" : "A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234",
+  "historyId" : "77e51764c7d3678d6cd1f4399611742d",
+  "time" : {
+    "start" : 1613644492477,
+    "stop" : 1613644526108,
+    "duration" : 33631
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+  "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:221:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:90:20\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+    "statusTrace" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:221:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:90:20\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "And I have set the routing option for unprocessable files to 'block-unprocessableFileTypes' ",
+      "time" : {
+        "start" : 1613644512922,
+        "stop" : 1613644526108,
+        "duration" : 13186
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:221:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:90:20\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishRouteFlag \"block-unprocessableFileTypes\"",
+        "time" : {
+          "start" : 1613644512922,
+          "stop" : 1613644512926,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-unprocessableFileTypes']\", \"checked\"",
+          "time" : {
+            "start" : 1613644512922,
+            "stop" : 1613644512925,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I click \"label[for='block-unprocessableFileTypes']\"",
+        "time" : {
+          "start" : 1613644512926,
+          "stop" : 1613644514968,
+          "duration" : 2042
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1613644514969,
+          "stop" : 1613644519974,
+          "duration" : 5005
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1613644519974,
+          "stop" : 1613644521994,
+          "duration" : 2020
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1613644521994,
+          "stop" : 1613644521997,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1613644521994,
+            "stop" : 1613644521997,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "1",
+          "time" : {
+            "start" : 1613644521997,
+            "stop" : 1613644521997,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1613644521997,
+          "stop" : 1613644522001,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1613644522002,
+          "stop" : 1613644524040,
+          "duration" : 2038
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1613644524043,
+          "stop" : 1613644526108,
+          "duration" : 2065
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Command failed: c-icap-client -i icap-client-neu-main.northeurope.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log\n                    at checkExecSyncError (child_process.js:611:11)\n                    at Object.execSync (child_process.js:647:15)\n                    at Actor.submitFile (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:221:22)\n                    at MetaStep.run (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/step.js:217:19)\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/non-compliant-files-routing-mechanism.steps.js:90:20\n                    at runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:15)\n                    at runMicrotasks (<anonymous>)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1613644524043,
+            "stop" : 1613644524048,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1613644524049,
+            "stop" : 1613644526092,
+            "duration" : 2043
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 13,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "c13ea6aa1791fe4f",
+      "name" : "Last Seen Screenshot",
+      "source" : "c13ea6aa1791fe4f.png",
+      "type" : "image/png",
+      "size" : 75705
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-234"
+  }, {
+    "name" : "tag",
+    "value" : "@fileprocess"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "A set routing policy for unprocessable files is correctly applied to submitted files {\"policyAction\":\"block-unprocessableFileTypes\",\"file\":\"icaptest.ps1\",\"fileOutcome\":\"htmlReport\",\"outcomeValue\":\"Unknown\"} @fileprocess @functional @TEST-234"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "8f88112d8a0b1882",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/8f88112d8a0b1882",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613578591683,
+          "stop" : 1613578591683,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "2949b7a9403a9401",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/2949b7a9403a9401",
+        "status" : "failed",
+        "statusDetails" : "Command failed: c-icap-client -i icap-client-uks-develop.uksouth.cloudapp.azure.com -p 1344  -s gw_rebuild  -f \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/data/multiset/icaptest.ps1\" -o \"/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/output/downloads/icaptest.ps1\" -v 2> output/icap.log",
+        "time" : {
+          "start" : 1613577023351,
+          "stop" : 1613577047798,
+          "duration" : 24447
+        }
+      }, {
+        "uid" : "ac0d572bbea6c6ba",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/ac0d572bbea6c6ba",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574484237,
+          "stop" : 1613574484237,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@fileprocess", "@TEST-234", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "dc38aa4ad3f050b8.json",
+  "parameterValues" : [ ]
+}
