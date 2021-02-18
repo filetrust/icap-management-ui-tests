@@ -58,7 +58,7 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                | fileType | contentFlag        | flagType | file       | fileOutcome | outcomeValue      |
       | relay-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | relayed     | Allowed by Policy |
-      | block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
+      #| block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
 
   @fileprocess
   @functional
@@ -71,6 +71,6 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                 | file                  | fileOutcome | outcomeValue      |
       | relay-glasswallBlockedFiles  | structuralIssues.xlsx | relayed     | Allowed by Policy |
-      | block-glasswallBlockedFiles  | structuralIssues.xlsx | htmlReport  | Blocked by Policy |
-      | block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Unknown           |
+      #| block-glasswallBlockedFiles  | structuralIssues.xlsx | htmlReport  | Blocked by Policy |
+      #| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Unknown           |
 
