@@ -1,6 +1,6 @@
 @dashboard-requests-filtering-by-file-risk
 Feature: dashboard-requests-filtering-by-file-risk
-    As a admin I need to validate file requests filtering by risk in order to confirm that the solution works as expected
+    As a admin I need to validate performance analytics filtering by risk in order to confirm that the solution works as expected
 
     Background:
         Given I am logged into the ui
@@ -9,7 +9,6 @@ Feature: dashboard-requests-filtering-by-file-risk
     @prototype
     @TEST-192
     @Fail-App
-    #Assertion error (filtered risks displayed)
     Scenario Outline: User can filter the risk legend
         When I tick select from the '<chart>' legend a file risk '<fileRisk>'
         Then the '<chart>' is updated to only show the filtered risk '<filteredRisk>'

@@ -15,9 +15,9 @@ Given("I have navigated to the Request History page", () => {
 
 Given('I process a file {string} through the icap server', async (file) => {
     const downloadedFile = path.join('output', 'downloads', file);
-    await I.cleanupFile(downloadedFile);
+    I.cleanupFile(downloadedFile);
     fileId = await I.sendFileICAP(file);
-    await console.log(`I sent a file and received ${fileId}`);
+    console.log(`I sent a file and received ${fileId}`);
 });
 
 Given('The transaction with {string} type and {string} risk is available in the transaction log', async (type, risk) => {
@@ -29,22 +29,21 @@ Given('The transaction with {string} type and {string} risk is available in the 
 });
 
 Given('The transaction is available in the transaction log', async () => {
-    I.viewTransactions()
-    requesthistoryPage.openDatePicker()
-    requesthistoryPage.selectTimePeriod('12 Hours')
-    await requesthistoryPage.verifyFileRecord(fileId)
+    I.viewTransactions('1 Hour')
+    //     await requesthistoryPage.verifyFileRecord(fileId)
 });
 
 Given('A previous transaction is available in the transaction log', async () => {
-    I.viewTransactions()
+    I.viewTransactions('24 Hours')
 });
 
-When('I click on the transaction record to open the detail view', () => {
-    requesthistoryPage.openFileRecord(fileId)
+When('I click on the transaction record to open the detail view', async () => {
+        await requesthistoryPage.openLatestTransactionRecord()
+    //     await requesthistoryPage.openFileRecord(fileId)
 });
 
-When('I click on a available file record to open the detail view', () => {
-    requesthistoryPage.openExistingFileRecord()
+When('I click on a available file record to open the detail view', async () => {
+    await requesthistoryPage.openLatestTransactionRecord()
 });
 
 Then('The issues content is displayed on the details view', () => {

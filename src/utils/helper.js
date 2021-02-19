@@ -129,9 +129,9 @@ class MyHelper extends Helper {
         try {
             const tableRows = 'tbody tr';
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
-            if (rowCount > 2) {
+            if (rowCount > 1) {
                 output.log(rowCount + ' rows are displayed');
-                return await this.clickElement('//tbody/tr[2]/th');
+                return await this.clickElement(`//tbody/tr[${i}]/th`);
             } else {
                 output.print('The table record is not available')
             }
@@ -219,9 +219,6 @@ class MyHelper extends Helper {
     async checkUserRecordStatus(col, data) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
-
-
-
         try {
             const [elm] = await page.$x(`//th[contains(text(),'${data}')]/../th[position()=${col}]`);
             if (!elm) {

@@ -6,12 +6,12 @@ const { output } = require("codeceptjs");
 
 const outputPath = './output/downloads'
 
-Feature('File Processing');
+Feature('Icap Client File Processing');
 
 
 Scenario('I process a non supported file using icap client tool', async () => {
   const file = 'icaptest.ps1'
-  I.cleanupFile(file);
+  I.cleanupFile(`${outputPath}/${file}`);
   const resp = await I.submitFile(file)
   const icapCode = I.getIcapHeaderCode(resp)
   if (icapCode === '204 Unmodified') {

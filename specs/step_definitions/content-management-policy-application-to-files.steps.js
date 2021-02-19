@@ -22,8 +22,13 @@ Given('I am on the draft Adaptation policy screen', () => {
     I.goToDraftAdaptationPolicy()
 });
 
+Given('The NCFS routing is set to Block for supported files', async () => {
+    await I.setGwBlockFilesToBlock();
+});
+
+
 Given('I set a policy for file type {string} with {string} set to {string}', async (fileType, contentFlag, flagType) => {
-    await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
+    await I.setRequiredContentFlag(fileType, contentFlag, flagType);
 })
 
 When('I process file {string} through the icap server using Icap client', async (file) => {
