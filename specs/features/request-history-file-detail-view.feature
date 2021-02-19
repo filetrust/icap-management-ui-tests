@@ -17,7 +17,6 @@ Feature: request-history-file-detail-view
 
 
     #@functional
-    @fileprocess
     @TEST-169_2
     Scenario Outline: User can view structural issues on a file
         Given I process a file '<file>' through the icap server
@@ -30,7 +29,6 @@ Feature: request-history-file-detail-view
             | structuralIssues.xlsx | End of stream 'wsSortMap1.xml' not reached |
 
     #@functional
-    @fileprocess
     @TEST-169_3
     Scenario Outline: User can view Sanitisation and Remedy items removed on a file
         Given I process a file '<file>' through the icap server

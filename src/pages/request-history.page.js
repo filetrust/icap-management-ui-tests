@@ -90,12 +90,18 @@ module.exports = {
     },
     modal: {
         modalHeader: `section[class*='FileInfo_FileInfo__'] > header`,
-        cmpDetailsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Content Management Policy')]`,
+        cmpDetailsBanner: `div[class*='ContentManagementFlags_contentFlagsContainer___']`,
         sanitisationItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Sanitisation Items')]`,
         issueItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Issue Items')]`,
         remedyItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Remedy Items')]`,
         fileDetailModal: `section[class^='Modal_Modal']`,
-        itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`
+        itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`,
+        cmpTab: `button[data-test-id="buttonContentManagementFlags"]`,
+        currentPolicySectionWord: `div[data-test-id="currentPolicySectionWord"]`,
+        currentPolicySectionExcel: `div[data-test-id="currentPolicySectionExcel"]`,
+        currentPolicySectionPowerpoint: `div[data-test-id="currentPolicySectionPowerpoint"]`,
+        currentPolicySectionPdf: `div[data-test-id="currentPolicySectionPdf"]`,
+
     },
 
     //Methods
@@ -157,11 +163,11 @@ module.exports = {
     selectTimePeriod(period) {
         try {
             if (period === '1 Hour') {
-                I.click(this.buttons.time_1hour);
+                I.clickElement(this.buttons.time_1hour);
             } else if (period === '12 Hours') {
-                I.click(this.buttons.time_12hours);
+                I.clickElement(this.buttons.time_12hours);
             } else if (period === '24 Hours') {
-                I.click(this.buttons.time_24hours);
+                I.clickElement(this.buttons.time_24hours);
             } else {
                 I.say("Unable to find the required option");
             }
@@ -322,7 +328,7 @@ module.exports = {
             await this.setTimeFrom(datetimeFrom)
             await this.setTimeTo(datetimeFrom, datetimeTo)
             I.click(this.buttons.apply)
-            I.waitForElement(this.table.tableHeaders,60)
+            I.waitForElement(this.table.tableHeaders, 60)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -366,7 +372,7 @@ module.exports = {
         await I.grabTextFrom(element);
     },
 
-   async isTimeApplied(start, end) {
+    async isTimeApplied(start, end) {
         let time = null;
         if (end === 'current time') {
             time = moment();
@@ -376,7 +382,7 @@ module.exports = {
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         const datefield = `//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`
-        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: '+timeFrom + ` - ` + currentTime ) : I.say('The selected period is correctly displayed');
+        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: ' + timeFrom + ` - ` + currentTime) : I.say('The selected period is correctly displayed');
     },
 
 
@@ -629,7 +635,7 @@ module.exports = {
         I.click(this.buttons.fileIdMenu);
         I.fillField(this.fields.inputFilterFileID, value);
         I.click(this.buttons.fileIdAdd);
-       
+
     },
 
     filterByFileId(fileId) {
@@ -687,6 +693,7 @@ module.exports = {
 
     getFileRecord(fileId) {
         return "//tr[contains(., '" + fileId + "')]"
+
     },
 
     getFileRecordByTypeAndRisk(type, risk) {
@@ -694,7 +701,11 @@ module.exports = {
     },
 
     async verifyFileRecord(fileId) {
-        await I.seeElementExist(this.getFileRecord(fileId))
+        if (fileId !== 'undefined') {
+            await I.seeElementExist(this.getFileRecord(fileId))
+        } else if (fileId === 'undefined') {
+            I.say('The fileId was not retrieved')
+        }
     },
 
     verifyFileRecordByTypeAndRisk(type, risk) {
@@ -706,12 +717,17 @@ module.exports = {
         return await I.grabTextFrom(`${el}/../th[2]`)
     },
 
-    openFileRecord(fileId) {
-        I.click(this.getFileRecord(fileId))
+    async openFileRecord(fileId) {
+        if (fileId !== 'undefined') {
+            I.click(this.getFileRecord(fileId))
+        } else if (fileId === 'undefined') {
+            I.say('The fileId was not retrieved, opening latest transaction')
+            await I.clickRecord(i)
+        }
     },
 
-    async openExistingFileRecord() {
-        I.clickRecord(2)
+    async openLatestTransactionRecord() {
+        await I.clickRecord(1)
     },
 
     isFileDetailModalOpened() {
@@ -753,8 +769,11 @@ module.exports = {
     async isCmpSectionAvailable() {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
-        const elBanner = this.modal.cmpDetailsBanner;
-        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Content Management Policy is displayed!') : output.log('Content Management Policy is displayed');
+        const cmpEl = this.modal.cmpTab;
+        (await I.seeElementExist(cmpEl) !== true) ? assert.fail('The CMP flags tab is not displayed!') : output.log('The CMP flags tab is available');
+        I.clickElement(cmpEl);
+        const elBanner = this.modal.currentPolicySectionWord;
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('The Content Management Policy details are not displayed!') : output.log('The Content Management Policy is displayed');
     },
 
     async isSanitisationItemsShowsDescription(description) {

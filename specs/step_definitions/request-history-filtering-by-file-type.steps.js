@@ -11,5 +11,5 @@ When('I click on the Add Filter button and add a file type filter as {string}', 
 Then('the result list shows files with the selected types as {string}', async (filteredType) => {
     let col = 3;
     await requesthistoryPage.checkResultFileTypesAreAccurate(filteredType, col);
-    
+
 });

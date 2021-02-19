@@ -58,7 +58,7 @@ Feature: Content Management Policy Editing
       | pdf      | Acroform    | disallow      | sanitise        |
 
   @portal
-  #@functional
+  @functional
   @TEST-241
   Scenario Outline: User can update and publish both Adaptation and NCFS policies at the same time
     Given I am on the draft adaptation Policy screen

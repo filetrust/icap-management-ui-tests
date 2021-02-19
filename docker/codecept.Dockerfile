@@ -20,7 +20,7 @@ COPY . .
 RUN chmod +x /usr/local/bin/codecept.entrypoint.sh
 
 RUN export DEBIAN_FRONTEND=noninteractive && \
-    apt-get update -yq && \
+    apt-get update -y && \
     apt-get install -yq c-icap
 RUN npm install
 

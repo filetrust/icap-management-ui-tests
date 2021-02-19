@@ -117,6 +117,18 @@ module.exports = function () {
             I.refreshPage()
             requesthistoryPage.openDatePicker();
             requesthistoryPage.selectTimePeriod(period)
+            this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
+        },
+
+        setGwBlockFilesToBlock: async function () {
+            await this.goToDraftNcfsPolicy();
+            await policyPage.setRouteFlag(`block-glasswallBlockedFiles`);
+            await policyPage.publishPolicy();
+        },
+
+        setRequiredContentFlag: async function (fileType, contentFlag, flagType) {
+            await this.goToDraftAdaptationPolicy();
+            await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
         },
 
         searchFileById: function (id) {
@@ -215,10 +227,10 @@ module.exports = function () {
             }
         },
 
-        submitFile: async function (fileName) {
+        submitFile: async function (file) {
             output.print('Sending file...')
-            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
-            await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
+            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`)
+            await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`).toString()
             const icapOutput = fs.readFileSync(`${icapLogs}`);
             output.print('icapLogs: ' + icapOutput)
             this.wait(60)

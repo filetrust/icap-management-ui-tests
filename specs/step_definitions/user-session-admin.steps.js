@@ -1,4 +1,4 @@
-const {I, homePage, loginPage, env} = inject();
+const { I, homePage, loginPage, env } = inject();
 
 
 Given('I hover over my profile and select Change Password', () => {
@@ -7,8 +7,8 @@ Given('I hover over my profile and select Change Password', () => {
 });
 
 When('I enter login details', () => {
-   const username = env.qa.user
-   const password = env.qa.password
+    const username = env.qa.user
+    const password = env.qa.password
     I.enterLoginDetails(username, password);
 });
 

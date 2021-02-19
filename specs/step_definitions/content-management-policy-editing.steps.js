@@ -118,8 +118,8 @@ When('I update the contentFlag for {string} to {string} and {string}', async (Fi
 When('I have updated the NCFS policy url with {string}', async (url) => {
     I.goToDraftNcfsPolicy();
     let id = randomId
-    newUrl= url+id
-    policyPage.enterTextInApiUrl(newUrl) ;
+    newUrl = url + id
+    policyPage.enterTextInApiUrl(newUrl);
     I.wait(5)
 });
 
