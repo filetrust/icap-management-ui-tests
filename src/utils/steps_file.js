@@ -120,13 +120,13 @@ module.exports = function () {
             this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
 
-        setGwBlockFilesToBlock: async function (){
+        setGwBlockFilesToBlock: async function () {
             await this.goToDraftNcfsPolicy();
             await policyPage.setRouteFlag(`block-glasswallBlockedFiles`);
             await policyPage.publishPolicy();
         },
 
-        setRequiredContentFlag: async function (fileType, contentFlag, flagType){
+        setRequiredContentFlag: async function (fileType, contentFlag, flagType) {
             await this.goToDraftAdaptationPolicy();
             await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
         },

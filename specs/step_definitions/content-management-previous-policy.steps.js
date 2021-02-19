@@ -1,10 +1,10 @@
 const { output } = require('codeceptjs');
 
-const {I, policyPage, modal} = inject();
+const { I, policyPage, modal } = inject();
 const assert = require('assert').strict;
 
 
-Given('I have navigated to the Policy History page',  () => {
+Given('I have navigated to the Policy History page', () => {
     I.goToContentManagementPolicy();
     I.goToPolicyHistory();
 });
@@ -27,10 +27,10 @@ Then('the previous Policy is displayed', () => {
 
 
 Then('the current policy is updated with the previous Policy', async () => {
-    const history_timestamp = await policyPage.getPolicyHistoryTimeStamp(1,1);
+    const history_timestamp = await policyPage.getPolicyHistoryTimeStamp(1, 1);
     I.goToCurrentAdaptationPolicy();
     const current_timestamp = await policyPage.getCurrentPolicyTimeStamp();
     output.print(current_timestamp)
-    policyPage.checkPreviousPolicyApplied(current_timestamp,history_timestamp)
+    policyPage.checkPreviousPolicyApplied(current_timestamp, history_timestamp)
 });
 

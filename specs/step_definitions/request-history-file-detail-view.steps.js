@@ -38,7 +38,7 @@ Given('A previous transaction is available in the transaction log', async () => 
 });
 
 When('I click on the transaction record to open the detail view', async () => {
-        await requesthistoryPage.openLatestTransactionRecord()
+    await requesthistoryPage.openLatestTransactionRecord()
     //     await requesthistoryPage.openFileRecord(fileId)
 });
 

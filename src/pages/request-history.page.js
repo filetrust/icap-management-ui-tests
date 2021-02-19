@@ -96,7 +96,7 @@ module.exports = {
         remedyItemsBanner: `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),'Remedy Items')]`,
         fileDetailModal: `section[class^='Modal_Modal']`,
         itemHeaders: `//thead[contains(@class, "MuiTableHead-root")]`,
-        cmpTab:  `button[data-test-id="buttonContentManagementFlags"]`,
+        cmpTab: `button[data-test-id="buttonContentManagementFlags"]`,
         currentPolicySectionWord: `div[data-test-id="currentPolicySectionWord"]`,
         currentPolicySectionExcel: `div[data-test-id="currentPolicySectionExcel"]`,
         currentPolicySectionPowerpoint: `div[data-test-id="currentPolicySectionPowerpoint"]`,
@@ -328,7 +328,7 @@ module.exports = {
             await this.setTimeFrom(datetimeFrom)
             await this.setTimeTo(datetimeFrom, datetimeTo)
             I.click(this.buttons.apply)
-            I.waitForElement(this.table.tableHeaders,60)
+            I.waitForElement(this.table.tableHeaders, 60)
         } catch (e) {
             I.say('Action unsuccessful')
             console.warn(e);
@@ -372,7 +372,7 @@ module.exports = {
         await I.grabTextFrom(element);
     },
 
-   async isTimeApplied(start, end) {
+    async isTimeApplied(start, end) {
         let time = null;
         if (end === 'current time') {
             time = moment();
@@ -382,7 +382,7 @@ module.exports = {
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         const datefield = `//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`
-        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: '+timeFrom + ` - ` + currentTime ) : I.say('The selected period is correctly displayed');
+        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: ' + timeFrom + ` - ` + currentTime) : I.say('The selected period is correctly displayed');
     },
 
 
@@ -635,7 +635,7 @@ module.exports = {
         I.click(this.buttons.fileIdMenu);
         I.fillField(this.fields.inputFilterFileID, value);
         I.click(this.buttons.fileIdAdd);
-       
+
     },
 
     filterByFileId(fileId) {
@@ -693,7 +693,7 @@ module.exports = {
 
     getFileRecord(fileId) {
         return "//tr[contains(., '" + fileId + "')]"
-       
+
     },
 
     getFileRecordByTypeAndRisk(type, risk) {
@@ -701,9 +701,9 @@ module.exports = {
     },
 
     async verifyFileRecord(fileId) {
-        if(fileId !== 'undefined'){
-        await I.seeElementExist(this.getFileRecord(fileId))
-        }else if(fileId === 'undefined'){
+        if (fileId !== 'undefined') {
+            await I.seeElementExist(this.getFileRecord(fileId))
+        } else if (fileId === 'undefined') {
             I.say('The fileId was not retrieved')
         }
     },
@@ -717,10 +717,10 @@ module.exports = {
         return await I.grabTextFrom(`${el}/../th[2]`)
     },
 
-   async openFileRecord(fileId) {
-        if(fileId !== 'undefined'){
-        I.click(this.getFileRecord(fileId))
-        }else if(fileId === 'undefined'){
+    async openFileRecord(fileId) {
+        if (fileId !== 'undefined') {
+            I.click(this.getFileRecord(fileId))
+        } else if (fileId === 'undefined') {
             I.say('The fileId was not retrieved, opening latest transaction')
             await I.clickRecord(i)
         }

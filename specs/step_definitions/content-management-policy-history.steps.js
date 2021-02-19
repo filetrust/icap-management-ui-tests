@@ -25,5 +25,5 @@ When('Items Shown is changed to {string}', (itemCount) => {
 
 Then('Up to {int} previous policies are displayed', async (rowCount) => {
     //availablePolicyRecords = policyPage.getTotalNumberOfRecordsOfPolicy()
-   await policyPage.isRecordCountAccurate(rowCount)
+    await policyPage.isRecordCountAccurate(rowCount)
 });

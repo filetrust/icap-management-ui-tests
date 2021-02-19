@@ -17,7 +17,7 @@ Given('There are transactions available in the transaction log', async () => {
     I.viewTransactions()
     requesthistoryPage.openDatePicker()
     requesthistoryPage.selectTimePeriod('24 Hours')
-    await requesthistoryPage.isDataAvailable ()
+    await requesthistoryPage.isDataAvailable()
 });
 
 When('I click on the Add Filter button', () => {
@@ -53,7 +53,7 @@ When('I have selected a time range {string} and {string}', async (datetimeFrom, 
 
 When('I click on the Add Filter button and add a file id filter with Id {string}', (fileId) => {
     requesthistoryPage.setFileId(fileId);
-    I.waitForElement(requesthistoryPage.table.tableHeaders,60)
+    I.waitForElement(requesthistoryPage.table.tableHeaders, 60)
 });
 
 Then('the result list only shows the filtered file with id {string}', (fileId) => {
