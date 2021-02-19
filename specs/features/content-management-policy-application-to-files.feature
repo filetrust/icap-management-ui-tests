@@ -9,7 +9,6 @@ Feature: content-management-policy-application-to-files
 
 
     @functional
-    @fileprocess
     @TEST-212
     Scenario Outline: The current Content Management Policy is correctly applied to processed files
         Given The file '<file>' is not in download folder

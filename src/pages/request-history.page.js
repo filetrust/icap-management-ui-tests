@@ -163,11 +163,11 @@ module.exports = {
     selectTimePeriod(period) {
         try {
             if (period === '1 Hour') {
-                I.click(this.buttons.time_1hour);
+                I.clickElement(this.buttons.time_1hour);
             } else if (period === '12 Hours') {
-                I.click(this.buttons.time_12hours);
+                I.clickElement(this.buttons.time_12hours);
             } else if (period === '24 Hours') {
-                I.click(this.buttons.time_24hours);
+                I.clickElement(this.buttons.time_24hours);
             } else {
                 I.say("Unable to find the required option");
             }
