@@ -1,3 +1,4 @@
+[![IcapServerTest.js CI](https://github.com/filetrust/icap-management-ui-tests/actions/workflows/icapserver-test.js.yml/badge.svg)](https://github.com/filetrust/icap-management-ui-tests/actions/workflows/icapserver-test.js.yml)
 ![FunctionalTest.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/FunctionalTest.js%20CI/badge.svg)
 
 
