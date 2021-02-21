@@ -1,0 +1,241 @@
+{
+  "uid" : "bdcab3b447c5596b",
+  "name" : "User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop",
+  "fullName" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting.User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop",
+  "historyId" : "636af08a263ad7b447a2abc1767ead49",
+  "time" : {
+    "start" : 1613919829435,
+    "stop" : 1613919846023,
+    "duration" : 16588
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+  "statusTrace" : "Error: Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.waitForClickable (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1920:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+    "statusTrace" : "Error: Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.waitForClickable (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1920:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+    "steps" : [ {
+      "name" : "Given I have uploaded a file 'src/data/multiset/file1.docx' ",
+      "time" : {
+        "start" : 1613919836989,
+        "stop" : 1613919846019,
+        "duration" : 9030
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/file1.docx\"",
+        "time" : {
+          "start" : 1613919836989,
+          "stop" : 1613919846019,
+          "duration" : 9030
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/file1.docx\"",
+          "time" : {
+            "start" : 1613919836989,
+            "stop" : 1613919839017,
+            "duration" : 2028
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1613919839017,
+            "stop" : 1613919846019,
+            "duration" : 7002
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click on PDF button ",
+      "time" : {
+        "start" : 1613919846019,
+        "stop" : 1613919846023,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.waitForClickable (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1920:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1613919846019,
+          "stop" : 1613919846020,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: clickPdfReport ",
+        "time" : {
+          "start" : 1613919846020,
+          "stop" : 1613919846023,
+          "duration" : 3
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.waitForClickable (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1920:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+        "steps" : [ {
+          "name" : "I wait for clickable \"//button[contains(.,'PDF')]\"",
+          "time" : {
+            "start" : 1613919846020,
+            "stop" : 1613919846023,
+            "duration" : 3
+          },
+          "status" : "failed",
+          "statusMessage" : "Error: Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath\n                    at new ElementNotFound (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/errors/ElementNotFound.js:14:11)\n                    at assertElementExists (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:2520:11)\n                    at Puppeteer.waitForClickable (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1920:5)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : true,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "42ea38d2ca6dab4d",
+      "name" : "Last Seen Screenshot",
+      "source" : "42ea38d2ca6dab4d.png",
+      "type" : "image/png",
+      "size" : 39900
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 8,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-226"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-analysis-reporting"
+  }, {
+    "name" : "tag",
+    "value" : "@filedrop"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 3
+      },
+      "items" : [ {
+        "uid" : "6ebdd73936c0dbf6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/6ebdd73936c0dbf6",
+        "status" : "failed",
+        "statusDetails" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613919238875,
+          "stop" : 1613919255458,
+          "duration" : 16583
+        }
+      }, {
+        "uid" : "e8bbb03f793f9e06",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/e8bbb03f793f9e06",
+        "status" : "failed",
+        "statusDetails" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613918327061,
+          "stop" : 1613918342202,
+          "duration" : 15141
+        }
+      } ]
+    },
+    "tags" : [ "@filedrop", "@file-drop-file-analysis-reporting", "@portal", "@TEST-226" ]
+  },
+  "source" : "bdcab3b447c5596b.json",
+  "parameterValues" : [ ]
+}

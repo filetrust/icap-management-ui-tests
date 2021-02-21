@@ -1,0 +1,333 @@
+{
+  "uid" : "3352ff0e7e15782e",
+  "name" : "User can change the outcome of unprocessable files {\"routeOption\":\"relay-unprocessableFileTypes\",\"updatedRouteOption\":\"Relay\"} @portal @functional @TEST-183",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.User can change the outcome of unprocessable files {\"routeOption\":\"relay-unprocessableFileTypes\",\"updatedRouteOption\":\"Relay\"} @portal @functional @TEST-183",
+  "historyId" : "27b4bbd2b7d5256014568a138d7b45f3",
+  "time" : {
+    "start" : 1613919877518,
+    "stop" : 1613919898263,
+    "duration" : 20745
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I change the route for unprocessable files to 'relay-unprocessableFileTypes' and save ",
+      "time" : {
+        "start" : 1613919898245,
+        "stop" : 1613919898258,
+        "duration" : 13
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setRouteFlag \"relay-unprocessableFileTypes\"",
+        "time" : {
+          "start" : 1613919898245,
+          "stop" : 1613919898258,
+          "duration" : 13
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='relay-unprocessableFileTypes']\", \"checked\"",
+          "time" : {
+            "start" : 1613919898245,
+            "stop" : 1613919898251,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the route selection for unprocessable files is applied as 'Relay' ",
+      "time" : {
+        "start" : 1613919898258,
+        "stop" : 1613919898263,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: assertCheckedUnprocessableRadioButton \"Relay\"",
+        "time" : {
+          "start" : 1613919898258,
+          "stop" : 1613919898263,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I see checkbox is checked \"#relay-unprocessableFileTypes\"",
+          "time" : {
+            "start" : 1613919898258,
+            "stop" : 1613919898263,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-183"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can change the outcome of unprocessable files {\"routeOption\":\"relay-unprocessableFileTypes\",\"updatedRouteOption\":\"Relay\"} @portal @functional @TEST-183"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 6,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 18
+      },
+      "items" : [ {
+        "uid" : "ab3b92c7ef47c60c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/ab3b92c7ef47c60c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919283351,
+          "stop" : 1613919311030,
+          "duration" : 27679
+        }
+      }, {
+        "uid" : "3d0956f7acfb58e1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/3d0956f7acfb58e1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613918373184,
+          "stop" : 1613918402364,
+          "duration" : 29180
+        }
+      }, {
+        "uid" : "cd70399ea0cb2597",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/169//#testresult/cd70399ea0cb2597",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613656345112,
+          "stop" : 1613656374190,
+          "duration" : 29078
+        }
+      }, {
+        "uid" : "589b336245fb89a9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/589b336245fb89a9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654059430,
+          "stop" : 1613654088853,
+          "duration" : 29423
+        }
+      }, {
+        "uid" : "a3025116c6860209",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/a3025116c6860209",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651622458,
+          "stop" : 1613651650829,
+          "duration" : 28371
+        }
+      }, {
+        "uid" : "d6ef06987ecbf0b0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/d6ef06987ecbf0b0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613650999555,
+          "stop" : 1613651020306,
+          "duration" : 20751
+        }
+      }, {
+        "uid" : "a10f720c62e41a84",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/a10f720c62e41a84",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644308274,
+          "stop" : 1613644337432,
+          "duration" : 29158
+        }
+      }, {
+        "uid" : "a8218f204fd1e641",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/a8218f204fd1e641",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613578591676,
+          "stop" : 1613578591676,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "dfe5dc7582810e92",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/dfe5dc7582810e92",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576836939,
+          "stop" : 1613576866411,
+          "duration" : 29472
+        }
+      }, {
+        "uid" : "2884baebc3663c0a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/2884baebc3663c0a",
+        "status" : "failed",
+        "statusDetails" : "element ([data-test-id='buttonCurrentNcfsPolicyTab']) still not present on page after 30 sec\n                waiting for selector `[data-test-id='buttonCurrentNcfsPolicyTab']` failed: timeout 30000ms exceeded",
+        "time" : {
+          "start" : 1613574436151,
+          "stop" : 1613574484104,
+          "duration" : 47953
+        }
+      }, {
+        "uid" : "b80bd3e635a46883",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/b80bd3e635a46883",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058952544,
+          "stop" : 1613058952544,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "fa18c617a576460",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/fa18c617a576460",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056731955,
+          "stop" : 1613056731955,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "61ba1da32d91459a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/61ba1da32d91459a",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908412175,
+          "stop" : 1612908412175,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "8d422486e22a1c88",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/8d422486e22a1c88",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612811890242,
+          "stop" : 1612811910827,
+          "duration" : 20585
+        }
+      }, {
+        "uid" : "b22ef2d2285be9ae",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/b22ef2d2285be9ae",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808388568,
+          "stop" : 1612808408985,
+          "duration" : 20417
+        }
+      }, {
+        "uid" : "71741209090cad24",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/71741209090cad24",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807546531,
+          "stop" : 1612807546531,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "73370498ef9ac7c6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/73370498ef9ac7c6",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806038242,
+          "stop" : 1612806038242,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@TEST-183", "@portal", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "3352ff0e7e15782e.json",
+  "parameterValues" : [ ]
+}

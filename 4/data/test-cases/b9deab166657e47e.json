@@ -1,0 +1,524 @@
+{
+  "uid" : "b9deab166657e47e",
+  "name" : "User can activate a previous policy @portal @functional @TEST-219",
+  "fullName" : "content-management-previous-policy @content-management-previous-policy.User can activate a previous policy @portal @functional @TEST-219",
+  "historyId" : "9da09f9c78c702b35c0304a5ba14c4f",
+  "time" : {
+    "start" : 1613919779506,
+    "stop" : 1613919812770,
+    "duration" : 33264
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I click activate on a previous policy ",
+      "time" : {
+        "start" : 1613919797621,
+        "stop" : 1613919806664,
+        "duration" : 9043
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: clickActivateFirstPolicy ",
+        "time" : {
+          "start" : 1613919797621,
+          "stop" : 1613919806664,
+          "duration" : 9043
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait 5",
+          "time" : {
+            "start" : 1613919797621,
+            "stop" : 1613919802622,
+            "duration" : 5001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"(//button[contains(text(),'Activate')])[1]\"",
+          "time" : {
+            "start" : 1613919802622,
+            "stop" : 1613919804659,
+            "duration" : 2037
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 2",
+          "time" : {
+            "start" : 1613919804659,
+            "stop" : 1613919806661,
+            "duration" : 2002
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the current policy is updated with the previous Policy ",
+      "time" : {
+        "start" : 1613919806664,
+        "stop" : 1613919812770,
+        "duration" : 6106
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1613919806664,
+          "stop" : 1613919808713,
+          "duration" : 2049
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"button[class*='ConfirmPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1613919806664,
+            "stop" : 1613919808712,
+            "duration" : 2048
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: getPolicyHistoryTimeStamp 1, 1",
+        "time" : {
+          "start" : 1613919808713,
+          "stop" : 1613919808721,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I get row text 1, 1",
+          "time" : {
+            "start" : 1613919808713,
+            "stop" : 1613919808720,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I: goToCurrentAdaptationPolicy ",
+        "time" : {
+          "start" : 1613919808721,
+          "stop" : 1613919812763,
+          "duration" : 4042
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+          "time" : {
+            "start" : 1613919808721,
+            "stop" : 1613919810745,
+            "duration" : 2024
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1613919810745,
+            "stop" : 1613919810749,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+          "time" : {
+            "start" : 1613919810750,
+            "stop" : 1613919812763,
+            "duration" : 2013
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: getCurrentPolicyTimeStamp ",
+        "time" : {
+          "start" : 1613919812763,
+          "stop" : 1613919812770,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)\"",
+          "time" : {
+            "start" : 1613919812763,
+            "stop" : 1613919812769,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "the previous policy is not applied",
+          "time" : {
+            "start" : 1613919812769,
+            "stop" : 1613919812769,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 11,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-219"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-previous-policy"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can activate a previous policy @portal @functional @TEST-219"
+  }, {
+    "name" : "package",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 5,
+        "passed" : 15,
+        "unknown" : 0,
+        "total" : 21
+      },
+      "items" : [ {
+        "uid" : "9dc6c99ce029e7fd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/9dc6c99ce029e7fd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919189604,
+          "stop" : 1613919223144,
+          "duration" : 33540
+        }
+      }, {
+        "uid" : "607deeafef9cdea1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/607deeafef9cdea1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613918276995,
+          "stop" : 1613918310222,
+          "duration" : 33227
+        }
+      }, {
+        "uid" : "b5c8aaa804a6f6a2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/169//#testresult/b5c8aaa804a6f6a2",
+        "status" : "failed",
+        "statusDetails" : "element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded",
+        "time" : {
+          "start" : 1613656336263,
+          "stop" : 1613656397712,
+          "duration" : 61449
+        }
+      }, {
+        "uid" : "201c1778658b52f7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/201c1778658b52f7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654047769,
+          "stop" : 1613654079882,
+          "duration" : 32113
+        }
+      }, {
+        "uid" : "82322865c46e91d7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/167//#testresult/82322865c46e91d7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613624344294,
+          "stop" : 1613624375634,
+          "duration" : 31340
+        }
+      }, {
+        "uid" : "71613778e711986e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/166//#testresult/71613778e711986e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613624344294,
+          "stop" : 1613624375634,
+          "duration" : 31340
+        }
+      }, {
+        "uid" : "e08d56800382ca39",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/165//#testresult/e08d56800382ca39",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613624344294,
+          "stop" : 1613624375634,
+          "duration" : 31340
+        }
+      }, {
+        "uid" : "aa6a14487948a4dd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/aa6a14487948a4dd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651611365,
+          "stop" : 1613651644018,
+          "duration" : 32653
+        }
+      }, {
+        "uid" : "72e186190ffa9eab",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/72e186190ffa9eab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613650990041,
+          "stop" : 1613651022094,
+          "duration" : 32053
+        }
+      }, {
+        "uid" : "e6bced71c35b09b3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/e6bced71c35b09b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644297698,
+          "stop" : 1613644331300,
+          "duration" : 33602
+        }
+      }, {
+        "uid" : "800abf3789d07065",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/800abf3789d07065",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578531967,
+          "stop" : 1613578563812,
+          "duration" : 31845
+        }
+      }, {
+        "uid" : "50fa0b4732f13017",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/50fa0b4732f13017",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576823588,
+          "stop" : 1613576857252,
+          "duration" : 33664
+        }
+      }, {
+        "uid" : "94eb01feca17ed14",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/94eb01feca17ed14",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613574422655,
+          "stop" : 1613574456061,
+          "duration" : 33406
+        }
+      }, {
+        "uid" : "d6ed230d295358f1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/d6ed230d295358f1",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058950556,
+          "stop" : 1613058950556,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "fc1583190355da81",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/fc1583190355da81",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056729139,
+          "stop" : 1613056729139,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "25d3039a8e95dbd3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/25d3039a8e95dbd3",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908411707,
+          "stop" : 1612908411707,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "ccc037a6e661c9c1",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/ccc037a6e661c9c1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612811879560,
+          "stop" : 1612811913376,
+          "duration" : 33816
+        }
+      }, {
+        "uid" : "ecf040107a4de7f7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/ecf040107a4de7f7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808374925,
+          "stop" : 1612808408511,
+          "duration" : 33586
+        }
+      }, {
+        "uid" : "c106b3ac09018ef5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/c106b3ac09018ef5",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807546535,
+          "stop" : 1612807546535,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "4efbbe2b1e90f91b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/4efbbe2b1e90f91b",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806038158,
+          "stop" : 1612806038158,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@content-management-previous-policy", "@portal", "@TEST-219", "@functional" ]
+  },
+  "source" : "b9deab166657e47e.json",
+  "parameterValues" : [ ]
+}
