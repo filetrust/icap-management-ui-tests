@@ -186,7 +186,7 @@ module.exports = {
             I.say('The expected error message: ' + errorMessage + ' is displayed')
         } else {
             I.say('The error message: ' + errorMessage + ' is not as expected')
-        };
+        }
     }
 
 

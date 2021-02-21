@@ -54,8 +54,7 @@ Then('I see the list of objects and structures not repaired {string}', (nonrepai
 });
 
 When('I view result and click on Download Processed File', () => {
-    I.handleDownloads();
-    filedropPage.clickDownloadFile();
+    //filedropPage.clickDownloadFile();
 
 });
 

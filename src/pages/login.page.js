@@ -69,7 +69,7 @@ module.exports = {
    * ***************************************************************
    */
   clickLogIn() {
-    const element = this.buttons.login;
+    //const element = this.buttons.login;
     //I.waitForVisible(element)
     I.wait(5)
     I.pressKey('Enter')
@@ -77,7 +77,7 @@ module.exports = {
   },
 
   errorMsg() {
-    let pin = I.grabTextFrom(this.fields.loginError);
+    return I.grabTextFrom(this.fields.loginError);
   },
 
   loginWith(email, password) {
@@ -91,10 +91,10 @@ module.exports = {
    * AccountActivationLink
    * ***************************************************************
    */
-  clickAccountActivationLink() {
-    const element = this.links.accountActivation;
-    I.clickElement(element);
-  },
+  // clickAccountActivationLink() {
+  //   const element = this.links.accountActivation;
+  //   I.clickElement(element);
+  // },
 
   /*
    * SowChecklist

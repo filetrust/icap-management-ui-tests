@@ -1,18 +1,14 @@
-const { I, policyPage, filedropPage, requesthistoryPage, sharepoint } = inject();
+const { I, policyPage, requesthistoryPage, sharepoint } = inject();
 const faker = require('faker');
-const chai = require('chai');
-const { assert } = require('chai');
-const expect = chai.expect;
-
-let currentUrl = null;
 
 let randomId = faker.random.number()
 let fileId;
 let resp;
+let newUrl;
 
 Given('I have navigated to the Draft NCFS Policy page', async () => {
     I.goToContentManagementPolicy();
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
 
 });
 Given('I am a new user', () => {
@@ -30,8 +26,7 @@ Then(`I see the default set routing option for blocked files as ''`, () => {
 });
 
 When('I enter a valid URL {string} into the API URL box and save', (url) => {
-    let id = randomId
-    newUrl = url + id
+    newUrl = url + randomId
     policyPage.enterTextInApiUrl(newUrl);
 });
 
@@ -39,7 +34,7 @@ When('I publish the policy', async () => {
     await policyPage.publishPolicy();
 });
 
-Then('the API URL is updated to the new url {string}', (message) => {
+Then('the API URL is updated to the new url {string}', (url) => {
     I.goToCurrentNcfsPolicy()
     url = newUrl
     I.seeInField(policyPage.fields.apiUrlInput, url);
@@ -64,26 +59,7 @@ Given('I have set the routing option for Glasswall Blocked files to {string}', a
 });
 
 When('I download a non compliant file {string} through the icap server', async (file) => {
-    //I.setHost()
-    //I.downloadFile(file)
-    await I.goToSharepoint()
-    I.wait(15)
-    I.seeInTitle("Communication site - ui-uploads - All Documents");
-    // //sharepoint.goToDocuments();
-    sharepoint.selectFile(file);
-    sharepoint.downloadFile()
-    I.usePuppeteerTo('get response', async ({ page }) => {
-        await page.on("response", async response => {
-            console.log(response.headers());
-
-            fileId = response.headers()
-                .toString()
-                .split('X-Adaptation-File-Id: ')[1]
-                .split("\n")[0];;
-            console.log('The fileId is ' + fileId)
-            //response.abort()
-        });
-    });
+  //TODO
 });
 
 When('I submit a non supported or unprocessable file {string} through the icap server', async (file) => {

@@ -7,7 +7,6 @@ const filedropPage = require("../pages/file-drop.page.js");
 const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
-const env = require("../utils/config")
 const assert = require('assert').strict;
 const cp = require('child_process')
 const fs = require('fs')
@@ -103,7 +102,7 @@ module.exports = function () {
         },
 
         goToDraftNcfsPolicy: async function () {
-            policyPage.clickDraftTab();
+            await policyPage.clickDraftTab();
             await policyPage.clickNcfsPolicy();
         },
 

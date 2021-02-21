@@ -16,7 +16,7 @@ npm install (This will install CodeceptJS with Puppeteer and all the dependent p
 
 #### Add SharePoint login details 
 Current Sharepoint URL in use is: "https://saaspoc1.sharepoint.com"
-Create an encoder.js file (this is used to encode your username and password, use sample encoder_sample.js in the src/utils directory
+Create an encoder.js file (this is used to encode your username and password), use sample encoder_sample.js in the src/utils directory
 Add your username and password in it, and run "node encoder.js", after this you can remove the file.
 Use the encoded username and password in config.json
 

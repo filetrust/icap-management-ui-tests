@@ -1,9 +1,6 @@
 const { output } = require('codeceptjs');
 
 const { I, policyPage, modal } = inject();
-const assert = require('assert').strict;
-
-
 Given('I have navigated to the Policy History page', () => {
     I.goToContentManagementPolicy();
     I.goToPolicyHistory();

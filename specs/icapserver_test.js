@@ -1,9 +1,4 @@
-const { I, policyPage, filedropPage, requesthistoryPage, sharepoint, icapclient } = inject();
-const chai = require('chai');
-const expect = chai.expect;
-const fs = require('fs');
-const { output } = require("codeceptjs");
-
+const { I,icapclient } = inject();
 const outputPath = './output/downloads'
 
 Feature('Icap Client File Processing');
@@ -28,32 +23,32 @@ Scenario('I process a non supported file using icap client tool', async () => {
 }).tag('@ns').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported office files process is successful', async () => {
-  var inPath = './src/data/office';
+  const inPath = './src/data/office';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@office').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported image files process is successful', async () => {
-  var inPath = './src/data/images';
+  const inPath = './src/data/images';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@images').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported pdf files process is successful', async () => {
-  var inPath = './src/data/pdf';
+  const inPath = './src/data/pdf';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@pdf').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported pdf files process is successful', async () => {
-  var inPath = './src/data/rtf';
+  const inPath = './src/data/rtf';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@rtf').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported pdf files process is successful', async () => {
-  var inPath = './src/data/multiset';
+  const inPath = './src/data/multiset';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@multiset');
 
 Scenario('Supported archive files process is successful', async () => {
-  var inPath = './src/data/archive_success';
+  const inPath = './src/data/archive_success';
   await icapclient.processFiles(inPath, outputPath);
 }).tag('@archives').tag('@fileprocess').tag('@functional');
 

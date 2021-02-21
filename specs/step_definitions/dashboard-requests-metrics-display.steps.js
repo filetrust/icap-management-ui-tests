@@ -48,7 +48,7 @@ Given('I have navigated to the Analytics page',  () => {
         I.goToAnalytics();
 });
 When('I process a {string} through the icap server with an outcome as {string}',  (file, fileOutcome) =>{
-
+    //file, fileOutcome
 });
 Then(/^the Total Files processed is increased by '(.*)'$/, function () {
 

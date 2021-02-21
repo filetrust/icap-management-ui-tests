@@ -1,34 +1,31 @@
-const { I, policyPage, filedropPage, requesthistoryPage, sharepoint } = inject();
-const chai = require('chai');
-const expect = chai.expect;
+const { I} = inject();
 const fs = require('fs');
-const { output } = require("codeceptjs");
 
 module.exports = {
 
     async processFiles(inPath, outPath) {
-        var find = function (dir, done) {
+        let find = function (dir, done) {
             fs.readdir(dir, function (error, list) {
                 if (error) {
                     return done(error);
                 }
-                var i = 0;
+                let i = 0;
                 (function next() {
-                    var file = list[i++];
+                    let file = list[i++];
                     if (!file) {
                         return done(null);
                     }
-                    fileIn = dir + '/' + file;
-                    var fileOut = outPath + '/' + file;
+                    file = dir + '/' + file;
+                    let fileOut = outPath + '/' + file;
                     I.cleanupFile(fileOut);
                     fs.stat(file, async function (error, stat) {
                         if (stat && stat.isDirectory()) {
-                            find(file, function (error) {
+                            find(file, function () {
                                 next();
                             });
                         } else {
                             console.log(file);
-                            const resp = await I.processFile(fileIn, fileOut);
+                            const resp = await I.processFile(file, fileOut);
                             I.getFileProcessingResult(resp);
                             next();
                         }
@@ -36,7 +33,7 @@ module.exports = {
                 })();
             });
         };
-        process.argv.forEach(function (val, index, array) {
+        process.argv.forEach(function (val) {
             if (val.indexOf('source') !== -1) {
                 inPath = val.split('=')[1];
             }

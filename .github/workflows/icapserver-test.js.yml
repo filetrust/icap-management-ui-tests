@@ -1,0 +1,76 @@
+name: IcapServerFileProcessTest.js CI
+
+on:
+  pull_request:
+    branches: [master]
+  
+  push:
+    branches: [master]
+ 
+  workflow_dispatch:
+  schedule:
+    - cron: '0 18 * * 1-5'
+
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [13.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          
+      - name: Install dependencies and run all tests
+        env:
+          UI_URL_DEV: ${{ secrets.UI_URL_DEV }}
+          ICAP_URL_DEV: ${{ secrets.ICAP_URL_DEV }}
+          UI_URL_NEU: ${{ secrets.UI_URL_NEU }}
+          ICAP_URL_NEU: ${{ secrets.ICAP_URL_NEU }}
+          UI_URL_T02: ${{ secrets.UI_URL_T02 }}
+          ICAP_URL_T02: ${{ secrets.ICAP_URL_T02 }}
+          FILEDROP_URL_NEU: ${{ secrets.FILEDROP_URL_NEU }}
+          USER: ${{ secrets.UI_USER_ID }}
+          PASSWORD: ${{ secrets.UI_SECRET_ID }}
+          AWSUSER: ${{ secrets.AWSUI_AWSUSER_ID }}
+          AWSPASSWORD: ${{ secrets.AWSUI_SECRET_ID }}
+        run: |  
+          sudo apt-get install -y c-icap
+          npm install -g allure-commandline --save-dev     
+          npm install
+          c-icap-client -i $ICAP_URL_NEU
+          npx codeceptjs run-multiple --steps --grep @fileprocess --all --plugins allure
+          cat output/icap.log
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: allure-report
+          path: allure-report
+
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        id: allure-report
+        with:
+          allure_results: allure/results
+          gh_pages: allure-report
+          allure_report: allure/report
+          allure_history: allure-history
+
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: allure-report
+          PUBLISH_DIR: allure-history
+          CI: true

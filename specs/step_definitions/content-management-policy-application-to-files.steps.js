@@ -1,8 +1,5 @@
-const assert = require('assert').strict;
-const fs = require('fs');
 const path = require('path');
-const { I, icapProxyPage, policyPage, requesthistoryPage } = inject();
-let isLocal;
+const { I, requesthistoryPage } = inject();
 let fileId;
 isLocal = true;
 

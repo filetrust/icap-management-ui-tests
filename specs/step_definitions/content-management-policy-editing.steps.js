@@ -6,7 +6,6 @@ const faker = require('faker');
 
 let selectedEl = null;
 let randomId = faker.random.number()
-let nUrl;
 
 Given('I am logged into the portal', () => {
     I.login()
@@ -58,7 +57,7 @@ Then('the draft policy for {string} is saved as {string} and {string}', (FileTyp
 * T215
 * ***************************************************************
 */
-When('I change all the flags to {string} on policy page', (flagType) => {
+When('I change all the flags to {string} on policy page', () => {
     //I.setFlags()
     policyPage.clickAllFlag()
     policyPage.clickSaveChanges()
@@ -106,7 +105,7 @@ Then('the current policy for {string} is saved as {string} and {string}', (FileT
 * ***************************************************************
 */
 Given('the current NCFS policy url is {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
     await policyPage.updateUrlIfNeeded(url);
 });
 
@@ -116,7 +115,7 @@ When('I update the contentFlag for {string} to {string} and {string}', async (Fi
 
 
 When('I have updated the NCFS policy url with {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
     let id = randomId
     newUrl = url + id
     policyPage.enterTextInApiUrl(newUrl);

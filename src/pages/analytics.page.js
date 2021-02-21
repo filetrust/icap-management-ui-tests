@@ -151,7 +151,7 @@ module.exports = {
         let label = riskLabel.trim();
         try {
             within(element, async () => {
-                let countsectors = null;
+                let countsectors;
                 if (chart === 'pie'.trim()) {
                     countsectors = await I.grabNumberOfVisibleElements(this.legend.rechart_sector);
                 } else {
@@ -334,21 +334,6 @@ module.exports = {
 
     async checkDateTimeFilterValues(dateRange) {
         I.seeTextEquals(dateRange, this.inputs.reportrange);
-    },
-
-
-    //23:00 --> 11:00 PM; 11:00 --> 11:00 AM
-    convertTimeFrom24To12(time) {
-        let timeArray = time.split(":");
-        let hours = parseInt(timeArray[0]);
-        let mins = timeArray[1];
-        let newTime;
-        if (hours > 12) {
-            newTime = hours % 12 + ":" + mins + " PM";
-        } else {
-            newTime = hours + ":" + mins + " AM";
-        }
-        return newTime;
     },
 
     getRequiredTime(datetimeTo) {

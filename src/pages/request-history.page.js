@@ -1,7 +1,5 @@
-const MyHelper = require("../utils/helper");
 const moment = require('moment');
 const assert = require('assert').strict;
-const fs = require('fs');
 const { output } = require("codeceptjs");
 const I = actor();
 
@@ -388,8 +386,7 @@ module.exports = {
 
 
     getCurrentTime() {
-        var currentTime = moment();
-        return currentTime;
+        return moment();
     },
 
     getRequiredTime(datetimeTo) {
@@ -409,12 +406,10 @@ module.exports = {
 
     getPastPeriod(time) {
         const now = this.getCurrentTime();
-        const pastPeriod = now.subtract(time, 'h')
-        return pastPeriod;
+        return now.subtract(time, 'h');
     },
 
     async isDataAvailable() {
-        const table = this.table.fileTableBody;
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
@@ -640,13 +635,9 @@ module.exports = {
 
     filterByFileId(fileId) {
         this.setFileId(fileId);
-        I.click(this.buttons.fileIdAdd);
+        I.clickElement(this.buttons.fileIdAdd);
     },
 
-    filterByFileId(fileId) {
-        this.setFileId(fileId);
-        I.click(this.buttons.fileIdAdd);
-    },
     async checkFileIdValues(filteredFile) {
         I.wait(5)
         await this.checkRows(filteredFile, 2)
@@ -745,16 +736,16 @@ module.exports = {
         }
     },
 
-    isIssueItemsSectionAvailable() {
-        const el = I.getModal(this.modal.fileDetailModal)
-        //;
-        if (I.seeElementExist(el) === true) {
-            within(this.modal.fileDetailModal, () => {
-                const element = this.modal.issueItemsBanner;
-                I.seeElementExist(element)
-            });
-        }
-    },
+    // isIssueItemsSectionAvailable() {
+    //     const el = I.getModal(this.modal.fileDetailModal)
+    //     //;
+    //     if (I.seeElementExist(el) === true) {
+    //         within(this.modal.fileDetailModal, () => {
+    //             const element = this.modal.issueItemsBanner;
+    //             I.seeElementExist(element)
+    //         });
+    //     }
+    // },
 
     isRemedyItemsSectionAvailable() {
         const el = this.modal.fileDetailModal;

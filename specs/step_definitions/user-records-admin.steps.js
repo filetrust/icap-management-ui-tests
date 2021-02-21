@@ -1,25 +1,19 @@
 const {
     I,
-    homePage,
     usersPage,
     env
 } = inject();
 
 const faker = require('faker');
-const chai = require('chai');
-const expect = chai.expect;
 
 let randomId = faker.random.number()
 let randomText = faker.random.uuid()
-let newUsername;
 let current_user;
 let uEmail;
 let uName;
 let fName;
 let lName;
 let exEmail;
-const MY_EMAIL = null;
-
 
 Given('I have logged into the ui and navigated to the Users page', () => {
     I.login();
@@ -44,7 +38,7 @@ When('I add a new user with details username {string}, firstname {string}, lastn
     await usersPage.addUserDetails(uName, fName, lName, uEmail);
 });
 When('I click Save Changes', () => {
-    user = usersPage.clickSaveChanges();
+   usersPage.clickSaveChanges();
 });
 Then('The new user record is saved with a green tick', () => {
     usersPage.waitForUsersTable()
@@ -66,11 +60,11 @@ Given('A user exist with the email address {string}', async (email) => {
 });
 When('I delete the existing user with email {string}', (email) => {
     email = exEmail;
-    usersPage.deleteUser(exEmail);
+    usersPage.deleteUser(email);
 });
 Then('The user record with email {string} is no longer available', (email) => {
     email = exEmail;
-    usersPage.confirmUserRecordNotAvailable(exEmail)
+    usersPage.confirmUserRecordNotAvailable(email)
 });
 
 Given('A user record exist with username {string}, firstname {string}, lastname {string} and email {string}', (username, firstname, lastname, email) => {
@@ -100,7 +94,8 @@ Given('A user record with the email {string} already exist', (email) => {
     I.addAUser(uName, fName, lName, uEmail);
 });
 When('I add a new user record with username {string}, firstname {string}, lastname {string} and the existing email {string}', (username, firstname, lastname, email) => {
-    usersPage.addUserDetails(username, firstname, lastname, uEmail);
+    email = uEmail;
+    usersPage.addUserDetails(username, firstname, lastname, email);
 });
 Then('the expected validation error is displayed and the record is not saved', async () => {
     const errorMsg = 'Email Addresses must be unique. A user with email: ' + uEmail + ' already exists'

@@ -54,13 +54,6 @@ module.exports = {
         //I.fillInField(element, lName);
     },
 
-    async getNewUserRowNameInput() {
-        return this.getUserRecord(1);
-    },
-
-    async getNewUserRowEmailInput() {
-        return this.getUserRecord(2);
-    },
     async setNewUserEmail(userEmail) {
         const element = this.fields.email;
         I.click(element)
@@ -98,11 +91,10 @@ module.exports = {
         I.wait(1);
     },
 
-    updateEmail(email) {
+    updateEmail() {
         const element = this.fields.userName;
         I.click(element)
         I.pressKey('Backspace')
-        I.type(userName);
     },
 
     deleteUser(email) {
@@ -124,26 +116,13 @@ module.exports = {
 
     },
 
-    getUserRecord(n) {
-        let element = null;
-        const rows = locate(`//*[@id="usersTable2"]/tbody/tr`);
-        for (let i in rows) {
-            const text = I.grabTextFrom(rows[i] + "/td[" + n + "]/input")
-            if (text === "") {
-                element = rows[i] + "/td[" + n + "]/input"
-            }
-        }
-        return element;
-    },
-
     findUserByEmail(email) {
-        waitForUsersTable()
-        const element = `//tr[contains(.,'` + email + `')]`;
-        return element;
+        this.waitForUsersTable()
+        return `//tr[contains(.,'` + email + `')]`;
     },
 
     findUserByName(name) {
-        waitForUsersTable()
+        this.waitForUsersTable()
         return `//tr[contains(.,'` + name + `')]`;
     },
 
@@ -175,7 +154,7 @@ module.exports = {
             I.say('The expected error message: ' + errorMessage + ' is displayed')
         } else {
             I.say('The error message: ' + errorMessage + ' is not as expected')
-        };
+        }
     }
 
 
