@@ -1,194 +1,87 @@
 {
   "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
   "children" : [ {
-    "name" : "request-history-filtering-by-date @request-history-filtering-by-date",
+    "name" : "Icap Client File Processing:",
     "children" : [ {
-      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
-      "uid" : "b38d007f67744c29",
-      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "name" : "I process a non supported file using icap client tool @ns @fileprocess @functional",
+      "uid" : "2c502fef9c1e58e5",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
       "status" : "passed",
       "time" : {
-        "start" : 1605460660973,
-        "stop" : 1605460683046,
-        "duration" : 22073
+        "start" : 1613918053446,
+        "stop" : 1613918121900,
+        "duration" : 68454
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
-      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
-      "uid" : "e4caaff87bcde797",
-      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "name" : "Supported office files process is successful @office @fileprocess @functional",
+      "uid" : "24b30650427571e0",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
       "status" : "passed",
       "time" : {
-        "start" : 1605460683087,
-        "stop" : 1605460699485,
-        "duration" : 16398
+        "start" : 1613918121926,
+        "stop" : 1613918124081,
+        "duration" : 2155
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     }, {
-      "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
-      "uid" : "be2fb466fdd95849",
-      "parentUid" : "282c3fa0779844206c0a149d3f1a5b21",
+      "name" : "Supported image files process is successful @images @fileprocess @functional",
+      "uid" : "d53f32ecabdf2bd4",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
       "status" : "passed",
       "time" : {
-        "start" : 1605460699506,
-        "stop" : 1605460715929,
-        "duration" : 16423
+        "start" : 1613918124279,
+        "stop" : 1613918126417,
+        "duration" : 2138
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Supported pdf files process is successful @pdf @fileprocess @functional",
+      "uid" : "6e1fea895bb98a1",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613918126590,
+        "stop" : 1613918128744,
+        "duration" : 2154
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Supported pdf files process is successful @rtf @fileprocess @functional",
+      "uid" : "189e5c0afde92367",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613918128936,
+        "stop" : 1613918131111,
+        "duration" : 2175
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "Supported archive files process is successful @archives @fileprocess @functional",
+      "uid" : "cacd141caa9e8868",
+      "parentUid" : "02099e8773006a8fdb68c4310d3c60aa",
+      "status" : "passed",
+      "time" : {
+        "start" : 1613918131289,
+        "stop" : 1613918133438,
+        "duration" : 2149
       },
       "flaky" : false,
       "newFailed" : false,
       "parameters" : [ ]
     } ],
-    "uid" : "282c3fa0779844206c0a149d3f1a5b21"
-  }, {
-    "name" : "Content Management Policy Editing @content-management-policy-editing",
-    "children" : [ {
-      "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
-      "uid" : "40f49ad543a74747",
-      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460660984,
-        "stop" : 1605460689655,
-        "duration" : 28671
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-155",
-      "uid" : "ce3602dd3ad9870",
-      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460689684,
-        "stop" : 1605460712831,
-        "duration" : 23147
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-155",
-      "uid" : "ba8b23f476dc4d2d",
-      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460712850,
-        "stop" : 1605460735986,
-        "duration" : 23136
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-Change-all-content-flag-for-all-doc-type",
-      "uid" : "d2aefbfa63a54a92",
-      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460736010,
-        "stop" : 1605460776178,
-        "duration" : 40168
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-Change-all-content-flag-for-all-doc-type",
-      "uid" : "2cfa9718d2131c37",
-      "parentUid" : "262a0365cef9223b0d8606ee810d1d32",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460776200,
-        "stop" : 1605460816365,
-        "duration" : 40165
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "262a0365cef9223b0d8606ee810d1d32"
-  }, {
-    "name" : "request-history-filtering-by-risk-outcome @request-history-filtering-by-risk-outcome",
-    "children" : [ {
-      "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
-      "uid" : "598d993ea315ef5a",
-      "parentUid" : "03bbb3585e9d26559b15aeb91751f9ac",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460661031,
-        "stop" : 1605460694675,
-        "duration" : 33644
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "03bbb3585e9d26559b15aeb91751f9ac"
-  }, {
-    "name" : "request-history-log @request-history-log",
-    "children" : [ {
-      "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\"} @functional @smoke @TEST-189",
-      "uid" : "e3a420185693c163",
-      "parentUid" : "9d9fcd0eae09492ac804d6e2df8f3111",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460694717,
-        "stop" : 1605460739183,
-        "duration" : 44466
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"Png\"} @functional @smoke @TEST-189",
-      "uid" : "8ce3f9b130b6127d",
-      "parentUid" : "9d9fcd0eae09492ac804d6e2df8f3111",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460739231,
-        "stop" : 1605460783732,
-        "duration" : 44501
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "9d9fcd0eae09492ac804d6e2df8f3111"
-  }, {
-    "name" : "request-history-filtering-by-file-type @request-history-filtering-by-file-type",
-    "children" : [ {
-      "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
-      "uid" : "4487695ae806788a",
-      "parentUid" : "817b18c8e839984f231f4c3e5d7f8546",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460715981,
-        "stop" : 1605460744194,
-        "duration" : 28213
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    }, {
-      "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
-      "uid" : "f41633f220e07ed5",
-      "parentUid" : "817b18c8e839984f231f4c3e5d7f8546",
-      "status" : "passed",
-      "time" : {
-        "start" : 1605460744214,
-        "stop" : 1605460772374,
-        "duration" : 28160
-      },
-      "flaky" : false,
-      "newFailed" : false,
-      "parameters" : [ ]
-    } ],
-    "uid" : "817b18c8e839984f231f4c3e5d7f8546"
+    "uid" : "02099e8773006a8fdb68c4310d3c60aa"
   } ],
   "name" : "packages"
 }
