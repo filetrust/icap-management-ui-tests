@@ -1,12 +1,6 @@
 name: FunctionalTest.js CI
 
 on:
-  pull_request:
-    branches: [master]
-  
-  push:
-    branches: [master]
- 
   workflow_dispatch:
   schedule:
     - cron: '0 18 * * 1-5'

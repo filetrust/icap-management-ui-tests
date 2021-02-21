@@ -1,4 +1,4 @@
-name: IcapServerFileProcessTest.js CI
+name: IcapServerTest.js CI
 
 on:
   pull_request:
@@ -7,11 +7,6 @@ on:
   push:
     branches: [master]
  
-  workflow_dispatch:
-  schedule:
-    - cron: '0 18 * * 1-5'
-
-
 jobs:
   test:
     runs-on: ubuntu-latest

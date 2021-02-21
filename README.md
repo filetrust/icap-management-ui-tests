@@ -1,3 +1,5 @@
+![IcapServerTest.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/icapserver-test.js%20CI/badge.svg)
+![PortalTest.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/portal-test.js%20CI/badge.svg)
 ![FunctionalTest.js CI](https://github.com/filetrust/icap-management-ui-tests/workflows/FunctionalTest.js%20CI/badge.svg)
 
 
