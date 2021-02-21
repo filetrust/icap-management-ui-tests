@@ -1,0 +1,197 @@
+{
+  "uid" : "ab8604f160200f0c",
+  "name" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"fileSize\":\"11603\",\"processStatus\":\"Your file has been processed\"} @portal @TEST-230",
+  "fullName" : "file-drop-file-processing @file-drop-file-processing.User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"fileSize\":\"11603\",\"processStatus\":\"Your file has been processed\"} @portal @TEST-230",
+  "historyId" : "708df12db630b56d335a0c697b42d79d",
+  "time" : {
+    "start" : 1613919207465,
+    "stop" : 1613919222857,
+    "duration" : 15392
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "",
+  "statusTrace" : "undefined",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "",
+    "statusTrace" : "undefined",
+    "steps" : [ {
+      "name" : "When I click Select a file and choose a supported file 'src/data/multiset/issues.docx' ",
+      "time" : {
+        "start" : 1613919213822,
+        "stop" : 1613919222853,
+        "duration" : 9031
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/issues.docx\"",
+        "time" : {
+          "start" : 1613919213822,
+          "stop" : 1613919222853,
+          "duration" : 9031
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/issues.docx\"",
+          "time" : {
+            "start" : 1613919213822,
+            "stop" : 1613919215845,
+            "duration" : 2023
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1613919215845,
+            "stop" : 1613919222853,
+            "duration" : 7008
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the File is processed with the process status displayed as 'Your file has been processed' ",
+      "time" : {
+        "start" : 1613919222853,
+        "stop" : 1613919222857,
+        "duration" : 4
+      },
+      "status" : "failed",
+      "statusMessage" : "undefined",
+      "steps" : [ {
+        "name" : "I see element \"button[data-test-id='buttonFileDropViewResult']\"",
+        "time" : {
+          "start" : 1613919222853,
+          "stop" : 1613919222856,
+          "duration" : 3
+        },
+        "status" : "failed",
+        "statusMessage" : "undefined",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "ba981ab8de446300",
+      "name" : "Last Seen Screenshot",
+      "source" : "ba981ab8de446300.png",
+      "type" : "image/png",
+      "size" : 39900
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-230"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-processing"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/issues.docx\",\"fileName\":\"issues.docx\",\"fileType\":\"docx\",\"fileSize\":\"11603\",\"processStatus\":\"Your file has been processed\"} @portal @TEST-230"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 2,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 0,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "8b3b7d4790b802a3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/8b3b7d4790b802a3",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1613918296422,
+          "stop" : 1613918312738,
+          "duration" : 16316
+        }
+      } ]
+    },
+    "tags" : [ "@file-drop-file-processing", "@portal", "@TEST-230" ]
+  },
+  "source" : "ab8604f160200f0c.json",
+  "parameterValues" : [ ]
+}
