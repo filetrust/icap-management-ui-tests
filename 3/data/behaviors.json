@@ -1,79 +1,170 @@
 {
   "uid" : "b1a8273437954620fa374b796ffaacdd",
   "children" : [ {
-    "name" : "I process a non supported file using icap client tool @ns @fileprocess @functional",
-    "uid" : "787803cf6464c092",
+    "name" : "A user can cancel any updates that they have done to the policy by pressing cancel {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"CurrentFlagType\":\"disallow\",\"ChangedFlagType\":\"sanitise\"} @functional @smoke @TEST-188",
+    "uid" : "801db5c88eaab606",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919172705,
-      "stop" : 1613919240623,
-      "duration" : 67918
+      "start" : 1605530772194,
+      "stop" : 1605530800410,
+      "duration" : 28216
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Supported office files process is successful @office @fileprocess @functional",
-    "uid" : "e402908db962790d",
+    "name" : "I can filter the request log using the time interval {\"timeInterval\":\"1 Hour\",\"datetimeFrom\":\"1\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+    "uid" : "36b83a4bac782cf4",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919240655,
-      "stop" : 1613919242797,
-      "duration" : 2142
+      "start" : 1605530772264,
+      "stop" : 1605530793828,
+      "duration" : 21564
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Supported image files process is successful @images @fileprocess @functional",
-    "uid" : "68cefa7acd0039c1",
+    "name" : "I can filter the log by file risks {\"filter\":\"Safe\",\"filteredFile\":\"Safe\"} @functional @smoke @TEST-164",
+    "uid" : "e9e92406dc89a798",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919242984,
-      "stop" : 1613919245141,
-      "duration" : 2157
+      "start" : 1605530772349,
+      "stop" : 1605530805442,
+      "duration" : 33093
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Supported pdf files process is successful @pdf @fileprocess @functional",
-    "uid" : "5ef2b05e2303bcb3",
+    "name" : "I can filter the request log using the time interval {\"timeInterval\":\"12 Hours\",\"datetimeFrom\":\"12\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+    "uid" : "ef980693523b5f3c",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919245308,
-      "stop" : 1613919247439,
-      "duration" : 2131
+      "start" : 1605530793869,
+      "stop" : 1605530810333,
+      "duration" : 16464
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Supported pdf files process is successful @rtf @fileprocess @functional",
-    "uid" : "c06e5e1896f8e67c",
+    "name" : "I can edit policy content flags {\"FileType\":\"word\",\"ContentFlags\":\"embeddedFiles\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-155",
+    "uid" : "a4e0657bf517a0c1",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919247625,
-      "stop" : 1613919249760,
-      "duration" : 2135
+      "start" : 1605530800444,
+      "stop" : 1605530823630,
+      "duration" : 23186
     },
     "flaky" : false,
     "newFailed" : false,
     "parameters" : [ ]
   }, {
-    "name" : "Supported archive files process is successful @archives @fileprocess @functional",
-    "uid" : "90c331b66e35cd8a",
+    "name" : "I can remove individual filters {\"filterOne\":\"docx\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"docx\",\"appliedFilter\":\"Safe\"} @functional @smoke @TEST-189",
+    "uid" : "4b535f769d756ea7",
     "parentUid" : "b1a8273437954620fa374b796ffaacdd",
     "status" : "passed",
     "time" : {
-      "start" : 1613919249944,
-      "stop" : 1613919252078,
-      "duration" : 2134
+      "start" : 1605530805480,
+      "stop" : 1605530850024,
+      "duration" : 44544
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can filter the request log using the time interval {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @functional @smoke @TEST-167",
+    "uid" : "fe0ea678713f91a",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "failed",
+    "time" : {
+      "start" : 1605530810359,
+      "stop" : 1605530826811,
+      "duration" : 16452
+    },
+    "flaky" : true,
+    "newFailed" : true,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can edit policy content flags {\"FileType\":\"excel\",\"ContentFlags\":\"externalHyperlinks\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-155",
+    "uid" : "903470fec8608955",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530823650,
+      "stop" : 1605530846829,
+      "duration" : 23179
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "filter the log by file type {\"filter\":\"docx\",\"filteredFile\":\"Docx\"} @functional @smoke @TEST-163",
+    "uid" : "4715291f7e049722",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530827019,
+      "stop" : 1605530855239,
+      "duration" : 28220
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"word\",\"FlagType\":\"sanitise\"} @functional @smoke @TEST-Change-all-content-flag-for-all-doc-type",
+    "uid" : "acd0136eca6c9d",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530846851,
+      "stop" : 1605530887066,
+      "duration" : 40215
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "I can remove individual filters {\"filterOne\":\"png\",\"filterTwo\":\"Safe\",\"filterToRemove\":\"Safe\",\"appliedFilter\":\"Png\"} @functional @smoke @TEST-189",
+    "uid" : "7e57b482545aef67",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530850056,
+      "stop" : 1605530894569,
+      "duration" : 44513
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "filter the log by file type {\"filter\":\"pdf\",\"filteredFile\":\"Pdf\"} @functional @smoke @TEST-163",
+    "uid" : "22394e5675c514ab",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530855262,
+      "stop" : 1605530883429,
+      "duration" : 28167
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  }, {
+    "name" : "A user is able to change all content flags for all file type in policy page {\"FileType\":\"pdf\",\"FlagType\":\"disallow\"} @functional @smoke @TEST-Change-all-content-flag-for-all-doc-type",
+    "uid" : "4534e7b31b995439",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "passed",
+    "time" : {
+      "start" : 1605530887084,
+      "stop" : 1605530927326,
+      "duration" : 40242
     },
     "flaky" : false,
     "newFailed" : false,
