@@ -106,18 +106,18 @@ module.exports = {
     I.clickElement(element);
   },
 
-  cancelPolicyDeletion() {
-    const modalEl = this.modal.deleteDraftPolicy;
-    I.waitForElement(modalEl, 30)
-    within(modalEl, () => {
-      I.clickElement(this.buttons.modal_cancel)
-    })
-  },
+  // cancelPolicyDeletion() {
+  //   const modalEl = this.modal.deleteDraftPolicy;
+  //   I.waitForElement(modalEl, 30)
+  //   within(modalEl, () => {
+  //     I.clickElement(this.buttons.modal_cancel)
+  //   })
+  // },
 
   async publishPolicy() {
     const element = this.buttons.publish;
     const elPublish = await I.grabNumberOfVisibleElements(element);
-    I.say(elPublish)
+    console.log(elPublish)
     if (elPublish > 0) {
       I.waitForElement(element, 15)
       //I.wait(5)
@@ -135,12 +135,12 @@ module.exports = {
   async clickPublish() {
     const element = this.buttons.publish;
     const elPublish = await I.grabNumberOfVisibleElements(element);
-    I.say(elPublish)
+    console.log(elPublish)
     if (elPublish > 0) {
       I.clickElement(element);
       I.wait(5)
     } else {
-      I.say('The Publish button is not available')
+      console.log('The Publish button is not available')
     }
   },
 
@@ -149,13 +149,13 @@ module.exports = {
     I.clickElement(element);
   },
 
-  cancelPolicyPublishing() {
-    const modalEl = this.modal.publishDraftPolicy;
-    I.waitForElement(modalEl)
-    within(modalEl, () => {
-      I.clickElement(this.buttons.modal_publish)
-    })
-  },
+  // cancelPolicyPublishing() {
+  //   const modalEl = this.modal.publishDraftPolicy;
+  //   I.waitForElement(modalEl)
+  //   within(modalEl, () => {
+  //     I.clickElement(this.buttons.modal_publish)
+  //   })
+  // },
 
   async goToDraftAdaptationPolicy() {
     await this.clickDraftTab();
@@ -222,30 +222,17 @@ module.exports = {
   async selectPolicyFlag(fileType, contentFlag, flagType) {
     try {
       const element = `label[for='` + fileType + contentFlag + flagType + `']`
-      this.goToDraftAdaptationPolicy()
+      await this.goToDraftAdaptationPolicy()
       I.clickElement(element);
       I.wait(3)
     } catch (e) {
-      I.say('Unable to set policy flag')
+      console.log('Unable to set policy flag')
       console.warn(e);
     }
   },
 
   async getFlagElement(fileType, contentFlag, flagType) {
     return `input[id='` + fileType + contentFlag + flagType + `']`;
-  },
-
-  async getSelected() {
-    const element = this.getFlagElement(fileType, contentFlag, flagType);
-    return await (await element.getProperty('checked')).jsonValue();
-  },
-
-  async setFlag(onOrOff) {
-    const val = await this.getSelected();
-    if ((onOrOff && !val) || (!onOrOff && val)) {
-      const element = await this.getFlagElement();
-      await element.click();
-    }
   },
 
   async setAndPublishPolicyFlag(fileType, contentFlag, flagType) {
@@ -277,7 +264,7 @@ module.exports = {
         output.print('The new flag is selected')
       }
     } catch (e) {
-      I.say('Unable to set policy flag')
+      console.log('Unable to set policy flag')
       console.warn(e);
     }
   },
@@ -294,27 +281,10 @@ module.exports = {
         I.clickElement(flag);
       }
     } catch (e) {
-      I.say('Unable to set policy flag')
+      console.log('Unable to set policy flag')
       console.warn(e);
     }
   },
-
-  async isChecked(element) {
-    let checked = null;
-    try {
-      checked = await I.grabAttributeFromAll(element)
-      //grabAttributeFrom(element, { checked: true })
-      output.print(checked)
-      if (checked === 1) {
-        return true
-      } else {
-        return false
-      }
-    } catch (e) {
-      console.warn(e);
-    }
-  },
-
 
   async selectFlag(fileType, contentFlag, flagType) {
 
@@ -322,7 +292,7 @@ module.exports = {
       //const flag = `label[for='` + fileType + contentFlag + flagType + `']`
       // const el = `input[id='` + fileType + contentFlag + flagType + `']`
       //   if (await this.getSelectedPolicyFlag(el) === true ){
-      this.goToDraftAdaptationPolicy()
+      await this.goToDraftAdaptationPolicy()
       //if (flagType == 'sanitise'){
 
       const flag = `label[for='` + fileType + contentFlag + flagType + `']`
@@ -340,38 +310,8 @@ module.exports = {
         output.print('The save cancel buttons are displayed')
       }
     } catch (e) {
-      I.say('Unable to set policy flag')
+      console.log('Unable to set policy flag')
       console.warn(e);
-    }
-  },
-
-  async getSelectedPolicyFlag(element) {
-    this.goToCurrentAdaptationPolicy()
-    try {
-      let selected = await I.grabAttributeFrom(element, 'checked')
-      output.print(selected)
-      return selected;
-    } catch (err) {
-      output.print(err);
-    }
-  },
-
-
-  async setCurrentPolicyFlag(fileType, contentFlag, flagType) {
-    const flag = `label[for='` + fileType + contentFlag + flagType + `']`
-    const element = `input[id='` + fileType + contentFlag + flagType + `']`
-    this.selectAnyFlag(fileType, contentFlag, flagType)
-    I.clickElement(this.buttons.saveChanges)
-    I.wait(3)
-    await this.publishPolicy()
-    I.wait(5)
-  },
-
-
-  assertSanitiseForAllFlag(docType) {
-    const elements = this.fields.input[docType].sanitise
-    for (let element in elements) {
-      this.assertElementChecked(elements[element])
     }
   },
 
@@ -386,8 +326,8 @@ module.exports = {
     this.assertElementChecked(element)
   },
 
-  assertDraftFlagAs(fileType, contentFlag, flagType) {
-    this.goToDraftAdaptationPolicy();
+  async assertDraftFlagAs(fileType, contentFlag, flagType) {
+    await this.goToDraftAdaptationPolicy();
     const element = `input[id='` + fileType + contentFlag + flagType + `']`
     this.assertElementChecked(element)
   },
@@ -396,13 +336,6 @@ module.exports = {
     const elements = await I.grabNumberOfVisibleElements(`label:nth-child(2)`)
     for (let element in elements) {
       I.click(`label:nth-child(2)`)
-    }
-  },
-
-  assertDisallowForAllFlag(docType) {
-    const elements = this.fields.input[docType].disallow
-    for (let element in elements) {
-      this.assertElementChecked(elements[element])
     }
   },
 
@@ -428,6 +361,11 @@ module.exports = {
     I.click(this.buttons.saveChanges)
   },
 
+  confirmApiIsUpdated(url){
+    I.seeInField(this.fields.apiUrlInput, url);
+    output.print(`The new Api is successfully saved as ${url}`)
+  },
+
   async updateUrlIfNeeded(text) {
     const elText = await I.grabValueFrom(this.fields.apiUrlInput)
     let message;
@@ -437,7 +375,7 @@ module.exports = {
     } else {
       message = `API URL is already ${text}`
     }
-    I.say(message)
+    console.log(message)
   },
 
   /*
@@ -448,14 +386,14 @@ module.exports = {
   async clickViewFirstPolicy() {
     const element = `(//button[contains(text(),'View')])[1]`;
     I.wait(5)
-    I.clickElement(element)[0]
+    await I.clickElement(element)[0]
   },
 
   async clickActivateFirstPolicy() {
     const element = `(//button[contains(text(),'Activate')])[1]`;
     try {
       I.wait(5)
-      I.clickElement(element)[0]
+      await I.clickElement(element)[0]
       I.wait(2);
 
     } catch (e) {
@@ -465,14 +403,14 @@ module.exports = {
 
   checkPreviousPolicyApplied(c_timestamp, p_timestamp) {
     if (c_timestamp === p_timestamp) {
-      I.say('the current policy is updated with the previous one')
+      console.log('the current policy is updated with the previous one')
     } else {
-      I.say('the previous policy is not applied')
+      console.log('the previous policy is not applied')
     }
   },
 
   async getPolicyHistoryTimeStamp(row, col) {
-    return await I.getRowText(row, col)
+    return I.getRowText(row, col)
   },
 
   async getCurrentPolicyTimeStamp() {
@@ -494,16 +432,16 @@ module.exports = {
     const numberOfOpenTabs = I.grabAllWindowHandles()
     numberOfOpenTabs.then((numberTabs) => {
       if (numberTabs.length === expectedTabCount) {
-        I.say('The number Of open tabs' + numberTabs.length + 'is as expected ' + expectedTabCount)
+        console.log('The number Of open tabs' + numberTabs.length + 'is as expected ' + expectedTabCount)
       } else {
-        I.say('Expected and actual tab count is not same')
+        console.log('Expected and actual tab count is not same')
       }
     })
   },
 
   async getTotalNumberOfRecordsOfPolicy() {
     const numberOfRecordsOfPolicy = await I.grabNumberOfVisibleElements(this.table.tableRows);
-    I.say(`Rows count is ${numberOfRecordsOfPolicy}`)
+    console.log(`Rows count is ${numberOfRecordsOfPolicy}`)
     return numberOfRecordsOfPolicy
   },
 
@@ -519,18 +457,18 @@ module.exports = {
   async isRecordCountAccurate(recordsCount) {
     const displayedCount = await I.grabTextFrom(this.options.countView);
     let itemCount = await this.getTotalNumberOfRecordsOfPolicy();
-    var totalR = displayedCount
+    let totalR = displayedCount
       .split(`1-${itemCount} of `)[1]
       .split("\n")[0];
     console.log(`The total records available is: ${totalR}`)
     if (totalR > itemCount) {
       if (itemCount === recordsCount && displayedCount.includes(`1-${itemCount}`)) {
-        I.say(`The selected number of record is correctly displayed as: ${itemCount}`)
+        console.log(`The selected number of record is correctly displayed as: ${itemCount}`)
       } else {
         assert.fail(`The number of records displayed ${itemCount} is not as expected`)
       }
     } else if (totalR <= itemCount) {
-      I.say(`The total available records is less than the selected count; ${itemCount} records are displayed`)
+      console.log(`The total available records is less than the selected count; ${itemCount} records are displayed`)
     }
   },
 
@@ -596,7 +534,7 @@ module.exports = {
         output.print('The flag is already selected')
       }
     } catch (e) {
-      I.say('Unable to set NCFS flag')
+      console.log('Unable to set NCFS flag')
       console.warn(e);
     }
   },
@@ -604,12 +542,6 @@ module.exports = {
   async setAndPublishRouteFlag(routeOption) {
     await this.setRouteFlag(routeOption)
     await this.publishPolicy()
-  },
-
-  async setUnprocessableFileAsRelay() {
-    const element = this.radiobuttons.unprocessedFileRelay;
-    await this.setRouteFlag()
-    //I.clickElement(element);
   },
 
   setUnprocessableFileAsBlock() {
@@ -653,23 +585,6 @@ module.exports = {
     }
   },
 
-  setUnprocessableRouteRadio(unprocessableRoute) {
-    switch (unprocessableRoute) {
-      case ('Relay'):
-        this.setUnprocessableFileAsRelay();
-        break;
-      case ('Block'):
-        this.setUnprocessableFileAsBlock();
-        break;
-      case ('Refer'):
-        this.setUnprocessableFileAsRefer();
-        break;
-      default:
-        throw "No such option";
-    }
-
-  },
-
   assertCheckedBlockedRadioButton(radioValue) {
     let radioElement = null;
     switch (radioValue) {
@@ -702,7 +617,7 @@ module.exports = {
       }
       I.seeCheckboxIsChecked(radioElement);
     } catch (e) {
-      I.say('Unable to verify NCFS flag')
+      console.log('Unable to verify NCFS flag')
       console.warn(e);
     }
 
@@ -718,13 +633,13 @@ module.exports = {
       I.amInPath('output/downloads');
       I.seeInThisFile('Document Access Blocked due to Policy', 'utf8')
     } else {
-      I.say(`Set option ` + fileOutcome + ` is not available`)
+      console.log(`Set option ` + fileOutcome + ` is not available`)
     }
   },
 
   async clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
-    I.waitForElement(element, 30)
+    I.waitForElement(element, 60)
     I.clickElement(element);
   }
 }

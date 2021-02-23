@@ -12,7 +12,8 @@ Scenario('I download a supported file from Sharepoint', async () => {
     await I.goToSharepoint()
     I.wait(15)
     I.seeInTitle("Communication site - ui-uploads - All Documents");
-    sharepoint.selectFile(file);
+    const file = ''
+    await sharepoint.selectFile(file);
     sharepoint.downloadFile()
     // I.usePuppeteerTo('get response', async ({
     //     page

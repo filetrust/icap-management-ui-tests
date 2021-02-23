@@ -26,15 +26,15 @@ module.exports = {
         I.wait(5)
     },
 
-    goToDocuments(){
+    async goToDocuments(){
         const element = this.links.documents;
-        I.clickElement(element)[0]
+        await I.clickElement(element)[0]
         I.wait(5);
     },
 
-    selectFile(file){
+    async selectFile(file){
         const element =`div[aria-label='`+file+`'] > div > i:nth-of-type(2)`
-        I.clickElement(element)[0];
+        await I.clickElement(element)[0];
         I.wait(5);
     },
 
@@ -53,11 +53,11 @@ module.exports = {
         if (tabs >1) {
             I.switchToNextTab();
             I.see('Document Access Blocked due to Policy');
-            I.say('The file is blocked');
+            console.log('The file is blocked');
         } else {
-            I.say('Only one tab is currently opened');
+            console.log('Only one tab is currently opened');
         }}catch (e) {
-            I.say('Unable to evaluate assertion')
+            console.log('Unable to evaluate assertion')
             console.warn(e);
         }
     }

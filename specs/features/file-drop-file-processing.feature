@@ -6,7 +6,7 @@ Feature: file-drop-file-processing
     Background:
         Given I am on the FileDrop page
 
-    #@functional
+    @functional
     @portal
     @TEST-230
     Scenario Outline: User can process a supported file through the file drop service
@@ -19,7 +19,7 @@ Feature: file-drop-file-processing
             | src/data/multiset/structuralIssues.xlsx | structuralIssues.xlsx | xlsx     | 187294   | Your file has been processed |
 
 
-    #@functional
+    @functional
     @TEST-231
     @filedrop
     @portal

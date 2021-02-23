@@ -12,7 +12,6 @@ When('I click Select a file and choose a supported file {string}', (supportedFil
 });
 
 Then('the File is processed with the process status displayed as {string}', (processStatus) => {
-  I.seeElement(filedropPage.buttons.viewresult);
   I.see(processStatus.trim(), filedropPage.sections.fileProcessStatus);
 });
 

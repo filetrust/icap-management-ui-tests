@@ -19,8 +19,8 @@ When('I open the date picker and select a {string}', (timeInterval) => {
     requesthistoryPage.selectTimePeriod(timeInterval)
 });
 
-Then('the date range is updated to be from {string} hrs earlier to {string}', (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.isTimeApplied(datetimeFrom, datetimeTo)
+Then('the date range is updated to be from {string} hrs earlier to {string}', async(datetimeFrom, datetimeTo) => {
+    await requesthistoryPage.isTimeApplied(datetimeFrom, datetimeTo)
 });
 
 Then('the files processed for the selected period are displayed', async () => {
@@ -34,8 +34,8 @@ When('I select a valid {string} and {string}', async (datetimeFrom, datetimeTo) 
     await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
-Then('the selected custom range is applied to include {string} and {string}', (datetimeFrom, datetimeTo) => {
-    requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
+Then('the selected custom range is applied to include {string} and {string}', async(datetimeFrom, datetimeTo) => {
+    await requesthistoryPage.isCustomRangeApplied(datetimeFrom, datetimeTo);
 });
 
 When('I select a custom time of {string}', async (datetimeFrom) => {

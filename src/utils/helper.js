@@ -96,20 +96,6 @@ class MyHelper extends Helper {
         }
     }
 
-    async fillInField(selector, value) {
-        const helper = this.helpers['Puppeteer'];
-        try {
-            const elVisible = await helper.grabNumberOfVisibleElements(selector);
-            if (elVisible) {
-                return helper.fillfield(selector, value);
-            } else {
-                output.error('The element ' + selector + ' is not visible')
-            }
-        } catch (err) {
-            output.log(err);
-        }
-    }
-
     async clickRecord(i) {
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
@@ -182,20 +168,22 @@ class MyHelper extends Helper {
                     previousTimestamp = this.parseItemTimestamp(previousText, true)
                 }
                 if (i !== 0) {
-                    let sortOrder
+                    let sortOrder;
                     if (isReverse) {
                         sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
+                    } else if (!isReverse){
+                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp) 
                     } else {
-                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp)
+                        sortOrder = moment(previousTimestamp).isSame(currentTimestamp)
                     }
                     if (sortOrder) {
                         n = n + 1;
                     } else {
-                        assert.fail('The timestamp sorting is wrong. Upper: ' + previousText + ', bottom: ' + currentText);
+                        assert.fail('The transactions sorting is not as expected. Upper: ' + previousText + ', bottom: ' + currentText);
                     }
                 }
             }
-            console.log(`The timestamp sorting well`);
+            console.log(`The transactions sorting is as expected`);
         } catch (err) {
             assert.fail(err);
         }
@@ -209,7 +197,7 @@ class MyHelper extends Helper {
             if (!elm) {
                 assert.fail(`The user record with ${data} is not displayed`);
             } else {
-                I.say('element is found')
+                console.log('element is found')
             }
 
         } catch (err) {
@@ -337,13 +325,8 @@ class MyHelper extends Helper {
         return Date.parse(time1) > Date.parse(time2);
     }
 
-    checkFileIsDownloaded(file) {
-        let f = new File(file);
-        if (f.exists()) {
-            write('The file is downloaded');
-        } else {
-            write('The file does not exist');
-        }
+    checkFileExist(file) {
+       return fs.existsSync(file);
     }
 
     checkFileContains(content) {
@@ -353,6 +336,21 @@ class MyHelper extends Helper {
         } catch (err) {
             assert.fail('The file does not contain required content:-  ' + content);
         }
+    }
+
+    getFileOutContent(file) {
+        try {
+            const exists = fs.existsSync(file);
+            if (exists) {
+                return fs.readFileSync(file)
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    checkFileOutputContent(file, content) {
+        return this.getFileOutContent(file).includes(content)
     }
 
     async goToSharepoint() {
@@ -387,8 +385,12 @@ class MyHelper extends Helper {
     }
 
     async typeIn(element, val) {
+        try {
         const page = this.helpers['Puppeteer'].page;
         await page.type(element, val);
+    }catch (error) {
+        console.error(error);
+    }
     }
 
 }

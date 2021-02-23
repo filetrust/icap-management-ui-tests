@@ -49,7 +49,7 @@ module.exports = {
         emptyTableNotification: `//td[contains(.,'No Transaction Data Found')]`,
         errorTableNotification: `//td[contains(.,'Error Getting Transaction Data')]`,
         loading: `//div[contains(@class, 'RequestHistory_wrapTable')]/div`,
-        tableHeaders: `tr[class*='MuiTableRow-head'] > th`,
+        tableHeaders: `tr[class*='MuiTableRow-head']`,
     },
     calendar: {
         dateTimePicker: `div[class*='daterangepicker']`,
@@ -111,15 +111,15 @@ module.exports = {
     clickAddFilterButton() {
         const mainEl = this.containers.filters;
         within(mainEl, () => {
-            I.waitForClickable(this.buttons.addFilterBytxt)
-            I.retry(2).click(this.buttons.addFilterBytxt);
+            I.waitForElement(this.buttons.addFilterBytxt, 60)
+            I.clickElement(this.buttons.addFilterBytxt);
         })
     },
 
     clickMoreFiltersButton() {
         const mainEl = this.containers.filters;
         within(mainEl, () => {
-            I.retry(2).click(locate(this.buttons.moreFilters));
+            I.clickElement(locate(this.buttons.moreFilters));
         })
     },
 
@@ -134,7 +134,7 @@ module.exports = {
     },
 
     removeAppliedFilter(filterName) {
-        I.click(`//span[contains(., '` + filterName + `')]/parent::*/../div/button`);
+        I.clickElement(`//span[contains(., '` + filterName + `')]/parent::*/../div/button`);
 
     },
 
@@ -142,10 +142,6 @@ module.exports = {
      * Datetimepicker
      * ***************************************************************
      */
-    async getDatetimepicker() {
-        const element = this.calendar.dateTimePicker;
-        return await I.grabAttributeFrom(element, jsonValue());
-    },
 
     setDatetimepicker(value) {
         const element = this.calendar.dateTimePicker;
@@ -153,13 +149,15 @@ module.exports = {
     },
 
     openDatePicker() {
+        I.waitForElement(this.table.tableHeaders, 60)
         const element = this.calendar.reportRange;
-        I.waitForVisible(element, 30)
-        I.click(element).catch(() => I.say(element + ' is not clickable'));
+        I.waitForClickable(element, 60)
+        I.click(element).catch(() => console.log(element + ' is not clickable'));
     },
 
     selectTimePeriod(period) {
         try {
+            I.waitForElement(this.table.tableHeaders, 60)
             if (period === '1 Hour') {
                 I.clickElement(this.buttons.time_1hour);
             } else if (period === '12 Hours') {
@@ -167,11 +165,11 @@ module.exports = {
             } else if (period === '24 Hours') {
                 I.clickElement(this.buttons.time_24hours);
             } else {
-                I.say("Unable to find the required option");
+                console.log("Unable to find the required option");
             }
             I.waitForVisible(this.table.tableHeaders, 60)
         } catch (e) {
-            I.say('Action unsuccessful')
+            console.log('Action unsuccessful')
             console.warn(e);
         }
     },
@@ -240,7 +238,7 @@ module.exports = {
         let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
         while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${year}`) {
-            await I.click(this.calendar.drp_arrow_left).catch(() => I.say(this.calendar.drp_arrow_left + 'is not clickable'))
+            await I.click(this.calendar.drp_arrow_left).catch(() => console.log(this.calendar.drp_arrow_left + 'is not clickable'))
             currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         }
         return currentYearAndMonthValueRight
@@ -255,7 +253,7 @@ module.exports = {
         const calendar = await I.grabNumberOfVisibleElements(this.calendar.drp_calendar_left)
         if (!calendar) {
             const element = this.buttons.customRange;
-            await I.click(element).catch(() => I.say(element + 'is not clickable'));
+            await I.click(element).catch(() => console.log(element + 'is not clickable'));
         }
     },
 
@@ -321,14 +319,14 @@ module.exports = {
 
     async setTimePeriod(datetimeFrom, datetimeTo) {
         const element = this.buttons.customRange;
-        I.click(element).catch(() => I.say(element + 'is not clickable'));
+        I.click(element).catch(() => console.log(element + 'is not clickable'));
         try {
             await this.setTimeFrom(datetimeFrom)
             await this.setTimeTo(datetimeFrom, datetimeTo)
             I.click(this.buttons.apply)
             I.waitForElement(this.table.tableHeaders, 60)
         } catch (e) {
-            I.say('Action unsuccessful')
+            console.log('Action unsuccessful')
             console.warn(e);
         }
     },
@@ -340,29 +338,15 @@ module.exports = {
         return startime;
     },
 
-    async getTimeTo() {
-        let endtime = null;
-        let range = await I.grabTextFrom(this.calendar.reportRange);
-        endtime = range.split("-")
-        return startime;
-    },
-
     async isCustomRangeApplied(dateFrom, dateTo) {
         // const element = null;
         const range = (dateFrom + " - " + dateTo).toString();
         const newrange = await I.grabTextFrom(this.calendar.reportRange)
         if (newrange === range) {
-            I.say('The required range is applied ' + newrange + ' as selected ' + range)
+            console.log('The required range is applied ' + newrange + ' as selected ' + range)
         } else {
-            I.say('The required range is not applied-- displayed range is ' + newrange + ' different to selected ' + range)
+            console.log('The required range is not applied-- displayed range is ' + newrange + ' different to selected ' + range)
         }
-    },
-
-    setCustomRange(dateFrom, dateTo) {
-        const start = this.setTimeFrom(dateFrom);
-        const end = setTimeTo(dateTo);
-        const range = moment.range(start, end);
-        range.format()
     },
 
     async getSelectedRange() {
@@ -380,7 +364,7 @@ module.exports = {
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
         const datefield = `//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`
-        await I.seeElementExist(datefield) !== true ? I.say('The date field shows: ' + timeFrom + ` - ` + currentTime) : I.say('The selected period is correctly displayed');
+        await I.seeElementExist(datefield) !== true ? console.log('The date field shows: ' + timeFrom + ` - ` + currentTime) : console.log('The selected period is correctly displayed');
     },
 
 
@@ -398,7 +382,7 @@ module.exports = {
                 time = datetimeTo
             }
         } catch (e) {
-            I.say('errors')
+            console.log('errors')
             console.warn(e);
         }
         return time;
@@ -413,27 +397,26 @@ module.exports = {
         try {
             const element = await I.grabNumberOfVisibleElements(this.table.emptyTableNotification);
             if (element) {
-                I.say("No Transaction Data Found")
+                console.log("No Transaction Data Found")
                 return false;
             } else {
-                I.say("The table data is available")
+                console.log("The table data is available")
                 return true;
             }
         } catch (e) {
-            I.say('errors')
             console.warn(e);
         }
     },
 
     async isDataReturned() {
-        I.waitForInvisible(this.table.loading)
-        const isErr = await I.grabNumberOfVisibleElements(`//tbody/descendant::h2`)
-        if (isErr) {
+        I.waitForInvisible(this.table.loading, 60)
+        I.waitForElement(this.table.tableHeaders, 60)
+        const notifEl = await I.grabNumberOfVisibleElements(`//tbody/descendant::h2`)
+        if (notifEl) {
             const text = await I.grabTextFrom(`//tbody/descendant::h2`)
             if (text === 'Error Getting Transaction Data') {
-                I.say(text)
                 assert.fail(text)
-            }
+            }else
             if (text === 'No Transaction Data Found') {
                 return text
             }
@@ -447,13 +430,13 @@ module.exports = {
                 if (isFailIfNoData) {
                     assert.fail(noData)
                 }
-                I.say(noData)
+                console.log(noData)
             } else {
-                I.say("Data is available")
+                console.log("Data is available")
                 await check(range, col)
             }
         } catch (err) {
-            assert.fail(err);
+            console.log(err);
         }
     },
 
@@ -464,13 +447,12 @@ module.exports = {
                 if (isFailIfNoData) {
                     assert.fail(noData)
                 }
-                I.say(noData)
             } else {
-                I.say("Data is available")
+                console.log("Data is available")
                 await check(range, col, fileId)
             }
         } catch (err) {
-            assert.fail(err);
+            console.log(err);
         }
     },
 
@@ -493,23 +475,23 @@ module.exports = {
 
     clickFileTypeAdd() {
         const mainEl = this.popup.filterMenu;
+        I.waitForElement(mainEl, 60)
         try {
             within(mainEl, () => {
-                I.retry(2).click(this.popup.fileTypeByCss);
+                I.clickElement(this.popup.fileTypeByCss);
             })
         } catch (e) {
-            I.say('Unable to click on locator')
             console.warn(e);
         }
     },
     clickFileOutcomeAdd() {
         const mainEl = this.popup.filterMenu;
+        I.waitForElement(mainEl, 60)
         try {
             within(mainEl, () => {
-                I.retry(2).click(this.popup.riskByCss);
+                I.clickElement(this.popup.riskByCss);
             })
         } catch (e) {
-            I.say('Unable to click on locator')
             console.warn(e);
         }
     },
@@ -518,57 +500,42 @@ module.exports = {
     selectFileType(value) {
         this.clickFileTypeAdd();
         try {
-            I.say('Filter to set is: ' + value)
+            console.log('Filter to set is: ' + value)
             let element = `//span[contains(.,'` + value + `')]/parent::label/span[1]/span/input`
             I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
         } catch (e) {
-            I.say('Unable to click on locator ' + element)
             console.warn(e);
         }
     },
     selectFileOutcome(value) {
         this.clickFileOutcomeAdd();
         try {
-            I.say('Filter to set is: ' + value)
             let element = `//label/span[text()='` + value + `']`;
             I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
         } catch (e) {
-            I.say('Unable to click on locator ' + element)
             console.warn(e);
         }
     },
 
     async checkResultFileTypesAreAccurate(filteredFile, col) {
+        I.waitForElement(this.table.tableHeaders, 60)
         try {
             const text = await I.grabTextFrom(`//tbody`);
             if (text === 'No Transaction Data Found') {
-                I.say('No data returned')
+                console.log('No data returned')
             } else {
-                I.say("Data is available")
+                console.log("Data is available")
                 await this.checkRows(filteredFile, col)
             }
         } catch (e) {
-            I.say('errors')
             console.warn(e);
         }
     },
 
-    async verifyResultIsAccurate(filter) {
-        let col;
-        try {
-            await this.isDataReturned()
-            I.say("Data is available")
-            col = this.getAppliedFilter(filter)
-            await this.checkRows(filter, col)
-        }
-        catch (e) {
-            assert.fail(e)
-        }
-    },
 
     checkFilters(appliedFilters, filterValues) {
         const filterRes = appliedFilters.split("_");
@@ -607,24 +574,27 @@ module.exports = {
         this.clickMoreFiltersButton();
         this.clickAddFilterButton();
         this.selectFileOutcome(riskFilter);
-
+        I.wait(5)
         this.clickAddFilterButton();
         this.selectFileType(typeFilter);
-    },
-
-    getAppliedFilter(res) {
-        let col;
-        if (res === 'Safe') {
-            col = 4;
-        } else col = 3;
-        return col;
     },
 
     /*
      * File ID Filtering
      * ***************************************************************
      */
-    setFileId(value) {
+    async setFileId(value) {
+        this.clickMoreFiltersButton();
+        this.clickAddFilterButton();
+        await I.clickElement(this.buttons.fileIdMenu);
+        I.fillField(this.fields.inputFilterFileID, value);
+        await I.clickElement(this.buttons.fileIdAdd);
+
+    },
+
+
+
+    setFileOutcome(value) {
         this.clickMoreFiltersButton();
         this.clickAddFilterButton();
         I.click(this.buttons.fileIdMenu);
@@ -633,14 +603,15 @@ module.exports = {
 
     },
 
-    filterByFileId(fileId) {
-        this.setFileId(fileId);
+    async filterByFileId(fileId) {
+        await this.setFileId(fileId);
         I.clickElement(this.buttons.fileIdAdd);
     },
 
     async checkFileIdValues(filteredFile) {
         I.wait(5)
         await this.checkRows(filteredFile, 2)
+        
     },
 
     /*
@@ -695,7 +666,7 @@ module.exports = {
         if (fileId !== 'undefined') {
             await I.seeElementExist(this.getFileRecord(fileId))
         } else if (fileId === 'undefined') {
-            I.say('The fileId was not retrieved')
+            console.log('The fileId was not retrieved')
         }
     },
 
@@ -709,11 +680,11 @@ module.exports = {
     },
 
     async openFileRecord(fileId) {
-        if (fileId !== 'undefined') {
-            I.click(this.getFileRecord(fileId))
-        } else if (fileId === 'undefined') {
-            I.say('The fileId was not retrieved, opening latest transaction')
-            await I.clickRecord(i)
+        if (fileId !== null) {
+            I.clickElement(this.getFileRecord(fileId))
+        } else {
+            console.log('The fileId was not retrieved, opening latest transaction')
+            await I.clickRecord(1)
         }
     },
 
@@ -735,17 +706,6 @@ module.exports = {
             })
         }
     },
-
-    // isIssueItemsSectionAvailable() {
-    //     const el = I.getModal(this.modal.fileDetailModal)
-    //     //;
-    //     if (I.seeElementExist(el) === true) {
-    //         within(this.modal.fileDetailModal, () => {
-    //             const element = this.modal.issueItemsBanner;
-    //             I.seeElementExist(element)
-    //         });
-    //     }
-    // },
 
     isRemedyItemsSectionAvailable() {
         const el = this.modal.fileDetailModal;
@@ -822,11 +782,11 @@ module.exports = {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
         const iBanner = this.modal.issueItemsBanner;
-        (await I.seeElementExist(iBanner) !== true) ? I.say('Issue Items are not available') : I.say('Issue Items section is available');
+        (await I.seeElementExist(iBanner) !== true) ? console.log('Issue Items are not available') : console.log('Issue Items section is available');
         const rBanner = this.modal.remedyItemsBanner;
-        (await I.seeElementExist(rBanner) !== true) ? I.say('Remedy Items section is not available') : I.say('Remedy Items section is available');
+        (await I.seeElementExist(rBanner) !== true) ? console.log('Remedy Items section is not available') : console.log('Remedy Items section is available');
         const sBanner = this.modal.sanitisationItemsBanner;
-        (await I.seeElementExist(sBanner) !== true) ? I.say('Sanitisation Items section is not displayed!') : I.say('Sanitisation Items section is displayed!');
+        (await I.seeElementExist(sBanner) !== true) ? console.log('Sanitisation Items section is not displayed!') : console.log('Sanitisation Items section is displayed!');
     },
 
 };

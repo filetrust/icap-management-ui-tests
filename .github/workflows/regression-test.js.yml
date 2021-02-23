@@ -1,4 +1,4 @@
-name: FunctionalTest.js CI
+name: RegressionTest.js CI
 
 on:
   workflow_dispatch:
@@ -39,7 +39,7 @@ jobs:
           npm install -g allure-commandline --save-dev     
           npm install
           c-icap-client -i $ICAP_URL_NEU
-          npx codeceptjs run-multiple --steps --grep @fileprocess --all --plugins allure
+          npx codeceptjs run-multiple --steps --grep @functional --all --plugins allure
           cat output/icap.log
 
       - name: Get Allure history

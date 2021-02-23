@@ -32,8 +32,8 @@ When('I process a supported sanitisation file {string} with remedy items', (acti
     I.wait(5);
 });
 
-Then('the notification message is displayed as {string}', (processStatus) => {
-    filedropPage.checkMessageDisplayed(processStatus.trim());
+Then('the notification message is displayed as {string}', async(processStatus) => {
+    await filedropPage.checkMessageDisplayed(processStatus.trim());
 });
 
 Then('I see the list of sanitised active contents with expected issue {string}', (activeContent) => {

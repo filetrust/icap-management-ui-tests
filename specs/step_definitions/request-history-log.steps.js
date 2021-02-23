@@ -14,32 +14,29 @@ Then('the count of files displayed is as selected {int} and will show in the ite
 });
 
 Given('There are transactions available in the transaction log', async () => {
-    I.viewTransactions()
-    requesthistoryPage.openDatePicker()
-    requesthistoryPage.selectTimePeriod('24 Hours')
+    I.viewTransactions('12 Hours')
     await requesthistoryPage.isDataAvailable()
 });
 
-When('I click on the Add Filter button', () => {
+When('I click on the Add Filter button and add multiple filter selections as {string}, {string}', (riskFilter,typeFilter) => {
     requesthistoryPage.clickMoreFiltersButton();
     requesthistoryPage.clickAddFilterButton();
-});
-When('add multiple filter selections as {string}, {string}, {string}', (riskFilter, typeFilter) => {
     requesthistoryPage.selectFileOutcome(riskFilter);
     requesthistoryPage.clickAddFilterButton();
     requesthistoryPage.selectFileType(typeFilter);
 });
+
 Then('the result list shows files with the applied filtertypes {string},{string}', async (fileType, fileRisk) => {
     let fileCol = 3;
     await requesthistoryPage.checkResultFileTypesAreAccurate(fileType, fileCol);
     await requesthistoryPage.checkFileOutcomeValues(fileRisk);
 });
 
-Then('the result list shows files with the applied filtertypes {string}, {string}', async (appliedFilter, filterValues) => {
+Then('The transactions with {string} are returned', async (filterValues) => {
     await requesthistoryPage.checkFileOutcomeValues(filterValues);
 });
 
-Given('{string} and {string} are applied', (typeFilter, riskFilter) => {
+Given('The filters {string} and {string} are applied', (typeFilter, riskFilter) => {
     requesthistoryPage.applyMultipleFilters(riskFilter, typeFilter);
 });
 When('I remove {string}', (filterName) => {
@@ -51,12 +48,12 @@ When('I have selected a time range {string} and {string}', async (datetimeFrom, 
     await requesthistoryPage.setTimePeriod(datetimeFrom, datetimeTo);
 });
 
-When('I click on the Add Filter button and add a file id filter with Id {string}', (fileId) => {
-    requesthistoryPage.setFileId(fileId);
+When('I click on the Add Filter button and add a file id filter with Id {string}', async (fileId) => {
+    await requesthistoryPage.setFileId(fileId);
     I.waitForElement(requesthistoryPage.table.tableHeaders, 60)
 });
 
-Then('the result list only shows the filtered file with id {string}', (fileId) => {
+Then('the result list only shows the filtered file with id {string}', async(fileId) => {
     I.wait(5)
-    requesthistoryPage.checkFileIdValues(fileId);
+    await requesthistoryPage.checkFileIdValues(fileId);
 });

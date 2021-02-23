@@ -15,7 +15,9 @@ Feature: content-management-policy-application-to-files
         And The NCFS routing is set to Block for supported files
         And I set a policy for file type '<fileType>' with '<contentFlag>' set to '<flagType>'
         When I process file '<file>' through the icap server using Icap client
-        Then The '<file>' with file type '<fileExtension>' processing outcome is as expected '<fileOutcome>' and '<outcomeValue>'
+        Then The file '<file>' appears in the output folder as '<fileOutcome>' with required content
+        And The transaction log shows the file with type '<fileExtension>' as '<outcomeValue>'
+
         Examples:
             | fileType | contentFlag        | flagType | file                           | fileOutcome | fileExtension | outcomeValue      |
             | word     | InternalHyperlinks | sanitise | issues.docx                    | Sanitised   | Docx          | Safe              |

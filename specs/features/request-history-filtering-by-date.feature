@@ -40,14 +40,8 @@ Feature: request-history-filtering-by-date
             | datetimeFrom       | datetimeTo          |
             | 20/10/2020 0:45 AM | 26/10/2020 13:45 PM |
 
-    @portal
-    #@functional
-    @TEST-242
-    Scenario: The request log is sorted by timestamp, newest to oldest
-        And There are existing transactions available
-        Then the request log is sorted from newest timestamp to oldest timestamp
 
-    @portal
+    #@portal
     #@functional
     @TEST-243
     Scenario: Transactions can be sorted by time

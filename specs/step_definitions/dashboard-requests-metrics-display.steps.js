@@ -29,7 +29,7 @@ When('I process a {string} through the icap server', (file) => {
 });
 
 Then('the Total Files processed is increased by {int}', (TFUpdateByValue) => {
-    I.seeInField(analyticsPage.sections.totalfilesprocessed, totalFilesNumber + TFUpdateByValue);
+    I.seeInField(analyticsPage.sections.totalFilesProcessed, totalFilesNumber + TFUpdateByValue);
 });
 
 Then('the Total icap requests is reflected as {int}', (TRUpdateByValue) => {
@@ -47,9 +47,7 @@ Then('the risk sector {string} is available and shows the count updated by {int}
 Given('I have navigated to the Analytics page',  () => {
         I.goToAnalytics();
 });
-When('I process a {string} through the icap server with an outcome as {string}',  (file, fileOutcome) =>{
-    //file, fileOutcome
-});
+
 Then(/^the Total Files processed is increased by '(.*)'$/, function () {
 
 });

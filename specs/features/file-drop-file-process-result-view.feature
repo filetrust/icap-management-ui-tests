@@ -6,7 +6,7 @@ Feature: file-drop-file-process-result-view
         Given I am on the FileDrop page
 
 
-    #@functional
+    @functional
     @portal
     @filedrop
     @TEST-228
@@ -18,7 +18,7 @@ Feature: file-drop-file-process-result-view
             | activeContentFile            | activeContent                              | repairedObject      |
             | src/data/multiset/file1.docx | Internal Hyperlinks present in CT_Bookmark | APP segment removed |
 
-    #@functional
+    @functional
     @portal
     @filedrop
     @TEST-229

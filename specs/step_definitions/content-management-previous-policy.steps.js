@@ -6,16 +6,16 @@ Given('I have navigated to the Policy History page', () => {
     I.goToPolicyHistory();
 });
 
-When('I click activate on a previous policy', () => {
-    policyPage.clickActivateFirstPolicy()
+When('I click activate on a previous policy', async() => {
+    await policyPage.clickActivateFirstPolicy()
 });
 
 When('I confirm publish action', () => {
     modal.acceptActivate();
 });
 
-When('I click view on a previous policy', () => {
-    policyPage.clickViewFirstPolicy()
+When('I click view on a previous policy', async() => {
+    await policyPage.clickViewFirstPolicy()
 });
 
 Then('the previous Policy is displayed', () => {

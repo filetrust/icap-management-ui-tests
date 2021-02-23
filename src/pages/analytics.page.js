@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const I = actor();
 
 module.exports = {
@@ -93,7 +95,7 @@ module.exports = {
         let element = this.getChartElement(chart)
         within(element, () => {
             I.click("//span[contains(.,'" + risk + "')]")
-                .catch(() =>  I.say('Required options not found'));
+                .catch(() =>  console.log('Required options not found'));
         })
     },
 
@@ -107,15 +109,15 @@ module.exports = {
         return element;
     },
 
-    async getRiskSector(risk) {
+    getRiskSector(risk) {
         let element = this.legend.rechart_sector;
         let sector = null;
         this.filterByRisk(element, risk);
         within(element, () => {
             try {
-                sector = this.legend.label_ + risk
+                sector = this.legend.riskLabels + risk
             } catch (e) {
-                I.say('errors, sector element not found')
+                console.log('errors, sector element not found')
                 console.warn(e);
             }
         })
@@ -128,9 +130,9 @@ module.exports = {
         this.filterByRisk(element, risk);
         within(element, async () => {
             try {
-                count = await I.grabValueFrom(this.legend.label_+ risk)
+                count = await I.grabValueFrom(this.legend.riskLabels + risk)
             } catch (e) {
-                I.say('errors, unable to retrieve value')
+                console.log('errors, unable to retrieve value')
                 console.warn(e);
             }})
         return count;
@@ -158,9 +160,9 @@ module.exports = {
                     countsectors = await I.grabNumberOfVisibleElements(this.legend.rechart_line);
                 }
                 if (countsectors === 1) {
-                    I.say("The number of filtered risks displayed (" + countsectors + ") is as expected")
+                    console.log("The number of filtered risks displayed (" + countsectors + ") is as expected")
                 } else {
-                    I.say("The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
+                    console.log("The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
                 }
                 if (riskLabel === 'Safe') {
                     I.seeElement(this.legend.label_Safe)
@@ -173,11 +175,11 @@ module.exports = {
                 } else if (label === 'Allowed By Policy') {
                     I.seeElement(this.legend.label_AllowedByPolicy)
                 } else {
-                    I.say('Required options not found')
+                    console.log('Required options not found')
                 }
             })
         } catch (e) {
-            I.say('errors')
+            console.log('errors')
             console.warn(e);
         }
     },
@@ -193,7 +195,7 @@ module.exports = {
             I.click("li[data-range-key='"+ timeInterval + "']");
         }
         catch (err){
-            I.say('Action unsuccessful')
+            console.log('Action unsuccessful')
             console.warn(err);
         }
     },
@@ -218,7 +220,7 @@ module.exports = {
             .then(() => this.clickApply());
         }
        catch (err){
-           I.say('errors')
+           console.log('errors')
            console.warn(err);
        }
 
@@ -234,6 +236,7 @@ module.exports = {
     },
 
      setMonthYear(month, year){
+       year = null;
         const leftMonthLocator = this.calendar.leftMonth;
         const rightMonthLocator = this.calendar.rightMonth;
         let calendarLeftMonth;
@@ -291,7 +294,7 @@ module.exports = {
                 this.setEndTime(time, timePeriod);
                 break;
             default:
-               I.say("No such element");
+               console.log("No such element");
         }
     },
 
@@ -332,7 +335,7 @@ module.exports = {
     },
 
 
-    async checkDateTimeFilterValues(dateRange) {
+    checkDateTimeFilterValues(dateRange) {
         I.seeTextEquals(dateRange, this.inputs.reportrange);
     },
 
@@ -345,7 +348,7 @@ module.exports = {
                 time = datetimeTo
             }
         } catch (e) {
-            I.say('errors')
+            console.log('errors')
             console.warn(e);
         }
         return time;

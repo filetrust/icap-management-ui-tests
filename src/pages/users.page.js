@@ -30,14 +30,14 @@ module.exports = {
         * AddingUser
         * ***************************************************************
         */
-    clickAddUserBtn() {
+    async clickAddUserBtn() {
         const element = this.buttons.addUser;
-        I.clickElement(element);
+        await I.clickElement(element);
     },
 
     async setNewUserName(userName) {
         const element = this.fields.userName;
-        I.click(element)
+        await I.clickElement(element)
         await I.typeIn(element, userName);
     },
 
@@ -61,7 +61,7 @@ module.exports = {
     },
 
     async addUser(userName, fName, lName, userEmail) {
-        this.clickAddUserBtn();
+        await this.clickAddUserBtn();
         await this.setNewUserName(userName);
         await this.setFirstName(fName);
         await this.setLastName(lName);
@@ -71,30 +71,34 @@ module.exports = {
     },
 
     async addUserDetails(userName, fName, lName, userEmail) {
-        this.clickAddUserBtn();
+        await this.clickAddUserBtn();
         await this.setNewUserName(userName);
         await this.setFirstName(fName);
         await this.setLastName(lName);
         await this.setNewUserEmail(userEmail);
     },
 
-    clickUserEditIcon(data) {
+    async clickUserEditIcon(data) {
         const user_record = `//tr[contains(.,'` + data + `')]`;
         const userEditIcon = user_record + this.buttons.editIcon;
-        I.clickElement(userEditIcon);
+        await I.clickElement(userEditIcon);
     },
 
-    updateUserName(userName) {
+    async updateUserName(userName) {
         const element = this.fields.cFirstName;
-        I.click(element)
-        I.type(userName);
-        I.wait(1);
+        I.clearField(element);
+        await I.clickElement(element)
+        I.fillField(element, userName);
+        this.clickSaveChanges();
+        this.waitForUsersTable();
     },
 
-    updateEmail() {
-        const element = this.fields.userName;
-        I.click(element)
-        I.pressKey('Backspace')
+    async updateEmail(email) {
+        const element = this.fields.email;
+        I.clearField(element);
+        await I.clickElement(element)
+        I.fillField(element, email);
+        I.wait(1);
     },
 
     deleteUser(email) {
@@ -137,6 +141,16 @@ module.exports = {
         I.seeElement(`//tr[contains(.,'` + data + `')]`);
     },
 
+    async confirmUserFirstname(data, name) {
+        this.waitForUsersTable();
+        const fName = await I.grabTextFrom(`//tr[contains(.,'${data}')]/td[2]`);
+        if (fName === name) {
+            console.log(`The user firstname is as expected: ${name}`)
+        } else {
+            console.error(`The user firstname: ${name} is NOT as expected`)
+        }
+    },
+
     confirmUserRecordNotAvailable(data) {
         this.waitForUsersTable()
         I.dontSeeElement(`//tr[contains(.,'` + data + `')]`);
@@ -151,9 +165,9 @@ module.exports = {
         const element = this.fields.error;
         const errorMessage = await I.grabTextFrom(element)
         if (errorMessage === error) {
-            I.say('The expected error message: ' + errorMessage + ' is displayed')
+            console.log('The expected error message: ' + errorMessage + ' is displayed')
         } else {
-            I.say('The error message: ' + errorMessage + ' is not as expected')
+            console.log('The error message: ' + errorMessage + ' is not as expected')
         }
     }
 
