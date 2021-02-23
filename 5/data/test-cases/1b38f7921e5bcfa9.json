@@ -1,0 +1,350 @@
+{
+  "uid" : "1b38f7921e5bcfa9",
+  "name" : "User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187",
+  "historyId" : "55aca0239424a21ca13ab33639d2083b",
+  "time" : {
+    "start" : 1614104448022,
+    "stop" : 1614104468867,
+    "duration" : 20845
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I change the route for blocked files to 'block-glasswallBlockedFiles' and save ",
+      "time" : {
+        "start" : 1614104468852,
+        "stop" : 1614104468863,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setRouteFlag \"block-glasswallBlockedFiles\"",
+        "time" : {
+          "start" : 1614104468852,
+          "stop" : 1614104468863,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-glasswallBlockedFiles']\", \"checked\"",
+          "time" : {
+            "start" : 1614104468852,
+            "stop" : 1614104468856,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the route selection for blocked files is applied as 'Block' ",
+      "time" : {
+        "start" : 1614104468863,
+        "stop" : 1614104468867,
+        "duration" : 4
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: assertCheckedBlockedRadioButton \"Block\"",
+        "time" : {
+          "start" : 1614104468863,
+          "stop" : 1614104468867,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I see checkbox is checked \"#block-glasswallBlockedFiles\"",
+          "time" : {
+            "start" : 1614104468863,
+            "stop" : 1614104468867,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 6,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-187"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can change the outcome of Glasswall Blocked files {\"routeOption\":\"block-glasswallBlockedFiles\",\"updatedRouteOption\":\"Block\"} @portal @functional @TEST-187"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "2b76ca578ac1843b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614104022110,
+        "stop" : 1614104051929,
+        "duration" : 29819
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 7,
+        "passed" : 12,
+        "unknown" : 0,
+        "total" : 19
+      },
+      "items" : [ {
+        "uid" : "cedc8e0931f15833",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/cedc8e0931f15833",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919898288,
+          "stop" : 1613919918398,
+          "duration" : 20110
+        }
+      }, {
+        "uid" : "b0c11beebdf6c03",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/b0c11beebdf6c03",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919311047,
+          "stop" : 1613919331424,
+          "duration" : 20377
+        }
+      }, {
+        "uid" : "1c3af0ea482532c2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/1c3af0ea482532c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613918402380,
+          "stop" : 1613918422484,
+          "duration" : 20104
+        }
+      }, {
+        "uid" : "13a7a18ec2dc0ede",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/169//#testresult/13a7a18ec2dc0ede",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613656374205,
+          "stop" : 1613656394190,
+          "duration" : 19985
+        }
+      }, {
+        "uid" : "260355b3eac4cf0b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/260355b3eac4cf0b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654088878,
+          "stop" : 1613654109481,
+          "duration" : 20603
+        }
+      }, {
+        "uid" : "d317cda317cf7bae",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/d317cda317cf7bae",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651650883,
+          "stop" : 1613651669716,
+          "duration" : 18833
+        }
+      }, {
+        "uid" : "fd28694df6dbe57d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/fd28694df6dbe57d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651020335,
+          "stop" : 1613651039133,
+          "duration" : 18798
+        }
+      }, {
+        "uid" : "7060e506cef518ec",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/7060e506cef518ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644337456,
+          "stop" : 1613644357931,
+          "duration" : 20475
+        }
+      }, {
+        "uid" : "15132c62ea510dc7",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/15132c62ea510dc7",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613578591677,
+          "stop" : 1613578591677,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a2371ff295c97d5e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/a2371ff295c97d5e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576866429,
+          "stop" : 1613576885738,
+          "duration" : 19309
+        }
+      }, {
+        "uid" : "e2d701c4e315b127",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/e2d701c4e315b127",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574484227,
+          "stop" : 1613574484227,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "e18eedd5ec14d452",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/e18eedd5ec14d452",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058952544,
+          "stop" : 1613058952544,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "370d8beef4111ec9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/370d8beef4111ec9",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056731956,
+          "stop" : 1613056731956,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "64e71f468c8e195",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/64e71f468c8e195",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908412176,
+          "stop" : 1612908412176,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "a604a6ee559cadd",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/a604a6ee559cadd",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612811910857,
+          "stop" : 1612811931626,
+          "duration" : 20769
+        }
+      }, {
+        "uid" : "fefc089557d13d82",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/fefc089557d13d82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808409011,
+          "stop" : 1612808429540,
+          "duration" : 20529
+        }
+      }, {
+        "uid" : "1d02fa086133e30a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/1d02fa086133e30a",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612807546540,
+          "stop" : 1612807546540,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "43d3c20891cbc0f5",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/43d3c20891cbc0f5",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612806038249,
+          "stop" : 1612806038249,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-187", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "1b38f7921e5bcfa9.json",
+  "parameterValues" : [ ]
+}

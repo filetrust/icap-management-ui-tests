@@ -1,0 +1,306 @@
+{
+  "uid" : "409eb5118f08fa03",
+  "name" : "User can change the number of previous polcy records displayed on a page {\"itemCount\":\"100\",\"rowCount\":\"100\"} @functional @portal @TEST-217",
+  "fullName" : "content-management-policy-history @content-management-policy-history.User can change the number of previous polcy records displayed on a page {\"itemCount\":\"100\",\"rowCount\":\"100\"} @functional @portal @TEST-217",
+  "historyId" : "87cfa6a0db051eaf494027dda5023f2a",
+  "time" : {
+    "start" : 1614104007207,
+    "stop" : 1614104033543,
+    "duration" : 26336
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I have navigated to the Policy History page ",
+      "time" : {
+        "start" : 1614104022246,
+        "stop" : 1614104026435,
+        "duration" : 4189
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: goToContentManagementPolicy ",
+        "time" : {
+          "start" : 1614104022246,
+          "stop" : 1614104024376,
+          "duration" : 2130
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='policy'] > div\"",
+          "time" : {
+            "start" : 1614104022247,
+            "stop" : 1614104024376,
+            "duration" : 2129
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I: goToPolicyHistory ",
+        "time" : {
+          "start" : 1614104024376,
+          "stop" : 1614104026435,
+          "duration" : 2059
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyHistoryTab']\"",
+          "time" : {
+            "start" : 1614104024376,
+            "stop" : 1614104026435,
+            "duration" : 2059
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When Items Shown is changed to '100' ",
+      "time" : {
+        "start" : 1614104026435,
+        "stop" : 1614104033507,
+        "duration" : 7072
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: selectCountOfPolicies \"100\"",
+        "time" : {
+          "start" : 1614104026435,
+          "stop" : 1614104030505,
+          "duration" : 4070
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \".MuiInputBase-root.MuiTablePagination-input.MuiTablePagination-selectRoot > svg\"",
+          "time" : {
+            "start" : 1614104026435,
+            "stop" : 1614104028467,
+            "duration" : 2032
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"//li[contains(.,'100')]\"",
+          "time" : {
+            "start" : 1614104028468,
+            "stop" : 1614104030499,
+            "duration" : 2031
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \".MuiInputBase-root.MuiTablePagination-input.MuiTablePagination-selectRoot > svg\", 60",
+          "time" : {
+            "start" : 1614104030499,
+            "stop" : 1614104030505,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait 3",
+        "time" : {
+          "start" : 1614104030505,
+          "stop" : 1614104033507,
+          "duration" : 3002
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then Up to 100 previous policies are displayed ",
+      "time" : {
+        "start" : 1614104033507,
+        "stop" : 1614104033543,
+        "duration" : 36
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: isRecordCountAccurate 100",
+        "time" : {
+          "start" : 1614104033507,
+          "stop" : 1614104033512,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \".MuiTypography-root:nth-child(4)\"",
+          "time" : {
+            "start" : 1614104033507,
+            "stop" : 1614104033512,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: getTotalNumberOfRecordsOfPolicy ",
+        "time" : {
+          "start" : 1614104033512,
+          "stop" : 1614104033543,
+          "duration" : 31
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"tbody.MuiTableBody-root > tr\"",
+          "time" : {
+            "start" : 1614104033512,
+            "stop" : 1614104033542,
+            "duration" : 30
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 16,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-217"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-history"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can change the number of previous polcy records displayed on a page {\"itemCount\":\"100\",\"rowCount\":\"100\"} @functional @portal @TEST-217"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-history @content-management-policy-history"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@portal", "@content-management-policy-history", "@functional", "@TEST-217" ]
+  },
+  "source" : "409eb5118f08fa03.json",
+  "parameterValues" : [ ]
+}

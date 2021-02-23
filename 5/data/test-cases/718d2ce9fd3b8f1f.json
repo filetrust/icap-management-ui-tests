@@ -1,0 +1,276 @@
+{
+  "uid" : "718d2ce9fd3b8f1f",
+  "name" : "User can log out of the ui @portal @functional @TEST-236",
+  "fullName" : "user-session-admin @user-session-admin.User can log out of the ui @portal @functional @TEST-236",
+  "historyId" : "da48456ed282007cca6ffe5faaf6759f",
+  "time" : {
+    "start" : 1614104184403,
+    "stop" : 1614104201108,
+    "duration" : 16705
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I am logged into the ui ",
+      "time" : {
+        "start" : 1614104186604,
+        "stop" : 1614104196938,
+        "duration" : 10334
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: login ",
+        "time" : {
+          "start" : 1614104186604,
+          "stop" : 1614104196938,
+          "duration" : 10334
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I am on page \"https://management-ui-neu-main.northeurope.cloudapp.azure.com\"",
+          "time" : {
+            "start" : 1614104186604,
+            "stop" : 1614104190608,
+            "duration" : 4004
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I fill field \"input[name='username']\", \"testuser\"",
+          "time" : {
+            "start" : 1614104190608,
+            "stop" : 1614104192770,
+            "duration" : 2162
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I fill field \"input[name='password']\", \"Password2\"",
+          "time" : {
+            "start" : 1614104192770,
+            "stop" : 1614104194915,
+            "duration" : 2145
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I press key \"Enter\"",
+          "time" : {
+            "start" : 1614104194915,
+            "stop" : 1614104196931,
+            "duration" : 2016
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"nav[class*='NavigationItems_NavigationItems__'] > ul\"",
+          "time" : {
+            "start" : 1614104196931,
+            "stop" : 1614104196938,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I hover over my profile and select Log Out ",
+      "time" : {
+        "start" : 1614104196938,
+        "stop" : 1614104201105,
+        "duration" : 4167
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "homePage: clickAccountToggle ",
+        "time" : {
+          "start" : 1614104196938,
+          "stop" : 1614104198993,
+          "duration" : 2055
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"div[data-test-id='userLink']\"",
+          "time" : {
+            "start" : 1614104196938,
+            "stop" : 1614104198992,
+            "duration" : 2054
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "homePage: clickLogout ",
+        "time" : {
+          "start" : 1614104198993,
+          "stop" : 1614104201105,
+          "duration" : 2112
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"button[data-test-id='userLinksButtonLogout']\"",
+          "time" : {
+            "start" : 1614104198993,
+            "stop" : 1614104201105,
+            "duration" : 2112
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then I am taken to the Login Screen ",
+      "time" : {
+        "start" : 1614104201105,
+        "stop" : 1614104201108,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see element \"input[name='password']\"",
+        "time" : {
+          "start" : 1614104201105,
+          "stop" : 1614104201108,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-236"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@user-session-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can log out of the ui @portal @functional @TEST-236"
+  }, {
+    "name" : "package",
+    "value" : "user-session-admin @user-session-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@portal", "@TEST-236", "@user-session-admin", "@functional" ]
+  },
+  "source" : "718d2ce9fd3b8f1f.json",
+  "parameterValues" : [ ]
+}

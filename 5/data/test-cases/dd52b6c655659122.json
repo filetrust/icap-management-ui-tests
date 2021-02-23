@@ -1,0 +1,316 @@
+{
+  "uid" : "dd52b6c655659122",
+  "name" : "User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop",
+  "fullName" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting.User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop",
+  "historyId" : "636af08a263ad7b447a2abc1767ead49",
+  "time" : {
+    "start" : 1614104294442,
+    "stop" : 1614104313459,
+    "duration" : 19017
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I have uploaded a file 'src/data/multiset/file1.docx' ",
+      "time" : {
+        "start" : 1614104302365,
+        "stop" : 1614104311399,
+        "duration" : 9034
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/file1.docx\"",
+        "time" : {
+          "start" : 1614104302365,
+          "stop" : 1614104311399,
+          "duration" : 9034
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/file1.docx\"",
+          "time" : {
+            "start" : 1614104302365,
+            "stop" : 1614104304391,
+            "duration" : 2026
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1614104304391,
+            "stop" : 1614104311399,
+            "duration" : 7008
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click on PDF button ",
+      "time" : {
+        "start" : 1614104311399,
+        "stop" : 1614104313459,
+        "duration" : 2060
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1614104311399,
+          "stop" : 1614104311401,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: clickPdfReport ",
+        "time" : {
+          "start" : 1614104311401,
+          "stop" : 1614104313459,
+          "duration" : 2058
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for clickable \"//button[contains(.,'PDF')]\"",
+          "time" : {
+            "start" : 1614104311401,
+            "stop" : 1614104311406,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"//button[contains(.,'PDF')]\"",
+          "time" : {
+            "start" : 1614104311406,
+            "stop" : 1614104313458,
+            "duration" : 2052
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the pdf report 'file1.xml' is downloaded ",
+      "time" : {
+        "start" : 1614104313459,
+        "stop" : 1614104313459,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am in path \"output/downloads\"",
+        "time" : {
+          "start" : 1614104313459,
+          "stop" : 1614104313459,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: isFileDownloaded \"file1.xml\"",
+        "time" : {
+          "start" : 1614104313459,
+          "stop" : 1614104313459,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I check file exist \"output/downloads/file1.xml\"",
+          "time" : {
+            "start" : 1614104313459,
+            "stop" : 1614104313459,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 13,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-226"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-analysis-reporting"
+  }, {
+    "name" : "tag",
+    "value" : "@filedrop"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can download the full PDF analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"pdfFile\":\"file1.xml\"} @portal @TEST-226 @filedrop"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "802a84391ca71058",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614103974380,
+        "stop" : 1614103993832,
+        "duration" : 19452
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 3,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 1,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "bdcab3b447c5596b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/bdcab3b447c5596b",
+        "status" : "failed",
+        "statusDetails" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613919829435,
+          "stop" : 1613919846023,
+          "duration" : 16588
+        }
+      }, {
+        "uid" : "6ebdd73936c0dbf6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/6ebdd73936c0dbf6",
+        "status" : "failed",
+        "statusDetails" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613919238875,
+          "stop" : 1613919255458,
+          "duration" : 16583
+        }
+      }, {
+        "uid" : "e8bbb03f793f9e06",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/e8bbb03f793f9e06",
+        "status" : "failed",
+        "statusDetails" : "Element \"//button[contains(.,'PDF')]\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613918327061,
+          "stop" : 1613918342202,
+          "duration" : 15141
+        }
+      } ]
+    },
+    "tags" : [ "@filedrop", "@file-drop-file-analysis-reporting", "@portal", "@TEST-226" ]
+  },
+  "source" : "dd52b6c655659122.json",
+  "parameterValues" : [ ]
+}
