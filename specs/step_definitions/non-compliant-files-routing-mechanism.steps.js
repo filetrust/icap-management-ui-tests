@@ -1,18 +1,15 @@
-const { I, policyPage, filedropPage, requesthistoryPage, sharepoint } = inject();
-const faker = require('faker');
-const chai = require('chai');
+const { I, policyPage, requesthistoryPage, icapclient } = inject();
 const { assert } = require('chai');
-const expect = chai.expect;
+const faker = require('faker');
 
-let currentUrl = null;
-
-let randomId = faker.random.number()
+let randomId = faker.random.number();
 let fileId;
 let resp;
+let newUrl;
 
 Given('I have navigated to the Draft NCFS Policy page', async () => {
     I.goToContentManagementPolicy();
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
 
 });
 Given('I am a new user', () => {
@@ -30,8 +27,7 @@ Then(`I see the default set routing option for blocked files as ''`, () => {
 });
 
 When('I enter a valid URL {string} into the API URL box and save', (url) => {
-    let id = randomId
-    newUrl = url + id
+    newUrl = url + randomId
     policyPage.enterTextInApiUrl(newUrl);
 });
 
@@ -39,10 +35,11 @@ When('I publish the policy', async () => {
     await policyPage.publishPolicy();
 });
 
-Then('the API URL is updated to the new url {string}', (message) => {
-    I.goToCurrentNcfsPolicy()
+Then('the API URL is updated to the new url {string}', async(url) => {
+    await I.goToCurrentNcfsPolicy()
     url = newUrl
-    I.seeInField(policyPage.fields.apiUrlInput, url);
+    policyPage.confirmApiIsUpdated(url);
+    
 
 });
 When('I change the route for blocked files to {string} and save', async (routeOption) => {
@@ -63,53 +60,33 @@ Given('I have set the routing option for Glasswall Blocked files to {string}', a
     await policyPage.setAndPublishRouteFlag(blockedPolicyAction);
 });
 
-When('I download a non compliant file {string} through the icap server', async (file) => {
-    //I.setHost()
-    //I.downloadFile(file)
-    await I.goToSharepoint()
-    I.wait(15)
-    I.seeInTitle("Communication site - ui-uploads - All Documents");
-    // //sharepoint.goToDocuments();
-    sharepoint.selectFile(file);
-    sharepoint.downloadFile()
-    I.usePuppeteerTo('get response', async ({ page }) => {
-        await page.on("response", async response => {
-            console.log(response.headers());
-
-            fileId = response.headers()
-                .toString()
-                .split('X-Adaptation-File-Id: ')[1]
-                .split("\n")[0];;
-            console.log('The fileId is ' + fileId)
-            //response.abort()
-        });
-    });
+When('I submit a non supported or unprocessable file {string} through the icap server', (file) => {
+    resp = icapclient.submitFile(file)
 });
 
-When('I submit a non supported or unprocessable file {string} through the icap server', async (file) => {
-    resp = await I.submitFile(file)
-});
-
-When('I submit a non compliant file {string} through the icap server', async (file) => {
-    resp = await I.submitFile(file)
+When('I submit a non compliant file {string} through the icap server', (file) => {
+    resp = icapclient.submitFile(file)
 });
 
 Then('The file outcome for the submitted file {string} is {string} with {string}', async (file, fileOutcome, outcomeValue) => {
-    const icapCode = await I.getIcapHeaderCode(resp)
+    const outputPath = './output/downloads'
+    const icapCode = I.getIcapHeaderCode(resp)
     if (fileOutcome === 'relayed') {
         if (icapCode === '204 Unmodified') {
-            I.say('Success, Response code is 204 as expected')
+            console.log('Success, Response code is 204 as expected')
+            I.confirmFileiSNotAvailable(`${outputPath}/${file}`)
         } else {
-            I.say('Failed, Response code is ' + icapCode)
+            assert.fail('Failed, Response code is ' + icapCode)
         }
     } else if (fileOutcome === 'htmlReport') {
-        fileId = await I.getFileId(resp)
-        const respCode = await I.getResponseCode(resp)
+        fileId = I.getFileId(resp)
+        const respCode = I.getResponseCode(resp)
         if (respCode === '403 Forbidden') {
-            I.say('Success, Response code is 403 as expected')
+            console.log('Success, Response code is 403 as expected')
         } else {
             assert.fail('Failed, Response code is ' + respCode)
-        } I.viewTransactions('1 Hour')
+        } I.checkFileOutputIsHtmlReport(`${outputPath}/${file}`)
+        I.viewTransactions('1 Hour')
         await requesthistoryPage.checkFileOutcomeValueByFileId(outcomeValue, fileId, true)
     }
 });
@@ -119,19 +96,7 @@ Given('I set the policy for file type {string} to {string} and {string}', async 
     await policyPage.setAndPublishPolicyFlag(FileType, ContentFlag, FlagType);
 });
 
-
-
 Given('I have set the routing option for unprocessable files to {string}', async (policyAction) => {
     await policyPage.setAndPublishRouteFlag(policyAction);
-});
-
-When('I download a non supported or unprocessable file {string} through the icap server', async (file) => {
-    await I.downloadFile(file)
-    I.wait(5)
-    //await I.goToSharepoint()
-    // I.wait(5)
-    // I.seeInTitle("Communication site - ui-uploads - All Documents");
-    // sharepoint.selectFile(file);
-    // sharepoint.downloadFile()
 });
 

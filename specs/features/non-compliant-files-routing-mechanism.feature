@@ -6,15 +6,6 @@ Feature: non-compliant-files-routing-mechanism
     Given I am logged into the ui
     And I have navigated to the Draft NCFS Policy page
 
-  # @success
-  # @prototype
-  # @TEST-238
-  # Scenario: The default routing option for unprocessable and blocked files is accurate
-  #   Given I am a new user
-  #   And I have navigated to the Current NCFS Policy page
-  #   Then I see the default set routing option for unprocessable files as ''
-  #   Then I see the default set routing option for blocked files as ''
-
   @portal
   @functional
   @TEST-158
@@ -57,7 +48,7 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                | fileType | contentFlag        | flagType | file       | fileOutcome | outcomeValue      |
       | relay-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | relayed     | Allowed by Policy |
-      #| block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
+      | block-glasswallBlockedFiles | word     | InternalHyperlinks | disallow | file1.docx | htmlReport  | Blocked by Policy |
 
   @functional
   @TEST-234
@@ -69,6 +60,7 @@ Feature: non-compliant-files-routing-mechanism
     Examples:
       | policyAction                 | file                  | fileOutcome | outcomeValue      |
       | relay-glasswallBlockedFiles  | structuralIssues.xlsx | relayed     | Allowed by Policy |
-      #| block-glasswallBlockedFiles  | structuralIssues.xlsx | htmlReport  | Blocked by Policy |
-      #| block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Unknown           |
+      | block-glasswallBlockedFiles  | structuralIssues.xlsx | htmlReport  | Blocked by Policy |
+      | block-unprocessableFileTypes | icaptest.ps1          | htmlReport  | Unknown           |
+
 

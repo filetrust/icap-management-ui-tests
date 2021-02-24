@@ -17,7 +17,7 @@ Given('I have uploaded a file {string}', (supportedFile) => {
 
 When('I click on Download XML Report button', () => {
     I.handleDownloads();
-    filedropPage.clickDownloadXmlReport();
+    filedropPage.clickXmlReport();
 });
 
 Then('the XML report {string} is downloaded', (xmlFile) => {

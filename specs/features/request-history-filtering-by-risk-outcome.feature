@@ -4,7 +4,7 @@ Feature: request-history-filtering-by-risk-outcome
 
     Background:
         Given I am logged into the ui
-    
+
     @portal
     @functional
     @TEST-163
@@ -16,4 +16,6 @@ Feature: request-history-filtering-by-risk-outcome
         Examples:
             | filter            | filteredFile      |
             | Safe              | Safe              |
-  
+            | Allowed By Policy | Allowed by Policy |
+            | Blocked By Policy | Blocked by Policy |
+

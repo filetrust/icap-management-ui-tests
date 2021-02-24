@@ -1,25 +1,17 @@
-const { I, sharepoint } = inject();
+const { I } = inject();
 const Helper = require('@codeceptjs/helper');
-const puppeteer = require('puppeteer');
-var moment = require('moment');
-const recorder = require('codeceptjs').recorder;
-const event = require('codeceptjs').event;
+//const puppeteer = require('puppeteer');
+let moment = require('moment');
+//const recorder = require('codeceptjs').recorder;
+//const event = require('codeceptjs').event;
 const fs = require('fs');
 const output = require('codeceptjs').output;
 const assert = require('assert').strict;
-var dockerCLI = require('docker-cli-js');
-var DockerOptions = dockerCLI.Options;
-var Docker = dockerCLI.Docker;
-const dockerJS = require('mydockerjs').docker
 const spauth = require('node-sp-auth');
 const path = require('path');
 const Cpass = require('cpass').Cpass;
 const config = fs.readFileSync(path.join(__dirname, "../../config.json"), "UTF-8");
 const configObj = JSON.parse(config);
-const { Download, IAuthOptions } = require('sp-download');
-var rmdir = require('rmdir');
-
-
 
 class MyHelper extends Helper {
 
@@ -31,9 +23,7 @@ class MyHelper extends Helper {
 
     async getElementAttribute(selector) {
         const page = this.helpers['Puppeteer'].page;
-        const element = this.getElement(selector);
-        const is_disabled = (await page.$$(selector)).length !== 0;
-        return is_disabled;
+        return (await page.$$(selector)).length !== 0;
     }
 
 
@@ -57,8 +47,7 @@ class MyHelper extends Helper {
 
     async getModal(element) {
         const page = this.helpers['Puppeteer'].page;
-        await page.waitForSelector('.modal', { visible: true });
-        const button = await page.waitForSelector(element, { visible: true });
+        await page.waitForSelector(element, { visible: true });
     }
 
     async getTextFrom(selector, ...options) {
@@ -77,7 +66,6 @@ class MyHelper extends Helper {
 
     async clickElement(selector) {
         const helper = this.helpers['Puppeteer'];
-        const page = this.helpers['Puppeteer'].page;
         try {
             const elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (elVisible) {
@@ -108,22 +96,7 @@ class MyHelper extends Helper {
         }
     }
 
-    async fillInField(selector, value) {
-        const helper = this.helpers['Puppeteer'];
-        try {
-            const elVisible = await helper.grabNumberOfVisibleElements(selector);
-            if (elVisible) {
-                return helper.fillfield(selector, value);
-            } else {
-                output.error('The element ' + selector + ' is not visible')
-            }
-        } catch (err) {
-            output.log(err);
-        }
-    }
-
     async clickRecord(i) {
-        const helper = this.helpers['Puppeteer'];
         const page = this.helpers['Puppeteer'].page;
         page.waitForSelector('tbody');
         try {
@@ -173,9 +146,7 @@ class MyHelper extends Helper {
             time = `${time.split(':')[0]}:${time.split(':')[1]} ${dayPart}`
         }
         time = this.timeConversionSlicker(time)
-        let itemDate = `${date} ${time}`
-        //itemDate = new Date(itemDate).toISOString()
-        return itemDate
+        return `${date} ${time}`
     }
 
     async checkRowsTimestamp(isReverse) {
@@ -192,25 +163,27 @@ class MyHelper extends Helper {
             for (let i = 0; i < rowCount; i++) {
                 currentText = await page.$eval(`${tableRows}:nth-child(${i + 1}) th:nth-child(1)`, (e) => e.innerText);
                 currentTimestamp = this.parseItemTimestamp(currentText, true)
-                if (i != 0) {
+                if (i !== 0) {
                     previousText = await page.$eval(`${tableRows}:nth-child(${i}) th:nth-child(1)`, (e) => e.innerText);
                     previousTimestamp = this.parseItemTimestamp(previousText, true)
                 }
                 if (i !== 0) {
-                    let sortOrder
+                    let sortOrder;
                     if (isReverse) {
                         sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
+                    } else if (!isReverse){
+                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp) 
                     } else {
-                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp)
+                        sortOrder = moment(previousTimestamp).isSame(currentTimestamp)
                     }
                     if (sortOrder) {
                         n = n + 1;
                     } else {
-                        assert.fail('The timestamp sorting is wrong. Upper: ' + previousText + ', bottom: ' + currentText);
+                        assert.fail('The transactions sorting is not as expected. Upper: ' + previousText + ', bottom: ' + currentText);
                     }
                 }
             }
-            console.log(`The timestamp sorting well`);
+            console.log(`The transactions sorting is as expected`);
         } catch (err) {
             assert.fail(err);
         }
@@ -224,7 +197,7 @@ class MyHelper extends Helper {
             if (!elm) {
                 assert.fail(`The user record with ${data} is not displayed`);
             } else {
-                I.say('element is found')
+                console.log('element is found')
             }
 
         } catch (err) {
@@ -268,43 +241,11 @@ class MyHelper extends Helper {
         }
     }
 
-    getElementAttribute(sel, at) {
-        const helper = this.helpers['Puppeteer'];
-        helper.executeScript(function (sel, at) {
-            var x = document.getElementById(sel);
-            var attr = "";
-            var i;
-            for (i = 0; i < x.attributes.length; i++) {
-                attr = attr + x.attributes[i].name;
-                if (attr === at) {
-                    output.print('The attribute: ' + at + ' is available')
-                }
-            } return attr;
-        }, sel, at)
-    }
-
-    getElementAttr(selector) {
-        const helper = this.helpers['Puppeteer'];
-        helper.executeScript((selector) => {
-            var el = document.getElementById(selector);
-            for (var i = 0, atts = el.attributes, n = atts.length, arr = []; i < n; i++) {
-                arr.push(atts[i].nodeName);
-                //if (atts[i].nodeName==='checked'){
-                return atts[i].nodeName
-            }
-        }, selector);
-    }
-
-    getText(selector, at) {
-        return this.getElementAttr(selector).contains(at)
-    }
-
-    async setFlags(element) {
-        const helper = this.helpers['Puppeteer'];
+    async setFlags() {
         try {
             let elCount = await this.getElement()
             for (let i = 0; i < elCount; i++) {
-                this.clickElement((await page.$x(`//label[text()='Sanitise']`))[i])
+                await this.clickElement((await page.$x(`//label[text()='Sanitise']`))[i])
             }
         } catch (err) {
             output.log(err);
@@ -384,13 +325,8 @@ class MyHelper extends Helper {
         return Date.parse(time1) > Date.parse(time2);
     }
 
-    checkFileIsDownloaded(file) {
-        var f = new File(file);
-        if (f.exists()) {
-            write('The file is downloaded');
-        } else {
-            write('The file does not exist');
-        }
+    checkFileExist(file) {
+       return fs.existsSync(file);
     }
 
     checkFileContains(content) {
@@ -402,17 +338,22 @@ class MyHelper extends Helper {
         }
     }
 
-    checkFileExist(path) {
-        fs.access(path, fs.F_OK, (err) => {
-            if (err) {
-                output.log('The file does not exist');
-                return;
+    getFileOutContent(file) {
+        try {
+            const exists = fs.existsSync(file);
+            if (exists) {
+                return fs.readFileSync(file)
             }
-        })
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    checkFileOutputContent(file, content) {
+        return this.getFileOutContent(file).includes(content)
     }
 
     async goToSharepoint() {
-
         const { username, password, pageUrl } = configObj;
         console.log('configObj ' + JSON.stringify(configObj))
         let cpass = new Cpass();
@@ -429,13 +370,6 @@ class MyHelper extends Helper {
         });
     }
 
-    setHost() {
-        let party = require('hostparty');
-        party.add('3.249.61.168', ['saaspoc1.sharepoint.com', 'saaspoc1-my.sharepoint.com', 'ukc-word-edit.officeapps.live.com', 'ukc-excel.officeapps.live.com', 'ukc-powerpoint.officeapps.live.com']);
-    }
-
-
-
     createFile(file) {
         try {
             const exists = fs.existsSync(file);
@@ -450,16 +384,13 @@ class MyHelper extends Helper {
         }
     }
 
-    removeFiles(filePath) {
-        var path = filePath;
-        rmdir(path, function (err, dirs, files) {
-            console.log('all files are removed');
-        });
-    }
-
     async typeIn(element, val) {
+        try {
         const page = this.helpers['Puppeteer'].page;
         await page.type(element, val);
+    }catch (error) {
+        console.error(error);
+    }
     }
 
 }

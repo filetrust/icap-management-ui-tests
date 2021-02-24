@@ -7,18 +7,9 @@ const filedropPage = require("../pages/file-drop.page.js");
 const requesthistoryPage = require("../pages/request-history.page.js");
 const { output } = require("codeceptjs");
 const I = actor();
-const env = require("../utils/config")
 const assert = require('assert').strict;
-const cp = require('child_process')
 const fs = require('fs')
-const path = require('path');
-const inputDir = path.join('src', 'data', 'multiset');
-const outputDir = path.join('output', 'downloads');
-const inputPath = path.join(process.cwd(), inputDir);
-const outputPath = path.join(process.cwd(), outputDir);
-const icapLogs = path.join('output', 'icap.log')
 const fileDropUrl = process.env.FILEDROP_URL_NEU;
-const icapClient = process.env.ICAP_URL_NEU;
 
 module.exports = function () {
     return actor({
@@ -66,7 +57,6 @@ module.exports = function () {
 
         goToFileDrop: function () {
             this.amOnPage(fileDropUrl)
-            //homePage.clickFileDrop();
             this.waitForElement(filedropPage.buttons.fileSelectButton)
         },
 
@@ -76,12 +66,12 @@ module.exports = function () {
 
         addAUser: async function (userName, fName, lName, userEmail) {
             await usersPage.addUser(userName, fName, lName, userEmail)
-            usersPage.checkUserDetailsSaved(userEmail)
-            //I.see(userEmail)
+            usersPage.confirmUserDetailsAvailable(userEmail)
         },
 
         goToRequestHistory: function () {
             homePage.clickRequestsHistory();
+            this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
 
         goToContentManagementPolicy: function () {
@@ -103,7 +93,7 @@ module.exports = function () {
         },
 
         goToDraftNcfsPolicy: async function () {
-            policyPage.clickDraftTab();
+            await policyPage.clickDraftTab();
             await policyPage.clickNcfsPolicy();
         },
 
@@ -114,10 +104,9 @@ module.exports = function () {
 
         viewTransactions: function (period) {
             this.goToRequestHistory()
-            I.refreshPage()
+            this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
             requesthistoryPage.openDatePicker();
             requesthistoryPage.selectTimePeriod(period)
-            this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
 
         setGwBlockFilesToBlock: async function () {
@@ -131,8 +120,8 @@ module.exports = function () {
             await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
         },
 
-        searchFileById: function (id) {
-            requesthistoryPage.setFileId(id);
+        searchFileById:  async function (id) {
+            await requesthistoryPage.setFileId(id);
             this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
 
@@ -150,13 +139,11 @@ module.exports = function () {
             this.login()
             this.goToFileDrop()
             this.uploadFile(file)
-            filedropPage.clickViewResult();
         },
 
         checkFileInFileDropUrl: function (file) {
             this.amOnPage(fileDropUrl)
             this.uploadFile(file)
-            filedropPage.clickViewResult();
         },
 
         uploadFileWithNoSanitiseData: function (file) {
@@ -199,57 +186,6 @@ module.exports = function () {
             this.wait(5)
         },
 
-        sendFileICAP: async function (fileName) {
-            // use NodeJS child process to run a bash command in sync way
-            output.print('Sending file...')
-            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`)
-            let fileId;
-            await cp.execSync(`c-icap-client -i ${icapClient} -p 1344 -s gw_rebuild  -f "${inputPath}/${fileName}" -o "${outputPath}/${fileName}" -v 2> ${icapLogs}`).toString()
-            const icapOutput = fs.readFileSync(`${icapLogs}`);
-            output.print('icapLogs: ' + icapOutput)
-            this.wait(60)
-            const statusCode = icapOutput
-                .toString()
-                .split('ICAP/1.0 ')[1]
-                .split(" ")[0];
-            if (statusCode === '200' || statusCode === '201') {
-                fileId = icapOutput
-                    .toString()
-                    .split('X-Adaptation-File-Id: ')[1]
-                    .split("\n")[0];
-                output.print('File is sent...')
-                return fileId;
-            } else if (statusCode === '204') {
-                output.print('File is sent...')
-                output.print('File is Unmodified')
-            } else {
-                assert.fail(`${statusCode} code was received`)
-            }
-        },
-
-        submitFile: async function (file) {
-            output.print('Sending file...')
-            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`)
-            await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`).toString()
-            const icapOutput = fs.readFileSync(`${icapLogs}`);
-            output.print('icapLogs: ' + icapOutput)
-            this.wait(60)
-            output.print('File is sent...')
-            return icapOutput;
-        },
-
-        processFile: async function (filePath, output) {
-            //output.print
-            console.log('Sending file...')
-            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${filePath}" -o "${output}" -v 2> ${icapLogs}`)
-            await cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${filePath}" -o "${output}" -v 2> ${icapLogs}`).toString()
-            const icapOutput = fs.readFileSync(`${icapLogs}`);
-            //output.print
-            console.log('icapLogs: ' + icapOutput)
-            //output.print
-            console.log('File is sent...')
-            return icapOutput;
-        },
 
         getIcapHeaderCode: function (icapResp) {
             let icapCode;
@@ -285,6 +221,8 @@ module.exports = function () {
                     .split('X-Adaptation-File-Id: ')[1]
                     .split("\n")[0];
                 output.print('The file id: ' + fileId)
+            }else{
+                fileId = null
             } return fileId;
         },
 
@@ -304,27 +242,57 @@ module.exports = function () {
 
         getFileProcessingResult: function (resp) {
             const icapCode = this.getIcapHeaderCode(resp)
-            if (icapCode === null) {
+            if (!icapCode) {
                 assert.fail('File processing not succesful')
             } else if (icapCode === '204 Unmodified') {
-                I.say('The submitted file is relayed as the responde code is: ' + icapCode)
+                console.log(`The submitted file is relayed as the responde code is: ${icapCode}`)
             } else {
                 const respCode = this.getResponseCode(resp)
-                if (respCode === null || respCode === 'undefined') {
+                if (!respCode) {
                     assert.fail('File processing not succesful')
                 } else if (respCode === '403 Forbidden') {
-                    I.say('Submitted file is blocked as the responde code is: ' + respCode)
-                } else {
-                    I.say('Submitted file response is: ' + respCode)
+                    console.log(`Submitted file is blocked as the responde code is: ${respCode}`)
+                } else if (respCode === '200 OK') {
+                    console.log(`Submitted file is successfully processed with response: ${respCode}`)
                 }
             }
         },
 
-        checkFileProcessedState: function (filePath, file, text) {
-            I.amInPath(filePath)
-            I.checkFileExist(filePath + file)
-            I.seeInThisFile(text)
+        checkFileOutputIsHtmlReport: function (file) {
+            try {
+                const exists = fs.existsSync(file);
+                if (exists) {
+                    const fileContent = fs.readFileSync(file)
+                    if (fileContent.includes('Document Access Blocked due to Policy')) {
+                        output.print('File output is a html report with title: "Document Access Blocked due to Policy"')
+                    } else {
+                        assert.fail('File output is not a html report')
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+            }
+        },
 
+
+
+        confirmFileiSNotAvailable: function (file) {
+            if (I.checkFileExist(file) === true) {
+                assert.fail('Failed: The file is available')
+            } else {
+                output.print('Expected outcome: the file is not available')
+            }
+        },
+
+        confirmFileOutputiSAvailable: function (file) {
+            if (I.checkFileExist(file) === true) {
+                console.log('The file output is available as expected')
+            } else {
+                assert.fail('Failed: The file output is NOT available')
+            }
         }
+
+
+
     });
 }

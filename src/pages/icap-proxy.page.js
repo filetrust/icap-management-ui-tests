@@ -30,21 +30,6 @@ module.exports = {
         I.seeFile(file)
     },
 
-    async checkIfHtmlReportReturned() {
-        try{
-        let url = await I.grabCurrentUrl();
-        console.log(`Current URL is [${url}]`);
-        let tabs = await I.grabNumberOfOpenTabs();
-        if (tabs >1) {
-            I.switchToNextTab();
-            I.see('Document Access Blocked due to Policy');
-            I.say('The file is blocked');
-        } else {
-            I.say('Only one tab is currently opened');
-        }}catch (e) {
-            I.say('Unable to evaluate assertion')
-            console.warn(e);
-        }
-    }
+
 
 };

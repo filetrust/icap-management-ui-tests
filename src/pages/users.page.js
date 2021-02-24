@@ -30,14 +30,14 @@ module.exports = {
         * AddingUser
         * ***************************************************************
         */
-    clickAddUserBtn() {
+    async clickAddUserBtn() {
         const element = this.buttons.addUser;
-        I.clickElement(element);
+        await I.clickElement(element);
     },
 
     async setNewUserName(userName) {
         const element = this.fields.userName;
-        I.click(element)
+        await I.clickElement(element)
         await I.typeIn(element, userName);
     },
 
@@ -54,13 +54,6 @@ module.exports = {
         //I.fillInField(element, lName);
     },
 
-    async getNewUserRowNameInput() {
-        return this.getUserRecord(1);
-    },
-
-    async getNewUserRowEmailInput() {
-        return this.getUserRecord(2);
-    },
     async setNewUserEmail(userEmail) {
         const element = this.fields.email;
         I.click(element)
@@ -68,7 +61,7 @@ module.exports = {
     },
 
     async addUser(userName, fName, lName, userEmail) {
-        this.clickAddUserBtn();
+        await this.clickAddUserBtn();
         await this.setNewUserName(userName);
         await this.setFirstName(fName);
         await this.setLastName(lName);
@@ -78,31 +71,34 @@ module.exports = {
     },
 
     async addUserDetails(userName, fName, lName, userEmail) {
-        this.clickAddUserBtn();
+        await this.clickAddUserBtn();
         await this.setNewUserName(userName);
         await this.setFirstName(fName);
         await this.setLastName(lName);
         await this.setNewUserEmail(userEmail);
     },
 
-    clickUserEditIcon(data) {
+    async clickUserEditIcon(data) {
         const user_record = `//tr[contains(.,'` + data + `')]`;
         const userEditIcon = user_record + this.buttons.editIcon;
-        I.clickElement(userEditIcon);
+        await I.clickElement(userEditIcon);
     },
 
-    updateUserName(userName) {
+    async updateUserName(userName) {
         const element = this.fields.cFirstName;
-        I.click(element)
-        I.type(userName);
-        I.wait(1);
+        I.clearField(element);
+        await I.clickElement(element)
+        I.fillField(element, userName);
+        this.clickSaveChanges();
+        this.waitForUsersTable();
     },
 
-    updateEmail(email) {
-        const element = this.fields.userName;
-        I.click(element)
-        I.pressKey('Backspace')
-        I.type(userName);
+    async updateEmail(email) {
+        const element = this.fields.email;
+        I.clearField(element);
+        await I.clickElement(element)
+        I.fillField(element, email);
+        I.wait(1);
     },
 
     deleteUser(email) {
@@ -124,26 +120,13 @@ module.exports = {
 
     },
 
-    getUserRecord(n) {
-        let element = null;
-        const rows = locate(`//*[@id="usersTable2"]/tbody/tr`);
-        for (let i in rows) {
-            const text = I.grabTextFrom(rows[i] + "/td[" + n + "]/input")
-            if (text === "") {
-                element = rows[i] + "/td[" + n + "]/input"
-            }
-        }
-        return element;
-    },
-
     findUserByEmail(email) {
-        waitForUsersTable()
-        const element = `//tr[contains(.,'` + email + `')]`;
-        return element;
+        this.waitForUsersTable()
+        return `//tr[contains(.,'` + email + `')]`;
     },
 
     findUserByName(name) {
-        waitForUsersTable()
+        this.waitForUsersTable()
         return `//tr[contains(.,'` + name + `')]`;
     },
 
@@ -156,6 +139,16 @@ module.exports = {
     confirmUserDetailsAvailable(data) {
         this.waitForUsersTable();
         I.seeElement(`//tr[contains(.,'` + data + `')]`);
+    },
+
+    async confirmUserFirstname(data, name) {
+        this.waitForUsersTable();
+        const fName = await I.grabTextFrom(`//tr[contains(.,'${data}')]/td[2]`);
+        if (fName === name) {
+            console.log(`The user firstname is as expected: ${name}`)
+        } else {
+            console.error(`The user firstname: ${name} is NOT as expected`)
+        }
     },
 
     confirmUserRecordNotAvailable(data) {
@@ -172,10 +165,10 @@ module.exports = {
         const element = this.fields.error;
         const errorMessage = await I.grabTextFrom(element)
         if (errorMessage === error) {
-            I.say('The expected error message: ' + errorMessage + ' is displayed')
+            console.log('The expected error message: ' + errorMessage + ' is displayed')
         } else {
-            I.say('The error message: ' + errorMessage + ' is not as expected')
-        };
+            console.log('The error message: ' + errorMessage + ' is not as expected')
+        }
     }
 
 

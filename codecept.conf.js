@@ -1,9 +1,5 @@
-const {
-  setHeadlessWhen
-} = require('@codeceptjs/configure');
-require('dotenv').config({
-  path: '.env'
-});
+const {setHeadlessWhen} = require('@codeceptjs/configure');
+require('dotenv').config({path: '.env'});
 
 setHeadlessWhen(process.env.HEADLESS);
 
@@ -17,7 +13,7 @@ exports.config = {
       //browser: 'firefox',
       windowSize: '1536 x 826',
       url: '',
-      show: false,
+      show: true,
       chrome: {
         args: ['--headless', '--no-sandbox', '--window-size=1536,826', '--ignore-certificate-errors'],
         //args: ['--no-sandbox', '--window-size=1536,826','--ignore-certificate-errors'],
@@ -80,7 +76,7 @@ exports.config = {
   },
   multiple: {
     parallel: {
-      chunks: 4,
+      chunks: 10,
       browsers: ['puppeteer']
     }
   },

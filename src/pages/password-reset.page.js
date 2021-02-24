@@ -26,11 +26,6 @@ module.exports = {
         I.fillField(element, value);
     },
 
-    async getGrecaptcharesponse() {
-        const element = this.fields.recaptchaResponse;
-        return await I.grabAttributeFrom(element, jsonValue());
-    },
-
     setGrecaptcharesponse(value) {
         const element = this.fields.recaptchaResponse;
         I.fillField(element, value);
@@ -56,10 +51,7 @@ module.exports = {
      * RequestVerificationToken
      * ***************************************************************
      */
-    async getRequestVerificationToken() {
-        const element = this.fields.requestVerificationToken;
-        return await I.grabAttributeFrom(element, jsonValue());
-    },
+
 
     setRequestVerificationToken(value) {
         const element = this.fields.requestVerificationToken;

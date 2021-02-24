@@ -68,5 +68,5 @@ Feature: Content Management Policy Editing
     And I update the contentFlag for '<FileType>' to '<ContentFlag>' and '<FlagType>'
     Then the current policy is updated with the new settings '<FileType>', '<ContentFlag>', '<FlagType>', and '<url>'
     Examples:
-      | FileType | ContentFlag    | FlagType | url                                       | CurrentFlagType | CurrentUrl       |
-      | word     | EmbeddedImages | sanitise | icap-client-qa.uksouth.cloudapp.azure.com | disallow        | testPrecondition |
+      | FileType | ContentFlag    | FlagType | url                                       | CurrentFlagType |
+      | word     | EmbeddedImages | sanitise | icap-client-qa.uksouth.cloudapp.azure.com | disallow        |

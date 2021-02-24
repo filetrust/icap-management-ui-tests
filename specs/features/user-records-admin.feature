@@ -39,7 +39,7 @@ Feature: user-records-admin
             | username      | firstname       | lastname        | email                      |
             | dupautotester | dupautotesterfn | dupautotesterln | dupautotester1@icaptest.co |
 
-    #@functional
+    @functional
     @TEST-191
     @portal
     Scenario: I cannot delete my own account
@@ -61,11 +61,10 @@ Feature: user-records-admin
 
     @functional
     @portal
-    @TEST-update
-    Scenario Outline: A existing user record can be update
+    @TEST-142
+    Scenario Outline: A existing user record can be updated
         Given A user record exist with username '<username>', firstname '<firstname>', lastname '<lastname>' and email '<email>'
-        When I click the edit on the user record and change the firstname to '<newfirstname>'
-        And I click Save Changes
+        When I click the edit on the user record and update the firstname to '<newfirstname>'
         Then The updated user record is saved
         Examples:
             | username     | firstname  | lastname   | email                          | newfirstname |

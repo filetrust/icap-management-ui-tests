@@ -1,6 +1,6 @@
 const {
     I,
-    requesthistoryPage
+    requesthistoryPage, icapclient
 } = inject();
 const path = require('path');
 let fileId;
@@ -16,7 +16,8 @@ Given("I have navigated to the Request History page", () => {
 Given('I process a file {string} through the icap server', async (file) => {
     const downloadedFile = path.join('output', 'downloads', file);
     I.cleanupFile(downloadedFile);
-    fileId = await I.sendFileICAP(file);
+    const resp = icapclient.submitFile(file)
+    fileId = I.getFileId(resp);
     console.log(`I sent a file and received ${fileId}`);
 });
 
@@ -29,17 +30,18 @@ Given('The transaction with {string} type and {string} risk is available in the 
 });
 
 Given('The transaction is available in the transaction log', async () => {
+    I.login();
     I.viewTransactions('1 Hour')
-    //     await requesthistoryPage.verifyFileRecord(fileId)
-});
-
-Given('A previous transaction is available in the transaction log', async () => {
-    I.viewTransactions('24 Hours')
+    if (fileId !== null) {
+        await requesthistoryPage.setFileId(fileId);
+        I.waitForElement(requesthistoryPage.table.tableHeaders, 60)
+       await requesthistoryPage.checkFileIdValues(fileId)
+    }
 });
 
 When('I click on the transaction record to open the detail view', async () => {
-    await requesthistoryPage.openLatestTransactionRecord()
-    //     await requesthistoryPage.openFileRecord(fileId)
+    //await requesthistoryPage.openLatestTransactionRecord()
+    await requesthistoryPage.openFileRecord(fileId)
 });
 
 When('I click on a available file record to open the detail view', async () => {

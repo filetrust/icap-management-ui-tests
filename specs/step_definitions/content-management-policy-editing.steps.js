@@ -6,7 +6,7 @@ const faker = require('faker');
 
 let selectedEl = null;
 let randomId = faker.random.number()
-let nUrl;
+let newUrl;
 
 Given('I am logged into the portal', () => {
     I.login()
@@ -16,8 +16,8 @@ Given('I am on the policy screen', () => {
     I.goToContentManagementPolicy();
 });
 
-Given('I am on the draft adaptation Policy screen', () => {
-    I.goToDraftAdaptationPolicy()
+Given('I am on the draft adaptation Policy screen', async() => {
+    await I.goToDraftAdaptationPolicy()
     //pause()
 });
 
@@ -50,22 +50,18 @@ When('I press the Save button', () => {
     policyPage.clickSaveChanges()
 });
 
-Then('the draft policy for {string} is saved as {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
-    policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
+Then('the draft policy for {string} is saved as {string} and {string}', async(FileType, ContentFlag, DraftFlagType) => {
+    await policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
 });
 
 /*
 * T215
 * ***************************************************************
 */
-When('I change all the flags to {string} on policy page', (flagType) => {
+When('I change all the flags to {string} on policy page', async () => {
     //I.setFlags()
-    policyPage.clickAllFlag()
+    await policyPage.clickAllFlag()
     policyPage.clickSaveChanges()
-});
-
-Then('All the flags are set to {string}', (flagType) => {
-    policyPage.assertSanitiseForAllFlag(flagType)
 });
 
 /*
@@ -97,8 +93,8 @@ Then('The current policy flag is set as {string} {string} and {string}', (FileTy
 * T213
 * ***************************************************************
 */
-Then('the current policy for {string} is saved as {string} and {string}', (FileType, ContentFlag, DraftFlagType) => {
-    policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
+Then('the current policy for {string} is saved as {string} and {string}', async(FileType, ContentFlag, DraftFlagType) => {
+    await policyPage.assertDraftFlagAs(FileType, ContentFlag, DraftFlagType)
 });
 
 /*
@@ -106,7 +102,7 @@ Then('the current policy for {string} is saved as {string} and {string}', (FileT
 * ***************************************************************
 */
 Given('the current NCFS policy url is {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
+    await I.goToDraftNcfsPolicy();
     await policyPage.updateUrlIfNeeded(url);
 });
 
@@ -116,16 +112,15 @@ When('I update the contentFlag for {string} to {string} and {string}', async (Fi
 
 
 When('I have updated the NCFS policy url with {string}', async (url) => {
-    I.goToDraftNcfsPolicy();
-    let id = randomId
-    newUrl = url + id
+    await I.goToDraftNcfsPolicy();
+    newUrl = url + randomId
     policyPage.enterTextInApiUrl(newUrl);
     I.wait(5)
 });
 
-Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', (FileType, ContentFlag, FlagType, url) => {
+Then('the current policy is updated with the new settings {string}, {string}, {string}, and {string}', async(FileType, ContentFlag, FlagType, url) => {
     url = newUrl
-    I.goToCurrentNcfsPolicy()
+    await I.goToCurrentNcfsPolicy()
     I.seeInField(policyPage.fields.apiUrlInput, url);
     policyPage.goToCurrentAdaptationPolicy()
     policyPage.assertCurrentFlagAs(FileType, ContentFlag, FlagType)

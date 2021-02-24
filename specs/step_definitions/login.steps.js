@@ -1,6 +1,3 @@
-var assert = require("assert");
-
-
 const { I, loginPage, env } = inject();
 
 Given("I am on the login page", () => {

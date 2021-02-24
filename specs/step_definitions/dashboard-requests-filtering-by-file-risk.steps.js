@@ -15,6 +15,6 @@ When('I tick select from the {string} legend a file risk {string}', (chart, file
     analyticsPage.filterByRisk(chart, fileRisk)
 });
 
-Then('the {string} is updated to only show the filtered risk {string}', (chart, filteredRisk) => {
-    analyticsPage.assertFilteredRisk(chart, filteredRisk)
+Then('the {string} is updated to only show the filtered risk {string}', async(chart, filteredRisk) => {
+    await analyticsPage.assertFilteredRisk(chart, filteredRisk)
 });
