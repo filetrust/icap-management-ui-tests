@@ -1,0 +1,582 @@
+{
+  "uid" : "79380ceee59a6e6a",
+  "name" : "User can update the non-compliant routes API URL {\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @portal @functional @TEST-158",
+  "fullName" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism.User can update the non-compliant routes API URL {\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @portal @functional @TEST-158",
+  "historyId" : "19f3f458b67d6aa38dfb365de4b62863",
+  "time" : {
+    "start" : 1614167432332,
+    "stop" : 1614167467194,
+    "duration" : 34862
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I enter a valid URL 'icap-client-qa.uksouth.cloudapp.azure.com' into the API URL box and save ",
+      "time" : {
+        "start" : 1614167451243,
+        "stop" : 1614167459026,
+        "duration" : 7783
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: enterTextInApiUrl \"icap-client-qa.uksouth.cloudapp.azure.com10796\"",
+        "time" : {
+          "start" : 1614167451243,
+          "stop" : 1614167459026,
+          "duration" : 7783
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I fill field \"input[data-test-id=\"inputApiUrl\"]\", \"icap-client-qa.uksouth.cloudapp.azure.com10796\"",
+          "time" : {
+            "start" : 1614167451243,
+            "stop" : 1614167454006,
+            "duration" : 2763
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 3",
+          "time" : {
+            "start" : 1614167454006,
+            "stop" : 1614167457007,
+            "duration" : 3001
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"//button[contains(.,'Save Changes')]\"",
+          "time" : {
+            "start" : 1614167457007,
+            "stop" : 1614167459026,
+            "duration" : 2019
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I publish the policy ",
+      "time" : {
+        "start" : 1614167459026,
+        "stop" : 1614167463114,
+        "duration" : 4088
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1614167459027,
+          "stop" : 1614167459032,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1614167459027,
+            "stop" : 1614167459031,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1614167459032,
+          "stop" : 1614167459036,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1614167459037,
+          "stop" : 1614167461073,
+          "duration" : 2036
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1614167461075,
+          "stop" : 1614167463114,
+          "duration" : 2039
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1614167461075,
+            "stop" : 1614167461079,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1614167461079,
+            "stop" : 1614167463108,
+            "duration" : 2029
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the API URL is updated to the new url 'icap-client-qa.uksouth.cloudapp.azure.com' ",
+      "time" : {
+        "start" : 1614167463114,
+        "stop" : 1614167467194,
+        "duration" : 4080
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: goToCurrentNcfsPolicy ",
+        "time" : {
+          "start" : 1614167463114,
+          "stop" : 1614167467171,
+          "duration" : 4057
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+          "time" : {
+            "start" : 1614167463114,
+            "stop" : 1614167465139,
+            "duration" : 2025
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"[data-test-id='buttonCurrentNcfsPolicyTab']\", 60",
+          "time" : {
+            "start" : 1614167465140,
+            "stop" : 1614167465144,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+          "time" : {
+            "start" : 1614167465144,
+            "stop" : 1614167467170,
+            "duration" : 2026
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: confirmApiIsUpdated \"icap-client-qa.uksouth.cloudapp.azure.com10796\"",
+        "time" : {
+          "start" : 1614167467171,
+          "stop" : 1614167467194,
+          "duration" : 23
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I see in field \"input[data-test-id=\"inputApiUrl\"]\", \"icap-client-qa.uksouth.cloudapp.azure.com10796\"",
+          "time" : {
+            "start" : 1614167467171,
+            "stop" : 1614167467194,
+            "duration" : 23
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 20,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-158"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testClass",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can update the non-compliant routes API URL {\"url\":\"icap-client-qa.uksouth.cloudapp.azure.com\"} @portal @functional @TEST-158"
+  }, {
+    "name" : "package",
+    "value" : "non-compliant-files-routing-mechanism @non-compliant-files-routing-mechanism"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "fb514f2d237db6b9",
+      "status" : "failed",
+      "statusDetails" : "",
+      "time" : {
+        "start" : 1614166992559,
+        "stop" : 1614167028295,
+        "duration" : 35736
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 10,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 21
+      },
+      "items" : [ {
+        "uid" : "90f3c3ba2f4f5b15",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/6//#testresult/90f3c3ba2f4f5b15",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1614165468092,
+          "stop" : 1614165504366,
+          "duration" : 36274
+        }
+      }, {
+        "uid" : "39f0f0b0da255461",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/5//#testresult/39f0f0b0da255461",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614104394792,
+          "stop" : 1614104429407,
+          "duration" : 34615
+        }
+      }, {
+        "uid" : "e1de3c58d8bee5d9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/e1de3c58d8bee5d9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919841483,
+          "stop" : 1613919877499,
+          "duration" : 36016
+        }
+      }, {
+        "uid" : "f030ec189f0ab94a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/f030ec189f0ab94a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919246914,
+          "stop" : 1613919283336,
+          "duration" : 36422
+        }
+      }, {
+        "uid" : "21a36f9db7375a0a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/21a36f9db7375a0a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613918337091,
+          "stop" : 1613918373164,
+          "duration" : 36073
+        }
+      }, {
+        "uid" : "c68db8fdeb27a36f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/169//#testresult/c68db8fdeb27a36f",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1613656309849,
+          "stop" : 1613656344975,
+          "duration" : 35126
+        }
+      }, {
+        "uid" : "8626635becb81df8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/8626635becb81df8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654021516,
+          "stop" : 1613654059411,
+          "duration" : 37895
+        }
+      }, {
+        "uid" : "ab1ef0f5e41eede3",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/ab1ef0f5e41eede3",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1613651585513,
+          "stop" : 1613651622313,
+          "duration" : 36800
+        }
+      }, {
+        "uid" : "793404920af0fc68",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/793404920af0fc68",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1613650963526,
+          "stop" : 1613650999409,
+          "duration" : 35883
+        }
+      }, {
+        "uid" : "e28cdf2ec61def64",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/e28cdf2ec61def64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644267602,
+          "stop" : 1613644308252,
+          "duration" : 40650
+        }
+      }, {
+        "uid" : "6e1d7bb646ee9776",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/6e1d7bb646ee9776",
+        "status" : "failed",
+        "statusDetails" : "element ([data-test-id='buttonCurrentNcfsPolicyTab']) still not present on page after 30 sec\n                waiting for selector `[data-test-id='buttonCurrentNcfsPolicyTab']` failed: timeout 30000ms exceeded",
+        "time" : {
+          "start" : 1613578544887,
+          "stop" : 1613578591548,
+          "duration" : 46661
+        }
+      }, {
+        "uid" : "fc1e8c42798cc1ca",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/fc1e8c42798cc1ca",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576800462,
+          "stop" : 1613576836918,
+          "duration" : 36456
+        }
+      }, {
+        "uid" : "e13c0be80fb6b0c0",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/e13c0be80fb6b0c0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613574399486,
+          "stop" : 1613574436132,
+          "duration" : 36646
+        }
+      }, {
+        "uid" : "48aa9e767d94c851",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/48aa9e767d94c851",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1613058949741,
+          "stop" : 1613058952425,
+          "duration" : 2684
+        }
+      }, {
+        "uid" : "7bed9ab5a0048e50",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/7bed9ab5a0048e50",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1613056729300,
+          "stop" : 1613056731821,
+          "duration" : 2521
+        }
+      }, {
+        "uid" : "37cda8d1a2b559a2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/37cda8d1a2b559a2",
+        "status" : "failed",
+        "statusDetails" : "Cannot read property 'goto' of undefined",
+        "time" : {
+          "start" : 1612908411821,
+          "stop" : 1612908412172,
+          "duration" : 351
+        }
+      }, {
+        "uid" : "2673f307564a1ff2",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/152//#testresult/2673f307564a1ff2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612811852738,
+          "stop" : 1612811890214,
+          "duration" : 37476
+        }
+      }, {
+        "uid" : "9287c4fac268dc29",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/150//#testresult/9287c4fac268dc29",
+        "status" : "passed",
+        "time" : {
+          "start" : 1612808347390,
+          "stop" : 1612808388526,
+          "duration" : 41136
+        }
+      }, {
+        "uid" : "415fbdaf9f56fb85",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/149//#testresult/415fbdaf9f56fb85",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1612807543070,
+          "stop" : 1612807546075,
+          "duration" : 3005
+        }
+      }, {
+        "uid" : "b8053aa432e7c93d",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/148//#testresult/b8053aa432e7c93d",
+        "status" : "failed",
+        "statusDetails" : "Protocol error (Page.navigate): Cannot navigate to invalid URL",
+        "time" : {
+          "start" : 1612806034920,
+          "stop" : 1612806037877,
+          "duration" : 2957
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-158", "@functional", "@non-compliant-files-routing-mechanism" ]
+  },
+  "source" : "79380ceee59a6e6a.json",
+  "parameterValues" : [ ]
+}

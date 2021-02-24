@@ -1,0 +1,689 @@
+{
+  "uid" : "fa9c20a30c75ea68",
+  "name" : "User can filter the request log using a custom range and see all transactions within that range {\"datetimeFrom\":\"11/02/2021 10:00 AM\",\"datetimeTo\":\"12/02/2021 10:00 AM\"} @portal @functional @TEST-235",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.User can filter the request log using a custom range and see all transactions within that range {\"datetimeFrom\":\"11/02/2021 10:00 AM\",\"datetimeTo\":\"12/02/2021 10:00 AM\"} @portal @functional @TEST-235",
+  "historyId" : "b2548fe3891d1f49b65ffb7d91718ace",
+  "time" : {
+    "start" : 1614167578998,
+    "stop" : 1614167615746,
+    "duration" : 36748
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I select a valid '11/02/2021 10:00 AM' and '12/02/2021 10:00 AM' ",
+      "time" : {
+        "start" : 1614167593815,
+        "stop" : 1614167615694,
+        "duration" : 21879
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: openDatePicker ",
+        "time" : {
+          "start" : 1614167593815,
+          "stop" : 1614167596147,
+          "duration" : 2332
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614167593815,
+            "stop" : 1614167593818,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"div[id*='reportrange']\", 60",
+          "time" : {
+            "start" : 1614167593818,
+            "stop" : 1614167593823,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1614167593823,
+            "stop" : 1614167596146,
+            "duration" : 2323
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: setTimePeriod \"11/02/2021 10:00 AM\", \"12/02/2021 10:00 AM\"",
+        "time" : {
+          "start" : 1614167596147,
+          "stop" : 1614167598169,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \".ranges li:nth-child(4)\"",
+          "time" : {
+            "start" : 1614167596147,
+            "stop" : 1614167598166,
+            "duration" : 2019
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"div[class*='drp-calendar left']\"",
+          "time" : {
+            "start" : 1614167598166,
+            "stop" : 1614167598169,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: getRightMonth \"FEB\", \"2021\"",
+        "time" : {
+          "start" : 1614167598169,
+          "stop" : 1614167598173,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+          "time" : {
+            "start" : 1614167598169,
+            "stop" : 1614167598173,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1614167598173,
+          "stop" : 1614167598177,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar right')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '11')]}",
+        "time" : {
+          "start" : 1614167598183,
+          "stop" : 1614167600222,
+          "duration" : 2039
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .hourselect\", \"10\"",
+        "time" : {
+          "start" : 1614167600222,
+          "stop" : 1614167602888,
+          "duration" : 2666
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .minuteselect\", \"00\"",
+        "time" : {
+          "start" : 1614167602888,
+          "stop" : 1614167605559,
+          "duration" : 2671
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: setTimeTo \"11/02/2021 10:00 AM\", \"12/02/2021 10:00 AM\"",
+        "time" : {
+          "start" : 1614167605559,
+          "stop" : 1614167605564,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+          "time" : {
+            "start" : 1614167605559,
+            "stop" : 1614167605564,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1614167605564,
+          "stop" : 1614167605568,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar right')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '12')]}",
+        "time" : {
+          "start" : 1614167605574,
+          "stop" : 1614167607615,
+          "duration" : 2041
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .hourselect\", \"10\"",
+        "time" : {
+          "start" : 1614167607615,
+          "stop" : 1614167610324,
+          "duration" : 2709
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar right'] .minuteselect\", \"00\"",
+        "time" : {
+          "start" : 1614167610324,
+          "stop" : 1614167613007,
+          "duration" : 2683
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"button[class*='applyBtn']\"",
+        "time" : {
+          "start" : 1614167613007,
+          "stop" : 1614167615689,
+          "duration" : 2682
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+        "time" : {
+          "start" : 1614167615689,
+          "stop" : 1614167615693,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 21,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the selected custom range is applied to include '11/02/2021 10:00 AM' and '12/02/2021 10:00 AM' ",
+      "time" : {
+        "start" : 1614167615694,
+        "stop" : 1614167615701,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: isCustomRangeApplied \"11/02/2021 10:00 AM\", \"12/02/2021 10:00 AM\"",
+        "time" : {
+          "start" : 1614167615694,
+          "stop" : 1614167615701,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1614167615694,
+            "stop" : 1614167615697,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the files processed for the selected period are displayed ",
+      "time" : {
+        "start" : 1614167615701,
+        "stop" : 1614167615746,
+        "duration" : 45
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1614167615701,
+          "stop" : 1614167615705,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: isDataInRange \"11/02/2021 10:00 AM - 12/02/2021 10:00 AM\", 1",
+        "time" : {
+          "start" : 1614167615705,
+          "stop" : 1614167615713,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\", 60",
+          "time" : {
+            "start" : 1614167615705,
+            "stop" : 1614167615707,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614167615707,
+            "stop" : 1614167615710,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1614167615711,
+            "stop" : 1614167615713,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check if returned files in date range \"11/02/2021 10:00 AM - 12/02/2021 10:00 AM\", 1",
+        "time" : {
+          "start" : 1614167615713,
+          "stop" : 1614167615746,
+          "duration" : 33
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 32,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-235"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the request log using a custom range and see all transactions within that range {\"datetimeFrom\":\"11/02/2021 10:00 AM\",\"datetimeTo\":\"12/02/2021 10:00 AM\"} @portal @functional @TEST-235"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "c3875f257a23c83a",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614167074637,
+        "stop" : 1614167113569,
+        "duration" : 38932
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 14
+      },
+      "items" : [ {
+        "uid" : "92fc6e87a4beaa9",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/6//#testresult/92fc6e87a4beaa9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614165614682,
+          "stop" : 1614165649562,
+          "duration" : 34880
+        }
+      }, {
+        "uid" : "a2260493b8bc0357",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/5//#testresult/a2260493b8bc0357",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614104603186,
+          "stop" : 1614104639107,
+          "duration" : 35921
+        }
+      }, {
+        "uid" : "553cd6471fb0d024",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/4//#testresult/553cd6471fb0d024",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919979480,
+          "stop" : 1613920014774,
+          "duration" : 35294
+        }
+      }, {
+        "uid" : "7818eeb04cb4892a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/3//#testresult/7818eeb04cb4892a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613919389586,
+          "stop" : 1613919424905,
+          "duration" : 35319
+        }
+      }, {
+        "uid" : "7c1ff754f822cad4",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/2//#testresult/7c1ff754f822cad4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613918482276,
+          "stop" : 1613918517187,
+          "duration" : 34911
+        }
+      }, {
+        "uid" : "b344b89ca53bf6ab",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/169//#testresult/b344b89ca53bf6ab",
+        "status" : "failed",
+        "statusDetails" : "Clickable element \".ranges li:nth-child(4)\" was not found by text|CSS|XPath",
+        "time" : {
+          "start" : 1613656366582,
+          "stop" : 1613656385142,
+          "duration" : 18560
+        }
+      }, {
+        "uid" : "5f548e931d38c33c",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/168//#testresult/5f548e931d38c33c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613654102159,
+          "stop" : 1613654148293,
+          "duration" : 46134
+        }
+      }, {
+        "uid" : "ebc937517a41402f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/164//#testresult/ebc937517a41402f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651655825,
+          "stop" : 1613651697705,
+          "duration" : 41880
+        }
+      }, {
+        "uid" : "dcaabd85746f4f77",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/163//#testresult/dcaabd85746f4f77",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613651028213,
+          "stop" : 1613651065670,
+          "duration" : 37457
+        }
+      }, {
+        "uid" : "d656731eb60ca948",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/160//#testresult/d656731eb60ca948",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613644330880,
+          "stop" : 1613644366047,
+          "duration" : 35167
+        }
+      }, {
+        "uid" : "1819335e0500fb7e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/1819335e0500fb7e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578595437,
+          "stop" : 1613578630301,
+          "duration" : 34864
+        }
+      }, {
+        "uid" : "e5feeab9e942d66",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/e5feeab9e942d66",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613576893032,
+          "stop" : 1613576928165,
+          "duration" : 35133
+        }
+      }, {
+        "uid" : "d84af4ff29c84e8a",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/d84af4ff29c84e8a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613575027668,
+          "stop" : 1613575062658,
+          "duration" : 34990
+        }
+      } ]
+    },
+    "tags" : [ "@portal", "@TEST-235", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "fa9c20a30c75ea68.json",
+  "parameterValues" : [ ]
+}

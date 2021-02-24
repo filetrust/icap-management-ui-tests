@@ -1,0 +1,741 @@
+{
+  "uid" : "6a9f5eb172ec225c",
+  "name" : "A existing user record can be updated {\"username\":\"usertoupdate\",\"firstname\":\"fntoupdate\",\"lastname\":\"lntoupdate\",\"email\":\"emailtoupdate@glasswalltest.co\",\"newfirstname\":\"newfname\"} @functional @portal @TEST-142",
+  "fullName" : "user-records-admin @user-records-admin.A existing user record can be updated {\"username\":\"usertoupdate\",\"firstname\":\"fntoupdate\",\"lastname\":\"lntoupdate\",\"email\":\"emailtoupdate@glasswalltest.co\",\"newfirstname\":\"newfname\"} @functional @portal @TEST-142",
+  "historyId" : "fc00e5d12eb57287a6b88a397c1e363f",
+  "time" : {
+    "start" : 1614167170944,
+    "stop" : 1614167218858,
+    "duration" : 47914
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given A user record exist with username 'usertoupdate', firstname 'fntoupdate', lastname 'lntoupdate' and email 'emailtoupdate@glasswalltest.co' ",
+      "time" : {
+        "start" : 1614167185958,
+        "stop" : 1614167203336,
+        "duration" : 17378
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: addAUser \"usertoupdate26144\", \"fntoupdate26144\", \"lntoupdate26144\", \"26144emailtoupdate@glasswalltest.co\"",
+        "time" : {
+          "start" : 1614167185958,
+          "stop" : 1614167188575,
+          "duration" : 2617
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"td[class*='Users_newUserCell__']\"",
+          "time" : {
+            "start" : 1614167185958,
+            "stop" : 1614167188575,
+            "duration" : 2617
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: setNewUserName \"usertoupdate26144\"",
+        "time" : {
+          "start" : 1614167188575,
+          "stop" : 1614167191199,
+          "duration" : 2624
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\"",
+          "time" : {
+            "start" : 1614167188575,
+            "stop" : 1614167191199,
+            "duration" : 2624
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(1) > div\", \"usertoupdate26144\"",
+        "time" : {
+          "start" : 1614167191199,
+          "stop" : 1614167191686,
+          "duration" : 487
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "usersPage: setFirstName \"fntoupdate26144\"",
+        "time" : {
+          "start" : 1614167191686,
+          "stop" : 1614167194583,
+          "duration" : 2897
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\"",
+          "time" : {
+            "start" : 1614167191686,
+            "stop" : 1614167194334,
+            "duration" : 2648
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(2) > div > input\", \"fntoupdate26144\"",
+          "time" : {
+            "start" : 1614167194334,
+            "stop" : 1614167194583,
+            "duration" : 249
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: setLastName \"lntoupdate26144\"",
+        "time" : {
+          "start" : 1614167194583,
+          "stop" : 1614167197452,
+          "duration" : 2869
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\"",
+          "time" : {
+            "start" : 1614167194583,
+            "stop" : 1614167197234,
+            "duration" : 2651
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(3) > div > input\", \"lntoupdate26144\"",
+          "time" : {
+            "start" : 1614167197234,
+            "stop" : 1614167197451,
+            "duration" : 217
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: setNewUserEmail \"26144emailtoupdate@glasswalltest.co\"",
+        "time" : {
+          "start" : 1614167197452,
+          "stop" : 1614167200557,
+          "duration" : 3105
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(4) > form > div > input\"",
+          "time" : {
+            "start" : 1614167197452,
+            "stop" : 1614167199995,
+            "duration" : 2543
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I type in \"tr[class*='NewUserRow_NewUser__'] > td:nth-of-type(4) > form > div > input\", \"26144emailtoupdate@glasswalltest.co\"",
+          "time" : {
+            "start" : 1614167199995,
+            "stop" : 1614167200549,
+            "duration" : 554
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: clickSaveChanges ",
+        "time" : {
+          "start" : 1614167200557,
+          "stop" : 1614167203336,
+          "duration" : 2779
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='Users_saveButton__']\", 5",
+          "time" : {
+            "start" : 1614167200557,
+            "stop" : 1614167200561,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"button[class*='Users_saveButton__']\"",
+          "time" : {
+            "start" : 1614167200561,
+            "stop" : 1614167203336,
+            "duration" : 2775
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 17,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "usersPage: waitForUsersTable ",
+      "time" : {
+        "start" : 1614167203336,
+        "stop" : 1614167204104,
+        "duration" : 768
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"//tbody\", 60",
+        "time" : {
+          "start" : 1614167203336,
+          "stop" : 1614167203340,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+        "time" : {
+          "start" : 1614167203340,
+          "stop" : 1614167204104,
+          "duration" : 764
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Given A user record exist with username 'usertoupdate', firstname 'fntoupdate', lastname 'lntoupdate' and email 'emailtoupdate@glasswalltest.co' ",
+      "time" : {
+        "start" : 1614167204104,
+        "stop" : 1614167204773,
+        "duration" : 669
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: confirmUserDetailsAvailable \"26144emailtoupdate@glasswalltest.co\"",
+        "time" : {
+          "start" : 1614167204104,
+          "stop" : 1614167204773,
+          "duration" : 669
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"//tbody\", 60",
+          "time" : {
+            "start" : 1614167204104,
+            "stop" : 1614167204108,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+          "time" : {
+            "start" : 1614167204108,
+            "stop" : 1614167204769,
+            "duration" : 661
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I see element \"//tr[contains(.,'26144emailtoupdate@glasswalltest.co')]\"",
+          "time" : {
+            "start" : 1614167204769,
+            "stop" : 1614167204773,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click the edit on the user record and update the firstname to 'newfname' ",
+      "time" : {
+        "start" : 1614167204773,
+        "stop" : 1614167218544,
+        "duration" : 13771
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: clickUserEditIcon \"26144emailtoupdate@glasswalltest.co\"",
+        "time" : {
+          "start" : 1614167204773,
+          "stop" : 1614167206795,
+          "duration" : 2022
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"//tr[contains(.,'26144emailtoupdate@glasswalltest.co')]//td[1]/div/*[@id=\"Pencil\"]\"",
+          "time" : {
+            "start" : 1614167204773,
+            "stop" : 1614167206795,
+            "duration" : 2022
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "usersPage: updateUserName \"newfname8fbccafa-bbdb-49c4-9802-9e4a48987ab3\"",
+        "time" : {
+          "start" : 1614167206795,
+          "stop" : 1614167212897,
+          "duration" : 6102
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I double click \"//td[2]/div/input\"",
+          "time" : {
+            "start" : 1614167206795,
+            "stop" : 1614167208807,
+            "duration" : 2012
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I press key \"Backspace\"",
+          "time" : {
+            "start" : 1614167208807,
+            "stop" : 1614167210866,
+            "duration" : 2059
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"//td[2]/div/input\"",
+          "time" : {
+            "start" : 1614167210867,
+            "stop" : 1614167212878,
+            "duration" : 2011
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I fill field \"//td[2]/div/input\", \"newfname8fbccafa-bbdb-49c4-9802-9e4a48987ab3\"",
+        "time" : {
+          "start" : 1614167212897,
+          "stop" : 1614167216039,
+          "duration" : 3142
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "usersPage: clickSaveChanges ",
+        "time" : {
+          "start" : 1614167216039,
+          "stop" : 1614167218544,
+          "duration" : 2505
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='Users_saveButton__']\", 5",
+          "time" : {
+            "start" : 1614167216039,
+            "stop" : 1614167216043,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"button[class*='Users_saveButton__']\"",
+          "time" : {
+            "start" : 1614167216043,
+            "stop" : 1614167218544,
+            "duration" : 2501
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 10,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "usersPage: waitForUsersTable ",
+      "time" : {
+        "start" : 1614167218544,
+        "stop" : 1614167218837,
+        "duration" : 293
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I wait for element \"//tbody\", 60",
+        "time" : {
+          "start" : 1614167218544,
+          "stop" : 1614167218548,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+        "time" : {
+          "start" : 1614167218548,
+          "stop" : 1614167218837,
+          "duration" : 289
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then The updated user record is saved ",
+      "time" : {
+        "start" : 1614167218837,
+        "stop" : 1614167218858,
+        "duration" : 21
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: confirmUserFirstname \"26144emailtoupdate@glasswalltest.co\", \"newfname8fbccafa-bbdb-49c4-9802-9e4a48987ab3\"",
+        "time" : {
+          "start" : 1614167218837,
+          "stop" : 1614167218858,
+          "duration" : 21
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"//tbody\", 60",
+          "time" : {
+            "start" : 1614167218837,
+            "stop" : 1614167218841,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+          "time" : {
+            "start" : 1614167218841,
+            "stop" : 1614167218844,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab text from \"//tr[contains(.,'26144emailtoupdate@glasswalltest.co')]/td[2]\"",
+          "time" : {
+            "start" : 1614167218844,
+            "stop" : 1614167218857,
+            "duration" : 13
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 45,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-142"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@user-records-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "A existing user record can be updated {\"username\":\"usertoupdate\",\"firstname\":\"fntoupdate\",\"lastname\":\"lntoupdate\",\"email\":\"emailtoupdate@glasswalltest.co\",\"newfirstname\":\"newfname\"} @functional @portal @TEST-142"
+  }, {
+    "name" : "package",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@portal", "@TEST-142", "@user-records-admin", "@functional" ]
+  },
+  "source" : "6a9f5eb172ec225c.json",
+  "parameterValues" : [ ]
+}

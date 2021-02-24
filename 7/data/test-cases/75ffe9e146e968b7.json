@@ -1,0 +1,216 @@
+{
+  "uid" : "75ffe9e146e968b7",
+  "name" : "User cannot process a non-supported file or unprocessable file size through the file drop service {\"file\":\"src/data/multiset/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @functional @TEST-231 @filedrop @portal",
+  "fullName" : "file-drop-file-processing @file-drop-file-processing.User cannot process a non-supported file or unprocessable file size through the file drop service {\"file\":\"src/data/multiset/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @functional @TEST-231 @filedrop @portal",
+  "historyId" : "c65cbdd7ee151cfc9aa6418c52192111",
+  "time" : {
+    "start" : 1614167422742,
+    "stop" : 1614167432291,
+    "duration" : 9549
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I click Select a file and choose non processable file 'src/data/multiset/icaptest.ps1' ",
+      "time" : {
+        "start" : 1614167430260,
+        "stop" : 1614167432286,
+        "duration" : 2026
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I attach file \"input[type = file]\", \"src/data/multiset/icaptest.ps1\"",
+        "time" : {
+          "start" : 1614167430260,
+          "stop" : 1614167432286,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the expected validation error is displayed as 'Please use a supported file type' ",
+      "time" : {
+        "start" : 1614167432286,
+        "stop" : 1614167432291,
+        "duration" : 5
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "filedropPage: checkMessageDisplayed \"Please use a supported file type\"",
+        "time" : {
+          "start" : 1614167432286,
+          "stop" : 1614167432291,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \".react-toast-notifications__toast__content\"",
+          "time" : {
+            "start" : 1614167432286,
+            "stop" : 1614167432291,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-231"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-processing"
+  }, {
+    "name" : "tag",
+    "value" : "@filedrop"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User cannot process a non-supported file or unprocessable file size through the file drop service {\"file\":\"src/data/multiset/icaptest.ps1\",\"error\":\"Please use a supported file type\"} @functional @TEST-231 @filedrop @portal"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "e4ffb7724082ab0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614167068464,
+        "stop" : 1614167078086,
+        "duration" : 9622
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 2,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 6
+      },
+      "items" : [ {
+        "uid" : "ee31d6c3763b02e8",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/6//#testresult/ee31d6c3763b02e8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614165458065,
+          "stop" : 1614165468055,
+          "duration" : 9990
+        }
+      }, {
+        "uid" : "df466e0f8aa6ec80",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/5//#testresult/df466e0f8aa6ec80",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614104386645,
+          "stop" : 1614104394770,
+          "duration" : 8125
+        }
+      }, {
+        "uid" : "cd91c3d56b4404b6",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/cd91c3d56b4404b6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1613578536924,
+          "stop" : 1613578544837,
+          "duration" : 7913
+        }
+      }, {
+        "uid" : "2983ec5f34fcc679",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/2983ec5f34fcc679",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613576800449,
+          "stop" : 1613576800449,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "117e659a41bb9e98",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/117e659a41bb9e98",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574399485,
+          "stop" : 1613574399485,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@filedrop", "@file-drop-file-processing", "@portal", "@TEST-231", "@functional" ]
+  },
+  "source" : "75ffe9e146e968b7.json",
+  "parameterValues" : [ ]
+}
