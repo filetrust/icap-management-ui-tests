@@ -1,0 +1,261 @@
+{
+  "uid" : "91473f7f92e94536",
+  "name" : "User can download the full XML analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"xmlFile\":\"file1.xml\"} @portal @filedrop @TEST-225",
+  "fullName" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting.User can download the full XML analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"xmlFile\":\"file1.xml\"} @portal @filedrop @TEST-225",
+  "historyId" : "b4325e26a7637f9b8786ca5ae454d411",
+  "time" : {
+    "start" : 1614165023352,
+    "stop" : 1614165043450,
+    "duration" : 20098
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given I have uploaded a file 'src/data/multiset/file1.docx' ",
+      "time" : {
+        "start" : 1614165032350,
+        "stop" : 1614165041383,
+        "duration" : 9033
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/file1.docx\"",
+        "time" : {
+          "start" : 1614165032350,
+          "stop" : 1614165041383,
+          "duration" : 9033
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/file1.docx\"",
+          "time" : {
+            "start" : 1614165032350,
+            "stop" : 1614165034380,
+            "duration" : 2030
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1614165034381,
+            "stop" : 1614165041383,
+            "duration" : 7002
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I click on Download XML Report button ",
+      "time" : {
+        "start" : 1614165041383,
+        "stop" : 1614165043449,
+        "duration" : 2066
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I handle downloads ",
+        "time" : {
+          "start" : 1614165041383,
+          "stop" : 1614165041385,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: clickXmlReport ",
+        "time" : {
+          "start" : 1614165041385,
+          "stop" : 1614165043449,
+          "duration" : 2064
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for clickable \"//button[contains(.,'XML')]\"",
+          "time" : {
+            "start" : 1614165041385,
+            "stop" : 1614165041392,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"//button[contains(.,'XML')]\"",
+          "time" : {
+            "start" : 1614165041392,
+            "stop" : 1614165043449,
+            "duration" : 2057
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the XML report 'file1.xml' is downloaded ",
+      "time" : {
+        "start" : 1614165043449,
+        "stop" : 1614165043450,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I am in path \"output/downloads\"",
+        "time" : {
+          "start" : 1614165043449,
+          "stop" : 1614165043449,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: isFileDownloaded \"file1.xml\"",
+        "time" : {
+          "start" : 1614165043449,
+          "stop" : 1614165043450,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I check file exist \"output/downloads/file1.xml\"",
+          "time" : {
+            "start" : 1614165043449,
+            "stop" : 1614165043449,
+            "duration" : 0
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 13,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-225"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-analysis-reporting"
+  }, {
+    "name" : "tag",
+    "value" : "@filedrop"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can download the full XML analysis report for a file {\"supportedFile\":\"src/data/multiset/file1.docx\",\"xmlFile\":\"file1.xml\"} @portal @filedrop @TEST-225"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-analysis-reporting @file-drop-file-analysis-reporting"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@filedrop", "@file-drop-file-analysis-reporting", "@portal", "@TEST-225" ]
+  },
+  "source" : "91473f7f92e94536.json",
+  "parameterValues" : [ ]
+}

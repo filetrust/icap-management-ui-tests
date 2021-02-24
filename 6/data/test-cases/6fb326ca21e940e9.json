@@ -1,0 +1,276 @@
+{
+  "uid" : "6fb326ca21e940e9",
+  "name" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230",
+  "fullName" : "file-drop-file-processing @file-drop-file-processing.User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230",
+  "historyId" : "9f91837409046ea1ed10247642476a91",
+  "time" : {
+    "start" : 1614165084735,
+    "stop" : 1614165100929,
+    "duration" : 16194
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I click Select a file and choose a supported file 'src/data/multiset/structuralIssues.xlsx' ",
+      "time" : {
+        "start" : 1614165091854,
+        "stop" : 1614165100881,
+        "duration" : 9027
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/structuralIssues.xlsx\"",
+        "time" : {
+          "start" : 1614165091854,
+          "stop" : 1614165100881,
+          "duration" : 9027
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/structuralIssues.xlsx\"",
+          "time" : {
+            "start" : 1614165091854,
+            "stop" : 1614165093879,
+            "duration" : 2025
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1614165093879,
+            "stop" : 1614165100881,
+            "duration" : 7002
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the File is processed with the process status displayed as 'Your file has been processed' ",
+      "time" : {
+        "start" : 1614165100881,
+        "stop" : 1614165100893,
+        "duration" : 12
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see \"Your file has been processed\", \"div[class*='FileDrop_message__']\"",
+        "time" : {
+          "start" : 1614165100881,
+          "stop" : 1614165100893,
+          "duration" : 12
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I can view more detailed results with file attributes 'structuralIssues.xlsx', 'xlsx' and '187294' ",
+      "time" : {
+        "start" : 1614165100893,
+        "stop" : 1614165100929,
+        "duration" : 36
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see element exist \"div[data-test-id=\"divFileDropResults\"]\"",
+        "time" : {
+          "start" : 1614165100893,
+          "stop" : 1614165100899,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: isFileNameAttributeDisplayed \"structuralIssues.xlsx\"",
+        "time" : {
+          "start" : 1614165100900,
+          "stop" : 1614165100908,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(1) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165100900,
+            "stop" : 1614165100907,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "filedropPage: isFileTypeAttributeDisplayed \"xlsx\"",
+        "time" : {
+          "start" : 1614165100908,
+          "stop" : 1614165100919,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(3) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165100908,
+            "stop" : 1614165100919,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "filedropPage: isFileSizeAttributeDisplayed \"187294\"",
+        "time" : {
+          "start" : 1614165100919,
+          "stop" : 1614165100929,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(2) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165100919,
+            "stop" : 1614165100929,
+            "duration" : 10
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-230"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-processing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@file-drop-file-processing", "@portal", "@TEST-230", "@functional" ]
+  },
+  "source" : "6fb326ca21e940e9.json",
+  "parameterValues" : [ ]
+}

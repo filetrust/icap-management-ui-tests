@@ -1,0 +1,381 @@
+{
+  "uid" : "5db440c2383a5d6",
+  "name" : "User can cancel a draft policy creation {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @portal @functional @TEST-213",
+  "fullName" : "Content Management Policy Editing @content-management-policy-editing.User can cancel a draft policy creation {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @portal @functional @TEST-213",
+  "historyId" : "49a312e08e30e995ff53bdcddab1eaf3",
+  "time" : {
+    "start" : 1614165023332,
+    "stop" : 1614165053357,
+    "duration" : 30025
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given the current policy for 'powerpoint' is set to 'Metadata' and 'sanitise' ",
+      "time" : {
+        "start" : 1614165044910,
+        "stop" : 1614165044945,
+        "duration" : 35
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setAndPublishPolicyFlag \"powerpoint\", \"Metadata\", \"sanitise\"",
+        "time" : {
+          "start" : 1614165044911,
+          "stop" : 1614165044924,
+          "duration" : 13
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"input[id='powerpointMetadatasanitise']\", 60",
+          "time" : {
+            "start" : 1614165044911,
+            "stop" : 1614165044921,
+            "duration" : 10
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab attribute from \"input[id='powerpointMetadatasanitise']\", \"checked\"",
+          "time" : {
+            "start" : 1614165044921,
+            "stop" : 1614165044924,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1614165044924,
+          "stop" : 1614165044926,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab number of visible elements \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1614165044926,
+          "stop" : 1614165044928,
+          "duration" : 2
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait for element \"label[for='powerpointMetadatasanitise']\", 60",
+        "time" : {
+          "start" : 1614165044935,
+          "stop" : 1614165044945,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I change the contentFlag for 'powerpoint' to 'Metadata' and 'disallow' ",
+      "time" : {
+        "start" : 1614165044945,
+        "stop" : 1614165047094,
+        "duration" : 2149
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: setPolicyFlag \"powerpoint\", \"Metadata\", \"disallow\"",
+        "time" : {
+          "start" : 1614165044945,
+          "stop" : 1614165044955,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='powerpointMetadatadisallow']\", \"checked\"",
+          "time" : {
+            "start" : 1614165044945,
+            "stop" : 1614165044949,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"label[for='powerpointMetadatadisallow']\", 30",
+        "time" : {
+          "start" : 1614165044955,
+          "stop" : 1614165044959,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='powerpointMetadatadisallow']\"",
+        "time" : {
+          "start" : 1614165044959,
+          "stop" : 1614165047094,
+          "duration" : 2135
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I press the Cancel button ",
+      "time" : {
+        "start" : 1614165047094,
+        "stop" : 1614165049223,
+        "duration" : 2129
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: clickCancelChanges ",
+        "time" : {
+          "start" : 1614165047094,
+          "stop" : 1614165049223,
+          "duration" : 2129
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"button[class*='DraftPolicy_cancelButton__']\"",
+          "time" : {
+            "start" : 1614165047094,
+            "stop" : 1614165049223,
+            "duration" : 2129
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the current policy is not updated ",
+      "time" : {
+        "start" : 1614165049223,
+        "stop" : 1614165053357,
+        "duration" : 4134
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: assertCurrentFlagIs \"input[id='powerpointMetadatasanitise']\"",
+        "time" : {
+          "start" : 1614165049223,
+          "stop" : 1614165053357,
+          "duration" : 4134
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+          "time" : {
+            "start" : 1614165049223,
+            "stop" : 1614165051333,
+            "duration" : 2110
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1614165051334,
+            "stop" : 1614165051338,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+          "time" : {
+            "start" : 1614165051339,
+            "stop" : 1614165053353,
+            "duration" : 2014
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I see attributes on elements \"input[id='powerpointMetadatasanitise']\", {\"checked\":true}",
+          "time" : {
+            "start" : 1614165053353,
+            "stop" : 1614165053357,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 21,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-213"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-editing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testClass",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can cancel a draft policy creation {\"FileType\":\"powerpoint\",\"ContentFlag\":\"Metadata\",\"DraftFlagType\":\"disallow\",\"CurrentFlagType\":\"sanitise\"} @portal @functional @TEST-213"
+  }, {
+    "name" : "package",
+    "value" : "Content Management Policy Editing @content-management-policy-editing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@content-management-policy-editing", "@portal", "@TEST-213", "@functional" ]
+  },
+  "source" : "5db440c2383a5d6.json",
+  "parameterValues" : [ ]
+}

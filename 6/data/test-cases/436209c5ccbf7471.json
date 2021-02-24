@@ -1,0 +1,370 @@
+{
+  "uid" : "436209c5ccbf7471",
+  "name" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230",
+  "fullName" : "file-drop-file-processing @file-drop-file-processing.User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230",
+  "historyId" : "9f91837409046ea1ed10247642476a91",
+  "time" : {
+    "start" : 1614165442540,
+    "stop" : 1614165458035,
+    "duration" : 15495
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I click Select a file and choose a supported file 'src/data/multiset/structuralIssues.xlsx' ",
+      "time" : {
+        "start" : 1614165448978,
+        "stop" : 1614165458013,
+        "duration" : 9035
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: uploadFile \"src/data/multiset/structuralIssues.xlsx\"",
+        "time" : {
+          "start" : 1614165448978,
+          "stop" : 1614165458013,
+          "duration" : 9035
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I attach file \"input[type = file]\", \"src/data/multiset/structuralIssues.xlsx\"",
+          "time" : {
+            "start" : 1614165448978,
+            "stop" : 1614165451006,
+            "duration" : 2028
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait 7",
+          "time" : {
+            "start" : 1614165451006,
+            "stop" : 1614165458013,
+            "duration" : 7007
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the File is processed with the process status displayed as 'Your file has been processed' ",
+      "time" : {
+        "start" : 1614165458013,
+        "stop" : 1614165458021,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see \"Your file has been processed\", \"div[class*='FileDrop_message__']\"",
+        "time" : {
+          "start" : 1614165458013,
+          "stop" : 1614165458020,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I can view more detailed results with file attributes 'structuralIssues.xlsx', 'xlsx' and '187294' ",
+      "time" : {
+        "start" : 1614165458021,
+        "stop" : 1614165458035,
+        "duration" : 14
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I see element exist \"div[data-test-id=\"divFileDropResults\"]\"",
+        "time" : {
+          "start" : 1614165458021,
+          "stop" : 1614165458024,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "filedropPage: isFileNameAttributeDisplayed \"structuralIssues.xlsx\"",
+        "time" : {
+          "start" : 1614165458024,
+          "stop" : 1614165458028,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(1) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165458024,
+            "stop" : 1614165458028,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "filedropPage: isFileTypeAttributeDisplayed \"xlsx\"",
+        "time" : {
+          "start" : 1614165458028,
+          "stop" : 1614165458032,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(3) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165458028,
+            "stop" : 1614165458031,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "filedropPage: isFileSizeAttributeDisplayed \"187294\"",
+        "time" : {
+          "start" : 1614165458032,
+          "stop" : 1614165458035,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"table[class*='FileAttributes_table__'] > tbody > tr:nth-of-type(2) > td:nth-of-type(2)\"",
+          "time" : {
+            "start" : 1614165458032,
+            "stop" : 1614165458035,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-230"
+  }, {
+    "name" : "tag",
+    "value" : "@file-drop-file-processing"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testClass",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can process a supported file through the file drop service {\"supportedFile\":\"src/data/multiset/structuralIssues.xlsx\",\"fileName\":\"structuralIssues.xlsx\",\"fileType\":\"xlsx\",\"fileSize\":\"187294\",\"processStatus\":\"Your file has been processed\"} @functional @portal @TEST-230"
+  }, {
+    "name" : "package",
+    "value" : "file-drop-file-processing @file-drop-file-processing"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "6fb326ca21e940e9",
+      "status" : "passed",
+      "time" : {
+        "start" : 1614165084735,
+        "stop" : 1614165100929,
+        "duration" : 16194
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "history" : {
+      "statistic" : {
+        "failed" : 1,
+        "broken" : 0,
+        "skipped" : 5,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 8
+      },
+      "items" : [ {
+        "uid" : "abccd9788933b616",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/5//#testresult/abccd9788933b616",
+        "status" : "passed",
+        "time" : {
+          "start" : 1614104371268,
+          "stop" : 1614104386625,
+          "duration" : 15357
+        }
+      }, {
+        "uid" : "495707c1aeb2940e",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/159//#testresult/495707c1aeb2940e",
+        "status" : "failed",
+        "statusDetails" : "",
+        "time" : {
+          "start" : 1613578521871,
+          "stop" : 1613578536769,
+          "duration" : 14898
+        }
+      }, {
+        "uid" : "18e5f1277f6400ac",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/158//#testresult/18e5f1277f6400ac",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613576800447,
+          "stop" : 1613576800447,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "cf8513b99b2cfc5f",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/156//#testresult/cf8513b99b2cfc5f",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613574399484,
+          "stop" : 1613574399484,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "cae6165e62c2f6aa",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/155//#testresult/cae6165e62c2f6aa",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613058949727,
+          "stop" : 1613058949727,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "911a8380176dd87b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/154//#testresult/911a8380176dd87b",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1613056729288,
+          "stop" : 1613056729288,
+          "duration" : 0
+        }
+      }, {
+        "uid" : "e3da3b5a18f7d21b",
+        "reportUrl" : "https://filetrust.github.io/icap-management-ui-tests/153//#testresult/e3da3b5a18f7d21b",
+        "status" : "skipped",
+        "statusDetails" : "Skipped due to failure in 'before' hook",
+        "time" : {
+          "start" : 1612908411802,
+          "stop" : 1612908411802,
+          "duration" : 0
+        }
+      } ]
+    },
+    "tags" : [ "@file-drop-file-processing", "@portal", "@TEST-230", "@functional" ]
+  },
+  "source" : "436209c5ccbf7471.json",
+  "parameterValues" : [ ]
+}
