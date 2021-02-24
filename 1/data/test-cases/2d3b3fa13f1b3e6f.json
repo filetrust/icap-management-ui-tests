@@ -1,0 +1,432 @@
+{
+  "uid" : "2d3b3fa13f1b3e6f",
+  "name" : "User cannot filter the date range to a time greater than 24 hours {\"datetimeFrom\":\"20/10/2020 0:45 AM\",\"datetimeTo\":\"26/10/2020 13:45 PM\"} @portal @functional @TEST-184",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.User cannot filter the date range to a time greater than 24 hours {\"datetimeFrom\":\"20/10/2020 0:45 AM\",\"datetimeTo\":\"26/10/2020 13:45 PM\"} @portal @functional @TEST-184",
+  "historyId" : "d3c85dd5b243801a74245db579926a2b",
+  "time" : {
+    "start" : 1614190822730,
+    "stop" : 1614190856142,
+    "duration" : 33412
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I select a custom time of '20/10/2020 0:45 AM' ",
+      "time" : {
+        "start" : 1614190838776,
+        "stop" : 1614190856131,
+        "duration" : 17355
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: openDatePicker ",
+        "time" : {
+          "start" : 1614190838776,
+          "stop" : 1614190840912,
+          "duration" : 2136
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190838776,
+            "stop" : 1614190838782,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"div[id*='reportrange']\", 60",
+          "time" : {
+            "start" : 1614190838782,
+            "stop" : 1614190838787,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1614190838787,
+            "stop" : 1614190840912,
+            "duration" : 2125
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: setTimeFrom \"20/10/2020 0:45 AM\"",
+        "time" : {
+          "start" : 1614190840912,
+          "stop" : 1614190840915,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"div[class*='drp-calendar left']\"",
+          "time" : {
+            "start" : 1614190840912,
+            "stop" : 1614190840915,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I click \".ranges li:nth-child(4)\"",
+        "time" : {
+          "start" : 1614190840915,
+          "stop" : 1614190842933,
+          "duration" : 2018
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: getRightMonth \"OCT\", \"2020\"",
+        "time" : {
+          "start" : 1614190842934,
+          "stop" : 1614190842940,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+          "time" : {
+            "start" : 1614190842934,
+            "stop" : 1614190842940,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+        "time" : {
+          "start" : 1614190842940,
+          "stop" : 1614190842944,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"div[class*='drp-calendar left'] th.prev\"",
+        "time" : {
+          "start" : 1614190842944,
+          "stop" : 1614190845141,
+          "duration" : 2197
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1614190845141,
+          "stop" : 1614190845147,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"div[class*='drp-calendar left'] th.prev\"",
+        "time" : {
+          "start" : 1614190845147,
+          "stop" : 1614190847374,
+          "duration" : 2227
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1614190847374,
+          "stop" : 1614190847379,
+          "duration" : 5
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"div[class*='drp-calendar left'] th.prev\"",
+        "time" : {
+          "start" : 1614190847379,
+          "stop" : 1614190849594,
+          "duration" : 2215
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I grab text from \"div[class*='drp-calendar left'] .month\"",
+        "time" : {
+          "start" : 1614190849594,
+          "stop" : 1614190849598,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click {xpath: .//div[contains(./@class, 'drp-calendar left')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '20')]}",
+        "time" : {
+          "start" : 1614190849605,
+          "stop" : 1614190851648,
+          "duration" : 2043
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .hourselect\", \"0\"",
+        "time" : {
+          "start" : 1614190851648,
+          "stop" : 1614190853917,
+          "duration" : 2269
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I select option \"div[class*='drp-calendar left'] .minuteselect\", \"45\"",
+        "time" : {
+          "start" : 1614190853918,
+          "stop" : 1614190856131,
+          "duration" : 2213
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 19,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then I am unable to select '26/10/2020 13:45 PM' ",
+      "time" : {
+        "start" : 1614190856131,
+        "stop" : 1614190856142,
+        "duration" : 11
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: unableSetTimeTo \"26/10/2020 13:45 PM\"",
+        "time" : {
+          "start" : 1614190856131,
+          "stop" : 1614190856139,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"div[class*='drp-calendar right'] .month\"",
+          "time" : {
+            "start" : 1614190856131,
+            "stop" : 1614190856138,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I grab attribute from {xpath: .//div[contains(./@class, 'drp-calendar left')]//td[not(contains(concat(' ', normalize-space(./@class), ' '), ' ends '))][contains(., '26')]}, \"class\"",
+        "time" : {
+          "start" : 1614190856139,
+          "stop" : 1614190856142,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 3,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 24,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-184"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "User cannot filter the date range to a time greater than 24 hours {\"datetimeFrom\":\"20/10/2020 0:45 AM\",\"datetimeTo\":\"26/10/2020 13:45 PM\"} @portal @functional @TEST-184"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@TEST-184", "@portal", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "2d3b3fa13f1b3e6f.json",
+  "parameterValues" : [ ]
+}

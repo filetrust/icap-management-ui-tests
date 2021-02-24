@@ -1,0 +1,222 @@
+{
+  "uid" : "b2b9a130719eb6d9",
+  "name" : "I cannot delete my own account @functional @TEST-191 @portal",
+  "fullName" : "user-records-admin @user-records-admin.I cannot delete my own account @functional @TEST-191 @portal",
+  "historyId" : "47cf5c5406f60960997c28a111404ace",
+  "time" : {
+    "start" : 1614190843921,
+    "stop" : 1614190859971,
+    "duration" : 16050
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I observe my account ",
+      "time" : {
+        "start" : 1614190859953,
+        "stop" : 1614190859963,
+        "duration" : 10
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: confirmUserDetailsAvailable \"testuser\"",
+        "time" : {
+          "start" : 1614190859953,
+          "stop" : 1614190859963,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"//tbody\", 60",
+          "time" : {
+            "start" : 1614190859953,
+            "stop" : 1614190859957,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+          "time" : {
+            "start" : 1614190859957,
+            "stop" : 1614190859960,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I see element \"//tr[contains(.,'testuser')]\"",
+          "time" : {
+            "start" : 1614190859960,
+            "stop" : 1614190859963,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then there will be no delete button next to my account ",
+      "time" : {
+        "start" : 1614190859963,
+        "stop" : 1614190859971,
+        "duration" : 8
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "usersPage: confirmUserDeleteIconNotAvailable \"testuser\"",
+        "time" : {
+          "start" : 1614190859963,
+          "stop" : 1614190859971,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"//tbody\", 60",
+          "time" : {
+            "start" : 1614190859963,
+            "stop" : 1614190859966,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"td[class*='Users_newUserCell__']\", 60",
+          "time" : {
+            "start" : 1614190859966,
+            "stop" : 1614190859969,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I dont see element \"//tr[contains(.,'testuser')]/td[6]/*[@id=\"Layer_1\"]\"",
+          "time" : {
+            "start" : 1614190859969,
+            "stop" : 1614190859971,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-191"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@user-records-admin"
+  }, {
+    "name" : "suite",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testClass",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "testMethod",
+    "value" : "I cannot delete my own account @functional @TEST-191 @portal"
+  }, {
+    "name" : "package",
+    "value" : "user-records-admin @user-records-admin"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@portal", "@user-records-admin", "@TEST-191", "@functional" ]
+  },
+  "source" : "b2b9a130719eb6d9.json",
+  "parameterValues" : [ ]
+}

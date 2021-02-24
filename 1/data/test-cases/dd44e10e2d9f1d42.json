@@ -1,0 +1,396 @@
+{
+  "uid" : "dd44e10e2d9f1d42",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212",
+  "historyId" : "f887a3ab509277e6e16437f6229e4819",
+  "time" : {
+    "start" : 1614190777254,
+    "stop" : 1614190836481,
+    "duration" : 59227
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded",
+  "statusTrace" : "Error: element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setAndPublishPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:243:23)\n                    at async Actor.setRequiredContentFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:120:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:29:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded",
+    "statusTrace" : "Error: element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setAndPublishPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:243:23)\n                    at async Actor.setRequiredContentFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:120:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:29:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+    "steps" : [ {
+      "name" : "And The NCFS routing is set to Block for supported files ",
+      "time" : {
+        "start" : 1614190796100,
+        "stop" : 1614190804257,
+        "duration" : 8157
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: setGwBlockFilesToBlock ",
+        "time" : {
+          "start" : 1614190796100,
+          "stop" : 1614190798114,
+          "duration" : 2014
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+          "time" : {
+            "start" : 1614190796100,
+            "stop" : 1614190798114,
+            "duration" : 2014
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: clickNcfsPolicy ",
+        "time" : {
+          "start" : 1614190798114,
+          "stop" : 1614190800157,
+          "duration" : 2043
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"[data-test-id='buttonCurrentNcfsPolicyTab']\", 60",
+          "time" : {
+            "start" : 1614190798114,
+            "stop" : 1614190798120,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+          "time" : {
+            "start" : 1614190798121,
+            "stop" : 1614190800157,
+            "duration" : 2036
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: setRouteFlag \"block-glasswallBlockedFiles\"",
+        "time" : {
+          "start" : 1614190800157,
+          "stop" : 1614190800161,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-glasswallBlockedFiles']\", \"checked\"",
+          "time" : {
+            "start" : 1614190800157,
+            "stop" : 1614190800161,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1614190800161,
+          "stop" : 1614190800165,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1614190800161,
+            "stop" : 1614190800164,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1614190800165,
+          "stop" : 1614190800169,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1614190800169,
+          "stop" : 1614190802225,
+          "duration" : 2056
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1614190802228,
+          "stop" : 1614190804257,
+          "duration" : 2029
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1614190802228,
+            "stop" : 1614190802232,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1614190802232,
+            "stop" : 1614190804254,
+            "duration" : 2022
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 14,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set a policy for file type 'pdf' with 'ExternalHyperlinks' set to 'disallow' ",
+      "time" : {
+        "start" : 1614190804257,
+        "stop" : 1614190836481,
+        "duration" : 32224
+      },
+      "status" : "failed",
+      "statusMessage" : "Error: element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setAndPublishPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:243:23)\n                    at async Actor.setRequiredContentFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:120:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:29:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+      "steps" : [ {
+        "name" : "I: setRequiredContentFlag \"pdf\", \"ExternalHyperlinks\", \"disallow\"",
+        "time" : {
+          "start" : 1614190804257,
+          "stop" : 1614190806270,
+          "duration" : 2013
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+          "time" : {
+            "start" : 1614190804257,
+            "stop" : 1614190806270,
+            "duration" : 2013
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: clickAdaptationPolicy ",
+        "time" : {
+          "start" : 1614190806270,
+          "stop" : 1614190836481,
+          "duration" : 30211
+        },
+        "status" : "failed",
+        "statusMessage" : "Error: element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setAndPublishPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:243:23)\n                    at async Actor.setRequiredContentFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:120:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:29:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+        "steps" : [ {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1614190806270,
+            "stop" : 1614190836296,
+            "duration" : 30026
+          },
+          "status" : "failed",
+          "statusMessage" : "Error: element ([data-test-id=\"buttonCurrentAdaptationPolicyTab\"]) still not present on page after 30 sec\n                waiting for selector `[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]` failed: timeout 30000ms exceeded\n                    at /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/helper/Puppeteer.js:1947:13\n                    at async Object.setAndPublishPolicyFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/policy.page.js:243:23)\n                    at async Actor.setRequiredContentFlag (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/steps_file.js:120:13)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:29:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : true,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "fedc894906440b81",
+      "name" : "Last Seen Screenshot",
+      "source" : "fedc894906440b81.png",
+      "type" : "image/png",
+      "size" : 25659
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 20,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"pdf\",\"contentFlag\":\"ExternalHyperlinks\",\"flagType\":\"disallow\",\"file\":\"Execute+Java+Script_JS_PDF.pdf\",\"fileOutcome\":\"htmlReport\",\"fileExtension\":\"Pdf\",\"outcomeValue\":\"Blocked by Policy\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "b106e35c5a919439",
+      "status" : "failed",
+      "statusDetails" : "assert is not defined",
+      "time" : {
+        "start" : 1614190775723,
+        "stop" : 1614190808433,
+        "duration" : 32710
+      }
+    } ],
+    "categories" : [ {
+      "name" : "Infrastructure problems",
+      "messageRegex" : ".*",
+      "matchedStatuses" : [ "broken", "failed" ],
+      "flaky" : false
+    }, {
+      "name" : "Product defects",
+      "matchedStatuses" : [ "failed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "dd44e10e2d9f1d42.json",
+  "parameterValues" : [ ]
+}

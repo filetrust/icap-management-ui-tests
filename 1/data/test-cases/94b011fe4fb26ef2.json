@@ -1,0 +1,357 @@
+{
+  "uid" : "94b011fe4fb26ef2",
+  "name" : "User can filter the request log using a default time interval(1, 12 or 24 hrs) {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @portal @functional @TEST-167",
+  "fullName" : "request-history-filtering-by-date @request-history-filtering-by-date.User can filter the request log using a default time interval(1, 12 or 24 hrs) {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @portal @functional @TEST-167",
+  "historyId" : "617da1f6910d83b87493c35e41b05bb1",
+  "time" : {
+    "start" : 1614190761247,
+    "stop" : 1614190786635,
+    "duration" : 25388
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I open the date picker and select a '24 Hours' ",
+      "time" : {
+        "start" : 1614190777652,
+        "stop" : 1614190785942,
+        "duration" : 8290
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: openDatePicker ",
+        "time" : {
+          "start" : 1614190777652,
+          "stop" : 1614190779742,
+          "duration" : 2090
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190777652,
+            "stop" : 1614190777655,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"div[id*='reportrange']\", 60",
+          "time" : {
+            "start" : 1614190777655,
+            "stop" : 1614190777661,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1614190777661,
+            "stop" : 1614190779742,
+            "duration" : 2081
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: selectTimePeriod \"24 Hours\"",
+        "time" : {
+          "start" : 1614190779742,
+          "stop" : 1614190785942,
+          "duration" : 6200
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190779742,
+            "stop" : 1614190779754,
+            "duration" : 12
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"li[data-range-key='24 Hours']\"",
+          "time" : {
+            "start" : 1614190779754,
+            "stop" : 1614190782013,
+            "duration" : 2259
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190782013,
+            "stop" : 1614190785942,
+            "duration" : 3929
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the date range is updated to be from '24' hrs earlier to 'current time' ",
+      "time" : {
+        "start" : 1614190785942,
+        "stop" : 1614190785979,
+        "duration" : 37
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "requesthistoryPage: isTimeApplied \"24\", \"current time\"",
+        "time" : {
+          "start" : 1614190785942,
+          "stop" : 1614190785979,
+          "duration" : 37
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I see element exist \"//span[contains(.,'23/02/2021 18:19 PM - 24/02/2021 18:19 PM')]\"",
+          "time" : {
+            "start" : 1614190785942,
+            "stop" : 1614190785945,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And the files processed for the selected period are displayed ",
+      "time" : {
+        "start" : 1614190785979,
+        "stop" : 1614190786635,
+        "duration" : 656
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I grab text from \"div[id*='reportrange']\"",
+        "time" : {
+          "start" : 1614190785979,
+          "stop" : 1614190785989,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "requesthistoryPage: isDataInRange \"23/02/2021 18:19 PM - 24/02/2021 18:19 PM\", 1",
+        "time" : {
+          "start" : 1614190785990,
+          "stop" : 1614190786019,
+          "duration" : 29
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\", 60",
+          "time" : {
+            "start" : 1614190785990,
+            "stop" : 1614190785992,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190785992,
+            "stop" : 1614190786012,
+            "duration" : 20
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1614190786012,
+            "stop" : 1614190786018,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check if returned files in date range \"23/02/2021 18:19 PM - 24/02/2021 18:19 PM\", 1",
+        "time" : {
+          "start" : 1614190786019,
+          "stop" : 1614190786634,
+          "duration" : 615
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 19,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-167"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "tag",
+    "value" : "@request-history-filtering-by-date"
+  }, {
+    "name" : "suite",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testClass",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can filter the request log using a default time interval(1, 12 or 24 hrs) {\"timeInterval\":\"24 Hours\",\"datetimeFrom\":\"24\",\"datetimeTo\":\"current time\"} @portal @functional @TEST-167"
+  }, {
+    "name" : "package",
+    "value" : "request-history-filtering-by-date @request-history-filtering-by-date"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@portal", "@TEST-167", "@functional", "@request-history-filtering-by-date" ]
+  },
+  "source" : "94b011fe4fb26ef2.json",
+  "parameterValues" : [ ]
+}

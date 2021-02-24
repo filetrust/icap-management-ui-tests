@@ -1,0 +1,312 @@
+{
+  "uid" : "ed6d348c516fb836",
+  "name" : "User can activate a previous policy @portal @functional @TEST-219",
+  "fullName" : "content-management-previous-policy @content-management-previous-policy.User can activate a previous policy @portal @functional @TEST-219",
+  "historyId" : "9da09f9c78c702b35c0304a5ba14c4f",
+  "time" : {
+    "start" : 1614190821725,
+    "stop" : 1614190855197,
+    "duration" : 33472
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "When I click activate on a previous policy ",
+      "time" : {
+        "start" : 1614190840009,
+        "stop" : 1614190849059,
+        "duration" : 9050
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "policyPage: clickActivateFirstPolicy ",
+        "time" : {
+          "start" : 1614190840009,
+          "stop" : 1614190847054,
+          "duration" : 7045
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait 5",
+          "time" : {
+            "start" : 1614190840009,
+            "stop" : 1614190845015,
+            "duration" : 5006
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"(//button[contains(text(),'Activate')])[1]\"",
+          "time" : {
+            "start" : 1614190845015,
+            "stop" : 1614190847053,
+            "duration" : 2038
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait 2",
+        "time" : {
+          "start" : 1614190847054,
+          "stop" : 1614190849054,
+          "duration" : 2000
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Then the current policy is updated with the previous Policy ",
+      "time" : {
+        "start" : 1614190849059,
+        "stop" : 1614190855197,
+        "duration" : 6138
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1614190849059,
+          "stop" : 1614190851124,
+          "duration" : 2065
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"button[class*='ConfirmPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1614190849059,
+            "stop" : 1614190851122,
+            "duration" : 2063
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: getPolicyHistoryTimeStamp 1, 1",
+        "time" : {
+          "start" : 1614190851124,
+          "stop" : 1614190851134,
+          "duration" : 10
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I get row text 1, 1",
+          "time" : {
+            "start" : 1614190851124,
+            "stop" : 1614190851133,
+            "duration" : 9
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I: goToCurrentAdaptationPolicy ",
+        "time" : {
+          "start" : 1614190851134,
+          "stop" : 1614190855186,
+          "duration" : 4052
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click \"[data-test-id=\"buttonPolicyCurrentTab\"]\"",
+          "time" : {
+            "start" : 1614190851134,
+            "stop" : 1614190853156,
+            "duration" : 2022
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1614190853156,
+            "stop" : 1614190853162,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+          "time" : {
+            "start" : 1614190853162,
+            "stop" : 1614190855186,
+            "duration" : 2024
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: getCurrentPolicyTimeStamp ",
+        "time" : {
+          "start" : 1614190855186,
+          "stop" : 1614190855197,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab text from \"tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)\"",
+          "time" : {
+            "start" : 1614190855186,
+            "stop" : 1614190855197,
+            "duration" : 11
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 10,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 16,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-219"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-previous-policy"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "tag",
+    "value" : "@portal"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "testMethod",
+    "value" : "User can activate a previous policy @portal @functional @TEST-219"
+  }, {
+    "name" : "package",
+    "value" : "content-management-previous-policy @content-management-previous-policy"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test passed",
+      "matchedStatuses" : [ "passed" ],
+      "flaky" : false
+    } ],
+    "tags" : [ "@content-management-previous-policy", "@portal", "@TEST-219", "@functional" ]
+  },
+  "source" : "ed6d348c516fb836.json",
+  "parameterValues" : [ ]
+}

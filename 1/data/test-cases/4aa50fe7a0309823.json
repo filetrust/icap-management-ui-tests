@@ -1,0 +1,915 @@
+{
+  "uid" : "4aa50fe7a0309823",
+  "name" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "fullName" : "content-management-policy-application-to-files @content-management-policy-application-to-files.The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212",
+  "historyId" : "5961c35b13e7be5a530c16bd92e417d8",
+  "time" : {
+    "start" : 1614190718646,
+    "stop" : 1614190775593,
+    "duration" : 56947
+  },
+  "description" : "",
+  "descriptionHtml" : "",
+  "status" : "failed",
+  "statusMessage" : "File with undefined is not displayed",
+  "statusTrace" : "AssertionError [ERR_ASSERTION]: File with undefined is not displayed\n                    at MyHelper.checkRowValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:214:24)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayedByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:452:17)\n                    at async Object.checkRowByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:468:9)\n                    at async Object.checkFileTypeValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:567:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:62:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "File with undefined is not displayed",
+    "statusTrace" : "AssertionError [ERR_ASSERTION]: File with undefined is not displayed\n                    at MyHelper.checkRowValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:214:24)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayedByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:452:17)\n                    at async Object.checkRowByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:468:9)\n                    at async Object.checkFileTypeValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:567:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:62:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+    "steps" : [ {
+      "name" : "And The NCFS routing is set to Block for supported files ",
+      "time" : {
+        "start" : 1614190738371,
+        "stop" : 1614190755600,
+        "duration" : 17229
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: setGwBlockFilesToBlock ",
+        "time" : {
+          "start" : 1614190738371,
+          "stop" : 1614190740383,
+          "duration" : 2012
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+          "time" : {
+            "start" : 1614190738371,
+            "stop" : 1614190740382,
+            "duration" : 2011
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: clickNcfsPolicy ",
+        "time" : {
+          "start" : 1614190740383,
+          "stop" : 1614190742434,
+          "duration" : 2051
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"[data-test-id='buttonCurrentNcfsPolicyTab']\", 60",
+          "time" : {
+            "start" : 1614190740383,
+            "stop" : 1614190740387,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id='buttonCurrentNcfsPolicyTab']\"",
+          "time" : {
+            "start" : 1614190740387,
+            "stop" : 1614190742434,
+            "duration" : 2047
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: setRouteFlag \"block-glasswallBlockedFiles\"",
+        "time" : {
+          "start" : 1614190742434,
+          "stop" : 1614190742441,
+          "duration" : 7
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab attribute from \"input[id='block-glasswallBlockedFiles']\", \"checked\"",
+          "time" : {
+            "start" : 1614190742434,
+            "stop" : 1614190742441,
+            "duration" : 7
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I click \"label[for='block-glasswallBlockedFiles']\"",
+        "time" : {
+          "start" : 1614190742441,
+          "stop" : 1614190744482,
+          "duration" : 2041
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I wait 5",
+        "time" : {
+          "start" : 1614190744483,
+          "stop" : 1614190749486,
+          "duration" : 5003
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1614190749486,
+          "stop" : 1614190751505,
+          "duration" : 2019
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1614190751505,
+          "stop" : 1614190751511,
+          "duration" : 6
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1614190751505,
+            "stop" : 1614190751509,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1614190751511,
+          "stop" : 1614190751515,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1614190751515,
+          "stop" : 1614190753560,
+          "duration" : 2045
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1614190753565,
+          "stop" : 1614190755600,
+          "duration" : 2035
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1614190753566,
+            "stop" : 1614190753569,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1614190753569,
+            "stop" : 1614190755595,
+            "duration" : 2026
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 17,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And I set a policy for file type 'word' with 'InternalHyperlinks' set to 'sanitise' ",
+      "time" : {
+        "start" : 1614190755600,
+        "stop" : 1614190768200,
+        "duration" : 12600
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I: setRequiredContentFlag \"word\", \"InternalHyperlinks\", \"sanitise\"",
+        "time" : {
+          "start" : 1614190755600,
+          "stop" : 1614190757613,
+          "duration" : 2013
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"[data-test-id='buttonPolicyDraftTab']\"",
+          "time" : {
+            "start" : 1614190755600,
+            "stop" : 1614190757613,
+            "duration" : 2013
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: clickAdaptationPolicy ",
+        "time" : {
+          "start" : 1614190757613,
+          "stop" : 1614190759640,
+          "duration" : 2027
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\", 30",
+          "time" : {
+            "start" : 1614190757613,
+            "stop" : 1614190757617,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"[data-test-id=\"buttonCurrentAdaptationPolicyTab\"]\"",
+          "time" : {
+            "start" : 1614190757617,
+            "stop" : 1614190759640,
+            "duration" : 2023
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "policyPage: setAndPublishPolicyFlag \"word\", \"InternalHyperlinks\", \"sanitise\"",
+        "time" : {
+          "start" : 1614190759640,
+          "stop" : 1614190759648,
+          "duration" : 8
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"input[id='wordInternalHyperlinkssanitise']\", 60",
+          "time" : {
+            "start" : 1614190759640,
+            "stop" : 1614190759644,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab attribute from \"input[id='wordInternalHyperlinkssanitise']\", \"checked\"",
+          "time" : {
+            "start" : 1614190759645,
+            "stop" : 1614190759647,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 60",
+        "time" : {
+          "start" : 1614190759648,
+          "stop" : 1614190759652,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"label[for='wordInternalHyperlinkssanitise']\"",
+        "time" : {
+          "start" : 1614190759652,
+          "stop" : 1614190761780,
+          "duration" : 2128
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"//button[contains(.,'Save Changes')]\"",
+        "time" : {
+          "start" : 1614190761780,
+          "stop" : 1614190763806,
+          "duration" : 2026
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "policyPage: publishPolicy ",
+        "time" : {
+          "start" : 1614190763806,
+          "stop" : 1614190763810,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I grab number of visible elements \"button[class*='DraftPolicy_publishButton__']\"",
+          "time" : {
+            "start" : 1614190763806,
+            "stop" : 1614190763809,
+            "duration" : 3
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"button[class*='DraftPolicy_publishButton__']\", 15",
+        "time" : {
+          "start" : 1614190763810,
+          "stop" : 1614190763813,
+          "duration" : 3
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "I click element \"button[class*='DraftPolicy_publishButton__']\"",
+        "time" : {
+          "start" : 1614190763813,
+          "stop" : 1614190765957,
+          "duration" : 2144
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "Within \"section[class*='Modal_Modal__']\" ",
+        "time" : {
+          "start" : 1614190765962,
+          "stop" : 1614190768196,
+          "duration" : 2234
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\", 5",
+          "time" : {
+            "start" : 1614190765962,
+            "stop" : 1614190765966,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"button[class*='ConfirmDraftPublishModal_confirmPublishButton__']\"",
+          "time" : {
+            "start" : 1614190765966,
+            "stop" : 1614190767997,
+            "duration" : 2031
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I wait for element \"label[for='wordInternalHyperlinkssanitise']\", 60",
+        "time" : {
+          "start" : 1614190768196,
+          "stop" : 1614190768200,
+          "duration" : 4
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 19,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "When I process file 'issues.docx' through the icap server using Icap client ",
+      "time" : {
+        "start" : 1614190768200,
+        "stop" : 1614190768201,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "I get file out content \"issues.docx\"",
+        "time" : {
+          "start" : 1614190768200,
+          "stop" : 1614190768201,
+          "duration" : 1
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "And The transaction log shows the file with type 'Docx' as 'Safe' ",
+      "time" : {
+        "start" : 1614190768201,
+        "stop" : 1614190775593,
+        "duration" : 7392
+      },
+      "status" : "failed",
+      "statusMessage" : "AssertionError [ERR_ASSERTION]: File with undefined is not displayed\n                    at MyHelper.checkRowValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:214:24)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayedByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:452:17)\n                    at async Object.checkRowByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:468:9)\n                    at async Object.checkFileTypeValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:567:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:62:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+      "steps" : [ {
+        "name" : "I: viewTransactions \"12 Hours\"",
+        "time" : {
+          "start" : 1614190768201,
+          "stop" : 1614190775569,
+          "duration" : 7368
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I click element \"a[href*='request-history'] > div\"",
+          "time" : {
+            "start" : 1614190768201,
+            "stop" : 1614190770338,
+            "duration" : 2137
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190770338,
+            "stop" : 1614190770342,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190770342,
+            "stop" : 1614190770346,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190770346,
+            "stop" : 1614190770352,
+            "duration" : 6
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for clickable \"div[id*='reportrange']\", 60",
+          "time" : {
+            "start" : 1614190770352,
+            "stop" : 1614190770361,
+            "duration" : 9
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click \"div[id*='reportrange']\"",
+          "time" : {
+            "start" : 1614190770362,
+            "stop" : 1614190772486,
+            "duration" : 2124
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190772486,
+            "stop" : 1614190772491,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I click element \"li[data-range-key='12 Hours']\"",
+          "time" : {
+            "start" : 1614190772491,
+            "stop" : 1614190774678,
+            "duration" : 2187
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for visible \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190774678,
+            "stop" : 1614190775567,
+            "duration" : 889
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 9,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "requesthistoryPage: checkFileTypeValueByFileId \"Docx\", , true",
+        "time" : {
+          "start" : 1614190775569,
+          "stop" : 1614190775580,
+          "duration" : 11
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "I wait for invisible \"//div[contains(@class, 'RequestHistory_wrapTable')]/div\", 60",
+          "time" : {
+            "start" : 1614190775569,
+            "stop" : 1614190775574,
+            "duration" : 5
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I wait for element \"tr[class*='MuiTableRow-head']\", 60",
+          "time" : {
+            "start" : 1614190775574,
+            "stop" : 1614190775578,
+            "duration" : 4
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "I grab number of visible elements \"//tbody/descendant::h2\"",
+          "time" : {
+            "start" : 1614190775578,
+            "stop" : 1614190775580,
+            "duration" : 2
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "I check row value by file id \"Docx\", 3, ",
+        "time" : {
+          "start" : 1614190775580,
+          "stop" : 1614190775586,
+          "duration" : 6
+        },
+        "status" : "failed",
+        "statusMessage" : "AssertionError [ERR_ASSERTION]: File with undefined is not displayed\n                    at MyHelper.checkRowValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/utils/helper.js:214:24)\n                    at processTicksAndRejections (internal/process/task_queues.js:97:5)\n                    at async Object.isDataDisplayedByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:452:17)\n                    at async Object.checkRowByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:468:9)\n                    at async Object.checkFileTypeValueByFileId (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/src/pages/request-history.page.js:567:9)\n                    at async /home/runner/work/icap-management-ui-tests/icap-management-ui-tests/specs/step_definitions/content-management-policy-application-to-files.steps.js:62:5\n                    at async runSteps (/home/runner/work/icap-management-ui-tests/icap-management-ui-tests/node_modules/codeceptjs/lib/interfaces/gherkin.js:57:9)",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : true,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 15,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ {
+      "uid" : "d6a0d8681626f280",
+      "name" : "Last Seen Screenshot",
+      "source" : "d6a0d8681626f280.png",
+      "type" : "image/png",
+      "size" : 109191
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 56,
+    "attachmentsCount" : 1,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "@TEST-212"
+  }, {
+    "name" : "tag",
+    "value" : "@content-management-policy-application-to-files"
+  }, {
+    "name" : "tag",
+    "value" : "@functional"
+  }, {
+    "name" : "suite",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testClass",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "testMethod",
+    "value" : "The current Content Management Policy is correctly applied to processed files {\"fileType\":\"word\",\"contentFlag\":\"InternalHyperlinks\",\"flagType\":\"sanitise\",\"file\":\"issues.docx\",\"fileOutcome\":\"Sanitised\",\"fileExtension\":\"Docx\",\"outcomeValue\":\"Safe\"} @functional @TEST-212"
+  }, {
+    "name" : "package",
+    "value" : "content-management-policy-application-to-files @content-management-policy-application-to-files"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure1"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ "@TEST-212", "@content-management-policy-application-to-files", "@functional" ]
+  },
+  "source" : "4aa50fe7a0309823.json",
+  "parameterValues" : [ ]
+}
