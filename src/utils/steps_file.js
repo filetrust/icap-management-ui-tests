@@ -225,10 +225,11 @@ module.exports = function () {
         },
 
         getFileId: function (icapResp) {
+            let fileId;
             try {
                 if (typeof icapResp !== 'undefined') {
                     if (icapResp.includes('X-Adaptation-File-Id')) {
-                        let fileId = icapResp
+                        fileId = icapResp
                             .toString()
                             .split('X-Adaptation-File-Id: ')[1]
                             .split("\n")[0];

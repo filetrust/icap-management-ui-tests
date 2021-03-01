@@ -46,7 +46,7 @@ module.exports = {
                     I.cleanupFile(fileOut);
                     fs.stat(file, async function (error, stat) {
                         if (stat && stat.isDirectory()) {
-                            find(file, function (error) {
+                            find(file, function () {
                                 next();
                             });
                         } else {

@@ -264,7 +264,7 @@ module.exports = {
     },
   async getMonthNumberFromLocator(locator){
         let result = await I.grabTextFrom(locator);
-        let calendarMonth = result.split(" ")[0];
+        let calendarMonth = result.toString().split(" ")[0];
         return this.getMonthNumber(calendarMonth);
        },
 

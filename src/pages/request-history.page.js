@@ -246,10 +246,10 @@ module.exports = {
 
     async getRightMonth(month, year) {
         const currentYearAndMonthValueRight = await this.selectMonthYear(month, year);
-        return currentYearAndMonthValueRight.split(" ")[0]
+        return currentYearAndMonthValueRight.toString().split(" ")[0]
     },
 
-    async selectCustomPriod() {
+    async selectCustomPeriod() {
         const calendar = await I.grabNumberOfVisibleElements(this.calendar.drp_calendar_left)
         if (!calendar) {
             const element = this.buttons.customRange;
@@ -272,7 +272,7 @@ module.exports = {
     },
 
     async setTimeFrom(datetimeFrom) {
-        await this.selectCustomPriod()
+        await this.selectCustomPeriod()
         const from = this.parseDate(datetimeFrom)
         from.month = this.getMonthName(from.month);
         const selectedRightMonth = await this.getRightMonth(from.month, from.year)
@@ -313,7 +313,7 @@ module.exports = {
         }
         const classes = await I.grabAttributeFrom(el, 'class');
         if (!classes.includes('disabled') && !classes.includes('all')) {
-            assert.fail(`It's possible to select more than 24 houts range - ${datetimeTo}`)
+            assert.fail(`It's possible to select more than 24 hours range - ${datetimeTo}`)
         }
     },
 

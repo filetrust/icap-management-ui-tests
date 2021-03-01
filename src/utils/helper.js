@@ -242,6 +242,7 @@ class MyHelper extends Helper {
     }
 
     async setFlags() {
+        const page = this.helpers['Puppeteer'].page;
         try {
             let elCount = await this.getElement()
             for (let i = 0; i < elCount; i++) {

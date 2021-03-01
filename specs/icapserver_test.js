@@ -1,7 +1,6 @@
 const { I, icapclient } = inject();
 const outputPath = './src/data/fileOutput'
-const assert = require('assert').strict;
-const { output } = require("codeceptjs");
+
 
 
 Feature('Icap Client File Processing');
