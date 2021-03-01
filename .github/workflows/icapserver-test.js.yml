@@ -40,7 +40,7 @@ jobs:
           npm install -g allure-commandline --save-dev     
           npm install
           c-icap-client -i $ICAP_URL_NEU
-          npx codeceptjs run --steps --grep @ns --plugins allure
+          npx codeceptjs run --steps --grep @fileprocess --plugins allure
           cat src/data/fileOutput/icap.log
 
       - name: Get Allure history
