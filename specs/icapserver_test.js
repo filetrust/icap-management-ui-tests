@@ -1,5 +1,8 @@
 const { I, icapclient } = inject();
-const outputPath = './output/downloads'
+const outputPath = './src/data/fileOutput'
+const assert = require('assert').strict;
+const { output } = require("codeceptjs");
+
 
 Feature('Icap Client File Processing');
 
@@ -14,7 +17,7 @@ Scenario('I process a non supported file using icap client tool', async () => {
     console.log('Submitted file is relayed')
     I.confirmFileiSNotAvailable(`${outputPath}/${file}`)
   } else if (icapCode === '200 OK') {
-    const respCode = await I.getResponseCode(resp)
+    const respCode = I.getResponseCode(resp)
     if (respCode === '403 Forbidden') {
       console.log('Submitted file is blocked')
       I.checkFileOutputIsHtmlReport(`${outputPath}/${file}`)
@@ -24,32 +27,32 @@ Scenario('I process a non supported file using icap client tool', async () => {
   }
 }).tag('@ns').tag('@fileprocess').tag('@functional');
 
-Scenario('Supported office files process is successful', async () => {
+Scenario('Supported office files process is successful', () => {
   const inPath = './src/data/office';
   icapclient.processFiles(inPath, outputPath);
 }).tag('@office').tag('@fileprocess').tag('@functional');
 
-Scenario('Supported image files process is successful', async () => {
+Scenario('Supported image files process is successful', () => {
   const inPath = './src/data/images';
   icapclient.processFiles(inPath, outputPath);
 }).tag('@images').tag('@fileprocess').tag('@functional');
 
-Scenario('Supported pdf files process is successful', async () => {
-  const inPath = './src/data/pdf';
-  icapclient.processFiles(inPath, outputPath);
-}).tag('@pdf').tag('@fileprocess').tag('@functional');
+Scenario('Supported pdf files process is successful', function () {
+    const inPath = './src/data/pdf';
+    icapclient.processFiles(inPath, outputPath);
+  }).tag('@pdf').tag('@fileprocess').tag('@functional');
 
-Scenario('Supported pdf files process is successful', async () => {
+Scenario('Supported pdf files process is successful', () => {
   const inPath = './src/data/rtf';
   icapclient.processFiles(inPath, outputPath);
 }).tag('@rtf').tag('@fileprocess').tag('@functional');
 
-Scenario('Supported pdf files process is successful', async () => {
+Scenario('Supported pdf files process is successful', () => {
   const inPath = './src/data/multiset';
   icapclient.processFiles(inPath, outputPath);
 }).tag('@multiset');
 
-Scenario('Supported archive files process is successful', async () => {
+Scenario('Supported archive files process is successful', () => {
   const inPath = './src/data/archive_success';
   icapclient.processFiles(inPath, outputPath);
 }).tag('@archives').tag('@fileprocess').tag('@functional');

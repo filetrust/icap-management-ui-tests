@@ -14,7 +14,7 @@ const fileDropUrl = process.env.FILEDROP_URL_NEU;
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.UI_URL_NEU)
+            this.amOnPage(process.env.UI_URL_T02)
         },
 
         loginAs: function (email, password) {
@@ -120,7 +120,7 @@ module.exports = function () {
             await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
         },
 
-        searchFileById:  async function (id) {
+        searchFileById: async function (id) {
             await requesthistoryPage.setFileId(id);
             this.waitForElement(requesthistoryPage.table.tableHeaders, 60)
         },
@@ -188,42 +188,58 @@ module.exports = function () {
 
 
         getIcapHeaderCode: function (icapResp) {
-            let icapCode;
-            if (icapResp.includes('ICAP/1.0')) {
-                icapCode = icapResp
-                    .toString()
-                    .split('ICAP/1.0 ')[1]
-                    .split("\n")[0];
-                output.print('The icap header code is: ' + icapCode)
-            } return icapCode;
+            try {
+                if (typeof icapResp !== 'undefined') {
+                    if (icapResp.includes('ICAP/1.0')) {
+                        let icapCode = icapResp
+                            .toString()
+                            .split('ICAP/1.0 ')[1]
+                            .split("\n")[0];
+                        output.print('The icap header code is: ' + icapCode)
+                        return icapCode;
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+            }
         },
 
         getResponseCode: function (icapResp) {
-            let responseCode;
-            if (icapResp.includes('HTTP/1.0')) {
-                responseCode = icapResp
-                    .toString()
-                    .split('HTTP/1.0 ')[1]
-                    .split("\n")[0];
-                if (responseCode !== null) {
-                    output.print('The response code is: ' + responseCode)
-                } else {
-                    output.print('The response header is not available')
+            try {
+                if (typeof icapResp !== 'undefined') {
+                    if (icapResp.includes('HTTP/1.0')) {
+                        let responseCode = icapResp
+                            .toString()
+                            .split('HTTP/1.0 ')[1]
+                            .split("\n")[0];
+                        if (responseCode !== null) {
+                            output.print('The response code is: ' + responseCode)
+                        } else {
+                            output.print('The response header is not available')
+                        } return responseCode;
+                    }
                 }
-            } return responseCode;
+            } catch (error) {
+                console.error(error);
+            }
         },
 
         getFileId: function (icapResp) {
-            let fileId;
-            if (icapResp.includes('X-Adaptation-File-Id')) {
-                fileId = icapResp
-                    .toString()
-                    .split('X-Adaptation-File-Id: ')[1]
-                    .split("\n")[0];
-                output.print('The file id: ' + fileId)
-            }else{
-                fileId = null
-            } return fileId;
+            try {
+                if (typeof icapResp !== 'undefined') {
+                    if (icapResp.includes('X-Adaptation-File-Id')) {
+                        let fileId = icapResp
+                            .toString()
+                            .split('X-Adaptation-File-Id: ')[1]
+                            .split("\n")[0];
+                        output.print('The file id: ' + fileId)
+                    } else {
+                        fileId = null
+                    } return fileId;
+                }
+            } catch (error) {
+                console.error(error);
+            }
         },
 
         cleanupFile(file) {
@@ -241,20 +257,24 @@ module.exports = function () {
         },
 
         getFileProcessingResult: function (resp) {
-            const icapCode = this.getIcapHeaderCode(resp)
-            if (!icapCode) {
-                assert.fail('File processing not succesful')
-            } else if (icapCode === '204 Unmodified') {
-                console.log(`The submitted file is relayed as the responde code is: ${icapCode}`)
-            } else {
-                const respCode = this.getResponseCode(resp)
-                if (!respCode) {
-                    assert.fail('File processing not succesful')
-                } else if (respCode === '403 Forbidden') {
-                    console.log(`Submitted file is blocked as the responde code is: ${respCode}`)
-                } else if (respCode === '200 OK') {
-                    console.log(`Submitted file is successfully processed with response: ${respCode}`)
-                }
+            try {
+                const icapCode = this.getIcapHeaderCode(resp)
+                if (typeof icapCode === 'undefined') {
+                    assert.fail('File processing is not successful')
+                } else if (icapCode === '204 Unmodified') {
+                    console.log(`The submitted file is relayed as the responde code is: ${icapCode}`)
+                } else {
+                    const respCode = this.getResponseCode(resp)
+                    if (!respCode) {
+                        assert.fail('File processing is not successful')
+                    } else if (respCode === '403 Forbidden') {
+                        console.log(`Submitted file is blocked as the responde code is: ${respCode}`)
+                    } else if (respCode === '200 OK') {
+                        console.log(`Submitted file is successfully processed with response: ${respCode}`)
+                    }
+                } return icapCode
+            } catch (error) {
+                console.error(error);
             }
         },
 

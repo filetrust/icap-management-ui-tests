@@ -1,25 +1,31 @@
-const { I,icapclient} = inject();
+const { I, icapclient } = inject();
 const fs = require('fs');
 const { output } = require("codeceptjs");
 const cp = require('child_process')
 const path = require('path');
-const inputDir = path.join('src', 'data', 'multiset');
-const outputDir = path.join('output', 'downloads');
-const inputPath = path.join(process.cwd(), inputDir);
-const outputPath = path.join(process.cwd(), outputDir);
-const icapLogs = path.join('output', 'icap.log')
-const icapClient = process.env.ICAP_URL_NEU;
+const assert = require('assert').strict;
+const inputPath = `./src/data/multiset`;
+const outputPath = `./src/data/fileOutput`;
+const icapLogs = path.join(`${outputPath}`, 'icap.log')
+const icapClient = process.env.ICAP_URL_T02;
 
 
 module.exports = {
 
-    submitFile (file) {
+    submitFile(file) {
         output.print('Sending file...')
         console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`)
         cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`).toString()
         const icapOutput = fs.readFileSync(`${icapLogs}`);
-        output.print('icapLogs: ' + icapOutput)
-        I.wait(60)
+        if (icapOutput.includes(`ICAP server:${icapClient}, ip:`)) {
+            console.log(`ICAP Server respone OK`);
+        } else {
+            assert.fail(`No response returned from ICAP Server`)
+        } if (icapOutput.includes(`Error opening output file`)) {
+            let fileErr = icapOutput.split(`Error opening output file`)[1]
+            assert.fail(`File error: ${fileErr}`)
+        }
+        output.log('icapLogs: ' + icapOutput)
         return icapOutput;
     },
 
@@ -40,7 +46,7 @@ module.exports = {
                     I.cleanupFile(fileOut);
                     fs.stat(file, async function (error, stat) {
                         if (stat && stat.isDirectory()) {
-                            find(file, function () {
+                            find(file, function (error) {
                                 next();
                             });
                         } else {
@@ -49,6 +55,7 @@ module.exports = {
                             I.getFileProcessingResult(resp);
                             next();
                         }
+
                     });
                 })();
             });
@@ -60,7 +67,7 @@ module.exports = {
         });
         find(inPath, function (error) {
             if (error) {
-                throw error;
+                assert.fail(`Inpath Error occurred ${error}`)
             } else {
                 console.log('finished.');
             }
@@ -96,16 +103,27 @@ module.exports = {
     },
 
     processFile: function (inPath, outPath) {
-        //output.print
-        console.log('Sending file...')
-        console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inPath}" -o "${outPath}" -v 2> ${icapLogs}`)
-        cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inPath}" -o "${outPath}" -v 2> ${icapLogs}`).toString()
-        const icapOutput = fs.readFileSync(`${icapLogs}`);
-        //output.print
-        console.log('icapLogs: ' + icapOutput)
-        //output.print
-        console.log('File is sent...')
-        return icapOutput;
+        //const icapOutput = null;
+        try {
+            console.log('Sending file...')
+            console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inPath}" -o "${outPath}" -v 2> ${icapLogs}`)
+            cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inPath}" -o "${outPath}" -v 2> ${icapLogs}`).toString()
+            const icapOutput = fs.readFileSync(`${icapLogs}`);
+            if (icapOutput)
+                if (icapOutput.includes(`ICAP server:${icapClient}, ip:`)) {
+                    console.log(`ICAP Server respone OK`);
+                } else {
+                    assert.fail(`No response returned from ICAP Server`)
+                } if (icapOutput.includes(`Error opening output file`)) {
+                    let fileErr = icapOutput.split(`Error opening output file`)[1]
+                    assert.fail(`File error: ${fileErr}`)
+                }
+            console.log('icapLogs: ' + icapOutput)
+            return icapOutput;
+        } catch (err) {
+            console.warn(err);
+        }
+
     },
 
 }
