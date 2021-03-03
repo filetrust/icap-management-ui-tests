@@ -1,4 +1,4 @@
-const {I} = inject();
+const { I } = inject();
 
 module.exports = {
 
@@ -72,7 +72,7 @@ module.exports = {
     //I.waitForVisible(element)
     I.wait(5)
     I.pressKey('Enter')
-    
+
   },
 
   errorMsg() {

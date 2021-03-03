@@ -123,7 +123,7 @@ module.exports = {
     async isFileNameAttributeDisplayed(fileName) {
         const name = await I.grabTextFrom(this.table.cell.fileName)
         if (name === fileName)
-            console.log('The file name attribute is: ' + name)
+            console.log(`The file name attribute is: ${name}`)
         else {
             console.log('The result view does not show the file name attribute')
         }
@@ -137,7 +137,7 @@ module.exports = {
     async isFileSizeAttributeDisplayed(fileSize) {
         const size = await I.grabTextFrom(this.table.cell.fileSize)
         if (size === fileSize)
-            console.log('The file size attribute is: ' + size)
+            console.log(`The file size attribute is: ${size}`)
         else {
             console.log('The result view does not show the file size attributes')
         }
@@ -146,7 +146,7 @@ module.exports = {
     async isFileTypeAttributeDisplayed(fileType) {
         const type = await I.grabTextFrom(this.table.cell.fileType)
         if (type === fileType)
-            console.log('The file type attribute is: ' + type)
+            console.log(`The file type attribute is: ${type}`)
         else {
             console.log('The result view does not show the file type attributes')
         }
@@ -169,7 +169,6 @@ module.exports = {
         })
     },
 
-
     isFileDownloaded(file) {
         return I.checkFileExist(`output/downloads/${file}`)
     },
@@ -179,13 +178,12 @@ module.exports = {
         I.seeFileNameMatching(analysisReport);
     },
     async checkMessageDisplayed(error) {
-        // I.seeElementInDOM('//div[text()="'+error+'"]');
         const element = this.sections.error;
         const errorMessage = await I.grabTextFrom(element)
         if (errorMessage === error) {
-            console.log('The expected error message: ' + errorMessage + ' is displayed')
+            console.log(`The expected error message: ${errorMessage} is displayed`)
         } else {
-            console.log('The error message: ' + errorMessage + ' is not as expected')
+            console.log(`The error message: ${errorMessage} is not as expected`)
         }
     }
 

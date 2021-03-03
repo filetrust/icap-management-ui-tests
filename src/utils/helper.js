@@ -35,10 +35,10 @@ class MyHelper extends Helper {
         try {
             elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
-                output.print('The element ' + selector + ' is not available');
+                output.print(`The element ${selector} is not available`);
                 return false;
             } else if (elVisible > 0) {
-                output.print('The required element ' + selector + ' is visible')
+                output.print(`The required element ${selector} is visible`)
                 return true
             }
             return elVisible;
@@ -59,7 +59,7 @@ class MyHelper extends Helper {
             if (numVisible) {
                 return await helper.grabTextFrom(selector, ...options);
             } else {
-                output.print(selector + ' is not visible')
+                output.print(`${selector} is not visible`)
             }
         } catch (err) {
             output.log(err);
@@ -73,7 +73,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return helper.click(selector);
             } else {
-                output.print('Skipping step, the element ' + selector + ' is not visible')
+                output.print(`Skipping step, the element ${selector} is not visible`)
             }
         } catch (err) {
             output.print(err);
@@ -91,7 +91,7 @@ class MyHelper extends Helper {
             if (elVisible) {
                 return await helper.click(selector2);
             } else {
-                output.print('Skipping step, the element ' + selector2 + ' is not visible')
+                output.print(`Skipping step, the element ${selector2} is not visible`)
             }
         } catch (err) {
             output.print(err);
@@ -105,7 +105,7 @@ class MyHelper extends Helper {
             const tableRows = 'tbody tr';
             let rowCount = await page.$$eval(tableRows, rows => rows.length);
             if (rowCount > 1) {
-                output.log(rowCount + ' rows are displayed');
+                output.log(`${rowCount} rows are displayed`);
                 return await this.clickElement(`//tbody/tr[${i}]/th`);
             } else {
                 output.print('The table record is not available')
@@ -128,7 +128,7 @@ class MyHelper extends Helper {
                 if (text === val) {
                     n = n + 1;
                 } else {
-                    assert.fail('The result is not as expected, filter found is: ' + text);
+                    assert.fail(`The result is not as expected, filter found is: ${text}`);
                 }
             }
             console.log(`The result list shows required files with the filter: ${text} displayed on page (${n}/${rowCount})`);
@@ -179,7 +179,7 @@ class MyHelper extends Helper {
                     if (sortOrder) {
                         n = n + 1;
                     } else {
-                        assert.fail('The transactions sorting is not as expected. Upper: ' + previousText + ', bottom: ' + currentText);
+                        assert.fail(`The transactions sorting is not as expected. Upper: ${previousText}, bottom: ${currentText}`);
                     }
                 }
             }
@@ -335,7 +335,7 @@ class MyHelper extends Helper {
             I.amInPath('output/downloads');
             I.seeInThisFile(content, 'utf8')
         } catch (err) {
-            assert.fail('The file does not contain required content:-  ' + content);
+            assert.fail(`The file does not contain required content:-  ${content}`);
         }
     }
 

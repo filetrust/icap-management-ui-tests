@@ -415,10 +415,10 @@ module.exports = {
             const text = await I.grabTextFrom(`//tbody/descendant::h2`)
             if (text === 'Error Getting Transaction Data') {
                 assert.fail(text)
-            }else
-            if (text === 'No Transaction Data Found') {
-                return text
-            }
+            } else
+                if (text === 'No Transaction Data Found') {
+                    return text
+                }
         }
     },
 
@@ -610,7 +610,7 @@ module.exports = {
     async checkFileIdValues(filteredFile) {
         I.wait(5)
         await this.checkRows(filteredFile, 2)
-        
+
     },
 
     /*
@@ -653,7 +653,7 @@ module.exports = {
      */
 
     getFileRecord(fileId) {
-        return "//tr[contains(., '" + fileId + "')]"
+        return `//tr[contains(., ' ${fileId}')]`
 
     },
 

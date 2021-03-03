@@ -41,8 +41,8 @@ module.exports = {
                     if (!file) {
                         return done(null);
                     }
-                    let fileIn = dir + '/' + file;
-                    let fileOut = outPath + '/' + file;
+                    let fileIn = `${dir}/${file}`;
+                    let fileOut = `${outPath}/${file}`;
                     I.cleanupFile(fileOut);
                     fs.stat(file, async function (error, stat) {
                         if (stat && stat.isDirectory()) {
@@ -118,7 +118,7 @@ module.exports = {
                     let fileErr = icapOutput.split(`Error opening output file`)[1]
                     assert.fail(`File error: ${fileErr}`)
                 }
-            console.log('icapLogs: ' + icapOutput)
+            console.log(`icapLogs: ${icapOutput}`)
             return icapOutput;
         } catch (err) {
             console.warn(err);
@@ -134,7 +134,7 @@ module.exports = {
                         .toString()
                         .split('ICAP/1.0 ')[1]
                         .split("\n")[0];
-                    output.print('The icap header code is: ' + icapCode)
+                    output.print(`The icap header code is: ${icapCode}`)
                     return icapCode;
                 }
             }
@@ -152,7 +152,7 @@ module.exports = {
                         .split('HTTP/1.0 ')[1]
                         .split("\n")[0];
                     if (responseCode !== null) {
-                        output.print('The response code is: ' + responseCode)
+                        output.print(`The response code is: ${responseCode}`)
                     } else {
                         output.print('The response header is not available')
                     } return responseCode;
@@ -167,13 +167,14 @@ module.exports = {
         try {
             if (typeof icapResp !== 'undefined') {
                 if (icapResp.includes('X-Adaptation-File-Id')) {
-                   let fileId = icapResp
+                    let fileId = icapResp
                         .toString()
                         .split('X-Adaptation-File-Id: ')[1]
                         .split("\n")[0];
-                    output.print('The file id: ' + fileId)
-                 return fileId;
-            }}
+                    output.print(`The file id: ${fileId}`)
+                    return fileId;
+                }
+            }
         } catch (error) {
             console.log(error);
         }
@@ -221,7 +222,7 @@ module.exports = {
         try {
             if (typeof s !== 'undefined') {
                 rHeader = s.substring(s.indexOf(`<h1>`) + `<h1>`.length, s.indexOf(`</h1>`));
-            }return rHeader;
+            } return rHeader;
         } catch (error) {
             console.error(error);
         }
@@ -233,7 +234,7 @@ module.exports = {
         try {
             if (typeof s !== 'undefined') {
                 rMsg = s.substring(s.indexOf(`</h1>`) + `</h1>`.length, s.indexOf(`<br>`));
-            }return rMsg;
+            } return rMsg;
         } catch (error) {
             console.error(error);
         }
