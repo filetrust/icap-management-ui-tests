@@ -1,4 +1,3 @@
-const path = require('path');
 const { I, requesthistoryPage, icapclient } = inject();
 let fileId;
 let resp;

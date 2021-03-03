@@ -7,7 +7,7 @@ const assert = require('assert').strict;
 const inputPath = `./src/data/multiset`;
 const outputPath = `./src/data/fileOutput`;
 const icapLogs = path.join(`${outputPath}`, 'icap.log')
-const icapClient = process.env.ICAP_URL_T02;
+const icapClient = process.env.ICAP_URL_T03;
 
 
 module.exports = {
@@ -231,7 +231,6 @@ module.exports = {
         const s = this.getHtmlReport(file);
         let rMsg;
         try {
-            const s = this.getHtmlReport(file);
             if (typeof s !== 'undefined') {
                 rMsg = s.substring(s.indexOf(`</h1>`) + `</h1>`.length, s.indexOf(`<br>`));
             }return rMsg;

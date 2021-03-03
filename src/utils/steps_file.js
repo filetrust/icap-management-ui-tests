@@ -14,7 +14,7 @@ const fileDropUrl = process.env.FILEDROP_URL_NEU;
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.UI_URL_T02)
+            this.amOnPage(process.env.UI_URL_T03)
         },
 
         loginAs: function (email, password) {

@@ -71,4 +71,4 @@ Then('the file result details and the sanitisation issues content is displayed t
 
 Then('The Remedy items content is displayed on the details view to show issue {string}', async (item) => {
     await requesthistoryPage.isRemedyItemsShowsDescription(item);
-})
+});

@@ -179,7 +179,6 @@ module.exports = {
                 }
             })
         } catch (e) {
-            console.log('errors')
             console.warn(e);
         }
     },

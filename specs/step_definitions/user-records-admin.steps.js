@@ -7,8 +7,8 @@ const {
 const { output } = require('codeceptjs');
 const faker = require('faker');
 
-let randomId = faker.random.number()
-let randomText = faker.random.uuid()
+let randomId = faker.random.number();
+let randomText = faker.random.uuid();
 let current_user;
 let newFirstname;
 let dupEmail;

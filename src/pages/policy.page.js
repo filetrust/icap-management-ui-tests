@@ -337,7 +337,7 @@ module.exports = {
   async clickAllFlag() {
     const elements = await I.grabNumberOfVisibleElements(`label:nth-child(2)`)
     for (let element in elements) {
-      I.clickElement(`label:nth-child(2)`)
+      I.clickElement(element)
     }
   },
 
@@ -549,7 +549,6 @@ module.exports = {
         output.print('The flag is already selected')
       }
     } catch (e) {
-      console.log('Unable to set NCFS flag')
       console.warn(e);
     }
   },
@@ -637,7 +636,6 @@ module.exports = {
       }
       I.seeCheckboxIsChecked(radioElement);
     } catch (e) {
-      console.log('Unable to verify NCFS flag')
       console.warn(e);
     }
 

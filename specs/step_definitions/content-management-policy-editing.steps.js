@@ -5,7 +5,7 @@ const {
 const faker = require('faker');
 
 let selectedEl = null;
-let randomId = faker.random.number()
+let randomId = faker.random.number();
 let newUrl;
 
 Given('I am logged into the portal', () => {

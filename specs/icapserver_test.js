@@ -1,6 +1,5 @@
 const { I, icapclient } = inject();
-const outputPath = './src/data/fileOutput'
-
+const outputPath = './src/data/fileOutput';
 
 
 Feature('Icap Client File Processing');
