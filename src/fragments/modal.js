@@ -9,7 +9,7 @@ module.exports = {
   async accept() {
     await within(this.root, async function() {
       I.waitForElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`, 5)
-      await I.clickElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`);
+      I.clickElement(`button[class*='ConfirmDraftPublishModal_confirmPublishButton__']`);
     });
   },
 

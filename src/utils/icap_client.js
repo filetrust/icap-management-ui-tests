@@ -17,6 +17,7 @@ module.exports = {
         console.log(`Command to send the file: c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`)
         cp.execSync(`c-icap-client -i ${icapClient} -p 1344  -s gw_rebuild  -f "${inputPath}/${file}" -o "${outputPath}/${file}" -v 2> ${icapLogs}`).toString()
         const icapOutput = fs.readFileSync(`${icapLogs}`);
+        output.log('icapLogs: ' + icapOutput)
         if (icapOutput.includes(`ICAP server:${icapClient}, ip:`)) {
             console.log(`ICAP Server respone OK`);
         } else {
@@ -25,7 +26,6 @@ module.exports = {
             let fileErr = icapOutput.split(`Error opening output file`)[1]
             assert.fail(`File error: ${fileErr}`)
         }
-        output.log('icapLogs: ' + icapOutput)
         return icapOutput;
     },
 
@@ -52,7 +52,7 @@ module.exports = {
                         } else {
                             console.log(file);
                             const resp = icapclient.processFile(fileIn, fileOut);
-                            I.getFileProcessingResult(resp);
+                            icapclient.getFileProcessingResult(resp);
                             next();
                         }
 
@@ -123,7 +123,120 @@ module.exports = {
         } catch (err) {
             console.warn(err);
         }
-
     },
 
+
+    getIcapHeaderCode: function (icapResp) {
+        try {
+            if (typeof icapResp !== 'undefined') {
+                if (icapResp.includes('ICAP/1.0')) {
+                    let icapCode = icapResp
+                        .toString()
+                        .split('ICAP/1.0 ')[1]
+                        .split("\n")[0];
+                    output.print('The icap header code is: ' + icapCode)
+                    return icapCode;
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    getResponseCode: function (icapResp) {
+        try {
+            if (typeof icapResp !== 'undefined') {
+                if (icapResp.includes('HTTP/1.0')) {
+                    let responseCode = icapResp
+                        .toString()
+                        .split('HTTP/1.0 ')[1]
+                        .split("\n")[0];
+                    if (responseCode !== null) {
+                        output.print('The response code is: ' + responseCode)
+                    } else {
+                        output.print('The response header is not available')
+                    } return responseCode;
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    getFileId: function (icapResp) {
+        try {
+            if (typeof icapResp !== 'undefined') {
+                if (icapResp.includes('X-Adaptation-File-Id')) {
+                   let fileId = icapResp
+                        .toString()
+                        .split('X-Adaptation-File-Id: ')[1]
+                        .split("\n")[0];
+                    output.print('The file id: ' + fileId)
+                 return fileId;
+            }}
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
+    getFileProcessingResult: function (resp) {
+        try {
+            const icapCode = this.getIcapHeaderCode(resp)
+            if (typeof icapCode === 'undefined') {
+                assert.fail('File processing is not successful')
+            } else if (icapCode === '204 Unmodified') {
+                console.log(`The submitted file is relayed as the responde code is: ${icapCode}`)
+            } else {
+                const respCode = this.getResponseCode(resp)
+                if (!respCode) {
+                    assert.fail('File processing is not successful')
+                } else if (respCode === '403 Forbidden') {
+                    console.log(`Submitted file is blocked as the responde code is: ${respCode}`)
+                } else if (respCode === '200 OK') {
+                    console.log(`Submitted file is successfully processed with response: ${respCode}`)
+                }
+            } return icapCode
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    getHtmlReport(file) {
+        try {
+            const exists = fs.existsSync(file);
+            if (exists) {
+                const s = fs.readFileSync(file, 'utf8').toString();
+                if (s.includes(`<html>`)) {
+                    return s;
+                }
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    getHtmlReportHeader(file) {
+        const s = this.getHtmlReport(file);
+        let rHeader;
+        try {
+            if (typeof s !== 'undefined') {
+                rHeader = s.substring(s.indexOf(`<h1>`) + `<h1>`.length, s.indexOf(`</h1>`));
+            }return rHeader;
+        } catch (error) {
+            console.error(error);
+        }
+    },
+
+    getHtmlReportMessage(file) {
+        const s = this.getHtmlReport(file);
+        let rMsg;
+        try {
+            const s = this.getHtmlReport(file);
+            if (typeof s !== 'undefined') {
+                rMsg = s.substring(s.indexOf(`</h1>`) + `</h1>`.length, s.indexOf(`<br>`));
+            }return rMsg;
+        } catch (error) {
+            console.error(error);
+        }
+    }
 }

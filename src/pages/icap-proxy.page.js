@@ -22,7 +22,7 @@ module.exports = {
 
     downloadFile(fileType) {
         I.handleDownloads()
-        I.click(this.links[`download_${fileType}`])
+        I.clickElement(this.links[`download_${fileType}`])
     },
 
     assertFileDownload(file) {

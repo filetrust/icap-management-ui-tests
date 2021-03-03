@@ -23,12 +23,12 @@ module.exports = {
      */
     setEmailAddress(value) {
         const element = this.fields.email;
-        I.fillField(element, value);
+        I.fillInField(element, value);
     },
 
     setGrecaptcharesponse(value) {
         const element = this.fields.recaptchaResponse;
-        I.fillField(element, value);
+        I.fillInField(element, value);
     },
 
     clickForgotPasswordCancelButton() {
@@ -42,9 +42,9 @@ module.exports = {
     },
 
     sendResetRequest(emailAddress) {
-        I.fillField(this.fields.email, emailAddress);
-        I.click(this.fields.captchaBox);
-        I.click(this.fields.sendLink);
+        I.fillInField(this.fields.email, emailAddress);
+        I.clickElement(this.fields.captchaBox);
+        I.clickElement(this.fields.sendLink);
     },
 
     /*
@@ -55,7 +55,7 @@ module.exports = {
 
     setRequestVerificationToken(value) {
         const element = this.fields.requestVerificationToken;
-        I.fillField(element, value);
+        I.fillInField(element, value);
     }
 
 }

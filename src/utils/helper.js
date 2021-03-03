@@ -171,8 +171,8 @@ class MyHelper extends Helper {
                     let sortOrder;
                     if (isReverse) {
                         sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
-                    } else if (!isReverse){
-                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp) 
+                    } else if (!isReverse) {
+                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp)
                     } else {
                         sortOrder = moment(previousTimestamp).isSame(currentTimestamp)
                     }
@@ -327,7 +327,7 @@ class MyHelper extends Helper {
     }
 
     checkFileExist(file) {
-       return fs.existsSync(file);
+        return fs.existsSync(file);
     }
 
     checkFileContains(content) {
@@ -387,12 +387,14 @@ class MyHelper extends Helper {
 
     async typeIn(element, val) {
         try {
-        const page = this.helpers['Puppeteer'].page;
-        await page.type(element, val);
-    }catch (error) {
-        console.error(error);
+            const page = this.helpers['Puppeteer'].page;
+            await page.type(element, val);
+        } catch (error) {
+            console.error(error);
+        }
     }
-    }
+
+   
 
 }
 

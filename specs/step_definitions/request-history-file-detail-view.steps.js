@@ -5,9 +5,6 @@ const {
 const path = require('path');
 let fileId;
 
-Given("I am logged into the ui", () => {
-    I.login();
-});
 
 Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();
@@ -17,7 +14,7 @@ Given('I process a file {string} through the icap server', async (file) => {
     const downloadedFile = path.join('output', 'downloads', file);
     I.cleanupFile(downloadedFile);
     const resp = icapclient.submitFile(file)
-    fileId = I.getFileId(resp);
+    fileId = icapclient.getFileId(resp);
     console.log(`I sent a file and received ${fileId}`);
 });
 

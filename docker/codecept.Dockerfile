@@ -23,5 +23,5 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update -y && \
     apt-get install -yq c-icap
 RUN npm install
-
+ENV NODE_PATH=/codecept/node_modules
 ENTRYPOINT ["/usr/local/bin/codecept.entrypoint.sh"]

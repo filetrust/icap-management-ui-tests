@@ -6,9 +6,6 @@ const {
 let displayedRange;
 let selectedRange;
 
-Given("I am logged into the ui", () => {
-    I.login();
-});
 
 Given("I have navigated to the Request History page", () => {
     I.goToRequestHistory();

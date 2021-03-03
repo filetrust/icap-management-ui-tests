@@ -94,7 +94,7 @@ module.exports = {
         let risk = fileRisk.trim();
         let element = this.getChartElement(chart)
         within(element, () => {
-            I.click("//span[contains(.,'" + risk + "')]")
+            I.clickElement("//span[contains(.,'" + risk + "')]")
                 .catch(() =>  console.log('Required options not found'));
         })
     },
@@ -191,8 +191,8 @@ module.exports = {
 
     selectTimeInterval(timeInterval) {
         try {
-            I.click(this.inputs.dateFilter);
-            I.click("li[data-range-key='"+ timeInterval + "']");
+            I.clickElement(this.inputs.dateFilter);
+            I.clickElement("li[data-range-key='"+ timeInterval + "']");
         }
         catch (err){
             console.log('Action unsuccessful')
@@ -232,7 +232,7 @@ module.exports = {
         const month = startDate[1];
         const year = startDate[2];
         let result =  this.setMonthYear(month, year);
-        I.click(result+"/descendant::td[text()=" + day + "]");
+        I.clickElement(result+"/descendant::td[text()=" + day + "]");
     },
 
      setMonthYear(month, year){
@@ -322,7 +322,7 @@ module.exports = {
     },
 
     setValueToDropdown(locator, value) {
-        I.click(locator);
+        I.clickElement(locator);
         I.selectOption(locator, value);
     },
     async getValueFromDateTimeInput(element) {

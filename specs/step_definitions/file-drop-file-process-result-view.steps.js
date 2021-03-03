@@ -4,10 +4,6 @@ const {
 } = inject();
 
 
-Given("I am logged into the ui", () => {
-    I.login();
-    I.wait(5);
-});
 
 Given("I have navigated to the File Drop page", () => {
     I.goToFileDrop();

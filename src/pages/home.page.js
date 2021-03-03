@@ -85,10 +85,10 @@ module.exports = {
         const newPassword = this.fields.newPassword;
         const confirmNewPassword = this.fields.confirmNewPassword;
         const saveButton = this.buttons.saveNewPassword;
-        I.fillField(currentPassword, currentPasswordValue);
-        I.fillField(newPassword, newPasswordValue);
-        I.fillField(confirmNewPassword, confirmNewPasswordValue);
-        I.click(saveButton);
+        I.fillInField(currentPassword, currentPasswordValue);
+        I.fillInField(newPassword, newPasswordValue);
+        I.fillInField(confirmNewPassword, confirmNewPasswordValue);
+        I.clickElement(saveButton);
 
 
     }

@@ -1,7 +1,7 @@
-const I = actor();
+const {I} = inject();
 
 module.exports = {
-  //locators
+
   fields: {
     email: `input[name='username']`,
     password: `input[name='password']`,
@@ -20,7 +20,6 @@ module.exports = {
     modalClose: "",
   },
 
-  //Methods
 
   /*
    * EmailAddress
@@ -28,7 +27,7 @@ module.exports = {
    */
   setEmailAddress(value) {
     const element = this.fields.email;
-    I.fillField(element, value);
+    I.fillInField(element, value);
   },
 
   /*
@@ -37,7 +36,7 @@ module.exports = {
    */
   setPassword(value) {
     const element = this.fields.password;
-    I.fillField(element, value);
+    I.fillInField(element, value);
   },
 
   clickForgotPasswordLink() {
@@ -81,11 +80,11 @@ module.exports = {
   },
 
   loginWith(email, password) {
-    I.fillField(this.fields.email, email);
-    I.fillField(this.fields.password, password);
+    I.fillInField(this.fields.email, email);
+    I.fillInField(this.fields.password, password);
     I.pressKey('Enter')
-    //I.click(this.buttons.login);
   },
+
 
   /*
    * AccountActivationLink

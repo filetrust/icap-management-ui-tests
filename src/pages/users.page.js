@@ -32,31 +32,31 @@ module.exports = {
         */
     async clickAddUserBtn() {
         const element = this.buttons.addUser;
-        await I.clickElement(element);
+        I.clickElement(element);
     },
 
     async setNewUserName(userName) {
         const element = this.fields.userName;
-        await I.clickElement(element)
+        I.clickElement(element)
         await I.typeIn(element, userName);
     },
 
     async setFirstName(firstName) {
         const element = this.fields.firstName;
-        I.click(element)
+        I.clickElement(element)
         await I.typeIn(element, firstName);
     },
 
     async setLastName(lName) {
         const element = this.fields.lastName;
-        I.click(element)
+        I.clickElement(element)
         await I.typeIn(element, lName)
         //I.fillInField(element, lName);
     },
 
     async setNewUserEmail(userEmail) {
         const element = this.fields.email;
-        I.click(element)
+        I.clickElement(element)
         await I.typeIn(element, userEmail);
     },
 
@@ -81,14 +81,14 @@ module.exports = {
     async clickUserEditIcon(data) {
         const user_record = `//tr[contains(.,'` + data + `')]`;
         const userEditIcon = user_record + this.buttons.editIcon;
-        await I.clickElement(userEditIcon);
+        I.clickElement(userEditIcon);
     },
 
     async updateUserName(userName) {
         const element = this.fields.cFirstName;
         I.clearField(element);
-        await I.clickElement(element)
-        I.fillField(element, userName);
+        I.clickElement(element)
+        I.fillInField(element, userName);
         this.clickSaveChanges();
         this.waitForUsersTable();
     },
@@ -96,15 +96,15 @@ module.exports = {
     async updateEmail(email) {
         const element = this.fields.email;
         I.clearField(element);
-        await I.clickElement(element)
-        I.fillField(element, email);
+        I.clickElement(element)
+        I.fillInField(element, email);
         I.wait(1);
     },
 
     deleteUser(email) {
         const user_record = `//tr[contains(.,'` + email + `')]`
         const deleteUserButton = user_record + this.buttons.delete;
-        I.click(deleteUserButton);
+        I.clickElement(deleteUserButton);
     },
 
     getUserDeleteIcon(name) {
@@ -116,7 +116,7 @@ module.exports = {
     clickSaveChanges() {
         const element = this.buttons.saveChanges;
         I.waitForElement(element, 5)
-        I.click(element);
+        I.clickElement(element);
 
     },
 
