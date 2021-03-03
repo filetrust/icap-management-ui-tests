@@ -12,12 +12,14 @@ module.exports = {
     draft: `[data-test-id='buttonPolicyDraftTab']`,
     adaptation_policy: `[data-test-id="buttonCurrentAdaptationPolicyTab"]`,
     ncfs_policy: `[data-test-id='buttonCurrentNcfsPolicyTab']`,
+    ref_ncfs: `[data-test-id='buttonReferenceNcfsTab']`,
   },
   fields: {
     domainNameInput: `div[class*='Input_Input__17Nwp'] > input`,
     pageHeading: `h1[class*='Main_pageHeading']`,
     contentFlags: `//h2[text()='Content Flags']`,
     apiUrlInput: `input[data-test-id="inputApiUrl"]`,
+    currentApiUrl: `p[class*='RoutesForNonCompliantFiles_currentApiUrl__']`,
     policyTimestamp: `tbody[class*='MuiTableBody-root'] > tr > td:nth-of-type(1)`
   },
   modal: {
@@ -182,7 +184,7 @@ module.exports = {
     } else if (type === "Pdf") {
       container = this.containers.pdfContentFlags;
     }
-    I.click(container);
+    I.clickElement(container);
     const element = this.getContentFlagRule(type, rule);
     I.clickElement(element);
   },
@@ -216,7 +218,7 @@ module.exports = {
 
   setFlagTypeForGivenContentFlagsForGivenDocType(contentFlags, fileType, flagType) {
     const element = this.fields.label[fileType][flagType][contentFlags]
-    I.click(element)
+    I.clickElement(element)
   },
 
   async selectPolicyFlag(fileType, contentFlag, flagType) {
@@ -335,7 +337,7 @@ module.exports = {
   async clickAllFlag() {
     const elements = await I.grabNumberOfVisibleElements(`label:nth-child(2)`)
     for (let element in elements) {
-      I.click(`label:nth-child(2)`)
+      I.clickElement(element)
     }
   },
 
@@ -344,24 +346,37 @@ module.exports = {
   },
 
   clickSaveApiUrl() {
-    I.click(this.svg.validateApiUrl)
+    I.clickElement(this.svg.validateApiUrl)
   },
 
   clickDeleteApiUrl() {
-    I.click(this.svg.deleteApiUrl)
+    I.clickElement(this.svg.deleteApiUrl)
   },
 
   clickCurrentPolicyTab() {
-    I.click(this.tabs.current)
+    I.clickElement(this.tabs.current)
   },
 
   enterTextInApiUrl(text) {
-    I.fillField(this.fields.apiUrlInput, text)
+    I.fillInField(this.fields.apiUrlInput, text)
     I.wait(3)
-    I.click(this.buttons.saveChanges)
+    I.clickElement(this.buttons.saveChanges)
   },
 
-  confirmApiIsUpdated(url){
+  async getCurrentApiUrl() {
+    let cUrlEl = await I.grabTextFrom(this.fields.currentApiUrl)
+    return cUrlEl.split(`Current API Url: `)[1];
+  },
+
+  async setNewApiUrl(api) {
+    if (await this.getCurrentApiUrl() !== api){
+      this.enterTextInApiUrl(api)
+    }else{
+      output.print(`The API ${api} is already set`)
+    }
+},
+
+  confirmApiIsUpdated(url) {
     I.seeInField(this.fields.apiUrlInput, url);
     output.print(`The new Api is successfully saved as ${url}`)
   },
@@ -383,17 +398,17 @@ module.exports = {
    * ***************************************************************
    */
 
-  async clickViewFirstPolicy() {
+  clickViewFirstPolicy() {
     const element = `(//button[contains(text(),'View')])[1]`;
     I.wait(5)
-    await I.clickElement(element)[0]
+    I.clickElement(element)[0]
   },
 
   async clickActivateFirstPolicy() {
     const element = `(//button[contains(text(),'Activate')])[1]`;
     try {
       I.wait(5)
-      await I.clickElement(element)[0]
+      I.clickElement(element)[0]
       I.wait(2);
 
     } catch (e) {
@@ -473,7 +488,7 @@ module.exports = {
   },
 
   clickOnHistoryPolicyTab() {
-    I.click(this.buttons.policy.history)
+    I.clickElement(this.buttons.policy.history)
   },
 
   assertHistoryPolicyPage() {
@@ -507,7 +522,7 @@ module.exports = {
 
   setCustomPage(value) {
     const element = this.fields.customPaginatorGoTo;
-    I.fillField(element, value);
+    I.fillInField(element, value);
   },
 
   clickGo() {
@@ -526,21 +541,25 @@ module.exports = {
     try {
       const checked = await I.grabAttributeFrom(el, 'checked');
       if (checked !== true) {
-        I.click(element);
+        I.clickElement(element);
         I.wait(5)
-        I.click(this.buttons.saveChanges)
+        I.clickElement(this.buttons.saveChanges)
       } else if (checked === true) {
         // I.waitForElement(element, 5)
         output.print('The flag is already selected')
       }
     } catch (e) {
-      console.log('Unable to set NCFS flag')
       console.warn(e);
     }
   },
 
   async setAndPublishRouteFlag(routeOption) {
     await this.setRouteFlag(routeOption)
+    await this.publishPolicy()
+  },
+
+  async setAndPublishReferenceNcfsFlag(option) {
+    await this.setRouteFlag(option)
     await this.publishPolicy()
   },
 
@@ -617,7 +636,6 @@ module.exports = {
       }
       I.seeCheckboxIsChecked(radioElement);
     } catch (e) {
-      console.log('Unable to verify NCFS flag')
       console.warn(e);
     }
 
@@ -637,9 +655,16 @@ module.exports = {
     }
   },
 
-  async clickNcfsPolicy() {
+  clickNcfsPolicy() {
     const element = this.tabs.ncfs_policy;
     I.waitForElement(element, 60)
     I.clickElement(element);
+  },
+
+  clickRefenceNcfs() {
+    const element = this.tabs.ref_ncfs;
+    I.waitForElement(element, 60)
+    I.clickElement(element);
   }
+
 }

@@ -14,7 +14,7 @@ const fileDropUrl = process.env.FILEDROP_URL_NEU;
 module.exports = function () {
     return actor({
         onLoginPage: function () {
-            this.amOnPage(process.env.UI_URL_T02)
+            this.amOnPage(process.env.UI_URL_T03)
         },
 
         loginAs: function (email, password) {
@@ -26,7 +26,7 @@ module.exports = function () {
         login: function () {
             this.onLoginPage();
             loginPage.loginWith(process.env.USER, process.env.PASSWORD);
-            this.waitForElement(homePage.sections.menu);
+            this.wait(5)
         },
 
         enterLoginDetails: function (user, password) {
@@ -83,7 +83,7 @@ module.exports = function () {
         },
 
         goToDraftAdaptationPolicy: async function () {
-            await policyPage.clickDraftTab();
+            policyPage.clickDraftTab();
             policyPage.clickAdaptationPolicy();
         },
 
@@ -93,13 +93,13 @@ module.exports = function () {
         },
 
         goToDraftNcfsPolicy: async function () {
-            await policyPage.clickDraftTab();
-            await policyPage.clickNcfsPolicy();
+            policyPage.clickDraftTab();
+            policyPage.clickNcfsPolicy();
         },
 
         goToCurrentNcfsPolicy: async function () {
             policyPage.clickCurrentPolicyTab();
-            await policyPage.clickNcfsPolicy();
+            policyPage.clickNcfsPolicy();
         },
 
         viewTransactions: function (period) {
@@ -110,13 +110,13 @@ module.exports = function () {
         },
 
         setGwBlockFilesToBlock: async function () {
-            await this.goToDraftNcfsPolicy();
+            this.goToDraftNcfsPolicy();
             await policyPage.setRouteFlag(`block-glasswallBlockedFiles`);
             await policyPage.publishPolicy();
         },
 
         setRequiredContentFlag: async function (fileType, contentFlag, flagType) {
-            await this.goToDraftAdaptationPolicy();
+            this.goToDraftAdaptationPolicy();
             await policyPage.setAndPublishPolicyFlag(fileType, contentFlag, flagType);
         },
 
@@ -150,32 +150,6 @@ module.exports = function () {
             this.attachFile(filedropPage.buttons.fileInput, file)
         },
 
-        uploadFileByType: function (fileType) {
-            let path = null;
-            switch (fileType) {
-                case ('Safe_file'):
-                    path = 'src/data/multiset/types/safe_file.xlsx';
-                    break;
-                case ('Blocked_file'):
-                    path = 'src/data/multiset/types/blocked_file.doc';
-                    break;
-                //todo: add file
-                case ('Dangerous_file'):
-                    path = 'src/data/multiset/types/dangerous_file.doc';
-                    break;
-                case ('Unclassified_file'):
-                    path = 'src/data/multiset/unsupported_icaptest.ps1';
-                    break;
-                default:
-                    throw 'There is not such file type.'
-            }
-            this.uploadFile(path);
-        },
-
-        fail(message) {
-            assert.fail(message);
-        },
-
         clearField: function (locator) {
             this.doubleClick(locator);
             this.pressKey('Backspace');
@@ -186,60 +160,24 @@ module.exports = function () {
             this.wait(5)
         },
 
-
-        getIcapHeaderCode: function (icapResp) {
-            try {
-                if (typeof icapResp !== 'undefined') {
-                    if (icapResp.includes('ICAP/1.0')) {
-                        let icapCode = icapResp
-                            .toString()
-                            .split('ICAP/1.0 ')[1]
-                            .split("\n")[0];
-                        output.print('The icap header code is: ' + icapCode)
-                        return icapCode;
-                    }
-                }
-            } catch (error) {
-                console.error(error);
-            }
+        clickElement: function (element) {
+            this.waitForElement(element, 60)
+            this.click(element);
         },
 
-        getResponseCode: function (icapResp) {
-            try {
-                if (typeof icapResp !== 'undefined') {
-                    if (icapResp.includes('HTTP/1.0')) {
-                        let responseCode = icapResp
-                            .toString()
-                            .split('HTTP/1.0 ')[1]
-                            .split("\n")[0];
-                        if (responseCode !== null) {
-                            output.print('The response code is: ' + responseCode)
-                        } else {
-                            output.print('The response header is not available')
-                        } return responseCode;
-                    }
-                }
-            } catch (error) {
-                console.error(error);
-            }
+        fillInField: function (element, data) {
+            this.waitForElement(element, 60)
+            this.fillField(element, data);
         },
 
-        getFileId: function (icapResp) {
-            try {
-                if (typeof icapResp !== 'undefined') {
-                    if (icapResp.includes('X-Adaptation-File-Id')) {
-                        let fileId = icapResp
-                            .toString()
-                            .split('X-Adaptation-File-Id: ')[1]
-                            .split("\n")[0];
-                        output.print('The file id: ' + fileId)
-                    } else {
-                        fileId = null
-                    } return fileId;
-                }
-            } catch (error) {
-                console.error(error);
-            }
+        goToDraftReferenceNcfsPolicy: function () {
+            policyPage.clickDraftTab();
+            policyPage.clickRefenceNcfs();
+        },
+
+        goToCurrentReferenceNcfs: async function () {
+            policyPage.clickCurrentPolicyTab();
+            policyPage.clickRefenceNcfs();
         },
 
         cleanupFile(file) {
@@ -251,28 +189,6 @@ module.exports = function () {
                 } else {
                     console.log(`File was already removed - ${file}`);
                 }
-            } catch (error) {
-                console.error(error);
-            }
-        },
-
-        getFileProcessingResult: function (resp) {
-            try {
-                const icapCode = this.getIcapHeaderCode(resp)
-                if (typeof icapCode === 'undefined') {
-                    assert.fail('File processing is not successful')
-                } else if (icapCode === '204 Unmodified') {
-                    console.log(`The submitted file is relayed as the responde code is: ${icapCode}`)
-                } else {
-                    const respCode = this.getResponseCode(resp)
-                    if (!respCode) {
-                        assert.fail('File processing is not successful')
-                    } else if (respCode === '403 Forbidden') {
-                        console.log(`Submitted file is blocked as the responde code is: ${respCode}`)
-                    } else if (respCode === '200 OK') {
-                        console.log(`Submitted file is successfully processed with response: ${respCode}`)
-                    }
-                } return icapCode
             } catch (error) {
                 console.error(error);
             }
@@ -293,8 +209,6 @@ module.exports = function () {
                 console.error(error);
             }
         },
-
-
 
         confirmFileiSNotAvailable: function (file) {
             if (I.checkFileExist(file) === true) {

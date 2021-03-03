@@ -4,10 +4,6 @@ const {
 } = inject();
 
 
-Given("I am logged into the ui", () => {
-    I.login();
-    I.wait(5);
-});
 
 Given("I have navigated to the File Drop page", () => {
     I.goToFileDrop();
@@ -47,7 +43,7 @@ Then('I see the list of objects and structures repaired with expected item {stri
 When('I process a supported file {string} with structural Issues', (fileWithIssues) => {
     I.uploadFile(fileWithIssues);
     I.wait(5);
-})
+});
 
 Then('I see the list of objects and structures not repaired {string}', (nonrepairedObject) => {
     filedropPage.isRequiredContentRefDisplayed(nonrepairedObject)

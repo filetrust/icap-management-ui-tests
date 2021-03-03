@@ -29,13 +29,15 @@ class MyHelper extends Helper {
 
     async seeElementExist(selector) {
         const helper = this.helpers['Puppeteer'];
+        const page = this.helpers['Puppeteer'].page;
         let elVisible;
+        page.waitForSelector(selector);
         try {
             elVisible = await helper.grabNumberOfVisibleElements(selector);
             if (!elVisible || elVisible.length === 0) {
                 output.print('The element ' + selector + ' is not available');
                 return false;
-            } else if (elVisible) {
+            } else if (elVisible > 0) {
                 output.print('The required element ' + selector + ' is visible')
                 return true
             }
@@ -170,11 +172,9 @@ class MyHelper extends Helper {
                 if (i !== 0) {
                     let sortOrder;
                     if (isReverse) {
-                        sortOrder = moment(previousTimestamp).isBefore(currentTimestamp)
-                    } else if (!isReverse){
-                        sortOrder = moment(previousTimestamp).isAfter(currentTimestamp) 
+                        sortOrder = moment(previousTimestamp).isSameOrBefore(currentTimestamp)
                     } else {
-                        sortOrder = moment(previousTimestamp).isSame(currentTimestamp)
+                        sortOrder = moment(previousTimestamp).isSameOrAfter(currentTimestamp)
                     }
                     if (sortOrder) {
                         n = n + 1;
@@ -242,6 +242,7 @@ class MyHelper extends Helper {
     }
 
     async setFlags() {
+        const page = this.helpers['Puppeteer'].page;
         try {
             let elCount = await this.getElement()
             for (let i = 0; i < elCount; i++) {
@@ -326,7 +327,7 @@ class MyHelper extends Helper {
     }
 
     checkFileExist(file) {
-       return fs.existsSync(file);
+        return fs.existsSync(file);
     }
 
     checkFileContains(content) {
@@ -386,12 +387,14 @@ class MyHelper extends Helper {
 
     async typeIn(element, val) {
         try {
-        const page = this.helpers['Puppeteer'].page;
-        await page.type(element, val);
-    }catch (error) {
-        console.error(error);
+            const page = this.helpers['Puppeteer'].page;
+            await page.type(element, val);
+        } catch (error) {
+            console.error(error);
+        }
     }
-    }
+
+
 
 }
 

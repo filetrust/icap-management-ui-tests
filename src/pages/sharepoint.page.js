@@ -28,13 +28,13 @@ module.exports = {
 
     async goToDocuments(){
         const element = this.links.documents;
-        await I.clickElement(element)[0]
+        I.clickElement(element)[0]
         I.wait(5);
     },
 
     async selectFile(file){
         const element =`div[aria-label='`+file+`'] > div > i:nth-of-type(2)`
-        await I.clickElement(element)[0];
+        I.clickElement(element)[0];
         I.wait(5);
     },
 

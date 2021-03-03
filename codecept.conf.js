@@ -1,5 +1,5 @@
-const {setHeadlessWhen} = require('@codeceptjs/configure');
-require('dotenv').config({path: '.env'});
+const { setHeadlessWhen } = require('@codeceptjs/configure');
+require('dotenv').config({ path: '.env' });
 
 setHeadlessWhen(process.env.HEADLESS);
 
@@ -9,6 +9,7 @@ exports.config = {
     MyHelper: {
       require: "./src/utils/helper.js"
     },
+
     Puppeteer: {
       //browser: 'firefox',
       windowSize: '1536 x 826',
@@ -26,7 +27,7 @@ exports.config = {
         ],
       },
       waitForNavigation: ["domcontentloaded", "networkidle0"],
-      waitForTimeout: 60000,
+      waitForTimeout: 120000,
       waitForAction: 2000
     },
     FileSystem: {},
@@ -69,9 +70,9 @@ exports.config = {
       enabled: true
     },
     autoDelay: {
-      enabled: false,
-      // delayBefore: 300,
-      // delayAfter: 200
+      enabled: true,
+      delayBefore: 300,
+      delayAfter:300
     }
   },
   multiple: {

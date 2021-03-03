@@ -30,6 +30,8 @@ jobs:
           ICAP_URL_NEU: ${{ secrets.ICAP_URL_NEU }}
           UI_URL_T02: ${{ secrets.UI_URL_T02 }}
           ICAP_URL_T02: ${{ secrets.ICAP_URL_T02 }}
+          UI_URL_T03: ${{ secrets.UI_URL_T03 }}
+          ICAP_URL_T03: ${{ secrets.ICAP_URL_T03 }}
           FILEDROP_URL_NEU: ${{ secrets.FILEDROP_URL_NEU }}
           USER: ${{ secrets.UI_USER_ID }}
           PASSWORD: ${{ secrets.UI_SECRET_ID }}
@@ -40,8 +42,8 @@ jobs:
           npm install -g allure-commandline --save-dev     
           npm install
           c-icap-client -i $ICAP_URL_NEU
-          npx codeceptjs run --steps --grep @ns --plugins allure
-          cat output/icap.log
+          npx codeceptjs run --steps --grep @fileprocess --plugins allure
+          cat src/data/fileOutput/icap.log
 
       - name: Get Allure history
         uses: actions/checkout@v2

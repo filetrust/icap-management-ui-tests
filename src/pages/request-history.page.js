@@ -145,14 +145,14 @@ module.exports = {
 
     setDatetimepicker(value) {
         const element = this.calendar.dateTimePicker;
-        I.fillField(element, value);
+        I.fillInField(element, value);
     },
 
     openDatePicker() {
         I.waitForElement(this.table.tableHeaders, 60)
         const element = this.calendar.reportRange;
         I.waitForClickable(element, 60)
-        I.click(element).catch(() => console.log(element + ' is not clickable'));
+        I.clickElement(element).catch(() => console.log(element + ' is not clickable'));
     },
 
     selectTimePeriod(period) {
@@ -169,7 +169,6 @@ module.exports = {
             }
             I.waitForVisible(this.table.tableHeaders, 60)
         } catch (e) {
-            console.log('Action unsuccessful')
             console.warn(e);
         }
     },
@@ -238,7 +237,7 @@ module.exports = {
         let currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         let currentYearAndMonthValueRight = await I.grabTextFrom(this.calendar.drp_month_and_year_right)
         while (currentYearAndMonthValueLeft !== `${month} ${year}` && currentYearAndMonthValueRight !== `${month} ${year}`) {
-            await I.click(this.calendar.drp_arrow_left).catch(() => console.log(this.calendar.drp_arrow_left + 'is not clickable'))
+            await I.clickElement(this.calendar.drp_arrow_left).catch(() => console.log(this.calendar.drp_arrow_left + 'is not clickable'))
             currentYearAndMonthValueLeft = await I.grabTextFrom(this.calendar.drp_month_and_year_left)
         }
         return currentYearAndMonthValueRight
@@ -246,14 +245,14 @@ module.exports = {
 
     async getRightMonth(month, year) {
         const currentYearAndMonthValueRight = await this.selectMonthYear(month, year);
-        return currentYearAndMonthValueRight.split(" ")[0]
+        return currentYearAndMonthValueRight.toString().split(" ")[0]
     },
 
-    async selectCustomPriod() {
+    async selectCustomPeriod() {
         const calendar = await I.grabNumberOfVisibleElements(this.calendar.drp_calendar_left)
         if (!calendar) {
             const element = this.buttons.customRange;
-            await I.click(element).catch(() => console.log(element + 'is not clickable'));
+            I.clickElement(element).catch(() => console.log(element + 'is not clickable'));
         }
     },
 
@@ -268,18 +267,18 @@ module.exports = {
             I.selectOption(this.calendar.drp_hour_left, hours.toString());
         }
         I.selectOption(this.calendar.drp_minutes_left, minutes.toString());
-        I.click(this.buttons.apply)
+        I.clickElement(this.buttons.apply)
     },
 
     async setTimeFrom(datetimeFrom) {
-        await this.selectCustomPriod()
+        await this.selectCustomPeriod()
         const from = this.parseDate(datetimeFrom)
         from.month = this.getMonthName(from.month);
         const selectedRightMonth = await this.getRightMonth(from.month, from.year)
         if (selectedRightMonth === from.month) {
-            I.click(locate(this.calendar.drp_day_right).withText(from.day))
+            I.clickElement(locate(this.calendar.drp_day_right).withText(from.day))
         } else {
-            I.click(locate(this.calendar.drp_day_left).withText(from.day))
+            I.clickElement(locate(this.calendar.drp_day_left).withText(from.day))
         }
         I.selectOption(this.calendar.drp_hour_left, from.hours);
         I.selectOption(this.calendar.drp_minutes_left, from.minutes);
@@ -292,9 +291,9 @@ module.exports = {
         from.month = this.getMonthName(from.month);
         const selectedRightMonth = await this.getRightMonth(from.month, from.year)
         if (selectedRightMonth === to.month) {
-            I.click(locate(this.calendar.drp_day_right).withText(to.day))
+            I.clickElement(locate(this.calendar.drp_day_right).withText(to.day))
         } else {
-            I.click(locate(this.calendar.drp_day_left).withText(to.day))
+            I.clickElement(locate(this.calendar.drp_day_left).withText(to.day))
         }
         I.selectOption(this.calendar.drp_hour_right, to.hours);
         I.selectOption(this.calendar.drp_minutes_right, to.minutes);
@@ -313,17 +312,17 @@ module.exports = {
         }
         const classes = await I.grabAttributeFrom(el, 'class');
         if (!classes.includes('disabled') && !classes.includes('all')) {
-            assert.fail(`It's possible to select more than 24 houts range - ${datetimeTo}`)
+            assert.fail(`It's possible to select more than 24 hours range - ${datetimeTo}`)
         }
     },
 
     async setTimePeriod(datetimeFrom, datetimeTo) {
         const element = this.buttons.customRange;
-        I.click(element).catch(() => console.log(element + 'is not clickable'));
+        I.clickElement(element).catch(() => console.log(element + 'is not clickable'));
         try {
             await this.setTimeFrom(datetimeFrom)
             await this.setTimeTo(datetimeFrom, datetimeTo)
-            I.click(this.buttons.apply)
+            I.clickElement(this.buttons.apply)
             I.waitForElement(this.table.tableHeaders, 60)
         } catch (e) {
             console.log('Action unsuccessful')
@@ -586,9 +585,9 @@ module.exports = {
     async setFileId(value) {
         this.clickMoreFiltersButton();
         this.clickAddFilterButton();
-        await I.clickElement(this.buttons.fileIdMenu);
-        I.fillField(this.fields.inputFilterFileID, value);
-        await I.clickElement(this.buttons.fileIdAdd);
+        I.clickElement(this.buttons.fileIdMenu);
+        I.fillInField(this.fields.inputFilterFileID, value);
+        I.clickElement(this.buttons.fileIdAdd);
 
     },
 
@@ -597,9 +596,9 @@ module.exports = {
     setFileOutcome(value) {
         this.clickMoreFiltersButton();
         this.clickAddFilterButton();
-        I.click(this.buttons.fileIdMenu);
-        I.fillField(this.fields.inputFilterFileID, value);
-        I.click(this.buttons.fileIdAdd);
+        I.clickElement(this.buttons.fileIdMenu);
+        I.fillInField(this.fields.inputFilterFileID, value);
+        I.clickElement(this.buttons.fileIdAdd);
 
     },
 
@@ -640,7 +639,7 @@ module.exports = {
 
     setCustomPage(value) {
         const element = this.fields.customPaginatorGoTo;
-        I.fillField(element, value);
+        I.fillInField(element, value);
     },
 
     clickGo() {
@@ -731,7 +730,7 @@ module.exports = {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
         const elBanner = this.modal.sanitisationItemsBanner;
-        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Sanitisation Items are displayed!') : I.click(elBanner);
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Sanitisation Items are displayed!') : I.clickElement(elBanner);
         const items = `${this.modal.sanitisationItemsBanner}${this.modal.itemHeaders}`
         I.waitForVisible(items)
         const elDescription = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Sanitisation Items")]//table//td[contains(text(),"${description}")]`;
@@ -742,7 +741,7 @@ module.exports = {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
         const elBanner = this.modal.issueItemsBanner;
-        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Issue Items are displayed!') : I.click(elBanner);
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Issue Items are displayed!') : I.clickElement(elBanner);
         const items = `${this.modal.issueItemsBanner}${this.modal.itemHeaders}`
         I.waitForVisible(items)
         const elIssue = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Issue Items")]//table//td[contains(text(),"${description}")]`;
@@ -753,7 +752,7 @@ module.exports = {
         const el = this.modal.fileDetailModal;
         (await I.seeElementExist(el) !== true) ? assert.fail('No modal window is displayed!') : output.log('Modal window is displayed');
         const elBanner = this.modal.remedyItemsBanner;
-        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Remedy Items are displayed!') : I.click(elBanner);
+        (await I.seeElementExist(elBanner) !== true) ? assert.fail('No Remedy Items are displayed!') : I.clickElement(elBanner);
         const items = `${this.modal.remedyItemsBanner}${this.modal.itemHeaders}`
         I.waitForVisible(items)
         const elDescription = `//*[starts-with(@class,"FileInfo_inner")]//div[contains(text(),"Remedy Items")]//table//td[contains(text(),"${description}")]`;
@@ -762,7 +761,7 @@ module.exports = {
 
     async clickOnTimestampArrow() {
         const element = this.buttons.sortTimestamp;
-        await I.clickElement(element);
+        I.clickElement(element);
     },
 
     async verifyTimestampArrow(isDecimal) {

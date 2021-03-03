@@ -4,10 +4,6 @@ const {
 } = inject();
 
 
-Given('I am logged into the ui', () => {
-    I.login();
-});
-
 Given('I have navigated to the Dashboard page', () => {
     I.goToAnalytics();
 });

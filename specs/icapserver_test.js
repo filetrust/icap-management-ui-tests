@@ -1,7 +1,5 @@
 const { I, icapclient } = inject();
-const outputPath = './src/data/fileOutput'
-const assert = require('assert').strict;
-const { output } = require("codeceptjs");
+const outputPath = './src/data/fileOutput';
 
 
 Feature('Icap Client File Processing');
@@ -11,13 +9,13 @@ Scenario('I process a non supported file using icap client tool', async () => {
   const file = 'icaptest.ps1'
   I.cleanupFile(`${outputPath}/${file}`);
   const resp = icapclient.submitFile(file)
-  const icapCode = I.getIcapHeaderCode(resp)
+  const icapCode = icapclient.getIcapHeaderCode(resp)
   if (icapCode === '204 Unmodified') {
     console.log('The response is: ' + icapCode)
     console.log('Submitted file is relayed')
     I.confirmFileiSNotAvailable(`${outputPath}/${file}`)
   } else if (icapCode === '200 OK') {
-    const respCode = I.getResponseCode(resp)
+    const respCode = icapclient.getResponseCode(resp)
     if (respCode === '403 Forbidden') {
       console.log('Submitted file is blocked')
       I.checkFileOutputIsHtmlReport(`${outputPath}/${file}`)
