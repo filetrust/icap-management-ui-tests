@@ -134,7 +134,7 @@ module.exports = {
     },
 
     removeAppliedFilter(filterName) {
-        I.clickElement(`//span[contains(., '` + filterName + `')]/parent::*/../div/button`);
+        I.clickElement(`//span[contains(., '${filterName}')]/parent::*/../div/button`);
 
     },
 
@@ -339,12 +339,12 @@ module.exports = {
 
     async isCustomRangeApplied(dateFrom, dateTo) {
         // const element = null;
-        const range = (dateFrom + " - " + dateTo).toString();
+        const range = (`${dateFrom} - ${dateTo}`).toString();
         const newrange = await I.grabTextFrom(this.calendar.reportRange)
         if (newrange === range) {
-            console.log('The required range is applied ' + newrange + ' as selected ' + range)
+            console.log(`The required range is applied ${newrange} as selected ${range}`)
         } else {
-            console.log('The required range is not applied-- displayed range is ' + newrange + ' different to selected ' + range)
+            console.log(`The required range is not applied-- displayed range is ${newrange} different to selected ${range}`)
         }
     },
 
@@ -362,8 +362,8 @@ module.exports = {
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
-        const datefield = `//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`
-        await I.seeElementExist(datefield) !== true ? console.log('The date field shows: ' + timeFrom + ` - ` + currentTime) : console.log('The selected period is correctly displayed');
+        const datefield = `//span[contains(.,'${timeFrom} - ${currentTime}')]`
+        await I.seeElementExist(datefield) !== true ? console.log(`The date field shows: ${timeFrom} - ${currentTime}`) : console.log('The selected period is correctly displayed');
     },
 
 
@@ -500,7 +500,7 @@ module.exports = {
         this.clickFileTypeAdd();
         try {
             console.log('Filter to set is: ' + value)
-            let element = `//span[contains(.,'` + value + `')]/parent::label/span[1]/span/input`
+            let element = `//span[contains(.,'${value}')]/parent::label/span[1]/span/input`
             I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
@@ -511,7 +511,7 @@ module.exports = {
     selectFileOutcome(value) {
         this.clickFileOutcomeAdd();
         try {
-            let element = `//label/span[text()='` + value + `']`;
+            let element = `//label/span[text()='${value}']`;
             I.clickElement(element);
             this.closeFilterPopup();
             I.wait(5);
@@ -540,7 +540,7 @@ module.exports = {
         const filterRes = appliedFilters.split("_");
         const res = filterValues.split("_");
         for (let i = 0; i < filterRes.length; i++) {
-            let filterValueLocator = `//div/span[contains(.,'` + filterRes[i] + `')]`;
+            let filterValueLocator = `//div/span[contains(.,'${filterRes[i]}')]`;
             this.checkFilterByValue(res[i], filterValueLocator);
         }
     },
@@ -653,7 +653,7 @@ module.exports = {
      */
 
     getFileRecord(fileId) {
-        return "//tr[contains(., '" + fileId + "')]"
+        return `//tr[contains(., '${fileId}')]`
 
     },
 
