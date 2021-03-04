@@ -33,7 +33,7 @@ module.exports = {
     },
 
     async selectFile(file){
-        const element =`div[aria-label='`+file+`'] > div > i:nth-of-type(2)`
+        const element =`div[aria-label='${file}'] > div > i:nth-of-type(2)`
         I.clickElement(element)[0];
         I.wait(5);
     },

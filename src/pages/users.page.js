@@ -79,7 +79,7 @@ module.exports = {
     },
 
     async clickUserEditIcon(data) {
-        const user_record = `//tr[contains(.,'` + data + `')]`;
+        const user_record = `//tr[contains(.,'${data}')]`;
         const userEditIcon = user_record + this.buttons.editIcon;
         I.clickElement(userEditIcon);
     },
@@ -102,13 +102,13 @@ module.exports = {
     },
 
     deleteUser(email) {
-        const user_record = `//tr[contains(.,'` + email + `')]`
+        const user_record = `//tr[contains(.,'${email}')]`
         const deleteUserButton = user_record + this.buttons.delete;
         I.clickElement(deleteUserButton);
     },
 
     getUserDeleteIcon(name) {
-        const user_record = `//tr[contains(.,'` + name + `')]`
+        const user_record = `//tr[contains(.,'${name}')]`
         const deleteUserButton = user_record + this.buttons.delete;
         return deleteUserButton.toString();
     },
@@ -122,12 +122,12 @@ module.exports = {
 
     findUserByEmail(email) {
         this.waitForUsersTable()
-        return `//tr[contains(.,'` + email + `')]`;
+        return `//tr[contains(.,'${email}')]`;
     },
 
     findUserByName(name) {
         this.waitForUsersTable()
-        return `//tr[contains(.,'` + name + `')]`;
+        return `//tr[contains(.,'${name}')]`;
     },
 
     waitForUsersTable() {
@@ -138,7 +138,7 @@ module.exports = {
 
     confirmUserDetailsAvailable(data) {
         this.waitForUsersTable();
-        I.seeElement(`//tr[contains(.,'` + data + `')]`);
+        I.seeElement(`//tr[contains(.,'${data}')]`);
     },
 
     async confirmUserFirstname(data, name) {
@@ -153,21 +153,21 @@ module.exports = {
 
     confirmUserRecordNotAvailable(data) {
         this.waitForUsersTable()
-        I.dontSeeElement(`//tr[contains(.,'` + data + `')]`);
+        I.dontSeeElement(`//tr[contains(.,'${data}')]`);
     },
 
     confirmUserDeleteIconNotAvailable(data) {
         this.waitForUsersTable()
-        I.dontSeeElement(`//tr[contains(.,'` + data + `')]` + this.buttons.delete);
+        I.dontSeeElement(`//tr[contains(.,'${data}')]` + this.buttons.delete);
     },
 
     async isErrorMessageDisplayed(error) {
         const element = this.fields.error;
         const errorMessage = await I.grabTextFrom(element)
         if (errorMessage === error) {
-            console.log('The expected error message: ' + errorMessage + ' is displayed')
+            console.log(`The expected error message: '${errorMessage}' is displayed`)
         } else {
-            console.log('The error message: ' + errorMessage + ' is not as expected')
+            console.log(`The error message: '${errorMessage}' is not as expected`)
         }
     }
 
