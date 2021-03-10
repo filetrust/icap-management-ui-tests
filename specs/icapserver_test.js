@@ -11,7 +11,7 @@ Scenario('I process a non supported file using icap client tool', async () => {
   const resp = icapclient.submitFile(file)
   const icapCode = icapclient.getIcapHeaderCode(resp)
   if (icapCode === '204 Unmodified') {
-    console.log('The response is: ' + icapCode)
+    console.log(`The response is: ${icapCode}`)
     console.log('Submitted file is relayed')
     I.confirmFileiSNotAvailable(`${outputPath}/${file}`)
   } else if (icapCode === '200 OK') {
@@ -20,7 +20,7 @@ Scenario('I process a non supported file using icap client tool', async () => {
       console.log('Submitted file is blocked')
       I.checkFileOutputIsHtmlReport(`${outputPath}/${file}`)
     } else {
-      console.log('Submitted file response is: ' + respCode)
+      console.log(`Submitted file response is: ${respCode}`)
     }
   }
 }).tag('@ns').tag('@fileprocess').tag('@functional');
@@ -36,9 +36,9 @@ Scenario('Supported image files process is successful', () => {
 }).tag('@images').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported pdf files process is successful', function () {
-    const inPath = './src/data/pdf';
-    icapclient.processFiles(inPath, outputPath);
-  }).tag('@pdf').tag('@fileprocess').tag('@functional');
+  const inPath = './src/data/pdf';
+  icapclient.processFiles(inPath, outputPath);
+}).tag('@pdf').tag('@fileprocess').tag('@functional');
 
 Scenario('Supported pdf files process is successful', () => {
   const inPath = './src/data/rtf';

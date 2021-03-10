@@ -31,7 +31,7 @@ Given('I have logged into the ui and navigated to the Users page', () => {
 
 When('I observe my account', () => {
     current_user = env.qa.user
-    console.log('Current user is ' + current_user)
+    console.log(`Current user is ${current_user}`)
     usersPage.confirmUserDetailsAvailable(current_user)
 });
 Then('there will be no delete button next to my account', () => {
@@ -63,7 +63,7 @@ Then('The new user record is saved with a green tick', () => {
 */
 Then('the record is not saved and the expected validation error is displayed', async () => {
     I.wait(2)
-    await usersPage.isErrorMessageDisplayed('Email Address: ' + uEmail + ' is invalid')
+    await usersPage.isErrorMessageDisplayed(`Email Address: ${uEmail} is invalid`)
 });
 
 /*
@@ -76,7 +76,7 @@ Given('A user exist with the email address {string}', async (email) => {
     fName = 'testfname' + randomId;
     lName = 'testlName' + randomId;
     await I.addAUser(uName, fName, lName, exEmail);
-    console.log('Existing email is ' + exEmail)
+    console.log(`Existing email is ${exEmail}`)
 });
 When('I delete the existing user with email {string}', (email) => {
     email = exEmail;
@@ -121,14 +121,14 @@ Given('A user record with the email {string} already exist', async (email) => {
     lName = 'dlastname' + randomId;
     uName = 'dusernamed' + randomId;
     await I.addAUser(uName, fName, lName, dupEmail);
-    console.log('Existing email is ' + dupEmail)
+    console.log(`Existing email is ${dupEmail}`)
 });
 When('I add a new user record with username {string}, firstname {string}, lastname {string} and the existing email {string}', async (username, firstname, lastname, email) => {
     email = dupEmail;
     await usersPage.addUserDetails(username, firstname, lastname, email);
 });
 Then('the expected validation error is displayed and the record is not saved', async () => {
-    const errorMsg = 'Email Addresses must be unique. A user with email: ' + dupEmail + ' already exists'
+    const errorMsg = `Email Addresses must be unique. A user with email: ${dupEmail} already exists`
     I.wait(2)
     await usersPage.isErrorMessageDisplayed(errorMsg)
 });

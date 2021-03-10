@@ -94,7 +94,7 @@ module.exports = {
         let risk = fileRisk.trim();
         let element = this.getChartElement(chart)
         within(element, () => {
-            I.clickElement("//span[contains(.,'" + risk + "')]")
+            I.clickElement(`//span[contains(.,'" ${risk} "')]`)
                 .catch(() =>  console.log('Required options not found'));
         })
     },
@@ -160,9 +160,9 @@ module.exports = {
                     countsectors = await I.grabNumberOfVisibleElements(this.legend.rechart_line);
                 }
                 if (countsectors === 1) {
-                    console.log("The number of filtered risks displayed (" + countsectors + ") is as expected")
+                    console.log(`The number of filtered risks displayed ${countsectors} is as expected`)
                 } else {
-                    console.log("The number of filtered risks displayed (" + countsectors + ") is NOT as expected")
+                    console.log(`The number of filtered risks displayed ${countsectors} is NOT as expected`)
                 }
                 if (riskLabel === 'Safe') {
                     I.seeElement(this.legend.label_Safe)
@@ -191,7 +191,7 @@ module.exports = {
     selectTimeInterval(timeInterval) {
         try {
             I.clickElement(this.inputs.dateFilter);
-            I.clickElement("li[data-range-key='"+ timeInterval + "']");
+            I.clickElement(`li[data-range-key='"${timeInterval}"']`);
         }
         catch (err){
             console.log('Action unsuccessful')
@@ -231,7 +231,7 @@ module.exports = {
         const month = startDate[1];
         const year = startDate[2];
         let result =  this.setMonthYear(month, year);
-        I.clickElement(result+"/descendant::td[text()=" + day + "]");
+        I.clickElement(`${result}"/descendant::td[text()=" ${day} "]`);
     },
 
      setMonthYear(month, year){
@@ -333,7 +333,6 @@ module.exports = {
         I.clickElement(element);
     },
 
-
     checkDateTimeFilterValues(dateRange) {
         I.seeTextEquals(dateRange, this.inputs.reportrange);
     },
@@ -367,6 +366,6 @@ module.exports = {
         }
         const currentTime = time.subtract(0, 'h').format('DD/MM/YYYY H:mm A')
         const timeFrom = time.subtract(start, 'h').format('DD/MM/YYYY H:mm A');
-        I.seeElement(`//span[contains(.,'` + timeFrom + ` - ` + currentTime + `')]`)
+        I.seeElement(`//span[contains(.,'${timeFrom} - ${currentTime}')]`)
     }
 }

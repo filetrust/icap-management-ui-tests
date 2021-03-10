@@ -4,7 +4,6 @@ const {
 } = inject();
 
 
-
 Given("I have navigated to the File Drop page", () => {
     I.goToFileDrop();
 });

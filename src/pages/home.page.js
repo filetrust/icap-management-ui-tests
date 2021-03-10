@@ -54,7 +54,7 @@ module.exports = {
         I.clickElement(element);
     },
 
-    
+
     clickUsers() {
         const element = this.links.users;
         I.clickElement(element);
